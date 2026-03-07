@@ -1,0 +1,37 @@
+{
+  "eyebrow": "On the Horizon",
+  "headline": {
+    "plain": "What's ",
+    "italic": "Coming Next"
+  },
+  "description": "The five-year Living Literature & Language rotation continues. Each unit available in homeschool and co-op versions.",
+  "units": [
+    {
+      "badge": "Soon",
+      "category": "Summer Bridge",
+      "title": "Summer of Foundations",
+      "subtitle": "Of Mice and Men \u2014 Steinbeck",
+      "description": "A 6-week immersive summer unit for high school. Charlotte Mason narration meets Steinbeck's moral landscape.",
+      "versions": "Homeschool & Co-op versions \u2022 High School (9\u201312)",
+      "image": "images/of-mice-and-men.png"
+    },
+    {
+      "badge": "Soon",
+      "category": "Year Two \u2014 Spring",
+      "title": "The Art of Attention",
+      "subtitle": "Poetry + The Old Man and the Sea",
+      "description": "6 weeks of close reading with poetry, followed by 6 weeks with Hemingway. Two lenses, one deep habit of attention.",
+      "versions": "Homeschool & Co-op versions \u2022 High School (9\u201312)",
+      "image": "images/poetry-old-man.png"
+    },
+    {
+      "badge": "Soon",
+      "category": "Year Two \u2014 Fall",
+      "title": "A Midsummer Night's Dream",
+      "subtitle": "William Shakespeare",
+      "description": "Shakespeare's comedy through the lens of imagination, love, and ordered reality \u2014 a full semester unit.",
+      "versions": "Homeschool & Co-op versions \u2022 High School (9\u201312)",
+      "image": "images/midsummer.png"
+    }
+  ]
+}
