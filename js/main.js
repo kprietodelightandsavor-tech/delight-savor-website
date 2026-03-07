@@ -141,8 +141,8 @@ function renderCurriculum(data) {
         <a class="btn btn-gold" href="${b.cta.href}" target="_blank">${b.cta.label}</a>
       </div>
       <div class="bundle-covers">
-        <div class="bundle-cover bundle-cover--macbeth"><span class="cover-label">Macbeth</span></div>
-        <div class="bundle-cover bundle-cover--wh"><span class="cover-label">Wuthering Heights</span></div>
+        <div class="bundle-cover"><img src="${b.image_macbeth}" alt="Macbeth" /></div>
+        <div class="bundle-cover"><img src="${b.image_wh}" alt="Wuthering Heights" /></div>
       </div>
     </div>
   `);
@@ -163,7 +163,7 @@ function renderCurriculum(data) {
           </div>
           <a class="btn btn-outline" href="${u.cta.href}" target="_blank">${u.cta.label}</a>
         </div>
-        <div class="unit-cover unit-cover--${u.title.toLowerCase().replace(/\s+/g,'-')}"></div>
+        <div class="unit-cover"><img src="${u.image}" alt="${u.title}" /></div>
       </div>
     </div>
   `).join(''));
@@ -273,7 +273,7 @@ function renderComingSoon(data) {
       <h3 class="coming-title">${u.title}</h3>
       <p class="coming-subtitle">${u.subtitle}</p>
       <div class="coming-cover">
-        <div class="coming-cover-inner">Delight & Savor<br>Living Literature & Language Series</div>
+        <img src="${u.image}" alt="${u.title}" />
       </div>
       <p class="coming-desc">${u.description}</p>
       <p class="coming-versions">${u.versions}</p>
