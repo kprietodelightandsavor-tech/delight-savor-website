@@ -1,0 +1,36 @@
+{
+  "brand": {
+    "name": "Delight & Savor",
+    "tagline": "Charlotte Mason Literature Curriculum"
+  },
+  "social": [
+    { "platform": "email", "url": "mailto:kimdelightandsavor@gmail.com" },
+    { "platform": "instagram", "url": "https://instagram.com/Kim.delightandsavor", "handle": "@kim.delightandsavor" },
+    { "platform": "pinterest", "url": "https://pinterest.com/kprietodelightandsavor", "handle": "@kprietodelightandsavor" },
+    { "platform": "substack", "url": "https://delightandsavor.substack.com" }
+  ],
+  "links": [
+    { "label": "Philosophy", "href": "#philosophy" },
+    { "label": "Curriculum", "href": "#curriculum" },
+    { "label": "Coming Soon", "href": "#coming-soon" },
+    { "label": "Teacher's Notebook", "href": "#teachers-notebook" },
+    { "label": "FAQ", "href": "#faq" },
+    { "label": "Field Notes", "href": "#field-notes" },
+    { "label": "About Kim", "href": "#about" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "cta": {
+    "label": "Shop Now",
+    "href": "https://the-delight-savor-press.myshopify.com"
+  },
+  "footer_links": [
+    { "label": "Philosophy", "href": "#philosophy" },
+    { "label": "Curriculum", "href": "#curriculum" },
+    { "label": "Coming Soon", "href": "#coming-soon" },
+    { "label": "Teacher's Notebook", "href": "#teachers-notebook" },
+    { "label": "FAQ", "href": "#faq" },
+    { "label": "About Kim", "href": "#about" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "copyright": "© 2025 Delight & Savor — All rights reserved — kimdelightandsavor@gmail.com"
+}

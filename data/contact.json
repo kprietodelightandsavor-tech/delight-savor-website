@@ -1,0 +1,34 @@
+{
+  "eyebrow": "Get in Touch",
+  "headline": {
+    "plain": "Questions? ",
+    "italic": "Say Hello."
+  },
+  "description": "Whether you're wondering which version is right for your family, curious about co-op licensing, or just want to talk books — I'd love to hear from you.",
+  "channels": [
+    {
+      "label": "Email Kim",
+      "detail": "kimdelightandsavor@gmail.com",
+      "href": "mailto:kimdelightandsavor@gmail.com",
+      "icon": "envelope"
+    },
+    {
+      "label": "Instagram",
+      "detail": "@kim.delightandsavor",
+      "href": "https://instagram.com/Kim.delightandsavor",
+      "icon": "instagram"
+    },
+    {
+      "label": "Substack",
+      "detail": "Field Notes from the ranch & classroom",
+      "href": "https://delightandsavor.substack.com",
+      "icon": "book-open"
+    },
+    {
+      "label": "Pinterest",
+      "detail": "@kprietodelightandsavor",
+      "href": "https://pinterest.com/kprietodelightandsavor",
+      "icon": "pinterest"
+    }
+  ]
+}

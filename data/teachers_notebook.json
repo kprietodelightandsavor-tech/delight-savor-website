@@ -1,0 +1,125 @@
+{
+  "page_hero": {
+    "eyebrow": "A Resource for Teachers & Homeschool Mamas",
+    "headline": {
+      "plain": "Teacher's ",
+      "italic": "Notebook"
+    },
+    "description": "Practical notes from two years in the co-op classroom and five years at the homeschool table. Things I have learned, things I wish someone had told me, and things worth writing down.",
+    "signature": "From one teacher to another — Kim"
+  },
+  "homepage_preview": {
+    "eyebrow": "A Free Resource",
+    "headline": {
+      "plain": "Teacher's ",
+      "italic": "Notebook"
+    },
+    "description": "Practical notes from the co-op classroom and homeschool table — on narration, discussion, pacing, and the art of teaching literature well. From one teacher to another.",
+    "cta": {
+      "label": "Open the Notebook",
+      "href": "#teachers-notebook"
+    }
+  },
+  "filter_categories": [
+    { "label": "All Notes", "value": "all", "default": true },
+    { "label": "Narration", "value": "narration" },
+    { "label": "Discussion", "value": "discussion" },
+    { "label": "Classroom Management", "value": "classroom-management" },
+    { "label": "Pacing & Planning", "value": "pacing-planning" },
+    { "label": "Homeschool", "value": "homeschool" },
+    { "label": "Co-op", "value": "co-op" }
+  ],
+  "intro_note": "These are not prescriptions. They are notes — things I have observed, tried, adjusted, and tried again in real classrooms with real students. Take what is useful. Leave what is not. Every class, every child, every day is different.",
+  "notes": [
+    {
+      "id": 1,
+      "category": "Narration",
+      "audience": ["Homeschool", "Co-op"],
+      "title": "The Many Forms of Narration (And Why You Should Never Skip It)",
+      "summary": "Oral, written, musical, visual — and why sometimes not having read the text yourself is actually an advantage.",
+      "body": [
+        "No matter what age your student is — elementary through 12th grade — do not underestimate the value of narration. It is the heartbeat of a Charlotte Mason education, and it works at every level. At home, it can be as simple and organic as: \"Tell me about what you read.\" That is it. That is narration.",
+        "One thing I have discovered with older students: sometimes it works better if I have not read everything they have read. When I genuinely need them to tell me what happened, I can hear the quality of their narration more clearly. If their retelling doesn't quite make sense, that tells me something real. Ignorance is not bliss — but in this case it is wisdom.",
+        "And remember: narration can take many forms. It is not always written, and it is not always spoken.",
+        "One more thing: a narration is what they took out of the reading, not what you or the teacher guide says is important. Do not expect them to get everything. You will not either. Every time you return to a text, you get more. Let them have the excitement of discovering what they discover.",
+        "If they miss a key plot point, wait until they finish. Then ask a specific question: \"I'm following you, but I got a little confused here — what happens next?\" That is gentler and more effective than correcting mid-narration."
+      ],
+      "callout": {
+        "label": "Forms of Narration to Try",
+        "content": "Oral retelling • Written narration (4–6 sentences) • Illustration or sketch • Composing music • Videography • Lego builds • Timeline mapping • Letter writing in character • Dramatic retelling"
+      },
+      "pull_quote": "\"Tell me about what you read.\" That is narration. Do not overcomplicate it."
+    },
+    {
+      "id": 2,
+      "category": "Pacing & Planning",
+      "audience": ["Co-op", "Homeschool"],
+      "title": "Feel the Room",
+      "summary": "Why reading your students matters as much as reading the plan — and what to do when the class is off.",
+      "body": [
+        "I always pace my co-op classes carefully. I plan the session, I know the material, I know where we need to get to. And then I walk in the room and I read the students.",
+        "Some days they come in sharp — energized, focused, ready. Those days we nail the plan. Other days — like last week, when we were all off-kilter, tired, the room was hot and muggy — I looked at my students and said: \"We're going to give our best effort considering all these circumstances.\" And they did. And so did I. And at the end I told them so.",
+        "This is not lowering the bar. This is teaching. Noticing where your students are — hour by hour, sometimes moment by moment — and adjusting accordingly is not weakness. It is the most skilled thing a teacher can do."
+      ],
+      "callout": {
+        "label": "When the Class is Off",
+        "content": "Acknowledge it out loud. Name what you see. Give them a smaller target for the day and celebrate when they reach it. Students rise to honest expectations far better than pretended ones."
+      },
+      "pull_quote": "Life gets in the way in the co-op classroom, just as it does in the homeschool room. Feel where your students are, and make accommodations."
+    },
+    {
+      "id": 3,
+      "category": "Classroom Management",
+      "audience": ["Co-op", "Homeschool"],
+      "title": "Getting Attention Without Begging for It",
+      "summary": "The one sentence that works better than anything else, and why physical presence beats verbal redirection every time.",
+      "body": [
+        "Here is something I learned the hard way: saying \"Hey, guys, I need your attention\" over and over does not work. It signals that you will keep waiting and keep asking. It puts the power in the wrong place.",
+        "What works instead: go quiet. Say calmly, once: \"When I have everyone's attention, we'll continue.\" Then stop. Wait. It feels inefficient. It is actually the most efficient thing I know.",
+        "For individual students who are off-task — chatting, on a phone, distracted — I do not call them out in front of the group. I move. I walk toward them, continuing to speak to the class from wherever they are sitting. If that doesn't land, a quiet, gentle tap on the table while I keep talking to the room. That is usually enough. No confrontation, no embarrassment, no interruption to the class flow."
+      ],
+      "callout": {
+        "label": "The Physical Presence Principle",
+        "content": "Moving your body toward a distracted student is almost always more effective than addressing them verbally. Proximity communicates without singling anyone out."
+      },
+      "pull_quote": "\"When I have everyone's attention, we'll continue.\" Say it once. Then wait. It works."
+    },
+    {
+      "id": 4,
+      "category": "Discussion",
+      "audience": ["Co-op", "Homeschool"],
+      "title": "When Your Class Goes Quiet",
+      "summary": "Write first, then share. One small change that gives every student — quiet or loud — a way into the conversation.",
+      "body": [
+        "A quiet class is not a failed class. Some of my most thoughtful students are the quietest ones — and some of the loudest students are the ones who need the most structure to actually think before they speak.",
+        "My go-to for a quiet group: pair share. Put them in pairs, give them a question, let them talk to one person before they talk to the room. The student who would never raise a hand in a group of twelve will often speak freely to one other person.",
+        "But even in pairs, certain students can dominate. So I add one step: before anyone shares with their partner, everyone writes something down first. Their own thought, their own words, on paper. Then they share. This means every student has something to say before the conversation starts — and the quieter student is not just listening to the louder one.",
+        "Charlotte Mason said children are born persons. The persons in front of you — the quiet ones and the loud ones — all deserve a way into the conversation. Your job is to build the structure that makes room for both."
+      ],
+      "callout": {
+        "label": "The Write-Pair-Share Sequence",
+        "content": "1. Pose a question. 2. Everyone writes their answer independently (2–3 minutes). 3. Share with a partner. 4. Partners share with the group. Every student has participated before you ever call on anyone."
+      },
+      "pull_quote": "Write first. Then share. That one step changes the whole dynamic of a pair discussion."
+    }
+  ],
+  "coming_soon_note": "More notes coming soon — on honors track teaching, writing instruction through literature, and managing the homeschool literature discussion.",
+  "cta_section": {
+    "headline": {
+      "plain": "Ready to teach with ",
+      "italic": "confidence?"
+    },
+    "description": "Every Delight & Savor unit includes a teacher guide with scripted discussion questions, pacing notes, and everything you need to walk into the room prepared.",
+    "cta": {
+      "label": "Browse the Curriculum",
+      "href": "#curriculum"
+    }
+  },
+  "sidebar": {
+    "follow_note": "More notes added regularly. Subscribe to be notified when new entries are posted.",
+    "cta": {
+      "label": "Follow on Substack →",
+      "href": "https://delightandsavor.substack.com"
+    }
+  }
+}

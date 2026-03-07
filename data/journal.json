@@ -1,0 +1,17 @@
+{
+  "eyebrow": "From the Journal",
+  "headline": {
+    "plain": "The Delight & Savor ",
+    "italic": "Journal"
+  },
+  "description": "Essays on slow education, living books, and life on our fifteen-acre Texas ranch. Free to read — subscribe if it resonates.",
+  "email_placeholder": "Your email address",
+  "cta_primary": {
+    "label": "Read for Free",
+    "href": "https://delightandsavor.substack.com"
+  },
+  "cta_secondary": {
+    "label": "Visit our Substack to read the latest essays.",
+    "href": "https://delightandsavor.substack.com"
+  }
+}
