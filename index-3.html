@@ -1,0 +1,1930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delight & Savor — Charlotte Mason Literature Curriculum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+/* ============================================================
+   DELIGHT & SAVOR — Main Stylesheet
+   Palette: Forest Green, Amber Gold, Cream, Slate
+   Fonts: Cormorant Garamond, Playfair Display, Libre Baskerville
+   ============================================================ */
+
+:root {
+  --green-dark:   #2d4a2d;
+  --green:        #3a5c3a;
+  --green-mid:    #4a6741;
+  --green-light:  #e8ede8;
+  --gold:         #c29b45;
+  --gold-light:   #d4af6a;
+  --amber:        #b8860b;
+  --cream:        #faf6ee;
+  --cream-dark:   #f0ead8;
+  --slate:        #4a5568;
+  --slate-light:  #718096;
+  --near-black:   #2c2c2c;
+  --white:        #ffffff;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Cormorant Garamond', Georgia, serif;
+  --font-ui:      'Libre Baskerville', Georgia, serif;
+
+  --max-width: 1200px;
+  --section-pad: 5rem 2rem;
+  --radius: 2px;
+  --transition: all 0.3s ease;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--near-black);
+  background: var(--cream);
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ── Typography ── */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--slate-light);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.eyebrow::before, .eyebrow::after {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+.eyebrow.light { color: rgba(255,255,255,0.6); }
+.eyebrow.light::before, .eyebrow.light::after { background: rgba(255,255,255,0.3); }
+
+em { font-style: italic; color: var(--gold); }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.75rem;
+  border: 1.5px solid currentColor;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-primary {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+}
+.btn-primary:hover { background: var(--amber); border-color: var(--amber); }
+
+.btn-secondary {
+  background: transparent;
+  border-color: var(--white);
+  color: var(--white);
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--slate);
+  color: var(--slate);
+}
+.btn-outline:hover { background: var(--slate); color: var(--white); }
+
+.btn-gold {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+}
+.btn-gold:hover { background: var(--amber); border-color: var(--amber); }
+
+/* ── Layout Helpers ── */
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--section-pad);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem;
+}
+.section-header.left-align { text-align: left; margin: 0 0 2rem; }
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--near-black);
+  margin-bottom: 1.25rem;
+}
+
+.section-intro {
+  font-size: 1.15rem;
+  color: var(--slate);
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--green-dark);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  height: 64px;
+}
+
+.nav-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+.nav-brand .brand-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--white);
+  font-weight: 400;
+}
+.nav-brand .brand-tagline {
+  font-family: var(--font-ui);
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.nav-social {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+.nav-social a {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.8rem;
+  transition: color 0.2s;
+}
+.nav-social a:hover { color: var(--gold-light); }
+
+.nav-links {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+.nav-links a {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  padding: 0.4rem 0.7rem;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav-links a:hover { color: var(--gold-light); }
+
+.nav-cta {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--white) !important;
+  padding: 0.6rem 1.1rem;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--amber); }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  background: var(--green-dark);
+  background-image:
+    radial-gradient(ellipse at 70% 50%, rgba(74,103,65,0.4) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(45,74,45,0.6) 0%, transparent 50%);
+  min-height: 540px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-inner {
+  flex: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5rem 2rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-content { max-width: 520px; }
+
+.hero-headline {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  color: var(--white);
+  margin-bottom: 1.25rem;
+  line-height: 1.1;
+}
+.hero-headline em { color: var(--gold-light); }
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  max-width: 420px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Book Mockup */
+.hero-book {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-mockup {
+  width: 300px;
+  background: var(--white);
+  box-shadow: -16px 16px 48px rgba(0,0,0,0.45), 4px 4px 0 rgba(0,0,0,0.15);
+  border-left: 10px solid var(--cream-dark);
+  padding: 1.5rem;
+  transform: rotate(-2deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.book-mockup:hover {
+  transform: rotate(0deg) scale(1.02);
+  box-shadow: -20px 20px 60px rgba(0,0,0,0.5), 4px 4px 0 rgba(0,0,0,0.15);
+}
+.book-header {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate-light);
+  border-bottom: 1px solid var(--cream-dark);
+  padding-bottom: 0.65rem;
+  margin-bottom: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.book-series { font-style: italic; }
+.book-image {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(160deg, #4a2020 0%, #1a0a0a 40%, #2d1a0a 70%, #3d2010 100%);
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.book-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.3) 100%);
+}
+.book-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--near-black);
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0;
+}
+
+/* New Here Strip */
+.new-here-strip {
+  background: var(--gold);
+  padding: 0.85rem 2rem;
+}
+.new-here-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.new-here-label {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+  flex-shrink: 0;
+}
+.new-here-steps {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.new-here-step {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.9);
+}
+.new-here-step:not(:last-child)::after {
+  content: '→';
+  margin: 0 0.75rem;
+  color: rgba(255,255,255,0.5);
+}
+.step-num {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  color: var(--white);
+  font-size: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.new-here-step a { color: var(--white); text-decoration: underline; }
+
+/* ============================================================
+   PHILOSOPHY
+   ============================================================ */
+.philosophy { background: var(--cream); }
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--cream-dark);
+}
+
+.pillar {
+  padding: 2rem 1.75rem;
+  border: 1px solid var(--cream-dark);
+  position: relative;
+}
+
+.pillar-numeral {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--cream-dark);
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.pillar-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--near-black);
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+}
+
+.pillar-body {
+  font-size: 0.95rem;
+  color: var(--slate);
+  line-height: 1.7;
+}
+
+.philosophy-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.pull-quote-band {
+  background: var(--green-dark);
+  padding: 2.5rem 2rem;
+}
+.pull-quote-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.pull-quote-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-style: italic;
+  color: var(--white);
+  flex: 1;
+}
+.pull-quote-text em { color: var(--gold-light); font-style: normal; }
+.pull-quote-label {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   CURRICULUM
+   ============================================================ */
+.curriculum { background: var(--white); }
+
+.curriculum-bundle {
+  border: 1px solid var(--cream-dark);
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.bundle-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--white);
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.bundle-label {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--slate-light);
+  margin-bottom: 0.4rem;
+}
+
+.bundle-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--near-black);
+  margin-bottom: 0.25rem;
+}
+
+.bundle-subtitle {
+  font-style: italic;
+  color: var(--slate-light);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.bundle-desc {
+  color: var(--slate);
+  margin-bottom: 1.25rem;
+  max-width: 680px;
+}
+
+.bundle-includes {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+.bundle-includes li {
+  font-size: 0.95rem;
+  color: var(--slate);
+  padding: 0.2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.bundle-includes li::before {
+  content: '·';
+  color: var(--gold);
+  font-size: 1.2rem;
+}
+
+.version-tabs {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.version-tab {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate);
+  border: 1px solid var(--cream-dark);
+  padding: 0.4rem 0.85rem;
+  background: var(--cream);
+}
+
+.curriculum-units {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--cream-dark);
+}
+
+.unit-card {
+  padding: 2.5rem;
+  border: 1px solid var(--cream-dark);
+}
+
+.unit-semester {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--slate-light);
+  margin-bottom: 0.5rem;
+}
+
+.unit-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--near-black);
+  margin-bottom: 0.2rem;
+}
+
+.unit-author {
+  font-style: italic;
+  color: var(--slate-light);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.unit-desc {
+  color: var(--slate);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.unit-includes {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+.unit-includes li {
+  font-size: 0.9rem;
+  color: var(--slate);
+  padding: 0.15rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.unit-includes li::before { content: '·'; color: var(--gold); font-size: 1.2rem; }
+
+/* ============================================================
+   ABOUT STRIP
+   ============================================================ */
+.about-strip {
+  background: var(--cream);
+  border-top: 1px solid var(--cream-dark);
+  border-bottom: 1px solid var(--cream-dark);
+  padding: 3rem 2rem;
+}
+.about-strip-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+}
+.about-tagline {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-style: italic;
+  color: var(--slate);
+}
+.about-credentials {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.credential-tag {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate);
+  border: 1px solid var(--cream-dark);
+  padding: 0.35rem 0.85rem;
+  background: var(--white);
+}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testimonials { background: var(--cream); }
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  padding: 2rem 1.75rem;
+  position: relative;
+}
+
+.testimonial-mark {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--cream-dark);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-quote {
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--near-black);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.testimonial-role {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-light);
+}
+
+.testimonial-context {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  margin-top: 0.2rem;
+}
+
+/* ============================================================
+   CHARLOTTE MASON
+   ============================================================ */
+.cm-section { background: var(--white); }
+
+.cm-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.cm-paragraphs p {
+  color: var(--slate);
+  line-height: 1.85;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+
+.cm-quote-box {
+  border-left: 3px solid var(--green);
+  padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+  background: var(--cream);
+  margin-bottom: 1.5rem;
+}
+.cm-quote-text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--near-black);
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+.cm-quote-attr {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-light);
+}
+
+.cm-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.cm-tag {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+  border: 1px solid var(--cream-dark);
+  padding: 0.3rem 0.7rem;
+  background: var(--cream);
+}
+
+/* ============================================================
+   TEACHER'S NOTEBOOK PREVIEW
+   ============================================================ */
+.notebook-preview { background: var(--cream); }
+
+.notebook-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.notebook-card {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.notebook-card-category {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-light);
+  border: 1px solid var(--cream-dark);
+  padding: 0.25rem 0.6rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+
+.notebook-card-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--near-black);
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+  flex: 1;
+}
+
+.notebook-card-summary {
+  font-size: 0.9rem;
+  color: var(--slate);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.notebook-card-link {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: gap 0.2s;
+}
+.notebook-card-link:hover { gap: 0.7rem; }
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq { background: var(--white); }
+
+.faq-list {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--slate);
+  padding: 1.4rem 2.5rem 1.4rem 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.2s;
+  position: relative;
+}
+.faq-question:hover { color: var(--near-black); }
+.faq-question.open { color: var(--near-black); }
+
+.faq-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  flex-shrink: 0;
+  color: var(--gold);
+}
+.faq-icon::before, .faq-icon::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.faq-icon::before { width: 12px; height: 1px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+.faq-icon::after  { width: 1px; height: 12px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+.faq-question.open .faq-icon::after { transform: translate(-50%,-50%) rotate(90deg); opacity: 0; }
+
+.faq-answer {
+  font-size: 1rem;
+  color: var(--slate);
+  line-height: 1.8;
+  padding: 0 1rem 1.5rem 0;
+  display: none;
+}
+.faq-answer.open { display: block; }
+
+/* ============================================================
+   COMING SOON
+   ============================================================ */
+.coming-soon { background: var(--cream); }
+
+.coming-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.coming-card {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  padding: 1.75rem;
+}
+
+.coming-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.coming-category {
+  font-family: var(--font-ui);
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-light);
+}
+
+.coming-badge {
+  font-family: var(--font-ui);
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate-light);
+  border: 1px solid var(--cream-dark);
+  padding: 0.2rem 0.5rem;
+}
+
+.coming-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--near-black);
+  margin-bottom: 0.2rem;
+}
+
+.coming-subtitle {
+  font-style: italic;
+  color: var(--slate-light);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.coming-cover {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(135deg, var(--green-light) 0%, var(--cream-dark) 100%);
+  margin-bottom: 1rem;
+  border: 1px solid var(--cream-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.coming-cover-inner {
+  font-family: var(--font-ui);
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate-light);
+  text-align: center;
+}
+
+.coming-desc {
+  font-size: 0.9rem;
+  color: var(--slate);
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
+
+.coming-versions {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  color: var(--slate-light);
+}
+
+/* ============================================================
+   JOURNAL BAND
+   ============================================================ */
+.journal-band {
+  background: var(--green-dark);
+  background-image: radial-gradient(ellipse at 30% 50%, rgba(74,103,65,0.4) 0%, transparent 60%);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.journal-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.journal-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.journal-title em { color: var(--gold-light); }
+
+.journal-desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.journal-form {
+  display: flex;
+  gap: 0;
+  max-width: 480px;
+  margin: 0 auto 1.25rem;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.journal-form input,
+.signup-form input {
+  flex: 1;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  padding: 0.85rem 1.25rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--white);
+  outline: none;
+}
+.journal-form input::placeholder,
+.signup-form input::placeholder { color: rgba(255,255,255,0.4); }
+
+.journal-substack-link {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  text-decoration: underline;
+}
+
+/* ============================================================
+   EMAIL SIGNUP
+   ============================================================ */
+.email-signup {
+  background: var(--green);
+  background-image: radial-gradient(ellipse at 70% 50%, rgba(74,103,65,0.5) 0%, transparent 60%);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.signup-inner { max-width: 600px; margin: 0 auto; }
+.signup-headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--white);
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+.signup-desc {
+  color: rgba(255,255,255,0.75);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.signup-form {
+  display: flex;
+  max-width: 480px;
+  margin: 0 auto;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact { background: var(--cream); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.contact-card {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+}
+.contact-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--slate-light);
+}
+
+.contact-label {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--near-black);
+  margin-bottom: 0.3rem;
+}
+
+.contact-detail {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  color: var(--slate-light);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background: var(--green-dark);
+  padding: 2.5rem 2rem 1rem;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+.footer-brand .brand-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--white);
+}
+.footer-brand .brand-tagline {
+  font-family: var(--font-ui);
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.footer-links {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+.footer-links a {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  padding: 0.3rem 0.65rem;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--gold-light); }
+
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+}
+.footer-social a {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.75rem;
+  font-family: var(--font-ui);
+  transition: color 0.2s;
+}
+.footer-social a:hover { color: var(--gold-light); }
+
+.footer-copyright {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-top: 1rem;
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-book { display: none; }
+  .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+  .curriculum-units { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .cm-inner { grid-template-columns: 1fr; }
+  .notebook-cards { grid-template-columns: 1fr; }
+  .coming-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-links { display: none; }
+  .pull-quote-inner { flex-direction: column; gap: 1rem; }
+}
+
+@media (max-width: 600px) {
+  .pillars-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .journal-form, .signup-form { flex-direction: column; }
+  .new-here-steps { flex-direction: column; align-items: flex-start; }
+  .new-here-step:not(:last-child)::after { display: none; }
+}
+
+/* ── Hero Book: Bigger + Glow ── */
+.hero {
+  min-height: 600px;
+}
+
+.hero-inner {
+  grid-template-columns: 1fr 380px;
+  padding: 5rem 2rem 5rem;
+  align-items: center;
+}
+
+.hero-book {
+  position: relative;
+}
+
+.hero-book::before {
+  content: '';
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(ellipse at center, rgba(194,155,69,0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.book-mockup {
+  width: 340px;
+  padding: 1.75rem;
+  border-left: 12px solid var(--cream-dark);
+  box-shadow:
+    -20px 24px 60px rgba(0,0,0,0.55),
+    6px 6px 0 rgba(0,0,0,0.12),
+    0 0 80px rgba(194,155,69,0.12);
+  position: relative;
+  z-index: 1;
+  transform: rotate(-1.5deg);
+}
+
+.book-mockup:hover {
+  transform: rotate(0deg) scale(1.03);
+  box-shadow:
+    -24px 28px 70px rgba(0,0,0,0.6),
+    6px 6px 0 rgba(0,0,0,0.12),
+    0 0 100px rgba(194,155,69,0.2);
+}
+
+.book-image {
+  height: 260px;
+}
+
+/* ============================================================
+   CURRICULUM REDESIGN — cleaner layout, cover images
+   ============================================================ */
+
+/* Bundle: side-by-side text + covers */
+.bundle-content {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2.5rem;
+  align-items: start;
+}
+.bundle-text { display: flex; flex-direction: column; gap: 0; }
+.bundle-versions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.bundle-covers {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+.bundle-cover {
+  width: 100%;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--cream-dark);
+}
+.bundle-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* Unit cards: text left, cover image right filling the space */
+.unit-card {
+  padding: 0;
+  border: 1px solid var(--cream-dark);
+  overflow: hidden;
+}
+.unit-card-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  min-height: 400px;
+  position: relative;
+}
+.unit-info {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.unit-cover {
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.unit-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* Coming soon — real images */
+.coming-cover {
+  height: 200px;
+  overflow: hidden;
+  background-size: cover !important;
+}
+.coming-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .bundle-content { grid-template-columns: 1fr; }
+  .bundle-covers { flex-direction: row; }
+  .bundle-cover { height: 140px; flex: 1; }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <span class="brand-name" id="brand-name"></span>
+        <span class="brand-tagline" id="brand-tagline"></span>
+      </a>
+      <div class="nav-social" id="nav-social"></div>
+      <nav class="nav-links" id="nav-links"></nav>
+      <a class="nav-cta" id="nav-cta" href="#"></a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow" id="hero-eyebrow"></p>
+          <h1 class="hero-headline" id="hero-headline"></h1>
+          <p class="hero-sub" id="hero-sub"></p>
+          <div class="hero-buttons" id="hero-buttons"></div>
+        </div>
+        <div class="hero-book">
+          <div class="book-mockup">
+            <div class="book-header">
+              <span>Delight & Savor</span>
+              <span class="book-series">Living Literature & Language Series</span>
+            </div>
+            <div class="book-image"></div>
+            <div class="book-title">Macbeth</div>
+          </div>
+        </div>
+      </div>
+      <div class="new-here-strip" id="new-here-strip"></div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section class="philosophy" id="philosophy">
+      <div class="section-inner">
+        <div class="section-header">
+          <p class="eyebrow" id="phil-eyebrow"></p>
+          <h2 class="section-title" id="phil-title"></h2>
+          <p class="section-intro" id="phil-intro"></p>
+        </div>
+        <div class="pillars-grid" id="pillars-grid"></div>
+        <div class="philosophy-cta" id="philosophy-cta"></div>
+      </div>
+      <div class="pull-quote-band" id="pull-quote-band"></div>
+    </section>
+
+    <!-- CURRICULUM -->
+    <section class="curriculum" id="curriculum">
+      <div class="section-inner">
+        <div class="section-header">
+          <p class="eyebrow" id="curr-eyebrow"></p>
+          <h2 class="section-title" id="curr-title"></h2>
+          <p class="section-intro" id="curr-desc"></p>
+        </div>
+        <div class="curriculum-bundle" id="curriculum-bundle"></div>
+        <div class="curriculum-units" id="curriculum-units"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT STRIP -->
+    <section class="about-strip" id="about-strip">
+      <div class="about-strip-inner">
+        <p class="about-tagline" id="about-tagline"></p>
+        <div class="about-credentials" id="about-credentials"></div>
+        <a class="btn btn-outline" id="about-cta" href="#journal"></a>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+      <div class="section-inner">
+        <div class="section-header">
+          <p class="eyebrow" id="test-eyebrow"></p>
+          <h2 class="section-title" id="test-title"></h2>
+        </div>
+        <div class="testimonials-grid" id="testimonials-grid"></div>
+      </div>
+    </section>
+
+    <!-- CHARLOTTE MASON -->
+    <section class="cm-section" id="cm-section">
+      <div class="section-inner cm-inner">
+        <div class="cm-text">
+          <div class="section-header left-align">
+            <p class="eyebrow" id="cm-eyebrow"></p>
+            <h2 class="section-title" id="cm-title"></h2>
+          </div>
+          <div class="cm-paragraphs" id="cm-paragraphs"></div>
+        </div>
+        <div class="cm-sidebar">
+          <div class="cm-quote-box" id="cm-quote-box"></div>
+          <div class="cm-tags" id="cm-tags"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEACHER'S NOTEBOOK PREVIEW -->
+    <section class="notebook-preview" id="notebook-preview">
+      <div class="section-inner">
+        <div class="section-header">
+          <p class="eyebrow">A Free Resource</p>
+          <h2 class="section-title">Teacher's <em>Notebook</em></h2>
+          <p class="section-intro">Practical notes from the co-op classroom and homeschool table — on narration, discussion, pacing, and the art of teaching literature well. From one teacher to another.</p>
+        </div>
+        <div class="notebook-cards" id="notebook-cards"></div>
+        <div class="section-cta">
+          <a href="teachers-notebook.html" class="btn btn-outline">Open the Notebook</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="section-inner">
+        <div class="section-header">
+          <p class="eyebrow" id="faq-eyebrow"></p>
+          <h2 class="section-title" id="faq-title"></h2>
+        </div>
+        <div class="faq-list" id="faq-list"></div>
+      </div>
+    </section>
+
+    <!-- COMING SOON -->
+    <section class="coming-soon" id="coming-soon">
+      <div class="section-inner">
+        <div class="section-header">
+          <p class="eyebrow" id="cs-eyebrow"></p>
+          <h2 class="section-title" id="cs-title"></h2>
+          <p class="section-intro" id="cs-desc"></p>
+        </div>
+        <div class="coming-grid" id="coming-grid"></div>
+      </div>
+    </section>
+
+    <!-- JOURNAL / EMAIL -->
+    <section class="journal-band" id="journal">
+      <div class="journal-inner">
+        <p class="eyebrow light" id="journal-eyebrow"></p>
+        <h2 class="journal-title" id="journal-title"></h2>
+        <p class="journal-desc" id="journal-desc"></p>
+        <div class="journal-form">
+          <input type="email" id="journal-email-input" placeholder="Your email address" />
+          <a class="btn btn-gold" id="journal-cta" href="https://delightandsavor.substack.com">Read for Free</a>
+        </div>
+        <a class="journal-substack-link" id="journal-substack" href="https://delightandsavor.substack.com"></a>
+      </div>
+    </section>
+
+    <!-- EMAIL SIGNUP -->
+    <section class="email-signup" id="email-signup">
+      <div class="signup-inner">
+        <p class="eyebrow light" id="signup-eyebrow"></p>
+        <h2 class="signup-headline" id="signup-headline"></h2>
+        <p class="signup-desc" id="signup-desc"></p>
+        <div class="signup-form">
+          <input type="email" placeholder="Your email address" />
+          <a class="btn btn-gold" href="https://delightandsavor.substack.com" id="signup-cta"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="section-inner">
+        <div class="section-header">
+          <p class="eyebrow" id="contact-eyebrow"></p>
+          <h2 class="section-title" id="contact-title"></h2>
+          <p class="section-intro" id="contact-desc"></p>
+        </div>
+        <div class="contact-grid" id="contact-grid"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-name" id="footer-brand-name"></span>
+        <span class="brand-tagline" id="footer-brand-tagline"></span>
+      </div>
+      <nav class="footer-links" id="footer-links"></nav>
+      <div class="footer-social" id="footer-social"></div>
+    </div>
+    <div class="footer-copyright" id="footer-copyright"></div>
+  </footer>
+
+  <script>
+window.__DATA__ = {"about": {"eyebrow": "Meet Your Guide", "headline": {"plain": "Curriculum made by a homeschool mama who ", "italic": "lives the life."}, "photo_caption": "Kim \u2014 educator, mama, ranch dweller, reader", "bio": ["I'm Kim \u2014 founder of Delight & Savor, Charlotte Mason educator, and the woman who teaches co-op literature while managing 46 animals on our 15-acre Texas ranch.", "I spent nine years in the public school classroom \u2014 teaching middle school literature and language arts, then 11th and 12th grade on-level and AP. I taught AP Language & Rhetoric and AP British Literature, and contributed to curriculum writing for my district. I loved that work. But something was always humming underneath it, a song I couldn't quite name.", "When I began homeschooling my children five years ago and discovered Charlotte Mason's philosophy of education, I finally heard the notes. It was the song I'd always been trying to write \u2014 ideas before information, narration as the foundation of language, beauty as a legitimate aim of education. It had always been there. I just hadn't had a name for it yet.", "For two years now I've been teaching high school literature in our co-op, and it's there that my curriculum writing has truly come to life. I write to fill the gaps \u2014 components I wished existed, materials that trust students with real ideas, guides that honor both the homeschool mama and the serious student. There are wonderful curricula out there, and I use them too. Delight & Savor was born from what I still needed."], "pull_quote": {"text": "In the surface of the song one could begin to hear a private melody \u2014 repeating itself again and again.", "attribution": "John Steinbeck, The Pearl"}, "homepage_strip": {"tagline": "Every unit is tested in my own co-op classroom before it reaches yours.", "credentials": ["M.A. Literary Studies", "9 Years Teaching", "Charlotte Mason", "Texas Ranch Life"], "cta": {"label": "Read the Journal", "href": "#journal"}}}, "charlotte_mason": {"eyebrow": "A Little Context", "headline": {"plain": "What is ", "italic": "Charlotte Mason?"}, "paragraphs": ["Charlotte Mason (1842\u20131923) was a British educator whose philosophy of education has shaped a quiet revolution in homeschooling. Her core conviction: children are not empty vessels to be filled with information, but full persons deserving a rich, living education.", "In a Charlotte Mason home, students read whole, living books rather than textbooks. They narrate \u2014 retelling what they have read in their own words \u2014 rather than filling in blanks. They spend time outdoors, study great art and music, and encounter ideas worthy of their full attention.", "At Delight & Savor, we build on this foundation at the high school level \u2014 adding rigorous literary analysis, classical rhetoric, and the Great Conversation with history's greatest thinkers. The result is a student who can read carefully, think deeply, and write with confidence."], "quote": {"text": "The question is not, \u2014 how much does the youth know? when he has finished his education \u2014 but how much does he care?", "attribution": "Charlotte Mason"}, "tags": ["Living Books", "Narration", "Atmosphere", "Habit Formation", "The Great Conversation", "Ideas Over Information"]}, "coming_soon": {"eyebrow": "On the Horizon", "headline": {"plain": "What's ", "italic": "Coming Next"}, "description": "The five-year Living Literature & Language rotation continues. Each unit available in homeschool and co-op versions.", "units": [{"badge": "Soon", "category": "Summer Bridge", "title": "Summer of Foundations", "subtitle": "Of Mice and Men \u2014 Steinbeck", "description": "A 6-week immersive summer unit for high school. Charlotte Mason narration meets Steinbeck's moral landscape.", "versions": "Homeschool & Co-op versions \u2022 High School (9\u201312)", "image": "of-mice-and-men.PNG"}, {"badge": "Soon", "category": "Year Two \u2014 Spring", "title": "The Art of Attention", "subtitle": "Poetry + The Old Man and the Sea", "description": "6 weeks of close reading with poetry, followed by 6 weeks with Hemingway. Two lenses, one deep habit of attention.", "versions": "Homeschool & Co-op versions \u2022 High School (9\u201312)", "image": "poetry-old-man.PNG"}, {"badge": "Soon", "category": "Year Two \u2014 Fall", "title": "A Midsummer Night's Dream", "subtitle": "William Shakespeare", "description": "Shakespeare's comedy through the lens of imagination, love, and ordered reality \u2014 a full semester unit.", "versions": "Homeschool & Co-op versions \u2022 High School (9\u201312)", "image": "midsummer.PNG"}]}, "contact": {"eyebrow": "Get in Touch", "headline": {"plain": "Questions? ", "italic": "Say Hello."}, "description": "Whether you're wondering which version is right for your family, curious about co-op licensing, or just want to talk books \u2014 I'd love to hear from you.", "channels": [{"label": "Email Kim", "detail": "kimdelightandsavor@gmail.com", "href": "mailto:kimdelightandsavor@gmail.com", "icon": "envelope"}, {"label": "Instagram", "detail": "@kim.delightandsavor", "href": "https://instagram.com/Kim.delightandsavor", "icon": "instagram"}, {"label": "Substack", "detail": "Field Notes from the ranch & classroom", "href": "https://delightandsavor.substack.com", "icon": "book-open"}, {"label": "Pinterest", "detail": "@kprietodelightandsavor", "href": "https://pinterest.com/kprietodelightandsavor", "icon": "pinterest"}]}, "curriculum": {"year_one": {"eyebrow": "Year One", "title": {"plain": "The Tragic Hero & ", "italic": "Anti-Hero"}, "description": "A full-year literature study for high school (9\u201312) pairing Shakespeare's Macbeth with Bront\u00eb's Wuthering Heights, built around the DELIGHT framework and the Great Conversation.", "bundle": {"badge": "Best Value", "label": "Complete Year One Bundle", "title": "Macbeth + Wuthering Heights", "subtitle": "High School (9\u201312) \u2014 Both Semesters", "description": "Everything you need for a complete year of Charlotte Mason literature \u2014 both full-semester units at a bundle price.", "includes": ["Student weekly handouts for both units", "Teacher guide with discussion scripts", "Honors track materials", "Parent guide for homeschool families", "Reading companion for each major work"], "versions": [{"label": "Homeschool Version", "icon": "home"}, {"label": "Co-op Version", "icon": "users"}], "cta": {"label": "Shop the Bundle", "href": "https://the-delight-savor-press.myshopify.com"}, "image_macbeth": "macbeth.PNG", "image_wh": "wuthering-heights.PNG"}, "units": [{"semester": "Fall Semester \u2014 Year One", "title": "Macbeth", "author": "William Shakespeare", "grade": "High School (9\u201312)", "description": "A full-semester unit on ambition, power, and moral order \u2014 rooted in Charlotte Mason narration and the DELIGHT framework.", "includes": ["Student weekly handouts", "Teacher guide with discussion scripts", "Honors track materials", "Parent guide for homeschool families", "Macbeth reading companion"], "versions": [{"label": "Homeschool Version", "icon": "home"}, {"label": "Co-op Version", "icon": "users"}], "cta": {"label": "Shop Macbeth Unit", "href": "https://the-delight-savor-press.myshopify.com"}, "image": "macbeth.PNG"}, {"semester": "Spring Semester \u2014 Year One", "title": "Wuthering Heights", "author": "Emily Bront\u00eb", "grade": "High School (9\u201312)", "description": "A full-semester unit exploring ordered and disordered love, Romantic philosophy, and the moral imagination \u2014 through narration and living discussion.", "includes": ["Student weekly handouts", "Teacher guide with discussion scripts", "Honors track materials", "Parent guide for homeschool families", "Wuthering Heights reading companion"], "versions": [{"label": "Homeschool Version", "icon": "home"}, {"label": "Co-op Version", "icon": "users"}], "cta": {"label": "Shop Wuthering Heights Unit", "href": "https://the-delight-savor-press.myshopify.com"}, "image": "wuthering-heights.PNG"}]}}, "email_signup": {"eyebrow": "Stay Close", "headline": "Ready to delight in learning and savor every page?", "description": "New units, Charlotte Mason essays, and early-access discounts \u2014 straight to your inbox. Unsubscribe anytime.", "email_placeholder": "Your email address", "cta": {"label": "Stay in the Loop", "href": "#"}}, "faq": {"eyebrow": "Common Questions", "title": "FAQ", "items": [{"question": "Do I need to have read the book myself first?", "answer": "Not at all. The teacher guide walks you through every discussion with scripted facilitation questions, context notes, and week-by-week structure. You can teach this confidently even if it's your first time reading the text alongside your student."}, {"question": "Is this curriculum secular or faith-based?", "answer": "It is faith-friendly. God is not left out when He is genuinely present in the literature or the ideas \u2014 and in works like Macbeth and Wuthering Heights, questions of moral order and the soul are impossible to ignore. But this is not a devotional curriculum. Secular families use it comfortably alongside families of faith."}, {"question": "What is the difference between the Homeschool and Co-op versions?", "answer": "The Homeschool version is designed for a parent teaching one or a few students at home \u2014 it moves at your own pace with a parent guide and flexible structure. The Co-op version includes a full teacher guide with scripted discussion, classroom-ready handouts, and materials designed for weekly 90-minute sessions with a group."}, {"question": "What grade level is this really for?", "answer": "The units are designed for high school, grades 9\u201312. That said, a strong 8th grader can absolutely handle the material, and the honors track extends the challenge for advanced students. The DELIGHT framework scales well \u2014 it meets students where they are."}, {"question": "Can I use this without a co-op?", "answer": "Absolutely. The homeschool version is built for exactly that. Many families use it as a one-on-one literature course at home, working through the narrations and discussions together as a family read-aloud or with an independent high schooler."}, {"question": "Do I need any other curriculum alongside this?", "answer": "Delight & Savor is a complete literature and language arts course \u2014 reading, analysis, writing, and grammar are all woven together through the unit. You will need a copy of the novel or play itself. Some families add a separate composition program; others find this course covers their writing goals fully."}]}, "hero": {"eyebrow": "Charlotte Mason Language Arts", "headline": {"plain": "Words that ", "italic": "linger,", "plain2": " ideas that ", "italic2": "form."}, "subheadline": "Narration-rooted, beauty-filled literature curriculum for the Charlotte Mason homeschool \u2014 from the co-op classroom to the family table.", "buttons": [{"label": "Explore Curriculum", "href": "#curriculum", "style": "primary"}, {"label": "Our Story", "href": "#about", "style": "secondary"}], "new_here_strip": {"label": "New Here?", "steps": [{"number": 1, "text": "Read the Philosophy \u2014 see if it resonates", "link_text": "Philosophy", "link_href": "#philosophy"}, {"number": 2, "text": "Browse Year One \u2014 Macbeth & Wuthering Heights", "link_text": "Year One", "link_href": "#curriculum"}, {"number": 3, "text": "Choose your version \u2014 Homeschool or Co-op \u2014 and download", "link_text": null, "link_href": null}]}}, "journal": {"eyebrow": "From the Journal", "headline": {"plain": "The Delight & Savor ", "italic": "Journal"}, "description": "Essays on slow education, living books, and life on our fifteen-acre Texas ranch. Free to read \u2014 subscribe if it resonates.", "email_placeholder": "Your email address", "cta_primary": {"label": "Read for Free", "href": "https://delightandsavor.substack.com"}, "cta_secondary": {"label": "Visit our Substack to read the latest essays.", "href": "https://delightandsavor.substack.com"}}, "nav": {"brand": {"name": "Delight & Savor", "tagline": "Charlotte Mason Literature Curriculum"}, "social": [{"platform": "email", "url": "mailto:kimdelightandsavor@gmail.com"}, {"platform": "instagram", "url": "https://instagram.com/Kim.delightandsavor", "handle": "@kim.delightandsavor"}, {"platform": "pinterest", "url": "https://pinterest.com/kprietodelightandsavor", "handle": "@kprietodelightandsavor"}, {"platform": "substack", "url": "https://delightandsavor.substack.com"}], "links": [{"label": "Philosophy", "href": "#philosophy"}, {"label": "Curriculum", "href": "#curriculum"}, {"label": "Coming Soon", "href": "#coming-soon"}, {"label": "Teacher's Notebook", "href": "#teachers-notebook"}, {"label": "FAQ", "href": "#faq"}, {"label": "Field Notes", "href": "#field-notes"}, {"label": "About Kim", "href": "#about"}, {"label": "Contact", "href": "#contact"}], "cta": {"label": "Shop Now", "href": "https://payhip.com/delightandsavor"}, "footer_links": [{"label": "Philosophy", "href": "#philosophy"}, {"label": "Curriculum", "href": "#curriculum"}, {"label": "Coming Soon", "href": "#coming-soon"}, {"label": "Teacher's Notebook", "href": "#teachers-notebook"}, {"label": "FAQ", "href": "#faq"}, {"label": "About Kim", "href": "#about"}, {"label": "Contact", "href": "#contact"}], "copyright": "\u00a9 2025 Delight & Savor \u2014 All rights reserved \u2014 kimdelightandsavor@gmail.com"}, "philosophy": {"eyebrow": "What We Believe", "headline": {"plain": "A Different Kind of ", "italic": "Literary Education"}, "intro": "Literature is the main dish \u2014 not a side. Every feast has a centerpiece, and for us it is the text: the reading, the thinking, the conversation it opens. From that center, everything else grows \u2014 writing, grammar, philosophy, rhetoric, the habits of mind that serve a student in any field they choose.", "pillars": [{"numeral": "I", "title": "Narration First, Always", "body": "Before analysis comes comprehension, and before comprehension comes attention. The work begins here."}, {"numeral": "II", "title": "Writing Grown from the Text", "body": "Craft is learned in context, not in a vacuum. Two or three principles per term, drawn directly from the literature."}, {"numeral": "III", "title": "The Great Conversation", "body": "Aristotle, Augustine, Rousseau \u2014 not as separate lessons, but as voices already present in the text."}, {"numeral": "IV", "title": "Direction Without Busywork", "body": "Enough structure that you never feel lost. Enough freedom to make it yours."}, {"numeral": "V", "title": "Ideas That Resonate", "body": "Love, ambition, justice, beauty \u2014 the things that form a person, not just prepare them for a test."}, {"numeral": "VI", "title": "Habits for Any Future", "body": "Close reading, careful thinking, articulate expression \u2014 habits that serve a student in any field they choose."}], "pull_quote": {"text": "Finally \u2014 something I can use for my high school student. Enough guidance that I'm not lost, enough freedom that it still feels like ours.", "highlight_word": "ours", "label": "What We Want Every Mama to Feel"}, "cta": {"label": "Read the Full Philosophy \u2192", "href": "#philosophy-full"}}, "teachers_notebook": {"page_hero": {"eyebrow": "A Resource for Teachers & Homeschool Mamas", "headline": {"plain": "Teacher's ", "italic": "Notebook"}, "description": "Practical notes from two years in the co-op classroom and five years at the homeschool table. Things I have learned, things I wish someone had told me, and things worth writing down.", "signature": "From one teacher to another \u2014 Kim"}, "homepage_preview": {"eyebrow": "A Free Resource", "headline": {"plain": "Teacher's ", "italic": "Notebook"}, "description": "Practical notes from the co-op classroom and homeschool table \u2014 on narration, discussion, pacing, and the art of teaching literature well. From one teacher to another.", "cta": {"label": "Open the Notebook", "href": "#teachers-notebook"}}, "filter_categories": [{"label": "All Notes", "value": "all", "default": true}, {"label": "Narration", "value": "narration"}, {"label": "Discussion", "value": "discussion"}, {"label": "Classroom Management", "value": "classroom-management"}, {"label": "Pacing & Planning", "value": "pacing-planning"}, {"label": "Homeschool", "value": "homeschool"}, {"label": "Co-op", "value": "co-op"}], "intro_note": "These are not prescriptions. They are notes \u2014 things I have observed, tried, adjusted, and tried again in real classrooms with real students. Take what is useful. Leave what is not. Every class, every child, every day is different.", "notes": [{"id": 1, "category": "Narration", "audience": ["Homeschool", "Co-op"], "title": "The Many Forms of Narration (And Why You Should Never Skip It)", "summary": "Oral, written, musical, visual \u2014 and why sometimes not having read the text yourself is actually an advantage.", "body": ["No matter what age your student is \u2014 elementary through 12th grade \u2014 do not underestimate the value of narration. It is the heartbeat of a Charlotte Mason education, and it works at every level. At home, it can be as simple and organic as: \"Tell me about what you read.\" That is it. That is narration.", "One thing I have discovered with older students: sometimes it works better if I have not read everything they have read. When I genuinely need them to tell me what happened, I can hear the quality of their narration more clearly. If their retelling doesn't quite make sense, that tells me something real. Ignorance is not bliss \u2014 but in this case it is wisdom.", "And remember: narration can take many forms. It is not always written, and it is not always spoken.", "One more thing: a narration is what they took out of the reading, not what you or the teacher guide says is important. Do not expect them to get everything. You will not either. Every time you return to a text, you get more. Let them have the excitement of discovering what they discover.", "If they miss a key plot point, wait until they finish. Then ask a specific question: \"I'm following you, but I got a little confused here \u2014 what happens next?\" That is gentler and more effective than correcting mid-narration."], "callout": {"label": "Forms of Narration to Try", "content": "Oral retelling \u2022 Written narration (4\u20136 sentences) \u2022 Illustration or sketch \u2022 Composing music \u2022 Videography \u2022 Lego builds \u2022 Timeline mapping \u2022 Letter writing in character \u2022 Dramatic retelling"}, "pull_quote": "\"Tell me about what you read.\" That is narration. Do not overcomplicate it."}, {"id": 2, "category": "Pacing & Planning", "audience": ["Co-op", "Homeschool"], "title": "Feel the Room", "summary": "Why reading your students matters as much as reading the plan \u2014 and what to do when the class is off.", "body": ["I always pace my co-op classes carefully. I plan the session, I know the material, I know where we need to get to. And then I walk in the room and I read the students.", "Some days they come in sharp \u2014 energized, focused, ready. Those days we nail the plan. Other days \u2014 like last week, when we were all off-kilter, tired, the room was hot and muggy \u2014 I looked at my students and said: \"We're going to give our best effort considering all these circumstances.\" And they did. And so did I. And at the end I told them so.", "This is not lowering the bar. This is teaching. Noticing where your students are \u2014 hour by hour, sometimes moment by moment \u2014 and adjusting accordingly is not weakness. It is the most skilled thing a teacher can do."], "callout": {"label": "When the Class is Off", "content": "Acknowledge it out loud. Name what you see. Give them a smaller target for the day and celebrate when they reach it. Students rise to honest expectations far better than pretended ones."}, "pull_quote": "Life gets in the way in the co-op classroom, just as it does in the homeschool room. Feel where your students are, and make accommodations."}, {"id": 3, "category": "Classroom Management", "audience": ["Co-op", "Homeschool"], "title": "Getting Attention Without Begging for It", "summary": "The one sentence that works better than anything else, and why physical presence beats verbal redirection every time.", "body": ["Here is something I learned the hard way: saying \"Hey, guys, I need your attention\" over and over does not work. It signals that you will keep waiting and keep asking. It puts the power in the wrong place.", "What works instead: go quiet. Say calmly, once: \"When I have everyone's attention, we'll continue.\" Then stop. Wait. It feels inefficient. It is actually the most efficient thing I know.", "For individual students who are off-task \u2014 chatting, on a phone, distracted \u2014 I do not call them out in front of the group. I move. I walk toward them, continuing to speak to the class from wherever they are sitting. If that doesn't land, a quiet, gentle tap on the table while I keep talking to the room. That is usually enough. No confrontation, no embarrassment, no interruption to the class flow."], "callout": {"label": "The Physical Presence Principle", "content": "Moving your body toward a distracted student is almost always more effective than addressing them verbally. Proximity communicates without singling anyone out."}, "pull_quote": "\"When I have everyone's attention, we'll continue.\" Say it once. Then wait. It works."}, {"id": 4, "category": "Discussion", "audience": ["Co-op", "Homeschool"], "title": "When Your Class Goes Quiet", "summary": "Write first, then share. One small change that gives every student \u2014 quiet or loud \u2014 a way into the conversation.", "body": ["A quiet class is not a failed class. Some of my most thoughtful students are the quietest ones \u2014 and some of the loudest students are the ones who need the most structure to actually think before they speak.", "My go-to for a quiet group: pair share. Put them in pairs, give them a question, let them talk to one person before they talk to the room. The student who would never raise a hand in a group of twelve will often speak freely to one other person.", "But even in pairs, certain students can dominate. So I add one step: before anyone shares with their partner, everyone writes something down first. Their own thought, their own words, on paper. Then they share. This means every student has something to say before the conversation starts \u2014 and the quieter student is not just listening to the louder one.", "Charlotte Mason said children are born persons. The persons in front of you \u2014 the quiet ones and the loud ones \u2014 all deserve a way into the conversation. Your job is to build the structure that makes room for both."], "callout": {"label": "The Write-Pair-Share Sequence", "content": "1. Pose a question. 2. Everyone writes their answer independently (2\u20133 minutes). 3. Share with a partner. 4. Partners share with the group. Every student has participated before you ever call on anyone."}, "pull_quote": "Write first. Then share. That one step changes the whole dynamic of a pair discussion."}], "coming_soon_note": "More notes coming soon \u2014 on honors track teaching, writing instruction through literature, and managing the homeschool literature discussion.", "cta_section": {"headline": {"plain": "Ready to teach with ", "italic": "confidence?"}, "description": "Every Delight & Savor unit includes a teacher guide with scripted discussion questions, pacing notes, and everything you need to walk into the room prepared.", "cta": {"label": "Browse the Curriculum", "href": "#curriculum"}}, "sidebar": {"follow_note": "More notes added regularly. Subscribe to be notified when new entries are posted.", "cta": {"label": "Follow on Substack \u2192", "href": "https://delightandsavor.substack.com"}}}, "testimonials": {"eyebrow": "What Families Are Saying", "headline": {"plain": "Words from the ", "italic": "Community"}, "testimonials": [{"quote": "My son has dyslexia and I was so nervous about tackling Shakespeare. Kim made Macbeth genuinely approachable without dumbing it down. He actually looked forward to class every week.", "role": "Co-op Parent", "context": "Macbeth \u2014 Year One"}, {"quote": "We signed up again without hesitation. There is something rare happening in this class \u2014 my daughter is reading harder books and thinking more carefully than I ever expected at this age.", "role": "Returning Co-op Family", "context": "Living Literature & Language"}, {"quote": "The honors track is everything. Kim runs both levels simultaneously and neither group feels shortchanged. My son is being genuinely challenged for the first time in his homeschool years.", "role": "Honors Track Parent", "context": "Wuthering Heights \u2014 Year One"}]}};
+</script>
+<script>
+/* ============================================================
+   DELIGHT & SAVOR — main.js
+   Loads JSON data files and renders all sections of the homepage
+   ============================================================ */
+
+// ── Utility: fetch a local JSON file ──────────────────────────
+async function loadJSON(path) {
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`Failed to load ${path}`);
+  return res.json();
+}
+
+// ── Utility: set inner HTML safely ────────────────────────────
+function set(id, html) {
+  const el = document.getElementById(id);
+  if (el) el.innerHTML = html;
+}
+function setText(id, text) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = text;
+}
+function setHref(id, href) {
+  const el = document.getElementById(id);
+  if (el) el.href = href;
+}
+
+// ── Render: italic headline helper ───────────────────────────
+function renderHeadline(h) {
+  let out = '';
+  if (h.plain)  out += h.plain;
+  if (h.italic) out += `<em>${h.italic}</em>`;
+  if (h.plain2) out += h.plain2;
+  if (h.italic2)out += `<em>${h.italic2}</em>`;
+  return out;
+}
+
+// ── Render: NAV ───────────────────────────────────────────────
+function renderNav(data) {
+  setText('brand-name', data.brand.name);
+  setText('brand-tagline', data.brand.tagline);
+  setText('footer-brand-name', data.brand.name);
+  setText('footer-brand-tagline', data.brand.tagline);
+
+  const socialIcons = { email: '✉', instagram: '◎', pinterest: '⊕', substack: '◈' };
+  set('nav-social', data.social.map(s =>
+    `<a href="${s.url}" title="${s.platform}" target="_blank" rel="noopener">${socialIcons[s.platform] || '●'}</a>`
+  ).join(''));
+
+  set('nav-links', data.links.map(l =>
+    `<a href="${l.href}">${l.label}</a>`
+  ).join(''));
+
+  const cta = document.getElementById('nav-cta');
+  if (cta) { cta.textContent = data.cta.label; cta.href = data.cta.href; }
+
+  set('footer-links', data.footer_links.map(l =>
+    `<a href="${l.href}">${l.label}</a>`
+  ).join(''));
+
+  set('footer-social', data.social.map(s =>
+    `<a href="${s.url}" title="${s.platform}" target="_blank" rel="noopener">${s.handle || s.platform}</a>`
+  ).join(''));
+
+  setText('footer-copyright', data.copyright);
+}
+
+// ── Render: HERO ──────────────────────────────────────────────
+function renderHero(data) {
+  setText('hero-eyebrow', data.eyebrow);
+  set('hero-headline', renderHeadline(data.headline));
+  setText('hero-sub', data.subheadline);
+
+  set('hero-buttons', data.buttons.map(b =>
+    `<a class="btn btn-${b.style}" href="${b.href}">${b.label}</a>`
+  ).join(''));
+
+  const s = data.new_here_strip;
+  const stepsHtml = s.steps.map(step => {
+    const text = step.link_text
+      ? step.text.replace(step.link_text, `<a href="${step.link_href}">${step.link_text}</a>`)
+      : step.text;
+    return `<div class="new-here-step"><span class="step-num">${step.number}</span>${text}</div>`;
+  }).join('');
+
+  set('new-here-strip', `
+    <div class="new-here-inner">
+      <span class="new-here-label">${s.label}</span>
+      <div class="new-here-steps">${stepsHtml}</div>
+    </div>
+  `);
+}
+
+// ── Render: PHILOSOPHY ───────────────────────────────────────
+function renderPhilosophy(data) {
+  setText('phil-eyebrow', data.eyebrow);
+  set('phil-title', renderHeadline(data.headline));
+  set('phil-intro', data.intro);
+
+  set('pillars-grid', data.pillars.map(p => `
+    <div class="pillar">
+      <div class="pillar-numeral">${p.numeral}</div>
+      <div class="pillar-title">${p.title}</div>
+      <p class="pillar-body">${p.body}</p>
+    </div>
+  `).join(''));
+
+  set('philosophy-cta', `<a class="btn btn-outline" href="#philosophy-full">${data.cta.label}</a>`);
+
+  const q = data.pull_quote;
+  const quoteParts = q.text.split(q.highlight_word);
+  const quoteHtml = quoteParts[0] + `<em>${q.highlight_word}</em>` + (quoteParts[1] || '');
+  set('pull-quote-band', `
+    <div class="pull-quote-inner">
+      <p class="pull-quote-text">"${quoteHtml}"</p>
+      <span class="pull-quote-label">${q.label}</span>
+    </div>
+  `);
+}
+
+// ── Render: CURRICULUM ───────────────────────────────────────
+function renderCurriculum(data) {
+  const yr = data.year_one;
+  setText('curr-eyebrow', yr.eyebrow);
+  set('curr-title', renderHeadline(yr.title));
+  setText('curr-desc', yr.description);
+
+  const b = yr.bundle;
+  set('curriculum-bundle', `
+    <div class="bundle-content">
+      <div class="bundle-text">
+        <span class="bundle-badge">${b.badge}</span>
+        <h3 class="bundle-title">${b.title}</h3>
+        <p class="bundle-subtitle">${b.subtitle}</p>
+        <p class="bundle-desc">${b.description}</p>
+        <ul class="bundle-includes">
+          ${b.includes.map(i => `<li>${i}</li>`).join('')}
+        </ul>
+        <div class="bundle-versions">
+          ${b.versions.map(v => `<span class="version-tab">${v.label}</span>`).join('')}
+        </div>
+        <a class="btn btn-gold" href="${b.cta.href}" target="_blank">${b.cta.label}</a>
+      </div>
+      <div class="bundle-covers">
+        <div class="bundle-cover"><img src="${b.image_macbeth}" alt="Macbeth" /></div>
+        <div class="bundle-cover"><img src="${b.image_wh}" alt="Wuthering Heights" /></div>
+      </div>
+    </div>
+  `);
+
+  set('curriculum-units', yr.units.map(u => `
+    <div class="unit-card">
+      <div class="unit-card-inner">
+        <div class="unit-info">
+          <p class="unit-semester">${u.semester}</p>
+          <h3 class="unit-title">${u.title}</h3>
+          <p class="unit-author">${u.author}</p>
+          <p class="unit-desc">${u.description}</p>
+          <ul class="unit-includes">
+            ${u.includes.map(i => `<li>${i}</li>`).join('')}
+          </ul>
+          <div class="bundle-versions">
+            ${u.versions.map(v => `<span class="version-tab">${v.label}</span>`).join('')}
+          </div>
+          <a class="btn btn-outline" href="${u.cta.href}" target="_blank">${u.cta.label}</a>
+        </div>
+        <div class="unit-cover"><img src="${u.image}" alt="${u.title}" /></div>
+      </div>
+    </div>
+  `).join(''));
+}
+
+
+// ── Render: ABOUT STRIP ───────────────────────────────────────
+function renderAbout(data) {
+  const strip = data.homepage_strip;
+  setText('about-tagline', strip.tagline);
+  set('about-credentials', strip.credentials.map(c =>
+    `<span class="credential-tag">${c}</span>`
+  ).join(''));
+  const cta = document.getElementById('about-cta');
+  if (cta) { cta.textContent = strip.cta.label; cta.href = strip.cta.href; }
+}
+
+// ── Render: TESTIMONIALS ──────────────────────────────────────
+function renderTestimonials(data) {
+  set('test-eyebrow', `<span>${data.eyebrow}</span>`);
+  set('test-title', renderHeadline(data.headline));
+
+  set('testimonials-grid', data.testimonials.map(t => `
+    <div class="testimonial-card">
+      <div class="testimonial-mark">"</div>
+      <p class="testimonial-quote">${t.quote}</p>
+      <p class="testimonial-role">${t.role}</p>
+      <p class="testimonial-context">${t.context}</p>
+    </div>
+  `).join(''));
+}
+
+// ── Render: CHARLOTTE MASON ───────────────────────────────────
+function renderCM(data) {
+  setText('cm-eyebrow', data.eyebrow);
+  set('cm-title', renderHeadline(data.headline));
+
+  set('cm-paragraphs', data.paragraphs.map(p => `<p>${p}</p>`).join(''));
+
+  set('cm-quote-box', `
+    <p class="cm-quote-text">"${data.quote.text}"</p>
+    <p class="cm-quote-attr">— ${data.quote.attribution}</p>
+  `);
+
+  set('cm-tags', data.tags.map(t => `<span class="cm-tag">${t}</span>`).join(''));
+}
+
+// ── Render: TEACHER'S NOTEBOOK PREVIEW ───────────────────────
+function renderNotebookPreview(data) {
+  const preview = data.notes.slice(0, 3);
+  set('notebook-cards', preview.map(n => `
+    <div class="notebook-card">
+      <span class="notebook-card-category">${n.category}</span>
+      <h4 class="notebook-card-title">${n.title}</h4>
+      <p class="notebook-card-summary">${n.summary}</p>
+      <a class="notebook-card-link" href="teachers-notebook.html#note-${n.id}">Read the Note →</a>
+    </div>
+  `).join(''));
+}
+
+// ── Render: FAQ ───────────────────────────────────────────────
+function renderFAQ(data) {
+  setText('faq-eyebrow', data.eyebrow);
+  setText('faq-title', data.title);
+
+  set('faq-list', data.items.map((item, i) => `
+    <div class="faq-item">
+      <button class="faq-question" data-index="${i}">
+        ${item.question}
+        <span class="faq-icon"></span>
+      </button>
+      <div class="faq-answer">${item.answer}</div>
+    </div>
+  `).join(''));
+
+  // Accordion behavior
+  document.getElementById('faq-list').addEventListener('click', e => {
+    const btn = e.target.closest('.faq-question');
+    if (!btn) return;
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-question.open').forEach(b => {
+      b.classList.remove('open');
+      b.nextElementSibling.classList.remove('open');
+    });
+    // Open clicked if it was closed
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  });
+}
+
+// ── Render: COMING SOON ───────────────────────────────────────
+function renderComingSoon(data) {
+  setText('cs-eyebrow', data.eyebrow);
+  set('cs-title', renderHeadline(data.headline));
+  setText('cs-desc', data.description);
+
+  set('coming-grid', data.units.map(u => `
+    <div class="coming-card">
+      <div class="coming-card-header">
+        <span class="coming-category">${u.category}</span>
+        <span class="coming-badge">${u.badge}</span>
+      </div>
+      <h3 class="coming-title">${u.title}</h3>
+      <p class="coming-subtitle">${u.subtitle}</p>
+      <div class="coming-cover">
+        <img src="${u.image}" alt="${u.title}" />
+      </div>
+      <p class="coming-desc">${u.description}</p>
+      <p class="coming-versions">${u.versions}</p>
+    </div>
+  `).join(''));
+}
+
+// ── Render: JOURNAL ───────────────────────────────────────────
+function renderJournal(data) {
+  set('journal-eyebrow', `<span>${data.eyebrow}</span>`);
+  set('journal-title', renderHeadline(data.headline));
+  setText('journal-desc', data.description);
+  setHref('journal-cta', data.cta_primary.href);
+  set('journal-substack', `Visit our Substack to read the latest essays.`);
+  setHref('journal-substack', data.cta_secondary.href);
+}
+
+// ── Render: EMAIL SIGNUP ──────────────────────────────────────
+function renderSignup(data) {
+  set('signup-eyebrow', `<span>${data.eyebrow}</span>`);
+  setText('signup-headline', data.headline);
+  setText('signup-desc', data.description);
+  const cta = document.getElementById('signup-cta');
+  if (cta) { cta.textContent = data.cta.label; cta.href = data.cta.href; }
+}
+
+// ── Render: CONTACT ───────────────────────────────────────────
+function renderContact(data) {
+  const icons = { envelope: '✉', instagram: '◎', 'book-open': '◈', pinterest: '⊕' };
+  set('contact-eyebrow', `<span>${data.eyebrow}</span>`);
+  set('contact-title', renderHeadline(data.headline));
+  setText('contact-desc', data.description);
+
+  set('contact-grid', data.channels.map(c => `
+    <a class="contact-card" href="${c.href}" target="_blank" rel="noopener">
+      <div class="contact-icon">${icons[c.icon] || '●'}</div>
+      <div class="contact-label">${c.label}</div>
+      <div class="contact-detail">${c.detail}</div>
+    </a>
+  `).join(''));
+}
+
+// ── INIT: Load all JSON and render ────────────────────────────
+async function init() {
+  const base = './data/';
+  try {
+    const [nav, hero, phil, curr, about, test, cm, notebook, faq, cs, journal, signup, contact] = await Promise.all([
+      loadJSON(base + 'nav.json'),
+      loadJSON(base + 'hero.json'),
+      loadJSON(base + 'philosophy.json'),
+      loadJSON(base + 'curriculum.json'),
+      loadJSON(base + 'about.json'),
+      loadJSON(base + 'testimonials.json'),
+      loadJSON(base + 'charlotte_mason.json'),
+      loadJSON(base + 'teachers_notebook.json'),
+      loadJSON(base + 'faq.json'),
+      loadJSON(base + 'coming_soon.json'),
+      loadJSON(base + 'journal.json'),
+      loadJSON(base + 'email_signup.json'),
+      loadJSON(base + 'contact.json'),
+    ]);
+
+    renderNav(nav);
+    renderHero(hero);
+    renderPhilosophy(phil);
+    renderCurriculum(curr);
+    renderAbout(about);
+    renderTestimonials(test);
+    renderCM(cm);
+    renderNotebookPreview(notebook);
+    renderFAQ(faq);
+    renderComingSoon(cs);
+    renderJournal(journal);
+    renderSignup(signup);
+    renderContact(contact);
+
+  } catch (err) {
+    console.error('Error loading site data:', err);
+    document.body.innerHTML = `<div style="padding:40px;font-family:sans-serif;color:#c00;background:#fff;">
+      <h2>Site Error</h2>
+      <p><strong>${err.message}</strong></p>
+      <pre style="font-size:12px;white-space:pre-wrap;">${err.stack || ''}</pre>
+    </div>`;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', init);
+
+</script>
+</body>
+</html>
