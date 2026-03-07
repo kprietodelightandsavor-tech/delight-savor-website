@@ -126,36 +126,49 @@ function renderCurriculum(data) {
 
   const b = yr.bundle;
   set('curriculum-bundle', `
-    <span class="bundle-badge">${b.badge}</span>
-    <p class="bundle-label">${b.label}</p>
-    <h3 class="bundle-title">${b.title}</h3>
-    <p class="bundle-subtitle">${b.subtitle}</p>
-    <p class="bundle-desc">${b.description}</p>
-    <ul class="bundle-includes">
-      ${b.includes.map(i => `<li>${i}</li>`).join('')}
-    </ul>
-    <div class="version-tabs">
-      ${b.versions.map(v => `<span class="version-tab">${v.label}</span>`).join('')}
+    <div class="bundle-content">
+      <div class="bundle-text">
+        <span class="bundle-badge">${b.badge}</span>
+        <h3 class="bundle-title">${b.title}</h3>
+        <p class="bundle-subtitle">${b.subtitle}</p>
+        <p class="bundle-desc">${b.description}</p>
+        <ul class="bundle-includes">
+          ${b.includes.map(i => `<li>${i}</li>`).join('')}
+        </ul>
+        <div class="bundle-versions">
+          ${b.versions.map(v => `<span class="version-tab">${v.label}</span>`).join('')}
+        </div>
+        <a class="btn btn-gold" href="${b.cta.href}" target="_blank">${b.cta.label}</a>
+      </div>
+      <div class="bundle-covers">
+        <div class="bundle-cover bundle-cover--macbeth"><span class="cover-label">Macbeth</span></div>
+        <div class="bundle-cover bundle-cover--wh"><span class="cover-label">Wuthering Heights</span></div>
+      </div>
     </div>
-    <a class="btn btn-outline" href="${b.cta.href}" target="_blank">${b.cta.label}</a>
   `);
 
   set('curriculum-units', yr.units.map(u => `
     <div class="unit-card">
-      <p class="unit-semester">${u.semester}</p>
-      <h3 class="unit-title">${u.title}</h3>
-      <p class="unit-author">${u.author} — ${u.grade}</p>
-      <p class="unit-desc">${u.description}</p>
-      <ul class="unit-includes">
-        ${u.includes.map(i => `<li>${i}</li>`).join('')}
-      </ul>
-      <div class="version-tabs">
-        ${u.versions.map(v => `<span class="version-tab">${v.label}</span>`).join('')}
+      <div class="unit-card-inner">
+        <div class="unit-info">
+          <p class="unit-semester">${u.semester}</p>
+          <h3 class="unit-title">${u.title}</h3>
+          <p class="unit-author">${u.author}</p>
+          <p class="unit-desc">${u.description}</p>
+          <ul class="unit-includes">
+            ${u.includes.map(i => `<li>${i}</li>`).join('')}
+          </ul>
+          <div class="bundle-versions">
+            ${u.versions.map(v => `<span class="version-tab">${v.label}</span>`).join('')}
+          </div>
+          <a class="btn btn-outline" href="${u.cta.href}" target="_blank">${u.cta.label}</a>
+        </div>
+        <div class="unit-cover unit-cover--${u.title.toLowerCase().replace(/\s+/g,'-')}"></div>
       </div>
-      <a class="btn btn-outline" href="${u.cta.href}" target="_blank">${u.cta.label}</a>
     </div>
   `).join(''));
 }
+
 
 // ── Render: ABOUT STRIP ───────────────────────────────────────
 function renderAbout(data) {
@@ -339,6 +352,11 @@ async function init() {
 
   } catch (err) {
     console.error('Error loading site data:', err);
+    document.body.innerHTML = `<div style="padding:40px;font-family:sans-serif;color:#c00;background:#fff;">
+      <h2>Site Error</h2>
+      <p><strong>${err.message}</strong></p>
+      <pre style="font-size:12px;white-space:pre-wrap;">${err.stack || ''}</pre>
+    </div>`;
   }
 }
 
