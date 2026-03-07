@@ -5,13 +5,13 @@
       "plain": "The Tragic Hero & ",
       "italic": "Anti-Hero"
     },
-    "description": "A full-year literature study for high school (9–12) pairing Shakespeare's Macbeth with Brontë's Wuthering Heights, built around the DELIGHT framework and the Great Conversation.",
+    "description": "A full-year literature study for high school (9\u201312) pairing Shakespeare's Macbeth with Bront\u00eb's Wuthering Heights, built around the DELIGHT framework and the Great Conversation.",
     "bundle": {
       "badge": "Best Value",
       "label": "Complete Year One Bundle",
       "title": "Macbeth + Wuthering Heights",
-      "subtitle": "High School (9–12) — Both Semesters",
-      "description": "Everything you need for a complete year of Charlotte Mason literature — both full-semester units at a bundle price.",
+      "subtitle": "High School (9\u201312) \u2014 Both Semesters",
+      "description": "Everything you need for a complete year of Charlotte Mason literature \u2014 both full-semester units at a bundle price.",
       "includes": [
         "Student weekly handouts for both units",
         "Teacher guide with discussion scripts",
@@ -20,21 +20,29 @@
         "Reading companion for each major work"
       ],
       "versions": [
-        { "label": "Homeschool Version", "icon": "home" },
-        { "label": "Co-op Version", "icon": "users" }
+        {
+          "label": "Homeschool Version",
+          "icon": "home"
+        },
+        {
+          "label": "Co-op Version",
+          "icon": "users"
+        }
       ],
       "cta": {
         "label": "Shop the Bundle",
         "href": "https://the-delight-savor-press.myshopify.com"
-      }
+      },
+      "image_macbeth": "images/macbeth.png",
+      "image_wh": "images/wuthering-heights.png"
     },
     "units": [
       {
-        "semester": "Fall Semester — Year One",
+        "semester": "Fall Semester \u2014 Year One",
         "title": "Macbeth",
         "author": "William Shakespeare",
-        "grade": "High School (9–12)",
-        "description": "A full-semester unit on ambition, power, and moral order — rooted in Charlotte Mason narration and the DELIGHT framework.",
+        "grade": "High School (9\u201312)",
+        "description": "A full-semester unit on ambition, power, and moral order \u2014 rooted in Charlotte Mason narration and the DELIGHT framework.",
         "includes": [
           "Student weekly handouts",
           "Teacher guide with discussion scripts",
@@ -43,20 +51,27 @@
           "Macbeth reading companion"
         ],
         "versions": [
-          { "label": "Homeschool Version", "icon": "home" },
-          { "label": "Co-op Version", "icon": "users" }
+          {
+            "label": "Homeschool Version",
+            "icon": "home"
+          },
+          {
+            "label": "Co-op Version",
+            "icon": "users"
+          }
         ],
         "cta": {
           "label": "Shop Macbeth Unit",
           "href": "https://the-delight-savor-press.myshopify.com"
-        }
+        },
+        "image": "images/macbeth.png"
       },
       {
-        "semester": "Spring Semester — Year One",
+        "semester": "Spring Semester \u2014 Year One",
         "title": "Wuthering Heights",
-        "author": "Emily Brontë",
-        "grade": "High School (9–12)",
-        "description": "A full-semester unit exploring ordered and disordered love, Romantic philosophy, and the moral imagination — through narration and living discussion.",
+        "author": "Emily Bront\u00eb",
+        "grade": "High School (9\u201312)",
+        "description": "A full-semester unit exploring ordered and disordered love, Romantic philosophy, and the moral imagination \u2014 through narration and living discussion.",
         "includes": [
           "Student weekly handouts",
           "Teacher guide with discussion scripts",
@@ -65,13 +80,20 @@
           "Wuthering Heights reading companion"
         ],
         "versions": [
-          { "label": "Homeschool Version", "icon": "home" },
-          { "label": "Co-op Version", "icon": "users" }
+          {
+            "label": "Homeschool Version",
+            "icon": "home"
+          },
+          {
+            "label": "Co-op Version",
+            "icon": "users"
+          }
         ],
         "cta": {
           "label": "Shop Wuthering Heights Unit",
           "href": "https://the-delight-savor-press.myshopify.com"
-        }
+        },
+        "image": "images/wuthering-heights.png"
       }
     ]
   }
