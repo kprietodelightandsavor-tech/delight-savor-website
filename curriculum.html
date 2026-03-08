@@ -79,38 +79,15 @@
       color: var(--cream); letter-spacing: .02em;
     }
     .logo span { color: var(--gold); }
-    .nav-wrap { display: flex; align-items: center; gap: 1.5rem; }
-    .dropdown { position: relative; }
-    .dropdown-btn {
-      font-family: var(--ff-sans); font-size: .8rem;
-      letter-spacing: .12em; text-transform: uppercase;
-      color: var(--light-sage); background: none; border: none;
-      cursor: pointer; display: flex; align-items: center; gap: .35rem;
-      padding: .4rem .1rem; transition: color .2s;
+        .nav-wrap { display: flex; align-items: center; gap: .15rem; }
+    .nav-link {
+      font-family: var(--ff-sans); font-size: .7rem; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--sage);
+      padding: .4rem .65rem; border-radius: 4px;
+      transition: color .2s, background .2s; white-space: nowrap;
     }
-    .dropdown-btn:hover { color: var(--gold); }
-    .dropdown-btn svg { width: 10px; height: 10px; transition: transform .2s; }
-    .dropdown-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
-    .dropdown-menu {
-      position: absolute; top: calc(100% + 8px); left: 50%;
-      transform: translateX(-50%) translateY(6px);
-      background: var(--slate);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 8px; padding: .6rem 0; min-width: 180px;
-      opacity: 0; pointer-events: none;
-      transition: opacity .2s, transform .2s;
-      box-shadow: 0 12px 32px rgba(0,0,0,.35);
-    }
-    .dropdown-menu.open {
-      opacity: 1; pointer-events: all;
-      transform: translateX(-50%) translateY(0);
-    }
-    .dropdown-menu a {
-      display: block; font-family: var(--ff-body); font-size: .95rem;
-      color: var(--cream); padding: .55rem 1.25rem;
-      transition: background .15s, color .15s;
-    }
-    .dropdown-menu a:hover { background: rgba(255,255,255,.07); color: var(--gold); }
+    .nav-link:hover { color: var(--cream); background: rgba(255,255,255,.07); }
+    .nav-link.active { color: var(--cream); }
     .btn-shopnow {
       font-family: var(--ff-sans); font-size: .75rem;
       letter-spacing: .1em; text-transform: uppercase;
@@ -582,21 +559,12 @@
 <header class="site-header" role="banner">
   <div class="header-inner">
     <a href="index.html" class="logo">Delight <span>&amp;</span> Savor</a>
-    <nav class="nav-wrap" aria-label="Primary navigation">
-      <div class="dropdown" id="siteDropdown">
-        <button class="dropdown-btn" id="dropdownBtn" aria-expanded="false" aria-haspopup="true">
-          Menu
-          <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg>
-        </button>
-        <ul class="dropdown-menu" id="dropdownMenu" role="menu">
-          <li role="none"><a href="philosophy.html" role="menuitem">Philosophy</a></li>
-          <li role="none"><a href="curriculum.html" role="menuitem">Curriculum</a></li>
-          <li role="none"><a href="teachers-notebook.html" role="menuitem">Teacher's Notebook</a></li>
-          <li role="none"><a href="shop.html" role="menuitem">Shop</a></li>
-          <li role="none"><a href="faq.html" role="menuitem">FAQ</a></li>
-        </ul>
-      </div>
-      <a href="curriculum.html" class="btn-shopnow" target="_blank" rel="noopener">Shop Now</a>
+        <nav class="nav-wrap" aria-label="Primary navigation">
+      <a href="philosophy.html" class="nav-link">Philosophy</a>
+      <a href="curriculum.html" class="nav-link active">Curriculum</a>
+      <a href="teachers-notebook.html" class="nav-link">Teacher's Notebook</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
+      <a href="curriculum.html" class="btn-shopnow">Shop Now</a>
     </nav>
   </div>
 </header>
@@ -997,4 +965,3 @@
   }
 
   /* Highlight acti
-
