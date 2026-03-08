@@ -1,1 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curriculum · Delight & Savor</title>
+  <!-- ── SEO + OPEN GRAPH + PINTEREST ──
+       TODO: Replace og:image with a branded 1200×630 flat-lay photo for best results.
+       Current placeholder: Wuthering Heights cover via Cloudinary. -->
+  <meta name="description" content="Browse the Delight & Savor unit series — 15-week literature companions for upper school homeschoolers. Co-op and home study versions for Macbeth, Wuthering Heights, and more." />
+  <meta name="keywords" content="Charlotte Mason, homeschool literature, upper school English, living books, narration, Macbeth, Wuthering Heights, literature companion, co-op curriculum, grades 9-12" />
+  <meta name="author" content="Delight &amp; Savor Press" />
+  <link rel="canonical" href="https://delightandsavor.com/curriculum.html" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Delight &amp; Savor" />
+  <meta property="og:title" content="Curriculum · Delight & Savor" />
+  <meta property="og:description" content="Browse the Delight & Savor unit series — 15-week literature companions for upper school homeschoolers. Co-op and home study versions for Macbeth, Wuthering Heights, and more." />
+  <meta property="og:url" content="https://delightandsavor.com/curriculum.html" />
+  <meta property="og:image" content="https://res.cloudinary.com/dwdbmowur/image/upload/v1772975874/IMG_7781_jpg_2_pgmwq4.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Delight &amp; Savor — Charlotte Mason upper school literature curriculum" />
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Curriculum · Delight & Savor" />
+  <meta name="twitter:description" content="Browse the Delight & Savor unit series — 15-week literature companions for upper school homeschoolers. Co-op and home study versions for Macbeth, Wuthering Heights, and more." />
+  <meta name="twitter:image" content="https://res.cloudinary.com/dwdbmowur/image/upload/v1772975874/IMG_7781_jpg_2_pgmwq4.jpg" />
+  <!-- Pinterest -->
+  <meta name="pinterest-rich-pin" content="true" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" />
+  <style>
+    /* ─── VARIABLES ─────────────────────────────────────── */
+    :root {
+      --slate:       #2d3748;
+      --slate-mid:   #4a5568;
+      --sage:        #a9b786;
+      --light-sage:  #eff4ea;
+      --gold:        #c29b61;
+      --cream:       #faf6ee;
+      --cream-dark:  #f0ebe0;
+      --text-dark:   #2c2c2c;
+      --text-mid:    #4a5568;
+
+      --ff-display: 'Playfair Display', Georgia, serif;
+      --ff-body:    'Cormorant Garamond', Georgia, serif;
+      --ff-sans:    'Libre Baskerville', serif;
+    }
+
+    /* ─── RESET ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--ff-body);
+      color: var(--text-dark);
+      background: var(--cream);
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── HEADER ────────────────────────────────────────── */
+    .site-header {
+      background: var(--slate);
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 16px rgba(0,0,0,.25);
+    }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 68px;
+    }
+    .logo {
+      font-family: var(--ff-display);
+      font-size: 1.45rem; font-weight: 600;
+      color: var(--cream); letter-spacing: .02em;
+    }
+    .logo span { color: var(--gold); }
+    .nav-wrap { display: flex; align-items: center; gap: 1.5rem; }
+    .dropdown { position: relative; }
+    .dropdown-btn {
+      font-family: var(--ff-sans); font-size: .8rem;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--light-sage); background: none; border: none;
+      cursor: pointer; display: flex; align-items: center; gap: .35rem;
+      padding: .4rem .1rem; transition: color .2s;
+    }
+    .dropdown-btn:hover { color: var(--gold); }
+    .dropdown-btn svg { width: 10px; height: 10px; transition: transform .2s; }
+    .dropdown-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+    .dropdown-menu {
+      position: absolute; top: calc(100% + 8px); left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      background: var(--slate);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 8px; padding: .6rem 0; min-width: 180px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .2s, transform .2s;
+      box-shadow: 0 12px 32px rgba(0,0,0,.35);
+    }
+    .dropdown-menu.open {
+      opacity: 1; pointer-events: all;
+      transform: translateX(-50%) translateY(0);
+    }
+    .dropdown-menu a {
+      display: block; font-family: var(--ff-body); font-size: .95rem;
+      color: var(--cream); padding: .55rem 1.25rem;
+      transition: background .15s, color .15s;
+    }
+    .dropdown-menu a:hover { background: rgba(255,255,255,.07); color: var(--gold); }
+    .btn-shopnow {
+      font-family: var(--ff-sans); font-size: .75rem;
+      letter-spacing: .1em; text-transform: uppercase;
+      background: var(--gold); color: var(--slate);
+      border: none; border-radius: 4px; padding: .55rem 1.25rem;
+      cursor: pointer; font-weight: 700;
+      transition: background .2s, transform .1s;
+    }
+    .btn-shopnow:hover { background: rgba(194,155,97,.85); transform: translateY(-1px); }
+
+    /* ─── SOCIAL BAR ────────────────────────────────────── */
+    .social-bar { background: var(--light-sage); border-bottom: 1px solid rgba(169,183,134,.4); }
+    .social-bar-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: 2rem; padding: .55rem 2rem;
+    }
+    .social-link {
+      font-family: var(--ff-sans); font-size: .72rem;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--slate); display: flex; align-items: center; gap: .5rem;
+      transition: color .2s;
+    }
+    .social-link:hover { color: var(--sage); }
+    .social-link svg { width: 15px; height: 15px; }
+
+    /* ─── PAGE HERO ─────────────────────────────────────── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--cream) 0%, var(--light-sage) 55%, #d4e8c8 100%);
+      padding: 5rem 2rem 4.5rem;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(ellipse 70% 50% at 15% 85%, rgba(169,183,134,.10) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 85% 15%, rgba(194,155,97,.08) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .page-hero-inner { max-width: 700px; margin: 0 auto; position: relative; }
+    .page-eyebrow {
+      font-family: var(--ff-sans); font-size: .75rem;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--sage); margin-bottom: 1rem;
+    }
+    .page-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-style: italic; font-weight: 400;
+      color: var(--slate); line-height: 1.15; margin-bottom: 1.25rem;
+    }
+    .page-title em { color: var(--gold); }
+    .page-tagline {
+      font-family: var(--ff-body); font-size: 1.15rem;
+      color: var(--text-mid); font-style: italic;
+      max-width: 520px; margin: 0 auto; line-height: 1.75;
+    }
+
+    /* ─── YEAR STRIP ────────────────────────────────────── */
+    .year-strip {
+      background: var(--slate);
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .year-strip-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: 0; flex-wrap: wrap;
+    }
+    .year-pill {
+      font-family: var(--ff-sans); font-size: .68rem;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: rgba(250,246,238,.75);
+      padding: .5rem 1.5rem;
+      border-right: 1px solid rgba(255,255,255,.1);
+      display: flex; flex-direction: column; align-items: center; gap: .2rem;
+      transition: color .2s; cursor: default;
+    }
+    .year-pill:last-child { border-right: none; }
+    .year-pill.active { color: var(--gold); }
+    .year-pill.active .year-pill-num { color: var(--gold); }
+    .year-pill-num {
+      font-family: var(--ff-display); font-style: italic;
+      font-size: 1.1rem; color: rgba(250,246,238,.4);
+      transition: color .2s;
+    }
+    .year-pill.active .year-pill-num { color: var(--gold); }
+
+    /* ─── SECTION UTILITIES ─────────────────────────────── */
+    .section-label {
+      font-family: var(--ff-sans); font-size: .72rem;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--sage); margin-bottom: .5rem;
+    }
+    .section-title {
+      font-family: var(--ff-display); font-size: 2.2rem;
+      font-weight: 600; color: var(--slate); margin-bottom: .75rem;
+    }
+    .section-intro {
+      font-family: var(--ff-body); font-size: 1.1rem;
+      color: var(--text-mid); line-height: 1.8;
+      max-width: 680px;
+    }
+    .gold-rule {
+      width: 48px; height: 2px;
+      background: var(--gold); margin-bottom: 1.5rem;
+    }
+
+    /* ─── YEAR ONE SECTION ──────────────────────────────── */
+    .year-section {
+      padding: 5.5rem 2rem;
+    }
+    .year-section.alt { background: var(--light-sage); }
+    .year-section-inner { max-width: 1100px; margin: 0 auto; }
+    .year-header { margin-bottom: 3.5rem; }
+
+    /* Unit cards — full width featured layout */
+    .unit-card {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 0;
+      background: var(--cream);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 32px rgba(74,85,104,.12);
+      margin-bottom: 3rem;
+      transition: box-shadow .3s, transform .3s;
+    }
+    .unit-card:hover { box-shadow: 0 16px 48px rgba(74,85,104,.18); transform: translateY(-3px); }
+    .unit-card-img-wrap {
+      position: relative; overflow: hidden;
+    }
+    .unit-card-img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top;
+      display: block;
+      transition: transform .5s ease;
+    }
+    .unit-card:hover .unit-card-img { transform: scale(1.03); }
+    .unit-card-body {
+      padding: 2.75rem 2.5rem;
+      display: flex; flex-direction: column;
+      border-left: none;
+    }
+    .unit-badge {
+      display: inline-block;
+      font-family: var(--ff-sans); font-size: .62rem;
+      letter-spacing: .15em; text-transform: uppercase;
+      background: var(--light-sage); color: var(--sage);
+      border-radius: 3px; padding: .3rem .75rem;
+      margin-bottom: 1rem; align-self: flex-start;
+    }
+    .unit-title {
+      font-family: var(--ff-display); font-size: 2rem;
+      font-weight: 600; color: var(--slate);
+      line-height: 1.2; margin-bottom: .35rem;
+    }
+    .unit-author {
+      font-family: var(--ff-body); font-style: italic;
+      font-size: 1rem; color: rgba(45,55,72,.5);
+      margin-bottom: 1.25rem;
+    }
+    .unit-desc {
+      font-family: var(--ff-body); font-size: 1.05rem;
+      color: var(--text-mid); line-height: 1.8;
+      margin-bottom: 1.75rem; flex-grow: 1;
+    }
+
+    /* What's included list */
+    .unit-includes {
+      margin-bottom: 1.75rem;
+    }
+    .unit-includes-title {
+      font-family: var(--ff-sans); font-size: .68rem;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: .75rem;
+    }
+    .unit-includes-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: .35rem .5rem;
+    }
+    .unit-include-item {
+      font-family: var(--ff-body); font-size: .95rem;
+      color: var(--text-mid);
+      display: flex; align-items: flex-start; gap: .45rem;
+    }
+    .unit-include-item::before {
+      content: '✦';
+      color: var(--sage); font-size: .6rem;
+      flex-shrink: 0; margin-top: .35rem;
+    }
+
+    /* Pricing */
+    .unit-pricing {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      margin-bottom: 1.75rem;
+      padding: 1.25rem 1.5rem;
+      background: rgba(239,244,234,.6);
+      border-radius: 8px;
+      border-left: 3px solid var(--sage);
+    }
+    .price-option {
+      display: flex; flex-direction: column;
+      align-items: flex-start; gap: .15rem;
+      padding-right: 1rem;
+      border-right: 1px solid rgba(169,183,134,.4);
+    }
+    .price-option:last-child { border-right: none; padding-right: 0; }
+    .price-label {
+      font-family: var(--ff-sans); font-size: .62rem;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--sage);
+    }
+    .price-amount {
+      font-family: var(--ff-display); font-size: 1.5rem;
+      font-weight: 600; color: var(--slate);
+    }
+    .price-sub {
+      font-family: var(--ff-body); font-size: .82rem;
+      font-style: italic; color: var(--text-mid);
+    }
+
+    /* CTA buttons */
+    .unit-cta { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .btn-buy {
+      font-family: var(--ff-sans); font-size: .75rem;
+      letter-spacing: .1em; text-transform: uppercase;
+      background: var(--gold); color: var(--slate);
+      border: none; border-radius: 4px; padding: .8rem 1.75rem;
+      font-weight: 700; cursor: pointer;
+      transition: background .2s, transform .15s;
+      display: inline-block;
+    }
+    .btn-buy:hover { background: rgba(194,155,97,.85); transform: translateY(-2px); }
+    .btn-secondary {
+      font-family: var(--ff-sans); font-size: .75rem;
+      letter-spacing: .1em; text-transform: uppercase;
+      background: transparent; color: var(--sage);
+      border: 1.5px solid var(--sage); border-radius: 4px;
+      padding: .8rem 1.75rem; font-weight: 700; cursor: pointer;
+      transition: background .2s, color .2s, transform .15s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { background: var(--sage); color: var(--cream); transform: translateY(-2px); }
+
+    /* ─── COMING SOON GRID ──────────────────────────────── */
+    .coming-soon-section {
+      background: var(--light-sage);
+      padding: 5rem 2rem;
+    }
+    .coming-soon-inner { max-width: 1100px; margin: 0 auto; }
+    .coming-soon-header { margin-bottom: 3rem; }
+    .coming-soon-header .section-label { color: var(--sage); }
+    .coming-soon-header .section-title { color: var(--slate); }
+    .coming-soon-header .section-intro { color: var(--text-mid); }
+
+    .coming-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .coming-card {
+      border-radius: 10px; overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0,0,0,.25);
+    }
+    .coming-card-img {
+      width: 100%; aspect-ratio: 3/4;
+      object-fit: cover; object-position: top;
+      display: block;
+      filter: brightness(.55) saturate(.7);
+      transition: filter .4s;
+    }
+    .coming-card:hover .coming-card-img { filter: brightness(.45) saturate(.6); }
+    .coming-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: flex-end;
+      padding: 1.5rem 1rem;
+      background: linear-gradient(to top, rgba(45,55,72,.85) 0%, transparent 55%);
+    }
+    .coming-tag {
+      font-family: var(--ff-sans); font-size: .58rem;
+      letter-spacing: .15em; text-transform: uppercase;
+      background: rgba(194,155,97,.25);
+      border: 1px solid rgba(194,155,97,.4);
+      color: var(--gold); border-radius: 3px;
+      padding: .25rem .65rem; margin-bottom: .6rem;
+    }
+    .coming-title {
+      font-family: var(--ff-display); font-size: 1.1rem;
+      font-style: italic; color: var(--cream);
+      text-align: center; line-height: 1.3;
+    }
+
+    /* ─── VERSIONS SECTION ──────────────────────────────── */
+    .versions-section {
+      padding: 5.5rem 2rem;
+      background: var(--cream);
+    }
+    .versions-inner { max-width: 1100px; margin: 0 auto; }
+    .versions-header { margin-bottom: 3.5rem; }
+
+    .versions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem; margin-bottom: 3rem;
+    }
+    .version-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(74,85,104,.1);
+    }
+    .version-card-head {
+      padding: 1.75rem 2rem 1.5rem;
+    }
+    .version-card.coop .version-card-head { background: var(--slate); }
+    .version-card.home .version-card-head { background: var(--sage); }
+    .version-icon {
+      font-size: 1.8rem; margin-bottom: .75rem;
+    }
+    .version-name {
+      font-family: var(--ff-display); font-size: 1.6rem;
+      font-weight: 600; color: var(--cream); margin-bottom: .25rem;
+    }
+    .version-tagline {
+      font-family: var(--ff-body); font-style: italic;
+      font-size: .95rem; color: rgba(250,246,238,.7);
+    }
+    .version-card-body {
+      background: white; padding: 2rem;
+    }
+    .version-list { list-style: none; }
+    .version-list li {
+      font-family: var(--ff-body); font-size: 1rem;
+      color: var(--text-mid); padding: .5rem 0;
+      border-bottom: 1px solid rgba(169,183,134,.2);
+      display: flex; align-items: flex-start; gap: .6rem;
+      line-height: 1.5;
+    }
+    .version-list li:last-child { border-bottom: none; }
+    .version-list li::before {
+      content: '→';
+      color: var(--gold); font-size: .8rem;
+      flex-shrink: 0; margin-top: .15rem;
+    }
+
+    /* Honors track callout */
+    .honors-callout {
+      background: linear-gradient(135deg, var(--light-sage), #d4e8c8);
+      border-radius: 12px; padding: 2.5rem 3rem;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 2rem; align-items: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,.15);
+    }
+    .honors-label {
+      font-family: var(--ff-sans); font-size: .68rem;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--sage); margin-bottom: .5rem;
+    }
+    .honors-title {
+      font-family: var(--ff-display); font-size: 1.7rem;
+      font-style: italic; color: var(--slate); margin-bottom: .75rem;
+    }
+    .honors-desc {
+      font-family: var(--ff-body); font-size: 1rem;
+      color: var(--text-mid); line-height: 1.7;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    .site-footer {
+      background: var(--slate);
+      padding: 4rem 2rem 2rem;
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.6fr;
+      gap: 3rem; margin-bottom: 3rem;
+    }
+    .footer-brand .logo { font-size: 1.3rem; margin-bottom: .75rem; }
+    .footer-tagline {
+      font-family: var(--ff-body); font-size: .95rem;
+      font-style: italic; color: rgba(250,246,238,.55); line-height: 1.7;
+    }
+    .footer-col-title {
+      font-family: var(--ff-sans); font-size: .68rem;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.1rem;
+    }
+    .footer-nav-list { list-style: none; }
+    .footer-nav-list li + li { margin-top: .55rem; }
+    .footer-nav-list a {
+      font-family: var(--ff-body); font-size: .98rem;
+      color: rgba(250,246,238,.65); transition: color .2s;
+    }
+    .footer-nav-list a:hover { color: var(--cream); }
+    .footer-social-list { list-style: none; }
+    .footer-social-list li + li { margin-top: .65rem; }
+    .footer-social-list a {
+      display: flex; align-items: center; gap: .6rem;
+      font-family: var(--ff-body); font-size: .98rem;
+      color: rgba(250,246,238,.65); transition: color .2s;
+    }
+    .footer-social-list a:hover { color: var(--cream); }
+    .footer-social-list svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .newsletter-desc {
+      font-family: var(--ff-body); font-size: .9rem;
+      color: rgba(250,246,238,.55); margin-bottom: 1rem; line-height: 1.6;
+    }
+    .newsletter-input-wrap { display: flex; }
+    .newsletter-input {
+      flex: 1; font-family: var(--ff-body); font-size: .9rem;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12); border-right: none;
+      border-radius: 4px 0 0 4px; color: var(--cream);
+      padding: .65rem 1rem; outline: none; transition: border-color .2s;
+    }
+    .newsletter-input::placeholder { color: rgba(250,246,238,.3); }
+    .newsletter-input:focus { border-color: var(--gold); }
+    .newsletter-submit {
+      font-family: var(--ff-sans); font-size: .7rem;
+      letter-spacing: .1em; text-transform: uppercase;
+      background: var(--gold); color: var(--slate);
+      border: none; border-radius: 0 4px 4px 0;
+      padding: .65rem 1.1rem; cursor: pointer; font-weight: 700;
+      transition: background .2s; white-space: nowrap;
+    }
+    .newsletter-submit:hover { background: rgba(194,155,97,.85); }
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.07); margin-bottom: 1.5rem; }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy {
+      font-family: var(--ff-body); font-size: .85rem;
+      color: rgba(250,246,238,.35);
+    }
+    .footer-bottom-links { display: flex; gap: 1.5rem; }
+    .footer-bottom-links a {
+      font-family: var(--ff-body); font-size: .85rem;
+      color: rgba(250,246,238,.35); transition: color .2s;
+    }
+    .footer-bottom-links a:hover { color: var(--cream); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .unit-card { grid-template-columns: 1fr; }
+      .unit-card-img-wrap { height: 260px; }
+      .versions-grid { grid-template-columns: 1fr; }
+      .honors-callout { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .coming-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .header-inner { padding: 0 1rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .unit-includes-grid { grid-template-columns: 1fr; }
+      .coming-grid { grid-template-columns: repeat(2, 1fr); }
+      .honors-callout { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════ HEADER ══════════════════════ -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Delight <span>&amp;</span> Savor</a>
+    <nav class="nav-wrap" aria-label="Primary navigation">
+      <div class="dropdown" id="siteDropdown">
+        <button class="dropdown-btn" id="dropdownBtn" aria-expanded="false" aria-haspopup="true">
+          Menu
+          <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg>
+        </button>
+        <ul class="dropdown-menu" id="dropdownMenu" role="menu">
+          <li role="none"><a href="philosophy.html" role="menuitem">Philosophy</a></li>
+          <li role="none"><a href="curriculum.html" role="menuitem">Curriculum</a></li>
+          <li role="none"><a href="teachers-notebook.html" role="menuitem">Teacher's Notebook</a></li>
+          <li role="none"><a href="shop.html" role="menuitem">Shop</a></li>
+          <li role="none"><a href="faq.html" role="menuitem">FAQ</a></li>
+        </ul>
+      </div>
+      <a href="curriculum.html" class="btn-shopnow" target="_blank" rel="noopener">Shop Now</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════════════════ SOCIAL BAR ══════════════════ -->
+<div class="social-bar">
+  <div class="social-bar-inner">
+    <a href="https://instagram.com/Kim.delightandsavor" class="social-link" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      Instagram
+    </a>
+    <a href="https://pinterest.com" class="social-link" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.64 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.132-1.867 3.132-4.563 0-2.387-1.715-4.055-4.163-4.055-2.836 0-4.5 2.127-4.5 4.326 0 .856.33 1.775.741 2.276a.3.3 0 01.069.286c-.076.315-.245 1-.278 1.139-.044.183-.146.222-.337.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+      Pinterest
+    </a>
+    <a href="https://delightandsavor.substack.com" class="social-link" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+      Substack
+    </a>
+  </div>
+</div>
+
+<!-- ══════════════════════ PAGE HERO ═══════════════════ -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">Living Literature &amp; Language · Grades 9–12</p>
+    <h1 class="page-title">The <em>Curriculum</em></h1>
+    <p class="page-tagline">
+      Five years of literature and language arts rooted in the Charlotte Mason
+      tradition — built for the student who is ready to read with attention
+      and write with real conviction.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════ YEAR STRIP ══════════════════ -->
+<nav class="year-strip" aria-label="Course year navigation">
+  <div class="year-strip-inner">
+    <a href="#year-one" class="year-pill active">
+      <span class="year-pill-num">I</span>
+      Tragedy &amp; Gothic
+    </a>
+    <div class="year-pill">
+      <span class="year-pill-num">II</span>
+      Art of Attention
+    </div>
+    <div class="year-pill">
+      <span class="year-pill-num">III</span>
+      Art of the Epic
+    </div>
+    <div class="year-pill">
+      <span class="year-pill-num">IV</span>
+      Art of Wit
+    </div>
+    <div class="year-pill">
+      <span class="year-pill-num">V</span>
+      Art of Integrity
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════ YEAR ONE ════════════════════ -->
+<section class="year-section" id="year-one" aria-labelledby="year-one-title">
+  <div class="year-section-inner">
+    <div class="year-header">
+      <div class="gold-rule"></div>
+      <p class="section-label">Year One · Available Now</p>
+      <h2 class="section-title" id="year-one-title">Tragedy &amp; Gothic</h2>
+      <p class="section-intro">
+        Two of the most powerful works in the Western canon — one a study in
+        ambition and moral collapse, the other in disordered love and its
+        consequences. Year One asks students to read slowly, narrate faithfully,
+        and begin to write with real argument.
+      </p>
+    </div>
+
+    <!-- MACBETH -->
+    <article class="unit-card" id="macbeth">
+      <div class="unit-card-img-wrap">
+        <img
+          src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947108/macbeth_gzcquq.png"
+          alt="Macbeth unit cover — Delight & Savor"
+          class="unit-card-img"
+        />
+      </div>
+      <div class="unit-card-body">
+        <span class="unit-badge">Year One · Fall</span>
+        <h3 class="unit-title">Macbeth</h3>
+        <p class="unit-author">William Shakespeare</p>
+        <p class="unit-desc">
+          A 15-week literature companion built around Charlotte Mason narration,
+          the DELIGHT analytical framework, and Augustine's theology of ordered
+          and disordered love. Students read the play closely, narrate weekly,
+          and work toward a full thesis argument by the final weeks. The Honors
+          Track pushes deeper into Shakespeare's source material and the nature
+          of conscience.
+        </p>
+        <div class="unit-includes">
+          <p class="unit-includes-title">What's Included</p>
+          <div class="unit-includes-grid">
+            <span class="unit-include-item">15 weekly student handouts</span>
+            <span class="unit-include-item">Teacher's guide with notes</span>
+            <span class="unit-include-item">DELIGHT framework practice</span>
+            <span class="unit-include-item">Thesis workshop</span>
+            <span class="unit-include-item">Absent student guides</span>
+            <span class="unit-include-item">Honors Track extension</span>
+            <span class="unit-include-item">Narration rubric</span>
+            <span class="unit-include-item">Follow the Thread project</span>
+          </div>
+        </div>
+        <div class="unit-pricing">
+          <div class="price-option">
+            <span class="price-label">Co-op</span>
+            <span class="price-amount">$18</span>
+            <span class="price-sub">Teacher + student set</span>
+          </div>
+          <div class="price-option">
+            <span class="price-label">Home Study</span>
+            <span class="price-amount">$15</span>
+            <span class="price-sub">Family license</span>
+          </div>
+          <div class="price-option">
+            <span class="price-label">Bundle</span>
+            <span class="price-amount">$25</span>
+            <span class="price-sub">Macbeth + Wuthering Heights</span>
+          </div>
+        </div>
+        <div class="unit-cta">
+          <a href="https://payhip.com/delightandsavor" class="btn-buy" target="_blank" rel="noopener">Buy on Payhip →</a>
+          <a href="#versions" class="btn-secondary">Compare Versions</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- WUTHERING HEIGHTS -->
+    <article class="unit-card" id="wuthering-heights">
+      <div class="unit-card-img-wrap">
+        <img
+          src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947108/wuthering-heights_e41woq.png"
+          alt="Wuthering Heights unit cover — Delight & Savor"
+          class="unit-card-img"
+        />
+      </div>
+      <div class="unit-card-body">
+        <span class="unit-badge">Year One · Spring</span>
+        <h3 class="unit-title">Wuthering Heights</h3>
+        <p class="unit-author">Emily Brontë</p>
+        <p class="unit-desc">
+          A 15-week deep dive into Brontë's gothic masterpiece, examining
+          coercive control, Rousseau's natural man, and the Augustinian
+          framework of love's disorder. Students practice oral narration,
+          build toward written argument, and engage with a curated selection
+          of secondary texts. One of the most intellectually rich units in
+          the series.
+        </p>
+        <div class="unit-includes">
+          <p class="unit-includes-title">What's Included</p>
+          <div class="unit-includes-grid">
+            <span class="unit-include-item">15 weekly student handouts</span>
+            <span class="unit-include-item">Teacher's guide with notes</span>
+            <span class="unit-include-item">DELIGHT framework practice</span>
+            <span class="unit-include-item">Thesis workshop</span>
+            <span class="unit-include-item">Absent student guides</span>
+            <span class="unit-include-item">Honors Track extension</span>
+            <span class="unit-include-item">Coercive control reading guide</span>
+            <span class="unit-include-item">Narration rubric</span>
+          </div>
+        </div>
+        <div class="unit-pricing">
+          <div class="price-option">
+            <span class="price-label">Co-op</span>
+            <span class="price-amount">$18</span>
+            <span class="price-sub">Teacher + student set</span>
+          </div>
+          <div class="price-option">
+            <span class="price-label">Home Study</span>
+            <span class="price-amount">$15</span>
+            <span class="price-sub">Family license</span>
+          </div>
+          <div class="price-option">
+            <span class="price-label">Bundle</span>
+            <span class="price-amount">$25</span>
+            <span class="price-sub">Macbeth + Wuthering Heights</span>
+          </div>
+        </div>
+        <div class="unit-cta">
+          <a href="https://payhip.com/delightandsavor" class="btn-buy" target="_blank" rel="noopener">Buy on Payhip →</a>
+          <a href="#versions" class="btn-secondary">Compare Versions</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ══════════════════════ COMING SOON ═════════════════ -->
+<section class="coming-soon-section" aria-labelledby="coming-title">
+  <div class="coming-soon-inner">
+    <div class="coming-soon-header">
+      <div class="gold-rule"></div>
+      <p class="section-label">Years Two &amp; Three · Coming Soon</p>
+      <h2 class="section-title" id="coming-title">More Units in Development</h2>
+      <p class="section-intro">
+        The full five-year series is being written and tested in Kim's own
+        co-op classroom. New units release as they're ready — subscribe to
+        the newsletter to hear first.
+      </p>
+    </div>
+    <div class="coming-grid">
+      <div class="coming-card">
+        <img
+          src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947109/poetry-old-man_cyl7cq.png"
+          alt="Poetry & The Old Man and the Sea"
+          class="coming-card-img"
+        />
+        <div class="coming-overlay">
+          <span class="coming-tag">Year Two · Fall</span>
+          <p class="coming-title">Poetry &amp; The Old Man and the Sea</p>
+        </div>
+      </div>
+      <div class="coming-card">
+        <img
+          src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947109/midsummer_ktd9qu.png"
+          alt="A Midsummer Night's Dream"
+          class="coming-card-img"
+        />
+        <div class="coming-overlay">
+          <span class="coming-tag">Year Two · Spring</span>
+          <p class="coming-title">A Midsummer Night's Dream</p>
+        </div>
+      </div>
+      <div class="coming-card">
+        <img
+          src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947110/of-mice-and-men_asjbyd.png"
+          alt="Of Mice and Men"
+          class="coming-card-img"
+        />
+        <div class="coming-overlay">
+          <span class="coming-tag">Summer Foundations</span>
+          <p class="coming-title">Of Mice and Men</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ VERSIONS ════════════════════ -->
+<section class="versions-section" id="versions" aria-labelledby="versions-title">
+  <div class="versions-inner">
+    <div class="versions-header">
+      <div class="gold-rule"></div>
+      <p class="section-label">Which Version Is Right for You?</p>
+      <h2 class="section-title" id="versions-title">Co-op vs. Home Study</h2>
+      <p class="section-intro">
+        Every unit comes in two versions — one designed for a weekly co-op
+        classroom, one for the independent home student. The content and rigor
+        are the same; the structure and pacing differ.
+      </p>
+    </div>
+
+    <div class="versions-grid">
+      <!-- CO-OP -->
+      <div class="version-card coop">
+        <div class="version-card-head">
+          <div class="version-icon">🏛️</div>
+          <h3 class="version-name">Co-op Version</h3>
+          <p class="version-tagline">For weekly classroom use · $18</p>
+        </div>
+        <div class="version-card-body">
+          <ul class="version-list">
+            <li>Designed for 1.5-hour weekly sessions</li>
+            <li>Includes full teacher's guide with discussion prompts, timing notes, and gray-box teacher annotations</li>
+            <li>Student handouts formatted for in-class narration and discussion</li>
+            <li>Absent student guides so no one falls behind</li>
+            <li>Oral narration as the backbone — writing builds gradually across the semester</li>
+            <li>Honors Track extensions for students ready to go deeper</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- HOME STUDY -->
+      <div class="version-card home">
+        <div class="version-card-head">
+          <div class="version-icon">📖</div>
+          <h3 class="version-name">Home Study Version</h3>
+          <p class="version-tagline">For independent learners · $15</p>
+        </div>
+        <div class="version-card-body">
+          <ul class="version-list">
+            <li>Flexible pacing — complete each week's work in 2–3 sessions</li>
+            <li>Student-facing handouts designed for independent reading and narration</li>
+            <li>Parent/teacher guide with light facilitation notes</li>
+            <li>Written narration options included for every week</li>
+            <li>Same DELIGHT framework and thesis progression as co-op version</li>
+            <li>Family license — covers all students in one household</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- HONORS CALLOUT -->
+    <div class="honors-callout">
+      <div>
+        <p class="honors-label">Available in Both Versions</p>
+        <h3 class="honors-title">The Honors Track</h3>
+        <p class="honors-desc">
+          Each unit includes optional Honors Track extensions — deeper reading,
+          additional secondary sources, and more demanding writing prompts —
+          for the student who is ready to be genuinely challenged. The Honors
+          Track is woven into the same handouts; no separate purchase needed.
+        </p>
+      </div>
+      <div>
+        <a href="https://payhip.com/delightandsavor" class="btn-buy" target="_blank" rel="noopener" style="white-space:nowrap;">Shop All Units →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════ FOOTER ══════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">Delight <span style="color:var(--gold)">&amp;</span> Savor</div>
+        <p class="footer-tagline">Charlotte Mason upper-level literature and language arts for the student who is ready to read deeply.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Navigate</p>
+        <ul class="footer-nav-list">
+          <li><a href="philosophy.html">Philosophy</a></li>
+          <li><a href="curriculum.html">Curriculum</a></li>
+          <li><a href="teachers-notebook.html">Teacher's Notebook</a></li>
+          <li><a href="https://payhip.com/delightandsavor" target="_blank" rel="noopener">Shop</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Connect</p>
+        <ul class="footer-social-list">
+          <li>
+            <a href="https://instagram.com/Kim.delightandsavor" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a href="https://pinterest.com" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.64 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.132-1.867 3.132-4.563 0-2.387-1.715-4.055-4.163-4.055-2.836 0-4.5 2.127-4.5 4.326 0 .856.33 1.775.741 2.276a.3.3 0 01.069.286c-.076.315-.245 1-.278 1.139-.044.183-.146.222-.337.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+              Pinterest
+            </a>
+          </li>
+          <li>
+            <a href="https://delightandsavor.substack.com" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+              Substack
+            </a>
+          </li>
+          <li>
+            <a href="/cdn-cgi/l/email-protection#e982999b808c9d86c78d8c85808e819d88878d9a889f869ba98e84888085c78a8684" data-old="var(--sage)98838f9e85c48e8f86838d829e8b848e998b9c8598aa8d878b8386c4898587">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email Us
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">From the Ranch &amp; the Desk</p>
+        <p class="newsletter-desc">One monthly letter: what I'm teaching, what I'm reading, and what's new in the shop.</p>
+        <form onsubmit="handleNewsletter(event)" aria-label="Newsletter signup">
+          <div class="newsletter-input-wrap">
+            <label for="footer-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Email address</label>
+            <input type="email" id="footer-email" class="newsletter-input" placeholder="your@email.com" required autocomplete="email" />
+            <button type="submit" class="newsletter-submit">Subscribe</button>
+          </div>
+          <p id="newsletter-msg" style="font-family:var(--ff-body);font-size:.82rem;color:var(--sage);margin-top:.6rem;min-height:1.2em"></p>
+        </form>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <span id="year"></span> Delight &amp; Savor Press · All rights reserved · All digital sales final.</p>
+      <nav class="footer-bottom-links">
+        <a href="faq.html#returns">Returns Policy</a>
+        <a href="faq.html#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  function handleNewsletter(e) {
+    e.preventDefault();
+    document.getElementById('newsletter-msg').textContent = 'Thank you! You\'ll hear from us soon. ✦';
+    document.getElementById('footer-email').value = '';
+  }
+
+  /* Highlight acti
 
