@@ -168,7 +168,7 @@
     .faq-answer p + p { margin-top: .85rem; }
     .faq-answer a { color: var(--slate); border-bottom: 1px solid var(--sage); transition: border-color .2s; }
     .faq-answer a:hover { border-color: var(--gold); }
-    .faq-item.open .faq-answer { max-height: 600px; padding-bottom: 1.5rem; }
+    .faq-item.open .faq-answer { max-height: 1200px; padding-bottom: 1.5rem; }
 
     /* ── CONTACT SECTION ── */
     .contact-section { background: var(--light-sage); padding: 5rem 2rem; }
@@ -570,4 +570,28 @@
       var isOpen = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(function(i) {
         i.classList.remove('open');
-        i.querySelector('.faq-btn').setAttribute('aria-expan
+        i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Sidebar active state on scroll
+  var groups = document.querySelectorAll('.faq-group');
+  var sideLinks = document.querySelectorAll('.faq-sidebar-nav a');
+  window.addEventListener('scroll', function() {
+    var scrollY = window.scrollY + 200;
+    groups.forEach(function(g) {
+      if (scrollY >= g.offsetTop) {
+        sideLinks.forEach(function(l){ l.classList.remove('active'); });
+        var match = document.querySelector('.faq-sidebar-nav a[href="#' + g.id + '"]');
+        if (match) match.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
