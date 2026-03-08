@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher's Notebook · Delight & Savor</title>
+  <!-- ── SEO + OPEN GRAPH + PINTEREST ──
+       TODO: Replace og:image with a branded 1200×630 flat-lay photo for best results.
+       Current placeholder: Wuthering Heights cover via Cloudinary. -->
+  <meta name="description" content="Everything a co-op teacher or homeschool parent needs: the DELIGHT framework, narration in the classroom, grading, and FAQs for the Delight & Savor curriculum." />
+  <meta name="keywords" content="Charlotte Mason, homeschool literature, upper school English, living books, narration, Macbeth, Wuthering Heights, literature companion, co-op curriculum, grades 9-12" />
+  <meta name="author" content="Delight &amp; Savor Press" />
+  <link rel="canonical" href="https://delightandsavor.com/teachers-notebook.html" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Delight &amp; Savor" />
+  <meta property="og:title" content="Teacher's Notebook · Delight & Savor" />
+  <meta property="og:description" content="Everything a co-op teacher or homeschool parent needs: the DELIGHT framework, narration in the classroom, grading, and FAQs for the Delight & Savor curriculum." />
+  <meta property="og:url" content="https://delightandsavor.com/teachers-notebook.html" />
+  <meta property="og:image" content="https://res.cloudinary.com/dwdbmowur/image/upload/v1772975874/IMG_7781_jpg_2_pgmwq4.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Delight &amp; Savor — Charlotte Mason upper school literature curriculum" />
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Teacher's Notebook · Delight & Savor" />
+  <meta name="twitter:description" content="Everything a co-op teacher or homeschool parent needs: the DELIGHT framework, narration in the classroom, grading, and FAQs for the Delight & Savor curriculum." />
+  <meta name="twitter:image" content="https://res.cloudinary.com/dwdbmowur/image/upload/v1772975874/IMG_7781_jpg_2_pgmwq4.jpg" />
+  <!-- Pinterest -->
+  <meta name="pinterest-rich-pin" content="true" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" />
+  <style>
+    :root {
+      --slate:       #2d3748;
+      --slate-mid:   #4a5568;
+      --sage:        #a9b786;
+      --light-sage:  #eff4ea;
+      --gold:        #c29b61;
+      --cream:       #faf6ee;
+      --text-dark:   #2c2c2c;
+      --text-mid:    #4a5568;
+      --ff-display:  'Playfair Display', Georgia, serif;
+      --ff-body:     'Cormorant Garamond', Georgia, serif;
+      --ff-sans:     'Libre Baskerville', serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--ff-body); color: var(--text-dark); background: var(--cream); line-height: 1.6; font-size: 18px; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ── SHARED HEADER/FOOTER STYLES (injected by nav.js) ── */
+    .site-header {
+      background: var(--slate); position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 16px rgba(0,0,0,.25);
+    }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 68px;
+    }
+    .logo { font-family: var(--ff-display); font-size: 1.45rem; font-weight: 600; color: var(--cream); letter-spacing: .02em; }
+    .logo span { color: var(--gold); }
+    .nav-wrap { display: flex; align-items: center; gap: 1.5rem; }
+    .dropdown { position: relative; }
+    .dropdown-btn {
+      font-family: var(--ff-sans); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--light-sage); background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; gap: .35rem; padding: .4rem .1rem; transition: color .2s;
+    }
+    .dropdown-btn:hover { color: var(--gold); }
+    .dropdown-btn svg { width: 10px; height: 10px; transition: transform .25s; }
+    .dropdown-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+    .dropdown-menu {
+      position: absolute; top: calc(100% + 12px); left: 50%;
+      transform: translateX(-50%);
+      background: var(--slate); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 8px; padding: .6rem 0; min-width: 200px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .2s, transform .2s;
+      transform: translateX(-50%) translateY(8px);
+      box-shadow: 0 12px 32px rgba(0,0,0,.35);
+    }
+    .dropdown-menu.open {
+      opacity: 1; pointer-events: all;
+      transform: translateX(-50%) translateY(0);
+    }
+    .dropdown-menu a {
+      display: block; font-family: var(--ff-body); font-size: .95rem;
+      color: var(--cream); padding: .65rem 1.25rem; transition: background .15s, color .15s;
+    }
+    .dropdown-menu a:hover,
+    .dropdown-menu a.active { background: rgba(255,255,255,.07); color: var(--gold); }
+    .btn-shopnow {
+      font-family: var(--ff-sans); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
+      background: var(--gold); color: var(--slate); border: none; border-radius: 4px;
+      padding: .55rem 1.25rem; cursor: pointer; font-weight: 700;
+      transition: background .2s, transform .1s; white-space: nowrap; display: inline-block;
+    }
+    .btn-shopnow:hover { background: rgba(194,155,97,.85); transform: translateY(-1px); }
+    .social-bar { background: var(--light-sage); border-bottom: 1px solid rgba(169,183,134,.4); }
+    .social-bar-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center; gap: 2rem; padding: .55rem 2rem;
+    }
+    .social-link {
+      font-family: var(--ff-sans); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--slate); display: flex; align-items: center; gap: .5rem; transition: color .2s;
+    }
+    .social-link:hover { color: var(--sage); }
+    .social-link svg { width: 15px; height: 15px; }
+
+    /* ── FOOTER STYLES ── */
+    .site-footer { background: var(--slate); padding: 4rem 2rem 2rem; border-top: 1px solid rgba(255,255,255,.07); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.6fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand .logo { font-size: 1.3rem; margin-bottom: .75rem; }
+    .footer-tagline { font-family: var(--ff-body); font-size: .95rem; font-style: italic; color: rgba(250,246,238,.55); line-height: 1.7; }
+    .footer-col-title { font-family: var(--ff-sans); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
+    .footer-nav-list { list-style: none; }
+    .footer-nav-list li + li { margin-top: .55rem; }
+    .footer-nav-list a { font-family: var(--ff-body); font-size: .98rem; color: rgba(250,246,238,.65); transition: color .2s; }
+    .footer-nav-list a:hover { color: var(--cream); }
+    .footer-social-list { list-style: none; }
+    .footer-social-list li + li { margin-top: .65rem; }
+    .footer-social-list a { display: flex; align-items: center; gap: .6rem; font-family: var(--ff-body); font-size: .98rem; color: rgba(250,246,238,.65); transition: color .2s; }
+    .footer-social-list a:hover { color: var(--cream); }
+    .footer-social-list svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .newsletter-desc { font-family: var(--ff-body); font-size: .9rem; color: rgba(250,246,238,.55); margin-bottom: 1rem; line-height: 1.6; }
+    .newsletter-input-wrap { display: flex; }
+    .newsletter-input { flex: 1; font-family: var(--ff-body); font-size: .9rem; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-right: none; border-radius: 4px 0 0 4px; color: var(--cream); padding: .65rem 1rem; outline: none; transition: border-color .2s; }
+    .newsletter-input::placeholder { color: rgba(250,246,238,.3); }
+    .newsletter-input:focus { border-color: var(--gold); }
+    .newsletter-submit { font-family: var(--ff-sans); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; background: var(--gold); color: var(--slate); border: none; border-radius: 0 4px 4px 0; padding: .65rem 1.1rem; cursor: pointer; font-weight: 700; transition: background .2s; white-space: nowrap; }
+    .newsletter-submit:hover { background: rgba(194,155,97,.85); }
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.07); margin-bottom: 1.5rem; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { font-family: var(--ff-body); font-size: .85rem; color: rgba(250,246,238,.35); }
+    .footer-bottom-links { display: flex; gap: 1.5rem; }
+    .footer-bottom-links a { font-family: var(--ff-body); font-size: .85rem; color: rgba(250,246,238,.35); transition: color .2s; }
+    .footer-bottom-links a:hover { color: var(--cream); }
+
+    /* ════════════════════════════════════════════════════════
+       PAGE-SPECIFIC STYLES
+    ════════════════════════════════════════════════════════ */
+
+    /* ── HERO ── */
+    .tn-hero {
+      position: relative; overflow: hidden;
+      min-height: 520px;
+      display: flex; align-items: center;
+    }
+    .tn-hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?w=1400&auto=format&fit=crop&q=80');
+      background-size: cover; background-position: center 30%;
+      filter: brightness(.75) saturate(.85);
+    }
+    .tn-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(100deg, rgba(239,244,234,.82) 0%, rgba(250,246,238,.5) 100%);
+    }
+    .tn-hero-inner {
+      position: relative; z-index: 1;
+      max-width: 1100px; margin: 0 auto; padding: 5rem 2rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .tn-hero-text {}
+    .tn-eyebrow {
+      font-family: var(--ff-sans); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--sage); margin-bottom: 1rem;
+    }
+    .tn-title {
+      font-family: var(--ff-display); font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+      font-style: italic; font-weight: 400; color: var(--slate); line-height: 1.15; margin-bottom: 1.25rem;
+    }
+    .tn-title em { color: var(--gold); }
+    .tn-tagline {
+      font-family: var(--ff-body); font-size: 1.15rem; font-style: italic;
+      color: var(--text-mid); line-height: 1.75; margin-bottom: 2rem;
+    }
+    .tn-hero-toc {
+      background: rgba(250,246,238,.88); border: 1px solid rgba(169,183,134,.35);
+      border-radius: 10px; padding: 1.75rem 2rem;
+      backdrop-filter: blur(4px);
+    }
+    .tn-toc-title {
+      font-family: var(--ff-sans); font-size: .65rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
+    }
+    .tn-toc-list { list-style: none; }
+    .tn-toc-list li + li { margin-top: .55rem; }
+    .tn-toc-list a {
+      font-family: var(--ff-body); font-size: 1rem; color: var(--text-mid);
+      display: flex; align-items: center; gap: .6rem; transition: color .2s;
+    }
+    .tn-toc-list a:hover { color: var(--gold); }
+    .tn-toc-list a::before { content: '§'; color: var(--sage); font-size: .75rem; }
+
+    /* ── SECTION SHARED ── */
+    .tn-section { padding: 5rem 2rem; }
+    .tn-section.alt { background: var(--light-sage); }
+    .tn-section.dark { background: var(--cream-dark); }
+    .tn-inner { max-width: 1000px; margin: 0 auto; }
+    .gold-rule { width: 48px; height: 2px; background: var(--gold); margin-bottom: 1.5rem; }
+    .section-label {
+      font-family: var(--ff-sans); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--sage); margin-bottom: .5rem;
+    }
+    .section-title {
+      font-family: var(--ff-display); font-size: 2.1rem; font-weight: 600;
+      color: var(--slate); margin-bottom: 1rem;
+    }
+    .section-title.light { color: var(--slate); }
+    .section-body {
+      font-family: var(--ff-body); font-size: 1.08rem; color: var(--text-mid);
+      line-height: 1.85; max-width: 700px;
+    }
+    .section-body.light { color: var(--text-mid); }
+    .section-body p + p { margin-top: 1rem; }
+
+    /* ── WHAT IS THE NOTEBOOK ── */
+    .notebook-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+      margin-top: 3rem; align-items: start;
+    }
+    .notebook-quote {
+      font-family: var(--ff-display); font-size: 1.5rem; font-style: italic;
+      color: var(--sage); line-height: 1.6; border-left: 3px solid var(--gold);
+      padding-left: 1.5rem; margin-top: 1.5rem;
+    }
+
+    /* ── DELIGHT FRAMEWORK ── */
+    .delight-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem; margin-top: 2.5rem;
+    }
+    .delight-card {
+      background: var(--cream); border-radius: 10px; padding: 1.75rem 1.5rem;
+      box-shadow: 0 3px 16px rgba(74,85,104,.08);
+      border-top: 3px solid transparent;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .delight-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(74,85,104,.13); }
+    .delight-card:nth-child(1) { border-color: var(--sage); }
+    .delight-card:nth-child(2) { border-color: var(--gold); }
+    .delight-card:nth-child(3) { border-color: var(--sage); }
+    .delight-card:nth-child(4) { border-color: rgba(45,55,72,.5); }
+    .delight-card:nth-child(5) { border-color: var(--slate-mid); }
+    .delight-card:nth-child(6) { border-color: rgba(194,155,97,.85); }
+    .delight-card:nth-child(7) { border-color: var(--sage); }
+    .delight-letter {
+      font-family: var(--ff-display); font-size: 2.5rem; font-style: italic;
+      font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: .4rem;
+    }
+    .delight-word {
+      font-family: var(--ff-sans); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--slate); margin-bottom: .75rem;
+    }
+    .delight-desc {
+      font-family: var(--ff-body); font-size: .98rem; color: var(--text-mid); line-height: 1.7;
+    }
+
+    /* ── NARRATION ── */
+    .narration-steps {
+      margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.25rem;
+    }
+    .narration-step {
+      display: grid; grid-template-columns: 56px 1fr;
+      gap: 1.25rem; align-items: start;
+      background: white; border: 1px solid rgba(169,183,134,.25);
+      border-radius: 10px; padding: 1.5rem;
+    }
+    .narration-step-num {
+      font-family: var(--ff-display); font-size: 2rem; font-style: italic;
+      color: var(--gold); line-height: 1; text-align: center; padding-top: .1rem;
+    }
+    .narration-step-title {
+      font-family: var(--ff-display); font-size: 1.2rem; font-weight: 600;
+      color: var(--slate); margin-bottom: .4rem;
+    }
+    .narration-step-desc {
+      font-family: var(--ff-body); font-size: 1rem; color: var(--text-mid); line-height: 1.7;
+    }
+
+    /* ── GRADING ── */
+    .rubric-wrap {
+      margin-top: 2.5rem; border-radius: 10px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(74,85,104,.1);
+    }
+    .rubric-head {
+      background: var(--slate); padding: 1.25rem 1.75rem;
+      display: grid; grid-template-columns: 2fr 1fr 2fr;
+      gap: 1rem;
+    }
+    .rubric-head span {
+      font-family: var(--ff-sans); font-size: .65rem; letter-spacing: .15em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .rubric-row {
+      background: white; padding: 1.1rem 1.75rem;
+      display: grid; grid-template-columns: 2fr 1fr 2fr;
+      gap: 1rem; border-bottom: 1px solid rgba(169,183,134,.2);
+      align-items: center;
+    }
+    .rubric-row:last-child { border-bottom: none; }
+    .rubric-row:nth-child(even) { background: var(--light-sage); }
+    .rubric-category {
+      font-family: var(--ff-display); font-size: 1rem; font-weight: 600; color: var(--slate);
+    }
+    .rubric-weight {
+      font-family: var(--ff-sans); font-size: .78rem; letter-spacing: .08em;
+      color: var(--sage); font-weight: 700;
+    }
+    .rubric-note {
+      font-family: var(--ff-body); font-size: .95rem; color: var(--text-mid); font-style: italic;
+    }
+    .rubric-split {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;
+    }
+    .rubric-callout {
+      background: var(--slate); border-radius: 10px; padding: 1.5rem 1.75rem;
+    }
+    .rubric-callout-title {
+      font-family: var(--ff-sans); font-size: .68rem; letter-spacing: .15em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: .5rem;
+    }
+    .rubric-callout-body {
+      font-family: var(--ff-body); font-size: .98rem; color: rgba(250,246,238,.7); line-height: 1.7;
+    }
+
+    /* ── SUBSTACK ── */
+    .substack-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem; margin-top: 2.5rem;
+    }
+    .substack-card {
+      background: white; border-radius: 10px; padding: 1.75rem;
+      box-shadow: 0 3px 16px rgba(74,85,104,.08);
+      border-bottom: 3px solid var(--sage);
+      display: flex; flex-direction: column;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .substack-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(74,85,104,.13); }
+    .substack-tag {
+      font-family: var(--ff-sans); font-size: .6rem; letter-spacing: .15em; text-transform: uppercase;
+      color: var(--sage); margin-bottom: .75rem;
+    }
+    .substack-title {
+      font-family: var(--ff-display); font-size: 1.2rem; font-weight: 600;
+      color: var(--slate); line-height: 1.3; margin-bottom: .75rem;
+    }
+    .substack-excerpt {
+      font-family: var(--ff-body); font-size: .98rem; color: var(--text-mid);
+      line-height: 1.7; flex-grow: 1; margin-bottom: 1.25rem;
+    }
+    .substack-link {
+      font-family: var(--ff-sans); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--sage); display: flex; align-items: center; gap: .4rem; transition: gap .2s;
+    }
+    .substack-link:hover { gap: .7rem; }
+    .substack-cta {
+      margin-top: 2.5rem; text-align: center;
+    }
+    .btn-primary {
+      font-family: var(--ff-sans); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
+      background: var(--gold); color: var(--slate); border: none; border-radius: 4px;
+      padding: .85rem 2rem; font-weight: 700; cursor: pointer;
+      transition: background .2s, transform .15s; display: inline-block;
+    }
+    .btn-primary:hover { background: rgba(194,155,97,.85); transform: translateY(-2px); }
+
+    /* ── FAQ ── */
+    .faq-list { margin-top: 2.5rem; }
+    .faq-item {
+      border-bottom: 1px solid rgba(169,183,134,.35);
+    }
+    .faq-item:first-child { border-top: 1px solid rgba(169,183,134,.35); }
+    .faq-btn {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 0; gap: 1rem; text-align: left;
+    }
+    .faq-question {
+      font-family: var(--ff-display); font-size: 1.15rem; font-weight: 600;
+      color: var(--slate); line-height: 1.3;
+    }
+    .faq-icon {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--light-sage); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s, transform .25s;
+    }
+    .faq-icon svg { width: 10px; height: 10px; color: var(--sage); transition: transform .25s; }
+    .faq-item.open .faq-icon { background: var(--gold); transform: none; }
+    .faq-item.open .faq-icon svg { transform: rotate(45deg); color: white; }
+    .faq-answer {
+      font-family: var(--ff-body); font-size: 1.05rem; color: var(--text-mid);
+      line-height: 1.8; overflow: hidden;
+      max-height: 0; transition: max-height .35s ease, padding .35s ease;
+      padding-bottom: 0;
+    }
+    .faq-item.open .faq-answer { max-height: 400px; padding-bottom: 1.25rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .tn-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .notebook-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .rubric-split { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .header-inner { padding: 0 1rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .rubric-head, .rubric-row { grid-template-columns: 1fr; gap: .4rem; }
+      .rubric-head span:not(:first-child) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- nav.js injects header + social bar here -->
+
+<!-- ══════════════════════ HERO ════════════════════════ -->
+<section class="tn-hero" aria-labelledby="tn-title">
+  <div class="tn-hero-bg" aria-hidden="true"></div>
+  <div class="tn-hero-overlay" aria-hidden="true"></div>
+  <div class="tn-hero-inner">
+    <div class="tn-hero-text">
+      <p class="tn-eyebrow">Resources for the Co-op &amp; Home Teacher</p>
+      <h1 class="tn-title" id="tn-title">The Teacher's <em>Notebook</em></h1>
+      <p class="tn-tagline">
+        Everything you need to teach Delight &amp; Savor with confidence —
+        the frameworks, the philosophy, the practical guides,
+        and the posts from the field.
+      </p>
+    </div>
+    <nav class="tn-hero-toc" aria-label="Page sections">
+      <p class="tn-toc-title">On This Page</p>
+      <ul class="tn-toc-list">
+        <li><a href="#what-is">What Is the Teacher's Notebook?</a></li>
+        <li><a href="#delight">The DELIGHT Framework</a></li>
+        <li><a href="#narration">Narration in the Co-op</a></li>
+        <li><a href="#grading">Grading &amp; Rubrics</a></li>
+        <li><a href="#substack">From the Ranch &amp; the Desk</a></li>
+        <li><a href="#faq">FAQ for New CM Teachers</a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+<!-- ══════════════════════ WHAT IS IT ══════════════════ -->
+<section class="tn-section" id="what-is" aria-labelledby="what-is-title">
+  <div class="tn-inner">
+    <div class="gold-rule"></div>
+    <p class="section-label">Start Here</p>
+    <h2 class="section-title" id="what-is-title">What Is the Teacher's Notebook?</h2>
+
+    <div class="notebook-grid">
+      <div>
+        <div class="section-body">
+          <p>
+            The Teacher's Notebook is the thinking-behind-the-teaching. It's where I explain
+            the decisions I made when building each unit — why narration comes before writing,
+            why we read Augustine alongside Brontë, why I structured the DELIGHT framework
+            the way I did.
+          </p>
+          <p>
+            Whether you're a seasoned classical educator or brand new to Charlotte Mason,
+            this is the place to understand not just <em>what</em> to do with these materials,
+            but <em>why</em> each piece is there.
+          </p>
+          <p>
+            Every unit you purchase includes a teacher's guide. This page gives you the
+            broader context — the philosophy, the frameworks, and the practical wisdom
+            that holds it all together.
+          </p>
+        </div>
+        <blockquote class="notebook-quote">
+          "The teacher's first job is not to explain — it is to get out of the way
+          and let the book do its work."
+        </blockquote>
+      </div>
+      <div class="section-body">
+        <p>
+          Charlotte Mason argued that children — and older students — are not empty
+          vessels to be filled with information. They are persons, capable of forming
+          real relationships with ideas. The teacher's role is to introduce the best
+          books, ask the right questions, and then trust the student to narrate
+          back what they've encountered.
+        </p>
+        <p>
+          At the upper level, this looks different than it does for a seven-year-old.
+          The narration becomes written argument. The retelling becomes analysis.
+          The "what happened" becomes "what does this mean?" — and eventually,
+          "what does this mean for how I should live?"
+        </p>
+        <p>
+          That progression — from encounter to narration to argument — is the
+          backbone of every Delight &amp; Savor unit. The Teacher's Notebook
+          shows you how to walk students through it.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ DELIGHT ═════════════════════ -->
+<section class="tn-section alt" id="delight" aria-labelledby="delight-title">
+  <div class="tn-inner">
+    <div class="gold-rule"></div>
+    <p class="section-label">The Analytical Framework</p>
+    <h2 class="section-title" id="delight-title">The DELIGHT Framework</h2>
+    <p class="section-body">
+      DELIGHT is the analytical structure woven through every unit. It gives students
+      a repeatable set of moves for engaging a text — not a formula, but a scaffold
+      that gradually becomes instinct. Each letter names a kind of attention.
+    </p>
+
+    <div class="delight-grid">
+      <div class="delight-card">
+        <div class="delight-letter">D</div>
+        <div class="delight-word">Describe</div>
+        <p class="delight-desc">What do you see? Before interpreting, simply name what is on the page — characters, setting, action, language. This is narration as the foundation of all analysis.</p>
+      </div>
+      <div class="delight-card">
+        <div class="delight-letter">E</div>
+        <div class="delight-word">Examine · Explore</div>
+        <p class="delight-desc">Look more closely. What patterns emerge? What words repeat? What does the author seem to be doing deliberately? Begin to ask "why."</p>
+      </div>
+      <div class="delight-card">
+        <div class="delight-letter">L</div>
+        <div class="delight-word">Look for Connections</div>
+        <p class="delight-desc">Where does this text touch the Great Conversation? What does it say about human nature, love, ambition, justice? Connect to other texts, ideas, or thinkers.</p>
+      </div>
+      <div class="delight-card">
+        <div class="delight-letter">I</div>
+        <div class="delight-word">Identify the Argument</div>
+        <p class="delight-desc">What claim is the author making — not just the plot, but the idea underneath it? Begin to articulate the text's thesis, even if it's never stated outright.</p>
+      </div>
+      <div class="delight-card">
+        <div class="delight-letter">G</div>
+        <div class="delight-word">Gather Evidence</div>
+        <p class="delight-desc">Find the passages, images, and moments that support your reading. Learn to quote and paraphrase well. This is the bridge between reading and writing argument.</p>
+      </div>
+      <div class="delight-card">
+        <div class="delight-letter">H</div>
+        <div class="delight-word">Highlight What Lingers</div>
+        <p class="delight-desc">What stayed with you? What surprised, disturbed, or delighted? This is the commonplace instinct — the habit of noticing what a text does to you as a reader.</p>
+      </div>
+      <div class="delight-card">
+        <div class="delight-letter">T</div>
+        <div class="delight-word">Tell · Tie Together</div>
+        <p class="delight-desc">Now write. Narrate, argue, reflect. Tie the pieces together into a coherent response — whether a paragraph, an essay, or a seminar contribution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ NARRATION ═══════════════════ -->
+<section class="tn-section dark" id="narration" aria-labelledby="narration-title">
+  <div class="tn-inner">
+    <div class="gold-rule"></div>
+    <p class="section-label" style="color:rgba(169,183,134,.7)">How It Works in the Room</p>
+    <h2 class="section-title light" id="narration-title">Narration in the Co-op</h2>
+    <p class="section-body light">
+      Narration is not a comprehension quiz. It's not a summary. It is the student's
+      own re-telling — in their own words, from their own memory — of what they
+      encountered in the text. Mason called it "the art of knowing." Here's how it
+      unfolds across a 1.5-hour co-op session.
+    </p>
+
+    <div class="narration-steps">
+      <div class="narration-step">
+        <div class="narration-step-num">1</div>
+        <div>
+          <h3 class="narration-step-title">Opening Narration (10–15 min)</h3>
+          <p class="narration-step-desc">
+            Without looking at notes, students narrate the assigned reading aloud —
+            one at a time or as a group pass. The teacher listens, does not correct,
+            and does not supply. The goal is to hear what actually landed.
+            Gaps and confusions reveal what needs attention.
+          </p>
+        </div>
+      </div>
+      <div class="narration-step">
+        <div class="narration-step-num">2</div>
+        <div>
+          <h3 class="narration-step-title">Discussion &amp; DELIGHT Work (40–50 min)</h3>
+          <p class="narration-step-desc">
+            The teacher guides the class through the week's DELIGHT focus — whether
+            that's identifying the argument, examining patterns of language, or
+            connecting the text to Augustine or Rousseau. Students use their handouts
+            as a scaffold, not a script.
+          </p>
+        </div>
+      </div>
+      <div class="narration-step">
+        <div class="narration-step-num">3</div>
+        <div>
+          <h3 class="narration-step-title">Written Narration or Response (15–20 min)</h3>
+          <p class="narration-step-desc">
+            Students write — a narration paragraph, a DELIGHT response, or (in later
+            weeks) a thesis draft. Writing begins orally and moves to the page gradually.
+            By mid-semester, students are producing structured written argument.
+          </p>
+        </div>
+      </div>
+      <div class="narration-step">
+        <div class="narration-step-num">4</div>
+        <div>
+          <h3 class="narration-step-title">Closing &amp; Looking Ahead (5–10 min)</h3>
+          <p class="narration-step-desc">
+            One student offers a closing narration — what did we think about today?
+            The teacher previews the next week's reading and sends students off with
+            a question to carry. The best co-op sessions end with students still
+            talking in the parking lot.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ GRADING ═════════════════════ -->
+<section class="tn-section" id="grading" aria-labelledby="grading-title">
+  <div class="tn-inner">
+    <div class="gold-rule"></div>
+    <p class="section-label">Assessment</p>
+    <h2 class="section-title" id="grading-title">Grading &amp; Rubrics</h2>
+    <p class="section-body">
+      Grading in a Charlotte Mason upper-level course is weighted heavily toward
+      major work — the things that demonstrate actual formation, not just compliance.
+      Here's the breakdown used across all Delight &amp; Savor units.
+    </p>
+
+    <div class="rubric-wrap">
+      <div class="rubric-head">
+        <span>Category</span>
+        <span>Weight</span>
+        <span>Examples</span>
+      </div>
+      <div class="rubric-row">
+        <span class="rubric-category">Major Assessments</span>
+        <span class="rubric-weight">60%</span>
+        <span class="rubric-note">Recitation, compositions, creative projects, presentations, final thesis</span>
+      </div>
+      <div class="rubric-row">
+        <span class="rubric-category">Minor Assessments</span>
+        <span class="rubric-weight">40%</span>
+        <span class="rubric-note">Weekly narrations, handouts, commonplace checks, annotated bibliography</span>
+      </div>
+    </div>
+
+    <div class="rubric-split">
+      <div class="rubric-callout">
+        <p class="rubric-callout-title">On Narration Grades</p>
+        <p class="rubric-callout-body">
+          Narration is graded on completeness, accuracy, and the student's ability to
+          organize what they encountered — not on sophistication. A faithful, honest
+          narration from a struggling reader earns full marks. A polished-sounding
+          summary that misses the point does not.
+        </p>
+      </div>
+      <div class="rubric-callout">
+        <p class="rubric-callout-title">On the Honors Track</p>
+        <p class="rubric-callout-body">
+          Honors Track students complete additional reading and produce more demanding
+          written work. Their grading scale remains the same; the expectations are
+          simply higher. Honors is a commitment, not a shortcut — it should stretch
+          the student who is ready to be stretched.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ SUBSTACK ════════════════════ -->
+<section class="tn-section alt" id="substack" aria-labelledby="substack-title">
+  <div class="tn-inner">
+    <div class="gold-rule"></div>
+    <p class="section-label">From the Ranch &amp; the Desk</p>
+    <h2 class="section-title" id="substack-title">Recent Posts</h2>
+    <p class="section-body">
+      I write on Substack about what I'm teaching, what I'm reading, and what
+      the ranch keeps teaching me about attention and formation. These are
+      the posts most relevant to teachers using Delight &amp; Savor.
+    </p>
+
+    <div class="substack-grid">
+      <article class="substack-card">
+        <p class="substack-tag">On Living Books</p>
+        <h3 class="substack-title">Why Living Books Are Not Just "Good Books"</h3>
+        <p class="substack-excerpt">
+          The difference between a living book and a merely good one is not quality —
+          it's the animating presence of an author who cares deeply about their subject.
+          Here's how I help students feel the difference.
+        </p>
+        <a href="https://delightandsavor.substack.com" class="substack-link" target="_blank" rel="noopener">
+          Read on Substack
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </article>
+
+      <article class="substack-card">
+        <p class="substack-tag">On Narration</p>
+        <h3 class="substack-title">Most Programs Over-Test and Under-Listen</h3>
+        <p class="substack-excerpt">
+          We've replaced the oldest assessment in education — the oral narration —
+          with multiple-choice tests and reading logs. Here's what we've lost,
+          and how to get it back in your classroom.
+        </p>
+        <a href="https://delightandsavor.substack.com" class="substack-link" target="_blank" rel="noopener">
+          Read on Substack
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </article>
+
+      <article class="substack-card">
+        <p class="substack-tag">From the Ranch</p>
+        <h3 class="substack-title">What the Barn Taught Me About Attention</h3>
+        <p class="substack-excerpt">
+          The goats don't care about your lesson plan. Neither does the horse
+          with the swollen leg, or the calf who won't nurse. The ranch has
+          made me a better teacher — here's how I bring that into the classroom.
+        </p>
+        <a href="https://delightandsavor.substack.com" class="substack-link" target="_blank" rel="noopener">
+          Read on Substack
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </article>
+    </div>
+
+    <div class="substack-cta">
+      <a href="https://delightandsavor.substack.com" class="btn-primary" target="_blank" rel="noopener">Read All Posts on Substack →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ FAQ ══════════════════════════ -->
+<section class="tn-section" id="faq" aria-labelledby="faq-title">
+  <div class="tn-inner">
+    <div class="gold-rule"></div>
+    <p class="section-label">For Teachers New to Charlotte Mason</p>
+    <h2 class="section-title" id="faq-title">Frequently Asked Questions</h2>
+    <p class="section-body">
+      These are the questions I hear most often from co-op teachers and homeschool
+      parents who are new to the Charlotte Mason approach at the upper level.
+    </p>
+
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-question">Do I need to know Charlotte Mason to use these materials?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          No — the teacher's guides are written to explain the "why" alongside the "what."
+          You don't need to have read Mason's volumes or attended a CM workshop.
+          The framework is built into the handouts, and the teacher notes walk you
+          through how to use it session by session. That said, if you're curious to
+          go deeper, I recommend Mason's <em>A Philosophy of Education</em> (Volume 6)
+          and Karen Glass's <em>Consider This</em> as excellent starting points.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-question">My student hasn't read much classical literature. Can they start with Year One?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          Yes. The units are designed to meet students where they are. Narration doesn't
+          require prior knowledge — only honest engagement with the text. A student
+          who has never read Shakespeare can absolutely begin with Macbeth. The DELIGHT
+          framework scaffolds the analytical work so that no one needs to arrive
+          already knowing how to write a thesis. That's what we're building toward.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-question">How do I handle the student who refuses to narrate out loud?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          This is one of the most common challenges in co-op teaching. A few things
+          that help: start with lower-stakes group narration before moving to individual
+          turns; let reluctant students write their narration first and then read it
+          aloud; frame narration as a gift to the class, not a performance for the
+          teacher. Most students relax within three or four sessions once they realize
+          there's no wrong answer — only honest or evasive ones.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-question">Can I use the co-op version for a one-on-one homeschool setting?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          The home study version is better suited to one-on-one work — it's paced
+          and formatted differently. But if you've purchased the co-op version and
+          want to adapt it, absolutely possible. The discussion prompts become
+          conversation prompts; the group narration becomes written narration.
+          The core content is identical between the two versions.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-question">What if we fall behind in the reading?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          It happens. The absent student guides exist precisely for this reason —
+          they allow students who missed a session or fell behind in the reading
+          to re-enter the unit without derailing the class. For students who are
+          consistently behind, I'd rather slow the reading pace than rush through
+          the text. A book read slowly and well is worth more than a book "covered."
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-question">Is the DELIGHT framework something I need to explain to students upfront?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          Not all at once. The framework is introduced gradually through the handouts —
+          students encounter each move in practice before they see the full acronym.
+          By Week 4 or 5, most students are using DELIGHT language naturally without
+          thinking about it. That's the goal: internalized habit, not memorized formula.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- nav.js injects footer here -->
+
+<script src="nav.js"></script>
+<script>
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+      });
+      // Open clicked (unless it was already open)
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+</body>
+</html>
