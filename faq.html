@@ -551,17 +551,9 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   document.getElementById('yr').textContent = new Date().getFullYear();
   function handleNewsletter(e) { e.preventDefault(); document.getElementById('newsletter-msg').textContent = 'Thank you! ✦'; document.getElementById('footer-email').value = ''; }
-
-  // Dropdown
-  (function(){
-    var btn=document.getElementById('dropdownBtn'), menu=document.getElementById('dropdownMenu');
-    btn.addEventListener('click',function(e){e.stopPropagation();var o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',String(o));});
-    document.addEventListener('click',function(){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
-  })();
 
   // FAQ accordion
   document.querySelectorAll('.faq-btn').forEach(function(btn) {
