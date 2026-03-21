@@ -399,39 +399,7 @@
       font-size: 0.95rem;
       margin-bottom: 2rem;
     }
-    .rotation-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1px;
-      background: rgba(255,255,255,0.1);
-    }
-    .rotation-item {
-      background: var(--navy);
-      padding: 1.25rem 1rem;
-    }
-    .rotation-item .r-num {
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      color: var(--gold);
-      margin-bottom: 0.25rem;
-    }
-    .rotation-item .r-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 0.9rem;
-      color: var(--cream);
-      margin-bottom: 0.25rem;
-      font-style: italic;
-    }
-    .rotation-item .r-works {
-      font-size: 0.78rem;
-      color: rgba(250,247,242,0.5);
-    }
-    .rotation-item.current {
-      background: rgba(194,155,97,0.15);
-    }
-    .rotation-item.current .r-num {
-      color: var(--gold-light);
-    }
+    /* rotation-grid replaced by coming-soon-grid above */
 
     /* ── FOOTER ── */
     footer {
@@ -524,6 +492,184 @@
       text-decoration: none;
     }
 
+    /* ── COMING SOON CARD GRID ── */
+    .coming-soon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .series-preview-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .series-preview-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(194,155,97,0.4);
+    }
+    .series-preview-card.available {
+      border-color: var(--gold);
+    }
+    .series-cover-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+    }
+    .series-cover-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(160deg, #232c42 0%, #1a2235 100%);
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .series-cover-placeholder .ph-series {
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .series-cover-placeholder .ph-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--cream);
+      font-style: italic;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+    }
+    .series-cover-placeholder .ph-rule {
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 0.75rem;
+    }
+    .series-cover-placeholder .ph-works {
+      font-size: 0.75rem;
+      color: rgba(250,247,242,0.45);
+      line-height: 1.5;
+    }
+    .series-card-meta {
+      padding: 0.9rem 1rem;
+    }
+    .series-card-meta .sc-num {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.2rem;
+    }
+    .series-card-meta .sc-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      color: var(--cream);
+      font-style: italic;
+    }
+    .series-card-meta .sc-status {
+      font-size: 0.72rem;
+      color: rgba(250,247,242,0.4);
+      margin-top: 0.2rem;
+    }
+    .series-card-meta .sc-status.available {
+      color: var(--gold-light);
+    }
+
+    /* ── SUMMER FOUNDATION ── */
+    .summer-section {
+      background: var(--navy);
+      padding: 4rem 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .summer-inner {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .summer-cover img {
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+      display: block;
+    }
+    .summer-content .summer-badge {
+      display: inline-block;
+      background: rgba(194,155,97,0.2);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.65rem;
+      border-radius: 2px;
+      margin-bottom: 0.75rem;
+    }
+    .summer-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.15rem;
+    }
+    .summer-content .summer-author {
+      font-style: italic;
+      color: rgba(250,247,242,0.55);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    .summer-content p {
+      color: rgba(250,247,242,0.78);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .summer-details {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+    .summer-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .summer-detail .sd-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(250,247,242,0.4);
+    }
+    .summer-detail .sd-value {
+      font-size: 0.9rem;
+      color: var(--gold-light);
+    }
+    .summer-buy-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      text-decoration: none;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .summer-buy-btn:hover { opacity: 0.85; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 700px) {
       nav ul { display: none; }
@@ -536,6 +682,9 @@
       .footer-inner { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 0.5rem; }
       .unit-includes-list { grid-template-columns: 1fr; }
+      .coming-soon-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+      .summer-inner { grid-template-columns: 1fr; }
+      .summer-cover { max-width: 200px; }
     }
   </style>
 </head>
@@ -698,39 +847,159 @@
   </div>
 </section>
 
-<!-- COMING SOON -->
+<!-- SUMMER FOUNDATION -->
+<section class="summer-section" id="summer">
+  <div class="summer-inner">
+    <div class="summer-cover">
+      <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947110/of-mice-and-men_asjbyd.png" alt="Of Mice and Men &#8212; Summer Foundation" />
+    </div>
+    <div class="summer-content">
+      <span class="summer-badge">Summer Foundation &middot; 6 Weeks</span>
+      <h2>Of Mice and Men</h2>
+      <div class="summer-author">John Steinbeck</div>
+      <p>A focused six-week summer course designed to build the habits of close reading and oral narration before the full co-op year begins. Students read Steinbeck slowly and deliberately, practicing the narration rhythms that anchor the entire Living Literature &amp; Language curriculum. A gentle, powerful on-ramp &#8212; or a standalone study for any student, any time.</p>
+      <div class="summer-details">
+        <div class="summer-detail">
+          <span class="sd-label">Length</span>
+          <span class="sd-value">6 weeks</span>
+        </div>
+        <div class="summer-detail">
+          <span class="sd-label">Format</span>
+          <span class="sd-value">Self-paced, home study</span>
+        </div>
+        <div class="summer-detail">
+          <span class="sd-label">Best for</span>
+          <span class="sd-value">Grades 9&#8211;12 &middot; any entry point</span>
+        </div>
+      </div>
+      <a href="https://delightnsavor.gumroad.com/l/xtqtpv" class="summer-buy-btn">Buy on Gumroad &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMING SOON: FULL ROTATION -->
 <section class="coming-soon" id="rotation">
   <div class="section-wrap">
-    <div class="section-label-light">Years Two through Five &middot; Coming Soon</div>
-    <h2>The Full Five-Year Rotation</h2>
-    <p>The complete series is being written and tested in Kim&#8217;s own co-op classroom. Students may enter at any point &#8212; each series is self-contained with no prerequisites. Subscribe to the newsletter to hear when new units release.</p>
+    <div class="section-label-light">The Complete Series &middot; Coming Soon</div>
+    <h2>Five Years of Living Literature</h2>
+    <p>Every series is self-contained &#8212; students may enter at any point with no prerequisites. New units release as they&#8217;re written and tested in Kim&#8217;s own co-op classroom. Subscribe to hear first.</p>
 
-    <div class="rotation-grid">
-      <div class="rotation-item current">
-        <div class="r-num">Series 1 &middot; Available Now</div>
-        <div class="r-title">The Art of Tragedy</div>
-        <div class="r-works">Macbeth + Wuthering Heights</div>
+    <div class="coming-soon-grid">
+
+      <!-- SERIES 1 — available, has real images -->
+      <div class="series-preview-card available">
+        <img class="series-cover-img" src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947108/macbeth_gzcquq.png" alt="Macbeth" />
+        <div class="series-card-meta">
+          <div class="sc-num">Series 1 &middot; Fall</div>
+          <div class="sc-title">Macbeth</div>
+          <div class="sc-status available">Available now</div>
+        </div>
       </div>
-      <div class="rotation-item">
-        <div class="r-num">Series 2</div>
-        <div class="r-title">The Art of Attention</div>
-        <div class="r-works">Poetry + Old Man &amp; the Sea + A Midsummer Night&#8217;s Dream</div>
+
+      <div class="series-preview-card available">
+        <img class="series-cover-img" src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947108/wuthering-heights_e41woq.png" alt="Wuthering Heights" />
+        <div class="series-card-meta">
+          <div class="sc-num">Series 1 &middot; Spring</div>
+          <div class="sc-title">Wuthering Heights</div>
+          <div class="sc-status available">Available now</div>
+        </div>
       </div>
-      <div class="rotation-item">
-        <div class="r-num">Series 3</div>
-        <div class="r-title">The Art of the Epic</div>
-        <div class="r-works">The Odyssey + Canterbury Tales + Short Stories</div>
+
+      <!-- SERIES 2 — has real images -->
+      <div class="series-preview-card">
+        <img class="series-cover-img" src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947109/poetry-old-man_cyl7cq.png" alt="Poetry &amp; The Old Man and the Sea" />
+        <div class="series-card-meta">
+          <div class="sc-num">Series 2 &middot; Fall</div>
+          <div class="sc-title">Poetry &amp; The Old Man and the Sea</div>
+          <div class="sc-status">Coming soon</div>
+        </div>
       </div>
-      <div class="rotation-item">
-        <div class="r-num">Series 4</div>
-        <div class="r-title">The Art of Wit</div>
-        <div class="r-works">Much Ado About Nothing + Pride and Prejudice</div>
+
+      <div class="series-preview-card">
+        <img class="series-cover-img" src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947109/midsummer_ktd9qu.png" alt="A Midsummer Night&#8217;s Dream" />
+        <div class="series-card-meta">
+          <div class="sc-num">Series 2 &middot; Spring</div>
+          <div class="sc-title">A Midsummer Night&#8217;s Dream</div>
+          <div class="sc-status">Coming soon</div>
+        </div>
       </div>
-      <div class="rotation-item">
-        <div class="r-num">Series 5</div>
-        <div class="r-title">The Art of Integrity</div>
-        <div class="r-works">Dr. Jekyll &amp; Mr. Hyde + Jane Eyre</div>
+
+      <!-- SERIES 3 — real images -->
+      <div class="series-preview-card">
+        <img class="series-cover-img" src="https://res.cloudinary.com/dwdbmowur/image/upload/COVER_THE_ODESSEY_ymhro0.png" alt="The Odyssey" />
+        <div class="series-card-meta">
+          <div class="sc-num">Series 3 &middot; Fall</div>
+          <div class="sc-title">The Odyssey</div>
+          <div class="sc-status">Coming soon</div>
+        </div>
       </div>
+
+      <div class="series-preview-card">
+        <img class="series-cover-img" src="https://res.cloudinary.com/dwdbmowur/image/upload/COVER_CANTERBURY_TALES_hd50ku.png" alt="Canterbury Tales" />
+        <div class="series-card-meta">
+          <div class="sc-num">Series 3 &middot; Spring</div>
+          <div class="sc-title">Canterbury Tales</div>
+          <div class="sc-status">Coming soon</div>
+        </div>
+      </div>
+
+      <div class="series-preview-card">
+        <img class="series-cover-img" src="https://res.cloudinary.com/dwdbmowur/image/upload/COVER_AMERICAN_VOICES_yhmqrm.png" alt="American Voices" />
+        <div class="series-card-meta">
+          <div class="sc-num">Series 3 &middot; Short Stories</div>
+          <div class="sc-title">American Voices</div>
+          <div class="sc-status">Coming soon</div>
+        </div>
+      </div>
+
+      <!-- SERIES 4 — real images -->
+      <div class="series-preview-card">
+        <img class="series-cover-img" src="https://res.cloudinary.com/dwdbmowur/image/upload/COVER_MUCH_ADO_ABOUT_NOTHING_nzhlkw.png" alt="Much Ado About Nothing" />
+        <div class="series-card-meta">
+          <div class="sc-num">Series 4 &middot; Fall</div>
+          <div class="sc-title">Much Ado About Nothing</div>
+          <div class="sc-status">Coming soon</div>
+        </div>
+      </div>
+
+      <div class="series-preview-card">
+        <img class="series-cover-img" src="https://res.cloudinary.com/dwdbmowur/image/upload/COVER_PRIDE_AND_PREJUDICE_ka5lcs.png" alt="Pride and Prejudice" />
+        <div class="series-card-meta">
+          <div class="sc-num">Series 4 &middot; Spring</div>
+          <div class="sc-title">Pride and Prejudice</div>
+          <div class="sc-status">Coming soon</div>
+        </div>
+      </div>
+
+      <!-- SERIES 5 — real images -->
+      <div class="series-preview-card">
+        <img class="series-cover-img" src="https://res.cloudinary.com/dwdbmowur/image/upload/COVER_DR_JEKYL_AND_MR_HYDE_jdo8d1.png" alt="Dr. Jekyll and Mr. Hyde" />
+        <div class="series-card-meta">
+          <div class="sc-num">Series 5 &middot; Fall</div>
+          <div class="sc-title">Dr. Jekyll &amp; Mr. Hyde</div>
+          <div class="sc-status">Coming soon</div>
+        </div>
+      </div>
+
+      <div class="series-preview-card">
+        <img class="series-cover-img" src="https://res.cloudinary.com/dwdbmowur/image/upload/COVER_JANE_EYRE_nf0niq.png" alt="Jane Eyre" />
+        <div class="series-card-meta">
+          <div class="sc-num">Series 5 &middot; Spring</div>
+          <div class="sc-title">Jane Eyre</div>
+          <div class="sc-status">Coming soon</div>
+        </div>
+      </div>
+
+      <!-- SUMMER FOUNDATION — has real image -->
+      <div class="series-preview-card">
+        <img class="series-cover-img" src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947110/of-mice-and-men_asjbyd.png" alt="Of Mice and Men &#8212; Summer Foundation" />
+        <div class="series-card-meta">
+          <div class="sc-num">Summer Foundation &middot; 6 Weeks</div>
+          <div class="sc-title">Of Mice and Men</div>
+          <div class="sc-status available">Available now</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
