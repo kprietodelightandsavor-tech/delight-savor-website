@@ -59,30 +59,170 @@
     min-height: 100vh;
   }
 
-  /* ── HEADER ── */
+  /* ── HEADER & NAV ── */
   .site-header {
     border-bottom: 1px solid var(--rule);
-    padding: 18px 24px;
+    padding: 0 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: var(--cream);
     position: sticky;
     top: 0;
-    z-index: 50;
+    z-index: 100;
+    height: 56px;
   }
   .site-header .brand {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 13px;
+    font-size: 15px;
     font-style: italic;
-    color: var(--ink-faint);
-    letter-spacing: .04em;
+    color: var(--ink);
+    letter-spacing: .02em;
+    text-decoration: none;
+    flex-shrink: 0;
   }
   .site-header .brand strong {
     font-style: normal;
     color: var(--sage);
     font-weight: 500;
   }
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .site-nav a {
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-decoration: none;
+    transition: color .2s;
+    white-space: nowrap;
+  }
+  .site-nav a:hover { color: var(--sage); }
+  .site-nav a.nav-cta {
+    background: var(--sage);
+    color: white;
+    padding: 7px 14px;
+    border-radius: 2px;
+  }
+  .site-nav a.nav-cta:hover { background: #7a8d79; color: white; }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--ink);
+    transition: all .25s;
+    border-radius: 2px;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    border-bottom: 1px solid var(--rule);
+    padding: 20px 24px 28px;
+    z-index: 99;
+    flex-direction: column;
+    box-shadow: 0 8px 24px rgba(44,42,39,.08);
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-decoration: none;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+    transition: color .2s;
+  }
+  .mobile-nav a:last-child { border-bottom: none; padding-bottom: 0; }
+  .mobile-nav a:hover { color: var(--sage); }
+  .mobile-nav a.nav-cta-mobile { color: var(--sage); font-weight: 700; }
+  @media (max-width: 680px) {
+    .site-nav { display: none; }
+    .hamburger { display: flex; }
+  }
+  /* ── TEND CARD ── */
+  .tend-card {
+    max-width: 680px;
+    margin: 0 auto 40px;
+    padding: 0 24px;
+  }
+  .tend-card-inner {
+    background: var(--navy);
+    border-radius: 6px;
+    padding: 28px 28px 24px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .tend-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+  .tend-card-body .eyebrow-sm {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--sage-md);
+    margin-bottom: 6px;
+    opacity: .8;
+  }
+  .tend-card-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .tend-card-body p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(255,255,255,.65);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .tend-card-links { display: flex; gap: 10px; flex-wrap: wrap; }
+  .tend-link {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 2px;
+    transition: all .2s;
+  }
+  .tend-link.primary { background: var(--sage); color: white; }
+  .tend-link.primary:hover { background: #7a8d79; }
+  .tend-link.ghost { border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.6); }
+  .tend-link.ghost:hover { border-color: rgba(255,255,255,.4); color: white; }
+  @media (max-width: 480px) { .tend-card-inner { flex-direction: column; gap: 16px; } }
 
   /* ── HERO ── */
   .hero {
@@ -557,6 +697,22 @@
   <button class="btn-primary" onclick="startBuilder()">Begin the conversation →</button>
 </div>
 
+<!-- TEND CARD -->
+<div class="tend-card" id="tend-card">
+  <div class="tend-card-inner">
+    <img src="/images/tend_icon.png" alt="Tend app icon" class="tend-icon"/>
+    <div class="tend-card-body">
+      <p class="eyebrow-sm">From Delight & Savor</p>
+      <h3>Tend — your daily planning companion</h3>
+      <p>Once you have your rhythm, Tend helps you live it every day. A Charlotte Mason daily planner, narration coach, nature journal, and habit tracker — built for homeschool families. Free to try, with room to grow.</p>
+      <div class="tend-card-links">
+        <a href="https://tend-ds.netlify.app" target="_blank" rel="noopener" class="tend-link primary">Try Tend free →</a>
+        <a href="https://tend-ds.netlify.app" target="_blank" rel="noopener" class="tend-link ghost">Learn more</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- PROGRESS BAR -->
 <div class="progress-wrap hidden" id="progress-section">
   <div class="progress-steps" id="progress-steps"></div>
@@ -596,7 +752,7 @@
         loading="lazy"
       />
       <div style="text-align:center;max-width:480px;">
-        <p style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:12px;font-family:'Lato',sans-serif;">About this tool</p>
+        <p id="about" style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:12px;font-family:'Lato',sans-serif;">About this tool</p>
         <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--ink);margin-bottom:16px;line-height:1.3;">Built from a real homeschool,<br/>on a real ranch</h3>
         <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--ink-lt);line-height:1.85;margin-bottom:12px;">
           I'm Kim — a former AP English teacher, Charlotte Mason homeschool mother of three, and the founder of Delight & Savor. I've spent years drawing from A Gentle Feast, Simply Charlotte Mason, A Delectable Education, and Read Aloud Revival to find the rhythm that actually fits our family's life on our 15-acre ranch near Boerne, Texas.
@@ -810,6 +966,7 @@ function renderProgress(activeIdx) {
 // ─── START ────────────────────────────────────────────────────────────────────
 function startBuilder() {
   document.getElementById('hero-section').classList.add('hidden');
+  document.getElementById('tend-card').classList.add('hidden');
   document.getElementById('progress-section').classList.remove('hidden');
   showStep(0);
 }
@@ -1006,12 +1163,30 @@ function renderOutput(plan) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+function toggleMenu() {
+  const btn = document.getElementById('hamburger');
+  const nav = document.getElementById('mobile-nav');
+  btn.classList.toggle('open');
+  nav.classList.toggle('open');
+}
+
+// Close menu on outside click
+document.addEventListener('click', (e) => {
+  const btn = document.getElementById('hamburger');
+  const nav = document.getElementById('mobile-nav');
+  if (nav?.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) {
+    btn.classList.remove('open');
+    nav.classList.remove('open');
+  }
+});
+
 function startOver() {
   Object.keys(state).forEach(k => delete state[k]);
   document.getElementById('rhythm-output').classList.add('hidden');
   document.getElementById('cta-section').classList.add('hidden');
   document.getElementById('steps-container').classList.remove('hidden');
   document.getElementById('hero-section').classList.remove('hidden');
+  document.getElementById('tend-card').classList.remove('hidden');
   document.getElementById('progress-section').classList.add('hidden');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
