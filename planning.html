@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Charlotte Mason Homeschool Planner · Living Rhythm Builder · Delight & Savor</title>
+<meta name="description" content="A free guided tool to help Charlotte Mason homeschool families build a weekly and daily rhythm that is truly theirs. Draws from A Gentle Feast, Simply Charlotte Mason, A Delectable Education, and Read Aloud Revival."/>
+<meta name="keywords" content="Charlotte Mason homeschool planner, Charlotte Mason daily rhythm, homeschool planning tool, living rhythm, Charlotte Mason weekly schedule, CM homeschool planner, morning time planner, loop schedule, Charlotte Mason upper school, living books homeschool"/>
+<link rel="canonical" href="https://www.delightandsavor.com/planning"/>
+<meta property="og:title" content="Living Rhythm Builder · Free Charlotte Mason Homeschool Planner"/>
+<meta property="og:description" content="Answer a few questions about your family and receive a personalized Charlotte Mason weekly and daily rhythm — free from Delight & Savor."/>
+<meta property="og:url" content="https://www.delightandsavor.com/planning"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Delight & Savor"/>
+<meta property="og:image" content="https://www.delightandsavor.com/assets/kim-journaling.jpg"/>
+<meta property="og:image:alt" content="Kim Prieto of Delight & Savor watercolor journaling outdoors — Charlotte Mason homeschool planner"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Living Rhythm Builder · Free Charlotte Mason Homeschool Planner"/>
+<meta name="twitter:description" content="A free guided tool to help you build a Charlotte Mason weekly and daily rhythm that is truly yours."/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Living Rhythm Builder",
+  "description": "A free guided Charlotte Mason homeschool planning tool from Delight & Savor",
+  "url": "https://www.delightandsavor.com/planning",
+  "applicationCategory": "EducationalApplication",
+  "author": { "@type": "Organization", "name": "Delight & Savor", "url": "https://www.delightandsavor.com" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Playfair+Display:wght@400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream:    #F7F4EF;
+    --parchment:#F0EBE1;
+    --ink:      #2C2A27;
+    --ink-lt:   #4A4743;
+    --ink-faint:#9A9590;
+    --sage:     #8A9E89;
+    --sage-md:  #C2CEB8;
+    --sage-bg:  #F2F5EE;
+    --gold:     #B8935A;
+    --gold-bg:  #FBF5EB;
+    --rule:     #DDD8CF;
+    --navy:     #2C3650;
+    --white:    #FFFFFF;
+    --step-active: #8A9E89;
+    --step-done:   #B8935A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .site-header .brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-faint);
+    letter-spacing: .04em;
+  }
+  .site-header .brand strong {
+    font-style: normal;
+    color: var(--sage);
+    font-weight: 500;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 24px 40px;
+    text-align: center;
+  }
+  .hero .eyebrow {
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .hero .eyebrow::before,
+  .hero .eyebrow::after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--sage-md);
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 6vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--sage);
+  }
+  .hero .lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--ink-lt);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto 32px;
+  }
+  .hero .from-line {
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* ── PROGRESS ── */
+  .progress-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px 32px;
+  }
+  .progress-steps {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 8px;
+  }
+  .step-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1.5px solid var(--rule);
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-family: 'Lato', sans-serif;
+    color: var(--ink-faint);
+    flex-shrink: 0;
+    transition: all .3s ease;
+    position: relative;
+    z-index: 2;
+  }
+  .step-dot.active {
+    border-color: var(--step-active);
+    background: var(--step-active);
+    color: white;
+  }
+  .step-dot.done {
+    border-color: var(--step-done);
+    background: var(--step-done);
+    color: white;
+  }
+  .step-line {
+    flex: 1;
+    height: 1.5px;
+    background: var(--rule);
+    transition: background .3s ease;
+  }
+  .step-line.done { background: var(--step-done); }
+  .step-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+  }
+  .step-label {
+    font-size: 8px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-align: center;
+    width: 28px;
+    transition: color .3s;
+  }
+  .step-label.active { color: var(--sage); }
+  .step-label.done   { color: var(--gold); }
+
+  /* ── CARD ── */
+  .card {
+    max-width: 680px;
+    margin: 0 auto 24px;
+    padding: 0 24px;
+  }
+  .card-inner {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 32px 32px 28px;
+    box-shadow: 0 2px 16px rgba(44,42,39,.04);
+  }
+  .card-inner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .card-inner .sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-faint);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  /* ── FORM ELEMENTS ── */
+  label.field-label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 7px;
+    margin-top: 20px;
+  }
+  label.field-label:first-of-type { margin-top: 0; }
+
+  input[type="text"], input[type="number"], select, textarea {
+    width: 100%;
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 10px 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink);
+    outline: none;
+    transition: border-color .2s;
+  }
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  select:focus,
+  textarea:focus { border-color: var(--sage); }
+  textarea { resize: vertical; min-height: 80px; }
+
+  .chip-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 2px;
+  }
+  .chip {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--rule);
+    background: none;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-faint);
+    transition: all .2s;
+    user-select: none;
+  }
+  .chip.selected {
+    border-color: var(--sage);
+    background: var(--sage-bg);
+    color: var(--sage);
+  }
+  .chip.selected-gold {
+    border-color: var(--gold);
+    background: var(--gold-bg);
+    color: var(--gold);
+  }
+
+  .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 480px) { .row-2 { grid-template-columns: 1fr; } }
+
+  /* ── BUTTONS ── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--sage);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 13px 28px;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .2s;
+    margin-top: 24px;
+  }
+  .btn-primary:hover { background: #7a8d79; }
+  .btn-primary:disabled { opacity: .5; cursor: default; }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    color: var(--ink-faint);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 12px 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .2s;
+    margin-top: 24px;
+  }
+  .btn-ghost:hover { border-color: var(--sage); color: var(--sage); }
+
+  .btn-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── GENERATING STATE ── */
+  .generating {
+    text-align: center;
+    padding: 56px 24px;
+  }
+  .generating .spinner {
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--rule);
+    border-top-color: var(--sage);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .generating p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-faint);
+    line-height: 1.7;
+  }
+
+  /* ── RHYTHM DOCUMENT ── */
+  .rhythm-doc {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+  .rhythm-doc .doc-header {
+    text-align: center;
+    padding: 40px 0 32px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 36px;
+  }
+  .rhythm-doc .doc-header .ornament {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: var(--sage-md);
+    display: block;
+    margin-bottom: 12px;
+  }
+  .rhythm-doc .doc-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .rhythm-doc .doc-header .family-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink-faint);
+  }
+
+  .rhythm-section {
+    margin-bottom: 36px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .rhythm-section:last-of-type { border-bottom: none; }
+  .rhythm-section .section-label {
+    font-size: 9px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .rhythm-section .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--sage-md);
+    opacity: .5;
+  }
+  .rhythm-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .rhythm-section .body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: var(--ink-lt);
+    line-height: 1.85;
+    white-space: pre-wrap;
+  }
+  .rhythm-section .note {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-faint);
+    line-height: 1.7;
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: var(--sage-bg);
+    border-left: 2px solid var(--sage-md);
+    border-radius: 0 3px 3px 0;
+  }
+
+  /* ── CTA FOOTER ── */
+  .cta-footer {
+    background: var(--navy);
+    color: white;
+    padding: 48px 24px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .cta-footer .ornament {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: var(--sage-md);
+    opacity: .4;
+    display: block;
+    margin-bottom: 16px;
+  }
+  .cta-footer h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+  .cta-footer p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(255,255,255,.7);
+    line-height: 1.75;
+    max-width: 440px;
+    margin: 0 auto 28px;
+  }
+  .cta-footer .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+  .cta-link {
+    display: inline-block;
+    padding: 11px 24px;
+    border-radius: 3px;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .2s;
+  }
+  .cta-link.primary { background: var(--sage); color: white; }
+  .cta-link.primary:hover { background: #7a8d79; }
+  .cta-link.secondary { border: 1px solid rgba(255,255,255,.25); color: rgba(255,255,255,.7); }
+  .cta-link.secondary:hover { border-color: rgba(255,255,255,.5); color: white; }
+
+  /* ── PRINT ── */
+  .print-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .print-bar p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-faint);
+  }
+
+  @media print {
+    .site-header, .progress-wrap, .print-bar, .btn-row, .cta-footer, #steps-container { display: none !important; }
+    .rhythm-doc { padding: 0; }
+    body { background: white; }
+    .card-inner { box-shadow: none; border: none; }
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-in {
+    animation: fadeIn .4s ease both;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── HIDDEN ── */
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div>
+    <div class="brand"><strong>Delight & Savor</strong> · Living Rhythm Builder</div>
+  </div>
+  <a href="https://www.delightandsavor.com" style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);text-decoration:none;font-family:'Lato',sans-serif;">delightandsavor.com →</a>
+</header>
+
+<!-- HERO -->
+<div class="hero fade-in" id="hero-section">
+  <div class="eyebrow">A free Charlotte Mason planning tool</div>
+  <h1>Build Your Family's<br/><em>Living Rhythm</em></h1>
+  <p class="lead">A guided conversation to help you build a Charlotte Mason weekly and daily rhythm that is truly yours — drawing from the best of A Gentle Feast, Simply Charlotte Mason, A Delectable Education, and Read Aloud Revival.</p>
+  <p class="from-line">Free from Delight & Savor · delightandsavor.com</p>
+  <br/>
+  <button class="btn-primary" onclick="startBuilder()">Begin the conversation →</button>
+</div>
+
+<!-- PROGRESS BAR -->
+<div class="progress-wrap hidden" id="progress-section">
+  <div class="progress-steps" id="progress-steps"></div>
+  <div class="step-labels" id="step-labels"></div>
+</div>
+
+<!-- STEPS CONTAINER -->
+<div id="steps-container"></div>
+
+<!-- GENERATING -->
+<div class="card hidden" id="generating-card">
+  <div class="generating">
+    <div class="spinner"></div>
+    <p>Weaving your rhythm together…<br/>This takes about 20 seconds.</p>
+  </div>
+</div>
+
+<!-- RHYTHM OUTPUT -->
+<div class="rhythm-doc hidden" id="rhythm-output">
+  <div class="doc-header">
+    <span class="ornament">❧</span>
+    <h2>Your Living Rhythm</h2>
+    <div class="family-name" id="output-family-name"></div>
+  </div>
+  <div id="output-sections"></div>
+</div>
+
+<div class="hidden" id="cta-section">
+
+  <!-- ABOUT SECTION WITH PHOTO -->
+  <div style="max-width:680px;margin:0 auto;padding:48px 24px 0;">
+    <div style="display:flex;flex-direction:column;gap:32px;align-items:center;border-top:1px solid var(--rule);padding-top:48px;">
+      <img
+        src="/assets/kim-journaling.jpg"
+        alt="Kim Prieto of Delight & Savor watercolor journaling outdoors on her Texas ranch"
+        style="width:100%;max-width:420px;border-radius:4px;object-fit:cover;aspect-ratio:3/4;object-position:center top;box-shadow:0 4px 24px rgba(44,42,39,.10);"
+        loading="lazy"
+      />
+      <div style="text-align:center;max-width:480px;">
+        <p style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:12px;font-family:'Lato',sans-serif;">About this tool</p>
+        <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--ink);margin-bottom:16px;line-height:1.3;">Built from a real homeschool,<br/>on a real ranch</h3>
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--ink-lt);line-height:1.85;margin-bottom:12px;">
+          I'm Kim — a former AP English teacher, Charlotte Mason homeschool mother of three, and the founder of Delight & Savor. I've spent years drawing from A Gentle Feast, Simply Charlotte Mason, A Delectable Education, and Read Aloud Revival to find the rhythm that actually fits our family's life on our 15-acre ranch near Boerne, Texas.
+        </p>
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--ink-lt);line-height:1.85;">
+          This tool is what I wish had existed when I was starting out — a way to take the best of every approach and make it mine. I hope it gives your family the same thing: a rhythm that is genuinely yours.
+        </p>
+        <p style="font-family:'Lato',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-top:20px;">
+          — Kim Prieto · <a href="https://www.delightandsavor.com" style="color:var(--sage);text-decoration:none;">delightandsavor.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-footer" style="margin-top:48px;">
+    <span class="ornament">❧</span>
+    <h3>Live this rhythm every day</h3>
+    <p>Tend brings your living rhythm to life — a daily planner, narration coach, nature journal, and habit tracker built for Charlotte Mason families.</p>
+    <div class="cta-links">
+      <a href="https://tend-ds.netlify.app" class="cta-link primary">Try Tend free →</a>
+      <a href="https://www.delightandsavor.com" class="cta-link secondary">Explore curriculum</a>
+      <a href="https://substack.com/@delightandsavor" class="cta-link secondary">Follow on Substack</a>
+    </div>
+    <p style="margin-top:28px;font-size:12px;opacity:.5;">Living Rhythm Builder is free, always. · Delight & Savor · Beauty. Meaning. Connection.</p>
+  </div>
+</div>
+
+<script>
+// ─── STATE ────────────────────────────────────────────────────────────────────
+const state = {};
+const STEP_LABELS = ["Family", "Philosophy", "Subjects", "Structure", "Preview"];
+
+// ─── STEP DEFINITIONS ─────────────────────────────────────────────────────────
+const STEPS = [
+  // STEP 1 — FAMILY SHAPE
+  {
+    id: "family",
+    title: "Tell me about your family",
+    sub: "The rhythm has to fit your actual life — not an idealized one. Be honest here.",
+    render: () => `
+      <div class="row-2">
+        <div>
+          <label class="field-label">Your name</label>
+          <input type="text" id="f-name" placeholder="e.g. Sarah" value="${state.name||''}"/>
+        </div>
+        <div>
+          <label class="field-label">Number of children you're schooling</label>
+          <select id="f-children">
+            ${[1,2,3,4,5,6].map(n=>`<option value="${n}" ${state.numChildren==n?'selected':''}>${n}</option>`).join('')}
+          </select>
+        </div>
+      </div>
+      <label class="field-label">Ages of your children (roughly)</label>
+      <input type="text" id="f-ages" placeholder="e.g. 6, 9, 12" value="${state.ages||''}"/>
+      <label class="field-label">Do you have a co-op or outside class days?</label>
+      <div class="chip-group" id="coop-chips">
+        ${['None','1 day/week','2 days/week','3 days/week'].map(o=>`
+          <div class="chip ${state.coopDays===o?'selected':''}" onclick="toggleSingle('coop-chips','${o}','coopDays')">${o}</div>
+        `).join('')}
+      </div>
+      <label class="field-label">How would you describe your family's energy pattern?</label>
+      <div class="chip-group" id="energy-chips">
+        ${['We rise early and do our best work before noon','We start slow and hit our stride mid-morning','We have a long afternoon rhythm','Honestly, it changes day to day'].map(o=>`
+          <div class="chip ${state.energy===o?'selected':''}" onclick="toggleSingle('energy-chips','${o}','energy')">${o}</div>
+        `).join('')}
+      </div>
+      <label class="field-label">Any constraints I should know about? (work from home, medical, animals to tend, etc.)</label>
+      <textarea id="f-constraints" placeholder="e.g. My husband works from home. We have animals that need morning care. I have one child with special needs.">${state.constraints||''}</textarea>
+    `,
+    collect: () => {
+      state.name        = document.getElementById('f-name')?.value || '';
+      state.numChildren = document.getElementById('f-children')?.value || '2';
+      state.ages        = document.getElementById('f-ages')?.value || '';
+      state.constraints = document.getElementById('f-constraints')?.value || '';
+    },
+    valid: () => (state.name?.trim() && state.ages?.trim() && state.coopDays && state.energy),
+  },
+
+  // STEP 2 — PHILOSOPHY
+  {
+    id: "philosophy",
+    title: "What resonates with you?",
+    sub: "You've probably read from several approaches. Tell me what has stuck — not what you think you should say.",
+    render: () => `
+      <label class="field-label">What draws you to Charlotte Mason? (choose all that resonate)</label>
+      <div class="chip-group" id="cm-chips">
+        ${['Living books over textbooks','Narration instead of tests','Nature study & outdoor time','Morning Time — poetry, music, Scripture together','Short lessons, full attention','The idea of a feast — many subjects, lightly held','Formation of the whole person, not just academics','A slower, more beautiful pace of life'].map(o=>`
+          <div class="chip ${(state.cmResonates||[]).includes(o)?'selected':''}" onclick="toggleMulti('cm-chips','${o}','cmResonates')">${o}</div>
+        `).join('')}
+      </div>
+      <label class="field-label">Which of these planning approaches have you been drawn to?</label>
+      <div class="chip-group" id="approach-chips">
+        ${['A Gentle Feast — feast days, loop scheduling, liturgical rhythm','Simply Charlotte Mason — habit training, short lessons, narration','A Delectable Education — strong CM method, classical roots','Read Aloud Revival — read-aloud as the spine of everything','I\'m building my own from scratch','I\'m not sure yet — that\'s why I\'m here'].map(o=>`
+          <div class="chip ${(state.approaches||[]).includes(o)?'selected':''}" onclick="toggleMulti('approach-chips','${o}','approaches')">${o}</div>
+        `).join('')}
+      </div>
+      <label class="field-label">What is your biggest struggle with homeschool planning?</label>
+      <div class="chip-group" id="struggle-chips">
+        ${['I over-plan and then feel like a failure','I under-plan and drift through the day','I can\'t figure out what to do daily vs. what to loop','Morning Time runs too long and crowds everything else','I don\'t know how to balance independent and together work','I keep abandoning the rhythm and starting over','I just don\'t know where to begin'].map(o=>`
+          <div class="chip ${(state.struggles||[]).includes(o)?'selected-gold':''}" onclick="toggleMulti('struggle-chips','${o}','struggles','selected-gold')">${o}</div>
+        `).join('')}
+      </div>
+    `,
+    collect: () => {},
+    valid: () => ((state.cmResonates||[]).length > 0 && (state.approaches||[]).length > 0),
+  },
+
+  // STEP 3 — SUBJECTS
+  {
+    id: "subjects",
+    title: "What are you teaching?",
+    sub: "Don't list everything you wish you were doing. List what is actually on your plate this term.",
+    render: () => `
+      <label class="field-label">Which subjects do you teach? (select all that apply)</label>
+      <div class="chip-group" id="subject-chips">
+        ${['Bible / Scripture','Morning Time (poetry, hymns, picture study)','Math','Language Arts / Writing','History','Science','Geography','Nature Study','Read Aloud','Spanish / Foreign Language','Artist Study','Composer Study','Handicrafts / Home Arts','Physical Education / Sports','Co-op classes'].map(o=>`
+          <div class="chip ${(state.subjects||[]).includes(o)?'selected':''}" onclick="toggleMulti('subject-chips','${o}','subjects')">${o}</div>
+        `).join('')}
+      </div>
+      <label class="field-label">Which subjects MUST happen every single day?</label>
+      <div class="chip-group" id="daily-chips">
+        ${['Bible / Scripture','Math','Language Arts / Writing','Read Aloud','Morning Time'].map(o=>`
+          <div class="chip ${(state.dailyMust||[]).includes(o)?'selected':''}" onclick="toggleMulti('daily-chips','${o}','dailyMust')">${o}</div>
+        `).join('')}
+      </div>
+      <label class="field-label">Is there anything you want to protect — a subject or practice you will not cut?</label>
+      <input type="text" id="f-protect" placeholder="e.g. Read aloud — even on hard days, we read together." value="${state.protect||''}"/>
+    `,
+    collect: () => {
+      state.protect = document.getElementById('f-protect')?.value || '';
+    },
+    valid: () => ((state.subjects||[]).length > 0),
+  },
+
+  // STEP 4 — STRUCTURE PREFERENCES
+  {
+    id: "structure",
+    title: "How do you want it to feel?",
+    sub: "This is where your rhythm gets its shape. There's no wrong answer.",
+    render: () => `
+      <label class="field-label">How do you want your school day to open?</label>
+      <div class="chip-group" id="open-chips">
+        ${['Morning Time together — Bible, poetry, music, memory work','Rise & Shine block — independent work before we gather','Outdoors first — a walk or animal chores before school begins','Slow breakfast together, then ease in','Straight to individual lessons — Morning Time later'].map(o=>`
+          <div class="chip ${state.dayOpen===o?'selected':''}" onclick="toggleSingle('open-chips','${o}','dayOpen')">${o}</div>
+        `).join('')}
+      </div>
+      <label class="field-label">How long is your ideal school day? (excluding outside activities)</label>
+      <div class="chip-group" id="length-chips">
+        ${['2–3 hours','3–4 hours','4–5 hours','5+ hours — we have a full day'].map(o=>`
+          <div class="chip ${state.dayLength===o?'selected':''}" onclick="toggleSingle('length-chips','${o}','dayLength')">${o}</div>
+        `).join('')}
+      </div>
+      <label class="field-label">How do you want to handle subjects that don't need to happen daily?</label>
+      <div class="chip-group" id="loop-chips">
+        ${['Loop schedule — I work through a list and pick up where I left off','Assigned days — History on Monday, Science on Tuesday, etc.','Block scheduling — focus on fewer subjects for longer stretches','I\'m not sure — help me figure this out'].map(o=>`
+          <div class="chip ${state.loopStyle===o?'selected':''}" onclick="toggleSingle('loop-chips','${o}','loopStyle')">${o}</div>
+        `).join('')}
+      </div>
+      <label class="field-label">How do you structure your terms?</label>
+      <div class="chip-group" id="term-chips">
+        ${['Traditional — September through June','Year-round — 6 weeks on, 1 week off','Year-round — 5 weeks on, 2 weeks off (like Delight & Savor)','We school when it makes sense and rest when we need to','I haven\'t thought about this yet'].map(o=>`
+          <div class="chip ${state.termStyle===o?'selected':''}" onclick="toggleSingle('term-chips','${o}','termStyle')">${o}</div>
+        `).join('')}
+      </div>
+      <label class="field-label">Anything else you want your rhythm to hold? A value, a practice, a non-negotiable?</label>
+      <textarea id="f-anything" placeholder="e.g. I want to protect afternoon quiet time. I want outdoor time every day, even in winter. I want to end school by 1pm.">${state.anything||''}</textarea>
+    `,
+    collect: () => {
+      state.anything = document.getElementById('f-anything')?.value || '';
+    },
+    valid: () => (state.dayOpen && state.dayLength && state.loopStyle && state.termStyle),
+  },
+];
+
+let currentStep = -1;
+
+// ─── CHIP HELPERS ─────────────────────────────────────────────────────────────
+function toggleSingle(groupId, value, stateKey) {
+  state[stateKey] = value;
+  document.querySelectorAll(`#${groupId} .chip`).forEach(c => {
+    c.classList.toggle('selected', c.textContent.trim() === value);
+  });
+}
+
+function toggleMulti(groupId, value, stateKey, cls = 'selected') {
+  if (!state[stateKey]) state[stateKey] = [];
+  const idx = state[stateKey].indexOf(value);
+  if (idx > -1) state[stateKey].splice(idx, 1);
+  else state[stateKey].push(value);
+  document.querySelectorAll(`#${groupId} .chip`).forEach(c => {
+    c.classList.toggle(cls, state[stateKey].includes(c.textContent.trim()));
+  });
+}
+
+// ─── PROGRESS BAR ─────────────────────────────────────────────────────────────
+function renderProgress(activeIdx) {
+  const stepsEl  = document.getElementById('progress-steps');
+  const labelsEl = document.getElementById('step-labels');
+  let stepsHtml = '', labelsHtml = '';
+  STEP_LABELS.forEach((label, i) => {
+    const isDone   = i < activeIdx;
+    const isActive = i === activeIdx;
+    stepsHtml += `<div class="step-dot ${isDone?'done':''} ${isActive?'active':''}">${isDone?'✓':i+1}</div>`;
+    if (i < STEP_LABELS.length - 1) stepsHtml += `<div class="step-line ${isDone?'done':''}"></div>`;
+    labelsHtml += `<div class="step-label ${isDone?'done':''} ${isActive?'active':''}">${label}</div>`;
+  });
+  stepsEl.innerHTML  = stepsHtml;
+  labelsEl.innerHTML = labelsHtml;
+}
+
+// ─── START ────────────────────────────────────────────────────────────────────
+function startBuilder() {
+  document.getElementById('hero-section').classList.add('hidden');
+  document.getElementById('progress-section').classList.remove('hidden');
+  showStep(0);
+}
+
+// ─── SHOW STEP ────────────────────────────────────────────────────────────────
+function showStep(idx) {
+  currentStep = idx;
+  renderProgress(idx);
+  const container = document.getElementById('steps-container');
+  const step = STEPS[idx];
+  container.innerHTML = `
+    <div class="card fade-in">
+      <div class="card-inner">
+        <h2>${step.title}</h2>
+        <p class="sub">${step.sub}</p>
+        ${step.render()}
+        <div class="btn-row">
+          ${idx > 0 ? `<button class="btn-ghost" onclick="prevStep()">← Back</button>` : ''}
+          <button class="btn-primary" onclick="nextStep()">${idx < STEPS.length - 1 ? 'Continue →' : 'Build my rhythm →'}</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ─── NAVIGATION ───────────────────────────────────────────────────────────────
+function prevStep() {
+  if (currentStep > 0) { STEPS[currentStep].collect(); showStep(currentStep - 1); }
+}
+
+function nextStep() {
+  STEPS[currentStep].collect();
+  if (!STEPS[currentStep].valid()) {
+    // gentle nudge — don't block, just scroll to top of card
+    document.querySelector('.card-inner').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  if (currentStep < STEPS.length - 1) {
+    showStep(currentStep + 1);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    generateRhythm();
+  }
+}
+
+// ─── GENERATE ────────────────────────────────────────────────────────────────
+async function generateRhythm() {
+  document.getElementById('steps-container').classList.add('hidden');
+  document.getElementById('generating-card').classList.remove('hidden');
+  renderProgress(4);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  const prompt = buildPrompt();
+  try {
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 4000,
+        system: `You are a warm, experienced Charlotte Mason homeschool planning guide writing for Delight & Savor (delightandsavor.com). Your voice is like a knowledgeable friend: specific, honest, encouraging, never preachy. You synthesize wisdom from A Gentle Feast, Simply Charlotte Mason, A Delectable Education, and Read Aloud Revival — but you help families find THEIR rhythm, not a borrowed one.
+
+You will respond with a JSON object containing exactly these keys:
+{
+  "weeklyRhythm": { "title": "...", "body": "...", "note": "..." },
+  "dailyRhythm": { "title": "...", "body": "...", "note": "..." },
+  "morningTime": { "title": "...", "body": "...", "note": "..." },
+  "loopPlan": { "title": "...", "body": "...", "note": "..." },
+  "outdoorNature": { "title": "...", "body": "...", "note": "..." },
+  "termStructure": { "title": "...", "body": "...", "note": "..." },
+  "readAloud": { "title": "...", "body": "...", "note": "..." },
+  "encouragement": { "title": "...", "body": "...", "note": "..." }
+}
+
+Each "body" should be 3–5 sentences of specific, practical guidance written in warm prose — not bullet points. Each "note" should be one sentence of honest, gentle coaching. Reference the family's specific answers. Use their name. Speak to their actual struggles. The rhythm should feel like it was made for this exact family.
+
+Return ONLY valid JSON. No markdown, no backticks, no preamble.`,
+        messages: [{ role: "user", content: prompt }],
+      }),
+    });
+
+    const data = await response.json();
+    const text = data.content?.[0]?.text || '{}';
+    let plan;
+    try { plan = JSON.parse(text.replace(/```json|```/g, '').trim()); }
+    catch { plan = buildFallback(); }
+    renderOutput(plan);
+  } catch (e) {
+    renderOutput(buildFallback());
+  }
+}
+
+// ─── BUILD PROMPT ─────────────────────────────────────────────────────────────
+function buildPrompt() {
+  return `Please build a Charlotte Mason weekly and daily rhythm plan for this family:
+
+FAMILY: ${state.name || 'This family'} has ${state.numChildren} ${state.numChildren == 1 ? 'child' : 'children'}, ages ${state.ages}.
+CO-OP / OUTSIDE DAYS: ${state.coopDays || 'None'}
+ENERGY PATTERN: ${state.energy || 'Not specified'}
+CONSTRAINTS: ${state.constraints || 'None noted'}
+
+WHAT RESONATES WITH THEM: ${(state.cmResonates||[]).join(', ')}
+APPROACHES THEY DRAW FROM: ${(state.approaches||[]).join(', ')}
+THEIR BIGGEST STRUGGLE: ${(state.struggles||[]).join(', ')}
+
+SUBJECTS THEY TEACH: ${(state.subjects||[]).join(', ')}
+MUST HAPPEN DAILY: ${(state.dailyMust||[]).join(', ')}
+WHAT THEY WANT TO PROTECT: ${state.protect || 'Not specified'}
+
+DAY OPENS WITH: ${state.dayOpen || 'Not specified'}
+IDEAL SCHOOL DAY LENGTH: ${state.dayLength || 'Not specified'}
+HOW THEY HANDLE NON-DAILY SUBJECTS: ${state.loopStyle || 'Not specified'}
+TERM STRUCTURE: ${state.termStyle || 'Not specified'}
+ANYTHING ELSE: ${state.anything || 'Nothing additional'}
+
+Please create a specific, practical rhythm plan for ${state.name || 'this family'} that addresses their actual situation, speaks to their struggles, and gives them a real framework they can begin using this week.`;
+}
+
+// ─── FALLBACK ─────────────────────────────────────────────────────────────────
+function buildFallback() {
+  const name = state.name || 'your family';
+  return {
+    weeklyRhythm: {
+      title: "Your Weekly Shape",
+      body: `For ${name}, with ${state.coopDays || 'your current'} co-op commitment, the key is protecting your home days as deeply rhythmic rather than trying to replicate a five-day-a-week school. Think of your week as having two kinds of days: gathering days (when the family learns together) and tending days (when you follow the loop and do individual work). This distinction alone will reduce the feeling that you're always behind.`,
+      note: "A week with two distinct kinds of days is more restful than five days that all feel the same.",
+    },
+    dailyRhythm: {
+      title: "A Shape for Your Day",
+      body: `Based on your ${state.energy || 'energy pattern'}, your day likely works best when the most demanding lessons happen in the first half of school — not because the afternoon doesn't matter, but because attention is a resource that depletes. Open with Morning Time to gather everyone together, move into individual or intensive work, and save the afternoon for loop subjects, read-aloud, and outdoor time. This is not a rigid schedule — it is a shape.`,
+      note: "The rhythm works best when it has enough structure to hold the day without being so tight that one disruption collapses everything.",
+    },
+    morningTime: {
+      title: "Morning Time",
+      body: `Your Morning Time is the hearth of your school day — the place where the family gathers before they scatter. For ${name}, it should include at minimum: Scripture or a devotional reading, one poem read aloud (no narration required), and a piece of memory work. If you have room, add a hymn or folksong and a picture study rotation. Keep it to 20–30 minutes. The goal is not to cover content — it is to begin the day together with beauty.`,
+      note: "If Morning Time regularly runs over 30 minutes, something should move to the loop.",
+    },
+    loopPlan: {
+      title: "Your Loop Schedule",
+      body: `A loop schedule means you keep a running list of subjects that don't need to happen every day, and you simply work through the list in order — picking up wherever you left off. For ${name}, candidates for the loop include: ${(state.subjects||['History','Science','Geography','Artist Study']).filter(s => !(state.dailyMust||[]).includes(s)).slice(0,4).join(', ')}. You don't need to decide how many times per week each subject happens — the loop decides that for you. On a four-day home week, each subject will come up roughly twice.`,
+      note: "The loop removes the guilt of 'we didn't do science this week' — because you simply pick up science next, whenever next comes.",
+    },
+    outdoorNature: {
+      title: "Outdoor Time & Nature Study",
+      body: `Charlotte Mason believed children needed at least four to six hours outdoors per week — not structured nature study, but simply time outside with room to wander and notice. For ${name}, the goal is to protect a daily outdoor block, even a short one. Formal nature study — the nature walk, the nature journal, the nature lore reading — can rotate through your loop. But the daily outdoor time should be non-negotiable, even on difficult days.`,
+      note: "Outdoor time is not a reward for finishing school — it is part of the education.",
+    },
+    termStructure: {
+      title: "Terms & Rest Weeks",
+      body: `Your term structure shapes the whole year's rhythm. ${state.termStyle?.includes('5 weeks') ? 'The five-weeks-on, two-weeks-off pattern gives you six terms per year and a two-week rest between each — long enough to truly rest, short enough that momentum returns quickly.' : 'Whatever term structure you choose, protect the rest weeks. They are not lost school days — they are the fallow that makes the growing possible.'} Plan a slightly lighter final week of each term (a "feast week" or review week), and enter your rest week fully released from school.`,
+      note: "Rest weeks only work if you actually rest — resist the urge to catch up during them.",
+    },
+    readAloud: {
+      title: "Read-Aloud Rhythm",
+      body: `Read-aloud is the single most powerful thing you do in your homeschool. For ${name}, it should happen every day — not as a reward, not as the last thing, but as something protected. Consider having two read-alouds running simultaneously: one literary (a novel, a classic, a living book for history), and one for pleasure (something everyone loves, with no narration required). The pleasure read-aloud is what keeps the love of reading alive even on hard days.`,
+      note: "If you have to cut something on a hard day, read aloud last — and cut something else first.",
+    },
+    encouragement: {
+      title: "A Word for the Road",
+      body: `${name}, the rhythm you're building is not a performance — it's a container for a life. It will not look like anyone else's rhythm, and it shouldn't. The approaches you've drawn from have each given you something real: the feast, the habits, the narration, the read-aloud. The work now is to weave those threads into something that is genuinely yours — something that holds your family without crushing it. Begin with less than you think you need. Add slowly. Protect what matters most.`,
+      note: "The most faithful rhythm is the one you can sustain on your worst day, not the one that looks beautiful on your best day.",
+    },
+  };
+}
+
+// ─── RENDER OUTPUT ────────────────────────────────────────────────────────────
+function renderOutput(plan) {
+  document.getElementById('generating-card').classList.add('hidden');
+
+  document.getElementById('output-family-name').textContent =
+    `${state.name ? state.name + ' · ' : ''}${new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`;
+
+  const sectionsEl = document.getElementById('output-sections');
+  const SECTION_LABELS = {
+    weeklyRhythm:  "Weekly Shape",
+    dailyRhythm:   "Daily Rhythm",
+    morningTime:   "Morning Time",
+    loopPlan:      "Loop Schedule",
+    outdoorNature: "Outdoor & Nature",
+    termStructure: "Terms & Rest",
+    readAloud:     "Read Aloud",
+    encouragement: "A Word for the Road",
+  };
+
+  let html = '';
+  Object.entries(plan).forEach(([key, section]) => {
+    if (!section?.body) return;
+    html += `
+      <div class="rhythm-section fade-in">
+        <div class="section-label">${SECTION_LABELS[key] || key}</div>
+        <h3>${section.title || ''}</h3>
+        <div class="body">${section.body || ''}</div>
+        ${section.note ? `<div class="note">${section.note}</div>` : ''}
+      </div>
+    `;
+  });
+
+  sectionsEl.innerHTML = html;
+
+  const outputEl = document.getElementById('rhythm-output');
+  outputEl.classList.remove('hidden');
+
+  // Print bar
+  outputEl.insertAdjacentHTML('afterbegin', `
+    <div class="print-bar">
+      <p>Your rhythm is ready, ${state.name || 'friend'}.</p>
+      <div style="display:flex;gap:10px;">
+        <button class="btn-ghost" style="margin-top:0;padding:8px 16px;font-size:10px;" onclick="window.print()">Print / Save PDF</button>
+        <button class="btn-ghost" style="margin-top:0;padding:8px 16px;font-size:10px;" onclick="startOver()">Start over</button>
+      </div>
+    </div>
+  `);
+
+  document.getElementById('cta-section').classList.remove('hidden');
+  document.getElementById('progress-section').classList.add('hidden');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function startOver() {
+  Object.keys(state).forEach(k => delete state[k]);
+  document.getElementById('rhythm-output').classList.add('hidden');
+  document.getElementById('cta-section').classList.add('hidden');
+  document.getElementById('steps-container').classList.remove('hidden');
+  document.getElementById('hero-section').classList.remove('hidden');
+  document.getElementById('progress-section').classList.add('hidden');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
