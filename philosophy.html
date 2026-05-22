@@ -27,233 +27,161 @@
   <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --slate:      #2d3748;
-      --slate-mid:  #4a5568;
-      --sage:       #a9b786;
-      --light-sage: #eff4ea;
-      --gold:       #c29b61;
-      --cream:      #faf6ee;
-      --cream-dark: #f0ebe0;
-      --text-dark:  #2c2c2c;
-      --text-mid:   #4a5568;
-      --ff-display: 'IM Fell English', Georgia, serif;
-      --ff-body:    'Cormorant Garamond', Georgia, serif;
-      --ff-sans:    'Libre Baskerville', serif;
+      --slate: #4A5568; --slate-mid: #5D6B80; --sage-dark: #5C7A5C;
+      --sage: #A9B786; --sage-light: #EFF4EA; --cream: #FAF9F6;
+      --gold: #C29B61; --gold-light: #E8D5B0; --teal: #4A7C7E;
+      --ink: #3a3a3a; --muted: #7a7a7a; --border: #dfe5d8;
     }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--ff-body); color: var(--text-dark); background: var(--cream); line-height: 1.6; font-size: 18px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Cormorant Garamond', Georgia, serif; background: var(--cream); color: var(--ink); font-size: 18px; line-height: 1.7; }
     a { text-decoration: none; color: inherit; }
     img { display: block; max-width: 100%; }
-
-    .site-header { background: var(--slate); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 16px rgba(0,0,0,.25); }
-    .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 68px; }
-    .logo { font-family: var(--ff-display); font-size: 1.45rem; font-weight: 600; color: var(--cream); letter-spacing: .02em; }
-    .logo span { color: var(--gold); }
-    .nav-wrap { display: flex; align-items: center; gap: 1.5rem; }
-    .nav-link { font-family: var(--ff-sans); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(250,246,238,0.85); transition: color .2s; }
-    .nav-link:hover { color: var(--gold); }
-    .nav-link.active { color: var(--gold); }
-    .btn-shopnow { font-family: var(--ff-sans); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; background: var(--gold); color: var(--slate); border: none; border-radius: 4px; padding: .55rem 1.25rem; cursor: pointer; font-weight: 700; transition: background .2s, transform .1s; white-space: nowrap; display: inline-block; }
-    .btn-shopnow:hover { background: rgba(194,155,97,.85); transform: translateY(-1px); }
-    .social-bar { background: var(--light-sage); border-bottom: 1px solid rgba(169,183,134,.4); }
-    .social-bar-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 2rem; padding: .55rem 2rem; }
-    .social-link { font-family: var(--ff-sans); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--slate); display: flex; align-items: center; gap: .5rem; transition: color .2s; }
-    .social-link:hover { color: var(--sage); }
-    .social-link svg { width: 15px; height: 15px; }
-
-    .site-footer { background: var(--slate); padding: 4rem 2rem 2rem; border-top: 1px solid rgba(255,255,255,.07); }
-    .footer-inner { max-width: 1100px; margin: 0 auto; }
-    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.6fr; gap: 3rem; margin-bottom: 3rem; }
-    .footer-brand .logo { font-size: 1.3rem; margin-bottom: .75rem; }
-    .footer-tagline { font-family: var(--ff-body); font-size: .95rem; font-style: italic; color: rgba(250,246,238,.55); line-height: 1.7; }
-    .footer-col-title { font-family: var(--ff-sans); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
-    .footer-nav-list { list-style: none; }
-    .footer-nav-list li + li { margin-top: .55rem; }
-    .footer-nav-list a { font-family: var(--ff-body); font-size: .98rem; color: rgba(250,246,238,.65); transition: color .2s; }
-    .footer-nav-list a:hover { color: var(--cream); }
-    .footer-social-list { list-style: none; }
-    .footer-social-list li + li { margin-top: .65rem; }
-    .footer-social-list a { display: flex; align-items: center; gap: .6rem; font-family: var(--ff-body); font-size: .98rem; color: rgba(250,246,238,.65); transition: color .2s; }
-    .footer-social-list a:hover { color: var(--cream); }
-    .footer-social-list svg { width: 14px; height: 14px; flex-shrink: 0; }
-    .newsletter-desc { font-family: var(--ff-body); font-size: .9rem; color: rgba(250,246,238,.55); margin-bottom: 1rem; line-height: 1.6; }
-    .newsletter-input-wrap { display: flex; }
-    .newsletter-input { flex: 1; font-family: var(--ff-body); font-size: .9rem; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-right: none; border-radius: 4px 0 0 4px; color: var(--cream); padding: .65rem 1rem; outline: none; transition: border-color .2s; }
-    .newsletter-input::placeholder { color: rgba(250,246,238,.3); }
-    .newsletter-input:focus { border-color: var(--gold); }
-    .newsletter-submit { font-family: var(--ff-sans); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; background: var(--gold); color: var(--slate); border: none; border-radius: 0 4px 4px 0; padding: .65rem 1.1rem; cursor: pointer; font-weight: 700; transition: background .2s; white-space: nowrap; }
-    .newsletter-submit:hover { background: rgba(194,155,97,.85); }
-    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.07); margin-bottom: 1.5rem; }
-    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    .footer-copy { font-family: var(--ff-body); font-size: .85rem; color: rgba(250,246,238,.35); }
-    .footer-bottom-links { display: flex; gap: 1.5rem; }
-    .footer-bottom-links a { font-family: var(--ff-body); font-size: .85rem; color: rgba(250,246,238,.35); transition: color .2s; }
-    .footer-bottom-links a:hover { color: var(--cream); }
-
-    .phil-hero { background: linear-gradient(135deg, var(--cream) 0%, var(--light-sage) 55%, #d4e8c8 100%); padding: 6rem 2rem 5rem; position: relative; overflow: hidden; }
-    .phil-hero::before { content: '"'; position: absolute; top: -4rem; right: 2rem; font-family: var(--ff-display); font-size: 32rem; color: rgba(169,183,134,.1); line-height: 1; pointer-events: none; user-select: none; }
-    .phil-hero-inner { max-width: 820px; margin: 0 auto; position: relative; z-index: 1; text-align: center; }
-    .hero-logo-wrap { display: flex; justify-content: center; margin-bottom: 1.5rem; }
-    .hero-logo-img { width: 260px; height: 260px; object-fit: contain; display: block; }
-    .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
-    .phil-lead { margin: 0 auto; }
-    .phil-eyebrow { font-family: var(--ff-sans); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; }
-    .phil-title { font-family: var(--ff-display); font-size: clamp(2rem, 5vw, 3.6rem); font-style: italic; font-weight: 400; color: var(--slate); line-height: 1.1; margin-bottom: 1.5rem; }
-    .phil-title em { color: var(--gold); }
-    .phil-lead { font-family: var(--ff-body); font-size: 1.25rem; color: var(--text-mid); line-height: 1.85; max-width: 680px; }
-
-    .manifesto { background: var(--slate); padding: 5rem 2rem; position: relative; overflow: hidden; }
-    .manifesto::after { content: '✦'; position: absolute; bottom: 2rem; right: 3rem; font-size: 8rem; color: rgba(169,183,134,.06); pointer-events: none; }
-    .manifesto-inner { max-width: 780px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
-    .manifesto-rule { width: 48px; height: 2px; background: var(--gold); margin: 0 auto 2.5rem; }
-    .manifesto-text { font-family: var(--ff-display); font-size: clamp(1.4rem, 2.8vw, 2rem); font-style: italic; color: var(--cream); line-height: 1.75; }
-    .manifesto-text em { color: var(--gold); }
-    .manifesto-attr { font-family: var(--ff-sans); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--sage); margin-top: 1.75rem; }
-
-    .phil-section { padding: 5.5rem 2rem; }
-    .phil-section.alt { background: var(--light-sage); }
-    .phil-section.stripe { background: var(--cream-dark); }
-    .phil-inner { max-width: 1060px; margin: 0 auto; }
-    .gold-rule { width: 48px; height: 2px; background: var(--gold); margin-bottom: 1.5rem; }
-    .section-label { font-family: var(--ff-sans); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--sage); margin-bottom: .5rem; }
-    .section-title { font-family: var(--ff-display); font-size: 2.1rem; font-weight: 600; color: var(--slate); margin-bottom: 1rem; }
-    .section-body { font-family: var(--ff-body); font-size: 1.08rem; color: var(--text-mid); line-height: 1.9; }
+    nav { background: var(--slate); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; }
+    .nav-logo-wrap { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; }
+    .nav-logo-img { height: 40px; width: auto; opacity: 0.95; }
+    .nav-logo-text { font-family: 'Playfair Display', serif; color: var(--cream); font-size: 1rem; letter-spacing: 0.04em; line-height: 1.2; }
+    .nav-logo-text span { display: block; font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); font-family: 'Cormorant Garamond', serif; font-style: italic; }
+    .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { color: rgba(250,249,246,0.82); font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+    .nav-cta { background: var(--gold); color: var(--cream) !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; }
+    .nav-social { display: flex; gap: 1.25rem; align-items: center; }
+    .nav-social a { color: rgba(250,249,246,0.52); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-social a:hover { color: var(--gold-light); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--cream); border-radius: 2px; transition: all .25s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--slate); border-top: 1px solid rgba(255,255,255,0.1); padding: 1rem 2rem 1.5rem; z-index: 99; flex-direction: column; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { color: rgba(250,249,246,0.75); font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 0.2s; }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a:hover { color: var(--gold-light); }
+    .mobile-nav a.mobile-cta { color: var(--gold-light); font-weight: 600; }
+    .mobile-nav .mobile-divider { height: 1px; background: rgba(255,255,255,0.12); margin: 0.5rem 0; }
+    .phil-hero { background: var(--slate); color: var(--cream); padding: 4.5rem 2rem 4rem; text-align: center; }
+    .phil-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem; font-style: italic; }
+    .phil-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 400; line-height: 1.2; max-width: 600px; margin: 0 auto 1.1rem; color: var(--cream); }
+    .phil-title em { font-style: italic; color: var(--gold-light); }
+    .phil-lead { max-width: 480px; margin: 0 auto 2rem; color: rgba(250,249,246,0.72); font-size: 1rem; line-height: 1.65; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--gold); color: var(--cream); padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; font-weight: 600; display: inline-block; }
+    .btn-ghost { border: 1px solid rgba(250,249,246,0.3); color: rgba(250,249,246,0.82); padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; display: inline-block; }
+    .section-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; font-style: italic; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 400; color: var(--slate); margin-bottom: 1rem; }
+    .section-body { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--ink); line-height: 1.9; }
     .section-body p + p { margin-top: 1.1rem; }
-
+    .gold-rule { width: 40px; height: 2px; background: var(--gold); margin-bottom: 1.5rem; }
+    .phil-section { padding: 5rem 2rem; }
+    .phil-section.alt { background: var(--sage-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .phil-section.stripe { background: var(--cream); border-top: 1px solid var(--border); }
+    .phil-inner { max-width: 1000px; margin: 0 auto; }
     .prose-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2.5rem; align-items: start; }
-    .prose-pull { font-family: var(--ff-display); font-size: 1.45rem; font-style: italic; color: var(--slate); line-height: 1.6; border-left: 3px solid var(--gold); padding-left: 1.5rem; margin-top: 2rem; }
-    .prose-pull em { color: var(--gold); }
-
-    .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
-    .pillar-card { background: var(--cream); border-radius: 12px; padding: 2.25rem 2rem; box-shadow: 0 3px 20px rgba(45,55,72,.07); border-top: 3px solid var(--gold); transition: transform .3s, box-shadow .3s; }
-    .pillar-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(45,55,72,.12); }
+    .prose-pull { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-style: italic; color: var(--slate); line-height: 1.6; border-left: 3px solid var(--gold); padding-left: 1.5rem; margin-top: 2rem; }
+    .pull-quote { margin: 2.5rem 0 0; padding: 1.25rem 1.75rem; border-left: 3px solid var(--gold); background: rgba(194,155,97,0.06); border-radius: 0 6px 6px 0; }
+    .pull-quote p { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; color: var(--slate); line-height: 1.6; }
+    .pull-quote p em { color: var(--gold); font-style: normal; }
+    .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
+    .pillar-card { background: var(--cream); border-radius: 4px; padding: 2rem 1.75rem; box-shadow: 0 3px 16px rgba(74,85,104,0.08); border-top: 3px solid var(--gold); transition: transform .25s, box-shadow .25s; }
+    .pillar-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(74,85,104,0.13); }
     .pillar-card:nth-child(2) { border-color: var(--sage); }
     .pillar-card:nth-child(3) { border-color: var(--gold); }
     .pillar-card:nth-child(4) { border-color: var(--sage); }
-    .pillar-card:nth-child(5) { border-color: var(--gold); }
-    .pillar-num { font-family: var(--ff-display); font-size: 3rem; font-style: italic; color: var(--light-sage); line-height: 1; margin-bottom: .5rem; }
-    .pillar-title { font-family: var(--ff-display); font-size: 1.35rem; font-weight: 600; color: var(--slate); margin-bottom: .75rem; }
-    .pillar-desc { font-family: var(--ff-body); font-size: 1rem; color: var(--text-mid); line-height: 1.75; }
-
-    .thinkers-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; }
-    .thinker-chip { font-family: var(--ff-body); font-size: 1rem; font-style: italic; color: var(--slate); background: var(--cream); border: 1px solid rgba(169,183,134,.5); border-radius: 100px; padding: .5rem 1.25rem; transition: background .2s, border-color .2s; }
-    .thinker-chip:hover { background: var(--light-sage); border-color: var(--sage); }
-    .great-conv-quote { margin-top: 3rem; background: var(--cream); border-radius: 12px; padding: 2.5rem 3rem; box-shadow: 0 3px 20px rgba(45,55,72,.07); position: relative; }
-    .great-conv-quote::before { content: '"'; position: absolute; top: -.5rem; left: 1.5rem; font-family: var(--ff-display); font-size: 6rem; color: rgba(169,183,134,.25); line-height: 1; }
-    .great-conv-quote p { font-family: var(--ff-display); font-size: 1.3rem; font-style: italic; color: var(--slate); line-height: 1.7; position: relative; z-index: 1; }
-    .great-conv-quote cite { display: block; font-family: var(--ff-sans); font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: var(--sage); margin-top: 1rem; font-style: normal; }
-
+    .pillar-card:nth-child(5) { border-color: var(--teal); }
+    .pillar-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-style: italic; color: var(--border); line-height: 1; margin-bottom: 0.5rem; }
+    .pillar-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 400; color: var(--slate); margin-bottom: 0.65rem; }
+    .pillar-desc { font-family: 'Cormorant Garamond', serif; font-size: 0.97rem; color: var(--muted); line-height: 1.75; }
+    .thinkers-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+    .thinker-chip { font-family: 'Cormorant Garamond', serif; font-size: 0.97rem; font-style: italic; color: var(--slate); background: var(--cream); border: 1px solid var(--border); border-radius: 100px; padding: 0.4rem 1.1rem; transition: background .2s, border-color .2s; }
+    .thinker-chip:hover { background: var(--sage-light); border-color: var(--sage); }
+    .great-conv-quote { margin-top: 2.5rem; background: var(--cream); border-radius: 4px; padding: 2rem 2.5rem; box-shadow: 0 3px 16px rgba(74,85,104,0.08); border-left: 3px solid var(--sage); }
+    .great-conv-quote p { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic; color: var(--slate); line-height: 1.7; }
+    .great-conv-quote cite { display: block; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.85rem; font-style: normal; }
     .narration-bridge { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2.5rem; align-items: start; }
-    .narration-bridge-visual { background: var(--cream); border-radius: 12px; padding: 2rem; box-shadow: 0 3px 20px rgba(45,55,72,.07); }
+    .narration-bridge-visual { background: var(--sage-light); border-radius: 4px; padding: 2rem; border: 1px solid var(--border); }
     .narration-bridge-visual .section-body p + p { margin-top: 1.1rem; }
-    .pull-quote { margin: 2.5rem 0 0; padding: 1.5rem 2rem; border-left: 3px solid var(--gold); background: rgba(194,155,97,.06); border-radius: 0 8px 8px 0; }
-    .pull-quote p { font-family: var(--ff-display); font-size: 1.25rem; font-style: italic; color: var(--slate); line-height: 1.65; }
-    .pull-quote p em { color: var(--gold); font-style: normal; }
-
-    .phil-cta { background: linear-gradient(135deg, var(--cream) 0%, var(--light-sage) 100%); padding: 5rem 2rem; text-align: center; border-top: 1px solid rgba(169,183,134,.3); }
-    .phil-cta-inner { max-width: 600px; margin: 0 auto; }
-    .phil-cta-title { font-family: var(--ff-display); font-size: 2.2rem; font-style: italic; color: var(--slate); margin-bottom: 1rem; }
-    .phil-cta-body { font-family: var(--ff-body); font-size: 1.1rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 2rem; }
+    .phil-cta { background: var(--slate); padding: 5rem 2rem; text-align: center; }
+    .phil-cta-inner { max-width: 560px; margin: 0 auto; }
+    .phil-cta-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-style: italic; color: var(--cream); margin-bottom: 0.85rem; font-weight: 400; }
+    .phil-cta-body { font-size: 1rem; color: rgba(250,249,246,0.68); line-height: 1.7; margin-bottom: 2rem; }
     .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { font-family: var(--ff-sans); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; background: var(--gold); color: var(--slate); border: none; border-radius: 4px; padding: .85rem 2rem; font-weight: 700; cursor: pointer; transition: background .2s, transform .15s; display: inline-block; }
-    .btn-primary:hover { background: rgba(194,155,97,.85); transform: translateY(-2px); }
-    .btn-outline { font-family: var(--ff-sans); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; background: transparent; color: var(--slate-mid); border: 1.5px solid rgba(74,85,104,.3); border-radius: 4px; padding: .85rem 2rem; font-weight: 700; cursor: pointer; transition: border-color .2s, color .2s, transform .15s; display: inline-block; }
-    .btn-outline:hover { border-color: var(--sage); color: var(--slate); transform: translateY(-2px); }
-
-    @media (max-width: 860px) {
+    .bridge-section { background: var(--slate-mid); color: var(--cream); }
+    .bridge-section .section-label { color: var(--gold-light); }
+    .bridge-section .section-title { color: var(--cream); }
+    .bridge-section .section-body { color: rgba(250,249,246,0.78); }
+    footer { background: var(--slate); border-top: 1px solid rgba(255,255,255,0.08); color: rgba(250,249,246,0.65); padding: 3rem 1.5rem 2rem; }
+    .footer-inner { max-width: 880px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+    .footer-logo { height: 36px; width: auto; filter: brightness(0) invert(1); opacity: 0.65; margin-bottom: 0.75rem; display: block; }
+    .footer-brand p { font-size: 0.84rem; color: rgba(250,249,246,0.5); line-height: 1.65; }
+    .footer-nav h4, .footer-connect h4 { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.85rem; }
+    .footer-nav ul, .footer-connect ul { list-style: none; }
+    .footer-nav li, .footer-connect li { margin-bottom: 0.45rem; }
+    .footer-nav a, .footer-connect a { color: rgba(250,249,246,0.52); font-size: 0.9rem; transition: color 0.2s; }
+    .footer-nav a:hover, .footer-connect a:hover { color: var(--gold-light); }
+    .footer-email { margin-top: 1.5rem; }
+    .footer-email p { font-size: 0.78rem; color: rgba(250,249,246,0.42); margin-bottom: 0.5rem; font-style: italic; }
+    .footer-email-row { display: flex; gap: 0.5rem; }
+    .footer-email-row input { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); color: var(--cream); padding: 0.4rem 0.75rem; font-size: 0.85rem; border-radius: 2px; flex: 1; font-family: 'Cormorant Garamond', serif; }
+    .footer-email-row button { background: var(--gold); color: var(--slate); border: none; padding: 0.4rem 0.9rem; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-weight: 700; }
+    .footer-bottom { max-width: 880px; margin: 2rem auto 0; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; font-size: 0.72rem; color: rgba(250,249,246,0.3); }
+    .footer-bottom a { color: rgba(250,249,246,0.35); }
+    @media (max-width: 720px) {
+      .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; }
       .prose-two-col { grid-template-columns: 1fr; gap: 2rem; }
       .narration-bridge { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-    }
-    @media (max-width: 640px) {
-      html, body { overflow-x: hidden; width: 100%; }
-      *, *::before, *::after { box-sizing: border-box; }
-      .header-inner { padding: 0 1.1rem; }
-      .nav-wrap { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-        background: var(--slate); flex-direction: column; align-items: center;
-        justify-content: center; gap: 2rem; z-index: 999; }
-      .nav-wrap.mobile-open { display: flex; }
-      .nav-wrap .nav-link { color: var(--cream); font-size: 1.2rem; }
-      .nav-wrap .btn-shopnow { background: var(--gold); color: var(--slate); padding: .7rem 1.8rem; }
-      .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer;
-        background: none; border: none; padding: .4rem; z-index: 1000; }
-      .hamburger span { display: block; width: 24px; height: 2px; background: var(--cream); border-radius: 2px; transition: .3s; }
-      .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-      .hamburger.open span:nth-child(2) { opacity: 0; }
-      .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-      .phil-hero { padding: 3.5rem 1.2rem 3rem; }
-      .phil-hero::before { font-size: 16rem; }
-      .manifesto { padding: 3.5rem 1.2rem; }
-      .phil-section { padding: 3.5rem 1.2rem; }
-      .great-conv-quote { padding: 2rem 1.5rem; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: .6rem; text-align: center; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; }
+      .phil-section { padding: 3.5rem 1.25rem; }
+      .phil-hero { padding: 3.5rem 1.25rem 3rem; }
     }
   </style>
 </head>
 <body>
 
-<header class="site-header" role="banner">
-  <div class="header-inner">
-    <a href="index.html" class="logo">Delight <span>&amp;</span> Savor</a>
-    <nav class="nav-wrap" aria-label="Primary navigation">
-      <a href="philosophy.html" class="nav-link active">Philosophy</a>
-      <a href="curriculum.html" class="nav-link">Curriculum</a>
-      <a href="teachers-notebook.html" class="nav-link">Teacher&#8217;s Notebook</a>
-      <a href="faq.html" class="nav-link">FAQ</a>
-      <a href="curriculum.html" class="btn-shopnow">Shop Now</a>
-    </nav>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+<nav>
+  <a href="/" class="nav-logo-wrap">
+    <img src="/images/ds_icon.png" alt="Delight &amp; Savor" class="nav-logo-img" />
+    <div class="nav-logo-text">
+      Delight &amp; Savor
+      <span>Beauty. Meaning. Connection.</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/philosophy" class="active">Philosophy</a></li>
+    <li><a href="/curriculum">Curriculum</a></li>
+    <li><a href="/teachers-notebook">Teacher&#8217;s Notebook</a></li>
+    <li><a href="/faq">FAQ</a></li>
+    <li><a href="/curriculum" class="nav-cta">Shop Now</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="https://instagram.com/Kim.delightandsavor">Instagram</a>
+    <a href="https://pinterest.com">Pinterest</a>
+    <a href="https://delightandsavor.substack.com">Substack</a>
   </div>
-</header>
-
-<div class="social-bar">
-  <div class="social-bar-inner">
-    <a href="https://instagram.com/Kim.delightandsavor" class="social-link" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-      Instagram
-    </a>
-    <a href="https://pinterest.com" class="social-link" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.64 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.132-1.867 3.132-4.563 0-2.387-1.715-4.055-4.163-4.055-2.836 0-4.5 2.127-4.5 4.326 0 .856.33 1.775.741 2.276a.3.3 0 01.069.286c-.076.315-.245 1-.278 1.139-.044.183-.146.222-.337.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
-      Pinterest
-    </a>
-    <a href="https://delightandsavor.substack.com" class="social-link" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
-      Substack
-    </a>
-  </div>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/philosophy" onclick="toggleMenu()">Philosophy</a>
+  <a href="/curriculum" onclick="toggleMenu()">Curriculum</a>
+  <a href="/teachers-notebook" onclick="toggleMenu()">Teacher&#8217;s Notebook</a>
+  <a href="/faq" onclick="toggleMenu()">FAQ</a>
+  <div class="mobile-divider"></div>
+  <a href="https://instagram.com/Kim.delightandsavor" onclick="toggleMenu()">Instagram</a>
+  <a href="https://delightandsavor.substack.com" onclick="toggleMenu()">Substack</a>
+  <div class="mobile-divider"></div>
+  <a href="/curriculum" class="mobile-cta" onclick="toggleMenu()">Shop Now &rarr;</a>
 </div>
 
 <section class="phil-hero" aria-labelledby="phil-title">
-  <div class="phil-hero-inner">
-    <h1 class="visually-hidden" id="phil-title">The Why Behind Every Unit — Delight &amp; Savor</h1>
-    <div class="hero-logo-wrap">
-      <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1774316147/D_S_Primary_Logo-_Transparent_p0ulxh.png"
-           alt="Delight &amp; Savor — Beauty. Meaning. Connection."
-           class="hero-logo-img" />
-    </div>
-    <p class="phil-eyebrow">The Philosophy Behind Every Unit</p>
-    <p class="phil-lead">
-      Charlotte Mason believed that children — and older students — deserve to encounter
-      the best that has been thought and written. Not simplified. Not pre-digested.
-      Not reduced to a worksheet. The <em>thing itself.</em>
-    </p>
-  </div>
-</section>
-
-<section class="manifesto" aria-label="Opening statement">
-  <div class="manifesto-inner">
-    <div class="manifesto-rule"></div>
-    <p class="manifesto-text">
-      Literature and language arts are the table at which a student learns to think —
-      not just about <em>what</em> a text says, but about what it means to be human,
-      what it means to love well, and what it means to live with conviction.
-    </p>
-    <p class="manifesto-attr">— On the Delight &amp; Savor Approach</p>
+  <p class="phil-eyebrow">Upper-Level Charlotte Mason Literature &middot; Grades 9&#8211;12</p>
+  <h1 class="phil-title" id="phil-title">The <em>Why</em> Behind Every Unit</h1>
+  <p class="phil-lead">Charlotte Mason believed students deserve to encounter the best that has been thought and written — not simplified, not pre-digested, but the <em>thing itself.</em></p>
+  <div class="hero-btns">
+    <a href="/curriculum" class="btn-primary">Browse the Curriculum</a>
+    <a href="/teachers-notebook" class="btn-ghost">Teacher&#8217;s Notebook</a>
   </div>
 </section>
 
@@ -420,78 +348,58 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="site-footer" role="contentinfo">
+<footer>
   <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="logo">Delight <span style="color:var(--gold)">&amp;</span> Savor</div>
-        <p class="footer-tagline">Charlotte Mason upper-level literature and language arts for the student who is ready to read deeply.</p>
-      </div>
-      <div>
-        <p class="footer-col-title">Navigate</p>
-        <ul class="footer-nav-list">
-          <li><a href="philosophy.html">Philosophy</a></li>
-          <li><a href="curriculum.html">Curriculum</a></li>
-          <li><a href="teachers-notebook.html">Teacher&#8217;s Notebook</a></li>
-          <li><a href="https://delightnsavor.gumroad.com/l/xtqtpv" target="_blank" rel="noopener">Shop</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-col-title">Connect</p>
-        <ul class="footer-social-list">
-          <li><a href="https://instagram.com/Kim.delightandsavor" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</a></li>
-          <li><a href="https://pinterest.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.64 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.132-1.867 3.132-4.563 0-2.387-1.715-4.055-4.163-4.055-2.836 0-4.5 2.127-4.5 4.326 0 .856.33 1.775.741 2.276a.3.3 0 01.069.286c-.076.315-.245 1-.278 1.139-.044.183-.146.222-.337.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>Pinterest</a></li>
-          <li><a href="https://delightandsavor.substack.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>Substack</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-col-title">From the Ranch &amp; the Desk</p>
-        <p class="newsletter-desc">One monthly letter: what I&#8217;m teaching, what I&#8217;m reading, and what&#8217;s new in the shop.</p>
-        <form onsubmit="handleNewsletter(event)">
-          <div class="newsletter-input-wrap">
-            <input type="email" id="footer-email" class="newsletter-input" placeholder="your@email.com" required />
-            <button type="submit" class="newsletter-submit">Subscribe</button>
-          </div>
-          <p id="newsletter-msg" style="font-family:var(--ff-body);font-size:.82rem;color:var(--sage);margin-top:.6rem;min-height:1.2em"></p>
-        </form>
+    <div class="footer-brand">
+      <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1774316147/D_S_Primary_Logo-_Transparent_p0ulxh.png" alt="Delight &amp; Savor" class="footer-logo" />
+      <p>Charlotte Mason upper-level literature and language arts for the student who is ready to read deeply.</p>
+      <div class="footer-email">
+        <p>From the Ranch &amp; the Desk &#8212; one monthly letter.</p>
+        <div class="footer-email-row">
+          <input type="email" placeholder="Email address" />
+          <button type="button">Subscribe</button>
+        </div>
       </div>
     </div>
-    <hr class="footer-divider" />
-    <div class="footer-bottom">
-      <p class="footer-copy">&copy; <span id="yr"></span> Delight &amp; Savor Press &middot; All rights reserved &middot; All digital sales final.</p>
-      <nav class="footer-bottom-links">
-        <a href="faq.html#returns">Returns Policy</a>
-        <a href="faq.html#contact">Contact</a>
-      </nav>
+    <nav class="footer-nav">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="/philosophy">Philosophy</a></li>
+        <li><a href="/curriculum">Curriculum</a></li>
+        <li><a href="/teachers-notebook">Teacher&#8217;s Notebook</a></li>
+        <li><a href="https://delightnsavor.gumroad.com/l/xtqtpv">Shop</a></li>
+        <li><a href="/faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="footer-connect">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://instagram.com/Kim.delightandsavor">Instagram</a></li>
+        <li><a href="https://pinterest.com">Pinterest</a></li>
+        <li><a href="https://delightandsavor.substack.com">Substack</a></li>
+      </ul>
     </div>
   </div>
+  <div class="footer-bottom">
+    <span>&copy; Delight &amp; Savor Press &middot; All rights reserved &middot; All digital sales final.</span>
+    <span><a href="/faq#returns">Returns Policy</a> &nbsp;&middot;&nbsp; <a href="/faq#contact">Contact</a></span>
+  </div>
 </footer>
-
 <script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
-  function handleNewsletter(e) {
-    e.preventDefault();
-    document.getElementById('newsletter-msg').textContent = 'Thank you! ✦';
-    document.getElementById('footer-email').value = '';
+function toggleMenu() {
+  const btn = document.getElementById('hamburger');
+  const nav = document.getElementById('mobile-nav');
+  btn.classList.toggle('open');
+  nav.classList.toggle('open');
+}
+document.addEventListener('click', (e) => {
+  const btn = document.getElementById('hamburger');
+  const nav = document.getElementById('mobile-nav');
+  if (nav?.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) {
+    btn.classList.remove('open');
+    nav.classList.remove('open');
   }
-  (function(){
-    var btn = document.getElementById('hamburger');
-    var nav = document.querySelector('.nav-wrap');
-    if (!btn || !nav) return;
-    btn.addEventListener('click', function() {
-      var open = nav.classList.toggle('mobile-open');
-      btn.classList.toggle('open', open);
-      btn.setAttribute('aria-expanded', String(open));
-    });
-    nav.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() {
-        nav.classList.remove('mobile-open');
-        btn.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-      });
-    });
-  })();
+});
 </script>
 </body>
 </html>
