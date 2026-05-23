@@ -29,6 +29,7 @@
           ${navLink('curriculum.html','Curriculum')}
           ${navLink('teachers-notebook.html','Teacher\'s Notebook')}
           ${navLink('faq.html','FAQ')}
+          ${navLink('conversation-quilt.html','Conversation Quilt')}
         </ul>
       </div>
       <a href="curriculum.html" class="btn-shopnow">Shop Now</a>
