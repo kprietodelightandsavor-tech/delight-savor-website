@@ -126,6 +126,22 @@
     .footer-email-row button { background: var(--gold); color: var(--slate); border: none; padding: 0.4rem 0.9rem; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-weight: 700; }
     .footer-bottom { max-width: 880px; margin: 2rem auto 0; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; font-size: 0.72rem; color: rgba(250,249,246,0.3); }
     .footer-bottom a { color: rgba(250,249,246,0.35); }
+
+    .capstone-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
+    .capstone-card { background: var(--cream); border-radius: 4px; padding: 2rem 1.75rem; box-shadow: 0 3px 16px rgba(74,85,104,0.08); border-top: 3px solid var(--teal); }
+    .capstone-card:nth-child(2) { border-color: var(--gold); }
+    .capstone-card:nth-child(3) { border-color: var(--sage); }
+    .capstone-card:nth-child(4) { border-color: var(--teal); }
+    .capstone-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-style: italic; color: var(--border); line-height: 1; margin-bottom: 0.5rem; }
+    .capstone-card-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 400; color: var(--slate); margin-bottom: 0.65rem; }
+    .capstone-card-body { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--muted); line-height: 1.8; }
+    .capstone-card-body em { color: var(--ink); font-style: italic; }
+    .capstone-celebrate { background: var(--slate); border-radius: 4px; padding: 2.5rem 3rem; margin-top: 0.5rem; }
+    .capstone-celebrate-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .capstone-celebrate-inner .section-label { color: var(--gold-light); }
+    .capstone-celebrate-inner p { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic; color: rgba(250,249,246,0.85); line-height: 1.75; }
+    .capstone-celebrate-inner p em { color: var(--gold-light); font-style: normal; }
+    @media (max-width: 720px) { .capstone-grid { grid-template-columns: 1fr; } .capstone-celebrate { padding: 2rem 1.5rem; } }
     @media (max-width: 720px) {
       .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; }
       .prose-two-col { grid-template-columns: 1fr; gap: 2rem; }
@@ -152,6 +168,7 @@
     <li><a href="/curriculum">Curriculum</a></li>
     <li><a href="/teachers-notebook">Teacher&#8217;s Notebook</a></li>
     <li><a href="/faq">FAQ</a></li>
+    <li><a href="/conversation-quilt">Conversation Quilt</a></li>
     <li><a href="/curriculum" class="nav-cta">Shop Now</a></li>
   </ul>
   <div class="nav-social">
@@ -168,6 +185,7 @@
   <a href="/curriculum" onclick="toggleMenu()">Curriculum</a>
   <a href="/teachers-notebook" onclick="toggleMenu()">Teacher&#8217;s Notebook</a>
   <a href="/faq" onclick="toggleMenu()">FAQ</a>
+  <a href="/conversation-quilt" onclick="toggleMenu()">Conversation Quilt</a>
   <div class="mobile-divider"></div>
   <a href="https://instagram.com/Kim.delightandsavor" onclick="toggleMenu()">Instagram</a>
   <a href="https://delightandsavor.substack.com" onclick="toggleMenu()">Substack</a>
@@ -306,6 +324,53 @@
   </div>
 </section>
 
+
+<!-- SECTION: THE CAPSTONE -->
+<section class="phil-section alt" aria-labelledby="capstone-title">
+  <div class="phil-inner">
+    <div class="gold-rule"></div>
+    <p class="section-label">The Heart of Every Course</p>
+    <h2 class="section-title" id="capstone-title">The Capstone — Where Students Enter the Great Conversation</h2>
+    <p class="section-body" style="max-width:700px; margin-bottom: 2.5rem;">At the heart of every Delight &amp; Savor course is a single piece of unified work that grows across the entire term. We call it The Capstone — and it&#8217;s where literature stops being a school subject and becomes a real conversation across centuries.</p>
+
+    <div class="capstone-grid">
+
+      <div class="capstone-card">
+        <div class="capstone-num">01</div>
+        <h3 class="capstone-card-title">They Choose the Thread</h3>
+        <p class="capstone-card-body">A Delight &amp; Savor course doesn&#8217;t tell students what to care about. They choose. Usually a character — Curley&#8217;s wife, Crooks, Heathcliff, Catherine, Lady Macbeth. Often something specific that pulled at them: a choice the character made, a longing they carry, a way they were shaped by forces larger than themselves. From the first week of the course, each student is following one thread through the book.</p>
+      </div>
+
+      <div class="capstone-card">
+        <div class="capstone-num">02</div>
+        <h3 class="capstone-card-title">They Read with a Great Thinker</h3>
+        <p class="capstone-card-body">A Delight &amp; Savor student never reads a great book alone. In the <em>Of Mice and Men</em> summer course, they read alongside Camus and Sartre — holding Steinbeck&#8217;s small, hard story beside the existentialist question of what it means to live with conviction in a world that gives few good choices. In The Art of Tragedy, they read <em>Macbeth</em> and <em>Wuthering Heights</em> alongside Augustine, Aristotle, and Rousseau — disordered love, virtue and habit, the natural self against the civilized one.</p>
+      </div>
+
+      <div class="capstone-card">
+        <div class="capstone-num">03</div>
+        <h3 class="capstone-card-title">The Books Speak to Each Other, Too</h3>
+        <p class="capstone-card-body">In a yearlong course, the second book never starts fresh. When students open <em>Wuthering Heights</em> in spring, they bring <em>Macbeth</em> with them — Macbeth&#8217;s questions about love and ambition still hovering, now answered differently by Heathcliff and Catherine. The Capstone follows that conversation. Students don&#8217;t just speak back to the thinkers; they trace how the books themselves speak to each other across a whole year of reading.</p>
+      </div>
+
+      <div class="capstone-card">
+        <div class="capstone-num">04</div>
+        <h3 class="capstone-card-title">They Work Across Modes</h3>
+        <p class="capstone-card-body">Each week brings a small artifact — and each one stretches a different faculty. A first-impression sketch. A letter written in a character&#8217;s voice. A short paragraph holding the book beside a philosopher. A scene rewritten from a new angle. A haiku that distills a person to seventeen syllables. A final portrait — watercolor, image, and reflection — that gathers everything. Not isolated exercises on a machine, where one muscle moves at a time. Every artifact engages observation, voice, conviction, craft, and synthesis at once. Small fibers, deep stabilizers, the whole student strengthening together.</p>
+      </div>
+
+    </div>
+
+    <div class="capstone-celebrate">
+      <div class="capstone-celebrate-inner">
+        <p class="section-label" style="text-align:center; margin-bottom: 0.75rem;">They Celebrate</p>
+        <p>At the end, students don&#8217;t turn in a five-paragraph essay. They share a body of work that proves they were really there — really thinking, really reading, really part of the conversation. The yearlong courses build all of this toward a final composition; the summer courses arrive at a portrait. Either way, the student leaves not just having learned <em>about</em> great thinkers — but having spoken back to them.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- SECTION 4: NARRATION TO ARGUMENT -->
 <section class="phil-section" aria-labelledby="bridge-title">
   <div class="phil-inner">
@@ -367,6 +432,7 @@
         <li><a href="/philosophy">Philosophy</a></li>
         <li><a href="/curriculum">Curriculum</a></li>
         <li><a href="/teachers-notebook">Teacher&#8217;s Notebook</a></li>
+        <li><a href="/conversation-quilt">Conversation Quilt</a></li>
         <li><a href="https://delightnsavor.gumroad.com/l/xtqtpv">Shop</a></li>
         <li><a href="/faq">FAQ</a></li>
       </ul>
