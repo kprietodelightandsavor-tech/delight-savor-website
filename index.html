@@ -2,637 +2,1034 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="google-site-verification" content="RQVt5mOKDMqQU_8mpiTGS-az0YpgjZAuPHKsKTuCVCk" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Delight &amp; Savor &middot; Charlotte Mason Upper School Literature</title>
+  <title>Delight & Savor · Charlotte Mason Upper School Literature</title>
+  <!-- ── SEO + OPEN GRAPH + PINTEREST ──
+       TODO: Replace og:image with a branded 1200×630 flat-lay photo for best results.
+       Current placeholder: Wuthering Heights cover via Cloudinary. -->
+  <meta name="description" content="Living literature and language arts for grades 9–12. Charlotte Mason-inspired companions for Macbeth, Wuthering Heights, and more. Narration, DELIGHT framework, and thesis-ready writing." />
+  <meta name="keywords" content="Charlotte Mason, homeschool literature, upper school English, living books, narration, Macbeth, Wuthering Heights, literature companion, co-op curriculum, grades 9-12" />
+  <meta name="author" content="Delight &amp; Savor Press" />
+  <link rel="canonical" href="https://delightandsavor.com/index.html" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Delight &amp; Savor" />
+  <meta property="og:title" content="Delight & Savor · Charlotte Mason Upper School Literature" />
+  <meta property="og:description" content="Living literature and language arts for grades 9–12. Charlotte Mason-inspired companions for Macbeth, Wuthering Heights, and more. Narration, DELIGHT framework, and thesis-ready writing." />
+  <meta property="og:url" content="https://delightandsavor.com/index.html" />
+  <meta property="og:image" content="https://res.cloudinary.com/dwdbmowur/image/upload/v1772975874/IMG_7781_jpg_2_pgmwq4.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Delight &amp; Savor — Charlotte Mason upper school literature curriculum" />
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Delight & Savor · Charlotte Mason Upper School Literature" />
+  <meta name="twitter:description" content="Living literature and language arts for grades 9–12. Charlotte Mason-inspired companions for Macbeth, Wuthering Heights, and more. Narration, DELIGHT framework, and thesis-ready writing." />
+  <meta name="twitter:image" content="https://res.cloudinary.com/dwdbmowur/image/upload/v1772975874/IMG_7781_jpg_2_pgmwq4.jpg" />
+  <!-- Pinterest -->
+  <meta name="pinterest-rich-pin" content="true" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="/images/ds_icon.png" />
-  <link rel="apple-touch-icon" href="/images/ds_icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" />
   <style>
+    /* ─── CSS VARIABLES ─────────────────────────────────── */
     :root {
-      --slate: #4A5568;
-      --slate-mid: #5D6B80;
-      --sage-dark: #5C7A5C;
-      --sage: #A9B786;
-      --sage-light: #EFF4EA;
-      --cream: #FAF9F6;
-      --gold: #C29B61;
-      --gold-light: #E8D5B0;
-      --teal: #4A7C7E;
-      --ink: #3a3a3a;
-      --muted: #7a7a7a;
-      --border: #dfe5d8;
+      --slate:       #2d3748;
+      --slate-mid:   #4a5568;
+      --sage:        #a9b786;
+      --light-sage:  #eff4ea;
+      --gold:        #c29b61;
+      --cream:       #faf6ee;
+      --text-dark:   #2c2c2c;
+      --text-mid:    #4a5568;
+
+      --ff-display: 'Playfair Display', Georgia, serif;
+      --ff-body:    'Cormorant Garamond', Georgia, serif;
+      --ff-sans:    'Libre Baskerville', serif;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ─── RESET & BASE ──────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-family: var(--ff-body);
+      color: var(--text-dark);
       background: var(--cream);
-      color: var(--ink);
+      line-height: 1.6;
       font-size: 18px;
-      line-height: 1.7;
     }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
 
-    /* NAV */
-    nav {
+    /* ─── HEADER ────────────────────────────────────────── */
+    .site-header {
       background: var(--slate);
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 68px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 16px rgba(0,0,0,.25);
     }
-    .nav-logo-wrap {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      text-decoration: none;
+    .header-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 68px;
     }
-    .nav-logo-img {
-      height: 40px;
-      width: auto;
-      opacity: 0.95;
-    }
-    .nav-logo-text {
-      font-family: 'Playfair Display', serif;
+    .logo {
+      font-family: var(--ff-display);
+      font-size: 1.45rem;
+      font-weight: 600;
       color: var(--cream);
-      font-size: 1rem;
-      letter-spacing: 0.04em;
-      line-height: 1.2;
+      letter-spacing: .02em;
+      white-space: nowrap;
     }
-    .nav-logo-text span {
-      display: block;
-      font-size: 0.58rem;
-      letter-spacing: 0.15em;
+    .logo span { color: var(--gold); }
+
+    /* ── NAV / DROPDOWN ── */
+    .nav-wrap { display: flex; align-items: center; gap: .15rem; }
+    .nav-link {
+      font-family: var(--ff-sans); font-size: .7rem; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--sage);
+      padding: .4rem .65rem; border-radius: 4px;
+      transition: color .2s, background .2s; white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--cream); background: rgba(255,255,255,.07); }
+    .nav-link.active { color: var(--cream); }
+
+    .btn-shopnow {
+      font-family: var(--ff-sans);
+      font-size: .75rem;
+      letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--gold-light);
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-    }
-    .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
-    .nav-links a {
-      color: rgba(250,249,246,0.82);
-      text-decoration: none;
-      font-size: 0.82rem;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--gold-light); }
-    .nav-cta {
       background: var(--gold);
-      color: var(--cream) !important;
-      padding: 0.4rem 1.1rem;
-      border-radius: 2px;
-      font-weight: 600;
-    }
-    .nav-social { display: flex; gap: 1.25rem; align-items: center; }
-    .nav-social a {
-      color: rgba(250,249,246,0.52);
-      text-decoration: none;
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-social a:hover { color: var(--gold-light); }
-
-    /* HAMBURGER */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--cream);
-      border-radius: 2px;
-      transition: all .25s;
-    }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* MOBILE DRAWER */
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      top: 68px;
-      left: 0;
-      right: 0;
-      background: var(--slate);
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding: 1rem 2rem 1.5rem;
-      z-index: 99;
-      flex-direction: column;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a {
-      color: rgba(250,249,246,0.75);
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.85rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      transition: color 0.2s;
-    }
-    .mobile-nav a:last-child { border-bottom: none; }
-    .mobile-nav a:hover { color: var(--gold-light); }
-    .mobile-nav a.mobile-cta {
-      color: var(--gold-light);
-      font-weight: 600;
-    }
-    .mobile-nav .mobile-divider {
-      height: 1px;
-      background: rgba(255,255,255,0.12);
-      margin: 0.5rem 0;
-    }
-
-    /* HERO */
-    .hero {
-      background: var(--slate);
-      color: var(--cream);
-      padding: 3.75rem 2rem 3.25rem;
-      text-align: center;
-    }
-    .hero .eyebrow {
-      font-size: 0.7rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 1rem;
-      font-style: italic;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.9rem, 4.5vw, 3rem);
-      font-weight: 400;
-      line-height: 1.2;
-      max-width: 600px;
-      margin: 0 auto 1.1rem;
-    }
-    .hero h1 em { font-style: italic; color: var(--gold-light); }
-    .hero p {
-      max-width: 460px;
-      margin: 0 auto 2rem;
-      color: rgba(250,249,246,0.72);
-      font-size: 1rem;
-      line-height: 1.65;
-    }
-    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--gold);
-      color: var(--cream);
-      text-decoration: none;
-      padding: 0.65rem 1.75rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-radius: 2px;
-      font-weight: 600;
-    }
-    .btn-ghost {
-      border: 1px solid rgba(250,249,246,0.3);
-      color: rgba(250,249,246,0.82);
-      text-decoration: none;
-      padding: 0.65rem 1.75rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-radius: 2px;
-    }
-
-    /* SHARED */
-    .section-eyebrow {
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.4rem;
-      text-align: center;
-      font-style: italic;
-    }
-    .section-heading {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.75rem;
-      font-weight: 400;
       color: var(--slate);
-      text-align: center;
-      margin-bottom: 2.25rem;
-    }
-
-    /* UNITS */
-    .units-section { background: var(--cream); padding: 4rem 1.5rem; }
-    .units-inner { max-width: 880px; margin: 0 auto; }
-    .units-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
-    .units-grid a img {
-      width: 100%;
+      border: none;
       border-radius: 4px;
-      box-shadow: 0 4px 16px rgba(74,85,104,0.13);
-      transition: transform 0.22s, box-shadow 0.22s;
-      display: block;
+      padding: .55rem 1.25rem;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background .2s, transform .1s;
+      white-space: nowrap;
     }
-    .units-grid a:hover img { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(74,85,104,0.2); }
+    .btn-shopnow:hover { background: rgba(194,155,97,.85); transform: translateY(-1px); }
 
-    /* PHOTO STRIP */
-    .photo-strip { background: var(--cream); padding: 0 1.5rem 4rem; }
-    .photo-strip-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.16em;
+    /* ─── SOCIAL BAR ────────────────────────────────────── */
+    .social-bar {
+      background: var(--light-sage);
+      border-bottom: 1px solid rgba(169,183,134,.4);
+    }
+    .social-bar-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: 2rem; padding: .55rem 2rem;
+    }
+    .social-link {
+      font-family: var(--ff-sans);
+      font-size: .72rem;
+      letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--muted);
-      font-style: italic;
+      color: var(--slate);
+      display: flex; align-items: center; gap: .5rem;
+      transition: color .2s;
+    }
+    .social-link:hover { color: var(--sage); }
+    .social-link svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+    /* ─── HERO ──────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--cream) 0%, var(--light-sage) 55%, #d4e8c8 100%);
+      position: relative; overflow: hidden;
+      padding: 7rem 2rem 6rem;
       text-align: center;
+    }
+    /* decorative botanical lines */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(ellipse 80% 60% at 20% 80%, rgba(169,183,134,.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(194,155,97,.10) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 820px; margin: 0 auto; position: relative; }
+    .hero-eyebrow {
+      font-family: var(--ff-sans);
+      font-size: .78rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--sage);
       margin-bottom: 1.25rem;
     }
-    .photo-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; }
-    .photo-grid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 3px; display: block; filter: saturate(0.88); }
+    .hero-headline {
+      font-family: var(--ff-display);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--slate);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .hero-headline em { color: var(--gold); font-style: italic; }
+    .hero-tagline {
+      font-family: var(--ff-body);
+      font-size: 1.25rem;
+      color: var(--text-mid);
+      font-style: italic;
+      max-width: 560px; margin: 0 auto 2.5rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+    }
+    .hero-cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      font-family: var(--ff-sans);
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--slate);
+      border: none; border-radius: 4px;
+      padding: .85rem 2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: rgba(194,155,97,.85); transform: translateY(-2px); }
+    .btn-outline {
+      font-family: var(--ff-sans);
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      background: transparent;
+      color: var(--slate);
+      border: 1.5px solid rgba(74,85,104,.35);
+      border-radius: 4px;
+      padding: .85rem 2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: border-color .2s, background .2s, transform .15s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
-    /* PREVIEWS */
-    .previews-section { background: var(--sage-light); padding: 4rem 1.5rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .previews-inner { max-width: 880px; margin: 0 auto; }
-    .previews-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-    .previews-grid img { width: 100%; border-radius: 3px; box-shadow: 0 3px 12px rgba(74,85,104,0.12); display: block; transition: transform 0.2s; }
-    .previews-grid img:hover { transform: translateY(-2px); }
-    .previews-caption { text-align: center; font-size: 0.82rem; color: var(--muted); font-style: italic; margin-top: 1.25rem; }
+    /* scroll cue */
+    .scroll-cue {
+      margin-top: 3.5rem;
+      display: flex; flex-direction: column; align-items: center; gap: .4rem;
+      color: rgba(74,85,104,.4);
+      font-family: var(--ff-sans); font-size: .65rem; letter-spacing: .15em; text-transform: uppercase;
+    }
+    .scroll-cue-line {
+      width: 1px; height: 36px;
+      background: linear-gradient(to bottom, rgba(74,85,104,.4), transparent);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+    @keyframes scrollLine { 0%,100%{opacity:.4;transform:scaleY(1)} 50%{opacity:1;transform:scaleY(.7)} }
 
-    /* FIND YOUR PATH */
-    .path-section { background: var(--slate-mid); padding: 4rem 1.5rem; color: var(--cream); }
-    .path-inner { max-width: 780px; margin: 0 auto; }
-    .path-eyebrow { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.4rem; text-align: center; font-style: italic; }
-    .path-section h2 { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 400; text-align: center; margin-bottom: 2.5rem; }
-    .path-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-    .path-item { background: rgba(255,255,255,0.07); border-radius: 3px; padding: 1.5rem 1.4rem 1.5rem 1.75rem; border-left: 3px solid var(--teal); transition: background 0.2s; }
-    .path-item:hover { background: rgba(255,255,255,0.11); }
-    .path-step { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; display: block; font-style: italic; }
-    .path-item h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 400; margin-bottom: 0.5rem; color: var(--cream); }
-    .path-item p { font-size: 0.87rem; color: rgba(250,249,246,0.68); line-height: 1.55; margin-bottom: 0.85rem; }
-    .path-item a { font-size: 0.73rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-light); text-decoration: none; }
-    .path-item a:hover { color: var(--gold); }
+    /* ─── CAROUSEL ──────────────────────────────────────── */
+    .carousel-section {
+      background: var(--cream);
+      padding: 4.5rem 0 3.5rem;
+    }
+    .section-label {
+      font-family: var(--ff-sans);
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--sage);
+      text-align: center;
+      margin-bottom: .6rem;
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--slate);
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .carousel-track-wrap {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 2rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .carousel-track-wrap::-webkit-scrollbar { display: none; }
+    .carousel-track {
+      display: flex; gap: 1.5rem;
+      padding-bottom: .5rem;
+    }
+    .carousel-card {
+      flex: 0 0 calc(25% - 1.125rem);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,.10);
+      background: var(--slate);
+      transition: transform .3s, box-shadow .3s;
+      cursor: pointer;
+    }
+    .carousel-card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(0,0,0,.18); }
+    .carousel-img {
+      width: 100%; aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+    }
+    /* placeholder covers */
+    .carousel-placeholder {
+      width: 100%; aspect-ratio: 3/4;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: flex-end;
+      padding: 1.5rem 1rem;
+      position: relative; overflow: hidden;
+    }
+    .carousel-placeholder::before {
+      content: '';
+      position: absolute; inset: 0;
+    }
+    .cover-1::before { background: linear-gradient(160deg, var(--slate) 0%, var(--slate-mid) 60%, var(--sage) 100%); }
+    .cover-2::before { background: linear-gradient(160deg, #3c574c 0%, var(--sage) 100%); }
+    .cover-3::before { background: linear-gradient(160deg, var(--slate) 0%, var(--gold) 100%); }
+    .cover-4::before { background: linear-gradient(160deg, var(--slate) 0%, var(--slate-mid) 100%); }
+    .cover-5::before { background: linear-gradient(160deg, var(--slate) 0%, var(--sage) 100%); }
 
-    /* APPS */
-    .apps-section { background: var(--cream); padding: 3.5rem 1.5rem; border-bottom: 1px solid var(--border); }
-    .apps-inner { max-width: 780px; margin: 0 auto; }
-    .apps-eyebrow { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); text-align: center; margin-bottom: 2rem; font-style: italic; }
-    .apps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .app-card { display: flex; align-items: center; gap: 1rem; text-decoration: none; padding: 1rem 1.1rem; border: 1px solid var(--border); border-radius: 4px; transition: border-color 0.2s, box-shadow 0.2s; }
-    .app-card:hover { border-color: var(--sage); box-shadow: 0 2px 12px rgba(74,85,104,0.08); }
-    .app-card img { width: 48px; height: 48px; border-radius: 10px; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .app-card-name { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--slate); font-weight: 400; display: block; margin-bottom: 0.15rem; }
-    .app-card-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.4; font-style: italic; }
+    .cover-label {
+      position: relative; z-index: 1;
+      text-align: center;
+    }
+    .cover-label-title {
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--cream);
+      display: block; margin-bottom: .2rem;
+    }
+    .cover-label-sub {
+      font-family: var(--ff-sans);
+      font-size: .6rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    /* decorative motif on placeholder */
+    .cover-motif {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -60%);
+      z-index: 1;
+      opacity: .18;
+      font-family: var(--ff-display);
+      font-size: 5rem;
+      font-style: italic;
+      color: white;
+      white-space: nowrap;
+      pointer-events: none;
+    }
 
-    /* TEND */
-    .tend-section { background: var(--sage-light); padding: 5rem 1.5rem; border-top: 1px solid var(--border); }
-    .tend-inner { max-width: 880px; margin: 0 auto; display: grid; grid-template-columns: 1fr 400px; gap: 4rem; align-items: center; }
-    .tend-eyebrow { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage-dark); margin-bottom: 1.25rem; font-style: italic; }
-    .tend-app-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
-    .tend-icon { width: 60px; height: 60px; border-radius: 13px; box-shadow: 0 4px 14px rgba(74,85,104,0.15); flex-shrink: 0; }
-    .tend-title { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 400; color: var(--slate); line-height: 1; margin-bottom: 0.2rem; }
-    .tend-sub { font-size: 0.85rem; color: var(--muted); font-style: italic; }
-    .tend-desc { font-size: 1rem; color: var(--ink); line-height: 1.7; margin-bottom: 1.5rem; }
-    .tend-features { list-style: none; margin-bottom: 1.75rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 1rem; }
-    .tend-features li { font-size: 0.88rem; color: var(--ink); display: flex; align-items: baseline; gap: 0.45rem; }
-    .tend-features li::before { content: "❧"; color: var(--sage-dark); font-size: 0.75rem; flex-shrink: 0; }
-    .tend-pricing { display: flex; gap: 1rem; margin-bottom: 1.75rem; flex-wrap: wrap; }
-    .tend-tier { border: 1px solid var(--border); border-radius: 4px; padding: 0.65rem 1rem; flex: 1; min-width: 140px; background: var(--cream); }
-    .featured-tier { border-color: var(--sage-dark); background: #e1ead8; }
-    .tier-label { display: block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); font-weight: 600; margin-bottom: 0.2rem; }
-    .tier-desc { display: block; font-size: 0.82rem; color: var(--muted); font-style: italic; }
-    .tend-btn { display: inline-block; background: var(--sage-dark); color: var(--cream); text-decoration: none; padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; font-weight: 600; transition: background 0.2s; }
-    .tend-btn:hover { background: var(--slate); }
-    .tend-mockup img { width: 100%; display: block; border-radius: 8px; box-shadow: 0 8px 32px rgba(74,85,104,0.15); }
+    .carousel-nav {
+      display: flex; justify-content: center; gap: .5rem; margin-top: 1.75rem;
+    }
+    .carousel-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(169,183,134,.4);
+      border: none; cursor: pointer;
+      transition: background .2s, transform .2s;
+      padding: 0;
+    }
+    .carousel-dot.active { background: var(--gold); transform: scale(1.3); }
 
-    /* QUOTE */
-    .quote-section { background: var(--cream); padding: 4.5rem 1.5rem; text-align: center; border-top: 1px solid var(--border); }
-    .quote-rule { width: 40px; height: 2px; background: var(--gold); margin: 0 auto 2rem; }
-    .quote-section blockquote { font-family: 'Playfair Display', serif; font-size: clamp(1.1rem, 3vw, 1.45rem); font-style: italic; color: var(--slate); max-width: 600px; margin: 0 auto 1rem; line-height: 1.6; }
-    .quote-section blockquote em { color: var(--sage-dark); font-style: normal; }
-    .quote-attr { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-    .quote-attr a { color: var(--sage-dark); text-decoration: none; }
+    /* ─── THREE STEPS ───────────────────────────────────── */
+    .steps-section {
+      background: var(--light-sage);
+      padding: 5rem 2rem;
+    }
+    .steps-inner {
+      max-width: 1100px; margin: 0 auto;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem; margin-top: 2.5rem;
+    }
+    .step-card {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 2px 16px rgba(74,85,104,.08);
+      display: flex; flex-direction: column;
+      transition: transform .3s, box-shadow .3s;
+      border-top: 3px solid var(--gold);
+    }
+    .step-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(74,85,104,.14); }
+    .step-num {
+      font-family: var(--ff-display);
+      font-size: 3rem;
+      font-style: italic;
+      color: var(--sage);
+      line-height: 1;
+      margin-bottom: .75rem;
+    }
+    .step-title {
+      font-family: var(--ff-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--slate);
+      margin-bottom: .75rem;
+    }
+    .step-desc {
+      font-family: var(--ff-body);
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    .step-link {
+      font-family: var(--ff-sans);
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 700;
+      display: flex; align-items: center; gap: .4rem;
+      transition: gap .2s, color .2s;
+    }
+    .step-link:hover { gap: .7rem; color: var(--slate-mid); }
+    .step-link svg { width: 14px; height: 14px; flex-shrink: 0; }
 
-    /* BIO */
-    .bio-section { background: var(--slate); color: var(--cream); padding: 5rem 1.5rem; }
-    .bio-inner { max-width: 880px; margin: 0 auto; display: grid; grid-template-columns: 260px 1fr; gap: 3.5rem; align-items: start; }
-    .bio-photo img { width: 100%; border-radius: 4px; box-shadow: 0 6px 28px rgba(0,0,0,0.25); filter: saturate(0.9); }
-    .bio-eyebrow { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.5rem; font-style: italic; }
-    .bio-content h2 { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 400; color: var(--cream); margin-bottom: 1.1rem; }
-    .bio-content p { color: rgba(250,249,246,0.73); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
-    .bio-content p em { font-style: italic; color: var(--gold-light); }
-    .bio-content a { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(232,213,176,0.35); padding-bottom: 1px; }
+    /* ─── PHILOSOPHY TEASER ─────────────────────────────── */
+    .philosophy-section {
+      background: var(--cream);
+      padding: 6rem 2rem;
+      position: relative; overflow: hidden;
+    }
+    .philosophy-section::before {
+      content: '"';
+      position: absolute; top: -2rem; left: -1rem;
+      font-family: var(--ff-display);
+      font-size: 28rem;
+      color: rgba(74,85,104,.04);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .philosophy-inner {
+      max-width: 780px; margin: 0 auto;
+      text-align: center; position: relative; z-index: 1;
+    }
+    .philosophy-rule {
+      width: 48px; height: 2px;
+      background: var(--gold);
+      margin: 0 auto 2rem;
+    }
+    .philosophy-quote {
+      font-family: var(--ff-display);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-style: italic;
+      color: var(--slate);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .philosophy-quote em { color: var(--gold); }
+    .philosophy-attr {
+      font-family: var(--ff-sans);
+      font-size: .72rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 2.5rem;
+    }
+    .btn-ghost {
+      font-family: var(--ff-sans);
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--slate);
+      border: 1.5px solid rgba(74,85,104,.3);
+      border-radius: 4px;
+      padding: .75rem 1.75rem;
+      display: inline-block;
+      transition: border-color .2s, color .2s, transform .15s;
+    }
+    .btn-ghost:hover { border-color: var(--sage); color: var(--sage); transform: translateY(-2px); }
 
-    /* FOOTER */
-    footer { background: var(--slate); border-top: 1px solid rgba(255,255,255,0.08); color: rgba(250,249,246,0.65); padding: 3rem 1.5rem 2rem; }
-    .footer-inner { max-width: 880px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
-    .footer-logo { height: 36px; width: auto; filter: brightness(0) invert(1); opacity: 0.65; margin-bottom: 0.75rem; display: block; }
-    .footer-brand p { font-size: 0.84rem; color: rgba(250,249,246,0.5); line-height: 1.65; }
-    .footer-nav h4, .footer-connect h4 { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.85rem; }
-    .footer-nav ul, .footer-connect ul { list-style: none; }
-    .footer-nav li, .footer-connect li { margin-bottom: 0.45rem; }
-    .footer-nav a, .footer-connect a { color: rgba(250,249,246,0.52); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-    .footer-nav a:hover, .footer-connect a:hover { color: var(--gold-light); }
-    .footer-email { margin-top: 1.5rem; }
-    .footer-email p { font-size: 0.78rem; color: rgba(250,249,246,0.42); margin-bottom: 0.5rem; font-style: italic; }
-    .footer-email-row { display: flex; gap: 0.5rem; }
-    .footer-email-row input { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); color: var(--cream); padding: 0.4rem 0.75rem; font-size: 0.85rem; border-radius: 2px; flex: 1; font-family: 'Cormorant Garamond', serif; }
-    .footer-email-row button { background: var(--gold); color: var(--slate); border: none; padding: 0.4rem 0.9rem; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-weight: 700; }
-    .footer-bottom { max-width: 880px; margin: 2rem auto 0; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; font-size: 0.72rem; color: rgba(250,249,246,0.3); }
-    .footer-bottom a { color: rgba(250,249,246,0.35); text-decoration: none; }
+    /* ─── MEET KIM ──────────────────────────────────────── */
+    .kim-section {
+      background: var(--cream);
+      padding: 5.5rem 2rem;
+    }
+    .kim-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.6fr;
+      gap: 4rem; align-items: center;
+    }
+    .kim-photo-wrap {
+      position: relative;
+    }
+    .kim-photo-frame {
+      aspect-ratio: 4/5;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0,0,0,.35);
+    }
+    .kim-photo-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(160deg, var(--slate-mid) 0%, var(--slate) 100%);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: .5rem;
+      color: rgba(250,246,238,.35);
+    }
+    .kim-photo-placeholder svg { width: 48px; height: 48px; }
+    .kim-photo-placeholder span {
+      font-family: var(--ff-sans); font-size: .65rem;
+      letter-spacing: .12em; text-transform: uppercase;
+    }
+    .kim-photo-accent {
+      position: absolute;
+      bottom: -14px; right: -14px;
+      width: 80px; height: 80px;
+      border-radius: 8px;
+      background: var(--gold);
+      opacity: .18;
+      z-index: 0;
+    }
+    .kim-eyebrow {
+      font-family: var(--ff-sans);
+      font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--sage); margin-bottom: 1rem;
+    }
+    .kim-name {
+      font-family: var(--ff-display);
+      font-size: 2.2rem; font-weight: 600;
+      color: var(--slate); margin-bottom: 1.25rem; line-height: 1.15;
+    }
+    .kim-bio {
+      font-family: var(--ff-body);
+      font-size: 1.08rem; color: var(--text-mid);
+      line-height: 1.8; margin-bottom: 1rem;
+    }
+    .kim-bio + .kim-bio { margin-top: .75rem; }
+    .kim-link {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-family: var(--ff-sans);
+      font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--gold); margin-top: 1.5rem;
+      transition: gap .2s;
+    }
+    .kim-link:hover { gap: .8rem; }
+    .kim-link svg { width: 14px; height: 14px; }
 
-    /* RESPONSIVE */
-    @media (max-width: 720px) {
-      .nav-links { display: none; }
-      .nav-social { display: none; }
-      .hamburger { display: flex; }
-      .units-grid { grid-template-columns: repeat(3, 1fr); }
-      .photo-grid { grid-template-columns: 1fr 1fr; }
-      .photo-grid img:first-child { aspect-ratio: 2/1; }
-      .previews-grid { grid-template-columns: repeat(2, 1fr); }
-      .path-grid { grid-template-columns: 1fr; }
-      .apps-grid { grid-template-columns: 1fr; }
-      .tend-inner { grid-template-columns: 1fr; }
-      .tend-mockup { order: -1; max-width: 320px; margin: 0 auto; }
-      .tend-features { grid-template-columns: 1fr; }
-      .bio-inner { grid-template-columns: 1fr; }
-      .bio-photo { max-width: 220px; }
-      .footer-inner { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 0.5rem; }
+    /* ─── FOOTER ────────────────────────────────────────── */
+    .site-footer {
+      background: var(--slate);
+      padding: 4rem 2rem 2rem;
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.6fr;
+      gap: 3rem; margin-bottom: 3rem;
+    }
+    .footer-brand .logo { font-size: 1.3rem; margin-bottom: .75rem; }
+    .footer-tagline {
+      font-family: var(--ff-body);
+      font-size: .95rem; font-style: italic;
+      color: rgba(250,246,238,.55); line-height: 1.7;
+    }
+    .footer-col-title {
+      font-family: var(--ff-sans);
+      font-size: .68rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.1rem;
+    }
+    .footer-nav-list { list-style: none; }
+    .footer-nav-list li + li { margin-top: .55rem; }
+    .footer-nav-list a {
+      font-family: var(--ff-body);
+      font-size: .98rem; color: rgba(250,246,238,.65);
+      transition: color .2s;
+    }
+    .footer-nav-list a:hover { color: var(--cream); }
+
+    .footer-social-list { list-style: none; }
+    .footer-social-list li + li { margin-top: .65rem; }
+    .footer-social-list a {
+      display: flex; align-items: center; gap: .6rem;
+      font-family: var(--ff-body);
+      font-size: .98rem; color: rgba(250,246,238,.65);
+      transition: color .2s;
+    }
+    .footer-social-list a:hover { color: var(--cream); }
+    .footer-social-list svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* newsletter */
+    .newsletter-form { margin-top: .25rem; }
+    .newsletter-desc {
+      font-family: var(--ff-body);
+      font-size: .9rem; color: rgba(250,246,238,.55);
+      margin-bottom: 1rem; line-height: 1.6;
+    }
+    .newsletter-input-wrap { display: flex; gap: 0; }
+    .newsletter-input {
+      flex: 1;
+      font-family: var(--ff-body);
+      font-size: .9rem;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      border-right: none;
+      border-radius: 4px 0 0 4px;
+      color: var(--cream);
+      padding: .65rem 1rem;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .newsletter-input::placeholder { color: rgba(250,246,238,.3); }
+    .newsletter-input:focus { border-color: var(--gold); }
+    .newsletter-submit {
+      font-family: var(--ff-sans);
+      font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+      background: var(--gold); color: var(--slate);
+      border: none; border-radius: 0 4px 4px 0;
+      padding: .65rem 1.1rem;
+      cursor: pointer; font-weight: 700;
+      transition: background .2s;
+      white-space: nowrap;
+    }
+    .newsletter-submit:hover { background: rgba(194,155,97,.85); }
+
+    .footer-divider {
+      border: none; border-top: 1px solid rgba(255,255,255,.07);
+      margin-bottom: 1.5rem;
+    }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy {
+      font-family: var(--ff-body);
+      font-size: .85rem;
+      color: rgba(250,246,238,.35);
+    }
+    .footer-bottom-links { display: flex; gap: 1.5rem; }
+    .footer-bottom-links a {
+      font-family: var(--ff-body);
+      font-size: .85rem;
+      color: rgba(250,246,238,.35);
+      transition: color .2s;
+    }
+    .footer-bottom-links a:hover { color: var(--cream); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .kim-inner { grid-template-columns: 1fr; max-width: 540px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .carousel-card { flex: 0 0 calc(50% - .75rem); }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      html, body { overflow-x: hidden; width: 100%; }
+      *, *::before, *::after { box-sizing: border-box; }
+      .header-inner { padding: 0 1.1rem; }
+      .nav-wrap { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: var(--slate); flex-direction: column; align-items: center;
+        justify-content: center; gap: 2rem; z-index: 999; }
+      .nav-wrap.mobile-open { display: flex; }
+      .nav-wrap .nav-link { color: var(--cream); font-size: 1.2rem; }
+      .nav-wrap .btn-shopnow { background: var(--gold); color: var(--slate); padding: .7rem 1.8rem; }
+      .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer;
+        background: none; border: none; padding: .4rem; z-index: 1000; }
+      .hamburger span { display: block; width: 24px; height: 2px; background: var(--cream); border-radius: 2px; transition: .3s; }
+      .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .hamburger.open span:nth-child(2) { opacity: 0; }
+      .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+      .hero-inner { padding: 3rem 1.2rem 2.5rem; }
+      .hero-inner h1 { font-size: 2rem; }
+      .hero-sub { font-size: 1rem; }
+      .hero-btn-group { flex-direction: column; align-items: center; gap: .8rem; }
+      .container { padding: 0 1.1rem; }
+      section { padding: 3rem 0; }
+      .steps-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .carousel-card { flex: 0 0 82%; }
+      .kim-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: .6rem; text-align: center; }
+      .social-bar { overflow-x: auto; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="/" class="nav-logo-wrap">
-    <img src="/images/ds_icon.png" alt="Delight &amp; Savor" class="nav-logo-img" />
-    <div class="nav-logo-text">
-      Delight &amp; Savor
-      <span>Beauty. Meaning. Connection.</span>
-    </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="/philosophy">Philosophy</a></li>
-    <li><a href="/curriculum">Curriculum</a></li>
-    <li><a href="/planning">Planning</a></li>
-    <li><a href="/teachers-notebook">Teacher&#8217;s Notebook</a></li>
-    <li><a href="/faq">FAQ</a></li>
-    <li><a href="/curriculum" class="nav-cta">Shop Now</a></li>
-  </ul>
-  <div class="nav-social">
-    <a href="https://instagram.com/Kim.delightandsavor">Instagram</a>
-    <a href="https://pinterest.com">Pinterest</a>
-    <a href="https://delightandsavor.substack.com">Substack</a>
-  </div>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<!-- ══════════════════════ HEADER ══════════════════════ -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Delight <span>&amp;</span> Savor</a>
 
-<!-- MOBILE NAV DRAWER -->
-<div class="mobile-nav" id="mobile-nav">
-  <a href="/philosophy" onclick="toggleMenu()">Philosophy</a>
-  <a href="/curriculum" onclick="toggleMenu()">Curriculum</a>
-  <a href="/planning" onclick="toggleMenu()">Planning</a>
-  <a href="/teachers-notebook" onclick="toggleMenu()">Teacher&#8217;s Notebook</a>
-  <a href="/faq" onclick="toggleMenu()">FAQ</a>
-  <div class="mobile-divider"></div>
-  <a href="https://instagram.com/Kim.delightandsavor" onclick="toggleMenu()">Instagram</a>
-  <a href="https://delightandsavor.substack.com" onclick="toggleMenu()">Substack</a>
-  <div class="mobile-divider"></div>
-  <a href="/curriculum" class="mobile-cta" onclick="toggleMenu()">Shop Now &rarr;</a>
+    <nav class="nav-wrap" aria-label="Primary navigation">
+      <a href="philosophy.html" class="nav-link">Philosophy</a>
+      <a href="curriculum.html" class="nav-link">Curriculum</a>
+      <a href="teachers-notebook.html" class="nav-link">Teacher's Notebook</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
+      <a href="conversation-quilt.html" class="nav-link">Conversation Quilt</a>
+      <a href="curriculum.html" class="btn-shopnow">Shop Now</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ══════════════════════ SOCIAL BAR ══════════════════ -->
+<div class="social-bar" role="complementary" aria-label="Social media links">
+  <div class="social-bar-inner">
+    <a href="https://instagram.com/Kim.delightandsavor" class="social-link" target="_blank" rel="noopener">
+      <!-- Instagram -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+      Instagram
+    </a>
+    <a href="https://pinterest.com" class="social-link" target="_blank" rel="noopener">
+      <!-- Pinterest -->
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.64 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.132-1.867 3.132-4.563 0-2.387-1.715-4.055-4.163-4.055-2.836 0-4.5 2.127-4.5 4.326 0 .856.33 1.775.741 2.276a.3.3 0 01.069.286c-.076.315-.245 1 -.278 1.139-.044.183-.146.222-.337.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+      </svg>
+      Pinterest
+    </a>
+    <a href="https://delightandsavor.substack.com" class="social-link" target="_blank" rel="noopener">
+      <!-- Substack -->
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+      </svg>
+      Substack
+    </a>
+  </div>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="eyebrow">Upper-Level Charlotte Mason Language Arts &middot; Grades 9&#8211;12</div>
-  <h1>Words That Linger, <em>Ideas That Form.</em></h1>
-  <p>Literature companions and writing curricula rooted in the living-books tradition &#8212; for students ready to read deeply and write with real conviction.</p>
-  <div class="hero-btns">
-    <a href="/curriculum" class="btn-primary">Explore the Curriculum</a>
-    <a href="/philosophy" class="btn-ghost">Read the Philosophy</a>
-  </div>
-</section>
-
-<!-- UNITS -->
-<section class="units-section">
-  <div class="units-inner">
-    <div class="section-eyebrow">Series 1: The Art of Tragedy</div>
-    <h2 class="section-heading">Explore the Units</h2>
-    <div class="units-grid">
-      <a href="/curriculum#macbeth"><img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947108/macbeth_gzcquq.png" alt="Macbeth" /></a>
-      <a href="/curriculum#wuthering-heights"><img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947108/wuthering-heights_e41woq.png" alt="Wuthering Heights" /></a>
-      <a href="/curriculum#series-2"><img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947109/poetry-old-man_cyl7cq.png" alt="Poetry &amp; Old Man and the Sea" /></a>
-      <a href="/curriculum#series-2"><img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947109/midsummer_ktd9qu.png" alt="A Midsummer Night&#8217;s Dream" /></a>
-      <a href="/curriculum#summer"><img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947110/of-mice-and-men_asjbyd.png" alt="Of Mice and Men" /></a>
+<!-- ══════════════════════ HERO ════════════════════════ -->
+<section class="hero" aria-labelledby="hero-headline">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Upper-Level Charlotte Mason Language Arts · Grades 9–12</p>
+    <h1 class="hero-headline" id="hero-headline">
+      Words That Linger,<br>
+      <em>Ideas That Form.</em>
+    </h1>
+    <p class="hero-tagline">
+      Literature companions, writing curricula, and enrichment guides
+      rooted in the living-books tradition — for the student who is ready
+      to read deeply and write with real conviction.
+    </p>
+    <div class="hero-cta-group">
+      <a href="curriculum.html" class="btn-primary">Explore the Curriculum</a>
+      <a href="philosophy.html" class="btn-outline">Read the Philosophy</a>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">
+      <div class="scroll-cue-line"></div>
+      <span>Scroll</span>
     </div>
   </div>
 </section>
 
-<!-- FIND YOUR PATH -->
-<section class="path-section">
-  <div class="path-inner">
-    <div class="path-eyebrow">Where to Begin</div>
-    <h2>Find Your Path In</h2>
-    <div class="path-grid">
-      <div class="path-item">
-        <span class="path-step">Step 01</span>
-        <h3>Read the Philosophy</h3>
-        <p>Narration as backbone. Living books over textbooks. The Great Conversation that ties literature to the formation of the whole student.</p>
-        <a href="/philosophy">Explore &rarr;</a>
-      </div>
-      <div class="path-item">
-        <span class="path-step">Step 02</span>
-        <h3>Browse Series 1</h3>
-        <p>Macbeth and Wuthering Heights &#8212; fifteen weeks of student handouts, teacher guides, and a thesis-writing workshop.</p>
-        <a href="/curriculum#series-1">See the units &rarr;</a>
-      </div>
-      <div class="path-item">
-        <span class="path-step">Step 03</span>
-        <h3>Choose Your Version</h3>
-        <p>Home study or co-op teacher license. Every purchase includes access to In the Margin, the student companion app.</p>
-        <a href="/curriculum#series-1">Compare versions &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ══════════════════════ CAROUSEL ════════════════════ -->
+<section class="carousel-section" aria-label="Curriculum units">
+  <p class="section-label">Year One · Tragedy &amp; Gothic</p>
+  <h2 class="section-title">Explore the Units</h2>
 
-<!-- PHOTO STRIP -->
-<section class="photo-strip">
-  <p class="photo-strip-label">Life at the table &#8212; co-op, ranch, and the living classroom</p>
-  <div class="photo-grid">
-    <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1774316699/IMG_0853_xvhjpe.jpg" alt="Kids looking out the window" />
-    <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1774316698/IMG_1853_tlu0yc.jpg" alt="Canoe" />
-    <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1774316707/IMG_9371_bz1law.jpg" alt="With the chickens" />
-    <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1774316716/IMG_9244_flb5vo.jpg" alt="Walking toward the alpacas" />
-  </div>
-</section>
+  <div class="carousel-track-wrap">
+    <div class="carousel-track" id="carouselTrack" role="list">
 
-<!-- TEND -->
-<section class="tend-section">
-  <div class="tend-inner">
-    <div class="tend-text">
-      <div class="tend-eyebrow">Plan Gently. Return Often.</div>
-      <div class="tend-app-header">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1774313328/tend_icon_n6fneu.jpg" alt="Tend" class="tend-icon" />
-        <div>
-          <h2 class="tend-title">Tend</h2>
-          <div class="tend-sub">The Charlotte Mason Homeschool Planner</div>
-        </div>
-      </div>
-      <p class="tend-desc">A gentle digital planner built around the rhythms of a Charlotte Mason home &#8212; morning time, nature hours, loop schedules, narration, and the habits that hold a day together. <em>A rhythm, not a system.</em></p>
-      <ul class="tend-features">
-        <li>Daily time-blocked schedule</li>
-        <li>Outdoor &amp; nature hour tracker</li>
-        <li>Weekly habit tracker</li>
-        <li>Narration log &amp; running record</li>
-        <li>Consider the Lilies journal</li>
-        <li>Works on any device</li>
-      </ul>
-      <div class="tend-pricing">
-        <div class="tend-tier">
-          <span class="tier-label">Free</span>
-          <span class="tier-desc">Limited access &#8212; start today</span>
-        </div>
-        <div class="tend-tier featured-tier">
-          <span class="tier-label">Monthly &amp; Annual</span>
-          <span class="tier-desc">Full access to every feature</span>
-        </div>
-      </div>
-      <a href="https://tend-ds.netlify.app" class="tend-btn">Start Free &rarr;</a>
-    </div>
-    <div class="tend-mockup">
-      <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1774316698/AFD693BD-502A-45CD-B01B-D71640CB7E5A_va1nr7.png" alt="Tend planner app mockup" />
-    </div>
-  </div>
-</section>
-
-<!-- QUOTE -->
-<section class="quote-section">
-  <div class="quote-rule"></div>
-  <blockquote>
-    Literature and language arts are the table at which a student learns to think &#8212; not just about <em>what a text says,</em> but about what it means to be human.
-  </blockquote>
-  <div class="quote-attr">On the Delight &amp; Savor Approach &nbsp;&middot;&nbsp; <a href="/philosophy">Read the full philosophy &rarr;</a></div>
-</section>
-
-<!-- APPS -->
-<section class="apps-section">
-  <div class="apps-inner">
-    <div class="apps-eyebrow">Also from Delight &amp; Savor</div>
-    <div class="apps-grid">
-      <a href="/curriculum" class="app-card">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1774313283/d_s_s8b35g.jpg" alt="Delight &amp; Savor" />
-        <div>
-          <span class="app-card-name">Delight &amp; Savor</span>
-          <span class="app-card-desc">Living Literature &amp; Language curriculum</span>
-        </div>
+      <!-- Card 1: Macbeth -->
+      <a href="curriculum.html#macbeth" class="carousel-card" role="listitem" aria-label="Macbeth unit">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947108/macbeth_gzcquq.png" alt="Macbeth — Shakespeare · Year 1" class="carousel-img" />
       </a>
-      <a href="https://in-the-margin.netlify.app" class="app-card">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1774313328/margin_icon_v9kgj1.jpg" alt="In the Margin" />
-        <div>
-          <span class="app-card-name">In the Margin</span>
-          <span class="app-card-desc">Student literary companion app</span>
-        </div>
+
+      <!-- Card 2: Wuthering Heights -->
+      <a href="curriculum.html#wuthering-heights" class="carousel-card" role="listitem" aria-label="Wuthering Heights unit">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947108/wuthering-heights_e41woq.png" alt="Wuthering Heights — Brontë · Year 1" class="carousel-img" />
       </a>
-      <a href="https://tend-ds.netlify.app" class="app-card">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1774313328/tend_icon_n6fneu.jpg" alt="Tend" />
-        <div>
-          <span class="app-card-name">Tend</span>
-          <span class="app-card-desc">Charlotte Mason homeschool planner</span>
-        </div>
+
+      <!-- Card 3: Poetry & Old Man and the Sea -->
+      <a href="curriculum.html#year-two" class="carousel-card" role="listitem" aria-label="Poetry & Old Man and the Sea unit">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947109/poetry-old-man_cyl7cq.png" alt="Art of Attention — Poetry &amp; Old Man and the Sea · Year 2" class="carousel-img" />
       </a>
+
+      <!-- Card 4: Midsummer -->
+      <a href="curriculum.html#midsummer" class="carousel-card" role="listitem" aria-label="A Midsummer Night's Dream unit">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947109/midsummer_ktd9qu.png" alt="A Midsummer Night's Dream — Shakespeare · Year 2" class="carousel-img" />
+      </a>
+
+      <!-- Card 5: Of Mice and Men -->
+      <a href="curriculum.html#year-three" class="carousel-card" role="listitem" aria-label="Of Mice and Men unit">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947110/of-mice-and-men_asjbyd.png" alt="Of Mice and Men — Steinbeck · Summer Foundations" class="carousel-img" />
+      </a>
+
+    </div>
+  </div>
+
+  <div class="carousel-nav" role="tablist" aria-label="Carousel navigation">
+    <button class="carousel-dot active" role="tab" aria-selected="true" aria-label="Go to slide 1" data-index="0"></button>
+    <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Go to slide 2" data-index="1"></button>
+    <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Go to slide 3" data-index="2"></button>
+  </div>
+</section>
+
+<!-- ══════════════════════ THREE STEPS ═════════════════ -->
+<section class="steps-section" aria-labelledby="steps-heading">
+  <div class="steps-inner">
+    <p class="section-label" style="text-align:center">Where to Begin</p>
+    <h2 class="section-title" id="steps-heading">Find Your Path In</h2>
+
+    <div class="steps-grid">
+
+      <article class="step-card">
+        <div class="step-num" aria-hidden="true">01</div>
+        <h3 class="step-title">Read the Philosophy</h3>
+        <p class="step-desc">
+          Understand the "why" behind Delight &amp; Savor: narration as backbone,
+          living books over textbooks, and the Great Conversation that ties
+          literature to the formation of the whole student.
+        </p>
+        <a href="philosophy.html" class="step-link">
+          Explore the philosophy
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+      </article>
+
+      <article class="step-card">
+        <div class="step-num" aria-hidden="true">02</div>
+        <h3 class="step-title">Browse Year One</h3>
+        <p class="step-desc">
+          Macbeth and Wuthering Heights — two giants of Tragedy &amp; Gothic.
+          Fifteen weeks of student handouts, teacher guides, DELIGHT framework
+          analysis, and a thesis-writing workshop.
+        </p>
+        <a href="curriculum.html#year-one" class="step-link">
+          See Year One units
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+      </article>
+
+      <article class="step-card">
+        <div class="step-num" aria-hidden="true">03</div>
+        <h3 class="step-title">Choose Your Version</h3>
+        <p class="step-desc">
+          Co-op or home study? Honors track or standard? Each unit comes in
+          versions designed for both settings, with an optional Honors Track
+          for students ready to go deeper.
+        </p>
+        <a href="curriculum.html#versions" class="step-link">
+          Compare versions
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+      </article>
+
     </div>
   </div>
 </section>
 
-<!-- BIO -->
-<section class="bio-section">
-  <div class="bio-inner">
-    <div class="bio-photo">
-      <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1774316710/IMG_5326_ddzz6u.jpg" alt="Kim Prieto, founder of Delight &amp; Savor" />
-    </div>
-    <div class="bio-content">
-      <div class="bio-eyebrow">Meet Your Guide</div>
-      <h2>Kim Prieto</h2>
-      <p>I spent nine years in the public school classroom teaching AP Language &amp; Composition and AP British Literature before bringing my family home to a 15-acre ranch outside Boerne, Texas. I hold a master&#8217;s in Literary Studies &#8212; but more than that, I&#8217;m a reader, a teacher, and a mother who believes great literature is meant to be <em>encountered,</em> not dissected from a safe distance.</p>
-      <p>Delight &amp; Savor grew out of the gap I saw between rigorous academics and the Charlotte Mason ideal of the living, breathing classroom. Every unit I write asks the same question Charlotte Mason asked: <em>What does this child deserve to think about?</em></p>
-      <a href="/philosophy">Read more about the approach &rarr;</a>
-      <div style="margin-top: 2rem; display: flex; align-items: center; gap: 1rem;">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1774316709/IMG_5414_nmmunq.jpg" alt="A page worth reading" style="width: 90px; height: 90px; object-fit: cover; border-radius: 50%; box-shadow: 0 3px 12px rgba(0,0,0,0.2); display: block; flex-shrink: 0; filter: saturate(0.9);" />
-        <p style="font-size: 0.88rem; color: rgba(250,249,246,0.6); font-style: italic; line-height: 1.55; margin: 0;">There&#8217;s a student somewhere who is ready for this. <em style="color: var(--gold-light);">Let&#8217;s find them a great book.</em></p>
+<!-- ══════════════════════ PHILOSOPHY TEASER ═══════════ -->
+<section class="philosophy-section" aria-labelledby="philosophy-heading">
+  <div class="philosophy-inner">
+    <div class="philosophy-rule" aria-hidden="true"></div>
+    <blockquote>
+      <p class="philosophy-quote" id="philosophy-heading">
+        Literature and language arts are the table at which a student
+        learns to think — not just about <em>what</em> a text says,
+        but about <em>what it means to be human.</em>
+      </p>
+    </blockquote>
+    <p class="philosophy-attr">On the Delight &amp; Savor Approach</p>
+    <a href="philosophy.html" class="btn-ghost">Read the full philosophy →</a>
+  </div>
+</section>
+
+<!-- ══════════════════════ MEET KIM ════════════════════ -->
+<section class="kim-section" aria-labelledby="kim-heading">
+  <div class="kim-inner">
+
+    <div class="kim-photo-wrap">
+      <div class="kim-photo-frame">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947404/IMG_9602_2_yptmbw.jpg" alt="Kim Prieto, founder of Delight & Savor" style="width:100%;height:100%;object-fit:cover;" />
       </div>
+      <div class="kim-photo-accent" aria-hidden="true"></div>
+    </div>
+
+    <div>
+      <p class="kim-eyebrow">Meet Your Guide</p>
+      <h2 class="kim-name" id="kim-heading">Kim Prieto</h2>
+      <p class="kim-bio">
+        I spent nine years in the public school classroom teaching AP Language &amp;
+        Composition and AP British Literature before bringing my family home to a
+        15-acre ranch outside Boerne, Texas. I hold a master's in Literary Studies —
+        but more than that, I'm a reader, a teacher, and a mother who believes
+        great literature is meant to be <em>encountered,</em> not dissected from a safe distance.
+      </p>
+      <p class="kim-bio">
+        Delight &amp; Savor grew out of the gap I saw between rigorous academics and
+        the Charlotte Mason ideal of the living, breathing classroom. Every unit I
+        write asks the same question Charlotte Mason asked: <em>What does this child
+        deserve to think about?</em>
+      </p>
+      <a href="philosophy.html" class="kim-link">
+        Read more about the approach
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4"/>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
+<!-- ══════════════════════ FOOTER ══════════════════════ -->
+<footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="/images/D_S_Primary_Logo-_Transparent.png" alt="Delight &amp; Savor" class="footer-logo" />
-      <p>Charlotte Mason upper-level literature and language arts for the student who is ready to read deeply.</p>
-      <div class="footer-email">
-        <p>From the Ranch &amp; the Desk &#8212; one monthly letter.</p>
-        <div class="footer-email-row">
-          <input type="email" placeholder="Email address" />
-          <button type="button">Subscribe</button>
-        </div>
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <div class="logo">Delight <span style="color:var(--gold)">&amp;</span> Savor</div>
+        <p class="footer-tagline">
+          Charlotte Mason upper-level literature and language arts
+          for the student who is ready to read deeply.
+        </p>
       </div>
+
+      <!-- Nav -->
+      <div>
+        <p class="footer-col-title">Navigate</p>
+        <ul class="footer-nav-list">
+          <li><a href="philosophy.html">Philosophy</a></li>
+          <li><a href="curriculum.html">Curriculum</a></li>
+          <li><a href="teachers-notebook.html">Teacher's Notebook</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="conversation-quilt.html">Conversation Quilt</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div>
+        <p class="footer-col-title">Connect</p>
+        <ul class="footer-social-list">
+          <li>
+            <a href="https://instagram.com/Kim.delightandsavor" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a href="https://pinterest.com" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.64 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.132-1.867 3.132-4.563 0-2.387-1.715-4.055-4.163-4.055-2.836 0-4.5 2.127-4.5 4.326 0 .856.33 1.775.741 2.276a.3.3 0 01.069.286c-.076.315-.245 1-.278 1.139-.044.183-.146.222-.337.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+              Pinterest
+            </a>
+          </li>
+          <li>
+            <a href="https://delightandsavor.substack.com" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+              Substack
+            </a>
+          </li>
+          <li>
+            <a href="/cdn-cgi/l/email-protection#3c574c4e5559485312585950555b54485d52584f5d4a534e7c5b515d5550125f5351">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email Us
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+        <p class="footer-col-title">From the Ranch &amp; the Desk</p>
+        <p class="newsletter-desc">
+          One monthly letter: what I'm teaching, what I'm reading, and what's
+          new in the shop.
+        </p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)" aria-label="Newsletter signup">
+          <div class="newsletter-input-wrap">
+            <label for="footer-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Email address</label>
+            <input
+              type="email"
+              id="footer-email"
+              class="newsletter-input"
+              placeholder="your@email.com"
+              required
+              autocomplete="email"
+            />
+            <button type="submit" class="newsletter-submit">Subscribe</button>
+          </div>
+          <p id="newsletter-msg" style="font-family:var(--ff-body);font-size:.82rem;color:var(--sage);margin-top:.6rem;min-height:1.2em"></p>
+        </form>
+      </div>
+
     </div>
-    <nav class="footer-nav">
-      <h4>Navigate</h4>
-      <ul>
-        <li><a href="/philosophy">Philosophy</a></li>
-        <li><a href="/curriculum">Curriculum</a></li>
-        <li><a href="/planning">Planning</a></li>
-        <li><a href="/teachers-notebook">Teacher&#8217;s Notebook</a></li>
-        <li><a href="https://delightnsavor.gumroad.com/l/xtqtpv">Shop</a></li>
-        <li><a href="/faq">FAQ</a></li>
-      </ul>
-    </nav>
-    <div class="footer-connect">
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="https://instagram.com/Kim.delightandsavor">Instagram</a></li>
-        <li><a href="https://pinterest.com">Pinterest</a></li>
-        <li><a href="https://delightandsavor.substack.com">Substack</a></li>
-      </ul>
+
+    <hr class="footer-divider" />
+
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        &copy; <span id="year"></span> Delight &amp; Savor Press · All rights reserved · All digital sales final.
+      </p>
+      <nav class="footer-bottom-links" aria-label="Legal links">
+        <a href="faq.html#returns">Returns Policy</a>
+        <a href="faq.html#contact">Contact</a>
+      </nav>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <span>&copy; Delight &amp; Savor Press &middot; All rights reserved &middot; All digital sales final.</span>
-    <span><a href="/faq#returns">Returns Policy</a> &nbsp;&middot;&nbsp; <a href="/faq#contact">Contact</a></span>
   </div>
 </footer>
 
-<script src="/chat.js"></script>
-<script>
-function toggleMenu() {
-  const btn = document.getElementById('hamburger');
-  const nav = document.getElementById('mobile-nav');
-  btn.classList.toggle('open');
-  nav.classList.toggle('open');
-}
-document.addEventListener('click', (e) => {
-  const btn = document.getElementById('hamburger');
-  const nav = document.getElementById('mobile-nav');
-  if (nav?.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) {
-    btn.classList.remove('open');
-    nav.classList.remove('open');
+<!-- ══════════════════════ JAVASCRIPT ══════════════════ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  /* ── Copyright year ── */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ── Carousel ── */
+  const track      = document.getElementById('carouselTrack');
+  const dots       = document.querySelectorAll('.carousel-dot');
+  const VISIBLE    = window.innerWidth <= 600 ? 1 : window.innerWidth <= 860 ? 2 : 4;
+  let current      = 0;
+  const totalSlides = 3; // dots/positions
+  let autoTimer;
+
+  function getCardWidth() {
+    const card = track.querySelector('.carousel-card');
+    if (!card) return 0;
+    const style = getComputedStyle(track);
+    return card.offsetWidth + parseInt(style.gap || '0');
   }
-});
-</script>
-</body>
-</html>
+
+  function goTo(idx) {
+    current = (idx + totalSlides) % totalSlides;
+    const offset = current * getCardWidth();
+    track.style.transform = `translateX(-${offset}px)`;
+    dots.forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+      d.setAttribute('aria-selected', i === current);
+    });
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      clearInterval(autoTimer);
+      goTo(parseInt(dot.dataset.index));
+      startAuto();
+    });
+  });
+
+  function startAuto() {
+    autoTimer = setInterval(() => goTo(current + 1), 4000);
+  }
+  startAuto();
+
+  /* pause on hover */
+  track.closest('.carousel-track-wrap').addEventListener('mouseenter', () => clearInterval(autoTimer));
+  track.closest('.carousel-track-wrap').addEventListener('mouseleave', startAuto);
+
+  /* ── Newsletter ── */
+  function handleNewsletter(e) {
+    e.preventDefault();
+    const msg = document.getElementById('newsletter-msg');
+    const inpu
