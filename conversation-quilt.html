@@ -27,7 +27,7 @@
     .nav-logo-wrap { display: flex; align-items: center; gap: 0.65rem; }
     .nav-logo-img { height: 40px; width: auto; opacity: 0.95; }
     .nav-logo-text { font-family: 'Playfair Display', serif; color: var(--cream); font-size: 1rem; letter-spacing: 0.04em; line-height: 1.2; }
-    .nav-logo-text span { display: block; font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); font-family: 'Cormorant Garamond', serif; font-style: italic; }
+    .nav-logo-text span { display: block; font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(232,213,176,0.45); font-family: 'Cormorant Garamond', serif; font-style: italic; }
     .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
     .nav-links a { color: rgba(250,249,246,0.82); font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
@@ -76,74 +76,22 @@
     .mason-quote p { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; color: var(--slate); line-height: 1.65; }
     .mason-quote cite { display: block; font-family: 'Cormorant Garamond', serif; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 0.75rem; font-style: normal; }
 
-    /* ── QUILT ── */
+        /* ── QUILT ── */
     .quilt-section { background: var(--slate-deep); padding: 4rem 2rem 5rem; }
-    .quilt-inner { max-width: 1100px; margin: 0 auto; }
-
-    .quilt-year { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.85rem; }
-    .quilt-year:not(:first-child) { margin-top: 3rem; }
+    .quilt-inner { max-width: 1060px; margin: 0 auto; }
+    .quilt-year { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
     .quilt-year-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-style: italic; white-space: nowrap; }
     .quilt-year-rule { flex: 1; height: 1px; background: rgba(255,255,255,0.09); }
-
-    /* 5-column grid */
-    .quilt-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; }
-
+    .quilt-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
     .quilt-tile { position: relative; overflow: hidden; background: var(--slate-mid); aspect-ratio: 1/1; }
-    .quilt-tile.wide { grid-column: span 3; aspect-ratio: 16/9; }
-
-    .quilt-tile img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-      transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s ease;
-      filter: saturate(0.85) brightness(0.97);
-    }
-    .quilt-tile:hover img { transform: scale(1.05); filter: saturate(1.05) brightness(1.02); }
-
-    /* Written tiles */
-    .quilt-tile.written img { filter: saturate(0.3) sepia(0.18) brightness(0.94); }
-    .quilt-tile.written:hover img { filter: saturate(0.4) sepia(0.1) brightness(1.0); }
-
-    /* Stitch border */
-    .quilt-tile::after { content: ''; position: absolute; inset: 4px; border: 1px solid rgba(255,255,255,0.06); pointer-events: none; z-index: 1; }
-
-    /* Hover overlay */
-    .quilt-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(30,38,52,0.9) 0%, transparent 60%);
-      opacity: 0; transition: opacity 0.3s ease;
-      display: flex; align-items: flex-end;
-      padding: 0.8rem 0.9rem 0.7rem; z-index: 2;
-    }
-    .quilt-tile:hover .quilt-overlay { opacity: 1; }
-    .quilt-caption { font-family: 'Cormorant Garamond', serif; font-size: 0.76rem; font-style: italic; color: var(--gold-light); line-height: 1.35; }
-
-    /* ── FOOTER NOTE ── */
+    .quilt-tile img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.88) brightness(0.97); }
+    .quilt-tile.written img { filter: saturate(0.32) sepia(0.2) brightness(0.93); }
+    .quilt-tile::after { content: ''; position: absolute; inset: 4px; border: 1px solid rgba(255,255,255,0.07); pointer-events: none; z-index: 1; }
     .quilt-footer-note { text-align: center; margin-top: 2.5rem; }
     .quilt-footer-note p { font-size: 0.85rem; color: rgba(250,249,246,0.32); font-style: italic; line-height: 1.8; }
     .quilt-footer-note em { color: var(--gold); font-style: normal; }
-
-    /* ── SITE FOOTER ── */
-    footer { background: var(--slate); border-top: 1px solid rgba(255,255,255,0.08); color: rgba(250,249,246,0.65); padding: 3rem 1.5rem 2rem; }
-    .footer-inner { max-width: 880px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
-    .footer-logo { height: 36px; width: auto; filter: brightness(0) invert(1); opacity: 0.65; margin-bottom: 0.75rem; display: block; }
-    .footer-brand p { font-size: 0.84rem; color: rgba(250,249,246,0.5); line-height: 1.65; }
-    .footer-nav h4, .footer-connect h4 { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.85rem; }
-    .footer-nav ul, .footer-connect ul { list-style: none; }
-    .footer-nav li, .footer-connect li { margin-bottom: 0.45rem; }
-    .footer-nav a, .footer-connect a { color: rgba(250,249,246,0.52); font-size: 0.9rem; transition: color 0.2s; }
-    .footer-nav a:hover, .footer-connect a:hover { color: var(--gold-light); }
-    .footer-bottom { max-width: 880px; margin: 2rem auto 0; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; font-size: 0.72rem; color: rgba(250,249,246,0.3); }
-    .footer-bottom a { color: rgba(250,249,246,0.35); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 860px) {
-      .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; }
-      .quilt-grid { grid-template-columns: repeat(4, 1fr); }
-      .quilt-tile.wide { grid-column: span 4; }
-      .footer-inner { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 0.5rem; }
-    }
-    @media (max-width: 560px) {
-      .quilt-grid { grid-template-columns: repeat(3, 1fr); gap: 3px; }
+    @media (max-width: 860px) { .quilt-grid { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 560px) { .quilt-grid { grid-template-columns: repeat(3, 1fr); gap: 3px; } .quilt-section { padding: 3rem 1rem 4rem; } }
       .quilt-tile.wide { grid-column: span 3; }
       .hero { padding: 3.5rem 1.25rem 3rem; }
       .intro-section { padding: 3.5rem 1.25rem; }
@@ -232,131 +180,76 @@
     </div>
 
     <div class="quilt-grid">
-
-      <!-- ROW 1: Macbeth collage + 2 tiles -->
-      <div class="quilt-tile wide">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_1200,h_675,q_85/v1779549799/4C3C2B9A-4152-4816-9ECD-F54E8A0B285B_srrfvo.png" alt="Macbeth capstone collage" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Macbeth · Capstone Collage</p></div>
+      <div class="quilt-tile">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549794/IMG_7552_vzsf8j.heic" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549794/IMG_7552_vzsf8j.heic" alt="Student watercolor tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Macbeth</p></div>
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549794/IMG_7549_qkkuvj.heic" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549794/IMG_7549_qkkuvj.heic" alt="Student watercolor tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Macbeth</p></div>
-      </div>
-
-      <!-- ROW 2: 5 tiles mixed -->
-      <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549795/IMG_7546_jvdgte.heic" alt="Student watercolor tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Macbeth</p></div>
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549795/IMG_7546_jvdgte.heic" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile written">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_north,w_600,h_600,q_85/v1779549795/IMG_7555_bcrdcw.heic" alt="Student written response" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Written response · Macbeth</p></div>
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_north,w_600,h_600,q_85/v1779549795/IMG_7555_bcrdcw.heic" alt="Student capstone tile" loading="lazy" />
+      </div>
+      <div class="quilt-tile">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551941/IMG_7534_sygr7a.heic" alt="Student capstone tile" loading="lazy" />
+      </div>
+      <div class="quilt-tile">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551936/IMG_7536_hukdd9.heic" alt="Student capstone tile" loading="lazy" />
+      </div>
+      <div class="quilt-tile">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551935/IMG_7537_ecfyjr.heic" alt="Student capstone tile" loading="lazy" />
+      </div>
+      <div class="quilt-tile">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551934/IMG_7538_e29fnk.heic" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile written">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_north,w_600,h_600,q_85/v1779549793/IMG_7556_jlmbym.heic" alt="Student written response" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Written response · Macbeth</p></div>
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_north,w_600,h_600,q_85/v1779549793/IMG_7556_jlmbym.heic" alt="Student capstone tile" loading="lazy" />
+      </div>
+      <div class="quilt-tile">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549798/IMG_7535_ocligj.heic" alt="Student capstone tile" loading="lazy" />
+      </div>
+      <div class="quilt-tile">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551940/IMG_7543_kmnhge.heic" alt="Student capstone tile" loading="lazy" />
+      </div>
+      <div class="quilt-tile">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551933/IMG_7544_qo9wcl.heic" alt="Student capstone tile" loading="lazy" />
+      </div>
+      <div class="quilt-tile">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551051/IMG_7545_dithnx.heic" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile written">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_north,w_600,h_600,q_85/v1779549793/IMG_7554_o0ngmu.heic" alt="Student written response" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Written response · Macbeth</p></div>
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_north,w_600,h_600,q_85/v1779549793/IMG_7554_o0ngmu.heic" alt="Student capstone tile" loading="lazy" />
+      </div>
+      <div class="quilt-tile">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551050/IMG_7547_iat1yr.heic" alt="Student capstone tile" loading="lazy" />
+      </div>
+      <div class="quilt-tile">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549796/IMG_7542_tpyrva.heic" alt="Student capstone tile" loading="lazy" />
+      </div>
+      <div class="quilt-tile">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549796/IMG_7541_g4flw7.heic" alt="Student capstone tile" loading="lazy" />
+      </div>
+      <div class="quilt-tile">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549798/IMG_7539_afyibq.heic" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile written">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_north,w_600,h_600,q_85/v1779549794/IMG_7553_pivqbv.heic" alt="Student written response" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Written response · Macbeth</p></div>
-      </div>
-
-      <!-- ROW 3: new tiles + extras -->
-      <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551941/IMG_7534_sygr7a.heic" alt="Student tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Macbeth</p></div>
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_north,w_600,h_600,q_85/v1779549794/IMG_7553_pivqbv.heic" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551936/IMG_7536_hukdd9.heic" alt="Student tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Macbeth</p></div>
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549798/IMG_7540_f4odgf.heic" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551935/IMG_7537_ecfyjr.heic" alt="Student tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Macbeth</p></div>
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549796/IMG_7548_lulqu3.heic" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551934/IMG_7538_e29fnk.heic" alt="Student tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Macbeth</p></div>
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549795/IMG_7551_x7wysb.heic" alt="Student capstone tile" loading="lazy" />
       </div>
-      <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549798/IMG_7535_ocligj.heic" alt="Student tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Macbeth</p></div>
-      </div>
-
-      <!-- ROW 4: Wuthering Heights collage + 2 tiles -->
-      <div class="quilt-tile wide">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_1200,h_675,q_85/v1779549799/2929112F-4199-4283-BA75-2B5FC2897CB0_bmfquu.png" alt="Wuthering Heights capstone collage" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Wuthering Heights · Capstone Collage</p></div>
-      </div>
-      <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551940/IMG_7543_kmnhge.heic" alt="Student tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Wuthering Heights</p></div>
-      </div>
-      <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551933/IMG_7544_qo9wcl.heic" alt="Student tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Wuthering Heights</p></div>
-      </div>
-
-      <!-- ROW 5: remaining Wuthering tiles -->
-      <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551051/IMG_7545_dithnx.heic" alt="Student tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Wuthering Heights</p></div>
-      </div>
-      <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551050/IMG_7547_iat1yr.heic" alt="Student tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Wuthering Heights</p></div>
-      </div>
-      <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549796/IMG_7542_tpyrva.heic" alt="Student tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Wuthering Heights</p></div>
-      </div>
-      <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549796/IMG_7541_g4flw7.heic" alt="Student tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Wuthering Heights</p></div>
-      </div>
-      <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549798/IMG_7539_afyibq.heic" alt="Student tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Wuthering Heights</p></div>
-      </div>
-      <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549798/IMG_7540_f4odgf.heic" alt="Student tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Wuthering Heights</p></div>
-      </div>
-      <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549796/IMG_7548_lulqu3.heic" alt="Student tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Wuthering Heights</p></div>
-      </div>
-      <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549795/IMG_7551_x7wysb.heic" alt="Student tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Wuthering Heights</p></div>
-      </div>
-
-      <!-- End-of-year showcase collage -->
-      <div class="quilt-tile wide">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_1200,h_675,q_85/v1779549798/DD914E93-70CF-46BA-B75F-0A907594BBFC_ohu1es.png" alt="Student Art Showcase 2023–2024" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">End-of-Year Showcase · 2023–2024</p></div>
-      </div>
-      <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549798/IMG_7535_ocligj.heic" alt="Student tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Art of Tragedy</p></div>
-      </div>
-      <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549795/IMG_7551_x7wysb.heic" alt="Student tile" loading="lazy" />
-        <div class="quilt-overlay"><p class="quilt-caption">Watercolor · Art of Tragedy</p></div>
-      </div>
-
-    </div><!-- /quilt-grid -->
+    </div>
 
     <div class="quilt-footer-note">
-      <p>Every square — polished or rough, painted or written — is a student who read closely,<br>thought carefully, and added their voice to a conversation centuries in the making.<br><em>The quilt grows every year.</em></p>
+      <p>Every square — painted or written — is a student who read closely,<br>thought carefully, and added their voice to a conversation centuries in the making.<br><em>The quilt grows every year.</em></p>
     </div>
 
   </div>
