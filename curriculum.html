@@ -62,62 +62,46 @@
     a { text-decoration: none; color: inherit; }
     img { display: block; max-width: 100%; }
 
-    /* ─── HEADER ────────────────────────────────────────── */
-    .site-header {
-      background: var(--slate);
-      position: sticky; top: 0; z-index: 100;
-      box-shadow: 0 2px 16px rgba(0,0,0,.25);
-    }
-    .header-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 2rem; height: 68px;
-    }
-    .logo {
-      font-family: var(--ff-display);
-      font-size: 1.45rem; font-weight: 600;
-      color: var(--cream); letter-spacing: .02em;
-    }
-    .logo span { color: var(--gold); }
-        .nav-wrap { display: flex; align-items: center; gap: .15rem; }
-    .nav-link {
-      font-family: var(--ff-sans); font-size: .7rem; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--sage);
-      padding: .4rem .65rem; border-radius: 4px;
-      transition: color .2s, background .2s; white-space: nowrap;
-    }
-    .nav-link:hover { color: var(--cream); background: rgba(255,255,255,.07); }
-    .nav-link.active { color: var(--cream); }
-    .btn-shopnow {
-      font-family: var(--ff-sans); font-size: .75rem;
-      letter-spacing: .1em; text-transform: uppercase;
-      background: var(--gold); color: var(--slate);
-      border: none; border-radius: 4px; padding: .55rem 1.25rem;
-      cursor: pointer; font-weight: 700;
-      transition: background .2s, transform .1s;
-    }
-    .btn-shopnow:hover { background: rgba(194,155,97,.85); transform: translateY(-1px); }
+    
+        
+    
+        
+    
 
-    /* ─── SOCIAL BAR ────────────────────────────────────── */
-    .social-bar { background: var(--light-sage); border-bottom: 1px solid rgba(169,183,134,.4); }
-    .social-bar-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: center;
-      gap: 2rem; padding: .55rem 2rem;
-    }
-    .social-link {
-      font-family: var(--ff-sans); font-size: .72rem;
-      letter-spacing: .1em; text-transform: uppercase;
-      color: var(--slate); display: flex; align-items: center; gap: .5rem;
-      transition: color .2s;
-    }
-    .social-link:hover { color: var(--sage); }
-    .social-link svg { width: 15px; height: 15px; }
+    
 
     /* ─── PAGE HERO ─────────────────────────────────────── */
+        /* ── NAV ── */
+    nav { background: var(--slate); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 16px rgba(0,0,0,.25); }
+    .nav-logo-wrap { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; }
+    .nav-logo-img { height: 40px; width: auto; opacity: 0.95; }
+    .nav-logo-text { font-family: 'Playfair Display', serif; color: var(--cream); font-size: 1rem; letter-spacing: 0.04em; line-height: 1.2; }
+    .nav-logo-text span { display: block; font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,213,176,0.45); font-family: 'Cormorant Garamond', serif; font-style: italic; }
+    .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { color: rgba(250,249,246,0.82); font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-light, #E8D5B0); }
+    .nav-cta { background: var(--gold); color: var(--cream) !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; }
+    .nav-social { display: flex; gap: 1.25rem; align-items: center; }
+    .nav-social a { color: rgba(250,249,246,0.52); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; }
+    .nav-social a:hover { color: #E8D5B0; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--cream); border-radius: 2px; transition: all .25s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--slate); border-top: 1px solid rgba(255,255,255,0.1); padding: 1rem 2rem 1.5rem; z-index: 99; flex-direction: column; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { color: rgba(250,249,246,0.75); font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 0.2s; text-decoration: none; }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a:hover { color: #E8D5B0; }
+    .mobile-nav a.mobile-cta { color: #E8D5B0; font-weight: 600; }
+    .mobile-nav .mobile-divider { height: 1px; background: rgba(255,255,255,0.12); margin: 0.5rem 0; }
+    @media (max-width: 720px) { .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; } }
+
     .page-hero {
-      background: linear-gradient(135deg, var(--cream) 0%, var(--light-sage) 55%, #d4e8c8 100%);
-      padding: 5rem 2rem 4.5rem;
+      background: var(--slate);
+      color: var(--cream);
+      padding: 4.5rem 2rem 4rem;
       text-align: center; position: relative; overflow: hidden;
     }
     .page-hero::before {
@@ -132,13 +116,13 @@
     .page-eyebrow {
       font-family: var(--ff-sans); font-size: .75rem;
       letter-spacing: .2em; text-transform: uppercase;
-      color: var(--sage); margin-bottom: 1rem;
+      color: var(--gold-light); margin-bottom: 1rem;
     }
     .page-title {
-      font-family: var(--ff-display);
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
       font-style: italic; font-weight: 400;
-      color: var(--slate); line-height: 1.15; margin-bottom: 1.25rem;
+      color: var(--cream); line-height: 1.2; margin-bottom: 1.1rem;
     }
     .page-title em { color: var(--gold); }
     .page-tagline {
@@ -189,7 +173,7 @@
     }
     .section-intro {
       font-family: var(--ff-body); font-size: 1.1rem;
-      color: var(--text-mid); line-height: 1.8;
+      color: rgba(250,249,246,0.72); line-height: 1.8;
       max-width: 680px;
     }
     .gold-rule {
@@ -556,36 +540,46 @@
 <body>
 
 <!-- ══════════════════════ HEADER ══════════════════════ -->
-<header class="site-header" role="banner">
-  <div class="header-inner">
-    <a href="index.html" class="logo">Delight <span>&amp;</span> Savor</a>
-        <nav class="nav-wrap" aria-label="Primary navigation">
-      <a href="philosophy.html" class="nav-link">Philosophy</a>
-      <a href="curriculum.html" class="nav-link active">Curriculum</a>
-      <a href="teachers-notebook.html" class="nav-link">Teacher's Notebook</a>
-      <a href="faq.html" class="nav-link">FAQ</a>
-      <a href="conversation-quilt.html" class="nav-link">Conversation Quilt</a>
-      <a href="curriculum.html" class="btn-shopnow">Shop Now</a>
-    </nav>
+<nav>
+  <a href="/" class="nav-logo-wrap">
+    <img src="/images/ds_icon.png" alt="Delight &amp; Savor" class="nav-logo-img" />
+    <div class="nav-logo-text">
+      Delight &amp; Savor
+      <span>Beauty. Meaning. Connection.</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/philosophy">Philosophy</a></li>
+    <li><a href="/curriculum" class="active">Curriculum</a></li>
+    <li><a href="/teachers-notebook">Teacher&#8217;s Notebook</a></li>
+    <li><a href="/faq">FAQ</a></li>
+    <li><a href="/conversation-quilt">Conversation Quilt</a></li>
+    <li><a href="/curriculum" class="nav-cta">Shop Now</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="https://instagram.com/Kim.delightandsavor">Instagram</a>
+    <a href="https://pinterest.com">Pinterest</a>
+    <a href="https://delightandsavor.substack.com">Substack</a>
   </div>
-</header>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/philosophy" onclick="toggleMenu()">Philosophy</a>
+  <a href="/curriculum" onclick="toggleMenu()">Curriculum</a>
+  <a href="/teachers-notebook" onclick="toggleMenu()">Teacher&#8217;s Notebook</a>
+  <a href="/faq" onclick="toggleMenu()">FAQ</a>
+  <a href="/conversation-quilt" onclick="toggleMenu()">Conversation Quilt</a>
+  <div class="mobile-divider"></div>
+  <a href="https://instagram.com/Kim.delightandsavor" onclick="toggleMenu()">Instagram</a>
+  <a href="https://delightandsavor.substack.com" onclick="toggleMenu()">Substack</a>
+  <div class="mobile-divider"></div>
+  <a href="/curriculum" class="mobile-cta" onclick="toggleMenu()">Shop Now &rarr;</a>
+</div>
 
 <!-- ══════════════════════ SOCIAL BAR ══════════════════ -->
-<div class="social-bar">
-  <div class="social-bar-inner">
-    <a href="https://instagram.com/Kim.delightandsavor" class="social-link" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-      Instagram
-    </a>
-    <a href="https://pinterest.com" class="social-link" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.64 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.132-1.867 3.132-4.563 0-2.387-1.715-4.055-4.163-4.055-2.836 0-4.5 2.127-4.5 4.326 0 .856.33 1.775.741 2.276a.3.3 0 01.069.286c-.076.315-.245 1-.278 1.139-.044.183-.146.222-.337.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
-      Pinterest
-    </a>
-    <a href="https://delightandsavor.substack.com" class="social-link" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
-      Substack
-    </a>
-  </div>
+
 </div>
 
 <!-- ══════════════════════ PAGE HERO ═══════════════════ -->
