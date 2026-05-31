@@ -3,25 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Philosophy · Delight & Savor</title>
-  <meta name="description" content="Why narration, living books, and the Great Conversation belong at the heart of upper school literature. The thinking behind every Delight & Savor unit." />
+  <title>Philosophy · Delight &amp; Savor</title>
+  <meta name="description" content="Why narration, living books, and the Great Conversation belong at the heart of upper school literature — and what it looks like in students' own work." />
   <meta name="keywords" content="Charlotte Mason, homeschool literature, upper school English, living books, narration, Macbeth, Wuthering Heights, literature companion, co-op curriculum, grades 9-12" />
   <meta name="author" content="Delight &amp; Savor Press" />
   <link rel="canonical" href="https://delightandsavor.com/philosophy" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Delight &amp; Savor" />
-  <meta property="og:title" content="Philosophy · Delight & Savor" />
-  <meta property="og:description" content="Why narration, living books, and the Great Conversation belong at the heart of upper school literature. The thinking behind every Delight & Savor unit." />
+  <meta property="og:title" content="Philosophy · Delight &amp; Savor" />
+  <meta property="og:description" content="Why narration, living books, and the Great Conversation belong at the heart of upper school literature — seen first in students' own work." />
   <meta property="og:url" content="https://delightandsavor.com/philosophy" />
   <meta property="og:image" content="https://res.cloudinary.com/dwdbmowur/image/upload/v1772975874/IMG_7781_jpg_2_pgmwq4.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Delight &amp; Savor — Charlotte Mason upper school literature curriculum" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Philosophy · Delight & Savor" />
-  <meta name="twitter:description" content="Why narration, living books, and the Great Conversation belong at the heart of upper school literature. The thinking behind every Delight & Savor unit." />
-  <meta name="twitter:image" content="https://res.cloudinary.com/dwdbmowur/image/upload/v1772975874/IMG_7781_jpg_2_pgmwq4.jpg" />
-  <meta name="pinterest-rich-pin" content="true" />
+  <meta name="twitter:title" content="Philosophy · Delight &amp; Savor" />
+  <meta name="twitter:description" content="Why narration, living books, and the Great Conversation belong at the heart of upper school literature — seen first in students' own work." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -30,7 +28,7 @@
       --slate: #37322B; --slate-mid: #5C564B; --sage-dark: #5C6A50;
       --sage: #8C9B79; --sage-light: #EBEFE2; --cream: #FAF6EE;
       --gold: #BE9457; --gold-light: #E2C79A; --teal: #5C6A50;
-      --ink: #2C2A26; --muted: #6E675C; --border: #E4DED1;
+      --ink: #2C2A26; --muted: #6E675C; --border: #E4DED1; --cloth: #232220;
       --ff-display: 'Playfair Display', Georgia, serif;
       --ff-body: 'Cormorant Garamond', Georgia, serif;
       --ff-sans: 'Jost', system-ui, sans-serif;
@@ -45,11 +43,11 @@
     .nav-logo-text { font-family: 'Playfair Display', serif; color: var(--cream); font-size: 1rem; letter-spacing: 0.04em; line-height: 1.2; }
     .nav-logo-text span { display: block; font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(232,213,176,0.45); font-family: 'Cormorant Garamond', serif; font-style: italic; }
     .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
-    .nav-links a { color: rgba(250,249,246,0.82); font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a { color: rgba(250,249,246,0.82); font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; font-family: var(--ff-sans); }
     .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
     .nav-cta { background: var(--gold); color: var(--cream) !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; }
     .nav-social { display: flex; gap: 1.25rem; align-items: center; }
-    .nav-social a { color: rgba(250,249,246,0.52); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-social a { color: rgba(250,249,246,0.52); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; font-family: var(--ff-sans); }
     .nav-social a:hover { color: var(--gold-light); }
     .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--cream); border-radius: 2px; transition: all .25s; }
@@ -58,125 +56,141 @@
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--slate); border-top: 1px solid rgba(255,255,255,0.1); padding: 1rem 2rem 1.5rem; z-index: 99; flex-direction: column; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
     .mobile-nav.open { display: flex; }
-    .mobile-nav a { color: rgba(250,249,246,0.75); font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 0.2s; }
+    .mobile-nav a { color: rgba(250,249,246,0.75); font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 0.2s; font-family: var(--ff-sans); }
     .mobile-nav a:last-child { border-bottom: none; }
     .mobile-nav a:hover { color: var(--gold-light); }
     .mobile-nav a.mobile-cta { color: var(--gold-light); font-weight: 600; }
     .mobile-nav .mobile-divider { height: 1px; background: rgba(255,255,255,0.12); margin: 0.5rem 0; }
-    .phil-hero { background: var(--slate); color: var(--cream); padding: 4.5rem 2rem 4rem; text-align: center; }
-    .phil-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem; font-style: italic; }
-    .phil-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 400; line-height: 1.2; max-width: 600px; margin: 0 auto 1.1rem; color: var(--cream); }
+
+    /* hero */
+    .phil-hero { color: var(--cream); padding: 4.75rem 2rem 4.25rem; text-align: center; }
+    .phil-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem; font-family: var(--ff-sans); }
+    .phil-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4.8vw, 3.1rem); font-weight: 400; font-style: italic; line-height: 1.2; max-width: 620px; margin: 0 auto 1.1rem; color: var(--cream); text-shadow: 0 2px 1px rgba(0,0,0,.5), 0 -1px 0 rgba(255,240,210,.04); }
     .phil-title em { font-style: italic; color: var(--gold-light); }
-    .phil-lead { max-width: 480px; margin: 0 auto 2rem; color: rgba(250,249,246,0.72); font-size: 1rem; line-height: 1.65; }
+    .phil-lead { max-width: 500px; margin: 0 auto 2rem; color: rgba(250,249,246,0.78); font-size: 1.05rem; line-height: 1.65; }
     .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background: var(--gold); color: var(--cream); padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; font-weight: 600; display: inline-block; }
-    .btn-ghost { border: 1px solid rgba(250,249,246,0.3); color: rgba(250,249,246,0.82); padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; display: inline-block; }
-    .section-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; font-style: italic; }
-    .section-title { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 400; color: var(--slate); margin-bottom: 1rem; }
-    .section-body { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--ink); line-height: 1.9; }
-    .section-body p + p { margin-top: 1.1rem; }
-    .gold-rule { width: 40px; height: 2px; background: var(--gold); margin-bottom: 1.5rem; }
-    .phil-section { padding: 5rem 2rem; }
+    .btn-primary { background: var(--gold); color: var(--cream); padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; font-weight: 600; display: inline-block; font-family: var(--ff-sans); }
+    .btn-ghost { border: 1px solid rgba(250,249,246,0.3); color: rgba(250,249,246,0.85); padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; display: inline-block; font-family: var(--ff-sans); }
+    .btn-outline { border: 1px solid rgba(250,249,246,0.3); color: rgba(250,249,246,0.85); padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; display: inline-block; font-family: var(--ff-sans); transition: border-color .2s, color .2s; }
+    .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+    .section-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; font-family: var(--ff-sans); }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400; color: var(--slate); margin-bottom: 1rem; line-height: 1.25; }
+    .section-body { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; color: var(--ink); line-height: 1.85; }
+    .section-body p + p { margin-top: 1rem; }
+    .gold-rule { width: 40px; height: 2px; background: var(--gold); margin-bottom: 1.4rem; }
+    .phil-section { padding: 4.75rem 2rem; }
     .phil-section.alt { background: var(--sage-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .phil-section.stripe { background: var(--cream); border-top: 1px solid var(--border); }
     .phil-inner { max-width: 1000px; margin: 0 auto; }
-    .prose-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2.5rem; align-items: start; }
-    .prose-pull { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-style: italic; color: var(--slate); line-height: 1.6; border-left: 3px solid var(--gold); padding-left: 1.5rem; margin-top: 2rem; }
-    .pull-quote { margin: 2.5rem 0 0; padding: 1.25rem 1.75rem; border-left: 3px solid var(--gold); background: rgba(190,148,87,0.06); border-radius: 0 6px 6px 0; }
+    .prose-pull { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-style: italic; color: var(--slate); line-height: 1.6; border-left: 3px solid var(--gold); padding-left: 1.5rem; margin-top: 1.75rem; }
+    .pull-quote { margin: 2rem auto 0; padding: 1.25rem 1.75rem; border-left: 3px solid var(--gold); background: rgba(190,148,87,0.06); border-radius: 0 6px 6px 0; max-width: 680px; }
     .pull-quote p { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; color: var(--slate); line-height: 1.6; }
     .pull-quote p em { color: var(--gold); font-style: normal; }
-    .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
-    .pillar-card { background: var(--cream); border-radius: 4px; padding: 2rem 1.75rem; box-shadow: 0 3px 16px rgba(92,86,75,0.08); border-top: 3px solid var(--gold); transition: transform .25s, box-shadow .25s; }
+
+    /* pillars */
+    .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.25rem; margin-top: 2.25rem; }
+    .pillar-card { background: var(--cream); border-radius: 4px; padding: 1.85rem 1.6rem; box-shadow: 0 3px 16px rgba(92,86,75,0.08); border-top: 3px solid var(--gold); transition: transform .25s, box-shadow .25s; }
     .pillar-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(92,86,75,0.13); }
     .pillar-card:nth-child(2) { border-color: var(--sage); }
-    .pillar-card:nth-child(3) { border-color: var(--gold); }
     .pillar-card:nth-child(4) { border-color: var(--sage); }
     .pillar-card:nth-child(5) { border-color: var(--teal); }
-    .pillar-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-style: italic; color: var(--border); line-height: 1; margin-bottom: 0.5rem; }
-    .pillar-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 400; color: var(--slate); margin-bottom: 0.65rem; }
-    .pillar-desc { font-family: 'Cormorant Garamond', serif; font-size: 0.97rem; color: var(--muted); line-height: 1.75; }
-    .thinkers-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
-    .thinker-chip { font-family: 'Cormorant Garamond', serif; font-size: 0.97rem; font-style: italic; color: var(--slate); background: var(--cream); border: 1px solid var(--border); border-radius: 100px; padding: 0.4rem 1.1rem; transition: background .2s, border-color .2s; }
+    .pillar-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-style: italic; color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
+    .pillar-title { font-family: 'Playfair Display', serif; font-size: 1.18rem; font-weight: 400; color: var(--slate); margin-bottom: 0.55rem; }
+    .pillar-desc { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--muted); line-height: 1.7; }
+    .pillar-desc strong { color: var(--slate); font-weight: 600; font-style: normal; }
+
+    /* thinkers + great conv */
+    .two-col { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; margin-top: 2rem; align-items: start; }
+    .thinkers-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.25rem; }
+    .thinker-chip { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; font-style: italic; color: var(--slate); background: var(--cream); border: 1px solid var(--border); border-radius: 100px; padding: 0.35rem 1rem; transition: background .2s, border-color .2s; }
     .thinker-chip:hover { background: var(--sage-light); border-color: var(--sage); }
-    .great-conv-quote { margin-top: 2.5rem; background: var(--cream); border-radius: 4px; padding: 2rem 2.5rem; box-shadow: 0 3px 16px rgba(92,86,75,0.08); border-left: 3px solid var(--sage); }
-    .great-conv-quote p { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic; color: var(--slate); line-height: 1.7; }
-    .great-conv-quote cite { display: block; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.85rem; font-style: normal; }
-    .narration-bridge { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2.5rem; align-items: start; }
-    .narration-bridge-visual { background: var(--sage-light); border-radius: 4px; padding: 2rem; border: 1px solid var(--border); }
-    .narration-bridge-visual .section-body p + p { margin-top: 1.1rem; }
-    .phil-cta { background: var(--slate); padding: 5rem 2rem; text-align: center; }
-    .phil-cta-inner { max-width: 560px; margin: 0 auto; }
+    .great-conv-quote { margin-top: 1.75rem; background: var(--cream); border-radius: 4px; padding: 1.75rem 2rem; box-shadow: 0 3px 16px rgba(92,86,75,0.08); border-left: 3px solid var(--sage); }
+    .great-conv-quote p { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; color: var(--slate); line-height: 1.65; }
+    .great-conv-quote cite { display: block; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.85rem; font-style: normal; font-family: var(--ff-sans); }
+
+    /* year note */
+    .year-note { max-width: 720px; margin: 0 auto; text-align: center; font-family: var(--ff-body); font-size: 1.08rem; color: var(--slate-mid); line-height: 1.8; }
+    .year-note strong { color: var(--slate); font-weight: 600; }
+
+    /* capstone */
+    .capstone-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.25rem; margin-bottom: 1.5rem; }
+    .capstone-card { background: var(--cream); border-radius: 4px; padding: 1.85rem 1.6rem; box-shadow: 0 3px 16px rgba(92,86,75,0.08); border-top: 3px solid var(--teal); }
+    .capstone-card:nth-child(2) { border-color: var(--gold); }
+    .capstone-card:nth-child(4) { border-color: var(--gold); }
+    .capstone-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-style: italic; color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
+    .capstone-card-title { font-family: 'Playfair Display', serif; font-size: 1.12rem; font-weight: 400; color: var(--slate); margin-bottom: 0.55rem; }
+    .capstone-card-body { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--muted); line-height: 1.75; }
+    .capstone-card-body em { color: var(--ink); font-style: italic; }
+
+    /* narration bridge */
+    .narration-bridge { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem; align-items: start; }
+    .narration-bridge-visual { background: var(--sage-light); border-radius: 4px; padding: 1.85rem; border: 1px solid var(--border); }
+    .nb-flow { display: flex; flex-direction: column; gap: 0.55rem; }
+    .nb-step { font-family: var(--ff-body); font-size: 1.04rem; color: var(--slate); line-height: 1.5; }
+    .nb-step b { font-family: var(--ff-sans); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.1rem; font-weight: 600; }
+
+    /* cta */
+    .phil-cta { padding: 4.75rem 2rem; text-align: center; }
+    .phil-cta-inner { max-width: 560px; margin: 0 auto; position: relative; z-index: 1; }
     .phil-cta-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-style: italic; color: var(--cream); margin-bottom: 0.85rem; font-weight: 400; }
-    .phil-cta-body { font-size: 1rem; color: rgba(250,249,246,0.68); line-height: 1.7; margin-bottom: 2rem; }
+    .phil-cta-body { font-size: 1.02rem; color: rgba(250,249,246,0.72); line-height: 1.7; margin-bottom: 2rem; }
     .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .bridge-section { background: var(--slate-mid); color: var(--cream); }
-    .bridge-section .section-label { color: var(--gold-light); }
-    .bridge-section .section-title { color: var(--cream); }
-    .bridge-section .section-body { color: rgba(250,249,246,0.78); }
-    footer { background: var(--slate); border-top: 1px solid rgba(255,255,255,0.08); color: rgba(250,249,246,0.65); padding: 3rem 1.5rem 2rem; }
-    .footer-inner { max-width: 880px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
-    .footer-logo { height: 36px; width: auto; filter: brightness(0) invert(1); opacity: 0.65; margin-bottom: 0.75rem; display: block; }
-    .footer-brand p { font-size: 0.84rem; color: rgba(250,249,246,0.5); line-height: 1.65; }
-    .footer-nav h4, .footer-connect h4 { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.85rem; }
+
+    /* student work — the heartbeat, near the top */
+    .student-work { background: var(--cream); padding: 4.75rem 2rem; }
+    .sw-inner { max-width: 1060px; margin: 0 auto; }
+    .sw-head { text-align: center; max-width: 640px; margin: 0 auto 2.5rem; }
+    .sw-head .section-label { color: var(--gold); }
+    .sw-grid { display: grid; grid-template-columns: 1fr; gap: 1.75rem; }
+    .sw-plate { background: #FAF6EE; border: 1px solid var(--border); padding: 12px; border-radius: 3px; box-shadow: 0 10px 28px rgba(92,86,75,0.12); }
+    .sw-plate img { width: 100%; display: block; border-radius: 2px; }
+    .sw-cap { text-align: center; font-family: var(--ff-sans); font-variant: small-caps; letter-spacing: 0.14em; font-size: 0.74rem; color: var(--sage-dark); margin-top: 0.7rem; }
+
+    /* footer */
+    footer { border-top: 1px solid rgba(255,255,255,0.07); color: rgba(250,249,246,0.65); padding: 3.25rem 1.5rem 2rem; }
+    .footer-inner { max-width: 880px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; position: relative; z-index: 1; }
+    .footer-logo { height: 36px; width: auto; filter: brightness(0) invert(1); opacity: 0.7; margin-bottom: 0.75rem; display: block; }
+    .footer-brand p { font-size: 0.84rem; color: rgba(250,249,246,0.55); line-height: 1.65; }
+    .footer-nav h4, .footer-connect h4 { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.85rem; font-family: var(--ff-sans); }
     .footer-nav ul, .footer-connect ul { list-style: none; }
     .footer-nav li, .footer-connect li { margin-bottom: 0.45rem; }
-    .footer-nav a, .footer-connect a { color: rgba(250,249,246,0.52); font-size: 0.9rem; transition: color 0.2s; }
+    .footer-nav a, .footer-connect a { color: rgba(250,249,246,0.55); font-size: 0.9rem; transition: color 0.2s; }
     .footer-nav a:hover, .footer-connect a:hover { color: var(--gold-light); }
     .footer-email { margin-top: 1.5rem; }
-    .footer-email p { font-size: 0.78rem; color: rgba(250,249,246,0.42); margin-bottom: 0.5rem; font-style: italic; }
+    .footer-email p { font-size: 0.78rem; color: rgba(250,249,246,0.45); margin-bottom: 0.5rem; font-style: italic; }
     .footer-email-row { display: flex; gap: 0.5rem; }
     .footer-email-row input { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); color: var(--cream); padding: 0.4rem 0.75rem; font-size: 0.85rem; border-radius: 2px; flex: 1; font-family: 'Cormorant Garamond', serif; }
-    .footer-email-row button { background: var(--gold); color: var(--slate); border: none; padding: 0.4rem 0.9rem; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-weight: 700; }
-    .footer-bottom { max-width: 880px; margin: 2rem auto 0; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; font-size: 0.72rem; color: rgba(250,249,246,0.3); }
-    .footer-bottom a { color: rgba(250,249,246,0.35); }
-    .capstone-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
-    .capstone-card { background: var(--cream); border-radius: 4px; padding: 2rem 1.75rem; box-shadow: 0 3px 16px rgba(92,86,75,0.08); border-top: 3px solid var(--teal); }
-    .capstone-card:nth-child(2) { border-color: var(--gold); }
-    .capstone-card:nth-child(3) { border-color: var(--sage); }
-    .capstone-card:nth-child(4) { border-color: var(--teal); }
-    .capstone-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-style: italic; color: var(--border); line-height: 1; margin-bottom: 0.5rem; }
-    .capstone-card-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 400; color: var(--slate); margin-bottom: 0.65rem; }
-    .capstone-card-body { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--muted); line-height: 1.8; }
-    .capstone-card-body em { color: var(--ink); font-style: italic; }
-    .capstone-celebrate { background: var(--slate); border-radius: 4px; padding: 2.5rem 3rem; margin-top: 0.5rem; }
-    .capstone-celebrate-inner { max-width: 720px; margin: 0 auto; text-align: center; }
-    .capstone-celebrate-inner .section-label { color: var(--gold-light); }
-    .capstone-celebrate-inner p { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic; color: rgba(250,249,246,0.85); line-height: 1.75; }
-    .capstone-celebrate-inner p em { color: var(--gold-light); font-style: normal; }
-    /* CAPSTONE COLLAGES */
-    .collages-section { background: var(--slate); padding: 0 2rem 4rem; }
-    .collages-inner { max-width: 1060px; margin: 0 auto; }
-    .collages-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-style: italic; text-align: center; padding-top: 3.5rem; margin-bottom: 1.5rem; }
-    .collages-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-    .collage-item { position: relative; overflow: hidden; }
-    .collage-item.full { grid-column: span 2; }
-    .collage-item img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.92); }
-    .collage-caption { text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 0.78rem; font-style: italic; color: rgba(250,249,246,0.38); margin-top: 0.5rem; }
-    @media (max-width: 720px) { .collages-grid { grid-template-columns: 1fr; } .collage-item.full { grid-column: span 1; } }
-        @media (max-width: 720px) { .capstone-grid { grid-template-columns: 1fr; } .capstone-celebrate { padding: 2rem 1.5rem; } }
-    @media (max-width: 720px) {
+    .footer-email-row button { background: var(--gold); color: var(--slate); border: none; padding: 0.4rem 0.9rem; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-weight: 700; font-family: var(--ff-sans); }
+    .footer-bottom { max-width: 880px; margin: 2rem auto 0; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; font-size: 0.72rem; color: rgba(250,249,246,0.35); position: relative; z-index: 1; font-family: var(--ff-sans); }
+    .footer-bottom a { color: rgba(250,249,246,0.4); }
+
+    /* ── book-cloth covers (charcoal ink) ── */
+    .cloth { position: relative; background-color: #232220;
+      background-image:
+        repeating-linear-gradient(90deg, rgba(0,0,0,.12) 0 1px, transparent 1px 3px),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.013) 0 1px, transparent 1px 3px),
+        radial-gradient(130% 90% at 50% 0%, #2f2d29 0%, #232220 55%, #191816 100%); }
+    .gilt::before { content:""; position:absolute; inset:16px; border:1px solid rgba(190,148,87,.42); pointer-events:none; z-index:0; }
+    .gilt::after  { content:""; position:absolute; inset:21px; border:1px solid rgba(190,148,87,.16); pointer-events:none; z-index:0; }
+    .phil-hero.cloth > * { position: relative; z-index: 1; }
+    .fieldnote { max-width: 40ch; margin: 1.9rem auto 0; position: relative; z-index: 1; }
+    .fn-label { display:flex; align-items:center; justify-content:center; gap:.7rem; font-family:var(--ff-sans); font-variant:small-caps; letter-spacing:.22em; font-size:.72rem; color:var(--gold-light); margin-bottom:.55rem; }
+    .fn-label::before, .fn-label::after { content:""; height:1px; width:22px; background:rgba(190,148,87,.55); }
+    .fn-text { font-family:var(--ff-display); font-style:italic; font-size:1.3rem; line-height:1.5; color:var(--cream); text-align:center; }
+    .fn-band { padding: 3.5rem 2rem; text-align:center; }
+
+    @media (max-width: 760px) {
       .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; }
-      .prose-two-col { grid-template-columns: 1fr; gap: 2rem; }
+      .two-col { grid-template-columns: 1fr; gap: 2rem; }
+      .capstone-grid { grid-template-columns: 1fr; }
       .narration-bridge { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 0.5rem; }
       .phil-section { padding: 3.5rem 1.25rem; }
       .phil-hero { padding: 3.5rem 1.25rem 3rem; }
+      .student-work { padding: 3.5rem 1.25rem; }
     }
-      /* --- brand cohesion: Jost labels + missing button --- */
-    .phil-eyebrow, .section-label, .nav-links a, .nav-social a, .mobile-nav a,
-    .footer-nav h4, .footer-connect h4, .great-conv-quote cite, .collages-label,
-    .btn-primary, .btn-ghost, .btn-outline, .footer-email-row button {
-      font-family: 'Jost', system-ui, sans-serif;
-    }
-    .phil-eyebrow, .section-label, .collages-label { font-style: normal; }
-    .btn-outline {
-      border: 1px solid rgba(250,249,246,0.3); color: rgba(250,249,246,0.85);
-      padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em;
-      text-transform: uppercase; border-radius: 2px; display: inline-block;
-      transition: border-color .2s, color .2s;
-    }
-    .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
   </style>
 </head>
 <body>
@@ -217,232 +231,225 @@
   <div class="mobile-divider"></div>
   <a href="/curriculum" class="mobile-cta" onclick="toggleMenu()">Shop Now &rarr;</a>
 </div>
-<section class="phil-hero" aria-labelledby="phil-title">
-  <p class="phil-eyebrow">Upper-Level Charlotte Mason Literature &middot; Grades 9&#8211;12</p>
+
+<!-- HERO -->
+<section class="phil-hero cloth gilt" aria-labelledby="phil-title">
+  <p class="phil-eyebrow">The Philosophy · Upper-Level Charlotte Mason Literature</p>
   <h1 class="phil-title" id="phil-title">The <em>Why</em> Behind Every Unit</h1>
-  <p class="phil-lead">Charlotte Mason believed students deserve to encounter the best that has been thought and written — not simplified, not pre-digested, but the <em>thing itself.</em></p>
+  <p class="phil-lead">Students deserve the real thing — the best that has been thought and written, not simplified or pre-digested. Here is what I believe, and what it looks like when it works.</p>
   <div class="hero-btns">
     <a href="/curriculum" class="btn-primary">Browse the Curriculum</a>
     <a href="/teachers-notebook" class="btn-ghost">Teacher&#8217;s Notebook</a>
   </div>
+  <div class="fieldnote">
+    <span class="fn-label">Field Note</span>
+    <p class="fn-text">We do not fill minds. We kindle them.</p>
+  </div>
 </section>
-<!-- SECTION 1: PERSONS NOT VESSELS -->
-<section class="phil-section" aria-labelledby="persons-title">
+
+<!-- STUDENT WORK — the heartbeat, moved near the top -->
+<section class="student-work" aria-labelledby="sw-title">
+  <div class="sw-inner">
+    <div class="sw-head">
+      <p class="section-label">The Heartbeat · Student Capstone Work</p>
+      <h2 class="section-title" id="sw-title">See It in Their Hands First</h2>
+      <p class="section-body">Before any of the philosophy below, the proof of it. Every course ends in a Capstone — a body of work where students don&#8217;t write <em>about</em> great books, they speak back to them. This is my students&#8217; work.</p>
+    </div>
+    <div class="sw-grid">
+      <div class="sw-plate">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_2000,h_1000,q_88/v1779549799/4C3C2B9A-4152-4816-9ECD-F54E8A0B285B_srrfvo.png" alt="Macbeth — student capstone collage, symbol and response tiles" />
+        <p class="sw-cap">Macbeth · Symbol &amp; Response · 2023&#8211;2024</p>
+      </div>
+      <div class="sw-plate">
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_2000,h_1000,q_88/v1779549799/2929112F-4199-4283-BA75-2B5FC2897CB0_bmfquu.png" alt="Wuthering Heights — student portrait mosaic" />
+        <p class="sw-cap">Wuthering Heights · Portrait Mosaic · 2023&#8211;2024</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE FOUNDATION -->
+<section class="phil-section alt" aria-labelledby="persons-title">
   <div class="phil-inner">
     <div class="gold-rule"></div>
     <p class="section-label">The Foundation</p>
     <h2 class="section-title" id="persons-title">Students Are Persons, Not Vessels</h2>
-    <div class="prose-two-col">
-      <div>
-        <div class="section-body">
-          <p>Charlotte Mason&#8217;s first principle is the simplest and the most radical: the child is a person. Not a project. Not a product to be optimized. A person, with a mind capable of forming real relationships with real ideas.</p>
-          <p>At the upper level, this means we don&#8217;t hand students a summary of Macbeth or Of Mice and Men and ask them to identify the theme. We hand them the book and ask them to read it — slowly, honestly, and with full attention. The encounter is the education.</p>
-          <p>This is a different posture than most curriculum takes. Most curriculum assumes the student needs to be protected from difficulty, pre-taught the vocabulary, given the interpretation before they&#8217;ve formed one of their own. Delight &amp; Savor assumes the opposite: that the student, given the right book and the right questions, is capable of more than we typically ask of them.</p>
-        </div>
-        <blockquote class="prose-pull">
-          &#8220;The mind is not a vessel to be filled,<br>but a <em>fire to be kindled.</em>&#8221;
-          <cite style="font-family:var(--ff-sans);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-top:.75rem;display:block;font-style:normal;">— Attributed to Plutarch</cite>
-        </blockquote>
-      </div>
-      <div class="section-body">
-        <p>In practice, this shapes every aspect of how the units are structured. The teacher&#8217;s job is not to deliver a lecture about Wuthering Heights. It is to create the conditions in which a student can encounter Wuthering Heights for themselves — and then narrate what they found there.</p>
-        <p>Narration is the hinge. It is how we know what a student actually experienced in a text, as opposed to what we told them to find. A faithful narration — imperfect, partial, genuine — reveals more about a student&#8217;s intellectual life than any multiple-choice test.</p>
-        <p>Over fifteen weeks, narration becomes something more: it becomes the raw material for argument. The student who has narrated faithfully for ten weeks has, without knowing it, been gathering the evidence they will need to write a thesis. The transition from narration to essay is not a leap — it is a natural next step.</p>
-      </div>
+    <div class="section-body" style="max-width:680px">
+      <p>Charlotte Mason&#8217;s first principle is the simplest and the most radical: the child is a person. Not a project. Not a product to optimize. So we don&#8217;t hand students a summary of <em>Macbeth</em> and ask them to find the theme. We hand them the book. <strong>The encounter is the education.</strong></p>
+      <p>Narration is the hinge — the student telling back, in their own words, what they actually found in a text. And over a term, those honest retellings quietly become the evidence for an argument. The leap to the essay turns out not to be a leap at all.</p>
     </div>
-    <div class="pull-quote" style="max-width:680px;margin-top:2.5rem;">
-      <p>The student, given the right book and the right questions, is capable of <em>more than we typically ask of them.</em></p>
-    </div>
+    <blockquote class="prose-pull">
+      The mind is not a vessel to be filled,<br>but a <em>fire to be kindled.</em>
+      <cite style="font-family:var(--ff-sans);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-top:.75rem;display:block;font-style:normal;">— Attributed to Plutarch</cite>
+    </blockquote>
   </div>
 </section>
-<!-- SECTION 2: FIVE PILLARS -->
-<section class="phil-section alt" aria-labelledby="pillars-title">
+
+<!-- FIVE PILLARS -->
+<section class="phil-section" aria-labelledby="pillars-title">
   <div class="phil-inner">
     <div class="gold-rule"></div>
     <p class="section-label">What Shapes Every Unit</p>
     <h2 class="section-title" id="pillars-title">Five Pillars of the Approach</h2>
-    <p class="section-body" style="max-width:680px">These are the convictions that shape every Delight &amp; Savor unit — the principles that determine what we include, what we leave out, and how we structure the work of each week.</p>
     <div class="pillars-grid">
       <article class="pillar-card">
-        <div class="pillar-num">01</div>
+        <div class="pillar-num">i</div>
         <h3 class="pillar-title">Living Books Over Textbooks</h3>
-        <p class="pillar-desc">A living book is written by an author who loves their subject — whose enthusiasm and conviction breathe through every page. We read Shakespeare, Bront&#235;, Hemingway, and Chaucer, not because they are canonical, but because they are alive in a way that no textbook can replicate.</p>
+        <p class="pillar-desc">A living book is written by someone who loves their subject — and it shows on every page. We read Shakespeare, Bront&#235;, and Hemingway because they are alive in a way no textbook can be.</p>
       </article>
       <article class="pillar-card">
-        <div class="pillar-num">02</div>
+        <div class="pillar-num">ii</div>
         <h3 class="pillar-title">Narration as the Backbone</h3>
-        <p class="pillar-desc">Before a student can analyze a text, they must be able to tell you what happened in it — in their own words, from their own memory. Narration is not a comprehension check. It is the beginning of intellectual ownership. Everything else — discussion, essay, argument — grows from it.</p>
+        <p class="pillar-desc">Before a student can analyze a text, they tell you what happened — in their own words, from memory. Narration isn&#8217;t a comprehension check. It&#8217;s the beginning of ownership, and everything grows from it.</p>
       </article>
       <article class="pillar-card">
-        <div class="pillar-num">03</div>
+        <div class="pillar-num">iii</div>
         <h3 class="pillar-title">Ideas Before Craft</h3>
-        <p class="pillar-desc">We resist the temptation to teach writing as a set of techniques divorced from real thought. The five-paragraph essay produces paragraphs, not thinkers. In Delight &amp; Savor, students develop an argument because they have something to argue — a genuine claim about a text they have genuinely read.</p>
+        <p class="pillar-desc">The five-paragraph formula produces paragraphs, not thinkers. Here, students build an argument because they have something to say about a book they have genuinely read.</p>
       </article>
       <article class="pillar-card">
-        <div class="pillar-num">04</div>
+        <div class="pillar-num">iv</div>
         <h3 class="pillar-title">The Great Conversation</h3>
-        <p class="pillar-desc">Literature does not exist in isolation. Macbeth speaks to Augustine. Wuthering Heights speaks to Rousseau. The Old Man and the Sea speaks to every human being who has ever struggled against forces larger than themselves. We read across time because truth is not dated.</p>
+        <p class="pillar-desc">Books talk to each other. <em>Macbeth</em> answers Augustine; <em>Wuthering Heights</em> answers Rousseau. We read across time because truth is not dated.</p>
       </article>
       <article class="pillar-card">
-        <div class="pillar-num">05</div>
-        <h3 class="pillar-title">Find It &middot; Follow It &middot; Frame It</h3>
-        <p class="pillar-desc">Three ways of reading, taught in order — so a student builds from noticing to thinking to wonder. Find It is reading the lines: noticing what the author actually wrote — a word, an image, a moment worth pointing to. Follow It is reading between the lines: asking why, not just what, and supporting an answer with the text itself. Frame It is reading beyond the lines: asking what the whole book is for, and what it asks of us after the last page. This is the spine of every Delight &amp; Savor unit — the method that turns close reading into real thinking.</p>
+        <div class="pillar-num">v</div>
+        <h3 class="pillar-title">Find It · Follow It · Frame It</h3>
+        <p class="pillar-desc">Three ways of reading, in order. <strong>Find It:</strong> notice what&#8217;s on the page. <strong>Follow It:</strong> ask why, with the text as your evidence. <strong>Frame It:</strong> ask what the whole book is for. This is the spine of every unit.</p>
       </article>
     </div>
   </div>
 </section>
-<!-- BRIDGE: YEAR STRUCTURE -->
-<section class="phil-section" aria-label="Course structure">
-  <div class="phil-inner">
-    <div class="section-body" style="max-width:780px;">
-      <p>Each Delight &amp; Savor year unfolds over thirty weeks — a full school year, divided into two fifteen-week semesters around a single theme. The Art of Tragedy held Macbeth and Wuthering Heights together; The Art of Attention will pair Hemingway and poetry with Shakespeare&#8217;s A Midsummer Night&#8217;s Dream. The year is the unit. The semesters are halves of a longer conversation.</p>
-      <p>Alongside the year-long rotation, Summer Foundations offers a shorter, six-week course built around one anchor book — a way to taste the method during summer, or to give a student a careful entry into living literature before the school year begins. The shape adapts; the soul of the work does not.</p>
-    </div>
+
+<!-- INTERSTITIAL FIELD NOTE -->
+<section class="cloth fn-band" aria-label="Field note">
+  <div class="fieldnote">
+    <span class="fn-label">Field Note</span>
+    <p class="fn-text">To read a book well is to be changed by it.</p>
   </div>
 </section>
-<!-- SECTION 3: GREAT CONVERSATION -->
+
+<!-- THE GREAT CONVERSATION -->
 <section class="phil-section stripe" aria-labelledby="conv-title">
   <div class="phil-inner">
     <div class="gold-rule"></div>
     <p class="section-label">Literature in Context</p>
     <h2 class="section-title" id="conv-title">The Great Conversation</h2>
-    <div class="prose-two-col">
+    <div class="two-col">
       <div class="section-body">
-        <p>Every great work of literature is in conversation with every other. Bront&#235; read Milton. Milton read Virgil. Virgil read Homer. And all of them — whether they knew it or not — were wrestling with the same questions Augustine named so clearly: What do we love? What do we love <em>rightly?</em> What happens when love goes wrong?</p>
-        <p>This is what Charlotte Mason meant when she called education the <strong style="color:var(--gold);font-style:normal;">science of relations</strong>. Her twelfth principle — &#8220;Education is the <strong style="color:var(--gold);">Science of Relations</strong>&#8221; — rests on the conviction that a child has natural affinities with a vast number of things and thoughts, and that the teacher&#8217;s work is not to pre-digest those connections, but to lay knowledge before the student and trust the mind to reach toward it. She wrote: <em>&#8220;our business is not to teach him all about anything, but to help him to make valid as many as may be of those first-born affinities that fit our new existence to existing things.&#8221;</em></p>
-        <p>Literature is where that principle reaches its fullest expression. A student who reads Macbeth alongside Augustine&#8217;s theology of disordered love is not being handed an interpretation — she is being given two texts and trusted to feel the current that runs between them. That current <em>is</em> the education. The relation she forms between Shakespeare&#8217;s ambition and Augustine&#8217;s will is hers in a way no lecture could produce. It was not given to her. It grew in her.</p>
-        <p>The Delight &amp; Savor units bring this into the classroom deliberately. Students don&#8217;t just read Wuthering Heights — they read it alongside Rousseau&#8217;s natural man and a contemporary article on coercive control. They don&#8217;t just read Of Mice and Men — they read it alongside Camus and Sartre, holding Steinbeck&#8217;s small, hard story beside the existentialist question of what it means to live with conviction in a world that gives few good choices. In each case, the secondary text is not a crutch. It is a second voice in a room where conversation is already happening.</p>
-        <p>This is not about making the curriculum harder. It is about making it more honest — acknowledging that these books raise real questions, with real stakes, that thoughtful people have been wrestling with for centuries. The student who finishes Wuthering Heights knowing that Rousseau and Bront&#235; were both asking what happens when feeling becomes its own law has learned something no worksheet could measure. She has formed a relation. And that relation will stay.</p>
+        <p>Every great book is in conversation with every other. Bront&#235; read Milton; Milton read Virgil; Virgil read Homer — all wrestling with the same questions. Mason called education the <strong style="color:var(--gold);font-weight:600;">science of relations</strong>: lay knowledge before a student and trust their mind to reach for it.</p>
+        <p>So students don&#8217;t just read <em>Wuthering Heights</em> — they read it beside Rousseau and a modern piece on coercive control. They don&#8217;t just read <em>Of Mice and Men</em> — they read it beside Camus and Sartre. The second voice isn&#8217;t a crutch. It&#8217;s another person in a conversation already underway.</p>
         <div class="pull-quote">
-          <p>A relation she forms between Shakespeare&#8217;s ambition and Augustine&#8217;s will is hers in a way <em>no lecture could produce.</em> It was not given to her. It grew in her.</p>
+          <p>The relation a student forms between Shakespeare&#8217;s ambition and Augustine&#8217;s will is hers in a way <em>no lecture could produce.</em> It was not given to her. It grew in her.</p>
         </div>
       </div>
       <div>
-        <p class="section-label" style="margin-bottom:1rem">Thinkers in the Series</p>
+        <p class="section-label" style="margin-bottom:0.75rem">Thinkers in the Series</p>
         <div class="thinkers-row">
-          <span class="thinker-chip">Augustine of Hippo</span>
+          <span class="thinker-chip">Augustine</span>
           <span class="thinker-chip">Aristotle</span>
-          <span class="thinker-chip">Jean-Jacques Rousseau</span>
-          <span class="thinker-chip">Albert Camus</span>
-          <span class="thinker-chip">Jean-Paul Sartre</span>
+          <span class="thinker-chip">Rousseau</span>
+          <span class="thinker-chip">Camus</span>
+          <span class="thinker-chip">Sartre</span>
           <span class="thinker-chip">Charlotte Mason</span>
           <span class="thinker-chip">C.S. Lewis</span>
           <span class="thinker-chip">Wendell Berry</span>
           <span class="thinker-chip">Mary Oliver</span>
-          <span class="thinker-chip">Gerard Manley Hopkins</span>
-          <span class="thinker-chip">Robert Frost</span>
-          <span class="thinker-chip">Emily Dickinson</span>
-          <span class="thinker-chip">William Carlos Williams</span>
-          <span class="thinker-chip">Geoffrey Chaucer</span>
+          <span class="thinker-chip">Hopkins</span>
+          <span class="thinker-chip">Frost</span>
+          <span class="thinker-chip">Dickinson</span>
         </div>
         <div class="great-conv-quote">
-          <p>The goal is not to produce students who have opinions about books. It is to produce students who have been <em>changed</em> by them.</p>
-          <cite>— Delight &amp; Savor, on the purpose of literary study</cite>
+          <p>The goal isn&#8217;t students who have opinions about books. It&#8217;s students who have been <em>changed</em> by them.</p>
+          <cite>— On the purpose of literary study</cite>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- SECTION: THE CAPSTONE -->
+
+<!-- THE CAPSTONE -->
 <section class="phil-section alt" aria-labelledby="capstone-title">
   <div class="phil-inner">
     <div class="gold-rule"></div>
     <p class="section-label">The Heart of Every Course</p>
-    <h2 class="section-title" id="capstone-title">The Capstone — Where Students Enter the Great Conversation</h2>
-    <p class="section-body" style="max-width:700px; margin-bottom: 2.5rem;">At the heart of every Delight &amp; Savor course is a single piece of unified work that grows across the entire term. We call it The Capstone — and it&#8217;s where literature stops being a school subject and becomes a real conversation across centuries.</p>
+    <h2 class="section-title" id="capstone-title">The Capstone — Entering the Conversation</h2>
+    <p class="section-body" style="max-width:700px;">The work you saw at the top grows across an entire term. It&#8217;s where literature stops being a school subject and becomes a real conversation across centuries.</p>
     <div class="capstone-grid">
       <div class="capstone-card">
-        <div class="capstone-num">01</div>
+        <div class="capstone-num">i</div>
         <h3 class="capstone-card-title">They Choose the Thread</h3>
-        <p class="capstone-card-body">A Delight &amp; Savor course doesn&#8217;t tell students what to care about. They choose. Usually a character — Curley&#8217;s wife, Crooks, Heathcliff, Catherine, Lady Macbeth. Often something specific that pulled at them: a choice the character made, a longing they carry, a way they were shaped by forces larger than themselves. From the first week of the course, each student is following one thread through the book.</p>
+        <p class="capstone-card-body">Students pick what pulls at them — usually a character, and something specific: a choice, a longing, a wound. From week one, they follow that one thread through the book.</p>
       </div>
       <div class="capstone-card">
-        <div class="capstone-num">02</div>
+        <div class="capstone-num">ii</div>
         <h3 class="capstone-card-title">They Read with a Great Thinker</h3>
-        <p class="capstone-card-body">A Delight &amp; Savor student never reads a great book alone. In the <em>Of Mice and Men</em> summer course, they read alongside Camus and Sartre — holding Steinbeck&#8217;s small, hard story beside the existentialist question of what it means to live with conviction in a world that gives few good choices. In The Art of Tragedy, they read <em>Macbeth</em> and <em>Wuthering Heights</em> alongside Augustine, Aristotle, and Rousseau — disordered love, virtue and habit, the natural self against the civilized one.</p>
+        <p class="capstone-card-body">No one reads a great book alone. With <em>Of Mice and Men</em>, students read beside Camus and Sartre. In <em>The Art of Tragedy</em>, beside Augustine, Aristotle, and Rousseau.</p>
       </div>
       <div class="capstone-card">
-        <div class="capstone-num">03</div>
-        <h3 class="capstone-card-title">The Books Speak to Each Other, Too</h3>
-        <p class="capstone-card-body">In a yearlong course, the second book never starts fresh. When students open <em>Wuthering Heights</em> in spring, they bring <em>Macbeth</em> with them — Macbeth&#8217;s questions about love and ambition still hovering, now answered differently by Heathcliff and Catherine. The Capstone follows that conversation. Students don&#8217;t just speak back to the thinkers; they trace how the books themselves speak to each other across a whole year of reading.</p>
+        <div class="capstone-num">iii</div>
+        <h3 class="capstone-card-title">The Books Speak to Each Other</h3>
+        <p class="capstone-card-body">In a yearlong course, the second book never starts fresh. Opening <em>Wuthering Heights</em> in spring, students still carry <em>Macbeth</em> — and trace how the two speak across the year.</p>
       </div>
       <div class="capstone-card">
-        <div class="capstone-num">04</div>
+        <div class="capstone-num">iv</div>
         <h3 class="capstone-card-title">They Work Across Modes</h3>
-        <p class="capstone-card-body">Each week brings a small artifact — and each one stretches a different faculty. A first-impression sketch. A letter written in a character&#8217;s voice. A short paragraph holding the book beside a philosopher. A scene rewritten from a new angle. A haiku that distills a person to seventeen syllables. A final portrait — watercolor, image, and reflection — that gathers everything. Not isolated exercises on a machine, where one muscle moves at a time. Every artifact engages observation, voice, conviction, craft, and synthesis at once. Small fibers, deep stabilizers, the whole student strengthening together.</p>
+        <p class="capstone-card-body">Each week, a small artifact — a sketch, a letter in a character&#8217;s voice, a haiku, a passage held beside a philosopher. Every one stretches a different muscle: observation, voice, conviction, craft, synthesis.</p>
       </div>
     </div>
-    <div class="capstone-celebrate">
-      <div class="capstone-celebrate-inner">
-        <p class="section-label" style="text-align:center; margin-bottom: 0.75rem;">They Celebrate</p>
-        <p>At the end, students don&#8217;t turn in a five-paragraph essay. They share a body of work that proves they were really there — really thinking, really reading, really part of the conversation. The yearlong courses build all of this toward a final composition; the summer courses arrive at a portrait. Either way, the student leaves not just having learned <em>about</em> great thinkers — but having spoken back to them.</p>
-      </div>
-    </div>
+    <p class="section-body" style="max-width:700px;">At the end, no five-paragraph essay. Students share a body of work that proves they were really there — really reading, really thinking, really part of the conversation.</p>
   </div>
 </section>
-<!-- CAPSTONE COLLAGES -->
-<section class="collages-section">
-  <div class="collages-inner">
-    <p class="collages-label">2023–2024 &middot; The Art of Tragedy &middot; Student Capstone Work</p>
-    <div class="collages-grid">
-      <!-- Macbeth collage — full width -->
-      <div class="collage-item full">
-        <img
-          src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_2000,h_1000,q_88/v1779549799/4C3C2B9A-4152-4816-9ECD-F54E8A0B285B_srrfvo.png"
-          alt="Macbeth — student capstone collage, symbol and response tiles" />
-        <p class="collage-caption">Macbeth · Symbol &amp; Response · 2023–2024</p>
-      </div>
-      <!-- Wuthering Heights mosaic — full width -->
-      <div class="collage-item full">
-        <img
-          src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_2000,h_1000,q_88/v1779549799/2929112F-4199-4283-BA75-2B5FC2897CB0_bmfquu.png"
-          alt="Wuthering Heights — student portrait mosaic" />
-        <p class="collage-caption">Wuthering Heights · Portrait Mosaic · 2023–2024</p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- SECTION 4: NARRATION TO ARGUMENT -->
+
+<!-- FROM NARRATION TO ARGUMENT -->
 <section class="phil-section" aria-labelledby="bridge-title">
   <div class="phil-inner">
     <div class="gold-rule"></div>
     <p class="section-label">How the Writing Works</p>
     <h2 class="section-title" id="bridge-title">From Narration to Argument</h2>
     <div class="narration-bridge">
-      <div class="narration-bridge-text">
+      <div>
         <div class="section-body">
-          <p>One of the most common concerns I hear from parents and co-op teachers is this: &#8220;My student can narrate, but they can&#8217;t write an essay.&#8221; The Delight &amp; Savor approach addresses this directly — not by drilling essay structure, but by making the path from narration to argument visible and walkable.</p>
-          <p>The progression is gradual and intentional. Students don&#8217;t move through it on a fixed schedule — they grow through it.</p>
-          <p>At no point does the essay appear out of nowhere. It grows, organically, from everything that came before it.</p>
+          <p>The most common worry I hear is this: &#8220;My student can narrate, but can&#8217;t write an essay.&#8221; The fix isn&#8217;t drilling essay structure. It&#8217;s making the path from narration to argument <em>visible</em> — and walkable. The essay never appears out of nowhere. It grows from everything that came before it.</p>
         </div>
-        <div class="pull-quote" style="margin-top:2rem;">
+        <div class="pull-quote" style="margin-top:1.75rem;">
           <p>The student who narrates faithfully for ten weeks has been <em>gathering the evidence for their thesis</em> — without knowing it.</p>
         </div>
       </div>
       <div class="narration-bridge-visual">
-        <p class="section-label" style="margin-bottom:1.25rem">The Progression</p>
-        <div class="section-body">
-          <p>They begin in oral narration — retelling what happened, in their own words, without notes. Then narration moves onto the page. As they read more carefully, they begin Find It: noticing what the author actually wrote — a word, an image, a moment worth pointing to.</p>
-          <p>From noticing comes Follow It — asking why, not just what, and supporting an answer with the text itself. Claims emerge from observation. The student is no longer summarizing; they are beginning to argue.</p>
-          <p>By the final arc of the course, they arrive at Frame It — a thesis-driven essay about a text they have genuinely inhabited. The argument is theirs because the noticing was theirs.</p>
+        <p class="section-label" style="margin-bottom:1.1rem">The Progression</p>
+        <div class="nb-flow">
+          <p class="nb-step"><b>Tell</b>Oral narration — retelling, in their own words, without notes.</p>
+          <p class="nb-step"><b>Find It</b>Narration moves to the page; they notice what the author actually wrote.</p>
+          <p class="nb-step"><b>Follow It</b>Claims emerge from observation. They&#8217;re no longer summarizing — they&#8217;re arguing.</p>
+          <p class="nb-step"><b>Frame It</b>A thesis-driven essay about a book they&#8217;ve truly inhabited. The argument is theirs because the noticing was theirs.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- A SHORT NOTE ON COURSE SHAPE -->
+<section class="phil-section stripe" aria-label="Course shape">
+  <div class="phil-inner">
+    <p class="year-note">Each year unfolds over <strong>thirty weeks</strong>, two semesters around a single theme. Alongside it, <strong>Summer Foundations</strong> offers a six-week course around one anchor book — a gentle way to taste the method. The shape adapts; the soul of the work does not.</p>
+  </div>
+</section>
+
 <!-- CLOSING CTA -->
-<section class="phil-cta" aria-labelledby="cta-title">
+<section class="phil-cta cloth" aria-labelledby="cta-title">
   <div class="phil-cta-inner">
     <h2 class="phil-cta-title" id="cta-title">Ready to See It in Action?</h2>
-    <p class="phil-cta-body">The philosophy comes to life in the units. Browse the curriculum to see how these principles shape fifteen weeks of living literature and language arts.</p>
+    <p class="phil-cta-body">The philosophy comes to life in the units. Browse the curriculum to see how these principles shape a term of living literature.</p>
     <div class="cta-group">
       <a href="curriculum.html" class="btn-primary">Browse the Curriculum &rarr;</a>
       <a href="teachers-notebook.html" class="btn-outline">Visit the Teacher&#8217;s Notebook</a>
     </div>
   </div>
 </section>
+
 <!-- FOOTER -->
-<footer>
+<footer class="cloth">
   <div class="footer-inner">
     <div class="footer-brand">
       <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1774316147/D_S_Primary_Logo-_Transparent_p0ulxh.png" alt="Delight &amp; Savor" class="footer-logo" />
@@ -462,7 +469,7 @@
         <li><a href="/curriculum">Curriculum</a></li>
         <li><a href="/teachers-notebook">Teacher&#8217;s Notebook</a></li>
         <li><a href="/conversation-quilt">Conversation Quilt</a></li>
-        <li><a href="https://delightnsavor.gumroad.com/l/xtqtpv">Shop</a></li>
+        <li><a href="https://payhip.com/delightandsavor">Shop</a></li>
         <li><a href="/faq">FAQ</a></li>
       </ul>
     </nav>
@@ -490,7 +497,7 @@ function toggleMenu() {
 document.addEventListener('click', (e) => {
   const btn = document.getElementById('hamburger');
   const nav = document.getElementById('mobile-nav');
-  if (nav?.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) {
+  if (nav && nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) {
     btn.classList.remove('open');
     nav.classList.remove('open');
   }
