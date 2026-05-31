@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Lately · Delight &amp; Savor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--cloth:#232220;--slate:#37322B;--cream:#FAF6EE;--card:#F4EFE0;--gold:#BE9457;--gold-light:#E2C79A;--sage:#8C9B79;--ink:#2C2A26;--muted:#6E675C;--line:#E4DED1}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Cormorant Garamond',Georgia,serif;background:var(--cream);color:var(--ink);line-height:1.7;font-size:18px}
+  .cloth{position:relative;background-color:#232220;color:var(--cream);text-align:center;padding:3.5rem 1.5rem 3rem;
+    background-image:repeating-linear-gradient(90deg,rgba(0,0,0,.12) 0 1px,transparent 1px 3px),repeating-linear-gradient(0deg,rgba(255,255,255,.013) 0 1px,transparent 1px 3px),radial-gradient(130% 90% at 50% 0%,#2f2d29 0%,#232220 55%,#191816 100%);}
+  .cloth::before{content:"";position:absolute;inset:14px;border:1px solid rgba(190,148,87,.40);pointer-events:none}
+  .cloth::after{content:"";position:absolute;inset:19px;border:1px solid rgba(190,148,87,.15);pointer-events:none}
+  .eyebrow{position:relative;font-variant:small-caps;letter-spacing:.24em;font-size:.8rem;color:var(--gold-light);margin-bottom:.55rem}
+  .cloth h1{position:relative;font-family:'Playfair Display',serif;font-weight:400;font-style:italic;font-size:clamp(2rem,5vw,3rem);text-shadow:0 2px 1px rgba(0,0,0,.5),0 -1px 0 rgba(255,240,210,.04)}
+  .intro{max-width:660px;margin:0 auto;padding:3rem 1.5rem 1rem;text-align:center}
+  .intro p{font-size:1.22rem;line-height:1.85}
+  .intro .lede{font-family:'Playfair Display',serif;font-style:italic;font-size:1.45rem;color:var(--slate);margin-bottom:1rem}
+  .intro em{color:var(--sage);font-style:italic}
+  .note{text-align:center;font-style:italic;color:var(--muted);font-size:1.08rem;margin-top:.4rem}
+  .wall{max-width:1180px;margin:1.75rem auto 0;padding:0 1.25rem;column-count:4;column-gap:1rem}
+  .snap{break-inside:avoid;margin:0 0 1rem;background:#fff;padding:8px 8px 12px;border:1px solid var(--line);box-shadow:0 6px 16px rgba(63,55,50,.13);border-radius:2px;transition:transform .18s,box-shadow .18s}
+  .snap img{display:block;width:100%;height:auto;border-radius:1px}
+  .snap:nth-child(3n+1){transform:rotate(-1.4deg)}
+  .snap:nth-child(3n+2){transform:rotate(1.1deg)}
+  .snap:nth-child(4n){transform:rotate(-.6deg)}
+  .snap:nth-child(5n){transform:rotate(1.7deg)}
+  .snap:hover{transform:rotate(0) scale(1.02);box-shadow:0 12px 26px rgba(63,55,50,.22);position:relative;z-index:3}
+  @media(max-width:1000px){.wall{column-count:3}}
+  @media(max-width:680px){.wall{column-count:2}}
+  .signoff{max-width:660px;margin:2.5rem auto 0;padding:0 1.5rem 4rem;text-align:center}
+  .signoff .hand{font-family:'Caveat',cursive;font-size:2rem;color:var(--slate);line-height:1.25}
+  .signoff .place{font-variant:small-caps;letter-spacing:.18em;font-size:.78rem;color:var(--muted);margin-top:.4rem}
+</style></head>
+<body>
+  <section class="cloth">
+    <p class="eyebrow">From the Ranch</p>
+    <h1>Lately</h1>
+  </section>
+
+  <div class="intro">
+    <p class="lede">A little window into our days.</p>
+    <p>Between the books and the lesson plans, this is the rest of it — the <em>animals, the seasons, the small adventures</em> that fill a life in the Texas Hill Country. I add to this wall as we go, so it's never quite the same twice. Pull up a chair and look around.</p>
+    <p class="note">— what we&#8217;ve been up to —</p>
+  </div>
+
+  <div class="wall" id="wall"></div>
+
+  <div class="signoff">
+    <p class="hand">More soon.<br>— Kim</p>
+    <p class="place">Delight &amp; Savor &middot; the Hill Country of Texas</p>
+  </div>
+
+<script>
+  /* ════════════════════════════════════════════════════════════════
+     TO ADD A NEW ADVENTURE:
+     Paste the photo's Cloudinary link below on its own line,
+     wrapped in "quotes", with a comma after it. That's the whole job.
+     (.heic links are fine — they're auto-converted to display.)
+     ════════════════════════════════════════════════════════════════ */
+  const photos = [
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251338/IMG_2002_s8hx0x.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251335/IMG_7469_aqf6zn.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251337/IMG_1328_zysfbk.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251337/IMG_2452_mp6oac.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251333/IMG_4185_w0ocud.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251331/IMG_6138_cd6b5n.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251332/IMG_8006_v0dc2u.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251331/IMG_8004_bzbvik.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251329/IMG_7995_evdy5g.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251329/IMG_2675_rxbbcj.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251328/IMG_6314_luikiw.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251327/IMG_6332_gmndgu.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251327/IMG_3670_b4wb1m.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251327/FCE55C3F-E690-4751-B112-3315709A6E50_lnudls.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251327/IMG_5337_fpccl9.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251326/IMG_5737_ywit1w.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251325/IMG_4394_ivr2jv.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251326/IMG_1994_zvxqxr.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251326/IMG_4924_fgiwne.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251325/IMG_2685_x12nto.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251323/IMG_3854_rcajjf.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251324/IMG_6805_gl8kkr.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251324/IMG_1991_otp1dd.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251323/IMG_1544_b6rbqw.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251322/IMG_1518_q17cps.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251322/IMG_7993_c4bzpr.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251322/IMG_6422_f6reg4.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251321/IMG_1464_i0e8t2.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251321/IMG_7994_wzpo4a.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251320/IMG_2636_ypfruu.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251320/IMG_1399_ndj3tn.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251320/IMG_1436_woydbs.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251320/IMG_1412_ririgb.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251320/IMG_4946_tgnvw9.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251319/IMG_1352_eckwgy.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251318/IMG_1338_vorh9d.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251318/IMG_2351_djiqma.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251317/IMG_3270_amgpab.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251317/IMG_1194_y2taxf.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251316/IMG_5154_xdrqsm.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251317/IMG_1181_nnqygu.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251316/IMG_1044_xncm6n.jpg"
+  ];
+
+  function src(u){
+    return u.replace('/upload/','/upload/c_fill,w_760,q_auto,f_auto/')
+            .replace(/\.(heic|jpe?g|png)$/i,'.jpg');
+  }
+  document.getElementById('wall').innerHTML = photos.map(function(u){
+    return '<figure class="snap"><img loading="lazy" src="'+src(u)+'" alt="A moment from our life on the ranch"></figure>';
+  }).join('');
+</script>
+</body></html>
