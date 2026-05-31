@@ -33,25 +33,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" />
   <style>
     :root {
-      --slate:      #2d3748;
-      --slate-mid:  #4a5568;
-      --sage:       #a9b786;
-      --light-sage: #eff4ea;
-      --gold:       #c29b61;
-      --cream:      #faf6ee;
-      --cream-dark: #f0ebe0;
-      --text-dark:  #2c2c2c;
-      --text-mid:   #4a5568;
+      --slate:      #37322B;
+      --slate-mid:  #5C564B;
+      --sage:       #8C9B79;
+      --light-sage: #EBEFE2;
+      --gold:       #BE9457;
+      --gold-light: #E2C79A;
+      --cloth:      #232220;
+      --cream:      #FAF6EE;
+      --cream-dark: #F0EBE0;
+      --text-dark:  #2C2A26;
+      --text-mid:   #6E675C;
       --ff-display: 'Playfair Display', Georgia, serif;
       --ff-body:    'Cormorant Garamond', Georgia, serif;
       --ff-sans:    'Libre Baskerville', serif;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: var(--ff-body); color: var(--text-dark); background: var(--cream); line-height: 1.6; font-size: 18px; }
     a { text-decoration: none; color: inherit; }
-
     /* ── HEADER ── */
     
     .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 68px; }
@@ -86,12 +86,11 @@
     .social-link { font-family: var(--ff-sans); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--slate); display: flex; align-items: center; gap: .5rem; transition: color .2s; }
     .social-link:hover { color: var(--sage); }
     .social-link svg { width: 15px; height: 15px; }
-
     /* ── FOOTER ── */
     .site-footer { background: var(--slate); padding: 4rem 2rem 2rem; border-top: 1px solid rgba(255,255,255,.07); }
     .footer-inner { max-width: 1100px; margin: 0 auto; }
     .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.6fr; gap: 3rem; margin-bottom: 3rem; }
-    .footer-brand .logo { font-size: 1.3rem; margin-bottom: .75rem; }
+    .footer-brand .logo { font-family: var(--ff-display); font-size: 1.3rem; margin-bottom: .75rem; color: var(--cream); }
     .footer-tagline { font-family: var(--ff-body); font-size: .95rem; font-style: italic; color: rgba(250,246,238,.55); line-height: 1.7; }
     .footer-col-title { font-family: var(--ff-sans); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
     .footer-nav-list { list-style: none; }
@@ -109,18 +108,16 @@
     .newsletter-input::placeholder { color: rgba(250,246,238,.3); }
     .newsletter-input:focus { border-color: var(--gold); }
     .newsletter-submit { font-family: var(--ff-sans); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; background: var(--gold); color: var(--slate); border: none; border-radius: 0 4px 4px 0; padding: .65rem 1.1rem; cursor: pointer; font-weight: 700; transition: background .2s; white-space: nowrap; }
-    .newsletter-submit:hover { background: rgba(194,155,97,.85); }
+    .newsletter-submit:hover { background: rgba(190,148,87,.85); }
     .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.07); margin-bottom: 1.5rem; }
     .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
     .footer-copy { font-family: var(--ff-body); font-size: .85rem; color: rgba(250,246,238,.35); }
     .footer-bottom-links { display: flex; gap: 1.5rem; }
     .footer-bottom-links a { font-family: var(--ff-body); font-size: .85rem; color: rgba(250,246,238,.35); transition: color .2s; }
     .footer-bottom-links a:hover { color: var(--cream); }
-
     /* ════════════════════════════════
        FAQ PAGE STYLES
     ════════════════════════════════ */
-
         /* ── NAV ── */
     nav { background: var(--slate); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 16px rgba(0,0,0,.25); }
     .nav-logo-wrap { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; }
@@ -129,11 +126,11 @@
     .nav-logo-text span { display: block; font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,213,176,0.45); font-family: 'Cormorant Garamond', serif; font-style: italic; }
     .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
     .nav-links a { color: rgba(250,249,246,0.82); font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; }
-    .nav-links a:hover, .nav-links a.active { color: var(--gold-light, #E8D5B0); }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-light, #E2C79A); }
     .nav-cta { background: var(--gold); color: var(--cream) !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; }
     .nav-social { display: flex; gap: 1.25rem; align-items: center; }
     .nav-social a { color: rgba(250,249,246,0.52); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; }
-    .nav-social a:hover { color: #E8D5B0; }
+    .nav-social a:hover { color: #E2C79A; }
     .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--cream); border-radius: 2px; transition: all .25s; }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -143,11 +140,10 @@
     .mobile-nav.open { display: flex; }
     .mobile-nav a { color: rgba(250,249,246,0.75); font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 0.2s; text-decoration: none; }
     .mobile-nav a:last-child { border-bottom: none; }
-    .mobile-nav a:hover { color: #E8D5B0; }
-    .mobile-nav a.mobile-cta { color: #E8D5B0; font-weight: 600; }
+    .mobile-nav a:hover { color: #E2C79A; }
+    .mobile-nav a.mobile-cta { color: #E2C79A; font-weight: 600; }
     .mobile-nav .mobile-divider { height: 1px; background: rgba(255,255,255,0.12); margin: 0.5rem 0; }
     @media (max-width: 720px) { .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; } }
-
     /* ── HERO ── */
     .faq-hero {
       background: var(--slate);
@@ -160,10 +156,9 @@
     }
     .faq-hero-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
     .faq-eyebrow { font-family: var(--ff-sans); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem; }
-    .faq-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4.5vw, 3rem); font-style: italic; font-weight: 400; color: var(--cream); line-height: 1.2; margin-bottom: 1.1rem; }
+    .faq-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4.5vw, 3rem); font-style: italic; font-weight: 400; color: var(--cream); line-height: 1.2; margin-bottom: 1.1rem; text-shadow: 0 2px 1px rgba(0,0,0,.5), 0 -1px 0 rgba(255,240,210,.04); }
     .faq-title em { color: var(--gold); }
     .faq-lead { font-family: var(--ff-body); font-size: 1.15rem; color: rgba(250,249,246,0.72); line-height: 1.8; }
-
     /* ── CATEGORY TABS ── */
     .faq-tabs { background: var(--cream-dark); border-bottom: 1px solid rgba(169,183,134,.3); position: sticky; top: 68px; z-index: 90; }
     .faq-tabs-inner { max-width: 1060px; margin: 0 auto; display: flex; overflow-x: auto; padding: 0 2rem; gap: 0; scrollbar-width: none; }
@@ -171,7 +166,6 @@
     .faq-tab { font-family: var(--ff-sans); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-mid); background: none; border: none; border-bottom: 2px solid transparent; padding: 1rem 1.25rem; cursor: pointer; white-space: nowrap; transition: color .2s, border-color .2s; }
     .faq-tab:hover { color: var(--slate); }
     .faq-tab.active { color: var(--slate); border-bottom-color: var(--gold); }
-
     /* ── MAIN LAYOUT ── */
     .faq-body { max-width: 1060px; margin: 0 auto; padding: 4rem 2rem 5rem; display: grid; grid-template-columns: 220px 1fr; gap: 4rem; align-items: start; }
     .faq-sidebar { position: sticky; top: 130px; }
@@ -180,8 +174,7 @@
     .faq-sidebar-nav li + li { margin-top: .1rem; }
     .faq-sidebar-nav a { font-family: var(--ff-body); font-size: .98rem; color: var(--text-mid); display: block; padding: .4rem .75rem; border-left: 2px solid transparent; border-radius: 0 4px 4px 0; transition: color .2s, border-color .2s, background .2s; }
     .faq-sidebar-nav a:hover { color: var(--slate); border-left-color: var(--sage); background: var(--light-sage); }
-    .faq-sidebar-nav a.active { color: var(--slate); border-left-color: var(--gold); background: rgba(194,155,97,.08); }
-
+    .faq-sidebar-nav a.active { color: var(--slate); border-left-color: var(--gold); background: rgba(190,148,87,.08); }
     /* ── FAQ GROUPS ── */
     .faq-group { margin-bottom: 4rem; }
     .faq-group:last-child { margin-bottom: 0; }
@@ -189,7 +182,6 @@
     .gold-rule { width: 32px; height: 2px; background: var(--gold); margin-bottom: .75rem; }
     .faq-group-label { font-family: var(--ff-sans); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--sage); margin-bottom: .35rem; }
     .faq-group-title { font-family: var(--ff-display); font-size: 1.7rem; font-weight: 600; color: var(--slate); }
-
     /* ── ACCORDION ── */
     .faq-list { list-style: none; }
     .faq-item { border-bottom: 1px solid rgba(169,183,134,.25); }
@@ -205,31 +197,35 @@
     .faq-answer a { color: var(--slate); border-bottom: 1px solid var(--sage); transition: border-color .2s; }
     .faq-answer a:hover { border-color: var(--gold); }
     .faq-item.open .faq-answer { max-height: 1200px; padding-bottom: 1.5rem; }
-
     /* ── CONTACT SECTION ── */
     .contact-section { background: var(--light-sage); padding: 5rem 2rem; }
     .contact-inner { max-width: 700px; margin: 0 auto; text-align: center; }
     .contact-title { font-family: var(--ff-display); font-size: 2rem; font-style: italic; color: var(--slate); margin-bottom: 1rem; }
     .contact-body { font-family: var(--ff-body); font-size: 1.08rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 2rem; }
     .btn-primary { font-family: var(--ff-sans); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; background: var(--gold); color: var(--slate); border: none; border-radius: 4px; padding: .85rem 2rem; font-weight: 700; cursor: pointer; transition: background .2s, transform .15s; display: inline-block; }
-    .btn-primary:hover { background: rgba(194,155,97,.85); transform: translateY(-2px); }
+    .btn-primary:hover { background: rgba(190,148,87,.85); transform: translateY(-2px); }
     .contact-email { margin-top: 1.5rem; font-family: var(--ff-body); font-size: 1rem; color: var(--text-mid); }
     .contact-email a { color: var(--slate); border-bottom: 1px solid var(--sage); }
-
     /* ── RETURNS SECTION ── */
     .returns-section { background: var(--cream-dark); padding: 4rem 2rem; }
     .returns-inner { max-width: 700px; margin: 0 auto; }
     .returns-title { font-family: var(--ff-display); font-size: 1.6rem; font-weight: 600; color: var(--slate); margin-bottom: 1rem; }
     .returns-body { font-family: var(--ff-body); font-size: 1.05rem; color: var(--text-mid); line-height: 1.85; }
     .returns-body p + p { margin-top: .85rem; }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 860px) { .faq-body { grid-template-columns: 1fr; } .faq-sidebar { display: none; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
     @media (max-width: 600px) { .header-inner { padding: 0 1rem; } .footer-grid { grid-template-columns: 1fr; } .faq-hero::before { font-size: 15rem; } }
+    /* ── book-cloth covers (charcoal ink) ── */
+    .cloth { position: relative; background-color: #232220;
+      background-image:
+        repeating-linear-gradient(90deg, rgba(0,0,0,.12) 0 1px, transparent 1px 3px),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.013) 0 1px, transparent 1px 3px),
+        radial-gradient(130% 90% at 50% 0%, #2f2d29 0%, #232220 55%, #191816 100%); }
+    .gilt::before { content:""; position:absolute; inset:16px; border:1px solid rgba(190,148,87,.42); pointer-events:none; z-index:0; }
+    .gilt::after  { content:""; position:absolute; inset:21px; border:1px solid rgba(190,148,87,.16); pointer-events:none; z-index:0; }
   </style>
 </head>
 <body>
-
 <!-- ── HEADER ── -->
 <nav>
   <a href="/" class="nav-logo-wrap">
@@ -268,13 +264,8 @@
   <div class="mobile-divider"></div>
   <a href="/curriculum" class="mobile-cta" onclick="toggleMenu()">Shop Now &rarr;</a>
 </div>
-
-<!-- ── SOCIAL BAR ── -->
-
-</div>
-
 <!-- ══ HERO ══════════════════════════════════════════════ -->
-<section class="faq-hero">
+<section class="faq-hero cloth gilt">
   <div class="faq-hero-inner">
     <p class="faq-eyebrow">Everything You Need to Know</p>
     <h1 class="faq-title">Frequently Asked <em>Questions</em></h1>
@@ -284,10 +275,8 @@
     </p>
   </div>
 </section>
-
 <!-- ══ FAQ BODY ═══════════════════════════════════════════ -->
 <div class="faq-body">
-
   <!-- Sidebar -->
   <aside class="faq-sidebar" aria-label="Jump to section">
     <p class="faq-sidebar-title">Jump To</p>
@@ -299,10 +288,8 @@
       <li><a href="#returns">Returns Policy</a></li>
     </ul>
   </aside>
-
   <!-- Questions -->
   <main>
-
     <!-- GROUP 1: ABOUT THE CURRICULUM -->
     <section class="faq-group" id="about-curriculum" aria-labelledby="about-title">
       <div class="faq-group-header">
@@ -311,7 +298,6 @@
         <h2 class="faq-group-title" id="about-title">About the Curriculum</h2>
       </div>
       <ul class="faq-list">
-
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
             <span class="faq-question">What grades is Delight &amp; Savor designed for?</span>
@@ -321,17 +307,15 @@
             <p>Grades 9–12, though honestly the better question is: is your student ready to sit with a hard book and have a real conversation about it? I've had advanced 8th graders thrive in these units. I've also had 12th graders who needed more time to grow into them. Grade is a guideline. The student is the guide.</p>
           </div>
         </li>
-
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
-            <span class="faq-question">What is the DELIGHT framework?</span>
+            <span class="faq-question">What is Find It &middot; Follow It &middot; Frame It?</span>
             <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
           </button>
           <div class="faq-answer">
-            <p>DELIGHT is the analytical framework I built to give students a repeatable set of moves for close reading — not a formula to memorize, but a set of habits to internalize over time. Each letter names a kind of attention: <em>Describe the Context, Explore, Look at the Language, Identify the Tone, Gather the Big Idea, Highlight the Quotation, Tie Together.</em></p><p>The goal is that by the end of a semester, students aren't asking "what letter am I on?" They're just noticing — the way a careful reader notices. The <a href="teachers-notebook.html#delight">Teacher's Notebook</a> has the full breakdown with descriptions for each move.</p>
+            <p>Find It &middot; Follow It &middot; Frame It is the reading method that runs through every unit — not a formula to memorize, but three habits of attention students grow into over time. <em>Find It</em> is noticing what's actually on the page: a word, an image, a shift in tone, the detail that catches the eye. <em>Follow It</em> is asking why it's there and tracing it through the book, with the text itself as the evidence. <em>Frame It</em> is stepping back to ask what the whole work is reaching for — what it's really about.</p><p>The goal is that by the end of a semester, students aren't asking "which step am I on?" They're just reading the way a careful reader reads — noticing, questioning, and listening for what a book is really saying. The <a href="teachers-notebook.html#delight">Teacher's Notebook</a> has the full breakdown of each move.</p>
           </div>
         </li>
-
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
             <span class="faq-question">How long does each unit take?</span>
@@ -341,7 +325,6 @@
             <p>Fifteen weeks — one per semester. In a co-op setting that's 15 sessions of about 90 minutes each (which is exactly how I run it with my own Thursday class). For home study, most families do 2–3 shorter sessions a week, spending roughly 3–4 hours total on reading, narration, and handout work. It fits neatly into a standard semester block, which makes scheduling straightforward.</p>
           </div>
         </li>
-
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
             <span class="faq-question">What's the difference between the co-op and home study versions?</span>
@@ -351,7 +334,6 @@
             <p>Same content, same rigor — different structure. The co-op version is built around a single 90-minute weekly session. It has a detailed teacher's guide with timing notes, discussion facilitation cues, and gray-box annotations that tell you exactly what to watch for. It's the version I use myself, and it's designed so that a teacher who is new to Charlotte Mason can still run the class confidently.</p><p>The home study version is paced across 2–3 sessions a week and formatted for more independent work, with a lighter-touch parent guide. Both include the Honors Track. The <a href="curriculum.html#versions">curriculum page</a> has a full side-by-side comparison.</p>
           </div>
         </li>
-
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
             <span class="faq-question">What is the Honors Track?</span>
@@ -361,7 +343,6 @@
             <p>The Honors Track lives inside the same handouts — you don't buy anything extra. It shows up as additional secondary readings (think: actual Augustine, not a summary of Augustine), more demanding writing prompts, and deeper analytical extensions for students who are truly ready to be stretched.</p><p>I'd encourage you to think carefully about who you put on the Honors Track. It's not meant to be a participation ribbon. It's genuinely more work, and it should mean something.</p>
           </div>
         </li>
-
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
             <span class="faq-question">Do I need to buy the primary texts separately?</span>
@@ -371,10 +352,8 @@
             <p>Yes — the units are companions, not replacements. You'll need a copy of the primary text (Macbeth, Wuthering Heights, etc.). Standard paperback editions work perfectly fine. I'm not precious about which edition you use; the teacher's guide notes any relevant page references, but the text itself is what matters, not the imprint.</p><p>Most editions are inexpensive or freely available — Macbeth, for instance, is in the public domain and easy to find online or at any used bookstore.</p>
           </div>
         </li>
-
       </ul>
     </section>
-
     <!-- GROUP 2: CHARLOTTE MASON -->
     <section class="faq-group" id="charlotte-mason" aria-labelledby="cm-title">
       <div class="faq-group-header">
@@ -383,7 +362,6 @@
         <h2 class="faq-group-title" id="cm-title">Charlotte Mason</h2>
       </div>
       <ul class="faq-list">
-
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
             <span class="faq-question">Do I need to be a Charlotte Mason family to use these materials?</span>
@@ -393,7 +371,6 @@
             <p>Not at all. I spent nine years in public school classrooms before I ever encountered Charlotte Mason, and the approach in these units grew just as much from my graduate work in literary studies and my years teaching AP English as it did from Mason. If you value real books, real conversation, and writing that comes from genuine thought — you're going to be fine.</p><p>The teacher's guides walk you through the philosophy as you go, so no prior CM training is required. That said, if you find yourself wanting to go deeper, I'd point you to Karen Glass's <em>Consider This</em> as the most accessible starting place.</p>
           </div>
         </li>
-
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
             <span class="faq-question">What is narration and why is it so central?</span>
@@ -403,7 +380,6 @@
             <p>Narration is when a student tells back — in their own words, from their own memory — what they encountered in the reading. No notes. No prompts beyond "tell me what happened." Mason called it "the art of knowing," and after years of teaching I think that's exactly right. It reveals what actually landed for a student — not what we told them was important, but what they genuinely took in.</p><p>Here's what I've seen in my own co-op class: the students who narrate well early in the semester are the ones who write strong essays by the end. Not because narration is easier than writing, but because it builds the same muscle — the ability to hold an idea in your mind and say something true about it. The <a href="teachers-notebook.html#narration">Teacher's Notebook</a> has a full section on how I use narration in a 90-minute co-op session.</p>
           </div>
         </li>
-
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
             <span class="faq-question">How does Delight &amp; Savor relate to the classical tradition?</span>
@@ -413,10 +389,8 @@
             <p>More in common than not. Both traditions read primary sources, both take the Great Conversation seriously, both believe education is about forming a whole person — not just covering content. Where they differ is mostly in method: classical education leans toward Socratic dialogue and the formal trivium; Charlotte Mason leans toward narration, living books, and the student's own personal encounter with ideas.</p><p>In practice, I draw on both. The Great Conversation connections in these units (Augustine, Aristotle, Rousseau) come from the classical tradition. The narration, the living books, the unhurried attention — that's Mason. Students who come from a classical background often find these units feel familiar and deepening rather than foreign.</p>
           </div>
         </li>
-
       </ul>
     </section>
-
     <!-- GROUP 3: PURCHASING -->
     <section class="faq-group" id="purchasing" aria-labelledby="purchasing-title">
       <div class="faq-group-header">
@@ -425,7 +399,6 @@
         <h2 class="faq-group-title" id="purchasing-title">Purchasing</h2>
       </div>
       <ul class="faq-list">
-
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
             <span class="faq-question">Where do I buy the units?</span>
@@ -435,7 +408,6 @@
             <p>All units are sold through <a href="https://payhip.com/delightandsavor" target="_blank" rel="noopener">Payhip</a>. After purchase you'll receive an immediate download link by email. No account is required to purchase, though creating a Payhip account lets you access your downloads anytime.</p>
           </div>
         </li>
-
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
             <span class="faq-question">What format are the files?</span>
@@ -445,7 +417,6 @@
             <p>All files are delivered as PDFs, formatted for standard US letter printing (8.5 × 11). Student handouts are designed to be printed single-sided. Teacher guides are print-friendly but also readable on screen. The files are high-resolution and print cleanly on a home printer.</p>
           </div>
         </li>
-
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
             <span class="faq-question">What are the prices?</span>
@@ -455,7 +426,6 @@
             <p>Co-op version: $18 per unit. Home study version: $15 per unit. Year One bundle (Macbeth + Wuthering Heights, both versions): $25. All prices are in USD. There are no subscription fees or recurring charges — you purchase once and the files are yours.</p>
           </div>
         </li>
-
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
             <span class="faq-question">Can I print for multiple students?</span>
@@ -465,10 +435,8 @@
             <p>The home study license covers your whole household — print as many copies as you need for your own children. The co-op license covers one class. If you're a co-op teacher, the expectation is that each family in your class purchases their own home study license rather than sharing a single file.</p><p>I'll be straightforward: these materials take hundreds of hours to build and the price reflects that. Sharing them digitally cuts off the thing that lets me keep making them. I appreciate you honoring that.</p>
           </div>
         </li>
-
       </ul>
     </section>
-
     <!-- GROUP 4: GETTING STARTED -->
     <section class="faq-group" id="getting-started" aria-labelledby="gs-title">
       <div class="faq-group-header">
@@ -477,17 +445,15 @@
         <h2 class="faq-group-title" id="gs-title">Getting Started</h2>
       </div>
       <ul class="faq-list">
-
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
             <span class="faq-question">Which unit should I start with?</span>
             <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
           </button>
           <div class="faq-answer">
-            <p>Start with Macbeth. It's Year One, Fall — and it's specifically designed to introduce the DELIGHT framework and build the narration habit from the ground up. Wuthering Heights (Year One, Spring) assumes students have some familiarity with the approach. If you're jumping in mid-year with a group that already narrates well, Wuthering Heights works as a standalone, but Macbeth is the better entry point.</p>
+            <p>Start with Macbeth. It's Year One, Fall — and it's specifically designed to introduce the Find It &middot; Follow It &middot; Frame It method and build the narration habit from the ground up. Wuthering Heights (Year One, Spring) assumes students have some familiarity with the approach. If you're jumping in mid-year with a group that already narrates well, Wuthering Heights works as a standalone, but Macbeth is the better entry point.</p>
           </div>
         </li>
-
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
             <span class="faq-question">How much teacher prep time does each unit require?</span>
@@ -497,7 +463,6 @@
             <p>Once you're in the rhythm of it: 30–45 minutes a week, mostly reading the teacher's guide and your assigned text sections. The first two or three weeks take longer as you get oriented — plan for an hour to an hour and a half until it clicks. After that it drops significantly.</p><p>I wrote the teacher's guides to minimize your prep while keeping your teaching substantive. Everything you need to run the session is in there — timing, discussion cues, what to listen for in narrations, how to handle the Honors students. You shouldn't have to supplement from other sources.</p>
           </div>
         </li>
-
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
             <span class="faq-question">My student struggles with writing. Will this work for them?</span>
@@ -507,23 +472,19 @@
             <p>Yes — and I'd gently say this approach might be exactly what a struggling writer needs. In nine years of public school teaching and several years in co-op, I've seen the same pattern over and over: a student who "can't write" usually means a student who doesn't yet know what they think. They haven't been given enough time to sit with the book, in their own words, before being asked to argue something about it.</p><p>Narration addresses that at the root. A student who narrates faithfully for ten weeks has been gathering their ideas without knowing it. By the time we ask them to write a thesis, they're not starting from nothing — they're organizing something they've already found. The progression from oral narration to essay is intentionally gradual, and in my experience even reluctant writers rarely feel ambushed by it.</p>
           </div>
         </li>
-
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
             <span class="faq-question">Can I see a sample before purchasing?</span>
             <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
           </button>
           <div class="faq-answer">
-            <p>Sample pages and previews are available on the <a href="https://payhip.com/delightandsavor" target="_blank" rel="noopener">Payhip product pages</a>. You can also get a sense of the approach and philosophy through the <a href="teachers-notebook.html">Teacher's Notebook</a> and the <a href="https://delightandsavor.substack.com" target="_blank" rel="noopener">Substack</a>. If you have specific questions before purchasing, email me at <a href="/cdn-cgi/l/email-protection#b4dfc4c6ddd1c0db9ad0d1d8ddd3dcc0d5dad0c7d5c2dbc6f4d3d9d5ddd89ad7dbd9"><span class="__cf_email__" data-cfemail="4c273c3e2529382362282920252b24382d22283f2d3a233e0c2b212d2520622f2321">[email&#160;protected]</span></a>.</p>
+            <p>Sample pages and previews are available on the <a href="https://payhip.com/delightandsavor" target="_blank" rel="noopener">Payhip product pages</a>. You can also get a sense of the approach and philosophy through the <a href="teachers-notebook.html">Teacher's Notebook</a> and the <a href="https://delightandsavor.substack.com" target="_blank" rel="noopener">Substack</a>. If you have specific questions before purchasing, email me at <a href="mailto:kprieto.delightandsavor@gmail.com">kprieto.delightandsavor@gmail.com</a>.</p>
           </div>
         </li>
-
       </ul>
     </section>
-
   </main>
 </div>
-
 <!-- ══ RETURNS ════════════════════════════════════════════ -->
 <section class="returns-section" id="returns" aria-labelledby="returns-title">
   <div class="returns-inner">
@@ -531,12 +492,11 @@
     <h2 class="returns-title" id="returns-title">Returns Policy</h2>
     <div class="returns-body">
       <p>All digital sales are final. Because the files are delivered immediately upon purchase and cannot be "returned" in the traditional sense, I am unable to offer refunds on digital downloads.</p>
-      <p>If you experience a technical problem with your download — a corrupted file, a failed delivery, or any other issue — please email <a href="/cdn-cgi/l/email-protection#84eff4f6ede1f0ebaae0e1e8ede3ecf0e5eae0f7e5f2ebf6c4e3e9e5ede8aae7ebe9" style="color:var(--slate);border-bottom:1px solid var(--sage)"><span class="__cf_email__" data-cfemail="701b00021915041f5e14151c19171804111e140311061f0230171d11191c5e131f1d">[email&#160;protected]</span></a> and I will make it right promptly. My goal is for every purchase to be exactly what you expected.</p>
+      <p>If you experience a technical problem with your download — a corrupted file, a failed delivery, or any other issue — please email <a href="mailto:kprieto.delightandsavor@gmail.com" style="color:var(--slate);border-bottom:1px solid var(--sage)">kprieto.delightandsavor@gmail.com</a> and I will make it right promptly. My goal is for every purchase to be exactly what you expected.</p>
       <p>If you purchased the wrong version (co-op vs. home study), reach out and we'll work something out.</p>
     </div>
   </div>
 </section>
-
 <!-- ══ CONTACT ════════════════════════════════════════════ -->
 <section class="contact-section" id="contact" aria-labelledby="contact-title">
   <div class="contact-inner">
@@ -546,13 +506,12 @@
       whether Delight &amp; Savor is the right fit. Send me an email — I read
       every one and try to respond within 48 hours.
     </p>
-    <a href="/cdn-cgi/l/email-protection#1f746f6d767a6b70317b7a737678776b7e717b6c7e69706d5f78727e7673317c7072" class="btn-primary">Email Kim →</a>
-    <p class="contact-email">or write directly to <a href="/cdn-cgi/l/email-protection#1d766d6f7478697233797871747a75697c73796e7c6b726f5d7a707c7471337e7270"><span class="__cf_email__" data-cfemail="95fee5e7fcf0e1fabbf1f0f9fcf2fde1f4fbf1e6f4e3fae7d5f2f8f4fcf9bbf6faf8">[email&#160;protected]</span></a></p>
+    <a href="mailto:kprieto.delightandsavor@gmail.com" class="btn-primary">Email Kim →</a>
+    <p class="contact-email">or write directly to <a href="mailto:kprieto.delightandsavor@gmail.com">kprieto.delightandsavor@gmail.com</a></p>
   </div>
 </section>
-
 <!-- ── FOOTER ── -->
-<footer class="site-footer" role="contentinfo">
+<footer class="site-footer cloth" role="contentinfo">
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -576,7 +535,7 @@
           <li><a href="https://instagram.com/Kim.delightandsavor" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</a></li>
           <li><a href="https://pinterest.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.64 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.132-1.867 3.132-4.563 0-2.387-1.715-4.055-4.163-4.055-2.836 0-4.5 2.127-4.5 4.326 0 .856.33 1.775.741 2.276a.3.3 0 01.069.286c-.076.315-.245 1-.278 1.139-.044.183-.146.222-.337.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>Pinterest</a></li>
           <li><a href="https://delightandsavor.substack.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>Substack</a></li>
-          <li><a href="/cdn-cgi/l/email-protection#1c776c6e7579687332787970757b74687d72786f7d6a736e5c7b717d7570327f7371"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email Us</a></li>
+          <li><a href="mailto:kprieto.delightandsavor@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email Us</a></li>
         </ul>
       </div>
       <div>
@@ -598,11 +557,9 @@
     </div>
   </div>
 </footer>
-
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
   function handleNewsletter(e) { e.preventDefault(); document.getElementById('newsletter-msg').textContent = 'Thank you! ✦'; document.getElementById('footer-email').value = ''; }
-
   // FAQ accordion
   document.querySelectorAll('.faq-btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
@@ -618,7 +575,6 @@
       }
     });
   });
-
   // Sidebar active state on scroll
   var groups = document.querySelectorAll('.faq-group');
   var sideLinks = document.querySelectorAll('.faq-sidebar-nav a');
