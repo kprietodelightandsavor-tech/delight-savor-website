@@ -24,13 +24,16 @@
   <meta name="pinterest-rich-pin" content="true" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --slate: #2d3748; --slate-mid: #5D6B80; --sage-dark: #5C7A5C;
-      --sage: #A9B786; --sage-light: #EFF4EA; --cream: #FAF9F6;
-      --gold: #C29B61; --gold-light: #E8D5B0; --teal: #4A7C7E;
-      --ink: #3a3a3a; --muted: #7a7a7a; --border: #dfe5d8;
+      --slate: #37322B; --slate-mid: #5C564B; --sage-dark: #5C6A50;
+      --sage: #8C9B79; --sage-light: #EBEFE2; --cream: #FAF6EE;
+      --gold: #BE9457; --gold-light: #E2C79A; --teal: #5C6A50;
+      --ink: #2C2A26; --muted: #6E675C; --border: #E4DED1;
+      --ff-display: 'Playfair Display', Georgia, serif;
+      --ff-body: 'Cormorant Garamond', Georgia, serif;
+      --ff-sans: 'Jost', system-ui, sans-serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Cormorant Garamond', Georgia, serif; background: var(--cream); color: var(--ink); font-size: 18px; line-height: 1.7; }
@@ -79,12 +82,12 @@
     .phil-inner { max-width: 1000px; margin: 0 auto; }
     .prose-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2.5rem; align-items: start; }
     .prose-pull { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-style: italic; color: var(--slate); line-height: 1.6; border-left: 3px solid var(--gold); padding-left: 1.5rem; margin-top: 2rem; }
-    .pull-quote { margin: 2.5rem 0 0; padding: 1.25rem 1.75rem; border-left: 3px solid var(--gold); background: rgba(194,155,97,0.06); border-radius: 0 6px 6px 0; }
+    .pull-quote { margin: 2.5rem 0 0; padding: 1.25rem 1.75rem; border-left: 3px solid var(--gold); background: rgba(190,148,87,0.06); border-radius: 0 6px 6px 0; }
     .pull-quote p { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; color: var(--slate); line-height: 1.6; }
     .pull-quote p em { color: var(--gold); font-style: normal; }
     .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
-    .pillar-card { background: var(--cream); border-radius: 4px; padding: 2rem 1.75rem; box-shadow: 0 3px 16px rgba(74,85,104,0.08); border-top: 3px solid var(--gold); transition: transform .25s, box-shadow .25s; }
-    .pillar-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(74,85,104,0.13); }
+    .pillar-card { background: var(--cream); border-radius: 4px; padding: 2rem 1.75rem; box-shadow: 0 3px 16px rgba(92,86,75,0.08); border-top: 3px solid var(--gold); transition: transform .25s, box-shadow .25s; }
+    .pillar-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(92,86,75,0.13); }
     .pillar-card:nth-child(2) { border-color: var(--sage); }
     .pillar-card:nth-child(3) { border-color: var(--gold); }
     .pillar-card:nth-child(4) { border-color: var(--sage); }
@@ -95,7 +98,7 @@
     .thinkers-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
     .thinker-chip { font-family: 'Cormorant Garamond', serif; font-size: 0.97rem; font-style: italic; color: var(--slate); background: var(--cream); border: 1px solid var(--border); border-radius: 100px; padding: 0.4rem 1.1rem; transition: background .2s, border-color .2s; }
     .thinker-chip:hover { background: var(--sage-light); border-color: var(--sage); }
-    .great-conv-quote { margin-top: 2.5rem; background: var(--cream); border-radius: 4px; padding: 2rem 2.5rem; box-shadow: 0 3px 16px rgba(74,85,104,0.08); border-left: 3px solid var(--sage); }
+    .great-conv-quote { margin-top: 2.5rem; background: var(--cream); border-radius: 4px; padding: 2rem 2.5rem; box-shadow: 0 3px 16px rgba(92,86,75,0.08); border-left: 3px solid var(--sage); }
     .great-conv-quote p { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic; color: var(--slate); line-height: 1.7; }
     .great-conv-quote cite { display: block; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.85rem; font-style: normal; }
     .narration-bridge { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2.5rem; align-items: start; }
@@ -126,9 +129,8 @@
     .footer-email-row button { background: var(--gold); color: var(--slate); border: none; padding: 0.4rem 0.9rem; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-weight: 700; }
     .footer-bottom { max-width: 880px; margin: 2rem auto 0; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; font-size: 0.72rem; color: rgba(250,249,246,0.3); }
     .footer-bottom a { color: rgba(250,249,246,0.35); }
-
     .capstone-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
-    .capstone-card { background: var(--cream); border-radius: 4px; padding: 2rem 1.75rem; box-shadow: 0 3px 16px rgba(74,85,104,0.08); border-top: 3px solid var(--teal); }
+    .capstone-card { background: var(--cream); border-radius: 4px; padding: 2rem 1.75rem; box-shadow: 0 3px 16px rgba(92,86,75,0.08); border-top: 3px solid var(--teal); }
     .capstone-card:nth-child(2) { border-color: var(--gold); }
     .capstone-card:nth-child(3) { border-color: var(--sage); }
     .capstone-card:nth-child(4) { border-color: var(--teal); }
@@ -141,8 +143,8 @@
     .capstone-celebrate-inner .section-label { color: var(--gold-light); }
     .capstone-celebrate-inner p { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic; color: rgba(250,249,246,0.85); line-height: 1.75; }
     .capstone-celebrate-inner p em { color: var(--gold-light); font-style: normal; }
-    /* ── CAPSTONE COLLAGES ── */
-    .collages-section { background: var(--slate-deep, #2d3748); padding: 0 2rem 4rem; }
+    /* CAPSTONE COLLAGES */
+    .collages-section { background: var(--slate); padding: 0 2rem 4rem; }
     .collages-inner { max-width: 1060px; margin: 0 auto; }
     .collages-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-style: italic; text-align: center; padding-top: 3.5rem; margin-bottom: 1.5rem; }
     .collages-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
@@ -161,10 +163,23 @@
       .phil-section { padding: 3.5rem 1.25rem; }
       .phil-hero { padding: 3.5rem 1.25rem 3rem; }
     }
+      /* --- brand cohesion: Jost labels + missing button --- */
+    .phil-eyebrow, .section-label, .nav-links a, .nav-social a, .mobile-nav a,
+    .footer-nav h4, .footer-connect h4, .great-conv-quote cite, .collages-label,
+    .btn-primary, .btn-ghost, .btn-outline, .footer-email-row button {
+      font-family: 'Jost', system-ui, sans-serif;
+    }
+    .phil-eyebrow, .section-label, .collages-label { font-style: normal; }
+    .btn-outline {
+      border: 1px solid rgba(250,249,246,0.3); color: rgba(250,249,246,0.85);
+      padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em;
+      text-transform: uppercase; border-radius: 2px; display: inline-block;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
   </style>
 </head>
 <body>
-
 <nav>
   <a href="/" class="nav-logo-wrap">
     <img src="/images/ds_icon.png" alt="Delight &amp; Savor" class="nav-logo-img" />
@@ -202,7 +217,6 @@
   <div class="mobile-divider"></div>
   <a href="/curriculum" class="mobile-cta" onclick="toggleMenu()">Shop Now &rarr;</a>
 </div>
-
 <section class="phil-hero" aria-labelledby="phil-title">
   <p class="phil-eyebrow">Upper-Level Charlotte Mason Literature &middot; Grades 9&#8211;12</p>
   <h1 class="phil-title" id="phil-title">The <em>Why</em> Behind Every Unit</h1>
@@ -212,7 +226,6 @@
     <a href="/teachers-notebook" class="btn-ghost">Teacher&#8217;s Notebook</a>
   </div>
 </section>
-
 <!-- SECTION 1: PERSONS NOT VESSELS -->
 <section class="phil-section" aria-labelledby="persons-title">
   <div class="phil-inner">
@@ -242,7 +255,6 @@
     </div>
   </div>
 </section>
-
 <!-- SECTION 2: FIVE PILLARS -->
 <section class="phil-section alt" aria-labelledby="pillars-title">
   <div class="phil-inner">
@@ -279,7 +291,6 @@
     </div>
   </div>
 </section>
-
 <!-- BRIDGE: YEAR STRUCTURE -->
 <section class="phil-section" aria-label="Course structure">
   <div class="phil-inner">
@@ -289,7 +300,6 @@
     </div>
   </div>
 </section>
-
 <!-- SECTION 3: GREAT CONVERSATION -->
 <section class="phil-section stripe" aria-labelledby="conv-title">
   <div class="phil-inner">
@@ -333,8 +343,6 @@
     </div>
   </div>
 </section>
-
-
 <!-- SECTION: THE CAPSTONE -->
 <section class="phil-section alt" aria-labelledby="capstone-title">
   <div class="phil-inner">
@@ -342,51 +350,41 @@
     <p class="section-label">The Heart of Every Course</p>
     <h2 class="section-title" id="capstone-title">The Capstone — Where Students Enter the Great Conversation</h2>
     <p class="section-body" style="max-width:700px; margin-bottom: 2.5rem;">At the heart of every Delight &amp; Savor course is a single piece of unified work that grows across the entire term. We call it The Capstone — and it&#8217;s where literature stops being a school subject and becomes a real conversation across centuries.</p>
-
     <div class="capstone-grid">
-
       <div class="capstone-card">
         <div class="capstone-num">01</div>
         <h3 class="capstone-card-title">They Choose the Thread</h3>
         <p class="capstone-card-body">A Delight &amp; Savor course doesn&#8217;t tell students what to care about. They choose. Usually a character — Curley&#8217;s wife, Crooks, Heathcliff, Catherine, Lady Macbeth. Often something specific that pulled at them: a choice the character made, a longing they carry, a way they were shaped by forces larger than themselves. From the first week of the course, each student is following one thread through the book.</p>
       </div>
-
       <div class="capstone-card">
         <div class="capstone-num">02</div>
         <h3 class="capstone-card-title">They Read with a Great Thinker</h3>
         <p class="capstone-card-body">A Delight &amp; Savor student never reads a great book alone. In the <em>Of Mice and Men</em> summer course, they read alongside Camus and Sartre — holding Steinbeck&#8217;s small, hard story beside the existentialist question of what it means to live with conviction in a world that gives few good choices. In The Art of Tragedy, they read <em>Macbeth</em> and <em>Wuthering Heights</em> alongside Augustine, Aristotle, and Rousseau — disordered love, virtue and habit, the natural self against the civilized one.</p>
       </div>
-
       <div class="capstone-card">
         <div class="capstone-num">03</div>
         <h3 class="capstone-card-title">The Books Speak to Each Other, Too</h3>
         <p class="capstone-card-body">In a yearlong course, the second book never starts fresh. When students open <em>Wuthering Heights</em> in spring, they bring <em>Macbeth</em> with them — Macbeth&#8217;s questions about love and ambition still hovering, now answered differently by Heathcliff and Catherine. The Capstone follows that conversation. Students don&#8217;t just speak back to the thinkers; they trace how the books themselves speak to each other across a whole year of reading.</p>
       </div>
-
       <div class="capstone-card">
         <div class="capstone-num">04</div>
         <h3 class="capstone-card-title">They Work Across Modes</h3>
         <p class="capstone-card-body">Each week brings a small artifact — and each one stretches a different faculty. A first-impression sketch. A letter written in a character&#8217;s voice. A short paragraph holding the book beside a philosopher. A scene rewritten from a new angle. A haiku that distills a person to seventeen syllables. A final portrait — watercolor, image, and reflection — that gathers everything. Not isolated exercises on a machine, where one muscle moves at a time. Every artifact engages observation, voice, conviction, craft, and synthesis at once. Small fibers, deep stabilizers, the whole student strengthening together.</p>
       </div>
-
     </div>
-
     <div class="capstone-celebrate">
       <div class="capstone-celebrate-inner">
         <p class="section-label" style="text-align:center; margin-bottom: 0.75rem;">They Celebrate</p>
         <p>At the end, students don&#8217;t turn in a five-paragraph essay. They share a body of work that proves they were really there — really thinking, really reading, really part of the conversation. The yearlong courses build all of this toward a final composition; the summer courses arrive at a portrait. Either way, the student leaves not just having learned <em>about</em> great thinkers — but having spoken back to them.</p>
       </div>
     </div>
-
   </div>
 </section>
-
 <!-- CAPSTONE COLLAGES -->
 <section class="collages-section">
   <div class="collages-inner">
     <p class="collages-label">2023–2024 &middot; The Art of Tragedy &middot; Student Capstone Work</p>
     <div class="collages-grid">
-
       <!-- Macbeth collage — full width -->
       <div class="collage-item full">
         <img
@@ -394,7 +392,6 @@
           alt="Macbeth — student capstone collage, symbol and response tiles" />
         <p class="collage-caption">Macbeth · Symbol &amp; Response · 2023–2024</p>
       </div>
-
       <!-- Wuthering Heights mosaic — full width -->
       <div class="collage-item full">
         <img
@@ -402,11 +399,9 @@
           alt="Wuthering Heights — student portrait mosaic" />
         <p class="collage-caption">Wuthering Heights · Portrait Mosaic · 2023–2024</p>
       </div>
-
     </div>
   </div>
 </section>
-
 <!-- SECTION 4: NARRATION TO ARGUMENT -->
 <section class="phil-section" aria-labelledby="bridge-title">
   <div class="phil-inner">
@@ -435,7 +430,6 @@
     </div>
   </div>
 </section>
-
 <!-- CLOSING CTA -->
 <section class="phil-cta" aria-labelledby="cta-title">
   <div class="phil-cta-inner">
@@ -447,7 +441,6 @@
     </div>
   </div>
 </section>
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
