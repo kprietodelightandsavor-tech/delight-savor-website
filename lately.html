@@ -1,6 +1,12 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Lately · Delight &amp; Savor</title>
+  <!-- favicon & app icons (Delight & Savor) -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon-180.png" />
+  <meta name="theme-color" content="#3F3732" />
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <style>
@@ -31,8 +37,78 @@
   .signoff{max-width:660px;margin:2.5rem auto 0;padding:0 1.5rem 4rem;text-align:center}
   .signoff .hand{font-family:'Caveat',cursive;font-size:2rem;color:var(--slate);line-height:1.25}
   .signoff .place{font-variant:small-caps;letter-spacing:.18em;font-size:.78rem;color:var(--muted);margin-top:.4rem}
+
+  /* ── NAV ── */
+  nav { background: var(--slate); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; }
+  .nav-logo-wrap { display: flex; align-items: center; gap: 0.65rem; }
+  .nav-logo-img { height: 40px; width: auto; opacity: 0.95; }
+  .nav-logo-text { font-family: 'Playfair Display', serif; color: var(--cream); font-size: 1rem; letter-spacing: 0.04em; line-height: 1.2; }
+  .nav-logo-text span { display: block; font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(232,213,176,0.45); font-family: 'Cormorant Garamond', serif; font-style: italic; }
+  .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
+  .nav-links a { color: rgba(250,249,246,0.82); font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+  .nav-cta { background: var(--gold); color: var(--cream) !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; }
+  .nav-social { display: flex; gap: 1.25rem; align-items: center; }
+  .nav-social a { color: rgba(250,249,246,0.52); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-social a:hover { color: var(--gold-light); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--cream); border-radius: 2px; transition: all .25s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--slate); border-top: 1px solid rgba(255,255,255,0.1); padding: 1rem 2rem 1.5rem; z-index: 99; flex-direction: column; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { color: rgba(250,249,246,0.75); font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 0.2s; }
+  .mobile-nav a:last-child { border-bottom: none; }
+  .mobile-nav a:hover { color: var(--gold-light); }
+  .mobile-nav a.mobile-cta { color: var(--gold-light); font-weight: 600; }
+  .mobile-nav .mobile-divider { height: 1px; background: rgba(255,255,255,0.12); margin: 0.5rem 0; }
+  @media (max-width: 900px) { .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; } }
 </style></head>
 <body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo-wrap">
+    <img src="ds_logo_rounded_512.png" alt="Delight &amp; Savor" class="nav-logo-img" />
+    <div class="nav-logo-text">
+      Delight &amp; Savor
+      <span>Beauty. Meaning. Connection.</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="philosophy.html">Philosophy</a></li>
+    <li><a href="curriculum.html">Curriculum</a></li>
+    <li><a href="teachers-notebook.html">Teacher&#8217;s Notebook</a></li>
+    <li><a href="conversation-quilt.html">Conversation Quilt</a></li>
+    <li><a href="lately.html" class="active">Lately</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="curriculum.html" class="nav-cta">Shop Now</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="https://instagram.com/Kim.delightandsavor">Instagram</a>
+    <a href="https://pinterest.com">Pinterest</a>
+    <a href="https://delightandsavor.substack.com">Substack</a>
+  </div>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="philosophy.html" onclick="toggleMenu()">Philosophy</a>
+  <a href="curriculum.html" onclick="toggleMenu()">Curriculum</a>
+  <a href="teachers-notebook.html" onclick="toggleMenu()">Teacher&#8217;s Notebook</a>
+  <a href="conversation-quilt.html" onclick="toggleMenu()">Conversation Quilt</a>
+  <a href="lately.html" onclick="toggleMenu()">Lately</a>
+  <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+  <div class="mobile-divider"></div>
+  <a href="https://instagram.com/Kim.delightandsavor" onclick="toggleMenu()">Instagram</a>
+  <a href="https://delightandsavor.substack.com" onclick="toggleMenu()">Substack</a>
+  <div class="mobile-divider"></div>
+  <a href="curriculum.html" class="mobile-cta" onclick="toggleMenu()">Shop Now &rarr;</a>
+</div>
+
   <section class="cloth">
     <p class="eyebrow">From the Ranch</p>
     <h1>Lately</h1>
@@ -110,5 +186,9 @@
   document.getElementById('wall').innerHTML = photos.map(function(u){
     return '<figure class="snap"><img loading="lazy" src="'+src(u)+'" alt="A moment from our life on the ranch"></figure>';
   }).join('');
+</script>
+<script>
+function toggleMenu(){document.getElementById('hamburger').classList.toggle('open');document.getElementById('mobile-nav').classList.toggle('open');}
+document.addEventListener('click',function(e){var b=document.getElementById('hamburger'),n=document.getElementById('mobile-nav');if(n&&n.classList.contains('open')&&!n.contains(e.target)&&!b.contains(e.target)){b.classList.remove('open');n.classList.remove('open');}});
 </script>
 </body></html>
