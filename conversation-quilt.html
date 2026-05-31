@@ -12,10 +12,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --slate: #2d3748; --slate-mid: #5D6B80; --slate-deep: #2d3748;
-      --sage: #A9B786; --sage-light: #EFF4EA; --sage-dark: #5C7A5C;
-      --cream: #FAF9F6; --gold: #C29B61; --gold-light: #E8D5B0;
-      --teal: #4A7C7E; --ink: #3a3a3a; --muted: #7a7a7a; --border: #dfe5d8;
+      --slate: #37322B; --slate-mid: #5C564B; --slate-deep: #232220;
+      --sage: #8C9B79; --sage-light: #EBEFE2; --sage-dark: #5C6A50;
+      --cream: #FAF6EE; --gold: #BE9457; --gold-light: #E2C79A;
+      --teal: #4A7C7E; --ink: #2C2A26; --muted: #6E675C; --border: #E4DED1;
+      --cloth: #232220;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Cormorant Garamond', Georgia, serif; background: var(--cream); color: var(--ink); font-size: 18px; line-height: 1.7; }
@@ -51,12 +52,12 @@
     /* ── HERO ── */
     .hero { background: var(--slate); color: var(--cream); padding: 4.5rem 2rem 4rem; text-align: center; }
     .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem; font-style: italic; }
-    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 400; line-height: 1.2; max-width: 640px; margin: 0 auto 1.1rem; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 400; line-height: 1.2; max-width: 640px; margin: 0 auto 1.1rem; text-shadow: 0 2px 1px rgba(0,0,0,.5), 0 -1px 0 rgba(255,240,210,.04); }
     .hero-title em { color: var(--gold-light); font-style: italic; }
     .hero-lead { max-width: 500px; margin: 0 auto 2rem; color: rgba(250,249,246,0.68); font-size: 1rem; line-height: 1.7; }
     .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .btn-primary { background: var(--gold); color: var(--cream); padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; font-weight: 600; display: inline-block; transition: background 0.2s; }
-    .btn-primary:hover { background: rgba(194,155,97,0.85); }
+    .btn-primary:hover { background: rgba(190,148,87,0.85); }
     .btn-ghost { border: 1px solid rgba(250,249,246,0.3); color: rgba(250,249,246,0.82); padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; display: inline-block; transition: border-color 0.2s; }
     .btn-ghost:hover { border-color: var(--gold-light); color: var(--gold-light); }
 
@@ -72,31 +73,59 @@
     .intro-body strong { font-weight: 600; color: var(--slate); }
 
     /* Mason pull quote */
-    .mason-quote { margin: 2.5rem 0 0; padding: 1.5rem 2rem; border-left: 3px solid var(--gold); background: rgba(194,155,97,0.06); border-radius: 0 6px 6px 0; }
+    .mason-quote { margin: 2.5rem 0 0; padding: 1.5rem 2rem; border-left: 3px solid var(--gold); background: rgba(190,148,87,0.06); border-radius: 0 6px 6px 0; }
     .mason-quote p { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; color: var(--slate); line-height: 1.65; }
     .mason-quote cite { display: block; font-family: 'Cormorant Garamond', serif; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 0.75rem; font-style: normal; }
 
-        /* ── QUILT ── */
+    /* ── QUILT ── */
     .quilt-section { background: var(--slate-deep); padding: 4rem 2rem 5rem; }
     .quilt-inner { max-width: 1060px; margin: 0 auto; }
     .quilt-year { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
     .quilt-year-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-style: italic; white-space: nowrap; }
     .quilt-year-rule { flex: 1; height: 1px; background: rgba(255,255,255,0.09); }
-    .quilt-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
-    .quilt-tile { position: relative; overflow: hidden; background: var(--slate-mid); aspect-ratio: 1/1; }
+    .quilt-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+    .quilt-tile { position: relative; overflow: hidden; background: var(--slate-mid); aspect-ratio: 1/1; flex: 0 0 calc(20% - 4.8px); }
     .quilt-tile img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.88) brightness(0.97); }
     .quilt-tile.written img { filter: saturate(0.32) sepia(0.2) brightness(0.93); }
     .quilt-tile::after { content: ''; position: absolute; inset: 4px; border: 1px solid rgba(255,255,255,0.07); pointer-events: none; z-index: 1; }
     .quilt-footer-note { text-align: center; margin-top: 2.5rem; }
     .quilt-footer-note p { font-size: 0.85rem; color: rgba(250,249,246,0.32); font-style: italic; line-height: 1.8; }
     .quilt-footer-note em { color: var(--gold); font-style: normal; }
-    @media (max-width: 860px) { .quilt-grid { grid-template-columns: repeat(4, 1fr); } }
-    @media (max-width: 560px) { .quilt-grid { grid-template-columns: repeat(3, 1fr); gap: 3px; } .quilt-section { padding: 3rem 1rem 4rem; } }
-      .quilt-tile.wide { grid-column: span 3; }
+    @media (max-width: 860px) { .quilt-tile { flex: 0 0 calc(25% - 4.5px); } }
+    @media (max-width: 560px) {
+      .quilt-grid { gap: 3px; }
+      .quilt-tile { flex: 0 0 calc(33.333% - 2px); }
       .hero { padding: 3.5rem 1.25rem 3rem; }
       .intro-section { padding: 3.5rem 1.25rem; }
       .quilt-section { padding: 3rem 1rem 4rem; }
     }
+
+    /* ── FOOTER (was unstyled — logo rendered full-size) ── */
+    footer { background: var(--slate); border-top: 1px solid rgba(255,255,255,0.08); color: rgba(250,249,246,0.65); padding: 3.25rem 1.5rem 2rem; }
+    .footer-inner { max-width: 880px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 2rem; }
+    .footer-logo { height: 34px; width: auto; filter: brightness(0) invert(1); opacity: 0.7; margin-bottom: 0.85rem; display: block; }
+    .footer-brand p { font-size: 0.86rem; color: rgba(250,249,246,0.55); line-height: 1.65; max-width: 30ch; }
+    .footer-nav h4, .footer-connect h4 { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.85rem; }
+    .footer-nav ul, .footer-connect ul { list-style: none; }
+    .footer-nav li, .footer-connect li { margin-bottom: 0.45rem; }
+    .footer-nav a, .footer-connect a { color: rgba(250,249,246,0.55); font-size: 0.9rem; transition: color 0.2s; }
+    .footer-nav a:hover, .footer-connect a:hover { color: var(--gold-light); }
+    .footer-bottom { max-width: 880px; margin: 2rem auto 0; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: 0.72rem; color: rgba(250,249,246,0.4); }
+    .footer-bottom a { color: rgba(250,249,246,0.45); }
+    @media (max-width: 760px) { .footer-inner { grid-template-columns: 1fr; gap: 1.75rem; } .footer-bottom { flex-direction: column; gap: 0.5rem; } }
+    /* ── book-cloth covers (charcoal ink) ── */
+    .cloth { position: relative; background-color: #232220;
+      background-image:
+        repeating-linear-gradient(90deg, rgba(0,0,0,.12) 0 1px, transparent 1px 3px),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.013) 0 1px, transparent 1px 3px),
+        radial-gradient(130% 90% at 50% 0%, #2f2d29 0%, #232220 55%, #191816 100%); }
+    .gilt::before { content:""; position:absolute; inset:16px; border:1px solid rgba(190,148,87,.42); pointer-events:none; z-index:0; }
+    .gilt::after  { content:""; position:absolute; inset:21px; border:1px solid rgba(190,148,87,.16); pointer-events:none; z-index:0; }
+    .hero.cloth > * { position: relative; z-index: 1; }
+    .fieldnote { max-width: 40ch; margin: 1.85rem auto 0; position: relative; z-index: 1; }
+    .fn-label { display:flex; align-items:center; justify-content:center; gap:.7rem; font-family:'Cormorant Garamond', serif; font-variant:small-caps; letter-spacing:.22em; font-size:.74rem; color:var(--gold-light); margin-bottom:.5rem; }
+    .fn-label::before, .fn-label::after { content:""; height:1px; width:22px; background:rgba(190,148,87,.55); }
+    .fn-text { font-family:'Playfair Display', serif; font-style:italic; font-size:1.25rem; line-height:1.5; color:var(--cream); text-align:center; }
   </style>
 </head>
 <body>
@@ -141,13 +170,17 @@
 </div>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero cloth gilt">
   <p class="hero-eyebrow">The Capstone Project &middot; Delight &amp; Savor</p>
   <h1 class="hero-title">The <em>Conversation</em> Quilt</h1>
   <p class="hero-lead">The science of relations, made literally and beautifully concrete. Every square is a student who was really there.</p>
   <div class="hero-btns">
     <a href="/philosophy" class="btn-ghost">Read the Philosophy</a>
     <a href="/curriculum" class="btn-primary">Browse the Curriculum</a>
+  </div>
+  <div class="fieldnote">
+    <span class="fn-label">Field Note</span>
+    <p class="fn-text">One square at a time, a year becomes a quilt.</p>
   </div>
 </section>
 
@@ -171,7 +204,7 @@
 </section>
 
 <!-- THE QUILT -->
-<section class="quilt-section">
+<section class="quilt-section cloth">
   <div class="quilt-inner">
 
     <div class="quilt-year">
@@ -181,70 +214,70 @@
 
     <div class="quilt-grid">
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549794/IMG_7552_vzsf8j.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549794/IMG_7552_vzsf8j.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549794/IMG_7549_qkkuvj.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549794/IMG_7549_qkkuvj.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549795/IMG_7546_jvdgte.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549795/IMG_7546_jvdgte.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile written">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_north,w_600,h_600,q_85/v1779549795/IMG_7555_bcrdcw.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_north,w_600,h_600,q_85/v1779549795/IMG_7555_bcrdcw.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551941/IMG_7534_sygr7a.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551941/IMG_7534_sygr7a.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551936/IMG_7536_hukdd9.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551936/IMG_7536_hukdd9.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551935/IMG_7537_ecfyjr.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551935/IMG_7537_ecfyjr.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551934/IMG_7538_e29fnk.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551934/IMG_7538_e29fnk.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile written">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_north,w_600,h_600,q_85/v1779549793/IMG_7556_jlmbym.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_north,w_600,h_600,q_85/v1779549793/IMG_7556_jlmbym.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549798/IMG_7535_ocligj.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549798/IMG_7535_ocligj.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551940/IMG_7543_kmnhge.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551940/IMG_7543_kmnhge.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551933/IMG_7544_qo9wcl.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551933/IMG_7544_qo9wcl.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551051/IMG_7545_dithnx.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551051/IMG_7545_dithnx.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile written">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_north,w_600,h_600,q_85/v1779549793/IMG_7554_o0ngmu.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_north,w_600,h_600,q_85/v1779549793/IMG_7554_o0ngmu.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551050/IMG_7547_iat1yr.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779551050/IMG_7547_iat1yr.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549796/IMG_7542_tpyrva.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549796/IMG_7542_tpyrva.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549796/IMG_7541_g4flw7.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549796/IMG_7541_g4flw7.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549798/IMG_7539_afyibq.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549798/IMG_7539_afyibq.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile written">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_north,w_600,h_600,q_85/v1779549794/IMG_7553_pivqbv.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_north,w_600,h_600,q_85/v1779549794/IMG_7553_pivqbv.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549798/IMG_7540_f4odgf.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549798/IMG_7540_f4odgf.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549796/IMG_7548_lulqu3.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549796/IMG_7548_lulqu3.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
       <div class="quilt-tile">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549795/IMG_7551_x7wysb.heic" alt="Student capstone tile" loading="lazy" />
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_600,h_600,q_85/v1779549795/IMG_7551_x7wysb.jpg" alt="Student capstone tile" loading="lazy" />
       </div>
     </div>
 
@@ -256,7 +289,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer class="cloth">
   <div class="footer-inner">
     <div class="footer-brand">
       <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1774316147/D_S_Primary_Logo-_Transparent_p0ulxh.png" alt="Delight &amp; Savor" class="footer-logo" />
@@ -269,7 +302,7 @@
         <li><a href="/curriculum">Curriculum</a></li>
         <li><a href="/teachers-notebook">Teacher&#8217;s Notebook</a></li>
         <li><a href="/conversation-quilt">Conversation Quilt</a></li>
-        <li><a href="https://delightnsavor.gumroad.com/l/xtqtpv">Shop</a></li>
+        <li><a href="https://payhip.com/delightandsavor">Shop</a></li>
         <li><a href="/faq">FAQ</a></li>
       </ul>
     </nav>
