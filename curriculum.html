@@ -4,14 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Curriculum · Delight & Savor</title>
-  <!-- ── SEO + OPEN GRAPH + PINTEREST ──
-       TODO: Replace og:image with a branded 1200×630 flat-lay photo for best results.
-       Current placeholder: Wuthering Heights cover via Cloudinary. -->
   <meta name="description" content="Browse the Delight & Savor unit series — 15-week literature companions for upper school homeschoolers. Co-op and home study versions for Macbeth, Wuthering Heights, and more." />
   <meta name="keywords" content="Charlotte Mason, homeschool literature, upper school English, living books, narration, Macbeth, Wuthering Heights, literature companion, co-op curriculum, grades 9-12" />
   <meta name="author" content="Delight &amp; Savor Press" />
   <link rel="canonical" href="https://delightandsavor.com/curriculum.html" />
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Delight &amp; Savor" />
   <meta property="og:title" content="Curriculum · Delight & Savor" />
@@ -21,35 +17,32 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Delight &amp; Savor — Charlotte Mason upper school literature curriculum" />
-  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Curriculum · Delight & Savor" />
   <meta name="twitter:description" content="Browse the Delight & Savor unit series — 15-week literature companions for upper school homeschoolers. Co-op and home study versions for Macbeth, Wuthering Heights, and more." />
   <meta name="twitter:image" content="https://res.cloudinary.com/dwdbmowur/image/upload/v1772975874/IMG_7781_jpg_2_pgmwq4.jpg" />
-  <!-- Pinterest -->
   <meta name="pinterest-rich-pin" content="true" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@400;500;600;700&display=swap" />
   <style>
-    /* ─── VARIABLES ─────────────────────────────────────── */
     :root {
-      --slate:       #2d3748;
-      --slate-mid:   #4a5568;
-      --sage:        #a9b786;
-      --light-sage:  #eff4ea;
-      --gold:        #c29b61;
-      --cream:       #faf6ee;
-      --cream-dark:  #f0ebe0;
-      --text-dark:   #2c2c2c;
-      --text-mid:    #4a5568;
+      --slate:       #37322B;
+      --slate-mid:   #5C564B;
+      --sage:        #8C9B79;
+      --light-sage:  #EBEFE2;
+      --gold:        #BE9457;
+      --gold-light:  #E2C79A;
+      --cream:       #FAF6EE;
+      --cream-dark:  #ECE5D6;
+      --text-dark:   #2C2A26;
+      --text-mid:    #5C564B;
 
       --ff-display: 'Playfair Display', Georgia, serif;
       --ff-body:    'Cormorant Garamond', Georgia, serif;
-      --ff-sans:    'Libre Baskerville', serif;
+      --ff-sans:    'Jost', system-ui, sans-serif;
     }
 
-    /* ─── RESET ─────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -62,16 +55,6 @@
     a { text-decoration: none; color: inherit; }
     img { display: block; max-width: 100%; }
 
-    
-        
-    
-        
-    
-
-    
-
-    /* ─── PAGE HERO ─────────────────────────────────────── */
-        /* ── NAV ── */
     nav { background: var(--slate); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 16px rgba(0,0,0,.25); }
     .nav-logo-wrap { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; }
     .nav-logo-img { height: 40px; width: auto; opacity: 0.95; }
@@ -79,11 +62,11 @@
     .nav-logo-text span { display: block; font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,213,176,0.45); font-family: 'Cormorant Garamond', serif; font-style: italic; }
     .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
     .nav-links a { color: rgba(250,249,246,0.82); font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; }
-    .nav-links a:hover, .nav-links a.active { color: var(--gold-light, #E8D5B0); }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-light, #E2C79A); }
     .nav-cta { background: var(--gold); color: var(--cream) !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; }
     .nav-social { display: flex; gap: 1.25rem; align-items: center; }
     .nav-social a { color: rgba(250,249,246,0.52); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; }
-    .nav-social a:hover { color: #E8D5B0; }
+    .nav-social a:hover { color: #E2C79A; }
     .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--cream); border-radius: 2px; transition: all .25s; }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -93,8 +76,8 @@
     .mobile-nav.open { display: flex; }
     .mobile-nav a { color: rgba(250,249,246,0.75); font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 0.2s; text-decoration: none; }
     .mobile-nav a:last-child { border-bottom: none; }
-    .mobile-nav a:hover { color: #E8D5B0; }
-    .mobile-nav a.mobile-cta { color: #E8D5B0; font-weight: 600; }
+    .mobile-nav a:hover { color: #E2C79A; }
+    .mobile-nav a.mobile-cta { color: #E2C79A; font-weight: 600; }
     .mobile-nav .mobile-divider { height: 1px; background: rgba(255,255,255,0.12); margin: 0.5rem 0; }
     @media (max-width: 720px) { .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; } }
 
@@ -108,8 +91,8 @@
       content: '';
       position: absolute; inset: 0;
       background-image:
-        radial-gradient(ellipse 70% 50% at 15% 85%, rgba(169,183,134,.10) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 40% at 85% 15%, rgba(194,155,97,.08) 0%, transparent 55%);
+        radial-gradient(ellipse 70% 50% at 15% 85%, rgba(140,155,121,.10) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 85% 15%, rgba(190,148,87,.08) 0%, transparent 55%);
       pointer-events: none;
     }
     .page-hero-inner { max-width: 700px; margin: 0 auto; position: relative; }
@@ -127,11 +110,10 @@
     .page-title em { color: var(--gold); }
     .page-tagline {
       font-family: var(--ff-body); font-size: 1.15rem;
-      color: var(--text-mid); font-style: italic;
+      color: rgba(250,249,246,0.82); font-style: italic;
       max-width: 520px; margin: 0 auto; line-height: 1.75;
     }
 
-    /* ─── YEAR STRIP ────────────────────────────────────── */
     .year-strip {
       background: var(--slate);
       padding: 1.5rem 2rem;
@@ -161,7 +143,6 @@
     }
     .year-pill.active .year-pill-num { color: var(--gold); }
 
-    /* ─── SECTION UTILITIES ─────────────────────────────── */
     .section-label {
       font-family: var(--ff-sans); font-size: .72rem;
       letter-spacing: .2em; text-transform: uppercase;
@@ -173,7 +154,7 @@
     }
     .section-intro {
       font-family: var(--ff-body); font-size: 1.1rem;
-      color: rgba(250,249,246,0.72); line-height: 1.8;
+      color: var(--text-mid); line-height: 1.8;
       max-width: 680px;
     }
     .gold-rule {
@@ -181,7 +162,6 @@
       background: var(--gold); margin-bottom: 1.5rem;
     }
 
-    /* ─── YEAR ONE SECTION ──────────────────────────────── */
     .year-section {
       padding: 5.5rem 2rem;
     }
@@ -189,7 +169,6 @@
     .year-section-inner { max-width: 1100px; margin: 0 auto; }
     .year-header { margin-bottom: 3.5rem; }
 
-    /* Unit cards — full width featured layout */
     .unit-card {
       display: grid;
       grid-template-columns: 280px 1fr;
@@ -197,11 +176,11 @@
       background: var(--cream);
       border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 6px 32px rgba(74,85,104,.12);
+      box-shadow: 0 6px 32px rgba(92,86,75,.12);
       margin-bottom: 3rem;
       transition: box-shadow .3s, transform .3s;
     }
-    .unit-card:hover { box-shadow: 0 16px 48px rgba(74,85,104,.18); transform: translateY(-3px); }
+    .unit-card:hover { box-shadow: 0 16px 48px rgba(92,86,75,.18); transform: translateY(-3px); }
     .unit-card-img-wrap {
       position: relative; overflow: hidden;
     }
@@ -232,7 +211,7 @@
     }
     .unit-author {
       font-family: var(--ff-body); font-style: italic;
-      font-size: 1rem; color: rgba(45,55,72,.5);
+      font-size: 1rem; color: rgba(55,50,43,.5);
       margin-bottom: 1.25rem;
     }
     .unit-desc {
@@ -241,7 +220,6 @@
       margin-bottom: 1.75rem; flex-grow: 1;
     }
 
-    /* What's included list */
     .unit-includes {
       margin-bottom: 1.75rem;
     }
@@ -265,12 +243,11 @@
       flex-shrink: 0; margin-top: .35rem;
     }
 
-    /* Pricing */
     .unit-pricing {
       display: flex; gap: 1rem; flex-wrap: wrap;
       margin-bottom: 1.75rem;
       padding: 1.25rem 1.5rem;
-      background: rgba(239,244,234,.6);
+      background: rgba(235,239,226,.6);
       border-radius: 8px;
       border-left: 3px solid var(--sage);
     }
@@ -278,7 +255,7 @@
       display: flex; flex-direction: column;
       align-items: flex-start; gap: .15rem;
       padding-right: 1rem;
-      border-right: 1px solid rgba(169,183,134,.4);
+      border-right: 1px solid rgba(140,155,121,.4);
     }
     .price-option:last-child { border-right: none; padding-right: 0; }
     .price-label {
@@ -295,7 +272,6 @@
       font-style: italic; color: var(--text-mid);
     }
 
-    /* CTA buttons */
     .unit-cta { display: flex; gap: .75rem; flex-wrap: wrap; }
     .btn-buy {
       font-family: var(--ff-sans); font-size: .75rem;
@@ -306,7 +282,7 @@
       transition: background .2s, transform .15s;
       display: inline-block;
     }
-    .btn-buy:hover { background: rgba(194,155,97,.85); transform: translateY(-2px); }
+    .btn-buy:hover { background: rgba(190,148,87,.85); transform: translateY(-2px); }
     .btn-secondary {
       font-family: var(--ff-sans); font-size: .75rem;
       letter-spacing: .1em; text-transform: uppercase;
@@ -318,7 +294,6 @@
     }
     .btn-secondary:hover { background: var(--sage); color: var(--cream); transform: translateY(-2px); }
 
-    /* ─── COMING SOON GRID ──────────────────────────────── */
     .coming-soon-section {
       background: var(--light-sage);
       padding: 5rem 2rem;
@@ -352,13 +327,13 @@
       display: flex; flex-direction: column;
       align-items: center; justify-content: flex-end;
       padding: 1.5rem 1rem;
-      background: linear-gradient(to top, rgba(45,55,72,.85) 0%, transparent 55%);
+      background: linear-gradient(to top, rgba(55,50,43,.85) 0%, transparent 55%);
     }
     .coming-tag {
       font-family: var(--ff-sans); font-size: .58rem;
       letter-spacing: .15em; text-transform: uppercase;
-      background: rgba(194,155,97,.25);
-      border: 1px solid rgba(194,155,97,.4);
+      background: rgba(190,148,87,.25);
+      border: 1px solid rgba(190,148,87,.4);
       color: var(--gold); border-radius: 3px;
       padding: .25rem .65rem; margin-bottom: .6rem;
     }
@@ -368,7 +343,6 @@
       text-align: center; line-height: 1.3;
     }
 
-    /* ─── VERSIONS SECTION ──────────────────────────────── */
     .versions-section {
       padding: 5.5rem 2rem;
       background: var(--cream);
@@ -384,7 +358,7 @@
     .version-card {
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 24px rgba(74,85,104,.1);
+      box-shadow: 0 4px 24px rgba(92,86,75,.1);
     }
     .version-card-head {
       padding: 1.75rem 2rem 1.5rem;
@@ -409,7 +383,7 @@
     .version-list li {
       font-family: var(--ff-body); font-size: 1rem;
       color: var(--text-mid); padding: .5rem 0;
-      border-bottom: 1px solid rgba(169,183,134,.2);
+      border-bottom: 1px solid rgba(140,155,121,.2);
       display: flex; align-items: flex-start; gap: .6rem;
       line-height: 1.5;
     }
@@ -420,9 +394,8 @@
       flex-shrink: 0; margin-top: .15rem;
     }
 
-    /* Honors track callout */
     .honors-callout {
-      background: linear-gradient(135deg, var(--light-sage), #d4e8c8);
+      background: linear-gradient(135deg, var(--light-sage), #D8E0C9);
       border-radius: 12px; padding: 2.5rem 3rem;
       display: grid; grid-template-columns: 1fr auto;
       gap: 2rem; align-items: center;
@@ -442,7 +415,6 @@
       color: var(--text-mid); line-height: 1.7;
     }
 
-    /* ─── FOOTER ────────────────────────────────────────── */
     .site-footer {
       background: var(--slate);
       padding: 4rem 2rem 2rem;
@@ -502,7 +474,7 @@
       padding: .65rem 1.1rem; cursor: pointer; font-weight: 700;
       transition: background .2s; white-space: nowrap;
     }
-    .newsletter-submit:hover { background: rgba(194,155,97,.85); }
+    .newsletter-submit:hover { background: rgba(190,148,87,.85); }
     .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.07); margin-bottom: 1.5rem; }
     .footer-bottom {
       display: flex; align-items: center; justify-content: space-between;
@@ -519,7 +491,6 @@
     }
     .footer-bottom-links a:hover { color: var(--cream); }
 
-    /* ─── RESPONSIVE ────────────────────────────────────── */
     @media (max-width: 860px) {
       .unit-card { grid-template-columns: 1fr; }
       .unit-card-img-wrap { height: 260px; }
@@ -535,11 +506,11 @@
       .coming-grid { grid-template-columns: repeat(2, 1fr); }
       .honors-callout { padding: 2rem 1.5rem; }
     }
+    .nav-links a, .nav-social a, .mobile-nav a { font-family: 'Jost', system-ui, sans-serif; }
   </style>
 </head>
 <body>
 
-<!-- ══════════════════════ HEADER ══════════════════════ -->
 <nav>
   <a href="/" class="nav-logo-wrap">
     <img src="/images/ds_icon.png" alt="Delight &amp; Savor" class="nav-logo-img" />
@@ -578,11 +549,6 @@
   <a href="/curriculum" class="mobile-cta" onclick="toggleMenu()">Shop Now &rarr;</a>
 </div>
 
-<!-- ══════════════════════ SOCIAL BAR ══════════════════ -->
-
-</div>
-
-<!-- ══════════════════════ PAGE HERO ═══════════════════ -->
 <section class="page-hero">
   <div class="page-hero-inner">
     <p class="page-eyebrow">Living Literature &amp; Language · Grades 9–12</p>
@@ -595,7 +561,6 @@
   </div>
 </section>
 
-<!-- ══════════════════════ YEAR STRIP ══════════════════ -->
 <nav class="year-strip" aria-label="Course year navigation">
   <div class="year-strip-inner">
     <a href="#year-one" class="year-pill active">
@@ -621,7 +586,6 @@
   </div>
 </nav>
 
-<!-- ══════════════════════ YEAR ONE ════════════════════ -->
 <section class="year-section" id="year-one" aria-labelledby="year-one-title">
   <div class="year-section-inner">
     <div class="year-header">
@@ -636,7 +600,6 @@
       </p>
     </div>
 
-    <!-- MACBETH -->
     <article class="unit-card" id="macbeth">
       <div class="unit-card-img-wrap">
         <img
@@ -694,7 +657,6 @@
       </div>
     </article>
 
-    <!-- WUTHERING HEIGHTS -->
     <article class="unit-card" id="wuthering-heights">
       <div class="unit-card-img-wrap">
         <img
@@ -755,7 +717,6 @@
   </div>
 </section>
 
-<!-- ══════════════════════ COMING SOON ═════════════════ -->
 <section class="coming-soon-section" aria-labelledby="coming-title">
   <div class="coming-soon-inner">
     <div class="coming-soon-header">
@@ -806,7 +767,6 @@
   </div>
 </section>
 
-<!-- ══════════════════════ VERSIONS ════════════════════ -->
 <section class="versions-section" id="versions" aria-labelledby="versions-title">
   <div class="versions-inner">
     <div class="versions-header">
@@ -821,7 +781,6 @@
     </div>
 
     <div class="versions-grid">
-      <!-- CO-OP -->
       <div class="version-card coop">
         <div class="version-card-head">
           <div class="version-icon">🏛️</div>
@@ -840,7 +799,6 @@
         </div>
       </div>
 
-      <!-- HOME STUDY -->
       <div class="version-card home">
         <div class="version-card-head">
           <div class="version-icon">📖</div>
@@ -860,7 +818,6 @@
       </div>
     </div>
 
-    <!-- HONORS CALLOUT -->
     <div class="honors-callout">
       <div>
         <p class="honors-label">Available in Both Versions</p>
@@ -880,7 +837,6 @@
   </div>
 </section>
 
-<!-- ══════════════════════ FOOTER ══════════════════════ -->
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <div class="footer-grid">
@@ -952,7 +908,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   document.getElementById('year').textContent = new Date().getFullYear();
   function handleNewsletter(e) {
     e.preventDefault();
@@ -960,4 +916,20 @@
     document.getElementById('footer-email').value = '';
   }
 
-  /* Highlight acti
+  function toggleMenu() {
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElementById('mobile-nav');
+    if (btn) btn.classList.toggle('open');
+    if (nav) nav.classList.toggle('open');
+  }
+  document.addEventListener('click', function (e) {
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElementById('mobile-nav');
+    if (nav && nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) {
+      btn.classList.remove('open');
+      nav.classList.remove('open');
+    }
+  });
+</script>
+</body>
+</html>
