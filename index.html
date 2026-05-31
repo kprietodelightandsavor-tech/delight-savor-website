@@ -104,6 +104,14 @@
 
     .hero-colophon { margin-top: 2.5rem; display: flex; align-items: center; justify-content: center; gap: .85rem; font-family: var(--ff-sans); font-variant: small-caps; letter-spacing: .14em; font-size: .74rem; color: rgba(250,246,238,.55); }
     .hero-colophon .tick { width: 26px; height: 1px; background: rgba(190,148,87,.6); }
+    .hero-snaps { display: flex; gap: .9rem; justify-content: center; align-items: flex-start; flex-wrap: wrap; margin-top: 2.4rem; }
+    .hero-snap { width: 132px; background: #fff; padding: 7px 7px 11px; border-radius: 2px; box-shadow: 0 9px 20px rgba(0,0,0,.38); transition: transform .18s, box-shadow .18s; }
+    .hero-snap img { display: block; width: 100%; height: 156px; object-fit: cover; border-radius: 1px; }
+    .hero-snap:nth-child(1) { transform: rotate(-3deg); }
+    .hero-snap:nth-child(2) { transform: rotate(1.6deg) translateY(-6px); }
+    .hero-snap:nth-child(3) { transform: rotate(2.8deg); }
+    .hero-snap:hover { transform: rotate(0) translateY(-3px); box-shadow: 0 14px 28px rgba(0,0,0,.46); z-index: 2; }
+    @media (max-width: 520px) { .hero-snap { width: 104px; } .hero-snap img { height: 124px; } }
 
     /* scroll cue */
     .scroll-cue { margin-top: 2.75rem; display: flex; flex-direction: column; align-items: center; gap: .4rem; color: rgba(250,249,246,.5); font-family: var(--ff-sans); font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; }
@@ -331,6 +339,8 @@
       <a href="philosophy.html" class="btn-outline">Read the Philosophy</a>
     </div>
     <div class="hero-colophon"><span class="tick"></span>A field guide to living books<span class="tick"></span></div>
+    <!-- hero snapshots — auto-chosen at random from the ranch photo set -->
+    <div class="hero-snaps" id="heroSnaps" aria-label="Scenes from the ranch"></div>
   </div>
 </section>
 
@@ -752,6 +762,64 @@
     if (nav) nav.classList.toggle('open');
     if (burger) burger.classList.toggle('open');
   }
+</script>
+<script>
+  /* Hero snapshots: pick 3 at random from the ranch set on each load.
+     To curate, delete any line you don't want from the list below. */
+  (function(){
+    var photos = [
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251338/IMG_2002_s8hx0x.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251335/IMG_7469_aqf6zn.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251337/IMG_1328_zysfbk.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251337/IMG_2452_mp6oac.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251333/IMG_4185_w0ocud.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251331/IMG_6138_cd6b5n.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251332/IMG_8006_v0dc2u.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251331/IMG_8004_bzbvik.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251329/IMG_7995_evdy5g.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251329/IMG_2675_rxbbcj.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251328/IMG_6314_luikiw.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251327/IMG_6332_gmndgu.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251327/IMG_3670_b4wb1m.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251327/FCE55C3F-E690-4751-B112-3315709A6E50_lnudls.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251327/IMG_5337_fpccl9.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251326/IMG_5737_ywit1w.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251325/IMG_4394_ivr2jv.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251326/IMG_1994_zvxqxr.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251326/IMG_4924_fgiwne.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251325/IMG_2685_x12nto.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251323/IMG_3854_rcajjf.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251324/IMG_6805_gl8kkr.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251324/IMG_1991_otp1dd.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251323/IMG_1544_b6rbqw.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251322/IMG_1518_q17cps.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251322/IMG_7993_c4bzpr.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251322/IMG_6422_f6reg4.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251321/IMG_1464_i0e8t2.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251321/IMG_7994_wzpo4a.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251320/IMG_2636_ypfruu.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251320/IMG_1399_ndj3tn.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251320/IMG_1436_woydbs.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251320/IMG_1412_ririgb.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251320/IMG_4946_tgnvw9.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251319/IMG_1352_eckwgy.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251318/IMG_1338_vorh9d.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251318/IMG_2351_djiqma.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251317/IMG_3270_amgpab.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251317/IMG_1194_y2taxf.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251316/IMG_5154_xdrqsm.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251317/IMG_1181_nnqygu.jpg",
+  "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251316/IMG_1044_xncm6n.jpg"
+    ];
+    function src(u){ return u.replace('/upload/','/upload/c_fill,w_360,h_440,q_auto,f_auto/').replace(/\.(heic|jpe?g|png)$/i,'.jpg'); }
+    var pool = photos.slice();
+    for (var i=pool.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=pool[i];pool[i]=pool[j];pool[j]=t; }
+    var pick = pool.slice(0,3);
+    var wrap = document.getElementById('heroSnaps');
+    if (wrap) wrap.innerHTML = pick.map(function(u){
+      return '<figure class="hero-snap"><img loading="lazy" src="'+src(u)+'" alt="A scene from the ranch"></figure>';
+    }).join('');
+  })();
 </script>
 </body>
 </html>
