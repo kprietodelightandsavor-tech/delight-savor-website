@@ -48,6 +48,11 @@
     .mobile-nav a:hover { color: var(--gold-light); }
     .mobile-nav a.mobile-cta { color: var(--gold-light); font-weight: 600; }
     .mobile-nav .mobile-divider { height: 1px; background: rgba(255,255,255,0.12); margin: 0.5rem 0; }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-social { display: none; }
+      .hamburger { display: flex; }
+    }
 
     /* ── HERO ── */
     .hero { background: var(--slate); color: var(--cream); padding: 4.5rem 2rem 4rem; text-align: center; }
@@ -132,7 +137,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="/" class="nav-logo-wrap">
+  <a href="index.html" class="nav-logo-wrap">
     <img src="/images/ds_icon.png" alt="Delight &amp; Savor" class="nav-logo-img" />
     <div class="nav-logo-text">
       Delight &amp; Savor
@@ -140,12 +145,12 @@
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="/philosophy">Philosophy</a></li>
-    <li><a href="/curriculum">Curriculum</a></li>
-    <li><a href="/teachers-notebook">Teacher&#8217;s Notebook</a></li>
-    <li><a href="/conversation-quilt" class="active">Conversation Quilt</a></li>
-    <li><a href="/faq">FAQ</a></li>
-    <li><a href="/curriculum" class="nav-cta">Shop Now</a></li>
+    <li><a href="philosophy.html">Philosophy</a></li>
+    <li><a href="curriculum.html">Curriculum</a></li>
+    <li><a href="teachers-notebook.html">Teacher&#8217;s Notebook</a></li>
+    <li><a href="conversation-quilt.html" class="active">Conversation Quilt</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="curriculum.html" class="nav-cta">Shop Now</a></li>
   </ul>
   <div class="nav-social">
     <a href="https://instagram.com/Kim.delightandsavor">Instagram</a>
@@ -157,16 +162,16 @@
   </button>
 </nav>
 <div class="mobile-nav" id="mobile-nav">
-  <a href="/philosophy" onclick="toggleMenu()">Philosophy</a>
-  <a href="/curriculum" onclick="toggleMenu()">Curriculum</a>
-  <a href="/teachers-notebook" onclick="toggleMenu()">Teacher&#8217;s Notebook</a>
-  <a href="/conversation-quilt" onclick="toggleMenu()">Conversation Quilt</a>
-  <a href="/faq" onclick="toggleMenu()">FAQ</a>
+  <a href="philosophy.html" onclick="toggleMenu()">Philosophy</a>
+  <a href="curriculum.html" onclick="toggleMenu()">Curriculum</a>
+  <a href="teachers-notebook.html" onclick="toggleMenu()">Teacher&#8217;s Notebook</a>
+  <a href="conversation-quilt.html" onclick="toggleMenu()">Conversation Quilt</a>
+  <a href="faq.html" onclick="toggleMenu()">FAQ</a>
   <div class="mobile-divider"></div>
   <a href="https://instagram.com/Kim.delightandsavor" onclick="toggleMenu()">Instagram</a>
   <a href="https://delightandsavor.substack.com" onclick="toggleMenu()">Substack</a>
   <div class="mobile-divider"></div>
-  <a href="/curriculum" class="mobile-cta" onclick="toggleMenu()">Shop Now &rarr;</a>
+  <a href="curriculum.html" class="mobile-cta" onclick="toggleMenu()">Shop Now &rarr;</a>
 </div>
 
 <!-- HERO -->
@@ -175,8 +180,8 @@
   <h1 class="hero-title">The <em>Conversation</em> Quilt</h1>
   <p class="hero-lead">The science of relations, made literally and beautifully concrete. Every square is a student who was really there.</p>
   <div class="hero-btns">
-    <a href="/philosophy" class="btn-ghost">Read the Philosophy</a>
-    <a href="/curriculum" class="btn-primary">Browse the Curriculum</a>
+    <a href="philosophy.html" class="btn-ghost">Read the Philosophy</a>
+    <a href="curriculum.html" class="btn-primary">Browse the Curriculum</a>
   </div>
   <div class="fieldnote">
     <span class="fn-label">Field Note</span>
@@ -298,12 +303,12 @@
     <nav class="footer-nav">
       <h4>Navigate</h4>
       <ul>
-        <li><a href="/philosophy">Philosophy</a></li>
-        <li><a href="/curriculum">Curriculum</a></li>
-        <li><a href="/teachers-notebook">Teacher&#8217;s Notebook</a></li>
-        <li><a href="/conversation-quilt">Conversation Quilt</a></li>
+        <li><a href="philosophy.html">Philosophy</a></li>
+        <li><a href="curriculum.html">Curriculum</a></li>
+        <li><a href="teachers-notebook.html">Teacher&#8217;s Notebook</a></li>
+        <li><a href="conversation-quilt.html">Conversation Quilt</a></li>
         <li><a href="https://payhip.com/delightandsavor">Shop</a></li>
-        <li><a href="/faq">FAQ</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
     <div class="footer-connect">
@@ -317,7 +322,7 @@
   </div>
   <div class="footer-bottom">
     <span>&copy; Delight &amp; Savor Press &middot; All rights reserved &middot; All digital sales final.</span>
-    <span><a href="/faq#returns">Returns Policy</a> &nbsp;&middot;&nbsp; <a href="/faq#contact">Contact</a></span>
+    <span><a href="faq.html#returns">Returns Policy</a> &nbsp;&middot;&nbsp; <a href="faq.html#contact">Contact</a></span>
   </div>
 </footer>
 
