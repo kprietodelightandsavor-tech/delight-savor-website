@@ -634,6 +634,283 @@
   </div>
 </section>
 
+
+<!-- ══ A LOOK INSIDE — In the Margin preview (scoped) ══ -->
+<section class="itm-preview" id="inside-the-work" aria-label="A look inside In the Margin">
+<style>
+.itm-preview *{margin:0;padding:0;box-sizing:border-box}
+.itm-preview{
+    --cream:#FAF6F0;--cream-deep:#F0EAE0;--parchment:#F7F1E8;--page:#E8E0D4;
+    --gold:#BF9B6F;--gold-light:#CCA882;--gold-deep:#9E7A4A;--gold-border:rgba(191,155,111,0.30);
+    --slate:#6B7A8D;--slate-light:#9AA5B4;--slate-deep:#3D4F63;--navy:#2C3650;
+    --euc:#6E8478;--euc-deep:#566A60;--euc-light:#8AA095;--euc-border:rgba(110,132,120,0.32);
+    --font-display:'Playfair Display',serif;--font-body:'Cormorant Garamond',serif;
+  }
+
+.itm-preview{
+    font-family:var(--font-body);color:var(--slate-deep);line-height:1.65;
+    background:
+      radial-gradient(1100px 600px at 50% -8%, rgba(110,132,120,0.10), transparent 60%),
+      radial-gradient(800px 500px at 110% 30%, rgba(191,155,111,0.08), transparent 55%),
+      var(--page);
+    
+    -webkit-font-smoothing:antialiased;
+  }
+.itm-preview .wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+.itm-preview .rise{opacity:0;transform:translateY(14px);animation:itm-rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes itm-rise{to{opacity:1;transform:none}}
+.itm-preview header.hero{text-align:center;padding:74px 26px 30px}
+.itm-preview .kicker{font-family:var(--font-display);font-size:12px;font-weight:600;letter-spacing:.30em;text-transform:uppercase;color:var(--euc-deep)}
+.itm-preview .kicker .dot{color:var(--gold);margin:0 .5em}
+.itm-preview h1.title{font-family:var(--font-display);font-weight:600;color:var(--navy);font-size:clamp(40px,7vw,68px);line-height:1.08;margin:18px 0 10px;letter-spacing:.005em}
+.itm-preview .lede{font-size:clamp(18px,2.4vw,22px);font-style:italic;color:var(--slate);max-width:30ch;margin:0 auto;line-height:1.5}
+.itm-preview .creed{margin-top:26px;font-family:var(--font-display);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
+.itm-preview .creed span{color:var(--euc-light);margin:0 .35em}
+.itm-preview .sprig{display:flex;align-items:center;justify-content:center;gap:14px;margin:34px auto 0;max-width:340px}
+.itm-preview .sprig .rule{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold-border))}
+.itm-preview .sprig .rule.r{background:linear-gradient(90deg,var(--gold-border),transparent)}
+.itm-preview .intro{max-width:640px;margin:38px auto 8px;text-align:center}
+.itm-preview .intro p{font-size:18px;line-height:1.8;color:var(--slate-deep)}
+.itm-preview .intro p+p{margin-top:14px}
+.itm-preview .show{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:66px 0;border-top:1px solid var(--euc-border)}
+.itm-preview .show.first{border-top:none;padding-top:40px}
+.itm-preview .show .copy{max-width:460px}
+.itm-preview .eyebrow{font-family:var(--font-display);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--euc-deep);margin-bottom:12px}
+.itm-preview .show h2{font-family:var(--font-display);font-weight:600;color:var(--navy);font-size:clamp(28px,3.6vw,38px);line-height:1.16;margin-bottom:14px}
+.itm-preview .show .said{font-size:18px;font-style:italic;color:var(--slate);line-height:1.55;margin-bottom:18px}
+.itm-preview .show p.body{font-size:16px;line-height:1.78;color:var(--slate-deep);margin-bottom:14px}
+.itm-preview .moves{list-style:none;margin:18px 0 22px}
+.itm-preview .moves li{display:flex;align-items:center;gap:12px;padding:7px 0;font-size:15.5px;color:var(--slate-deep);border-top:1px solid rgba(110,132,120,0.14)}
+.itm-preview .moves li:first-child{border-top:none}
+.itm-preview .moves .pip{width:9px;height:9px;border-radius:50%;flex:none}
+.itm-preview .m1{background:#DDE4DE}
+.itm-preview .m2{background:#C7D2C9}
+.itm-preview .m3{background:#A9BCAE}
+.itm-preview .m4{background:#8AA095}
+.itm-preview .m5{background:#6E8478}
+.itm-preview .m6{background:#5A6E62}
+.itm-preview .m7{background:#4A5A50}
+.itm-preview .moves b{font-family:var(--font-display);font-weight:600;color:var(--navy);font-size:15px}
+.itm-preview .fine{font-size:14px;font-style:italic;color:var(--slate-light);margin-top:4px}
+.itm-preview .cta{display:inline-flex;align-items:center;gap:9px;margin-top:22px;padding:13px 22px;background:var(--euc);color:var(--cream);text-decoration:none;border-radius:26px;font-family:var(--font-display);font-size:14px;font-weight:600;letter-spacing:.04em;border:1px solid var(--euc);transition:background .16s,transform .16s,box-shadow .16s;box-shadow:0 6px 18px rgba(86,106,96,0.18)}
+.itm-preview .cta:hover{background:var(--euc-deep);transform:translateY(-1px);box-shadow:0 10px 24px rgba(86,106,96,0.24)}
+.itm-preview .cta svg{flex:none}
+.itm-preview .stage{display:flex;justify-content:center}
+.itm-preview .phone{width:330px;max-width:100%;background:var(--euc-deep);border-radius:46px;padding:14px;box-shadow:0 26px 60px rgba(44,54,80,0.28),inset 0 0 0 1px rgba(255,255,255,0.06)}
+.itm-preview .phone .notch{width:108px;height:6px;border-radius:4px;background:rgba(255,255,255,0.22);margin:3px auto 10px}
+.itm-preview .phone .screen{border-radius:32px;overflow:hidden;background:var(--cream);height:680px}
+.itm-preview .phone iframe{width:100%;height:100%;border:0;display:block}
+.itm-preview .paper{width:100%;background:var(--cream);border:1px solid var(--euc-border);border-radius:8px;box-shadow:0 22px 50px rgba(44,54,80,0.18);overflow:hidden}
+.itm-preview .paper .thread{display:flex;gap:5px;padding:14px 18px 12px;background:var(--cream);border-bottom:1px solid var(--euc-border)}
+.itm-preview .paper .seg{flex:1;height:5px;border-radius:3px}
+.itm-preview .paper .cap-label{margin-left:10px;font-family:var(--font-display);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--euc-deep);white-space:nowrap;align-self:center}
+.itm-preview .paper .frame-wrap{height:560px;overflow:hidden;background:#E8E0D4}
+.itm-preview .paper iframe{width:100%;height:100%;border:0;display:block}
+.itm-preview .preview-tag{text-align:center;font-size:12.5px;font-style:italic;color:var(--slate-light);margin-top:12px}
+.itm-preview .closing{text-align:center;max-width:600px;margin:0 auto;padding:64px 26px 22px;border-top:1px solid var(--euc-border)}
+.itm-preview .closing h2{font-family:var(--font-display);font-weight:600;color:var(--navy);font-size:clamp(26px,4vw,34px);margin-bottom:14px}
+.itm-preview .closing p{font-size:18px;font-style:italic;color:var(--slate);line-height:1.6}
+.itm-preview .closing .ornament{margin-top:24px;font-family:var(--font-display);font-size:18px;color:var(--gold-light);letter-spacing:.4em}
+.itm-preview footer.brand{text-align:center;padding:36px 26px 56px;font-family:var(--font-display);font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-light)}
+@media(max-width:860px){.itm-preview .show{grid-template-columns:1fr;gap:30px;padding:54px 0}
+.itm-preview .show .copy{max-width:none;order:2}
+.itm-preview .show .stage{order:1}
+.itm-preview .show.flip .copy{order:2}
+.itm-preview .phone .screen{height:620px}
+.itm-preview .paper .frame-wrap{height:480px}
+}
+
+</style>
+
+  <header class="hero">
+    <div class="kicker rise" style="animation-delay:.05s">Delight &amp; Savor <span class="dot">&#10022;</span> In the Margin</div>
+    <h2 class="title rise" style="animation-delay:.12s">A look inside the work</h2>
+    <p class="lede rise" style="animation-delay:.2s">Before you begin, see how your reader learns to notice, narrate, and write.</p>
+    <div class="creed rise" style="animation-delay:.3s">Notice <span>&middot;</span> Narrate <span>&middot;</span> Connect <span>&middot;</span> Write</div>
+    <div class="sprig rise" style="animation-delay:.4s">
+      <span class="rule"></span>
+      <svg width="40" height="22" viewBox="0 0 40 22" fill="none" aria-hidden="true">
+        <path d="M2 11 C10 3,16 3,20 11 C24 19,30 19,38 11" stroke="#BF9B6F" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M20 11 c-2 -5,-2 -8,0 -10 M20 11 c2 -5,2 -8,0 -10" stroke="#8AA095" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+      <span class="rule r"></span>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section class="intro rise" style="animation-delay:.5s">
+      <p>In the Margin is built on a simple, old idea: children grow as writers when they first learn to pay attention. Reading comes first, then telling it back in their own words &mdash; and only then the slow, satisfying work of shaping what they noticed into thought.</p>
+      <p>Here are the two pieces families ask to see most. The Writing Table below is fully live &mdash; tap through it. The Capstone shows the shape of a whole term&rsquo;s work. Then, just below, the units themselves.</p>
+    </section>
+
+    <!-- ── The Writing Table ── -->
+    <section class="show first">
+      <div class="copy">
+        <div class="eyebrow">The Writing Table</div>
+        <h2>From what stayed with you, to what you want to say.</h2>
+        <p class="said">&ldquo;Before we build an argument, we begin by noticing what lingers.&rdquo;</p>
+        <p class="body">A calm, guided notebook that carries a student from a first impression all the way to a finished essay outline &mdash; one quiet movement at a time. No blank page, no overwhelm. Just the next honest question.</p>
+        <ul class="moves">
+          <li><span class="pip m1"></span><b>Narration</b> &mdash; tell it back in your own words</li>
+          <li><span class="pip m2"></span><b>Claim</b> &mdash; what do you want to argue?</li>
+          <li><span class="pip m3"></span><b>Evidence</b> &mdash; the moments that prove it</li>
+          <li><span class="pip m4"></span><b>Analysis</b> &mdash; what the text reveals</li>
+          <li><span class="pip m5"></span><b>Connections</b> &mdash; joining the great conversation</li>
+          <li><span class="pip m6"></span><b>So What</b> &mdash; why this matters, in life</li>
+          <li><span class="pip m7"></span><b>Revision</b> &mdash; the outline, ready to write</li>
+        </ul>
+        <p class="fine">Everything saves on its own as they go, and the finished outline prints or copies in a single tap.</p>
+        <a class="cta" href="#year-one">
+          Browse the units
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h9M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="stage">
+        <div class="phone">
+          <div class="notch"></div>
+          <!-- Loads the real Writing Table from the In the Margin site (a separate deploy).
+               Full URL is required because this page lives on the Delight & Savor domain. -->
+          <div class="screen"><iframe id="wtFrame" title="The Writing Table — live preview" loading="lazy" src="https://in-the-margin.netlify.app/writing-table.html"></iframe></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── The Capstone ── -->
+    <section class="show flip">
+      <div class="stage">
+        <div class="phone">
+          <div class="notch"></div>
+          <div class="screen"><iframe id="capFrame" title="The Capstone — a look at the opening" loading="lazy"></iframe></div>
+        </div>
+      </div>
+      <div class="copy">
+        <div class="eyebrow">The Capstone</div>
+        <h2>Following a thread through the term</h2>
+        <p class="said">One symbol, one idea &mdash; followed from the first page to the last.</p>
+        <p class="body">Each term, a student carries a single thread through everything they read, meeting its thinkers, themes, and language through many different doors &mdash; the eight intelligences Howard Gardner described &mdash; and climbing the levels of Bloom&rsquo;s taxonomy, from understanding toward analysis and making something new.</p>
+        <p class="body">The assignments shift from term to term &mdash; summer runs six weeks, fall and spring thirteen to sixteen &mdash; but every term builds toward two things: a <em>Composition Exam</em> (a literary analysis with a works cited) and the <em>Quilt</em> (a 4&times;4 watercolor or art piece of the thread they followed, with a quote on the back that holds it in words, and a brief explanation).</p>
+        <p class="fine">Offered each term, for the live course and self-paced families alike.</p>
+        <a class="cta" href="#year-one">
+          Browse the units
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h9M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <section class="closing">
+    <h2>Come read alongside us.</h2>
+    <p>What your child makes here is small, and it is theirs, and it is real. That is the whole point.</p>
+    <div class="ornament">&#10022; &middot; &#10022; &middot; &#10022;</div>
+  </section>
+
+<script type="text/template" id="tpl-cap"><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Capstone</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --cream:#FAF6F0; --cream-deep:#F0EAE0; --parchment:#F7F1E8;
+    --gold:#BF9B6F; --gold-light:#CCA882; --gold-deep:#9E7A4A;
+    --slate:#6B7A8D; --slate-light:#9AA5B4; --slate-deep:#3D4F63;
+    --navy:#2C3650; --hero:#474D56;
+    --euc:#6E8478; --euc-deep:#566A60; --euc-light:#8AA095;
+    --euc-border:rgba(110,132,120,0.32);
+    --font-display:'Playfair Display', serif;
+    --font-body:'Cormorant Garamond', serif;
+  }
+  html, body { background:#E8E0D4; font-family:var(--font-body); color:var(--slate-deep); line-height:1.62; }
+  .doc { background:var(--cream); }
+  .page { padding:34px 30px 40px; }
+  .cover-banner {
+    background:var(--hero); color:var(--cream);
+    padding:28px 30px; text-align:center; border-bottom:3px solid var(--euc);
+  }
+  .cover-banner .eyebrow {
+    font-family:var(--font-display); font-size:10px; font-weight:600;
+    letter-spacing:.22em; text-transform:uppercase; color:var(--euc-light); margin-bottom:8px;
+  }
+  .cover-banner h1 { font-family:var(--font-display); font-size:34px; font-weight:600; color:var(--cream); line-height:1.18; }
+  .cover-banner .sub { font-family:var(--font-body); font-size:15px; font-style:italic; color:var(--euc-light); margin-top:5px; }
+  h3 { font-family:var(--font-display); font-size:17px; font-weight:600; color:var(--navy); margin-top:22px; margin-bottom:8px; }
+  p { font-size:15px; line-height:1.7; color:var(--slate-deep); margin-bottom:12px; }
+  p.lede { font-size:16px; font-style:italic; color:var(--slate); line-height:1.6; margin-bottom:14px; }
+  em { font-style:italic; color:var(--navy); }
+  .outcome {
+    background:var(--parchment); border:1px solid var(--euc-border); border-left:3px solid var(--euc);
+    border-radius:0 9px 9px 0; padding:14px 18px; margin:12px 0;
+  }
+  .outcome-label { font-family:var(--font-display); font-size:15px; font-weight:600; color:var(--navy); margin-bottom:5px; }
+  .outcome p { margin-bottom:0; font-size:14.5px; }
+  .ornament { text-align:center; margin:26px 0 0; font-family:var(--font-display); font-size:18px; color:var(--gold-light); letter-spacing:.4em; }
+</style>
+</head>
+<body>
+<div class="doc">
+  <div class="cover-banner">
+    <div class="eyebrow">A Term-Long Study</div>
+    <h1>The Capstone</h1>
+    <div class="sub">Following one thread through the term</div>
+  </div>
+  <div class="page">
+    <p class="lede" style="text-align:center; margin-top:8px;">
+      &ldquo;The thread is too fine for you to see it. You can only feel it&hellip;
+      you must lay your finger upon the thread, and follow the thread wherever
+      it leads you.&rdquo;
+    </p>
+    <p style="text-align:center; font-size:12.5px; color:var(--slate-light); font-style:italic; margin-bottom:28px;">
+      &mdash; George MacDonald, <em>The Princess and the Goblin</em>
+    </p>
+
+    <h3 style="margin-top:0;">What the Capstone is</h3>
+    <p>Each term, you choose one thread &mdash; a symbol, an image, a question &mdash;
+      and follow it through everything you read, from the first page to the last.</p>
+    <p>You meet the reading, its thinkers, its themes, and its language through
+      many different doors &mdash; the eight intelligences Howard Gardner described
+      &mdash; and you climb the levels of <em>Bloom&rsquo;s taxonomy</em>, moving from
+      remembering and understanding toward analysis, judgment, and making something
+      wholly your own.</p>
+
+    <h3>How long it runs</h3>
+    <p>The work is paced to the term. Summer is short &mdash; six weeks. Fall and
+      spring run longer, thirteen to sixteen. The particular assignments shift from
+      term to term, but the arc is always the same: many small acts of attention,
+      gathered toward two final pieces.</p>
+
+    <h3>Where it all leads</h3>
+    <div class="outcome">
+      <div class="outcome-label">The Composition Exam</div>
+      <p>A literary analysis, with a works cited &mdash; the thread you followed,
+        now argued in full.</p>
+    </div>
+    <div class="outcome">
+      <div class="outcome-label">The Quilt</div>
+      <p>A 4&times;4 watercolor &mdash; or art in any medium &mdash; of the symbol or
+        idea you followed all term. On the back, a quote that holds the same idea in
+        words, and a brief explanation.</p>
+    </div>
+
+    <div class="ornament">&#10022; &middot; &#10022; &middot; &#10022;</div>
+  </div>
+</div>
+</body>
+</html></script>
+<script>
+(function(){
+  var cap=document.getElementById("capFrame");
+  if(!cap)return;
+  var t=document.getElementById("tpl-cap");
+  if(t)cap.srcdoc=t.textContent.split("[[ENDSCRIPT]]").join("</"+"script>");
+})();
+</script>
+</section>
+
 <!-- ══ VERSIONS ══ -->
 <section class="versions-section" id="versions" aria-labelledby="versions-title">
   <div class="versions-inner">
