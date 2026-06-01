@@ -49,7 +49,18 @@
   <a href="curriculum.html" class="mobile-cta" onclick="toggleMenu()">Shop Now &rarr;</a>
 </div>`;
 
-  /* ── NAV CSS ── */
+ /* ── INJECT FAVICON + APPLE TOUCH ICON ── */
+[
+  { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/favicon-32x32.png' },
+  { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/favicon-16x16.png' },
+  { rel: 'icon', href: '/images/favicon.ico', sizes: 'any' },
+  { rel: 'apple-touch-icon', sizes: '180x180', href: '/images/apple-touch-icon.png' }
+].forEach(function (i) {
+  const link = document.createElement('link');
+  Object.keys(i).forEach(function (k) { link.setAttribute(k, i[k]); });
+  document.head.appendChild(link);
+});
+   /* ── NAV CSS ── */
   const navCSS = `
     nav { background: #2d3748; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 16px rgba(0,0,0,.25); }
     .nav-logo-wrap { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; }
