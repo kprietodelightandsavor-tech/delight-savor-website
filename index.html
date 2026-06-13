@@ -558,6 +558,343 @@
   </div>
 </section>
 
+  <!-- ============================================================
+     DELIGHT & SAVOR — From the Substack
+     Drop-in section for the homepage of delightandsavor.com
+     Auto-pulls latest post from delightandsavor.substack.com
+     Falls back gracefully to a static card if feed is unreachable
+     ============================================================ -->
+
+<section class="ds-substack-section" aria-labelledby="ds-substack-heading">
+  <div class="ds-substack-inner">
+
+    <!-- Header -->
+    <header class="ds-substack-header">
+      <p class="ds-eyebrow">From the Journal</p>
+      <h2 id="ds-substack-heading" class="ds-substack-title">Letters from Delight &amp; Savor</h2>
+      <p class="ds-substack-lede">
+        Charlotte Mason–inspired reflections on learning, parenting,
+        and beauty in the everyday — sent quietly, read slowly.
+      </p>
+    </header>
+
+    <!-- Featured latest post card -->
+    <article class="ds-latest-card" id="ds-latest-card" aria-live="polite">
+      <!-- Default static fallback content (replaced by JS if feed loads) -->
+      <div class="ds-latest-meta">
+        <span class="ds-latest-label">Latest letter</span>
+      </div>
+      <h3 class="ds-latest-headline">
+        <a href="https://delightandsavor.substack.com" target="_blank" rel="noopener">
+          Read the latest on Substack
+        </a>
+      </h3>
+      <p class="ds-latest-excerpt">
+        Visit the journal to read recent reflections on living books,
+        nature study, and the slow work of cultivating attention.
+      </p>
+      <a class="ds-latest-link" href="https://delightandsavor.substack.com" target="_blank" rel="noopener">
+        Open the journal
+        <span class="ds-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </article>
+
+    <!-- Subscribe + visit row -->
+    <div class="ds-substack-actions">
+      <a class="ds-btn-primary" href="https://delightandsavor.substack.com/subscribe" target="_blank" rel="noopener">
+        Subscribe by email
+      </a>
+      <a class="ds-btn-quiet" href="https://delightandsavor.substack.com" target="_blank" rel="noopener">
+        Browse all letters
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     STYLES — scoped with .ds-substack- prefix to avoid collisions
+     ============================================================ -->
+<style>
+  .ds-substack-section {
+    background: #F1E8D9; /* Parchment */
+    padding: 5rem 1.5rem;
+    font-family: 'Source Serif 4', 'Lora', Georgia, serif;
+    color: #3F3732; /* Ink */
+  }
+
+  .ds-substack-inner {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .ds-substack-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .ds-eyebrow {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #8D8377; /* Taupe */
+    margin: 0 0 1rem;
+  }
+
+  .ds-substack-title {
+    font-family: 'Cormorant Garamond', 'Canela', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    line-height: 1.15;
+    color: #3F3732;
+    margin: 0 0 1.25rem;
+    font-style: italic;
+  }
+
+  .ds-substack-lede {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #5a514b;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  /* Latest post card */
+  .ds-latest-card {
+    background: #ffffff;
+    border: 1px solid rgba(141, 131, 119, 0.25); /* Taupe at low opacity */
+    border-radius: 2px;
+    padding: 2.5rem 2.25rem;
+    position: relative;
+    box-shadow: 0 1px 0 rgba(63, 55, 50, 0.04);
+  }
+
+  /* Subtle gold corner mark — the "margin mark" idea */
+  .ds-latest-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 2.25rem;
+    width: 2px;
+    height: 28px;
+    background: #C9A363; /* Warm Gold */
+  }
+
+  .ds-latest-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .ds-latest-label {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6C7F9D; /* Dusty Blue */
+  }
+
+  .ds-latest-date {
+    font-size: 0.85rem;
+    color: #8D8377;
+    font-style: italic;
+  }
+
+  .ds-latest-date::before {
+    content: "·";
+    margin-right: 0.75rem;
+    color: #8D8377;
+  }
+
+  .ds-latest-headline {
+    font-family: 'Cormorant Garamond', 'Canela', Georgia, serif;
+    font-size: clamp(1.5rem, 3vw, 1.875rem);
+    font-weight: 500;
+    line-height: 1.25;
+    margin: 0 0 1rem;
+  }
+
+  .ds-latest-headline a {
+    color: #3F3732;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  .ds-latest-headline a:hover {
+    border-bottom-color: #C9A363;
+  }
+
+  .ds-latest-excerpt {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #5a514b;
+    margin: 0 0 1.5rem;
+  }
+
+  .ds-latest-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: #6C7F9D;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(108, 127, 157, 0.3);
+    padding-bottom: 2px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .ds-latest-link:hover {
+    color: #3F3732;
+    border-bottom-color: #C9A363;
+  }
+
+  .ds-arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .ds-latest-link:hover .ds-arrow {
+    transform: translateX(3px);
+  }
+
+  /* Action buttons */
+  .ds-substack-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .ds-btn-primary {
+    display: inline-block;
+    background: #3F3732;
+    color: #F1E8D9;
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.95rem 2rem;
+    border-radius: 2px;
+    transition: background 0.3s ease;
+  }
+
+  .ds-btn-primary:hover {
+    background: #C9A363;
+    color: #3F3732;
+  }
+
+  .ds-btn-quiet {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: #8D8377;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(141, 131, 119, 0.4);
+    padding-bottom: 3px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .ds-btn-quiet:hover {
+    color: #3F3732;
+    border-bottom-color: #C9A363;
+  }
+
+  /* Loading state */
+  .ds-loading .ds-latest-headline {
+    opacity: 0.4;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .ds-substack-section {
+      padding: 3.5rem 1.25rem;
+    }
+    .ds-latest-card {
+      padding: 2rem 1.5rem;
+    }
+    .ds-latest-card::before {
+      left: 1.5rem;
+    }
+    .ds-substack-actions {
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+  }
+</style>
+
+<!-- ============================================================
+     SCRIPT — pulls latest Substack post via free RSS-to-JSON proxy
+     If the request fails for any reason, the static fallback above
+     remains visible. No tracking, no API key required.
+     ============================================================ -->
+<script>
+(function() {
+  var FEED_URL = 'https://delightandsavor.substack.com/feed';
+  var ENDPOINT = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(FEED_URL);
+
+  function stripHtml(html) {
+    var tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    var text = tmp.textContent || tmp.innerText || '';
+    return text.replace(/\s+/g, ' ').trim();
+  }
+
+  function formatDate(dateStr) {
+    try {
+      var d = new Date(dateStr);
+      return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    } catch (e) {
+      return '';
+    }
+  }
+
+  function renderLatest(post) {
+    var card = document.getElementById('ds-latest-card');
+    if (!card || !post) return;
+
+    var title = post.title || 'Read the latest letter';
+    var link = post.link || 'https://delightandsavor.substack.com';
+    var date = formatDate(post.pubDate);
+    var raw = post.description || post.content || '';
+    var excerpt = stripHtml(raw);
+    if (excerpt.length > 220) {
+      excerpt = excerpt.slice(0, 220).replace(/\s+\S*$/, '') + '…';
+    }
+
+    card.innerHTML =
+      '<div class="ds-latest-meta">' +
+        '<span class="ds-latest-label">Latest letter</span>' +
+        (date ? '<span class="ds-latest-date">' + date + '</span>' : '') +
+      '</div>' +
+      '<h3 class="ds-latest-headline">' +
+        '<a href="' + link + '" target="_blank" rel="noopener">' + title + '</a>' +
+      '</h3>' +
+      (excerpt ? '<p class="ds-latest-excerpt">' + excerpt + '</p>' : '') +
+      '<a class="ds-latest-link" href="' + link + '" target="_blank" rel="noopener">' +
+        'Continue reading <span class="ds-arrow" aria-hidden="true">&rarr;</span>' +
+      '</a>';
+  }
+
+  fetch(ENDPOINT)
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(data) {
+      if (data && data.status === 'ok' && data.items && data.items.length) {
+        renderLatest(data.items[0]);
+      }
+      // If anything fails, the static fallback already rendered stays in place.
+    })
+    .catch(function() { /* keep fallback */ });
+})();
+</script>
+  
 <!-- MEET KIM -->
 <section class="kim-section" aria-labelledby="kim-heading">
   <div class="kim-inner">
