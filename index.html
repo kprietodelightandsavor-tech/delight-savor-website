@@ -734,45 +734,268 @@
   </div>
 </section>
 
-<!-- THE WRITING TABLE -->
-<section class="writing-table-section" id="writing-table" aria-labelledby="wt-heading">
-  <div class="wt-inner">
-    <div class="section-rule" aria-hidden="true"></div>
-    <p class="section-label">From Reading to Writing</p>
-    <h2 class="section-title" id="wt-heading">The Writing Table</h2>
-    <p class="wt-lead">Every great essay begins not with an argument, but with attention.</p>
+<!-- ============================================================
+     DELIGHT & SAVOR — The Writing Table (Find · Follow · Frame)
+     Drop-in replacement for the existing Writing Table section
+     on the delightandsavor.com homepage.
+     ============================================================ -->
 
-    <div class="wt-flow" aria-label="The writing progression">
-      <span class="wt-step">Reading</span><span class="wt-arrow">→</span>
-      <span class="wt-step">Narration</span><span class="wt-arrow">→</span>
-      <span class="wt-step">Reflection</span><span class="wt-arrow">→</span>
-      <span class="wt-step">Written Analysis</span>
-    </div>
+<section class="ds-writingtable-section" aria-labelledby="ds-wt-heading">
+  <div class="ds-wt-inner">
 
-    <div class="wt-body">
-      <p>
-        At the Writing Table, students move gently from reading to narration, from narration
-        to reflection, and finally into written analysis — learning to notice what lingers,
-        to trust their own thinking, and to say something true about what they've read.
+    <header class="ds-wt-header">
+      <p class="ds-wt-eyebrow">From Reading to Writing</p>
+      <h2 id="ds-wt-heading" class="ds-wt-title">The Writing Table</h2>
+      <p class="ds-wt-epigraph">
+        Every great essay begins not with an argument, but with attention.
       </p>
-      <p>
-        But the real work runs deeper than the page. To read a book well is to be changed by
-        it: to see ourselves, and others, and the world we live in with new understanding.
-      </p>
-    </div>
+    </header>
 
-    <p class="wt-gift-intro">
-      Along the way, students learn the threefold gift at the heart of a literary education —
+    <p class="ds-wt-flow" aria-label="The reading-to-writing arc">
+      <span>Reading</span>
+      <span class="ds-wt-flow-arrow" aria-hidden="true">&rarr;</span>
+      <span>Narration</span>
+      <span class="ds-wt-flow-arrow" aria-hidden="true">&rarr;</span>
+      <span>Reflection</span>
+      <span class="ds-wt-flow-arrow" aria-hidden="true">&rarr;</span>
+      <span>Written Analysis</span>
     </p>
-    <div class="wt-gift">
-      <div class="wt-pillar"><span class="wt-pillar-num">i</span><span class="wt-pillar-name">Read well</span></div>
-      <div class="wt-pillar"><span class="wt-pillar-num">ii</span><span class="wt-pillar-name">Think well</span></div>
-      <div class="wt-pillar"><span class="wt-pillar-num">iii</span><span class="wt-pillar-name">Write well</span></div>
+
+    <p class="ds-wt-body">
+      At the Writing Table, students move gently from reading to narration,
+      from narration to reflection, and finally into written analysis —
+      learning to notice what lingers, to trust their own thinking, and to
+      say something true about what they've read.
+    </p>
+
+    <div class="ds-wt-movements">
+      <p class="ds-wt-movements-intro">
+        Along the way, students practice the three movements that turn reading into writing —
+      </p>
+
+      <div class="ds-wt-grid">
+        <div class="ds-wt-movement">
+          <span class="ds-wt-numeral" aria-hidden="true">i</span>
+          <h3 class="ds-wt-movement-title">Find It</h3>
+          <p class="ds-wt-movement-desc">
+            Notice what stands out — a recurring image, a strange word, a moment that lingers.
+          </p>
+        </div>
+
+        <div class="ds-wt-movement">
+          <span class="ds-wt-numeral" aria-hidden="true">ii</span>
+          <h3 class="ds-wt-movement-title">Follow It</h3>
+          <p class="ds-wt-movement-desc">
+            Trace it through the text. Watch it grow, shift, return, complicate.
+          </p>
+        </div>
+
+        <div class="ds-wt-movement">
+          <span class="ds-wt-numeral" aria-hidden="true">iii</span>
+          <h3 class="ds-wt-movement-title">Frame It</h3>
+          <p class="ds-wt-movement-desc">
+            Articulate what it means — and how it connects: to ourselves, to the world,
+            to other writers and thinkers, to the other subjects we study.
+          </p>
+        </div>
+      </div>
     </div>
-    <p class="wt-coda">There is no trick to any of it. It is organic, it is honest — and year after year, it simply works.</p>
+
+    <p class="ds-wt-body ds-wt-body--deeper">
+      But the real work runs deeper than the page. To read a book well is to be changed
+      by it: to see ourselves, and others, and the world we live in with new understanding.
+    </p>
+
+    <p class="ds-wt-closing">
+      There is no trick to any of it. It is organic, it is honest —
+      and year after year, it simply works.
+    </p>
+
   </div>
 </section>
 
+<style>
+  .ds-writingtable-section {
+    background: #F1E8D9; /* Parchment */
+    padding: 5.5rem 1.5rem;
+    font-family: 'Source Serif 4', 'Lora', Georgia, serif;
+    color: #3F3732;
+  }
+  .ds-wt-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* Header */
+  .ds-wt-header { margin-bottom: 2.5rem; }
+  .ds-wt-eyebrow {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #8D8377;
+    margin: 0 0 0.85rem;
+  }
+  .ds-wt-title {
+    font-family: 'Cormorant Garamond', 'Canela', Georgia, serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: clamp(2.25rem, 4.5vw, 3rem);
+    line-height: 1.15;
+    color: #3F3732;
+    margin: 0 0 1.5rem;
+  }
+  .ds-wt-epigraph {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #5a514b;
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  /* Reading → Narration → Reflection → Written Analysis flow */
+  .ds-wt-flow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.85rem 1rem;
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #6C7F9D; /* Dusty Blue */
+    margin: 0 auto 2.5rem;
+    max-width: 720px;
+  }
+  .ds-wt-flow-arrow {
+    color: #C9A363; /* Warm Gold */
+    font-weight: 400;
+  }
+
+  /* Body paragraphs */
+  .ds-wt-body {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: #3F3732;
+    max-width: 640px;
+    margin: 0 auto 3.5rem;
+  }
+  .ds-wt-body--deeper {
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Three movements */
+  .ds-wt-movements {
+    margin: 0 auto;
+    max-width: 880px;
+  }
+  .ds-wt-movements-intro {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: #5a514b;
+    margin: 0 0 3rem;
+    line-height: 1.5;
+  }
+
+  .ds-wt-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    align-items: start;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .ds-wt-movement {
+    position: relative;
+    padding: 0 0.5rem;
+  }
+
+  /* Subtle gold connector between movements */
+  .ds-wt-movement:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 1.6rem;
+    right: -1.4rem;
+    width: 1rem;
+    height: 1px;
+    background: #C9A363;
+    opacity: 0.5;
+  }
+
+  .ds-wt-numeral {
+    display: block;
+    font-family: 'Cormorant Garamond', 'Canela', Georgia, serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #C9A363; /* Warm Gold */
+    letter-spacing: 0.05em;
+    margin-bottom: 0.85rem;
+    line-height: 1;
+  }
+
+  .ds-wt-movement-title {
+    font-family: 'Cormorant Garamond', 'Canela', Georgia, serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.85rem;
+    line-height: 1.1;
+    color: #3F3732;
+    margin: 0 0 1rem;
+  }
+
+  .ds-wt-movement-desc {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: #5a514b;
+    margin: 0;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Closing */
+  .ds-wt-closing {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: #5a514b;
+    max-width: 580px;
+    margin: 1.5rem auto 0;
+    line-height: 1.6;
+  }
+
+  /* Mobile */
+  @media (max-width: 760px) {
+    .ds-writingtable-section { padding: 4rem 1.25rem; }
+    .ds-wt-flow {
+      gap: 0.6rem 0.8rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+    }
+    .ds-wt-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      padding: 0;
+    }
+    .ds-wt-movement:not(:last-child)::after {
+      top: auto;
+      right: 50%;
+      bottom: -1.5rem;
+      transform: translateX(50%);
+      width: 1px;
+      height: 1rem;
+    }
+    .ds-wt-movement-desc { max-width: 320px; }
+    .ds-wt-movement-title { font-size: 1.65rem; }
+  }
+</style>
 <!-- PHILOSOPHY TEASER -->
 <section class="philosophy-section cloth" aria-labelledby="philosophy-heading">
   <div class="philosophy-inner">
