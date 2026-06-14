@@ -4,9 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Curriculum · Delight & Savor</title>
-  <!-- favicon: points at ds_logo-rounded-512.png in the repo root; relative path works on any URL -->
-  <link rel="icon" type="image/png" href="ds_logo-rounded-512.png" />
-  <link rel="apple-touch-icon" href="ds_logo-rounded-512.png" />
+  <!-- favicon + app icons: drop these files into the repo root alongside the page -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <meta name="theme-color" content="#3F3732" />
   <meta name="description" content="Browse the Delight & Savor unit series — Charlotte Mason literature companions for middle and upper school homeschoolers. Macbeth, Wuthering Heights, Of Mice and Men, and more." />
   <meta name="keywords" content="Charlotte Mason, homeschool literature, upper school English, middle school literature, living books, narration, Macbeth, Wuthering Heights, Of Mice and Men, literature companion, grades 6-12" />
@@ -357,13 +359,13 @@
 <!-- ══ SHELF STRIP — level wayfinding ══ -->
 <nav class="shelf-strip" aria-label="Browse by level">
   <div class="shelf-strip-inner">
-    <a href="#middle-school" class="shelf-pill">
-      Middle School
-      <span class="shelf-pill-grade">Grades 6–8</span>
-    </a>
     <a href="#high-school" class="shelf-pill">
       High School · The Art of Attention
       <span class="shelf-pill-grade">Grades 9–12</span>
+    </a>
+    <a href="#middle-school" class="shelf-pill">
+      Middle School
+      <span class="shelf-pill-grade">Grades 6–8</span>
     </a>
     <a href="#summer" class="shelf-pill">
       Summer
@@ -383,64 +385,8 @@
      ══════════════════════════════════════════════════════════════ -->
 
 
-<!-- ══ MIDDLE SCHOOL ══ -->
-<section class="shelf-section ms" id="middle-school" aria-labelledby="ms-title">
-  <div class="shelf-section-inner">
-    <div class="shelf-header">
-      <div class="shelf-header-text">
-        <div class="shelf-accent-bar"></div>
-        <p class="section-label">Middle School</p>
-        <h2 class="section-title" id="ms-title">Words &amp; Wonder</h2>
-        <p class="section-intro">
-          The habits of attention and expression that make high-school analysis
-          possible — narration, noticing, and a real love of language, built
-          gently across the middle-school years.
-        </p>
-      </div>
-      <p class="shelf-grade">Grades 6–8</p>
-    </div>
-
-    <!-- WORDS & WONDER (coming soon) -->
-    <article class="unit-card" id="words-and-wonder">
-      <div class="unit-cover soon">
-        <span class="cover-ribbon">Coming September 2026</span>
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1781472598/cover-words-wonder_dqbuo7.png" alt="Words & Wonder cover — Delight & Savor" />
-      </div>
-      <div class="unit-body">
-        <div class="unit-titleline">
-          <!-- signature mark: moss sprig -->
-          <svg class="unit-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <path d="M20 36 V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M20 20 C14 18,11 14,11 9 C16 9,19 12,20 18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
-            <path d="M20 24 C26 22,29 18,29 13 C24 13,21 16,20 22" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
-            <path d="M20 30 C15 29,12 26,12 22 C17 22,19 24,20 28" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-          </svg>
-          <h3 class="unit-title">Words &amp; Wonder</h3>
-        </div>
-        <p class="unit-author">A literature &amp; language course for middle school</p>
-        <p class="unit-meta">Charlotte Mason ELA · Grades 6–8</p>
-        <p class="unit-desc">
-          Stories of courage, beauty, and belonging — read slowly, told back in a
-          student's own words, and savored. The full year is being written and
-          tested in Kim's own classroom now.
-        </p>
-        <div class="margin-note">
-          <span class="when">A note in the margin</span>
-          <p class="obs">Before a child can argue, they must first learn to notice — and to love what they've noticed.</p>
-        </div>
-        <div class="unit-foot">
-          <div class="unit-cta">
-            <span class="unit-soon-note">Arriving September 2026 — join the newsletter to hear first.</span>
-          </div>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-
 <!-- ══ HIGH SCHOOL ══ -->
-<section class="shelf-section alt hs" id="high-school" aria-labelledby="hs-title">
+<section class="shelf-section hs" id="high-school" aria-labelledby="hs-title">
   <div class="shelf-section-inner">
     <div class="shelf-header">
       <div class="shelf-header-text">
@@ -584,7 +530,7 @@
         </div>
         <div class="unit-foot">
           <div class="unit-cta">
-            <a href="/old-man-preview.html" class="btn-secondary">Preview the course →</a>
+            <a href="/old-man-preview.html" class="btn-secondary">Take a deeper look →</a>
             <span class="unit-soon-note">Available Fall 2026</span>
           </div>
         </div>
@@ -620,13 +566,69 @@
         </div>
         <div class="unit-foot">
           <div class="unit-cta">
-            <a href="/midsummer-preview.html" class="btn-secondary">Preview the course →</a>
+            <a href="/midsummer-preview.html" class="btn-secondary">Take a deeper look →</a>
             <span class="unit-soon-note">Available January 2027</span>
           </div>
         </div>
       </div>
     </article>
 
+  </div>
+</section>
+
+
+<!-- ══ MIDDLE SCHOOL ══ -->
+<section class="shelf-section alt ms" id="middle-school" aria-labelledby="ms-title">
+  <div class="shelf-section-inner">
+    <div class="shelf-header">
+      <div class="shelf-header-text">
+        <div class="shelf-accent-bar"></div>
+        <p class="section-label">Middle School</p>
+        <h2 class="section-title" id="ms-title">Words &amp; Wonder</h2>
+        <p class="section-intro">
+          The habits of attention and expression that make high-school analysis
+          possible — narration, noticing, and a real love of language, built
+          gently across the middle-school years.
+        </p>
+      </div>
+      <p class="shelf-grade">Grades 6–8</p>
+    </div>
+
+    <!-- WORDS & WONDER (coming soon) -->
+    <article class="unit-card" id="words-and-wonder">
+      <div class="unit-cover soon">
+        <span class="cover-ribbon">Coming September 2026</span>
+        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1781472598/cover-words-wonder_dqbuo7.png" alt="Words & Wonder cover — Delight & Savor" />
+      </div>
+      <div class="unit-body">
+        <div class="unit-titleline">
+          <!-- signature mark: moss sprig -->
+          <svg class="unit-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 36 V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M20 20 C14 18,11 14,11 9 C16 9,19 12,20 18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+            <path d="M20 24 C26 22,29 18,29 13 C24 13,21 16,20 22" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+            <path d="M20 30 C15 29,12 26,12 22 C17 22,19 24,20 28" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+          </svg>
+          <h3 class="unit-title">Words &amp; Wonder</h3>
+        </div>
+        <p class="unit-author">A literature &amp; language course for middle school</p>
+        <p class="unit-meta">Charlotte Mason ELA · Grades 6–8</p>
+        <p class="unit-desc">
+          Stories of courage, beauty, and belonging — read slowly, told back in a
+          student's own words, and savored. The full year is being written and
+          tested in Kim's own classroom now.
+        </p>
+        <div class="margin-note">
+          <span class="when">A note in the margin</span>
+          <p class="obs">Before a child can argue, they must first learn to notice — and to love what they've noticed.</p>
+        </div>
+        <div class="unit-foot">
+          <div class="unit-cta">
+            <span class="unit-soon-note">Arriving September 2026 — join the newsletter to hear first.</span>
+          </div>
+        </div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -687,8 +689,8 @@
         </div>
         <div class="unit-foot">
           <div class="unit-cta">
-            <a href="/omam-preview.html" class="btn-buy">Preview the course →</a>
-            <a href="#versions" class="btn-secondary">Compare Versions</a>
+            <a href="#" class="btn-buy shop-link" target="_blank" rel="noopener">Bring it home →</a>
+            <a href="/omam-preview.html" class="btn-secondary">Take a deeper look →</a>
           </div>
         </div>
       </div>
