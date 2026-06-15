@@ -1,1179 +1,671 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Curriculum · Delight & Savor</title>
-  <!-- favicon + app icons: files live in the /images/ folder at the repo root -->
-  <link rel="icon" href="/images/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
-  <meta name="theme-color" content="#3F3732" />
-  <meta name="description" content="Browse the Delight & Savor unit series — Charlotte Mason literature companions for middle and upper school homeschoolers. Macbeth, Wuthering Heights, Of Mice and Men, and more." />
-  <meta name="keywords" content="Charlotte Mason, homeschool literature, upper school English, middle school literature, living books, narration, Macbeth, Wuthering Heights, Of Mice and Men, literature companion, grades 6-12" />
-  <meta name="author" content="Delight &amp; Savor Press" />
-  <link rel="canonical" href="https://delightandsavor.com/curriculum.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Delight &amp; Savor" />
-  <meta property="og:title" content="Curriculum · Delight & Savor" />
-  <meta property="og:description" content="Browse the Delight & Savor unit series — Charlotte Mason literature companions for middle and upper school homeschoolers." />
-  <meta property="og:url" content="https://delightandsavor.com/curriculum.html" />
-  <meta property="og:image" content="https://res.cloudinary.com/dwdbmowur/image/upload/v1772975874/IMG_7781_jpg_2_pgmwq4.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Delight &amp; Savor — Charlotte Mason literature curriculum" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Curriculum · Delight & Savor" />
-  <meta name="twitter:description" content="Browse the Delight & Savor unit series — Charlotte Mason literature companions for middle and upper school homeschoolers." />
-  <meta name="twitter:image" content="https://res.cloudinary.com/dwdbmowur/image/upload/v1772975874/IMG_7781_jpg_2_pgmwq4.jpg" />
-  <meta name="pinterest-rich-pin" content="true" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --slate:       #37322B;
-      --slate-mid:   #5C564B;
-      --sage:        #8C9B79;
-      --deep-sage:   #5C6A50;
-      --light-sage:  #EBEFE2;
-      --gold:        #BE9457;
-      --gold-light:  #E2C79A;
-      --cream:       #FAF6EE;
-      --cream-dark:  #ECE5D6;
-      --card:        #F4EFE0;
-      --text-dark:   #2C2A26;
-      --text-mid:    #5C564B;
-      --body-ink:    #45423B;
-      --line:        rgba(126,142,114,.30);
-      --line-ink:    rgba(55,50,43,.14);
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Curriculum · Delight &amp; Savor</title>
+<meta name="description" content="Charlotte Mason living-literature courses from Delight & Savor — a gentle summer start, self-paced middle school, and honors-ready high school." />
 
-      /* ── per-level accent (matches the bookshelf spines) ── */
-      --ms-accent:   #5C6A50;   /* Middle School · moss   */
-      --hs-accent:   #6C7F9D;   /* High School · dusty blue */
-      --su-accent:   #BE9457;   /* Summer · warm gold     */
+<!-- favicon (same files your other pages use) -->
+<link rel="icon" type="image/png" href="images/ds_logo-rounded-512.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-      --ff-display: 'Playfair Display', Georgia, serif;
-      --ff-body:    'Cormorant Garamond', Georgia, serif;
-      --ff-sans:    'Jost', system-ui, sans-serif;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lato:wght@400;500;700&display=swap" rel="stylesheet" />
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--ff-body);
-      color: var(--text-dark);
-      background: var(--cream);
-      line-height: 1.6;
-      font-size: 18px;
-    }
-    a { text-decoration: none; color: inherit; }
-    img { display: block; max-width: 100%; }
-
-    /* ── NAV ── */
-    nav { background: var(--slate); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
-    .nav-logo-wrap { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; }
-    .nav-logo-img { height: 40px; width: auto; opacity: 0.95; }
-    .nav-logo-text { font-family: 'Playfair Display', serif; color: var(--cream); font-size: 1rem; letter-spacing: 0.04em; line-height: 1.2; }
-    .nav-logo-text span { display: block; font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,213,176,0.45); font-family: 'Cormorant Garamond', serif; font-style: italic; }
-    .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
-    .nav-links a { color: rgba(250,249,246,0.82); font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; }
-    .nav-links a:hover, .nav-links a.active { color: var(--gold-light, #E2C79A); }
-    .nav-cta { background: var(--gold); color: var(--slate) !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; }
-    .nav-social { display: flex; gap: 1.25rem; align-items: center; }
-    .nav-social a { color: rgba(250,249,246,0.52); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; }
-    .nav-social a:hover { color: #E2C79A; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: var(--cream); border-radius: 2px; transition: all .25s; }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--slate); border-top: 1px solid rgba(255,255,255,0.1); padding: 1rem 2rem 1.5rem; z-index: 99; flex-direction: column; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a { color: rgba(250,249,246,0.75); font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 0.2s; text-decoration: none; }
-    .mobile-nav a:last-child { border-bottom: none; }
-    .mobile-nav a:hover { color: #E2C79A; }
-    .mobile-nav a.mobile-cta { color: #E2C79A; font-weight: 600; }
-    .mobile-nav .mobile-divider { height: 1px; background: rgba(255,255,255,0.12); margin: 0.5rem 0; }
-    .nav-links a, .nav-social a, .mobile-nav a { font-family: 'Jost', system-ui, sans-serif; }
-    @media (max-width: 720px) { .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; } }
-
-    /* ── PAGE HERO ── (flat: no glows) */
-    .page-hero { background: var(--slate); color: var(--cream); padding: 4.5rem 2rem 4rem; text-align: center; position: relative; }
-    .page-hero-inner { max-width: 700px; margin: 0 auto; position: relative; }
-    .page-eyebrow { font-family: var(--ff-sans); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem; }
-    .page-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4.5vw, 3rem); font-style: italic; font-weight: 400; color: var(--cream); line-height: 1.2; margin-bottom: 1.1rem; text-shadow: 0 2px 1px rgba(0,0,0,.5), 0 -1px 0 rgba(255,240,210,.04); }
-    .page-title em { color: var(--gold); }
-    .page-tagline { font-family: var(--ff-body); font-size: 1.15rem; color: rgba(250,249,246,0.82); font-style: italic; max-width: 520px; margin: 0 auto; line-height: 1.75; }
-    .hero-colophon { margin-top: 1.6rem; display: flex; align-items: center; justify-content: center; gap: .85rem; font-family: var(--ff-sans); font-variant: small-caps; letter-spacing: .14em; font-size: .74rem; color: rgba(250,246,238,.55); }
-    .hero-colophon .tick { width: 26px; height: 1px; background: rgba(190,148,87,.6); }
-
-    /* ── SHELF STRIP (level wayfinding) ── */
-    .shelf-strip { background: var(--slate); padding: 1.5rem 2rem; border-top: 1px solid rgba(255,255,255,.07); border-bottom: 1px solid rgba(255,255,255,.07); }
-    .shelf-strip-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; }
-    .shelf-pill { font-family: var(--ff-sans); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(250,246,238,.75); padding: .5rem 1.75rem; border-right: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; align-items: center; gap: .25rem; transition: color .2s; text-decoration: none; }
-    .shelf-pill:last-child { border-right: none; }
-    .shelf-pill:hover { color: var(--gold-light); }
-    .shelf-pill-grade { font-family: var(--ff-body); font-style: italic; font-size: .9rem; color: rgba(250,246,238,.45); text-transform: none; letter-spacing: 0; }
-
-    /* ── SECTION UTILITIES ── */
-    .section-label { font-family: var(--ff-sans); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--sage); margin-bottom: .5rem; }
-    .section-title { font-family: var(--ff-display); font-size: 2.2rem; font-weight: 600; color: var(--slate); margin-bottom: .75rem; }
-    .section-intro { font-family: var(--ff-body); font-size: 1.1rem; color: var(--text-mid); line-height: 1.8; max-width: 680px; }
-    .gold-rule { width: 48px; height: 2px; background: var(--gold); margin-bottom: 1.5rem; }
-
-    /* ── SHELF SECTION ── */
-    .shelf-section { padding: 5rem 2rem; }
-    .shelf-section.alt { background: var(--light-sage); }
-    .shelf-section-inner { max-width: 1080px; margin: 0 auto; }
-    .shelf-header { margin-bottom: 3.25rem; display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
-    .shelf-header-text { flex: 1; min-width: 260px; }
-    .shelf-accent-bar { width: 60px; height: 3px; border-radius: 2px; margin-bottom: 1.25rem; }
-    .ms .shelf-accent-bar { background: var(--ms-accent); }
-    .hs .shelf-accent-bar { background: var(--hs-accent); }
-    .su .shelf-accent-bar { background: var(--su-accent); }
-    .shelf-grade { font-family: var(--ff-body); font-style: italic; font-size: 1.1rem; color: var(--sage); white-space: nowrap; padding-bottom: .4rem; }
-
-    /* ── UNIT CARD — cover is the hero ── */
-    .unit-card {
-      display: grid; grid-template-columns: 340px 1fr; gap: 0;
-      background: var(--cream); border: 1px solid var(--line); border-radius: 4px;
-      overflow: hidden; margin-bottom: 2.75rem; transition: border-color .25s, box-shadow .25s;
-    }
-    .unit-card:last-child { margin-bottom: 0; }
-    .unit-card:hover { border-color: rgba(126,142,114,.5); box-shadow: 0 14px 40px rgba(55,50,43,.10); }
-
-    /* cover panel — large, centered, breathing */
-    .unit-cover {
-      position: relative; display: flex; align-items: center; justify-content: center;
-      padding: 2.25rem; background: var(--card); border-right: 1px solid var(--line);
-    }
-    .ms .unit-cover { background: linear-gradient(160deg, #EEF1E8 0%, #E4EADD 100%); }
-    .hs .unit-cover { background: linear-gradient(160deg, #ECEFF3 0%, #E0E6EC 100%); }
-    .su .unit-cover { background: linear-gradient(160deg, #F4EEE0 0%, #EFE6D4 100%); }
-    .unit-cover img {
-      width: 100%; max-width: 240px; aspect-ratio: 3/4; object-fit: cover;
-      border-radius: 2px;
-      box-shadow: 0 12px 30px rgba(55,50,43,.22), 0 2px 6px rgba(55,50,43,.14);
-    }
-    /* status ribbon for coming-soon covers */
-    .unit-cover.soon img { filter: saturate(.7) opacity(.82); }
-    .cover-ribbon {
-      position: absolute; top: 1.5rem; left: 1.5rem;
-      font-family: var(--ff-sans); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase;
-      background: rgba(55,50,43,.82); color: var(--cream); padding: .35rem .75rem; border-radius: 2px;
-    }
-
-    /* body */
-    .unit-body { padding: 2.5rem 2.5rem 2.25rem; display: flex; flex-direction: column; }
-    .unit-titleline { display: flex; align-items: center; gap: .85rem; margin-bottom: .15rem; }
-    .unit-mark { flex-shrink: 0; width: 38px; height: 38px; opacity: .9; }
-    .ms .unit-mark { color: var(--ms-accent); }
-    .hs .unit-mark { color: var(--hs-accent); }
-    .su .unit-mark { color: var(--su-accent); }
-    .unit-title { font-family: var(--ff-display); font-size: 2rem; font-weight: 600; color: var(--slate); line-height: 1.15; }
-    .unit-author { font-family: var(--ff-body); font-style: italic; font-size: 1.05rem; color: rgba(55,50,43,.5); margin-bottom: 1.1rem; }
-    .unit-meta { font-family: var(--ff-sans); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--sage); margin-bottom: 1.1rem; }
-    .unit-desc { font-family: var(--ff-body); font-size: 1.05rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 1.4rem; }
-
-    /* the noticing voice — a margin note */
-    .margin-note { border-left: 2px solid var(--sage); padding: .15rem 0 .15rem 1.1rem; margin: 0 0 1.6rem; }
-    .ms .margin-note { border-color: var(--ms-accent); }
-    .hs .margin-note { border-color: var(--hs-accent); }
-    .su .margin-note { border-color: var(--su-accent); }
-    .margin-note .when { display: block; font-family: var(--ff-sans); font-variant: small-caps; letter-spacing: .12em; font-size: .7rem; color: var(--sage); margin-bottom: .3rem; }
-    .margin-note .obs { font-family: var(--ff-body); font-style: italic; font-size: 1.08rem; line-height: 1.55; color: var(--deep-sage); }
-
-    .unit-includes { margin-bottom: 1.6rem; }
-    .unit-includes-title { font-family: var(--ff-sans); font-size: .66rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: .7rem; }
-    .unit-includes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .35rem .5rem; }
-    .unit-include-item { font-family: var(--ff-body); font-size: .95rem; color: var(--text-mid); display: flex; align-items: flex-start; gap: .45rem; }
-    .unit-include-item::before { content: '✦'; color: var(--sage); font-size: .6rem; flex-shrink: 0; margin-top: .35rem; }
-
-    .unit-foot { margin-top: auto; padding-top: .5rem; }
-    .unit-cta { display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; }
-    .btn-buy { font-family: var(--ff-sans); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; background: var(--gold); color: var(--slate); border: none; border-radius: 4px; padding: .8rem 1.75rem; font-weight: 700; cursor: pointer; transition: background .2s; display: inline-block; }
-    .btn-buy:hover { background: rgba(190,148,87,.85); }
-    .btn-secondary { font-family: var(--ff-sans); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; background: transparent; color: var(--sage); border: 1.5px solid var(--sage); border-radius: 4px; padding: .8rem 1.75rem; font-weight: 700; cursor: pointer; transition: background .2s, color .2s; display: inline-block; }
-    .btn-secondary:hover { background: var(--sage); color: var(--cream); }
-    .unit-soon-note { font-family: var(--ff-body); font-style: italic; font-size: 1rem; color: var(--sage); }
-
-    /* ── INTERSTITIAL FIELD NOTE ── */
-    .fn-band { padding: 3.75rem 2rem; text-align: center; }
-
-    /* ── VERSIONS ── */
-    .versions-section { padding: 5.5rem 2rem; background: var(--cream); }
-    .versions-inner { max-width: 1100px; margin: 0 auto; }
-    .versions-header { margin-bottom: 3.5rem; }
-    .versions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
-    .version-card { border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
-    .version-card-head { padding: 1.75rem 2rem 1.5rem; }
-    .version-card.coop .version-card-head { background: var(--slate); }
-    .version-card.home .version-card-head { background: var(--deep-sage); }
-    .version-numeral { font-family: var(--ff-display); font-style: italic; font-size: 1.7rem; color: var(--gold-light); margin-bottom: .5rem; line-height: 1; }
-    .version-card.home .version-numeral { color: var(--cream); }
-    .version-name { font-family: var(--ff-display); font-size: 1.6rem; font-weight: 600; color: var(--cream); margin-bottom: .25rem; }
-    .version-tagline { font-family: var(--ff-body); font-style: italic; font-size: .95rem; color: rgba(250,246,238,.75); }
-    .version-card-body { background: #fff; padding: 2rem; }
-    .version-list { list-style: none; }
-    .version-list li { font-family: var(--ff-body); font-size: 1rem; color: var(--text-mid); padding: .5rem 0; border-bottom: 1px solid rgba(140,155,121,.2); display: flex; align-items: flex-start; gap: .6rem; line-height: 1.5; }
-    .version-list li:last-child { border-bottom: none; }
-    .version-list li::before { content: '→'; color: var(--gold); font-size: .8rem; flex-shrink: 0; margin-top: .15rem; }
-
-    /* Honors callout — flat */
-    .honors-callout { background: var(--light-sage); border: 1px solid var(--line); border-radius: 3px; padding: 2.5rem 3rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
-    .honors-label { font-family: var(--ff-sans); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--sage); margin-bottom: .5rem; }
-    .honors-title { font-family: var(--ff-display); font-size: 1.7rem; font-style: italic; color: var(--slate); margin-bottom: .75rem; }
-    .honors-desc { font-family: var(--ff-body); font-size: 1rem; color: var(--text-mid); line-height: 1.7; }
-
-    /* ── FOOTER ── */
-    .site-footer { background: var(--slate); padding: 4rem 2rem 2rem; border-top: 1px solid rgba(255,255,255,.07); }
-    .footer-inner { max-width: 1100px; margin: 0 auto; }
-    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.6fr; gap: 3rem; margin-bottom: 3rem; }
-    .footer-brand .logo { font-size: 1.3rem; margin-bottom: .75rem; }
-    .footer-tagline { font-family: var(--ff-body); font-size: .95rem; font-style: italic; color: rgba(250,246,238,.55); line-height: 1.7; }
-    .footer-col-title { font-family: var(--ff-sans); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
-    .footer-nav-list { list-style: none; }
-    .footer-nav-list li + li { margin-top: .55rem; }
-    .footer-nav-list a { font-family: var(--ff-body); font-size: .98rem; color: rgba(250,246,238,.65); transition: color .2s; }
-    .footer-nav-list a:hover { color: var(--cream); }
-    .footer-social-list { list-style: none; }
-    .footer-social-list li + li { margin-top: .65rem; }
-    .footer-social-list a { display: flex; align-items: center; gap: .6rem; font-family: var(--ff-body); font-size: .98rem; color: rgba(250,246,238,.65); transition: color .2s; }
-    .footer-social-list a:hover { color: var(--cream); }
-    .footer-social-list svg { width: 14px; height: 14px; flex-shrink: 0; }
-    .newsletter-desc { font-family: var(--ff-body); font-size: .9rem; color: rgba(250,246,238,.55); margin-bottom: 1rem; line-height: 1.6; }
-    .newsletter-input-wrap { display: flex; }
-    .newsletter-input { flex: 1; font-family: var(--ff-body); font-size: .9rem; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-right: none; border-radius: 4px 0 0 4px; color: var(--cream); padding: .65rem 1rem; outline: none; transition: border-color .2s; }
-    .newsletter-input::placeholder { color: rgba(250,246,238,.3); }
-    .newsletter-input:focus { border-color: var(--gold); }
-    .newsletter-submit { font-family: var(--ff-sans); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; background: var(--gold); color: var(--slate); border: none; border-radius: 0 4px 4px 0; padding: .65rem 1.1rem; cursor: pointer; font-weight: 700; transition: background .2s; white-space: nowrap; }
-    .newsletter-submit:hover { background: rgba(190,148,87,.85); }
-    .footer-colophon { text-align: center; font-family: var(--ff-sans); font-variant: small-caps; letter-spacing: .14em; font-size: .74rem; color: rgba(250,246,238,.5); margin-bottom: 1.5rem; line-height: 1.7; }
-    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.07); margin-bottom: 1.5rem; }
-    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    .footer-copy { font-family: var(--ff-body); font-size: .85rem; color: rgba(250,246,238,.35); }
-    .footer-bottom-links { display: flex; gap: 1.5rem; }
-    .footer-bottom-links a { font-family: var(--ff-body); font-size: .85rem; color: rgba(250,246,238,.35); transition: color .2s; }
-    .footer-bottom-links a:hover { color: var(--cream); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 860px) {
-      .unit-card { grid-template-columns: 1fr; }
-      .unit-cover { border-right: none; border-bottom: 1px solid var(--line); padding: 2.5rem; }
-      .unit-cover img { max-width: 200px; }
-      .versions-grid { grid-template-columns: 1fr; }
-      .honors-callout { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-      .shelf-pill { padding: .45rem 1.1rem; border-right: none; }
-      .unit-includes-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 600px) {
-      .footer-grid { grid-template-columns: 1fr; }
-      .honors-callout { padding: 2rem 1.5rem; }
-      .unit-body { padding: 2rem 1.5rem; }
-      .unit-title { font-size: 1.7rem; }
-      .shelf-strip { padding: 1rem .75rem; }
-      .shelf-strip-inner { gap: .3rem .15rem; }
-      .shelf-header { gap: 1rem; }
-    }
-
-    /* ── book-cloth covers (charcoal ink) ── */
-    .cloth { position: relative; background-color: #232220;
-      background-image:
-        repeating-linear-gradient(90deg, rgba(0,0,0,.12) 0 1px, transparent 1px 3px),
-        repeating-linear-gradient(0deg, rgba(255,255,255,.013) 0 1px, transparent 1px 3px),
-        radial-gradient(130% 90% at 50% 0%, #2f2d29 0%, #232220 55%, #191816 100%); }
-    .gilt::before { content:""; position:absolute; inset:16px; border:1px solid rgba(190,148,87,.42); pointer-events:none; z-index:0; }
-    .gilt::after  { content:""; position:absolute; inset:21px; border:1px solid rgba(190,148,87,.16); pointer-events:none; z-index:0; }
-    .page-hero.cloth .page-hero-inner { position: relative; z-index: 1; }
-    .fieldnote { max-width: 36ch; margin: 0 auto; position: relative; z-index: 1; }
-    .fn-label { display:flex; align-items:center; justify-content:center; gap:.7rem; font-family:var(--ff-sans); font-variant:small-caps; letter-spacing:.22em; font-size:.72rem; color:var(--gold-light); margin-bottom:.7rem; }
-    .fn-label::before, .fn-label::after { content:""; height:1px; width:22px; background:rgba(190,148,87,.55); }
-    .fn-text { font-family:var(--ff-display); font-style:italic; font-size:1.3rem; line-height:1.5; color:var(--cream); text-align:center; }
-    .site-footer.cloth .footer-inner { position: relative; z-index: 1; }
-  </style>
-</head>
-<body>
-
-<nav>
-  <a href="index.html" class="nav-logo-wrap">
-    <img src="data:image/png;base64,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" alt="Delight &amp; Savor" class="nav-logo-img" />
-    <div class="nav-logo-text">
-      Delight &amp; Savor
-      <span>Beauty. Meaning. Connection.</span>
-    </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="philosophy.html">Philosophy</a></li>
-    <li><a href="curriculum.html" class="active">Curriculum</a></li>
-    <li><a href="teachers-notebook.html">Teacher&#8217;s Notebook</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="conversation-quilt.html">Conversation Quilt</a></li>
-    <li><a href="lately.html">Lately</a></li>
-    <li><a href="curriculum.html" class="nav-cta">Shop Now</a></li>
-  </ul>
-  <div class="nav-social">
-    <a href="https://instagram.com/Kim.delightandsavor">Instagram</a>
-    <a href="https://pinterest.com">Pinterest</a>
-    <a href="https://delightandsavor.substack.com">Substack</a>
-  </div>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div class="mobile-nav" id="mobile-nav">
-  <a href="index.html" onclick="toggleMenu()">Home</a>
-  <a href="philosophy.html" onclick="toggleMenu()">Philosophy</a>
-  <a href="curriculum.html" onclick="toggleMenu()">Curriculum</a>
-  <a href="teachers-notebook.html" onclick="toggleMenu()">Teacher&#8217;s Notebook</a>
-  <a href="faq.html" onclick="toggleMenu()">FAQ</a>
-  <a href="conversation-quilt.html" onclick="toggleMenu()">Conversation Quilt</a>
-  <a href="lately.html" onclick="toggleMenu()">Lately</a>
-  <div class="mobile-divider"></div>
-  <a href="https://instagram.com/Kim.delightandsavor" onclick="toggleMenu()">Instagram</a>
-  <a href="https://delightandsavor.substack.com" onclick="toggleMenu()">Substack</a>
-  <div class="mobile-divider"></div>
-  <a href="curriculum.html" class="mobile-cta" onclick="toggleMenu()">Shop Now &rarr;</a>
-</div>
-
-<!-- ══ PAGE HERO ══ -->
-<section class="page-hero cloth gilt">
-  <div class="page-hero-inner">
-    <p class="page-eyebrow">Living Literature &amp; Language · Grades 6–12</p>
-    <h1 class="page-title">The <em>Curriculum</em></h1>
-    <p class="page-tagline">
-      Charlotte Mason literature companions, built for the student who is ready
-      to read with attention and write with real conviction — gathered onto three
-      shelves, by the reader you're teaching.
-    </p>
-    <div class="fieldnote" style="margin-top:2rem">
-      <span class="fn-label">Field Note</span>
-      <p class="fn-text">A book read slowly is a book kept.</p>
-    </div>
-    <div class="hero-colophon"><span class="tick"></span>A field guide to living books<span class="tick"></span></div>
-  </div>
-</section>
-
-<!-- ══ SHELF STRIP — level wayfinding ══ -->
-<nav class="shelf-strip" aria-label="Browse by level">
-  <div class="shelf-strip-inner">
-    <a href="#high-school" class="shelf-pill">
-      High School · The Art of Attention
-      <span class="shelf-pill-grade">Grades 9–12</span>
-    </a>
-    <a href="#middle-school" class="shelf-pill">
-      Middle School
-      <span class="shelf-pill-grade">Grades 6–8</span>
-    </a>
-    <a href="#summer" class="shelf-pill">
-      Summer
-      <span class="shelf-pill-grade">A short season's reading</span>
-    </a>
-  </div>
-</nav>
-
-
-<!-- ══════════════════════════════════════════════════════════════
-     PURCHASE LINK — single source of truth.
-     The shop platform isn't locked in yet. Every "Bring it home"
-     button on this page points at the PLACEHOLDER below. When you
-     choose a platform (Payhip, Gumroad, direct checkout, etc.),
-     change this ONE href in the JS at the bottom of the page
-     (search: SHOP_URL) and every button updates at once.
-     ══════════════════════════════════════════════════════════════ -->
-
-
-<!-- ══ HIGH SCHOOL ══ -->
-<section class="shelf-section hs" id="high-school" aria-labelledby="hs-title">
-  <div class="shelf-section-inner">
-    <div class="shelf-header">
-      <div class="shelf-header-text">
-        <div class="shelf-accent-bar"></div>
-        <p class="section-label">High School · The Art of Attention</p>
-        <h2 class="section-title" id="hs-title">The Upper-School Units</h2>
-        <p class="section-intro">
-          Fifteen-week companions to some of the most powerful works in the
-          Western canon. Students read closely, narrate faithfully, and build
-          toward writing with real argument — with an Honors Track woven in for
-          those ready to go deeper.
-        </p>
-      </div>
-      <p class="shelf-grade">Grades 9–12</p>
-    </div>
-
-    <!-- MACBETH -->
-    <article class="unit-card" id="macbeth">
-      <div class="unit-cover">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947108/macbeth_gzcquq.png" alt="Macbeth unit cover — Delight & Savor" />
-      </div>
-      <div class="unit-body">
-        <div class="unit-titleline">
-          <!-- signature mark: the raven -->
-          <svg class="unit-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <path d="M7 26 C12 22,15 21,20 22 C24 19,29 17,34 18 C30 21,27 24,22 25 C18 28,12 29,7 26 Z" fill="currentColor" opacity=".88"/>
-            <path d="M22 25 L31 31" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <circle cx="11" cy="24" r="1" fill="#FAF6EE"/>
-          </svg>
-          <h3 class="unit-title">Macbeth</h3>
-        </div>
-        <p class="unit-author">William Shakespeare</p>
-        <p class="unit-meta">15-Week Companion · Honors Track Included</p>
-        <p class="unit-desc">
-          A study in ambition and moral collapse, built on Charlotte Mason
-          narration and Augustine's theology of ordered and disordered love.
-          Students read closely, narrate weekly, and build toward a full thesis
-          argument.
-        </p>
-        <div class="margin-note">
-          <span class="when">A note in the margin</span>
-          <p class="obs">Notice how often the light is asked to go out. Who keeps calling for the dark — and what are they trying not to see?</p>
-        </div>
-        <div class="unit-includes">
-          <p class="unit-includes-title">What's Included</p>
-          <div class="unit-includes-grid">
-            <span class="unit-include-item">15 weekly student handouts</span>
-            <span class="unit-include-item">Teacher's guide with notes</span>
-            <span class="unit-include-item">Close-reading practice</span>
-            <span class="unit-include-item">Thesis workshop</span>
-            <span class="unit-include-item">Absent student guides</span>
-            <span class="unit-include-item">Honors Track extension</span>
-            <span class="unit-include-item">Narration rubric</span>
-            <span class="unit-include-item">Follow the Thread project</span>
-          </div>
-        </div>
-        <div class="unit-foot">
-          <div class="unit-cta">
-            <a href="#" class="btn-buy shop-link" target="_blank" rel="noopener">Bring it home →</a>
-            <a href="#versions" class="btn-secondary">Compare Versions</a>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- WUTHERING HEIGHTS -->
-    <article class="unit-card" id="wuthering-heights">
-      <div class="unit-cover">
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947108/wuthering-heights_e41woq.png" alt="Wuthering Heights unit cover — Delight & Savor" />
-      </div>
-      <div class="unit-body">
-        <div class="unit-titleline">
-          <!-- signature mark: moor grass -->
-          <svg class="unit-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <path d="M14 35 C12 26,12 18,13 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M20 35 C20 25,21 16,22 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M26 35 C27 27,28 19,29 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M13 11 c-2 -2,-3 -4,-3 -6 M22 8 c0 -3,1 -5,2 -7 M29 12 c2 -2,3 -4,3 -6" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
-          </svg>
-          <h3 class="unit-title">Wuthering Heights</h3>
-        </div>
-        <p class="unit-author">Emily Brontë</p>
-        <p class="unit-meta">15-Week Companion · Honors Track Included</p>
-        <p class="unit-desc">
-          A study of Brontë's gothic masterpiece — coercive control, Rousseau's
-          natural man, and the Augustinian disorder of love. Students narrate
-          orally, build toward written argument, and read alongside a curated set
-          of secondary texts.
-        </p>
-        <div class="margin-note">
-          <span class="when">A note in the margin</span>
-          <p class="obs">The moor is never only scenery. It wants something. Watch what it gives the characters — and what it quietly takes back.</p>
-        </div>
-        <div class="unit-includes">
-          <p class="unit-includes-title">What's Included</p>
-          <div class="unit-includes-grid">
-            <span class="unit-include-item">15 weekly student handouts</span>
-            <span class="unit-include-item">Teacher's guide with notes</span>
-            <span class="unit-include-item">Close-reading practice</span>
-            <span class="unit-include-item">Thesis workshop</span>
-            <span class="unit-include-item">Absent student guides</span>
-            <span class="unit-include-item">Honors Track extension</span>
-            <span class="unit-include-item">Coercive control reading guide</span>
-            <span class="unit-include-item">Narration rubric</span>
-          </div>
-        </div>
-        <div class="unit-foot">
-          <div class="unit-cta">
-            <a href="#" class="btn-buy shop-link" target="_blank" rel="noopener">Bring it home →</a>
-            <a href="#versions" class="btn-secondary">Compare Versions</a>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- POETRY & THE OLD MAN AND THE SEA (coming soon) -->
-    <article class="unit-card" id="old-man-and-the-sea">
-      <div class="unit-cover soon">
-        <span class="cover-ribbon">Coming Fall 2026</span>
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947109/poetry-old-man_cyl7cq.png" alt="Poetry & The Old Man and the Sea cover — Delight & Savor" />
-      </div>
-      <div class="unit-body">
-        <div class="unit-titleline">
-          <!-- signature mark: a wave -->
-          <svg class="unit-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <path d="M5 18 C9 12,13 12,17 18 C21 24,25 24,29 18 C31 15,33 14,35 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M5 26 C9 20,13 20,17 26 C21 32,25 32,29 26 C31 23,33 22,35 23" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity=".7"/>
-          </svg>
-          <h3 class="unit-title">Poetry &amp; The Old Man and the Sea</h3>
-        </div>
-        <p class="unit-author">Ernest Hemingway, with a season of poetry</p>
-        <p class="unit-meta">The Art of Attention · Year II · Fall</p>
-        <p class="unit-desc">
-          Six weeks of poetry and six weeks with Hemingway's spare, luminous
-          novella — endurance, dignity, and Santiago's quiet aspiration. In
-          development now for the 2026–27 year.
-        </p>
-        <div class="margin-note">
-          <span class="when">A note in the margin</span>
-          <p class="obs">He was an old man who fished alone — and the sea was the only thing large enough to hold what he carried.</p>
-        </div>
-        <div class="unit-foot">
-          <div class="unit-cta">
-            <a href="https://in-the-margin.netlify.app/old-man-preview.html" class="btn-secondary" target="_blank" rel="noopener">Take a deeper look →</a>
-            <span class="unit-soon-note">Available Fall 2026</span>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- A MIDSUMMER NIGHT'S DREAM (coming soon) -->
-    <article class="unit-card" id="midsummer">
-      <div class="unit-cover soon">
-        <span class="cover-ribbon">Coming January 2027</span>
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947109/midsummer_ktd9qu.png" alt="A Midsummer Night's Dream cover — Delight & Savor" />
-      </div>
-      <div class="unit-body">
-        <div class="unit-titleline">
-          <!-- signature mark: a leaf/wing -->
-          <svg class="unit-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <path d="M20 35 C12 28,9 20,12 11 C20 13,27 20,27 31 C24 30,21 28,20 24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
-            <path d="M20 35 C20 27,19 18,18 12" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
-            <circle cx="28" cy="9" r="1.4" fill="currentColor"/>
-          </svg>
-          <h3 class="unit-title">A Midsummer Night's Dream</h3>
-        </div>
-        <p class="unit-author">William Shakespeare</p>
-        <p class="unit-meta">The Art of Attention · Year II · Spring</p>
-        <p class="unit-desc">
-          Shakespeare's most delightful comedy, read act by act, paired with a
-          home novel and the play's most musical language. In development now for
-          the 2026–27 year.
-        </p>
-        <div class="margin-note">
-          <span class="when">A note in the margin</span>
-          <p class="obs">The wood is where everyone gets lost — and where, somehow, everyone is found.</p>
-        </div>
-        <div class="unit-foot">
-          <div class="unit-cta">
-            <a href="https://in-the-margin.netlify.app/midsummer-preview.html" class="btn-secondary" target="_blank" rel="noopener">Take a deeper look →</a>
-            <span class="unit-soon-note">Available January 2027</span>
-          </div>
-        </div>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-
-<!-- ══ MIDDLE SCHOOL ══ -->
-<section class="shelf-section alt ms" id="middle-school" aria-labelledby="ms-title">
-  <div class="shelf-section-inner">
-    <div class="shelf-header">
-      <div class="shelf-header-text">
-        <div class="shelf-accent-bar"></div>
-        <p class="section-label">Middle School</p>
-        <h2 class="section-title" id="ms-title">Words &amp; Wonder</h2>
-        <p class="section-intro">
-          The habits of attention and expression that make high-school analysis
-          possible — narration, noticing, and a real love of language, built
-          gently across the middle-school years.
-        </p>
-      </div>
-      <p class="shelf-grade">Grades 6–8</p>
-    </div>
-
-    <!-- WORDS & WONDER (coming soon) -->
-    <article class="unit-card" id="words-and-wonder">
-      <div class="unit-cover soon">
-        <span class="cover-ribbon">Coming September 2026</span>
-        <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1781472598/cover-words-wonder_dqbuo7.png" alt="Words & Wonder cover — Delight & Savor" />
-      </div>
-      <div class="unit-body">
-        <div class="unit-titleline">
-          <!-- signature mark: moss sprig -->
-          <svg class="unit-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <path d="M20 36 V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M20 20 C14 18,11 14,11 9 C16 9,19 12,20 18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
-            <path d="M20 24 C26 22,29 18,29 13 C24 13,21 16,20 22" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
-            <path d="M20 30 C15 29,12 26,12 22 C17 22,19 24,20 28" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-          </svg>
-          <h3 class="unit-title">Words &amp; Wonder</h3>
-        </div>
-        <p class="unit-author">A literature &amp; language course for middle school</p>
-        <p class="unit-meta">Charlotte Mason ELA · Grades 6–8</p>
-        <p class="unit-desc">
-          Stories of courage, beauty, and belonging — read slowly, told back in a
-          student's own words, and savored. The full year is being written and
-          tested in Kim's own classroom now.
-        </p>
-        <div class="margin-note">
-          <span class="when">A note in the margin</span>
-          <p class="obs">Before a child can argue, they must first learn to notice — and to love what they've noticed.</p>
-        </div>
-        <div class="unit-foot">
-          <div class="unit-cta">
-            <span class="unit-soon-note">Arriving September 2026 — join the newsletter to hear first.</span>
-          </div>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-
-<!-- ══ SUMMER ══ -->
-<section class="shelf-section su" id="summer" aria-labelledby="su-title">
-  <div class="shelf-section-inner">
-    <div class="shelf-header">
-      <div class="shelf-header-text">
-        <div class="shelf-accent-bar"></div>
-        <p class="section-label">Summer</p>
-        <h2 class="section-title" id="su-title">A Short Season's Reading</h2>
-        <p class="section-intro">
-          A six-week summer course — a gentle, rigorous on-ramp to close reading
-          and narration, built around a single unforgettable American novella.
-        </p>
-      </div>
-      <p class="shelf-grade">A short season's reading</p>
-    </div>
-
-    <!-- OF MICE AND MEN -->
-<article class="unit-card" id="of-mice-and-men">
-  <div class="unit-cover">
-    <img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1772947110/of-mice-and-men_asjbyd.png" alt="Of Mice and Men unit cover — Delight & Savor" />
-  </div>
-  <div class="unit-body">
-    <div class="unit-titleline">
-      <!-- signature mark: a river reed -->
-      <svg class="unit-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M17 36 C16 26,16 16,18 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M23 36 C24 27,24 18,23 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
-        <path d="M18 7 c2 -2,4 -2,6 -1 c-1 2,-3 3,-6 3 M23 10 c-2 -1,-4 -1,-6 0" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" fill="none"/>
-        <path d="M11 33 C16 32,24 32,29 33" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity=".55"/>
-      </svg>
-      <h3 class="unit-title">Of Mice and Men</h3>
-    </div>
-    <p class="unit-author">John Steinbeck</p>
-    <p class="unit-meta">Six-Week Summer Course · Find · Follow · Frame</p>
-    <p class="unit-desc">
-      Six weeks built around Find · Follow · Frame — a focused on-ramp to
-      high-school literature, or simply a season spent reading Steinbeck's
-      quiet, devastating novella with real attention.
-    </p>
-    <div class="margin-note">
-      <span class="when">A note in the margin</span>
-      <p class="obs">Before anyone speaks, the river is already there.</p>
-    </div>
-    <div class="unit-includes">
-      <p class="unit-includes-title">What's Included</p>
-      <div class="unit-includes-grid">
-        <span class="unit-include-item">Six weeks of student handouts</span>
-        <span class="unit-include-item">Find · Follow · Frame method</span>
-        <span class="unit-include-item">The character thread &amp; Relation Study</span>
-        <span class="unit-include-item">Narration &amp; close-reading practice</span>
-        <span class="unit-include-item">Existentialist Lens capstone</span>
-        <span class="unit-include-item">Guided writing progression</span>
-      </div>
-    </div>
-    <div class="unit-foot">
-      <<div class="unit-foot">
-      <div class="unit-cta">
-        <a class="btn-buy" href="/summer-foundations-omam.html">Add to Cart →</a>
-      </div>
-    </div>
-  </div>
-</article>
-
-
-<!-- INTERSTITIAL FIELD NOTE -->
-<section class="cloth fn-band" aria-label="Field note">
-  <div class="fieldnote">
-    <span class="fn-label">Field Note</span>
-    <p class="fn-text">The full series is still being gathered.</p>
-  </div>
-</section>
-
-
-<!-- ══ A LOOK INSIDE — In the Margin preview (scoped) ══ -->
-<section class="itm-preview" id="inside-the-work" aria-label="A look inside In the Margin">
 <style>
-.itm-preview *{margin:0;padding:0;box-sizing:border-box}
-.itm-preview{
-    --cream:#FAF6F0;--cream-deep:#F0EAE0;--parchment:#F7F1E8;--page:#E8E0D4;
-    --gold:#BF9B6F;--gold-light:#CCA882;--gold-deep:#9E7A4A;--gold-border:rgba(191,155,111,0.30);
-    --slate:#6B7A8D;--slate-light:#9AA5B4;--slate-deep:#3D4F63;--navy:#2C3650;
-    --euc:#6E8478;--euc-deep:#566A60;--euc-light:#8AA095;--euc-border:rgba(110,132,120,0.32);
-    --font-display:'Playfair Display',serif;--font-body:'Cormorant Garamond',serif;
+  :root{
+    --paper:#FBF8F1;
+    --cream:#F4EFE4;
+    --cream-warm:#EFE7D7;
+    --slate:#37322B;     /* warm charcoal — primary ink */
+    --ink:#2B2620;
+    --sage:#5F7457;
+    --sage-deep:#4E6149;
+    --sage-soft:#8A977E;
+    --tawny:#C4923A;     /* tawny gold */
+    --rust:#A8552F;      /* warm terracotta — CTAs */
+    --umber:#6B5240;
+    --line:#E2DACB;
+    --line-soft:#EBE4D6;
+    --shadow-sm:0 1px 2px rgba(55,50,43,.06), 0 6px 18px rgba(55,50,43,.07);
+    --shadow-md:0 2px 4px rgba(55,50,43,.08), 0 14px 34px rgba(55,50,43,.12);
   }
-.itm-preview{overflow-x:hidden}
 
-.itm-preview{
-    font-family:var(--font-body);color:var(--slate-deep);line-height:1.65;
-    background:
-      radial-gradient(1100px 600px at 50% -8%, rgba(110,132,120,0.10), transparent 60%),
-      radial-gradient(800px 500px at 110% 30%, rgba(191,155,111,0.08), transparent 55%),
-      var(--page);
-    
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--slate);
+    font-family:"Cormorant Garamond", Georgia, serif;
+    font-size:19px;
+    line-height:1.55;
     -webkit-font-smoothing:antialiased;
   }
-.itm-preview .wrap{max-width:1080px;margin:0 auto;padding:0 26px}
-.itm-preview .rise{opacity:0;transform:translateY(14px);animation:itm-rise .8s cubic-bezier(.2,.7,.2,1) forwards}
-@keyframes itm-rise{to{opacity:1;transform:none}}
-.itm-preview header.hero{text-align:center;padding:56px 22px 24px}
-.itm-preview .kicker{font-family:var(--font-display);font-size:12px;font-weight:600;letter-spacing:.30em;text-transform:uppercase;color:var(--euc-deep)}
-.itm-preview .kicker .dot{color:var(--gold);margin:0 .5em}
-.itm-preview .title{font-family:var(--font-display);font-weight:600;color:var(--navy);font-size:clamp(30px,6vw,52px);line-height:1.1;margin:16px 0 10px;letter-spacing:.005em}
-.itm-preview .lede{font-size:clamp(18px,2.4vw,22px);font-style:italic;color:var(--slate);max-width:30ch;margin:0 auto;line-height:1.5}
-.itm-preview .creed{margin-top:26px;font-family:var(--font-display);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
-.itm-preview .creed span{color:var(--euc-light);margin:0 .35em}
-.itm-preview .sprig{display:flex;align-items:center;justify-content:center;gap:14px;margin:34px auto 0;max-width:340px}
-.itm-preview .sprig .rule{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold-border))}
-.itm-preview .sprig .rule.r{background:linear-gradient(90deg,var(--gold-border),transparent)}
-.itm-preview .intro{max-width:640px;margin:38px auto 8px;text-align:center}
-.itm-preview .intro p{font-size:18px;line-height:1.8;color:var(--slate-deep)}
-.itm-preview .intro p+p{margin-top:14px}
-.itm-preview .show{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:48px 0;border-top:1px solid var(--euc-border)}
-.itm-preview .show.first{border-top:none;padding-top:40px}
-.itm-preview .show .copy{max-width:460px}
-.itm-preview .eyebrow{font-family:var(--font-display);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--euc-deep);margin-bottom:12px}
-.itm-preview .show h2{font-family:var(--font-display);font-weight:600;color:var(--navy);font-size:clamp(28px,3.6vw,38px);line-height:1.16;margin-bottom:14px}
-.itm-preview .show .said{font-size:18px;font-style:italic;color:var(--slate);line-height:1.55;margin-bottom:18px}
-.itm-preview .show p.body{font-size:16px;line-height:1.78;color:var(--slate-deep);margin-bottom:14px}
-.itm-preview .moves{list-style:none;margin:18px 0 22px}
-.itm-preview .moves li{display:flex;align-items:center;gap:12px;padding:7px 0;font-size:15.5px;color:var(--slate-deep);border-top:1px solid rgba(110,132,120,0.14)}
-.itm-preview .moves li:first-child{border-top:none}
-.itm-preview .moves .pip{width:9px;height:9px;border-radius:50%;flex:none}
-.itm-preview .m1{background:#DDE4DE}
-.itm-preview .m2{background:#C7D2C9}
-.itm-preview .m3{background:#A9BCAE}
-.itm-preview .m4{background:#8AA095}
-.itm-preview .m5{background:#6E8478}
-.itm-preview .m6{background:#5A6E62}
-.itm-preview .m7{background:#4A5A50}
-.itm-preview .moves b{font-family:var(--font-display);font-weight:600;color:var(--navy);font-size:15px}
-.itm-preview .fine{font-size:14px;font-style:italic;color:var(--slate-light);margin-top:4px}
-.itm-preview .cta{display:inline-flex;align-items:center;gap:9px;margin-top:22px;padding:13px 22px;background:var(--euc);color:var(--cream);text-decoration:none;border-radius:26px;font-family:var(--font-display);font-size:14px;font-weight:600;letter-spacing:.04em;border:1px solid var(--euc);transition:background .16s,transform .16s,box-shadow .16s;box-shadow:0 6px 18px rgba(86,106,96,0.18)}
-.itm-preview .cta:hover{background:var(--euc-deep);transform:translateY(-1px);box-shadow:0 10px 24px rgba(86,106,96,0.24)}
-.itm-preview .cta svg{flex:none}
-.itm-preview .stage{display:flex;justify-content:center}
-.itm-preview .phone{width:300px;max-width:100%;background:var(--euc-deep);border-radius:40px;padding:12px;box-shadow:0 22px 48px rgba(44,54,80,0.24),inset 0 0 0 1px rgba(255,255,255,0.06)}
-.itm-preview .phone .notch{width:108px;height:6px;border-radius:4px;background:rgba(255,255,255,0.22);margin:3px auto 10px}
-.itm-preview .phone .screen{border-radius:30px;overflow:hidden;background:var(--cream);height:600px}
-.itm-preview .phone iframe{width:100%;height:100%;border:0;display:block}
-.itm-preview .paper{width:100%;background:var(--cream);border:1px solid var(--euc-border);border-radius:8px;box-shadow:0 22px 50px rgba(44,54,80,0.18);overflow:hidden}
-.itm-preview .paper .thread{display:flex;gap:5px;padding:14px 18px 12px;background:var(--cream);border-bottom:1px solid var(--euc-border)}
-.itm-preview .paper .seg{flex:1;height:5px;border-radius:3px}
-.itm-preview .paper .cap-label{margin-left:10px;font-family:var(--font-display);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--euc-deep);white-space:nowrap;align-self:center}
-.itm-preview .paper .frame-wrap{height:560px;overflow:hidden;background:#E8E0D4}
-.itm-preview .paper iframe{width:100%;height:100%;border:0;display:block}
-.itm-preview .preview-tag{text-align:center;font-size:12.5px;font-style:italic;color:var(--slate-light);margin-top:12px}
-.itm-preview .closing{text-align:center;max-width:600px;margin:0 auto;padding:64px 26px 22px;border-top:1px solid var(--euc-border)}
-.itm-preview .closing h2{font-family:var(--font-display);font-weight:600;color:var(--navy);font-size:clamp(26px,4vw,34px);margin-bottom:14px}
-.itm-preview .closing p{font-size:18px;font-style:italic;color:var(--slate);line-height:1.6}
-.itm-preview .closing .ornament{margin-top:24px;font-family:var(--font-display);font-size:18px;color:var(--gold-light);letter-spacing:.4em}
-.itm-preview footer.brand{text-align:center;padding:36px 26px 56px;font-family:var(--font-display);font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-light)}
-@media(max-width:860px){.itm-preview .show{grid-template-columns:1fr;gap:26px;padding:40px 0}
-.itm-preview .show .copy{max-width:none;order:2}
-.itm-preview .show .stage{order:1}
-.itm-preview .show.flip .copy{order:2}
-.itm-preview header.hero{padding:44px 18px 18px}
-.itm-preview .wrap{padding:0 18px}
-.itm-preview .phone{width:270px}
-.itm-preview .phone .screen{height:520px}
-.itm-preview .paper .frame-wrap{height:460px}
-}
-@media(max-width:430px){
-.itm-preview .phone{width:240px;border-radius:34px;padding:10px}
-.itm-preview .phone .screen{height:480px;border-radius:26px}
-.itm-preview .title{font-size:28px}
-}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
 
-</style>
-
-  <header class="hero">
-    <div class="kicker rise" style="animation-delay:.05s">Delight &amp; Savor <span class="dot">&#10022;</span> In the Margin</div>
-    <h2 class="title rise" style="animation-delay:.12s">A look inside the work</h2>
-    <p class="lede rise" style="animation-delay:.2s">Before you begin, see how your reader learns to notice, narrate, and write.</p>
-    <div class="creed rise" style="animation-delay:.3s">Notice <span>&middot;</span> Narrate <span>&middot;</span> Connect <span>&middot;</span> Write</div>
-    <div class="sprig rise" style="animation-delay:.4s">
-      <span class="rule"></span>
-      <svg width="40" height="22" viewBox="0 0 40 22" fill="none" aria-hidden="true">
-        <path d="M2 11 C10 3,16 3,20 11 C24 19,30 19,38 11" stroke="#BF9B6F" stroke-width="1.4" stroke-linecap="round"/>
-        <path d="M20 11 c-2 -5,-2 -8,0 -10 M20 11 c2 -5,2 -8,0 -10" stroke="#8AA095" stroke-width="1.2" stroke-linecap="round"/>
-      </svg>
-      <span class="rule r"></span>
-    </div>
-  </header>
-
-  <div class="wrap">
-    <section class="intro rise" style="animation-delay:.5s">
-      <p>In the Margin is built on a simple, old idea: children grow as writers when they first learn to pay attention. Reading comes first, then telling it back in their own words &mdash; and only then the slow, satisfying work of shaping what they noticed into thought.</p>
-      <p>Here are the two pieces families ask to see most. The Writing Table below is fully live &mdash; tap through it. The Capstone shows the shape of a whole term&rsquo;s work. Then, just below, the units themselves.</p>
-    </section>
-
-    <!-- ── The Writing Table ── -->
-    <section class="show first">
-      <div class="copy">
-        <div class="eyebrow">The Writing Table</div>
-        <h2>From what stayed with you, to what you want to say.</h2>
-        <p class="said">&ldquo;Before we build an argument, we begin by noticing what lingers.&rdquo;</p>
-        <p class="body">A calm, guided notebook that carries a student from a first impression all the way to a finished essay outline &mdash; one quiet movement at a time. No blank page, no overwhelm. Just the next honest question.</p>
-        <ul class="moves">
-          <li><span class="pip m1"></span><b>Narration</b> &mdash; tell it back in your own words</li>
-          <li><span class="pip m2"></span><b>Claim</b> &mdash; what do you want to argue?</li>
-          <li><span class="pip m3"></span><b>Evidence</b> &mdash; the moments that carry it</li>
-          <li><span class="pip m4"></span><b>Analysis</b> &mdash; what the text reveals</li>
-          <li><span class="pip m5"></span><b>Connections</b> &mdash; joining the great conversation</li>
-          <li><span class="pip m6"></span><b>So What</b> &mdash; why this matters, in life</li>
-          <li><span class="pip m7"></span><b>Revision</b> &mdash; the outline, ready to write</li>
-        </ul>
-        <p class="fine">Everything saves on its own as they go, and the finished outline prints or copies in a single tap.</p>
-      </div>
-      <div class="stage">
-        <div class="phone">
-          <div class="notch"></div>
-          <!-- Loads the real Writing Table from the In the Margin site (a separate deploy).
-               Full URL is required because this page lives on the Delight & Savor domain. -->
-          <div class="screen"><iframe id="wtFrame" title="The Writing Table — live preview" loading="lazy" src="https://in-the-margin.netlify.app/writing-table.html"></iframe></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── The Capstone ── -->
-    <section class="show flip">
-      <div class="stage">
-        <div class="phone">
-          <div class="notch"></div>
-          <div class="screen"><iframe id="capFrame" title="The Capstone — a look at the opening" loading="lazy"></iframe></div>
-        </div>
-      </div>
-      <div class="copy">
-        <div class="eyebrow">The Capstone</div>
-        <h2>Following a thread through the term</h2>
-        <p class="said">One symbol, one idea &mdash; followed from the first page to the last.</p>
-        <p class="body">Each term, a student carries a single thread through everything they read, meeting its thinkers, themes, and language through many different doors &mdash; the eight intelligences Howard Gardner described &mdash; and climbing the levels of Bloom&rsquo;s taxonomy, from understanding toward analysis and making something new.</p>
-        <p class="body">The assignments shift from term to term &mdash; summer runs six weeks, fall and spring thirteen to sixteen &mdash; but every term builds toward two things: a <em>Composition Exam</em> (a literary analysis with a works cited) and the <em>Quilt</em> (a 4&times;4 watercolor or art piece of the thread they followed, with a quote on the back that holds it in words, and a brief explanation).</p>
-        <p class="fine">Offered each term, for the live course and self-paced families alike.</p>
-      </div>
-    </section>
-  </div>
-
-  <section class="closing">
-    <h2>Come read alongside us.</h2>
-    <p>What your child makes here is small, and it is theirs, and it is real. That is the whole point.</p>
-    <div class="ornament">&#10022; &middot; &#10022; &middot; &#10022;</div>
-  </section>
-
-<script type="text/template" id="tpl-cap"><!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Capstone</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  :root {
-    --cream:#FAF6F0; --cream-deep:#F0EAE0; --parchment:#F7F1E8;
-    --gold:#BF9B6F; --gold-light:#CCA882; --gold-deep:#9E7A4A;
-    --slate:#6B7A8D; --slate-light:#9AA5B4; --slate-deep:#3D4F63;
-    --navy:#2C3650; --hero:#474D56;
-    --euc:#6E8478; --euc-deep:#566A60; --euc-light:#8AA095;
-    --euc-border:rgba(110,132,120,0.32);
-    --font-display:'Playfair Display', serif;
-    --font-body:'Cormorant Garamond', serif;
+  .eyebrow{
+    font-family:"Lato", system-ui, sans-serif;
+    font-size:12px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--sage);
+    font-weight:700;
   }
-  html, body { background:#E8E0D4; font-family:var(--font-body); color:var(--slate-deep); line-height:1.62; }
-  .doc { background:var(--cream); }
-  .page { padding:34px 30px 40px; }
-  .cover-banner {
-    background:var(--hero); color:var(--cream);
-    padding:28px 30px; text-align:center; border-bottom:3px solid var(--euc);
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px;}
+
+  /* ---------- HERO (full branded banner; wordmark + tagline are baked into the art) ---------- */
+  .hero{display:block;background:#2A2520;line-height:0;}
+  .hero__img{width:100%;height:auto;display:block;}
+  .hero-cta{background:var(--paper);text-align:center;padding:30px 22px 4px;}
+
+  .btn{
+    display:inline-block;
+    font-family:"Lato", system-ui, sans-serif;
+    font-size:13px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-weight:700;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    border-radius:999px;
+    padding:16px 34px;
+    transition:transform .18s ease, background .18s ease, box-shadow .18s ease;
   }
-  .cover-banner .eyebrow {
-    font-family:var(--font-display); font-size:10px; font-weight:600;
-    letter-spacing:.22em; text-transform:uppercase; color:var(--euc-light); margin-bottom:8px;
+  .btn--primary{background:var(--rust);color:#FBF6EC;box-shadow:var(--shadow-sm);}
+  .btn--primary:hover{background:#974B29;transform:translateY(-2px);box-shadow:var(--shadow-md);}
+  .btn--cream{background:#FBF6EC;color:var(--rust);box-shadow:var(--shadow-sm);}
+  .btn--cream:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);}
+  .btn--ghost{background:transparent;color:var(--slate);border:1.5px solid var(--line);}
+  .btn--ghost:hover{border-color:var(--sage);color:var(--sage);}
+
+  /* ---------- LEVELS (big subject-style words) ---------- */
+  .levels{padding:62px 0 14px;text-align:center;}
+  .levels__head{margin-bottom:30px;}
+  .levels__head h2{
+    font-family:"Playfair Display", serif;
+    font-weight:600;
+    font-size:clamp(26px,4vw,34px);
+    margin:.3em 0 .15em;
+    color:var(--slate);
   }
-  .cover-banner h1 { font-family:var(--font-display); font-size:34px; font-weight:600; color:var(--cream); line-height:1.18; }
-  .cover-banner .sub { font-family:var(--font-body); font-size:15px; font-style:italic; color:var(--euc-light); margin-top:5px; }
-  h3 { font-family:var(--font-display); font-size:17px; font-weight:600; color:var(--navy); margin-top:22px; margin-bottom:8px; }
-  p { font-size:15px; line-height:1.7; color:var(--slate-deep); margin-bottom:12px; }
-  p.lede { font-size:16px; font-style:italic; color:var(--slate); line-height:1.6; margin-bottom:14px; }
-  em { font-style:italic; color:var(--navy); }
-  .outcome {
-    background:var(--parchment); border:1px solid var(--euc-border); border-left:3px solid var(--euc);
-    border-radius:0 9px 9px 0; padding:14px 18px; margin:12px 0;
+  .levels__head .lede{
+    font-size:21px;color:var(--umber);max-width:56ch;margin:0 auto;
   }
-  .outcome-label { font-family:var(--font-display); font-size:15px; font-weight:600; color:var(--navy); margin-bottom:5px; }
-  .outcome p { margin-bottom:0; font-size:14.5px; }
-  .ornament { text-align:center; margin:26px 0 0; font-family:var(--font-display); font-size:18px; color:var(--gold-light); letter-spacing:.4em; }
+  .level-words{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:14px 48px;margin-top:8px;
+  }
+  .level-word{
+    background:none;border:none;cursor:pointer;padding:10px 6px;
+    font-family:"Playfair Display", serif;
+    line-height:1.05;text-align:center;
+    color:var(--sage);
+    transition:color .18s ease, transform .18s ease;
+  }
+  .level-word .big{
+    display:block;font-size:clamp(28px,5.2vw,46px);font-weight:600;
+  }
+  .level-word .sub{
+    display:block;font-family:"Lato",system-ui,sans-serif;
+    font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--sage-soft);margin-top:6px;font-weight:600;
+  }
+  .level-word:hover,.level-word:focus-visible{color:var(--rust);transform:translateY(-2px);}
+  .level-word:hover .sub{color:var(--umber);}
+
+  /* ---------- SHELF (horizontal carousel on a rail) ---------- */
+  .shelf-section{padding:34px 0 60px;}
+  .shelf-head{
+    display:flex;align-items:flex-end;justify-content:space-between;gap:16px;
+    max-width:1120px;margin:0 auto 18px;padding:0 22px;
+  }
+  .shelf-head h2{
+    font-family:"Playfair Display",serif;font-weight:600;
+    font-size:clamp(24px,3.4vw,30px);margin:.2em 0 0;
+  }
+  .shelf-arrows{display:flex;gap:10px;}
+  .arrow{
+    width:46px;height:46px;border-radius:999px;
+    border:1.5px solid var(--line);background:var(--paper);
+    color:var(--slate);font-size:18px;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:border-color .18s, color .18s, background .18s;
+  }
+  .arrow:hover{border-color:var(--sage);color:var(--sage);}
+  .arrow:disabled{opacity:.35;cursor:default;}
+
+  .shelf-rail{position:relative;}
+  .shelf{
+    display:flex;gap:22px;
+    overflow-x:auto;scroll-snap-type:x mandatory;
+    padding:6px 22px 26px;
+    margin:0 auto;max-width:1164px;
+    scrollbar-width:none;
+  }
+  .shelf::-webkit-scrollbar{display:none;}
+  /* the wooden/sage ledge that makes it read as a shelf */
+  .shelf-rail::after{
+    content:"";position:absolute;left:22px;right:22px;bottom:8px;height:10px;
+    border-radius:3px;
+    background:linear-gradient(180deg, var(--umber), #574231);
+    box-shadow:0 10px 22px rgba(55,50,43,.18);
+  }
+  .shelf-fade{position:absolute;top:0;bottom:18px;width:24px;pointer-events:none;z-index:2;}
+  .shelf-fade--l{left:0;background:linear-gradient(90deg,var(--paper),transparent);}
+  .shelf-fade--r{right:0;background:linear-gradient(270deg,var(--paper),transparent);}
+
+  .card{
+    scroll-snap-align:start;
+    flex:0 0 auto;width:208px;
+    text-decoration:none;color:inherit;
+    display:flex;flex-direction:column;
+    transition:transform .2s ease;
+  }
+  .card:hover{transform:translateY(-6px);}
+  .card:hover .cover{box-shadow:var(--shadow-md);}
+
+  /* book-cover treatment (clothbound placeholder until a real photo is set) */
+  .cover{
+    position:relative;aspect-ratio:3/4;border-radius:4px;overflow:hidden;
+    box-shadow:var(--shadow-sm);
+    background-size:cover;background-position:center;
+    transition:box-shadow .2s ease;
+  }
+  .cover--cloth{
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;padding:22px 18px;color:#F4E9D8;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, rgba(0,0,0,.06) 0 1px, transparent 1px 3px);
+  }
+  .cover--cloth::before{
+    content:"";position:absolute;inset:12px;border:1px solid rgba(244,233,216,.45);
+    border-radius:2px;pointer-events:none;
+  }
+  .cover--cloth .ct{
+    font-family:"Playfair Display",serif;font-weight:600;
+    font-size:20px;line-height:1.15;letter-spacing:.01em;
+  }
+  .cover--cloth .cr{
+    width:24px;height:1px;background:var(--tawny);margin:11px 0;
+  }
+  .cover--cloth .ca{
+    font-family:"Lato",system-ui,sans-serif;font-size:10px;
+    letter-spacing:.18em;text-transform:uppercase;opacity:.85;
+  }
+  /* your real cover art, layered over the cloth placeholder; if the file is
+     missing it removes itself and the placeholder shows through */
+  .cover__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+
+  .pill{
+    display:inline-block;align-self:flex-start;
+    font-family:"Lato",system-ui,sans-serif;
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+    color:#FBF6EC;background:var(--slate);
+    border-radius:999px;padding:6px 13px;margin:14px 0 8px;
+  }
+  .card__title{
+    font-family:"Cormorant Garamond",serif;font-weight:600;
+    font-size:23px;line-height:1.16;color:var(--rust);
+  }
+  .card__meta{
+    font-family:"Lato",system-ui,sans-serif;font-size:12px;letter-spacing:.02em;
+    color:var(--sage-soft);margin-top:5px;
+  }
+
+  .shelf-cta{text-align:center;margin-top:14px;}
+
+  /* ---------- FEATURED spotlight ---------- */
+  .featured{background:var(--cream-warm);padding:0;margin-top:6px;}
+  .featured__grid{
+    max-width:1120px;margin:0 auto;
+    display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch;
+  }
+  .featured__img{
+    min-height:380px;background-size:cover;background-position:center;
+    background-image:
+      linear-gradient(135deg, rgba(78,97,73,.25), rgba(55,50,43,.45)),
+      url("images/featured.jpg");
+    background-color:var(--sage-deep);
+  }
+  .featured__body{padding:54px 52px;}
+  .featured__body h2{
+    font-family:"Playfair Display",serif;font-weight:600;
+    font-size:clamp(30px,4.4vw,46px);line-height:1.05;
+    color:var(--slate);margin:.34em 0 .4em;
+  }
+  .featured__body p{font-size:21px;color:var(--ink);max-width:42ch;margin:0 0 28px;}
+
+  /* ---------- CATALOG (Shop All) ---------- */
+  .catalog{padding:42px 0 70px;}
+  .catalog__top{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    flex-wrap:wrap;margin-bottom:8px;
+  }
+  .back-link{
+    background:none;border:none;cursor:pointer;
+    font-family:"Lato",system-ui,sans-serif;font-size:13px;letter-spacing:.06em;
+    color:var(--sage);font-weight:700;padding:6px 0;
+  }
+  .back-link:hover{color:var(--rust);}
+  .catalog h2{
+    font-family:"Playfair Display",serif;font-weight:600;
+    font-size:clamp(28px,4vw,40px);margin:.1em 0 .35em;color:var(--slate);
+  }
+  .controls{
+    display:flex;align-items:center;justify-content:space-between;gap:18px;
+    flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:14px 0;margin-bottom:30px;
+  }
+  .filters{display:flex;flex-wrap:wrap;gap:9px;}
+  .chip{
+    font-family:"Lato",system-ui,sans-serif;font-size:12px;letter-spacing:.08em;
+    text-transform:uppercase;font-weight:700;cursor:pointer;
+    border:1.5px solid var(--line);background:var(--paper);color:var(--umber);
+    border-radius:999px;padding:8px 16px;transition:all .16s ease;
+  }
+  .chip:hover{border-color:var(--sage);color:var(--sage);}
+  .chip[aria-pressed="true"]{background:var(--sage);border-color:var(--sage);color:#FBF6EC;}
+  .sort{display:flex;align-items:center;gap:9px;}
+  .sort label{
+    font-family:"Lato",system-ui,sans-serif;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--sage-soft);font-weight:700;
+  }
+  .sort select{
+    font-family:"Lato",system-ui,sans-serif;font-size:13px;color:var(--slate);
+    border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;
+    background:var(--paper);cursor:pointer;
+  }
+
+  .grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:30px 26px;
+  }
+  @media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr);}}
+  @media(min-width:980px){.grid{grid-template-columns:repeat(4,1fr);}}
+
+  .gcard{text-decoration:none;color:inherit;display:flex;flex-direction:column;
+    transition:transform .18s ease;}
+  .gcard:hover{transform:translateY(-5px);}
+  .gcard:hover .cover{box-shadow:var(--shadow-md);}
+  .gcard .cover{aspect-ratio:3/4;}
+  .gcard .cover--cloth .ct{font-size:17px;}
+  .status{
+    display:inline-block;align-self:flex-start;margin:13px 0 7px;
+    font-family:"Lato",system-ui,sans-serif;font-size:10px;letter-spacing:.12em;
+    text-transform:uppercase;font-weight:700;border-radius:999px;padding:5px 11px;
+  }
+  .status--go{background:var(--sage);color:#FBF6EC;}
+  .status--self{background:var(--tawny);color:#3A2D12;}
+  .status--avail{background:var(--umber);color:#FBF6EC;}
+  .status--soon{background:transparent;color:var(--umber);border:1px solid var(--line);}
+  .gcard__level{
+    font-family:"Lato",system-ui,sans-serif;font-size:10px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--sage-soft);font-weight:700;margin-bottom:2px;
+  }
+  .gcard__title{
+    font-family:"Cormorant Garamond",serif;font-weight:600;font-size:21px;
+    line-height:1.15;color:var(--rust);
+  }
+  .gcard__blurb{font-size:16.5px;line-height:1.4;color:var(--umber);margin-top:5px;}
+  .empty{grid-column:1/-1;text-align:center;color:var(--sage-soft);padding:50px 0;font-size:20px;}
+
+  /* view toggling */
+  [hidden]{display:none !important;}
+
+  @media(max-width:760px){
+    .featured__grid{grid-template-columns:1fr;}
+    .featured__img{min-height:240px;}
+    .featured__body{padding:38px 26px 44px;}
+    .shelf-head{align-items:center;}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+  :focus-visible{outline:2.5px solid var(--tawny);outline-offset:3px;border-radius:3px;}
 </style>
 </head>
+
 <body>
-<div class="doc">
-  <div class="cover-banner">
-    <div class="eyebrow">A Term-Long Study</div>
-    <h1>The Capstone</h1>
-    <div class="sub">Following one thread through the term</div>
+<!-- Your shared nav/footer are injected by nav.js, same as every other page. -->
+
+<main>
+
+  <!-- ============ BROWSE VIEW ============ -->
+  <div id="browse">
+
+  <!-- HERO — full branded banner; the wordmark, tagline, and "rooted in beauty…" are part of the artwork -->
+  <header class="hero">
+    <img class="hero__img" src="images/hero-curriculum.jpg"
+         alt="Delight & Savor — a Charlotte Mason-inspired curriculum cultivating attentive hearts, thoughtful minds, and a lifelong love of learning." />
+  </header>
+  <div class="hero-cta">
+    <a class="btn btn--primary" href="#shelf-section">Browse the courses</a>
   </div>
-  <div class="page">
-    <p class="lede" style="text-align:center; margin-top:8px;">
-      &ldquo;The thread is too fine for you to see it. You can only feel it&hellip;
-      you must lay your finger upon the thread, and follow the thread wherever
-      it leads you.&rdquo;
-    </p>
-    <p style="text-align:center; font-size:12.5px; color:var(--slate-light); font-style:italic; margin-bottom:28px;">
-      &mdash; George MacDonald, <em>The Princess and the Goblin</em>
-    </p>
 
-    <h3 style="margin-top:0;">What the Capstone is</h3>
-    <p>Each term, you choose one thread &mdash; a symbol, an image, a question &mdash;
-      and follow it through everything you read, from the first page to the last.</p>
-    <p>You meet the reading, its thinkers, its themes, and its language through
-      many different doors &mdash; the eight intelligences Howard Gardner described
-      &mdash; and you climb the levels of <em>Bloom&rsquo;s taxonomy</em>, moving from
-      remembering and understanding toward analysis, judgment, and making something
-      wholly your own.</p>
+    <!-- LEVELS -->
+    <section class="levels wrap">
+      <div class="levels__head">
+        <span class="eyebrow">One method, every level</span>
+        <h2>Find it. Follow it. Frame it.</h2>
+        <p class="lede">Every course runs on living books and narration — and underneath that gentle surface is real rigor. Students work in close literary and comparative analysis, read through historical and critical lenses, and learn to build an argument that holds. Wonder and analysis grow side by side — never one before the other.</p>
+      </div>
+      <div class="level-words">
+        <button class="level-word" data-level="summer">
+          <span class="big">Summer Foundations</span>
+          <span class="sub">A gentle start</span>
+        </button>
+        <button class="level-word" data-level="middle">
+          <span class="big">Middle School</span>
+          <span class="sub">Living Stories &amp; Sentences</span>
+        </button>
+        <button class="level-word" data-level="high">
+          <span class="big">High School</span>
+          <span class="sub">Living Literature &amp; Language</span>
+        </button>
+      </div>
+    </section>
 
-    <h3>How long it runs</h3>
-    <p>The work is paced to the term. Summer is short &mdash; six weeks. Fall and
-      spring run longer, thirteen to sixteen. The particular assignments shift from
-      term to term, but the arc is always the same: many small acts of attention,
-      gathered toward two final pieces.</p>
-
-    <h3>Where it all leads</h3>
-    <div class="outcome">
-      <div class="outcome-label">The Composition Exam</div>
-      <p>A literary analysis, with a works cited &mdash; the thread you followed,
-        now argued in full.</p>
-    </div>
-    <div class="outcome">
-      <div class="outcome-label">The Quilt</div>
-      <p>A 4&times;4 watercolor &mdash; or art in any medium &mdash; of the symbol or
-        idea you followed all term. On the back, a quote that holds the same idea in
-        words, and a brief explanation.</p>
-    </div>
-
-    <div class="ornament">&#10022; &middot; &#10022; &middot; &#10022;</div>
-  </div>
-</div>
-</body>
-</html></script>
-<script>
-(function(){
-  var cap=document.getElementById("capFrame");
-  if(!cap)return;
-  var t=document.getElementById("tpl-cap");
-  if(t)cap.srcdoc=t.textContent.split("[[ENDSCRIPT]]").join("</"+"script>");
-})();
-</script>
-</section>
-
-<!-- ══ VERSIONS ══ -->
-<section class="versions-section" id="versions" aria-labelledby="versions-title">
-  <div class="versions-inner">
-    <div class="versions-header">
-      <div class="gold-rule"></div>
-      <p class="section-label">Which Version Is Right for You?</p>
-      <h2 class="section-title" id="versions-title">Co-op vs. Home Study</h2>
-      <p class="section-intro">
-        Every unit comes in two versions — one designed for a weekly co-op
-        classroom, one for the independent home student. The content and rigor
-        are the same; the structure and pacing differ.
-      </p>
-    </div>
-
-    <div class="versions-grid">
-      <div class="version-card coop">
-        <div class="version-card-head">
-          <div class="version-numeral">i</div>
-          <h3 class="version-name">Co-op Version</h3>
-          <p class="version-tagline">For weekly classroom use</p>
+    <!-- SHELF / CAROUSEL -->
+    <section class="shelf-section" id="shelf-section">
+      <div class="shelf-head">
+        <div>
+          <span class="eyebrow">On the shelf</span>
+          <h2>Pull one down and look closer</h2>
         </div>
-        <div class="version-card-body">
-          <ul class="version-list">
-            <li>Designed for 1.5-hour weekly sessions</li>
-            <li>Includes full teacher's guide with discussion prompts, timing notes, and gray-box teacher annotations</li>
-            <li>Student handouts formatted for in-class narration and discussion</li>
-            <li>Absent student guides so no one falls behind</li>
-            <li>Oral narration as the backbone — writing builds gradually across the semester</li>
-            <li>Honors Track extensions for students ready to go deeper</li>
-          </ul>
+        <div class="shelf-arrows">
+          <button class="arrow" id="shelfPrev" aria-label="Scroll left">‹</button>
+          <button class="arrow" id="shelfNext" aria-label="Scroll right">›</button>
         </div>
       </div>
+      <div class="shelf-rail">
+        <span class="shelf-fade shelf-fade--l"></span>
+        <span class="shelf-fade shelf-fade--r"></span>
+        <div class="shelf" id="shelf"><!-- rendered --></div>
+      </div>
+      <div class="shelf-cta">
+        <button class="btn btn--primary" id="shopAll">Shop all curriculum</button>
+      </div>
+    </section>
 
-      <div class="version-card home">
-        <div class="version-card-head">
-          <div class="version-numeral">ii</div>
-          <h3 class="version-name">Home Study Version</h3>
-          <p class="version-tagline">For independent learners</p>
-        </div>
-        <div class="version-card-body">
-          <ul class="version-list">
-            <li>Flexible pacing — complete each week's work in 2–3 sessions</li>
-            <li>Student-facing handouts designed for independent reading and narration</li>
-            <li>Parent/teacher guide with light facilitation notes</li>
-            <li>Written narration options included for every week</li>
-            <li>Same analytical method and thesis progression as the co-op version</li>
-            <li>Family license — covers all students in one household</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="honors-callout">
-      <div>
-        <p class="honors-label">Available in Both Versions</p>
-        <h3 class="honors-title">The Honors Track</h3>
-        <p class="honors-desc">
-          Each unit includes optional Honors Track extensions — deeper reading,
-          additional secondary sources, and more demanding writing prompts —
-          for the student who is ready to be genuinely challenged. The Honors
-          Track is woven into the same handouts; no separate purchase needed.
-        </p>
-      </div>
-      <div>
-        <a href="#" class="btn-buy shop-link" target="_blank" rel="noopener" style="white-space:nowrap;">Shop All Units →</a>
-      </div>
-    </div>
+    <!-- FEATURED -->
+    <section class="featured">
+      <div class="featured__grid" id="featured"><!-- rendered --></div>
+    </section>
 
   </div>
-</section>
 
-<!-- ══ FOOTER ══ -->
-<footer class="site-footer cloth" role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="logo">Delight <span style="color:var(--gold)">&amp;</span> Savor</div>
-        <p class="footer-tagline">Charlotte Mason literature and language arts for the student who is ready to read deeply.</p>
+  <!-- ============ CATALOG VIEW (Shop All) ============ -->
+  <div id="catalog" class="catalog wrap" hidden>
+    <div class="catalog__top">
+      <button class="back-link" id="backBtn">‹ Back to featured</button>
+    </div>
+    <h2 tabindex="-1">All Curriculum</h2>
+    <div class="controls">
+      <div class="filters" id="filters" role="group" aria-label="Filter by level">
+        <button class="chip" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" data-filter="summer" aria-pressed="false">Summer</button>
+        <button class="chip" data-filter="middle" aria-pressed="false">Middle School</button>
+        <button class="chip" data-filter="high" aria-pressed="false">High School</button>
       </div>
-      <div>
-        <p class="footer-col-title">Navigate</p>
-        <ul class="footer-nav-list">
-          <li><a href="philosophy.html">Philosophy</a></li>
-          <li><a href="curriculum.html">Curriculum</a></li>
-          <li><a href="teachers-notebook.html">Teacher's Notebook</a></li>
-          <li><a href="#" class="shop-link">Shop</a></li>
-          <li><a href="conversation-quilt.html">Conversation Quilt</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-col-title">Connect</p>
-        <ul class="footer-social-list">
-          <li>
-            <a href="https://instagram.com/Kim.delightandsavor" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-              Instagram
-            </a>
-          </li>
-          <li>
-            <a href="https://pinterest.com" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.64 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.132-1.867 3.132-4.563 0-2.387-1.715-4.055-4.163-4.055-2.836 0-4.5 2.127-4.5 4.326 0 .856.33 1.775.741 2.276a.3.3 0 01.069.286c-.076.315-.245 1-.278 1.139-.044.183-.146.222-.337.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
-              Pinterest
-            </a>
-          </li>
-          <li>
-            <a href="https://delightandsavor.substack.com" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
-              Substack
-            </a>
-          </li>
-          <li>
-            <a href="mailto:kprieto.delightandsavor@gmail.com">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              Email Us
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-col-title">From the Ranch &amp; the Desk</p>
-        <p class="newsletter-desc">One monthly letter: what I'm teaching, what I'm reading, and what's new in the shop.</p>
-        <form onsubmit="handleNewsletter(event)" aria-label="Newsletter signup">
-          <div class="newsletter-input-wrap">
-            <label for="footer-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Email address</label>
-            <input type="email" id="footer-email" class="newsletter-input" placeholder="your@email.com" required autocomplete="email" />
-            <button type="submit" class="newsletter-submit">Subscribe</button>
-          </div>
-          <p id="newsletter-msg" style="font-family:var(--ff-body);font-size:.82rem;color:var(--sage);margin-top:.6rem;min-height:1.2em"></p>
-        </form>
+      <div class="sort">
+        <label for="sortSel">Sort by</label>
+        <select id="sortSel">
+          <option value="featured">Featured</option>
+          <option value="az">Title A–Z</option>
+          <option value="level">Level</option>
+        </select>
       </div>
     </div>
-    <div class="fieldnote" style="margin:0 auto 2rem">
-      <span class="fn-label">Field Note</span>
-      <p class="fn-text">What we give attention to, we come to love.</p>
-    </div>
-    <p class="footer-colophon">Set in Playfair Display &amp; Cormorant Garamond · written and gathered at the ranch, Texas</p>
-    <hr class="footer-divider" />
-    <div class="family-apps" style="max-width:880px;margin:0 auto 1.6rem;padding:1.85rem 0 0;border-top:1px solid rgba(255,255,255,.08);text-align:center;">
-    <p style="font-family:'Cormorant Garamond',serif;font-variant:small-caps;letter-spacing:.18em;font-size:.72rem;color:rgba(250,246,238,.5);margin:0 0 1.15rem;">Also from Delight &amp; Savor</p>
-    <div style="display:flex;gap:2.75rem;justify-content:center;align-items:flex-start;flex-wrap:wrap;">
-      <a href="https://in-the-margin.netlify.app" target="_blank" rel="noopener" style="display:inline-flex;flex-direction:column;align-items:center;gap:.55rem;text-decoration:none;color:rgba(250,246,238,.75);font-family:'Cormorant Garamond',serif;font-size:.95rem;letter-spacing:.02em;">
-        <img src="data:image/png;base64,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" alt="In the Margin app icon" width="52" height="52" style="display:block;" />In the Margin
-      </a>
-      <a href="https://tend-ds.netlify.app" target="_blank" rel="noopener" style="display:inline-flex;flex-direction:column;align-items:center;gap:.55rem;text-decoration:none;color:rgba(250,246,238,.75);font-family:'Cormorant Garamond',serif;font-size:.95rem;letter-spacing:.02em;">
-        <img src="data:image/png;base64,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" alt="Tend app icon" width="52" height="52" style="display:block;" />Tend
-      </a>
-    </div>
+    <div class="grid" id="grid"><!-- rendered --></div>
   </div>
-  <div class="footer-bottom">
-      <p class="footer-copy">&copy; <span id="year"></span> Delight &amp; Savor Press · All rights reserved · All digital sales final.</p>
-      <nav class="footer-bottom-links">
-        <a href="faq.html#returns">Returns Policy</a>
-        <a href="faq.html#contact">Contact</a>
-      </nav>
-    </div>
-  </div>
-</footer>
+
+</main>
+
+<script src="nav.js"></script>
 
 <script>
-  /* ──────────────────────────────────────────────────────────────
-     SHOP_URL — the ONE place the buy/enroll destination lives.
-     The shop platform isn't decided yet. When it is, replace the
-     '#' below with the real link (e.g. 'https://payhip.com/delightandsavor')
-     and every "Bring it home" / "Shop" button updates automatically.
-     ────────────────────────────────────────────────────────────── */
-  var SHOP_URL = "#";
-  document.querySelectorAll('.shop-link').forEach(function (a) {
-    a.setAttribute('href', SHOP_URL);
-  });
+/* =====================================================================
+   EDIT HERE — one list runs the whole page.
+   Add a course = add one object. Both the shelf and the Shop-All grid
+   read from this. To change the big spotlight each season, change FEATURED.
+   ---------------------------------------------------------------------
+   level:   "summer" | "middle" | "high"
+   status:  "go" (enrolling) | "self" (self-paced) | "avail" | "soon"
+   image:   path to your cover art. Until that file exists, the clothbound
+            placeholder (cloth color + title) shows automatically — nothing
+            breaks before or after you add covers. Portrait (3:4) looks best.
+   link:    where the card goes when clicked (your detail page)
+   ===================================================================== */
+const FEATURED = "summer-foundations";
 
-  document.getElementById('year').textContent = new Date().getFullYear();
-  function handleNewsletter(e) {
-    e.preventDefault();
-    document.getElementById('newsletter-msg').textContent = 'Thank you! You\'ll hear from us soon. ✦';
-    document.getElementById('footer-email').value = '';
-  }
-  function toggleMenu() {
-    const btn = document.getElementById('hamburger');
-    const nav = document.getElementById('mobile-nav');
-    if (btn) btn.classList.toggle('open');
-    if (nav) nav.classList.toggle('open');
-  }
-  document.addEventListener('click', function (e) {
-    const btn = document.getElementById('hamburger');
-    const nav = document.getElementById('mobile-nav');
-    if (nav && nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) {
-      btn.classList.remove('open');
-      nav.classList.remove('open');
+const STATUS_LABEL = {
+  go:"Enrolling now", self:"Self-paced", avail:"Available", soon:"Coming soon"
+};
+const LEVEL_LABEL = {
+  summer:"Summer Foundations", middle:"Middle School", high:"High School"
+};
+
+const COURSES = [
+  {
+    id:"summer-foundations",
+    title:"Summer Foundations",
+    author:"Of Mice and Men",
+    level:"summer",
+    meta:"Steinbeck · 6 weeks",
+    status:"go",
+    cloth:"#6B5240",
+    image:"images/covers/summer-foundations.png",
+    link:"Summer-Foundations-Sales-Page.html",
+    blurb:"A gentle six-week on-ramp into close reading and narration.",
+    spotlight:{
+      image:"images/spotlight-summer.jpg",  /* a wide photo for the big panel; falls back to the cover, then cloth */
+      eyebrow:"Enrolling now · begins late June",
+      heading:"Meet Summer Foundations",
+      body:"Six unhurried weeks with Steinbeck’s <em>Of Mice and Men</em> — a character thread, a Relation Study, a haiku, and a capstone that gathers the summer’s noticing into knowing. Delivered through the In&nbsp;the&nbsp;Margin app, paper and all.",
+      cta:"Take a deeper look",
+      ctaHref:"Summer-Foundations-Sales-Page.html"
     }
-  });
+  },
+  {
+    id:"art-of-attention",
+    title:"Art of Attention",
+    author:"Poetry & The Old Man and the Sea",
+    level:"high",
+    meta:"Year-long · In the Margin",
+    status:"avail",
+    cloth:"#4E6149",
+    image:"images/covers/art-of-attention.png",
+    link:"https://in-the-margin.netlify.app/",
+    blurb:"A year of poetry and Hemingway — close reading, narration, the Great Conversation."
+  },
+  {
+    id:"macbeth",
+    title:"Macbeth",
+    author:"Shakespeare",
+    level:"high",
+    meta:"The Tragic Hero",
+    status:"avail",
+    cloth:"#37322B",
+    image:"images/covers/macbeth.png",
+    link:"#",
+    blurb:"Ambition and disordered loves, read beside Augustine."
+  },
+  {
+    id:"wuthering-heights",
+    title:"Wuthering Heights",
+    author:"Emily Brontë",
+    level:"high",
+    meta:"The Anti-Hero",
+    status:"avail",
+    cloth:"#65766A",
+    image:"images/covers/wuthering-heights.png",
+    link:"#",
+    blurb:"Wild, strange, unforgettable — the anti-hero studied in full."
+  },
+  {
+    id:"lss",
+    title:"A Place to Belong",
+    author:"Living Stories & Sentences · Series 1",
+    level:"middle",
+    meta:"32 weeks · self-paced",
+    status:"self",
+    cloth:"#5B7FA6",
+    image:"images/covers/a-place-to-belong.png",
+    link:"#",
+    blurb:"Living literature and sentence-craft for the middle years, fully self-paced."
+  },
+  {
+    id:"old-man",
+    title:"The Old Man and the Sea",
+    author:"Hemingway",
+    level:"high",
+    meta:"Companion study",
+    status:"soon",
+    cloth:"#7C7A52",
+    image:"images/covers/old-man-and-the-sea.png",
+    link:"https://in-the-margin.netlify.app/old-man-preview.html",
+    blurb:"Hemingway’s sea, scaffolded for honors-ready writing. Coming Fall 2026."
+  },
+  {
+    id:"midsummer",
+    title:"A Midsummer Night’s Dream",
+    author:"Shakespeare",
+    level:"high",
+    meta:"Comedy",
+    status:"soon",
+    cloth:"#8B6B8B",
+    image:"images/covers/midsummer.png",
+    link:"https://in-the-margin.netlify.app/midsummer-preview.html",
+    blurb:"Shakespeare’s comedy, taught the Charlotte Mason way. Coming Jan 2027."
+  }
+];
+
+/* ---------- helpers ---------- */
+const esc = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const external = href => /^https?:\/\//.test(href);
+
+function coverHTML(c){
+  return `<div class="cover cover--cloth" style="background-color:${esc(c.cloth)}">
+    <div class="ct">${esc(c.title)}</div>
+    <div class="cr"></div>
+    <div class="ca">${esc(c.author||"")}</div>
+    ${c.image ? `<img class="cover__img" src="${esc(c.image)}" alt="${esc(c.title)} cover" loading="lazy" onerror="this.remove()">` : ``}
+  </div>`;
+}
+function linkAttrs(link){
+  return external(link) ? ` target="_blank" rel="noopener"` : "";
+}
+
+/* ---------- render shelf ---------- */
+function renderShelf(){
+  document.getElementById("shelf").innerHTML = COURSES.map(c => `
+    <a class="card" href="${esc(c.link)}"${linkAttrs(c.link)}>
+      ${coverHTML(c)}
+      <span class="pill">${esc(LEVEL_LABEL[c.level])}</span>
+      <div class="card__title">${esc(c.title)}</div>
+      <div class="card__meta">${esc(c.meta)}</div>
+    </a>`).join("");
+}
+
+/* ---------- render featured spotlight ---------- */
+function renderFeatured(){
+  const c = COURSES.find(x => x.id === FEATURED) || COURSES[0];
+  const s = c.spotlight || {
+    eyebrow:STATUS_LABEL[c.status], heading:c.title, body:c.blurb,
+    cta:"Take a deeper look", ctaHref:c.link
+  };
+  const fimg = (c.spotlight && c.spotlight.image) || c.image || "";
+  const bg = fimg
+    ? `background-image:linear-gradient(135deg, rgba(78,97,73,.20), rgba(55,50,43,.42)), url('${esc(fimg)}');background-color:${esc(c.cloth)};background-size:cover;background-position:center`
+    : `background-color:${esc(c.cloth)}`;
+  document.getElementById("featured").innerHTML = `
+    <div class="featured__img" style="${bg}"></div>
+    <div class="featured__body">
+      <span class="eyebrow">${esc(s.eyebrow)}</span>
+      <h2>${esc(s.heading)}</h2>
+      <p>${s.body}</p>
+      <a class="btn btn--primary" href="${esc(s.ctaHref)}"${linkAttrs(s.ctaHref)}>${esc(s.cta)} →</a>
+    </div>`;
+}
+
+/* ---------- render catalog grid ---------- */
+let activeFilter = "all";
+function renderGrid(){
+  let list = COURSES.filter(c => activeFilter === "all" ? true : c.level === activeFilter);
+  const sort = document.getElementById("sortSel").value;
+  if (sort === "az") list = [...list].sort((a,b)=>a.title.localeCompare(b.title));
+  else if (sort === "level"){
+    const order = {summer:0, middle:1, high:2};
+    list = [...list].sort((a,b)=> order[a.level]-order[b.level] || a.title.localeCompare(b.title));
+  }
+  const grid = document.getElementById("grid");
+  if (!list.length){ grid.innerHTML = `<p class="empty">No courses here yet — check back soon.</p>`; return; }
+  grid.innerHTML = list.map(c => `
+    <a class="gcard" href="${esc(c.link)}"${linkAttrs(c.link)}>
+      ${coverHTML(c)}
+      <span class="status status--${c.status}">${esc(STATUS_LABEL[c.status])}</span>
+      <div class="gcard__level">${esc(LEVEL_LABEL[c.level])}</div>
+      <div class="gcard__title">${esc(c.title)}</div>
+      <div class="gcard__blurb">${esc(c.blurb)}</div>
+    </a>`).join("");
+}
+
+/* ---------- view toggle ---------- */
+const browse = document.getElementById("browse");
+const catalog = document.getElementById("catalog");
+function showCatalog(filter){
+  if (filter){ setFilter(filter); }
+  browse.hidden = true;
+  catalog.hidden = false;
+  window.scrollTo(0, 0);
+  catalog.querySelector("h2").focus?.();
+}
+function showBrowse(){
+  catalog.hidden = true;
+  browse.hidden = false;
+}
+function setFilter(f){
+  activeFilter = f;
+  document.querySelectorAll(".chip").forEach(ch =>
+    ch.setAttribute("aria-pressed", ch.dataset.filter === f ? "true" : "false"));
+  renderGrid();
+}
+
+/* ---------- shelf scrolling ---------- */
+function setupShelf(){
+  const shelf = document.getElementById("shelf");
+  const step = () => Math.min(shelf.clientWidth * 0.8, 460);
+  document.getElementById("shelfPrev").onclick = () => shelf.scrollBy({left:-step(), behavior:"smooth"});
+  document.getElementById("shelfNext").onclick = () => shelf.scrollBy({left: step(), behavior:"smooth"});
+  const upd = () => {
+    document.getElementById("shelfPrev").disabled = shelf.scrollLeft < 8;
+    document.getElementById("shelfNext").disabled =
+      shelf.scrollLeft + shelf.clientWidth >= shelf.scrollWidth - 8;
+  };
+  shelf.addEventListener("scroll", upd, {passive:true});
+  window.addEventListener("resize", upd);
+  upd();
+}
+
+/* ---------- wire up ---------- */
+renderShelf();
+renderFeatured();
+renderGrid();
+setupShelf();
+
+document.getElementById("shopAll").onclick = () => showCatalog("all");
+document.getElementById("backBtn").onclick = showBrowse;
+document.getElementById("sortSel").onchange = renderGrid;
+document.querySelectorAll(".chip").forEach(ch =>
+  ch.addEventListener("click", () => setFilter(ch.dataset.filter)));
+document.querySelectorAll(".level-word").forEach(w =>
+  w.addEventListener("click", () => showCatalog(w.dataset.level)));
 </script>
 </body>
 </html>
