@@ -82,7 +82,28 @@
     .mobile-nav a:hover { color: #E8D5B0; }
     .mobile-nav a.mobile-cta { color: #E8D5B0; font-weight: 600; }
     .mobile-nav .mobile-divider { height: 1px; background: rgba(255,255,255,0.12); margin: 0.5rem 0; }
-    @media (max-width: 720px) { .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; } }`;
+    @media (max-width: 720px) { .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; } }
+
+    /* ── FOOTER ── */
+    footer { background: #2d3748; color: #d9d2c4; font-family: 'Lato', system-ui, sans-serif; padding: 56px 2rem 28px; margin-top: 60px; }
+    .footer-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; align-items: start; }
+    .footer-brand .footer-logo { height: 46px; width: auto; margin-bottom: 14px; opacity: .95; }
+    .footer-brand p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; line-height: 1.5; color: rgba(232,225,212,.78); margin: 0 0 18px; max-width: 38ch; }
+    .footer-email p { font-size: .8rem; letter-spacing: .04em; color: rgba(232,225,212,.66); margin: 0 0 8px; }
+    .footer-email-row { display: flex; gap: 8px; max-width: 320px; }
+    .footer-email-row input { flex: 1; padding: 9px 12px; border: 1px solid rgba(255,255,255,.18); border-radius: 4px; background: rgba(255,255,255,.06); color: #faf9f6; font-size: .82rem; }
+    .footer-email-row input::placeholder { color: rgba(232,225,212,.5); }
+    .footer-email-row button { padding: 9px 16px; border: none; border-radius: 4px; background: #C29B61; color: #2d3748; font-weight: 700; font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; transition: background .2s; }
+    .footer-email-row button:hover { background: #d4ad72; }
+    footer h4 { font-family: 'Lato', system-ui, sans-serif; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; color: #E8D5B0; margin: 0 0 14px; font-weight: 700; }
+    .footer-nav ul, .footer-connect ul { list-style: none; margin: 0; padding: 0; }
+    .footer-nav li, .footer-connect li { margin-bottom: 9px; }
+    .footer-nav a, .footer-connect a { color: rgba(232,225,212,.78); text-decoration: none; font-size: .86rem; letter-spacing: .03em; transition: color .2s; }
+    .footer-nav a:hover, .footer-connect a:hover { color: #fff; }
+    .footer-bottom { max-width: 1120px; margin: 36px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.12); display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between; font-size: .72rem; letter-spacing: .03em; color: rgba(232,225,212,.55); }
+    .footer-bottom a { color: rgba(232,225,212,.7); text-decoration: none; }
+    .footer-bottom a:hover { color: #fff; }
+    @media (max-width: 720px) { .footer-inner { grid-template-columns: 1fr; gap: 34px; } footer { padding: 44px 1.5rem 24px; } .footer-bottom { justify-content: flex-start; } }`;
   /* ── FOOTER HTML ── */
   const footerHTML = `
 <footer>
