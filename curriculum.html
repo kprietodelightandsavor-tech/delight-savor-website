@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Curriculum · Delight &amp; Savor</title>
+<meta name="description" content="Charlotte Mason living-literature courses from Delight & Savor — a gentle summer start, self-paced middle school, and honors-ready high school." />
+
+<!-- favicon handled by nav.js (same as every other page) -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lato:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --paper:#FBF8F1;
+    --cream:#F4EFE4;
+    --cream-warm:#EFE7D7;
+    --slate:#37322B;     /* warm charcoal — primary ink */
+    --ink:#2B2620;
+    --sage:#5F7457;
+    --sage-deep:#4E6149;
+    --sage-soft:#8A977E;
+    --tawny:#C4923A;     /* tawny gold */
+    --rust:#A8552F;      /* warm terracotta — CTAs */
+    --umber:#6B5240;
+    --line:#E2DACB;
+    --line-soft:#EBE4D6;
+    --shadow-sm:0 1px 2px rgba(55,50,43,.06), 0 6px 18px rgba(55,50,43,.07);
+    --shadow-md:0 2px 4px rgba(55,50,43,.08), 0 14px 34px rgba(55,50,43,.12);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--slate);
+    font-family:"Cormorant Garamond", Georgia, serif;
+    font-size:19px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+
+  .eyebrow{
+    font-family:"Lato", system-ui, sans-serif;
+    font-size:12px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--sage);
+    font-weight:700;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px;}
+
+  /* ---------- HERO (full branded banner; wordmark + tagline are baked into the art) ---------- */
+  .hero{display:block;background:#2A2520;line-height:0;}
+  .hero__img{width:100%;height:auto;display:block;}
+  .hero-cta{background:var(--paper);text-align:center;padding:30px 22px 4px;}
+
+  .btn{
+    display:inline-block;
+    font-family:"Lato", system-ui, sans-serif;
+    font-size:13px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-weight:700;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    border-radius:999px;
+    padding:16px 34px;
+    transition:transform .18s ease, background .18s ease, box-shadow .18s ease;
+  }
+  .btn--primary{background:var(--rust);color:#FBF6EC;box-shadow:var(--shadow-sm);}
+  .btn--primary:hover{background:#974B29;transform:translateY(-2px);box-shadow:var(--shadow-md);}
+  .btn--cream{background:#FBF6EC;color:var(--rust);box-shadow:var(--shadow-sm);}
+  .btn--cream:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);}
+  .btn--ghost{background:transparent;color:var(--slate);border:1.5px solid var(--line);}
+  .btn--ghost:hover{border-color:var(--sage);color:var(--sage);}
+
+  /* ---------- LEVELS (big subject-style words) ---------- */
+  .levels{padding:62px 0 14px;text-align:center;}
+  .levels__head{margin-bottom:30px;}
+  .levels__head h2{
+    font-family:"Playfair Display", serif;
+    font-weight:600;
+    font-size:clamp(26px,4vw,34px);
+    margin:.3em 0 .15em;
+    color:var(--slate);
+  }
+  .levels__head .lede{
+    font-size:21px;color:var(--umber);max-width:56ch;margin:0 auto;
+  }
+  .level-words{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:14px 48px;margin-top:8px;
+  }
+  .level-word{
+    background:none;border:none;cursor:pointer;padding:10px 6px;
+    font-family:"Playfair Display", serif;
+    line-height:1.05;text-align:center;
+    color:var(--sage);
+    transition:color .18s ease, transform .18s ease;
+  }
+  .level-word .big{
+    display:block;font-size:clamp(28px,5.2vw,46px);font-weight:600;
+  }
+  .level-word .sub{
+    display:block;font-family:"Lato",system-ui,sans-serif;
+    font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--sage-soft);margin-top:6px;font-weight:600;
+  }
+  .level-word:hover,.level-word:focus-visible{color:var(--rust);transform:translateY(-2px);}
+  .level-word:hover .sub{color:var(--umber);}
+
+  /* ---------- SHELF (horizontal carousel on a rail) ---------- */
+  .shelf-section{padding:34px 0 60px;}
+  .shelf-head{
+    display:flex;align-items:flex-end;justify-content:space-between;gap:16px;
+    max-width:1120px;margin:0 auto 18px;padding:0 22px;
+  }
+  .shelf-head h2{
+    font-family:"Playfair Display",serif;font-weight:600;
+    font-size:clamp(24px,3.4vw,30px);margin:.2em 0 0;
+  }
+  .shelf-arrows{display:flex;gap:10px;}
+  .arrow{
+    width:46px;height:46px;border-radius:999px;
+    border:1.5px solid var(--line);background:var(--paper);
+    color:var(--slate);font-size:18px;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:border-color .18s, color .18s, background .18s;
+  }
+  .arrow:hover{border-color:var(--sage);color:var(--sage);}
+  .arrow:disabled{opacity:.35;cursor:default;}
+
+  .shelf-rail{position:relative;}
+  .shelf{
+    display:flex;gap:22px;
+    overflow-x:auto;scroll-snap-type:x mandatory;
+    padding:6px 22px 26px;
+    margin:0 auto;max-width:1164px;
+    scrollbar-width:none;
+  }
+  .shelf::-webkit-scrollbar{display:none;}
+  /* the wooden/sage ledge that makes it read as a shelf */
+  .shelf-rail::after{
+    content:"";position:absolute;left:22px;right:22px;bottom:8px;height:10px;
+    border-radius:3px;
+    background:linear-gradient(180deg, var(--umber), #574231);
+    box-shadow:0 10px 22px rgba(55,50,43,.18);
+  }
+  .shelf-fade{position:absolute;top:0;bottom:18px;width:24px;pointer-events:none;z-index:2;}
+  .shelf-fade--l{left:0;background:linear-gradient(90deg,var(--paper),transparent);}
+  .shelf-fade--r{right:0;background:linear-gradient(270deg,var(--paper),transparent);}
+
+  .card{
+    scroll-snap-align:start;
+    flex:0 0 auto;width:208px;
+    text-decoration:none;color:inherit;
+    display:flex;flex-direction:column;
+    transition:transform .2s ease;
+  }
+  .card:hover{transform:translateY(-6px);}
+  .card:hover .cover{box-shadow:var(--shadow-md);}
+
+  /* book-cover treatment (clothbound placeholder until a real photo is set) */
+  .cover{
+    position:relative;aspect-ratio:3/4;border-radius:4px;overflow:hidden;
+    box-shadow:var(--shadow-sm);
+    background-size:cover;background-position:center;
+    transition:box-shadow .2s ease;
+  }
+  .cover--cloth{
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;padding:22px 18px;color:#F4E9D8;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, rgba(0,0,0,.06) 0 1px, transparent 1px 3px);
+  }
+  .cover--cloth::before{
+    content:"";position:absolute;inset:12px;border:1px solid rgba(244,233,216,.45);
+    border-radius:2px;pointer-events:none;
+  }
+  .cover--cloth .ct{
+    font-family:"Playfair Display",serif;font-weight:600;
+    font-size:20px;line-height:1.15;letter-spacing:.01em;
+  }
+  .cover--cloth .cr{
+    width:24px;height:1px;background:var(--tawny);margin:11px 0;
+  }
+  .cover--cloth .ca{
+    font-family:"Lato",system-ui,sans-serif;font-size:10px;
+    letter-spacing:.18em;text-transform:uppercase;opacity:.85;
+  }
+  /* your real cover art, layered over the cloth placeholder; if the file is
+     missing it removes itself and the placeholder shows through */
+  .cover__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+
+  .pill{
+    display:inline-block;align-self:flex-start;
+    font-family:"Lato",system-ui,sans-serif;
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+    color:#FBF6EC;background:var(--slate);
+    border-radius:999px;padding:6px 13px;margin:14px 0 8px;
+  }
+  .card__title{
+    font-family:"Cormorant Garamond",serif;font-weight:600;
+    font-size:23px;line-height:1.16;color:var(--rust);
+  }
+  .card__meta{
+    font-family:"Lato",system-ui,sans-serif;font-size:12px;letter-spacing:.02em;
+    color:var(--sage-soft);margin-top:5px;
+  }
+
+  .shelf-cta{text-align:center;margin-top:14px;}
+
+  /* ---------- FEATURED spotlight ---------- */
+  .featured{background:var(--cream-warm);padding:0;margin-top:6px;}
+  .featured__grid{
+    max-width:1120px;margin:0 auto;
+    display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch;
+  }
+  .featured__img{
+    min-height:380px;background-size:cover;background-position:center;
+    background-color:var(--sage-deep);
+  }
+  .featured__body{padding:54px 52px;}
+  .featured__body h2{
+    font-family:"Playfair Display",serif;font-weight:600;
+    font-size:clamp(30px,4.4vw,46px);line-height:1.05;
+    color:var(--slate);margin:.34em 0 .4em;
+  }
+  .featured__body p{font-size:21px;color:var(--ink);max-width:42ch;margin:0 0 28px;}
+
+  /* ---------- CATALOG (Shop All) ---------- */
+  .catalog{padding:42px 0 70px;}
+  .catalog__top{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    flex-wrap:wrap;margin-bottom:8px;
+  }
+  .back-link{
+    background:none;border:none;cursor:pointer;
+    font-family:"Lato",system-ui,sans-serif;font-size:13px;letter-spacing:.06em;
+    color:var(--sage);font-weight:700;padding:6px 0;
+  }
+  .back-link:hover{color:var(--rust);}
+  .catalog h2{
+    font-family:"Playfair Display",serif;font-weight:600;
+    font-size:clamp(28px,4vw,40px);margin:.1em 0 .35em;color:var(--slate);
+  }
+  .controls{
+    display:flex;align-items:center;justify-content:space-between;gap:18px;
+    flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:14px 0;margin-bottom:30px;
+  }
+  .filters{display:flex;flex-wrap:wrap;gap:9px;}
+  .chip{
+    font-family:"Lato",system-ui,sans-serif;font-size:12px;letter-spacing:.08em;
+    text-transform:uppercase;font-weight:700;cursor:pointer;
+    border:1.5px solid var(--line);background:var(--paper);color:var(--umber);
+    border-radius:999px;padding:8px 16px;transition:all .16s ease;
+  }
+  .chip:hover{border-color:var(--sage);color:var(--sage);}
+  .chip[aria-pressed="true"]{background:var(--sage);border-color:var(--sage);color:#FBF6EC;}
+  .sort{display:flex;align-items:center;gap:9px;}
+  .sort label{
+    font-family:"Lato",system-ui,sans-serif;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--sage-soft);font-weight:700;
+  }
+  .sort select{
+    font-family:"Lato",system-ui,sans-serif;font-size:13px;color:var(--slate);
+    border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;
+    background:var(--paper);cursor:pointer;
+  }
+
+  .grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:30px 26px;
+  }
+  @media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr);}}
+  @media(min-width:980px){.grid{grid-template-columns:repeat(4,1fr);}}
+
+  .gcard{text-decoration:none;color:inherit;display:flex;flex-direction:column;
+    transition:transform .18s ease;}
+  .gcard:hover{transform:translateY(-5px);}
+  .gcard:hover .cover{box-shadow:var(--shadow-md);}
+  .gcard .cover{aspect-ratio:3/4;}
+  .gcard .cover--cloth .ct{font-size:17px;}
+  .status{
+    display:inline-block;align-self:flex-start;margin:13px 0 7px;
+    font-family:"Lato",system-ui,sans-serif;font-size:10px;letter-spacing:.12em;
+    text-transform:uppercase;font-weight:700;border-radius:999px;padding:5px 11px;
+  }
+  .status--go{background:var(--sage);color:#FBF6EC;}
+  .status--self{background:var(--tawny);color:#3A2D12;}
+  .status--avail{background:var(--umber);color:#FBF6EC;}
+  .status--soon{background:transparent;color:var(--umber);border:1px solid var(--line);}
+  .gcard__level{
+    font-family:"Lato",system-ui,sans-serif;font-size:10px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--sage-soft);font-weight:700;margin-bottom:2px;
+  }
+  .gcard__title{
+    font-family:"Cormorant Garamond",serif;font-weight:600;font-size:21px;
+    line-height:1.15;color:var(--rust);
+  }
+  .gcard__blurb{font-size:16.5px;line-height:1.4;color:var(--umber);margin-top:5px;}
+  .empty{grid-column:1/-1;text-align:center;color:var(--sage-soft);padding:50px 0;font-size:20px;}
+
+  /* view toggling */
+  [hidden]{display:none !important;}
+
+  @media(max-width:760px){
+    .featured__grid{grid-template-columns:1fr;}
+    .featured__img{min-height:240px;}
+    .featured__body{padding:38px 26px 44px;}
+    .shelf-head{align-items:center;}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+  :focus-visible{outline:2.5px solid var(--tawny);outline-offset:3px;border-radius:3px;}
+</style>
+</head>
+
+<body>
+<!-- Your shared nav/footer are injected by nav.js, same as every other page. -->
+
+<main>
+
+  <!-- ============ BROWSE VIEW ============ -->
+  <div id="browse">
+
+  <!-- HERO — full branded banner; the wordmark, tagline, and "rooted in beauty…" are part of the artwork -->
+  <header class="hero">
+    <img class="hero__img" src="/images/hero-curriculum.jpg"
+         alt="Delight & Savor — a Charlotte Mason-inspired curriculum cultivating attentive hearts, thoughtful minds, and a lifelong love of learning." />
+  </header>
+  <div class="hero-cta">
+    <a class="btn btn--primary" href="#shelf-section">Browse the courses</a>
+  </div>
+
+    <!-- LEVELS -->
+    <section class="levels wrap">
+      <div class="levels__head">
+        <span class="eyebrow">One method, every level</span>
+        <h2>Find it. Follow it. Frame it.</h2>
+        <p class="lede">Every course runs on living books and narration — and underneath that gentle surface is real rigor. Students work in close literary and comparative analysis, read through historical and critical lenses, and learn to build an argument that holds. Wonder and analysis grow side by side — never one before the other.</p>
+      </div>
+      <div class="level-words">
+        <button class="level-word" data-level="summer">
+          <span class="big">Summer Foundations</span>
+          <span class="sub">A gentle start</span>
+        </button>
+        <button class="level-word" data-level="middle">
+          <span class="big">Middle School</span>
+          <span class="sub">Living Stories &amp; Sentences</span>
+        </button>
+        <button class="level-word" data-level="high">
+          <span class="big">High School</span>
+          <span class="sub">Living Literature &amp; Language</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- SHELF / CAROUSEL -->
+    <section class="shelf-section" id="shelf-section">
+      <div class="shelf-head">
+        <div>
+          <span class="eyebrow">On the shelf</span>
+          <h2>Pull one down and look closer</h2>
+        </div>
+        <div class="shelf-arrows">
+          <button class="arrow" id="shelfPrev" aria-label="Scroll left">&lsaquo;</button>
+          <button class="arrow" id="shelfNext" aria-label="Scroll right">&rsaquo;</button>
+        </div>
+      </div>
+      <div class="shelf-rail">
+        <span class="shelf-fade shelf-fade--l"></span>
+        <span class="shelf-fade shelf-fade--r"></span>
+        <div class="shelf" id="shelf"><!-- rendered --></div>
+      </div>
+      <div class="shelf-cta">
+        <button class="btn btn--primary" id="shopAll">Shop all curriculum</button>
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section class="featured">
+      <div class="featured__grid" id="featured"><!-- rendered --></div>
+    </section>
+
+  </div>
+
+  <!-- ============ CATALOG VIEW (Shop All) ============ -->
+  <div id="catalog" class="catalog wrap" hidden>
+    <div class="catalog__top">
+      <button class="back-link" id="backBtn">&lsaquo; Back to featured</button>
+    </div>
+    <h2 tabindex="-1">All Curriculum</h2>
+    <div class="controls">
+      <div class="filters" id="filters" role="group" aria-label="Filter by level">
+        <button class="chip" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" data-filter="summer" aria-pressed="false">Summer</button>
+        <button class="chip" data-filter="middle" aria-pressed="false">Middle School</button>
+        <button class="chip" data-filter="high" aria-pressed="false">High School</button>
+      </div>
+      <div class="sort">
+        <label for="sortSel">Sort by</label>
+        <select id="sortSel">
+          <option value="featured">Featured</option>
+          <option value="az">Title A–Z</option>
+          <option value="level">Level</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid" id="grid"><!-- rendered --></div>
+  </div>
+
+</main>
+
+<script src="/nav.js"></script>
+
+<script>
+/* =====================================================================
+   EDIT HERE — one list runs the whole page.
+   ===================================================================== */
+const FEATURED = "summer-foundations";
+
+const STATUS_LABEL = {
+  go:"Enrolling now", self:"Self-paced", avail:"Available", soon:"Coming soon"
+};
+const LEVEL_LABEL = {
+  summer:"Summer Foundations", middle:"Middle School", high:"High School"
+};
+
+const COURSES = [
+  {
+    id:"summer-foundations",
+    title:"Summer Foundations",
+    author:"Of Mice and Men",
+    level:"summer",
+    meta:"Steinbeck · 6 weeks",
+    status:"go",
+    cloth:"#6B5240",
+    image:"/images/of-mice-and-men.png",
+    link:"/Summer-Foundations-Sales-Page.html",
+    blurb:"A gentle six-week on-ramp into close reading and narration.",
+    spotlight:{
+      image:"/images/of-mice-and-men.png",
+      eyebrow:"Enrolling now · begins late June",
+      heading:"Meet Summer Foundations",
+      body:"Six unhurried weeks with Steinbeck’s <em>Of Mice and Men</em> — a character thread, a Relation Study, a haiku, and a capstone that gathers the summer’s noticing into knowing. Delivered through the In&nbsp;the&nbsp;Margin app, paper and all.",
+      cta:"Take a deeper look",
+      ctaHref:"/Summer-Foundations-Sales-Page.html"
+    }
+  },
+  {
+    id:"art-of-attention",
+    title:"Art of Attention",
+    author:"Poetry & The Old Man and the Sea",
+    level:"high",
+    meta:"Year-long · In the Margin",
+    status:"avail",
+    cloth:"#4E6149",
+    image:"/images/poetry-old-man.png",
+    link:"https://in-the-margin.netlify.app/",
+    blurb:"A year of poetry and Hemingway — close reading, narration, the Great Conversation."
+  },
+  {
+    id:"macbeth",
+    title:"Macbeth",
+    author:"Shakespeare",
+    level:"high",
+    meta:"The Tragic Hero",
+    status:"avail",
+    cloth:"#37322B",
+    image:"/images/macbeth.png",
+    link:"#",
+    blurb:"Ambition and disordered loves, read beside Augustine."
+  },
+  {
+    id:"wuthering-heights",
+    title:"Wuthering Heights",
+    author:"Emily Brontë",
+    level:"high",
+    meta:"The Anti-Hero",
+    status:"avail",
+    cloth:"#65766A",
+    image:"/images/wuthering-heights.png",
+    link:"#",
+    blurb:"Wild, strange, unforgettable — the anti-hero studied in full."
+  },
+  {
+    id:"lss",
+    title:"A Place to Belong",
+    author:"Living Stories & Sentences · Series 1",
+    level:"middle",
+    meta:"32 weeks · self-paced",
+    status:"self",
+    cloth:"#5B7FA6",
+    image:"",
+    link:"#",
+    blurb:"Living literature and sentence-craft for the middle years, fully self-paced."
+  },
+  {
+    id:"old-man",
+    title:"The Old Man and the Sea",
+    author:"Hemingway",
+    level:"high",
+    meta:"Companion study",
+    status:"soon",
+    cloth:"#7C7A52",
+    image:"",
+    link:"https://in-the-margin.netlify.app/old-man-preview.html",
+    blurb:"Hemingway’s sea, scaffolded for honors-ready writing. Coming Fall 2026."
+  },
+  {
+    id:"midsummer",
+    title:"A Midsummer Night’s Dream",
+    author:"Shakespeare",
+    level:"high",
+    meta:"Comedy",
+    status:"soon",
+    cloth:"#8B6B8B",
+    image:"/images/midsummer.png",
+    link:"https://in-the-margin.netlify.app/midsummer-preview.html",
+    blurb:"Shakespeare’s comedy, taught the Charlotte Mason way. Coming Jan 2027."
+  }
+];
+
+/* ---------- helpers ---------- */
+const esc = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const external = href => /^https?:\/\//.test(href);
+
+function coverHTML(c){
+  return `<div class="cover cover--cloth" style="background-color:${esc(c.cloth)}">
+    <div class="ct">${esc(c.title)}</div>
+    <div class="cr"></div>
+    <div class="ca">${esc(c.author||"")}</div>
+    ${c.image ? `<img class="cover__img" src="${esc(c.image)}" alt="${esc(c.title)} cover" loading="lazy" onerror="this.remove()">` : ``}
+  </div>`;
+}
+function linkAttrs(link){
+  return external(link) ? ` target="_blank" rel="noopener"` : "";
+}
+
+/* ---------- render shelf ---------- */
+function renderShelf(){
+  document.getElementById("shelf").innerHTML = COURSES.map(c => `
+    <a class="card" href="${esc(c.link)}"${linkAttrs(c.link)}>
+      ${coverHTML(c)}
+      <span class="pill">${esc(LEVEL_LABEL[c.level])}</span>
+      <div class="card__title">${esc(c.title)}</div>
+      <div class="card__meta">${esc(c.meta)}</div>
+    </a>`).join("");
+}
+
+/* ---------- render featured spotlight ---------- */
+function renderFeatured(){
+  const c = COURSES.find(x => x.id === FEATURED) || COURSES[0];
+  const s = c.spotlight || {
+    eyebrow:STATUS_LABEL[c.status], heading:c.title, body:c.blurb,
+    cta:"Take a deeper look", ctaHref:c.link
+  };
+  const fimg = (c.spotlight && c.spotlight.image) || c.image || "";
+  const bg = fimg
+    ? `background-image:linear-gradient(135deg, rgba(78,97,73,.20), rgba(55,50,43,.42)), url('${esc(fimg)}');background-color:${esc(c.cloth)};background-size:cover;background-position:center`
+    : `background-color:${esc(c.cloth)}`;
+  document.getElementById("featured").innerHTML = `
+    <div class="featured__img" style="${bg}"></div>
+    <div class="featured__body">
+      <span class="eyebrow">${esc(s.eyebrow)}</span>
+      <h2>${esc(s.heading)}</h2>
+      <p>${s.body}</p>
+      <a class="btn btn--primary" href="${esc(s.ctaHref)}"${linkAttrs(s.ctaHref)}>${esc(s.cta)} →</a>
+    </div>`;
+}
+
+/* ---------- render catalog grid ---------- */
+let activeFilter = "all";
+function renderGrid(){
+  let list = COURSES.filter(c => activeFilter === "all" ? true : c.level === activeFilter);
+  const sort = document.getElementById("sortSel").value;
+  if (sort === "az") list = [...list].sort((a,b)=>a.title.localeCompare(b.title));
+  else if (sort === "level"){
+    const order = {summer:0, middle:1, high:2};
+    list = [...list].sort((a,b)=> order[a.level]-order[b.level] || a.title.localeCompare(b.title));
+  }
+  const grid = document.getElementById("grid");
+  if (!list.length){ grid.innerHTML = `<p class="empty">No courses here yet — check back soon.</p>`; return; }
+  grid.innerHTML = list.map(c => `
+    <a class="gcard" href="${esc(c.link)}"${linkAttrs(c.link)}>
+      ${coverHTML(c)}
+      <span class="status status--${c.status}">${esc(STATUS_LABEL[c.status])}</span>
+      <div class="gcard__level">${esc(LEVEL_LABEL[c.level])}</div>
+      <div class="gcard__title">${esc(c.title)}</div>
+      <div class="gcard__blurb">${esc(c.blurb)}</div>
+    </a>`).join("");
+}
+
+/* ---------- view toggle ---------- */
+const browse = document.getElementById("browse");
+const catalog = document.getElementById("catalog");
+function showCatalog(filter){
+  if (filter){ setFilter(filter); }
+  browse.hidden = true;
+  catalog.hidden = false;
+  window.scrollTo(0, 0);
+  catalog.querySelector("h2").focus?.();
+}
+function showBrowse(){
+  catalog.hidden = true;
+  browse.hidden = false;
+}
+function setFilter(f){
+  activeFilter = f;
+  document.querySelectorAll(".chip").forEach(ch =>
+    ch.setAttribute("aria-pressed", ch.dataset.filter === f ? "true" : "false"));
+  renderGrid();
+}
+
+/* ---------- shelf scrolling ---------- */
+function setupShelf(){
+  const shelf = document.getElementById("shelf");
+  const step = () => Math.min(shelf.clientWidth * 0.8, 460);
+  document.getElementById("shelfPrev").onclick = () => shelf.scrollBy({left:-step(), behavior:"smooth"});
+  document.getElementById("shelfNext").onclick = () => shelf.scrollBy({left: step(), behavior:"smooth"});
+  const upd = () => {
+    document.getElementById("shelfPrev").disabled = shelf.scrollLeft < 8;
+    document.getElementById("shelfNext").disabled =
+      shelf.scrollLeft + shelf.clientWidth >= shelf.scrollWidth - 8;
+  };
+  shelf.addEventListener("scroll", upd, {passive:true});
+  window.addEventListener("resize", upd);
+  upd();
+}
+
+/* ---------- wire up ---------- */
+renderShelf();
+renderFeatured();
+renderGrid();
+setupShelf();
+
+document.getElementById("shopAll").onclick = () => showCatalog("all");
+document.getElementById("backBtn").onclick = showBrowse;
+document.getElementById("sortSel").onchange = renderGrid;
+document.querySelectorAll(".chip").forEach(ch =>
+  ch.addEventListener("click", () => setFilter(ch.dataset.filter)));
+document.querySelectorAll(".level-word").forEach(w =>
+  w.addEventListener("click", () => showCatalog(w.dataset.level)));
+</script>
+</body>
+</html>
