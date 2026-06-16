@@ -56,6 +56,9 @@ h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--ink);line-height
 .hero{padding:54px 0 40px;}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:start;}
 .gallery .main{min-height:430px;}
+.thumb{cursor:pointer;transition:transform .15s, box-shadow .15s;}
+.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px -12px rgba(55,50,43,.5);}
+.thumb.active{outline:2px solid var(--gold);outline-offset:1px;}
 .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px;}
 .thumbs .placeholder{min-height:78px;padding:10px;} .thumbs .placeholder span{font-size:9px;}
 .pill{display:inline-block;font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
@@ -235,12 +238,13 @@ details[open] summary .mk{transform:rotate(45deg);}
 <!-- HERO -->
 <section class="hero"><div class="wrap"><div class="hero-grid">
  <div class="gallery">
-    <figure class="imgspot" style="--h:430px"><img src="/images/hero-flatlay.jpg" alt="Flat-lay — the guide, a journal, an open notebook" onload="this.closest('.imgspot').classList.add('has-img')"><span class="imgspot-lbl">Flat-lay — the guide, a journal, an open notebook</span></figure>
+    <figure class="imgspot" style="--h:430px"><img id="mainShot" src="/images/your-flatlay.jpg" alt="Flat-lay — the guide, a journal, an open notebook" onload="this.closest('.imgspot').classList.add('has-img')"><span class="imgspot-lbl">Flat-lay — the guide, a journal, an open notebook</span></figure>
     <div class="thumbs">
-      <figure class="imgspot" style="--h:88px"><img src="/images/preview-app-home.png" onload="this.closest('.imgspot').classList.add('has-img')"><span class="imgspot-lbl">Interior spread</span></figure>
-      <figure class="imgspot" style="--h:88px"><img src="/images/preview-course-week.jpg" onload="this.closest('.imgspot').classList.add('has-img')"><span class="imgspot-lbl">Narration page</span></figure>
-      <figure class="imgspot" style="--h:88px"><img src="/images/preview-journal-passage.jpg" onload="this.closest('.imgspot').classList.add('has-img')"><span class="imgspot-lbl">Scope sheet</span></figure>
+      <figure class="imgspot thumb" style="--h:88px"><img src="/images/preview-app-home.png" onload="this.closest('.imgspot').classList.add('has-img')"><span class="imgspot-lbl">Interior</span></figure>
+      <figure class="imgspot thumb" style="--h:88px"><img src="/images/preview-course-week.jpg" onload="this.closest('.imgspot').classList.add('has-img')"><span class="imgspot-lbl">Narration</span></figure>
+      <figure class="imgspot thumb" style="--h:88px"><img src="/images/preview-journal-passage.jpg" onload="this.closest('.imgspot').classList.add('has-img')"><span class="imgspot-lbl">Scope</span></figure>
     </div>
+  </div>
   </div>
   <div class="buyside">
     <span class="pill">Grades 8–11 · Advanced 7th Welcome</span>
@@ -401,7 +405,7 @@ details[open] summary .mk{transform:rotate(45deg);}
 <!-- TRUST / ABOUT -->
 <section class="band alt" id="about"><div class="wrap">
   <div class="trust">
-    <figure class="imgspot" style="--h:300px"><img  alt="Photo of you" onload="this.closest('.imgspot').classList.add('has-img')"><span class="imgspot-lbl">Photo of you<em>paste your Cloudinary URL in src=&quot;&quot;</em></span></figure>
+    <figure class="imgspot" style="--h:300px"><img src="https://res.cloudinary.com/dwdbmowur/image/upload/v1774316709/IMG_5414_nmmunq.jpg" alt="Kim Prieto" onload="this.closest('.imgspot').classList.add('has-img')"><span class="imgspot-lbl">Photo of you</span></figure>
     <div class="copy">
       <span class="eyebrow">Who Makes This</span>
       <h2>Built by a teacher, on a ranch.</h2>
@@ -451,6 +455,20 @@ details[open] summary .mk{transform:rotate(45deg);}
   <div class="fine">© Delight &amp; Savor · Texas Hill Country · delightandsavor.com</div>
 </footer>
 
+<script>
+(function(){
+  var main=document.getElementById('mainShot');
+  document.querySelectorAll('.thumb img').forEach(function(t){
+    t.addEventListener('click',function(){
+      main.src=this.src;
+      main.closest('.imgspot').classList.add('has-img');
+      document.querySelectorAll('.thumb').forEach(function(f){f.classList.remove('active');});
+      this.closest('.thumb').classList.add('active');
+    });
+  });
+})();
+</script>
+  
 <script>
 (function(){
   var sel=document.getElementById('license'), now=document.getElementById('priceNow'),
