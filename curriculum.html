@@ -6,9 +6,7 @@
 <title>The Curriculum · Delight &amp; Savor</title>
 <meta name="description" content="Charlotte Mason living-literature courses from Delight & Savor — a gentle summer start, self-paced middle school, and honors-ready high school." />
 
-<!-- favicon (same files your other pages use) -->
-<link rel="icon" type="image/png" href="images/ds_logo-rounded-512.png" />
-<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<!-- favicon handled by nav.js (same as every other page) -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -227,9 +225,6 @@
   }
   .featured__img{
     min-height:380px;background-size:cover;background-position:center;
-    background-image:
-      linear-gradient(135deg, rgba(78,97,73,.25), rgba(55,50,43,.45)),
-      url("images/featured.jpg");
     background-color:var(--sage-deep);
   }
   .featured__body{padding:54px 52px;}
@@ -341,7 +336,7 @@
 
   <!-- HERO — full branded banner; the wordmark, tagline, and "rooted in beauty…" are part of the artwork -->
   <header class="hero">
-    <img class="hero__img" src="images/hero-curriculum.jpg"
+    <img class="hero__img" src="/images/hero-curriculum.jpg"
          alt="Delight & Savor — a Charlotte Mason-inspired curriculum cultivating attentive hearts, thoughtful minds, and a lifelong love of learning." />
   </header>
   <div class="hero-cta">
@@ -379,8 +374,8 @@
           <h2>Pull one down and look closer</h2>
         </div>
         <div class="shelf-arrows">
-          <button class="arrow" id="shelfPrev" aria-label="Scroll left">‹</button>
-          <button class="arrow" id="shelfNext" aria-label="Scroll right">›</button>
+          <button class="arrow" id="shelfPrev" aria-label="Scroll left">&lsaquo;</button>
+          <button class="arrow" id="shelfNext" aria-label="Scroll right">&rsaquo;</button>
         </div>
       </div>
       <div class="shelf-rail">
@@ -403,7 +398,7 @@
   <!-- ============ CATALOG VIEW (Shop All) ============ -->
   <div id="catalog" class="catalog wrap" hidden>
     <div class="catalog__top">
-      <button class="back-link" id="backBtn">‹ Back to featured</button>
+      <button class="back-link" id="backBtn">&lsaquo; Back to featured</button>
     </div>
     <h2 tabindex="-1">All Curriculum</h2>
     <div class="controls">
@@ -427,20 +422,11 @@
 
 </main>
 
-<script src="nav.js"></script>
+<script src="/nav.js"></script>
 
 <script>
 /* =====================================================================
    EDIT HERE — one list runs the whole page.
-   Add a course = add one object. Both the shelf and the Shop-All grid
-   read from this. To change the big spotlight each season, change FEATURED.
-   ---------------------------------------------------------------------
-   level:   "summer" | "middle" | "high"
-   status:  "go" (enrolling) | "self" (self-paced) | "avail" | "soon"
-   image:   path to your cover art. Until that file exists, the clothbound
-            placeholder (cloth color + title) shows automatically — nothing
-            breaks before or after you add covers. Portrait (3:4) looks best.
-   link:    where the card goes when clicked (your detail page)
    ===================================================================== */
 const FEATURED = "summer-foundations";
 
@@ -460,16 +446,16 @@ const COURSES = [
     meta:"Steinbeck · 6 weeks",
     status:"go",
     cloth:"#6B5240",
-    image:"images/covers/summer-foundations.png",
-    link:"Summer-Foundations-Sales-Page.html",
+    image:"/images/of-mice-and-men.png",
+    link:"/Summer-Foundations-Sales-Page.html",
     blurb:"A gentle six-week on-ramp into close reading and narration.",
     spotlight:{
-      image:"images/spotlight-summer.jpg",  /* a wide photo for the big panel; falls back to the cover, then cloth */
+      image:"/images/of-mice-and-men.png",
       eyebrow:"Enrolling now · begins late June",
       heading:"Meet Summer Foundations",
       body:"Six unhurried weeks with Steinbeck’s <em>Of Mice and Men</em> — a character thread, a Relation Study, a haiku, and a capstone that gathers the summer’s noticing into knowing. Delivered through the In&nbsp;the&nbsp;Margin app, paper and all.",
       cta:"Take a deeper look",
-      ctaHref:"Summer-Foundations-Sales-Page.html"
+      ctaHref:"/Summer-Foundations-Sales-Page.html"
     }
   },
   {
@@ -480,7 +466,7 @@ const COURSES = [
     meta:"Year-long · In the Margin",
     status:"avail",
     cloth:"#4E6149",
-    image:"images/covers/art-of-attention.png",
+    image:"/images/poetry-old-man.png",
     link:"https://in-the-margin.netlify.app/",
     blurb:"A year of poetry and Hemingway — close reading, narration, the Great Conversation."
   },
@@ -492,7 +478,7 @@ const COURSES = [
     meta:"The Tragic Hero",
     status:"avail",
     cloth:"#37322B",
-    image:"images/covers/macbeth.png",
+    image:"/images/macbeth.png",
     link:"#",
     blurb:"Ambition and disordered loves, read beside Augustine."
   },
@@ -504,7 +490,7 @@ const COURSES = [
     meta:"The Anti-Hero",
     status:"avail",
     cloth:"#65766A",
-    image:"images/covers/wuthering-heights.png",
+    image:"/images/wuthering-heights.png",
     link:"#",
     blurb:"Wild, strange, unforgettable — the anti-hero studied in full."
   },
@@ -516,7 +502,7 @@ const COURSES = [
     meta:"32 weeks · self-paced",
     status:"self",
     cloth:"#5B7FA6",
-    image:"images/covers/a-place-to-belong.png",
+    image:"",
     link:"#",
     blurb:"Living literature and sentence-craft for the middle years, fully self-paced."
   },
@@ -528,7 +514,7 @@ const COURSES = [
     meta:"Companion study",
     status:"soon",
     cloth:"#7C7A52",
-    image:"images/covers/old-man-and-the-sea.png",
+    image:"",
     link:"https://in-the-margin.netlify.app/old-man-preview.html",
     blurb:"Hemingway’s sea, scaffolded for honors-ready writing. Coming Fall 2026."
   },
@@ -540,7 +526,7 @@ const COURSES = [
     meta:"Comedy",
     status:"soon",
     cloth:"#8B6B8B",
-    image:"images/covers/midsummer.png",
+    image:"/images/midsummer.png",
     link:"https://in-the-margin.netlify.app/midsummer-preview.html",
     blurb:"Shakespeare’s comedy, taught the Charlotte Mason way. Coming Jan 2027."
   }
