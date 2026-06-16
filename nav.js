@@ -1,14 +1,11 @@
 /* ─── Delight & Savor · Shared Nav ───────────────────────────
    Injects header + footer, marks active page, handles mobile menu.
 ──────────────────────────────────────────────────────────── */
-
 (function () {
   const page = location.pathname.split('/').pop() || 'index.html';
-
   function isActive(href) {
     return page === href || page === href.replace('.html','') ? ' class="active"' : '';
   }
-
   /* ── NAV HTML ── */
   const navHTML = `
 <nav>
@@ -25,7 +22,7 @@
     <li><a href="teachers-notebook.html"${isActive('teachers-notebook.html')}>Teacher&rsquo;s Notebook</a></li>
     <li><a href="faq.html"${isActive('faq.html')}>FAQ</a></li>
     <li><a href="conversation-quilt.html"${isActive('conversation-quilt.html')}>Conversation Quilt</a></li>
-    <li><a href="curriculum.html" class="nav-cta">Shop Now</a></li>
+    <li><a href="Shop.html" class="nav-cta">Shop Now</a></li>
   </ul>
   <div class="nav-social">
     <a href="https://instagram.com/Kim.delightandsavor" target="_blank" rel="noopener">Instagram</a>
@@ -46,9 +43,8 @@
   <a href="https://instagram.com/Kim.delightandsavor" target="_blank" rel="noopener" onclick="toggleMenu()">Instagram</a>
   <a href="https://delightandsavor.substack.com" target="_blank" rel="noopener" onclick="toggleMenu()">Substack</a>
   <div class="mobile-divider"></div>
-  <a href="curriculum.html" class="mobile-cta" onclick="toggleMenu()">Shop Now &rarr;</a>
+  <a href="Shop.html" class="mobile-cta" onclick="toggleMenu()">Shop Now &rarr;</a>
 </div>`;
-
  /* ── INJECT FAVICON + APPLE TOUCH ICON ── */
 [
   { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/favicon-32x32.png' },
@@ -87,7 +83,6 @@
     .mobile-nav a.mobile-cta { color: #E8D5B0; font-weight: 600; }
     .mobile-nav .mobile-divider { height: 1px; background: rgba(255,255,255,0.12); margin: 0.5rem 0; }
     @media (max-width: 720px) { .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; } }`;
-
   /* ── FOOTER HTML ── */
   const footerHTML = `
 <footer>
@@ -110,7 +105,7 @@
         <li><a href="curriculum.html">Curriculum</a></li>
         <li><a href="teachers-notebook.html">Teacher&rsquo;s Notebook</a></li>
         <li><a href="conversation-quilt.html">Conversation Quilt</a></li>
-        <li><a href="https://delightnsavor.gumroad.com/l/xtqtpv" target="_blank" rel="noopener">Shop</a></li>
+        <li><a href="Shop.html">Shop</a></li>
         <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
@@ -128,22 +123,18 @@
     <span><a href="faq.html#returns">Returns Policy</a> &nbsp;&middot;&nbsp; <a href="faq.html#contact">Contact</a></span>
   </div>
 </footer>`;
-
   /* ── INJECT NAV CSS ── */
   const style = document.createElement('style');
   style.textContent = navCSS;
   document.head.appendChild(style);
-
   /* ── INJECT NAV ── */
   const navWrap = document.createElement('div');
   navWrap.innerHTML = navHTML;
   document.body.insertBefore(navWrap, document.body.firstChild);
-
   /* ── INJECT FOOTER ── */
   const footerWrap = document.createElement('div');
   footerWrap.innerHTML = footerHTML;
   document.body.appendChild(footerWrap);
-
   /* ── MOBILE MENU ── */
   window.toggleMenu = function() {
     const btn = document.getElementById('hamburger');
@@ -153,7 +144,6 @@
       nav.classList.toggle('open');
     }
   };
-
   document.addEventListener('click', function(e) {
     const btn = document.getElementById('hamburger');
     const nav = document.getElementById('mobile-nav');
@@ -162,5 +152,4 @@
       nav.classList.remove('open');
     }
   });
-
 })();
