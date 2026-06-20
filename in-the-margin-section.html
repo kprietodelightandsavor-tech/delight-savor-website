@@ -182,9 +182,28 @@
   @media (prefers-reduced-motion:reduce){
     .itm-body>*{opacity:1;transform:none;animation:none;}
   }
+     /* site nav */
+  nav.site-nav { background: #37322B; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 0 rgba(0,0,0,.18); font-family: 'Jost', system-ui, sans-serif; }
+  .site-nav .nav-logo-text { font-family: 'Cormorant Garamond', serif; color: #FAF6EE; font-size: 1rem; letter-spacing: 0.04em; text-decoration: none; }
+  .site-nav .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; margin: 0; padding: 0; }
+  .site-nav .nav-links a { color: rgba(250,249,246,0.82); font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; text-decoration: none; transition: color 0.2s; }
+  .site-nav .nav-links a:hover, .site-nav .nav-links a.active { color: #E2C79A; }
+  .site-nav .nav-cta { background: #BE9457; color: #37322B !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; }
+  @media (max-width: 720px) { .site-nav .nav-links { gap: 1rem; font-size: 0.7rem; } }
 </style>
 </head>
 <body style="margin:0;">
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo-text">Delight &amp; Savor</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="philosophy.html">Philosophy</a></li>
+    <li><a href="curriculum.html">Curriculum</a></li>
+    <li><a href="podcast.html" class="active">Podcast</a></li>
+    <li><a href="Shop.html" class="nav-cta">Shop Now</a></li>
+  </ul>
+</nav>
 
 <!-- ITM:START -->
 <section class="itm-podcast" aria-label="In the Margin podcast">
