@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>In the Margin — Podcast</title>
+
+<!-- ============================================================
+     IN THE MARGIN — podcast section for the Delight & Savor site
+     ------------------------------------------------------------
+     HOW TO USE:
+     • Easiest: use this whole file as its own page (e.g. podcast.html)
+       and add a "Podcast" link to your nav.
+     • Or: copy everything between  <!-- ITM:START -->  and
+       <!-- ITM:END -->  and paste it into an existing page,
+       then add the font <link> below into that page's <head>.
+
+     THE ONE THING TO DO:
+     Find  <!-- PASTE RSS.COM EMBED CODE HERE -->  below and drop in
+     the embed code from RSS.com (Distribution / share → Embed).
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ---- scoped to .itm-podcast so it won't collide with your site CSS ---- */
+  .itm-podcast{
+    --cream:#F4ECDB;        /* page ground */
+    --cream-deep:#EFE5CF;   /* card ground */
+    --slate:#403A30;        /* primary text */
+    --umber:#6A5A45;        /* secondary text */
+    --sage:#8A9A7A;         /* botanical accent */
+    --sage-deep:#6C7C60;
+    --gold:#C19B61;         /* margin rule + wordmark */
+    --rule:#D9C9A6;
+
+    background:var(--cream);
+    color:var(--slate);
+    font-family:"Crimson Pro",Georgia,serif;
+    font-size:19px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding:0;
+  }
+  .itm-podcast *{box-sizing:border-box;}
+
+  /* the page sits to the right of a manuscript margin */
+  .itm-wrap{
+    max-width:980px;
+    margin:0 auto;
+    padding:84px 40px 96px 0;
+    display:grid;
+    grid-template-columns:150px 1fr;   /* [ margin ] [ content ] */
+  }
+
+  /* the margin itself — a single gold rule with room for marginalia */
+  .itm-margin{
+    border-right:2px solid var(--gold);
+    padding:6px 26px 0 16px;
+    position:relative;
+  }
+  .itm-margin .note{
+    font-family:"Caveat",cursive;
+    font-size:25px;
+    line-height:1.25;
+    color:var(--sage-deep);
+    transform:rotate(-3deg);
+    margin-bottom:54px;
+  }
+  .itm-margin .note .arrow{display:block;font-size:22px;color:var(--gold);}
+
+  .itm-body{padding-left:52px;}
+
+  .itm-eyebrow{
+    font-family:"Crimson Pro",serif;
+    text-transform:uppercase;
+    letter-spacing:.28em;
+    font-size:13px;
+    color:var(--gold);
+    margin:0 0 14px;
+  }
+  .itm-title{
+    font-family:"Cormorant Garamond",serif;
+    font-weight:600;
+    font-size:clamp(48px,8vw,76px);
+    line-height:1.02;
+    letter-spacing:.01em;
+    color:var(--slate);
+    margin:0;
+  }
+  .itm-sub{
+    font-family:"Cormorant Garamond",serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(22px,3.5vw,28px);
+    color:var(--umber);
+    margin:6px 0 28px;
+  }
+  .itm-intro{max-width:54ch;margin:0 0 36px;color:var(--slate);}
+
+  /* Start Here — the cohort signpost, set like a note pinned to the page */
+  .itm-start{
+    background:var(--cream-deep);
+    border:1px solid var(--rule);
+    border-left:5px solid var(--sage);
+    border-radius:3px;
+    padding:24px 28px;
+    margin:0 0 40px;
+    max-width:56ch;
+  }
+  .itm-start h3{
+    font-family:"Cormorant Garamond",serif;
+    font-weight:600;
+    font-size:26px;
+    margin:0 0 10px;
+    color:var(--sage-deep);
+  }
+  .itm-start p{margin:0 0 8px;}
+  .itm-start p:last-child{margin-bottom:0;}
+  .itm-start .lead{color:var(--umber);font-style:italic;}
+  /* edit the episode number each year ↓ */
+  .itm-start b{color:var(--slate);font-weight:600;}
+
+  /* the player */
+  .itm-player{margin:0 0 30px;max-width:680px;}
+  .itm-player-placeholder{
+    border:2px dashed var(--rule);
+    border-radius:6px;
+    padding:40px 28px;
+    text-align:center;
+    color:var(--umber);
+    font-style:italic;
+    background:rgba(255,255,255,.35);
+  }
+
+  /* listen-on links */
+  .itm-listen{
+    display:flex;flex-wrap:wrap;gap:14px;align-items:center;
+    margin-top:6px;
+  }
+  .itm-listen a{
+    font-family:"Crimson Pro",serif;
+    font-size:15px;
+    letter-spacing:.04em;
+    text-decoration:none;
+    color:var(--slate);
+    border:1px solid var(--gold);
+    border-radius:30px;
+    padding:9px 20px;
+    transition:background .18s ease,color .18s ease;
+  }
+  .itm-listen a:hover,
+  .itm-listen a:focus-visible{
+    background:var(--gold);
+    color:var(--cream);
+  }
+  .itm-listen a:focus-visible{outline:2px solid var(--slate);outline-offset:2px;}
+
+  /* gentle entrance */
+  .itm-body>*{opacity:0;transform:translateY(10px);animation:itm-rise .7s ease forwards;}
+  .itm-body>*:nth-child(2){animation-delay:.05s}
+  .itm-body>*:nth-child(3){animation-delay:.10s}
+  .itm-body>*:nth-child(4){animation-delay:.15s}
+  .itm-body>*:nth-child(5){animation-delay:.20s}
+  .itm-body>*:nth-child(6){animation-delay:.25s}
+  @keyframes itm-rise{to{opacity:1;transform:none;}}
+
+  /* ---- mobile: the margin folds to a slim top accent ---- */
+  @media (max-width:720px){
+    .itm-wrap{grid-template-columns:1fr;padding:54px 22px 70px;}
+    .itm-margin{
+      border-right:none;
+      border-top:2px solid var(--gold);
+      padding:18px 0 4px;
+      display:flex;gap:22px;flex-wrap:wrap;
+    }
+    .itm-margin .note{margin-bottom:0;transform:rotate(-2deg);font-size:22px;}
+    .itm-body{padding-left:0;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .itm-body>*{opacity:1;transform:none;animation:none;}
+  }
+</style>
+</head>
+<body style="margin:0;">
+
+<!-- ITM:START -->
+<section class="itm-podcast" aria-label="In the Margin podcast">
+  <div class="itm-wrap">
+
+    <!-- the manuscript margin, with handwritten notes -->
+    <aside class="itm-margin" aria-hidden="true">
+      <p class="note"><span class="arrow">↳</span> listen in order</p>
+      <p class="note"><span class="arrow">✎</span> new episodes added through the year</p>
+    </aside>
+
+    <div class="itm-body">
+      <p class="itm-eyebrow">The Podcast</p>
+      <h2 class="itm-title">In the Margin</h2>
+      <p class="itm-sub">A literature podcast — with Kim Prieto</p>
+
+      <p class="itm-intro">
+        Where we slow down, pay close attention, and let good books do their quiet
+        work on us. Short episodes on how — and why — we read the way we do, made
+        for my students first and for anyone who loves a good book.
+      </p>
+
+      <!-- cohort signpost: edit the episode number at the start of each year -->
+      <div class="itm-start">
+        <h3>Start here</h3>
+        <p class="lead">Listen in order — each episode builds on the last.</p>
+        <p><b>New this year?</b> Begin with Episode 1.</p>
+        <p><b>Returning students</b> — pick up where you left off
+           <em>(third year: start at Episode ___)</em>.</p>
+      </div>
+
+      <!-- ============ PLAYER (auto-shows your latest episode) ============ -->
+      <div class="itm-player">
+        <iframe src="https://player.rss.com/in-the-margin/latest?theme=light&v=2"
+                width="100%" height="202px" title="In the Margin" frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen scrolling="no">
+          <a href="https://rss.com/podcasts/in-the-margin/latest/">In the Margin | RSS.com</a>
+        </iframe>
+      </div>
+
+      <!-- update these links once Apple & Spotify list the show -->
+      <div class="itm-listen">
+        <a href="#" target="_blank" rel="noopener">Apple Podcasts</a>
+        <a href="#" target="_blank" rel="noopener">Spotify</a>
+        <a href="#" target="_blank" rel="noopener">All episodes</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ITM:END -->
+
+</body>
+</html>
