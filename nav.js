@@ -10,7 +10,7 @@
   const navHTML = `
 <nav>
   <a href="index.html" class="nav-logo-wrap">
-    <img src="images/ds_icon.png" alt="Delight &amp; Savor" class="nav-logo-img" />
+    <img src="images/images/web-app-manifest-192x192.png" alt="Delight &amp; Savor" class="nav-logo-img" />
     <div class="nav-logo-text">
       Delight &amp; Savor
       <span>Beauty. Meaning. Connection.</span>
@@ -94,7 +94,6 @@
     .nav-social a { color: #8A8073; }
     .nav-social a:hover { color: #C9A363; }
     .hamburger span { background: #3F3732; }
-    .mobile-nav { background: #F5F1E8; border-top: 1px solid #E6DECF; }
     .mobile-nav a { color: #5C544A; border-bottom: 1px solid #E6DECF; }
     .mobile-nav a:hover, .mobile-nav a.mobile-cta { color: #C9A363; }
     .mobile-nav .mobile-divider { background: #E6DECF; }
@@ -124,7 +123,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="images/ds_icon.png" alt="Delight &amp; Savor" class="footer-logo" />
+      <img src="images/images/web-app-manifest-192x192.png" alt="Delight &amp; Savor" class="footer-logo" />
       <p>Charlotte Mason upper-level literature and language arts for the student who is ready to read deeply.</p>
       <div class="footer-email">
         <p>From the Ranch &amp; the Desk &mdash; one monthly letter.</p>
