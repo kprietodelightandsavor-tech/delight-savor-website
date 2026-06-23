@@ -10,7 +10,7 @@
   const navHTML = `
 <nav>
   <a href="index.html" class="nav-logo-wrap">
-    <img src="images/images/web-app-manifest-192x192.png" alt="Delight &amp; Savor" class="nav-logo-img" />
+    <img src="images/web-app-manifest-192x192.png" alt="Delight &amp; Savor" class="nav-logo-img" />
     <div class="nav-logo-text">
       Delight &amp; Savor
       <span>Beauty. Meaning. Connection.</span>
@@ -59,47 +59,34 @@
 });
    /* ── NAV CSS ── */
   const navCSS = `
-    nav { background: #2d3748; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 16px rgba(0,0,0,.25); }
+    nav { background: #F5F1E8; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 0 #E6DECF; }
     .nav-logo-wrap { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; }
     .nav-logo-img { height: 40px; width: auto; opacity: 0.95; }
-    .nav-logo-text { font-family: 'Playfair Display', serif; color: #faf9f6; font-size: 1rem; letter-spacing: 0.04em; line-height: 1.2; }
-    .nav-logo-text span { display: block; font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,213,176,0.45); font-family: 'Cormorant Garamond', serif; font-style: italic; }
+    .nav-logo-text { font-family: 'Playfair Display', serif; color: #3F3732; font-size: 1rem; letter-spacing: 0.04em; line-height: 1.2; }
+    .nav-logo-text span { display: block; font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase; color: #9A7437; font-family: 'Cormorant Garamond', serif; font-style: italic; }
     .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
-    .nav-links a { color: rgba(250,249,246,0.82); font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; }
-    .nav-links a:hover, .nav-links a.active { color: #E8D5B0; }
-    .nav-cta { background: #C29B61; color: #faf9f6 !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; }
+    .nav-links a { color: #5C544A; font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; }
+    .nav-links a:hover, .nav-links a.active { color: #C9A363; }
+    .nav-cta { background: #C9A363; color: #fff !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; }
     .nav-social { display: flex; gap: 1.25rem; align-items: center; }
-    .nav-social a { color: rgba(250,249,246,0.52); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; }
-    .nav-social a:hover { color: #E8D5B0; }
+    .nav-social a { color: #8A8073; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; }
+    .nav-social a:hover { color: #C9A363; }
     .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: #faf9f6; border-radius: 2px; transition: all .25s; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #3F3732; border-radius: 2px; transition: all .25s; }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; background: #2d3748; border-top: 1px solid rgba(255,255,255,0.1); padding: 1rem 2rem 1.5rem; z-index: 99; flex-direction: column; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; background: #F5F1E8; border-top: 1px solid #E6DECF; padding: 1rem 2rem 1.5rem; z-index: 99; flex-direction: column; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
     .mobile-nav.open { display: flex; }
-    .mobile-nav a { color: rgba(250,249,246,0.75); font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 0.2s; text-decoration: none; }
+    .mobile-nav a { color: #5C544A; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 0; border-bottom: 1px solid #E6DECF; transition: color 0.2s; text-decoration: none; }
     .mobile-nav a:last-child { border-bottom: none; }
-    .mobile-nav a:hover { color: #E8D5B0; }
-    .mobile-nav a.mobile-cta { color: #E8D5B0; font-weight: 600; }
-    .mobile-nav .mobile-divider { height: 1px; background: rgba(255,255,255,0.12); margin: 0.5rem 0; }
+    .mobile-nav a:hover { color: #C9A363; }
+    .mobile-nav a.mobile-cta { color: #C9A363; font-weight: 600; }
+    .mobile-nav .mobile-divider { height: 1px; background: #E6DECF; margin: 0.5rem 0; }
     @media (max-width: 720px) { .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; } }
-    /* ── cream top nav ── */
-    nav { background: #F5F1E8; box-shadow: 0 1px 0 #E6DECF; }
-    .nav-logo-text { color: #3F3732; }
-    .nav-logo-text span { color: #9A7437; }
-    .nav-links a { color: #5C544A; }
-    .nav-links a:hover, .nav-links a.active { color: #C9A363; }
-    .nav-cta { background: #C9A363; color: #fff !important; }
-    .nav-social a { color: #8A8073; }
-    .nav-social a:hover { color: #C9A363; }
-    .hamburger span { background: #3F3732; }
-    .mobile-nav a { color: #5C544A; border-bottom: 1px solid #E6DECF; }
-    .mobile-nav a:hover, .mobile-nav a.mobile-cta { color: #C9A363; }
-    .mobile-nav .mobile-divider { background: #E6DECF; }
 
     /* ── FOOTER ── */
-    footer { background: #232220;; color: #d9d2c4; font-family: 'Lato', system-ui, sans-serif; padding: 56px 2rem 28px; margin-top: 60px; }
+    footer { background: #232220; color: #d9d2c4; font-family: 'Lato', system-ui, sans-serif; padding: 56px 2rem 28px; margin-top: 60px; }
     .footer-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; align-items: start; }
     .footer-brand .footer-logo { height: 46px; width: auto; margin-bottom: 14px; opacity: .95; }
     .footer-brand p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; line-height: 1.5; color: rgba(232,225,212,.78); margin: 0 0 18px; max-width: 38ch; }
@@ -107,13 +94,20 @@
     .footer-email-row { display: flex; gap: 8px; max-width: 320px; }
     .footer-email-row input { flex: 1; padding: 9px 12px; border: 1px solid rgba(255,255,255,.18); border-radius: 4px; background: rgba(255,255,255,.06); color: #faf9f6; font-size: .82rem; }
     .footer-email-row input::placeholder { color: rgba(232,225,212,.5); }
-    .footer-email-row button { padding: 9px 16px; border: none; border-radius: 4px; background: #C29B61; color: #2d3748; font-weight: 700; font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; transition: background .2s; }
+    .footer-email-row button { padding: 9px 16px; border: none; border-radius: 4px; background: #C9A363; color: #232220; font-weight: 700; font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; transition: background .2s; }
     .footer-email-row button:hover { background: #d4ad72; }
-    footer h4 { font-family: 'Lato', system-ui, sans-serif; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; color: #E8D5B0; margin: 0 0 14px; font-weight: 700; }
+    footer h4 { font-family: 'Lato', system-ui, sans-serif; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; color: #E0C99A; margin: 0 0 14px; font-weight: 700; }
     .footer-nav ul, .footer-connect ul { list-style: none; margin: 0; padding: 0; }
     .footer-nav li, .footer-connect li { margin-bottom: 9px; }
     .footer-nav a, .footer-connect a { color: rgba(232,225,212,.78); text-decoration: none; font-size: .86rem; letter-spacing: .03em; transition: color .2s; }
     .footer-nav a:hover, .footer-connect a:hover { color: #fff; }
+    /* ── Also from D&S (family apps) ── */
+    .footer-apps { max-width: 1120px; margin: 40px auto 0; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.1); text-align: center; }
+    .footer-apps p { font-family: 'Cormorant Garamond', serif; font-variant: small-caps; letter-spacing: .18em; font-size: .74rem; color: rgba(232,225,212,.5); margin: 0 0 16px; }
+    .footer-apps-row { display: flex; gap: 2.75rem; justify-content: center; align-items: flex-start; flex-wrap: wrap; }
+    .footer-apps-row a { display: inline-flex; flex-direction: column; align-items: center; gap: .55rem; text-decoration: none; color: rgba(232,225,212,.75); font-family: 'Cormorant Garamond', serif; font-size: .95rem; letter-spacing: .02em; transition: color .2s; }
+    .footer-apps-row a:hover { color: #fff; }
+    .footer-apps-row img { display: block; width: 52px; height: 52px; border-radius: 11px; }
     .footer-bottom { max-width: 1120px; margin: 36px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.12); display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between; font-size: .72rem; letter-spacing: .03em; color: rgba(232,225,212,.55); }
     .footer-bottom a { color: rgba(232,225,212,.7); text-decoration: none; }
     .footer-bottom a:hover { color: #fff; }
@@ -123,7 +117,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="images/images/web-app-manifest-192x192.png" alt="Delight &amp; Savor" class="footer-logo" />
+      <img src="images/web-app-manifest-192x192.png" alt="Delight &amp; Savor" class="footer-logo" />
       <p>Charlotte Mason upper-level literature and language arts for the student who is ready to read deeply.</p>
       <div class="footer-email">
         <p>From the Ranch &amp; the Desk &mdash; one monthly letter.</p>
@@ -151,6 +145,19 @@
         <li><a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a></li>
         <li><a href="https://delightandsavor.substack.com" target="_blank" rel="noopener">Substack</a></li>
       </ul>
+    </div>
+  </div>
+  <div class="footer-apps">
+    <p>Also from Delight &amp; Savor</p>
+    <div class="footer-apps-row">
+      <a href="https://in-the-margin.netlify.app" target="_blank" rel="noopener">
+        <img src="images/margin_logo-rounded-512.png" alt="In the Margin app icon" />
+        In the Margin
+      </a>
+      <a href="https://tend-ds.netlify.app" target="_blank" rel="noopener">
+        <img src="images/tend_logo-rounded-512.png" alt="Tend app icon" />
+        Tend
+      </a>
     </div>
   </div>
   <div class="footer-bottom">
