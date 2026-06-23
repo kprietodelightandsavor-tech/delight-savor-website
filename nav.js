@@ -10,7 +10,7 @@
   const navHTML = `
 <nav>
   <a href="index.html" class="nav-logo-wrap">
-    <img src="/images/ds_icon.png" alt="Delight &amp; Savor" class="nav-logo-img" />
+    <img src="images/ds_icon.png" alt="Delight &amp; Savor" class="nav-logo-img" />
     <div class="nav-logo-text">
       Delight &amp; Savor
       <span>Beauty. Meaning. Connection.</span>
@@ -47,11 +47,11 @@
 </div>`;
  /* ── INJECT FAVICON + APPLE TOUCH ICON ── */
 [
-  { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/images/favicon-96x96.png' },
-  { rel: 'icon', type: 'image/svg+xml', href: '/images/favicon.svg' },
-  { rel: 'shortcut icon', href: '/images/favicon.ico' },
-  { rel: 'apple-touch-icon', sizes: '180x180', href: '/images/apple-touch-icon.png' },
-  { rel: 'manifest', href: '/images/site.webmanifest' }
+  { rel: 'icon', type: 'image/png', sizes: '96x96', href: 'images/favicon-96x96.png' },
+  { rel: 'icon', type: 'image/svg+xml', href: 'images/favicon.svg' },
+  { rel: 'shortcut icon', href: 'images/favicon.ico' },
+  { rel: 'apple-touch-icon', sizes: '180x180', href: 'images/apple-touch-icon.png' },
+  { rel: 'manifest', href: 'images/site.webmanifest' }
 ].forEach(function (i) {
   const link = document.createElement('link');
   Object.keys(i).forEach(function (k) { link.setAttribute(k, i[k]); });
@@ -84,9 +84,23 @@
     .mobile-nav a.mobile-cta { color: #E8D5B0; font-weight: 600; }
     .mobile-nav .mobile-divider { height: 1px; background: rgba(255,255,255,0.12); margin: 0.5rem 0; }
     @media (max-width: 720px) { .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; } }
+    /* ── cream top nav ── */
+    nav { background: #F5F1E8; box-shadow: 0 1px 0 #E6DECF; }
+    .nav-logo-text { color: #3F3732; }
+    .nav-logo-text span { color: #9A7437; }
+    .nav-links a { color: #5C544A; }
+    .nav-links a:hover, .nav-links a.active { color: #C9A363; }
+    .nav-cta { background: #C9A363; color: #fff !important; }
+    .nav-social a { color: #8A8073; }
+    .nav-social a:hover { color: #C9A363; }
+    .hamburger span { background: #3F3732; }
+    .mobile-nav { background: #F5F1E8; border-top: 1px solid #E6DECF; }
+    .mobile-nav a { color: #5C544A; border-bottom: 1px solid #E6DECF; }
+    .mobile-nav a:hover, .mobile-nav a.mobile-cta { color: #C9A363; }
+    .mobile-nav .mobile-divider { background: #E6DECF; }
 
     /* ── FOOTER ── */
-    footer { background: #2d3748; color: #d9d2c4; font-family: 'Lato', system-ui, sans-serif; padding: 56px 2rem 28px; margin-top: 60px; }
+    footer { background: #49331E;; color: #d9d2c4; font-family: 'Lato', system-ui, sans-serif; padding: 56px 2rem 28px; margin-top: 60px; }
     .footer-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; align-items: start; }
     .footer-brand .footer-logo { height: 46px; width: auto; margin-bottom: 14px; opacity: .95; }
     .footer-brand p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; line-height: 1.5; color: rgba(232,225,212,.78); margin: 0 0 18px; max-width: 38ch; }
@@ -110,7 +124,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="/images/ds_icon.png" alt="Delight &amp; Savor" class="footer-logo" />
+      <img src="images/ds_icon.png" alt="Delight &amp; Savor" class="footer-logo" />
       <p>Charlotte Mason upper-level literature and language arts for the student who is ready to read deeply.</p>
       <div class="footer-email">
         <p>From the Ranch &amp; the Desk &mdash; one monthly letter.</p>
