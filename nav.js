@@ -100,7 +100,7 @@
     .mobile-nav .mobile-divider { background: #E6DECF; }
 
     /* ── FOOTER ── */
-    footer { background: #49331E;; color: #d9d2c4; font-family: 'Lato', system-ui, sans-serif; padding: 56px 2rem 28px; margin-top: 60px; }
+    footer { background: #232220;; color: #d9d2c4; font-family: 'Lato', system-ui, sans-serif; padding: 56px 2rem 28px; margin-top: 60px; }
     .footer-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; align-items: start; }
     .footer-brand .footer-logo { height: 46px; width: auto; margin-bottom: 14px; opacity: .95; }
     .footer-brand p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; line-height: 1.5; color: rgba(232,225,212,.78); margin: 0 0 18px; max-width: 38ch; }
