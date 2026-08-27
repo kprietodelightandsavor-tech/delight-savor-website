@@ -23,25 +23,40 @@ const PAYHIP_API_KEY       = process.env.PAYHIP_API_KEY;
 
 // Map Payhip product / variant names to the units they unlock.
 // Names are lowercased and trimmed before lookup.
-const PRODUCT_UNIT_MAP = {
-  'all access':                        ['macbeth', 'wh', 'aoa', 'lss', 'omam'],
-  'all access membership':             ['macbeth', 'wh', 'aoa', 'lss', 'omam'],
-  'living stories & sentences':        ['lss'],
-  'the art of attention':              ['aoa'],
-  'summer foundations: of mice and men': ['omam'],
-  'wuthering heights':                 ['wh'],
-  'macbeth':                           ['macbeth'],
-};
-const DEFAULT_UNITS = ['omam'];
+// Unit codes must match what the app gates on: 'macbeth', 'wh', 'omam'.
+const ALL_UNITS = ['macbeth', 'wh', 'omam'];
 
+const PRODUCT_UNIT_MAP = {
+  // Memberships — create these in Payhip with names that match.
+  'all access':                                          ALL_UNITS,
+  'all access membership':                               ALL_UNITS,
+  'all access · monthly':                                ALL_UNITS,
+  'all access · annual':                                 ALL_UNITS,
+
+  // Live products, exactly as they are named in the Payhip store.
+  'summer foundations: of mice and men':                 ['omam'],
+  'summer foundations · co-op license — of mice and men': ['omam'],
+
+  // Sold, but grant no in-app course access (printables / other apps).
+  'ds find it, follow it, frame it':                     [],
+  'living rhythm planer- pro access':                    [],
+
+  // Not yet launched — names are provisional, correct them at launch.
+  'macbeth':                                             ['macbeth'],
+  'wuthering heights':                                   ['wh'],
+};
+
+// Unknown product: grant nothing, but still record the sale loudly so a
+// mis-named product surfaces instead of silently over- or under-granting.
 function unitsFor(variantName, productName) {
   for (const n of [variantName, productName]) {
     if (!n) continue;
     const hit = PRODUCT_UNIT_MAP[String(n).toLowerCase().trim()];
     if (hit) return hit;
   }
-  console.warn('No unit mapping for:', productName, '/', variantName);
-  return DEFAULT_UNITS;
+  console.error('NO UNIT MAPPING — add to PRODUCT_UNIT_MAP:',
+    JSON.stringify({ productName, variantName }));
+  return [];
 }
 
 function safeEqual(a, b) {
