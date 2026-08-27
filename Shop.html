@@ -49,8 +49,8 @@ h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--ink);line-height
 @media (max-width:760px){ .grid{gap:14px;} }
 .product{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s, box-shadow .2s;text-decoration:none;color:inherit;}
 .product:hover{transform:translateY(-4px);box-shadow:0 20px 44px -28px rgba(55,50,43,.55);}
-.product .shot{position:relative;width:100%;aspect-ratio:16/10;background:linear-gradient(135deg,#F4EFE4,#EFE8D9);display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.product .shot img{width:100%;height:100%;object-fit:cover;object-position:center;}
+.product .shot{position:relative;width:100%;aspect-ratio:2/3;background:linear-gradient(135deg,#F4EFE4,#EFE8D9);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.product .shot img{width:100%;height:100%;object-fit:cover;object-position:center top;}
 .product .shot .ph{font-family:var(--lit);font-style:italic;color:var(--sage);font-size:15px;padding:18px;text-align:center;}
 .product .soon{position:absolute;top:11px;left:11px;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);background:#F3EAD7;border:1px solid #E6D4AE;border-radius:999px;padding:4px 11px;font-weight:700;z-index:2;}
 .product .body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1;}
@@ -121,6 +121,23 @@ h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--ink);line-height
 <section class="shop" id="shop"><div class="wrap">
   <div class="grid">
 
+    <!-- ALL ACCESS MEMBERSHIP — the flagship offer -->
+    <a class="product" href="https://payhip.com/b/kTe1O" style="border:2px solid var(--gold);">
+      <div class="shot" style="background:var(--cream);">
+        <span class="soon" style="background:var(--gold);border-color:var(--gold-deep);color:#fff;">Membership</span>
+        <span class="ph" style="font-size:19px;color:var(--gold-deep);">Every course.<br>All year.</span>
+      </div>
+      <div class="body">
+        <div class="tier">All Ages &middot; Monthly or Annual</div>
+        <h3>All Access</h3>
+        <p class="desc">Every course, every companion, self-paced &mdash; the whole shelf, for as long as you keep it. New units land the day they open.</p>
+        <div class="foot">
+          <span class="price">$25 <small>/month &middot; or $250/year</small></span>
+          <span class="go">Join &rarr;</span>
+        </div>
+      </div>
+    </a>
+
     <!-- Summer Foundations — LIVE -->
     <a class="product" href="Summer-Foundations-Sales-Page.html">
       <div class="shot"><img src="images/cover-omam.jpg" alt="Summer Foundations: Of Mice and Men"></div>
@@ -137,7 +154,7 @@ h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--ink);line-height
 
     <!-- Poetry & The Old Man and the Sea — COMING FALL 2026 -->
     <a class="product is-soon" aria-disabled="true">
-      <div class="shot"><span class="soon">Fall 2026</span><span class="ph">Poetry &amp; The Old Man and the Sea</span></div>
+      <div class="shot"><span class="soon">Fall 2026</span><img src="images/poetry-old-man.jpg" alt="Poetry &amp; The Old Man and the Sea" loading="lazy"></div>
       <div class="body">
         <div class="tier">Grades 9&ndash;12 &middot; Fall Term</div>
         <h3>Poetry &amp; The Old Man and the Sea</h3>
@@ -151,7 +168,7 @@ h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--ink);line-height
 
     <!-- A Midsummer Night's Dream — COMING SPRING 2027 -->
     <a class="product is-soon" aria-disabled="true">
-      <div class="shot"><span class="soon">Spring 2027</span><span class="ph">A Midsummer Night&rsquo;s Dream</span></div>
+      <div class="shot"><span class="soon">Spring 2027</span><img src="images/midsummer.jpg" alt="A Midsummer Night&#39;s Dream" loading="lazy"></div>
       <div class="body">
         <div class="tier">Grades 9&ndash;12 &middot; Spring Term</div>
         <h3>A Midsummer Night's Dream</h3>
@@ -165,7 +182,7 @@ h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--ink);line-height
 
     <!-- Macbeth — COMING SOON -->
     <a class="product is-soon" aria-disabled="true">
-      <div class="shot"><span class="soon">Coming Soon</span><span class="ph">Macbeth</span></div>
+      <div class="shot"><span class="soon">Coming Soon</span><img src="images/macbeth.jpg" alt="Macbeth" loading="lazy"></div>
       <div class="body">
         <div class="tier">Grades 9&ndash;12 &middot; Semester</div>
         <h3>Macbeth</h3>
@@ -179,7 +196,7 @@ h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--ink);line-height
 
     <!-- Wuthering Heights — COMING SOON -->
     <a class="product is-soon" aria-disabled="true">
-      <div class="shot"><span class="soon">Coming Soon</span><img src="images/wuthering-heights.png" alt="Wuthering Heights"></div>
+      <div class="shot"><span class="soon">Coming Soon</span><img src="images/wuthering-heights.jpg" alt="Wuthering Heights" loading="lazy"></div>
       <div class="body">
         <div class="tier">Grades 9&ndash;12 &middot; Semester</div>
         <h3>Wuthering Heights</h3>
