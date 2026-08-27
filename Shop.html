@@ -64,6 +64,10 @@ h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--ink);line-height
   .feature h2{font-size:28px;}
 }
 
+/* logo-style card art (apps, not book covers) */
+.product .shot.logo{background:linear-gradient(135deg,#F7F3EC,#EFE8D9);}
+.product .shot.logo img{width:auto;height:56%;object-fit:contain;}
+
 /* group headings */
 .group-head{display:flex;align-items:baseline;gap:14px;margin:42px 0 16px;}
 .group-head:first-of-type{margin-top:6px;}
@@ -156,7 +160,7 @@ h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--ink);line-height
 
     <!-- Summer Foundations — LIVE -->
     <a class="product" href="Summer-Foundations-Sales-Page.html">
-      <div class="shot"><img src="images/cover-omam.jpg" alt="Summer Foundations: Of Mice and Men"></div>
+      <div class="shot"><img src="images/cover-omam.jpg" alt="Summer Foundations: Of Mice and Men" loading="lazy"></div>
       <div class="body">
         <div class="tier">Grades 8&ndash;11 &middot; Summer</div>
         <h3>Summer Foundations: Of Mice and Men</h3>
@@ -168,24 +172,80 @@ h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--ink);line-height
       </div>
     </a>
 
+    <!-- Macbeth — Art of Tragedy, fall term -->
+    <a class="product" href="https://in-the-margin.netlify.app/macbeth-preview.html">
+      <div class="shot"><img src="images/macbeth.jpg" alt="Macbeth" loading="lazy"></div>
+      <div class="body">
+        <div class="tier">Grades 9&ndash;12 &middot; Art of Tragedy &middot; Fall</div>
+        <h3>Macbeth</h3>
+        <p class="desc">Year One, fall term. Ambition, conscience, and fate against free will &mdash; with Augustine and Aristotle in the room.</p>
+        <div class="foot">
+          <span class="price tbd">Pricing soon</span>
+          <span class="go">Preview &rarr;</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Wuthering Heights — Art of Tragedy, spring term -->
+    <a class="product" href="https://in-the-margin.netlify.app/wuthering-heights-preview.html">
+      <div class="shot"><img src="images/wuthering-heights.jpg" alt="Wuthering Heights" loading="lazy"></div>
+      <div class="body">
+        <div class="tier">Grades 9&ndash;12 &middot; Art of Tragedy &middot; Spring</div>
+        <h3>Wuthering Heights</h3>
+        <p class="desc">Year One, spring term. Bront&euml;'s Gothic masterpiece &mdash; obsessive love, class, and the long shadow of revenge.</p>
+        <div class="foot">
+          <span class="price tbd">Pricing soon</span>
+          <span class="go">Preview &rarr;</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Poetry & The Old Man and the Sea — Art of Attention, fall term -->
+    <a class="product" href="https://in-the-margin.netlify.app/old-man-preview.html">
+      <div class="shot"><img src="images/poetry-old-man.jpg" alt="Poetry &amp; The Old Man and the Sea" loading="lazy"></div>
+      <div class="body">
+        <div class="tier">Grades 9&ndash;12 &middot; Art of Attention &middot; Fall</div>
+        <h3>Poetry &amp; The Old Man and the Sea</h3>
+        <p class="desc">Year Two, fall term. Fifteen weeks of close reading &mdash; six of poetry, then Hemingway&#8217;s sea.</p>
+        <div class="foot">
+          <span class="price tbd">Pricing soon</span>
+          <span class="go">Preview &rarr;</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Living Stories & Sentences · A Place to Belong -->
+    <a class="product" aria-disabled="true">
+      <div class="shot"><span class="ph">Living Stories &amp; Sentences</span></div>
+      <div class="body">
+        <div class="tier">Middle School &middot; Full Year &middot; 30 Weeks</div>
+        <h3>Living Stories &amp; Sentences</h3>
+        <p class="desc"><em>A Place to Belong</em> &mdash; two terms of living books and real writing. <em>A Place to Hang the Moon</em>, then <em>Number the Stars</em>.</p>
+        <div class="foot">
+          <span class="price tbd">Pricing soon</span>
+          <span class="go">Preview &rarr;</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Tend — homeschool planner app -->
+    <a class="product" href="https://tend-ds.netlify.app">
+      <div class="shot logo"><img src="images/tend_logo-rounded-512.png" alt="Tend" loading="lazy"></div>
+      <div class="body">
+        <div class="tier">Companion &middot; The Planner App</div>
+        <h3>Tend</h3>
+        <p class="desc">A gentle daily rhythm for Charlotte Mason families &mdash; six-block days, habit keeping, an evening close, and the Lantern to help you switch tasks.</p>
+        <div class="foot">
+          <span class="price">Free 5-day trial</span>
+          <span class="go">Open Tend &rarr;</span>
+        </div>
+      </div>
+    </a>
+
   </div>
 
   <div class="group-head"><h2>Coming Soon</h2><span class="rule"></span><span class="count">In the works</span></div>
   <div class="grid soon">
-
-    <!-- Poetry & The Old Man and the Sea — COMING FALL 2026 -->
-    <a class="product is-soon" aria-disabled="true">
-      <div class="shot"><span class="soon">Fall 2026</span><img src="images/poetry-old-man.jpg" alt="Poetry &amp; The Old Man and the Sea" loading="lazy"></div>
-      <div class="body">
-        <div class="tier">Grades 9&ndash;12 &middot; Fall Term</div>
-        <h3>Poetry &amp; The Old Man and the Sea</h3>
-        <p class="desc">A season of close attention &mdash; six weeks among the poets, then Hemingway's <em>The Old Man and the Sea</em>.</p>
-        <div class="foot">
-          <span class="price tbd">Pricing soon</span>
-          <span class="go soon-btn">Coming soon</span>
-        </div>
-      </div>
-    </a>
 
     <!-- A Midsummer Night's Dream — COMING SPRING 2027 -->
     <a class="product is-soon" aria-disabled="true">
@@ -194,48 +254,6 @@ h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--ink);line-height
         <div class="tier">Grades 9&ndash;12 &middot; Spring Term</div>
         <h3>A Midsummer Night's Dream</h3>
         <p class="desc">Shakespeare's most enchanting comedy &mdash; wit, wonder, and the woods, read the slow and beautiful way.</p>
-        <div class="foot">
-          <span class="price tbd">Pricing soon</span>
-          <span class="go soon-btn">Coming soon</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- Macbeth — COMING SOON -->
-    <a class="product is-soon" aria-disabled="true">
-      <div class="shot"><span class="soon">Coming Soon</span><img src="images/macbeth.jpg" alt="Macbeth" loading="lazy"></div>
-      <div class="body">
-        <div class="tier">Grades 9&ndash;12 &middot; Semester</div>
-        <h3>Macbeth</h3>
-        <p class="desc">Shakespeare's darkest tragedy &mdash; ambition, conscience, and consequence, read slowly and well.</p>
-        <div class="foot">
-          <span class="price tbd">Pricing soon</span>
-          <span class="go soon-btn">Coming soon</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- Wuthering Heights — COMING SOON -->
-    <a class="product is-soon" aria-disabled="true">
-      <div class="shot"><span class="soon">Coming Soon</span><img src="images/wuthering-heights.jpg" alt="Wuthering Heights" loading="lazy"></div>
-      <div class="body">
-        <div class="tier">Grades 9&ndash;12 &middot; Semester</div>
-        <h3>Wuthering Heights</h3>
-        <p class="desc">Bront&euml;'s wild Gothic masterpiece &mdash; the moors, the passions, and the long shadow they cast.</p>
-        <div class="foot">
-          <span class="price tbd">Pricing soon</span>
-          <span class="go soon-btn">Coming soon</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- Living Stories & Sentences — MIDDLE SCHOOL, FULL YEAR -->
-    <a class="product is-soon" aria-disabled="true">
-      <div class="shot"><span class="soon">Coming Soon</span><span class="ph">Living Stories<br>&amp; Sentences</span></div>
-      <div class="body">
-        <div class="tier">Middle School &middot; Full Year &middot; 30 Weeks</div>
-        <h3>Living Stories &amp; Sentences</h3>
-        <p class="desc">Two terms of living books and real writing. <em>A Place to Hang the Moon</em>, then <em>Number the Stars</em> &mdash; narration carried gently into a first research paper.</p>
         <div class="foot">
           <span class="price tbd">Pricing soon</span>
           <span class="go soon-btn">Coming soon</span>
