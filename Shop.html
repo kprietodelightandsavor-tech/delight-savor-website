@@ -45,11 +45,39 @@ h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--ink);line-height
 
 /* product grid — two columns, holds on mobile, compact */
 .shop{padding:0 0 70px;}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+@media (max-width:980px){ .grid{grid-template-columns:repeat(2,1fr);} }
 @media (max-width:760px){ .grid{gap:14px;} }
+/* membership feature band */
+.feature{background:var(--paper);border:2px solid var(--gold);border-radius:14px;padding:34px 36px;display:grid;grid-template-columns:1fr auto;gap:34px;align-items:center;margin-bottom:14px;text-decoration:none;color:inherit;transition:transform .2s, box-shadow .2s;}
+.feature:hover{transform:translateY(-3px);box-shadow:0 22px 48px -30px rgba(55,50,43,.5);}
+.feature .f-badge{display:inline-block;font-family:var(--sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#fff;background:var(--gold);border-radius:999px;padding:5px 12px;margin-bottom:12px;}
+.feature h2{font-family:var(--display);font-size:34px;line-height:1.1;margin:0 0 10px;}
+.feature p{font-family:var(--lit);font-size:19px;color:var(--umber);line-height:1.45;margin:0;max-width:56ch;}
+.feature .f-buy{text-align:right;white-space:nowrap;}
+.feature .f-price{display:block;font-family:var(--display);font-size:30px;color:var(--ink);}
+.feature .f-price small{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.06em;color:var(--ink-soft);margin-top:4px;}
+.feature .f-cta{display:inline-block;margin-top:14px;font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#fff;background:var(--sage);border-radius:999px;padding:12px 26px;}
+@media (max-width:760px){
+  .feature{grid-template-columns:1fr;gap:20px;padding:26px 22px;}
+  .feature .f-buy{text-align:left;}
+  .feature h2{font-size:28px;}
+}
+
+/* group headings */
+.group-head{display:flex;align-items:baseline;gap:14px;margin:42px 0 16px;}
+.group-head:first-of-type{margin-top:6px;}
+.group-head h2{font-family:var(--display);font-size:24px;margin:0;white-space:nowrap;}
+.group-head .rule{flex:1;height:1px;background:var(--line);}
+.group-head .count{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-soft);}
+
+/* coming-soon shelf reads quieter and more compact */
+.grid.soon .product{opacity:.92;}
+.grid.soon .product h3{font-size:19px;}
+
 .product{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s, box-shadow .2s;text-decoration:none;color:inherit;}
 .product:hover{transform:translateY(-4px);box-shadow:0 20px 44px -28px rgba(55,50,43,.55);}
-.product .shot{position:relative;width:100%;aspect-ratio:2/3;background:linear-gradient(135deg,#F4EFE4,#EFE8D9);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.product .shot{position:relative;width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#F4EFE4,#EFE8D9);display:flex;align-items:center;justify-content:center;overflow:hidden;}
 .product .shot img{width:100%;height:100%;object-fit:cover;object-position:center top;}
 .product .shot .ph{font-family:var(--lit);font-style:italic;color:var(--sage);font-size:15px;padding:18px;text-align:center;}
 .product .soon{position:absolute;top:11px;left:11px;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);background:#F3EAD7;border:1px solid #E6D4AE;border-radius:999px;padding:4px 11px;font-weight:700;z-index:2;}
@@ -106,37 +134,25 @@ h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--ink);line-height
   <p>Gentle, rigorous literature and writing for the homeschool years &mdash; built by a teacher, on a ranch. Choose where your reader is, and begin.</p>
 </div></section>
 
-<!-- Free Week signup -->
-<section style="padding:0 0 44px;">
-  <div class="wrap" style="max-width:660px;text-align:center;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:36px 32px;">
-    <span class="eyebrow">Free First Week</span>
-    <h2 style="font-size:30px;margin:10px 0 12px;">Try a week before you buy</h2>
-    <p style="font-family:var(--lit);font-size:19px;color:var(--umber);line-height:1.45;margin-bottom:24px;">
-      Enter your email and I'll send you a real first week of Summer Foundations &mdash; yours to keep, with just the novel and an unhurried afternoon.
-    </p>
-    <div class="ml-embedded" data-form="NMSjKJ"></div>
-  </div>
-</section>
 
 <section class="shop" id="shop"><div class="wrap">
-  <div class="grid">
 
-    <!-- ALL ACCESS MEMBERSHIP — the flagship offer -->
-    <a class="product" href="https://payhip.com/b/kTe1O" style="border:2px solid var(--gold);">
-      <div class="shot" style="background:var(--cream);">
-        <span class="soon" style="background:var(--gold);border-color:var(--gold-deep);color:#fff;">Membership</span>
-        <span class="ph" style="font-size:19px;color:var(--gold-deep);">Every course.<br>All year.</span>
-      </div>
-      <div class="body">
-        <div class="tier">All Ages &middot; Monthly or Annual</div>
-        <h3>All Access</h3>
-        <p class="desc">Every course, every companion, self-paced &mdash; the whole shelf, for as long as you keep it. New units land the day they open.</p>
-        <div class="foot">
-          <span class="price">$25 <small>/month &middot; or $250/year</small></span>
-          <span class="go">Join &rarr;</span>
-        </div>
-      </div>
-    </a>
+  <!-- ALL ACCESS — the flagship offer, given its own band -->
+  <a class="feature" href="https://payhip.com/b/kTe1O">
+    <div>
+      <span class="f-badge">Membership</span>
+      <h2>All Access</h2>
+      <p>Every course and every companion, self-paced, for as long as you keep it &mdash; and each new unit the day it opens. One shelf, always open.</p>
+    </div>
+    <div class="f-buy">
+      <span class="f-price">$25<small>per month</small></span>
+      <span class="f-price" style="font-size:15px;color:var(--ink-soft);margin-top:8px;">or $250 a year</span>
+      <span class="f-cta">Join &rarr;</span>
+    </div>
+  </a>
+
+  <div class="group-head"><h2>Available Now</h2><span class="rule"></span><span class="count">Ready to begin</span></div>
+  <div class="grid">
 
     <!-- Summer Foundations — LIVE -->
     <a class="product" href="Summer-Foundations-Sales-Page.html">
@@ -151,6 +167,11 @@ h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--ink);line-height
         </div>
       </div>
     </a>
+
+  </div>
+
+  <div class="group-head"><h2>Coming Soon</h2><span class="rule"></span><span class="count">In the works</span></div>
+  <div class="grid soon">
 
     <!-- Poetry & The Old Man and the Sea — COMING FALL 2026 -->
     <a class="product is-soon" aria-disabled="true">
@@ -238,6 +259,18 @@ h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--ink);line-height
 
   </div>
 </div></section>
+
+<!-- Free Week signup -->
+<section style="padding:0 0 44px;">
+  <div class="wrap" style="max-width:660px;text-align:center;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:36px 32px;">
+    <span class="eyebrow">Free First Week</span>
+    <h2 style="font-size:30px;margin:10px 0 12px;">Try a week before you buy</h2>
+    <p style="font-family:var(--lit);font-size:19px;color:var(--umber);line-height:1.45;margin-bottom:24px;">
+      Enter your email and I'll send you a real first week of Summer Foundations &mdash; yours to keep, with just the novel and an unhurried afternoon.
+    </p>
+    <div class="ml-embedded" data-form="NMSjKJ"></div>
+  </div>
+</section>
 
 <footer class="site-foot">
   <div class="nm">Delight <span class="wampc">&amp;</span> Savor</div>
