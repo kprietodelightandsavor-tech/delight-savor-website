@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/tokens.css" />
 <style>
-  :root{--cloth:#232220;--slate:#37322B;--cream:#FAF6EE;--card:#F4EFE0;--gold:#BE9457;--gold-light:#E2C79A;--sage:#8C9B79;--ink:#2C2A26;--muted:#6E675C;--line:#E4DED1}
+  :root{--cloth:var(--ds-juniper-deep);--slate:var(--ds-juniper);--cream:var(--ds-paper);--card:var(--ds-paper-warm);--gold:var(--ds-ochre-text);--gold-fill:var(--ds-ochre);--gold-light:var(--ds-ochre-lt);--sage:var(--ds-ink-soft);--ink:var(--ds-ink);--muted:var(--ds-ink-soft);--line:var(--ds-rule)}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Cormorant Garamond',Georgia,serif;background:var(--cream);color:var(--ink);line-height:1.7;font-size:18px}
   .cloth{position:relative;background-color:#232220;color:var(--cream);text-align:center;padding:3.5rem 1.5rem 3rem;
@@ -38,26 +38,26 @@
   .signoff .place{font-variant:small-caps;letter-spacing:.18em;font-size:.78rem;color:var(--muted);margin-top:.4rem}
 
   /* ── NAV ── */
-  nav { background: var(--slate); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 68px; position: sticky; top: 0; z-index: 100; }
+  nav { background: var(--ds-paper); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 68px; position: sticky; top: 0; z-index: 100; }
   .nav-logo-wrap { display: flex; align-items: center; gap: 0.65rem; }
   .nav-logo-img { height: 40px; width: auto; opacity: 0.95; }
-  .nav-logo-text { font-family: 'Playfair Display', serif; color: var(--cream); font-size: 1rem; letter-spacing: 0.04em; line-height: 1.2; }
-  .nav-logo-text span { display: block; font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,213,176,0.45); font-family: 'Cormorant Garamond', serif; font-style: italic; }
+  .nav-logo-text { font-family: 'Playfair Display', serif; color: var(--ds-juniper); font-size: 1rem; letter-spacing: 0.04em; line-height: 1.2; }
+  .nav-logo-text span { display: block; font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ds-ink-soft); font-family: 'Cormorant Garamond', serif; font-style: italic; }
   .nav-links { list-style: none; display: flex; gap: clamp(0.85rem, 1.5vw, 1.6rem); align-items: center; flex-wrap: nowrap; margin: 0; padding: 0; }
-  .nav-links a { color: rgba(250,249,246,0.82); font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
-  .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+  .nav-links a { color: var(--ds-ink-soft); font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
+  .nav-links a:hover, .nav-links a.active { color: var(--ds-juniper); }
   .nav-cta { background: var(--ds-juniper); color: var(--ds-paper) !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; white-space: nowrap; }
   .nav-social { display: flex; gap: 1rem; align-items: center; flex: 0 0 auto; }
-  .nav-social a { color: rgba(250,249,246,0.52); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
+  .nav-social a { color: var(--ds-ink-soft); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
   .nav-social a:hover { color: var(--gold-light); }
   .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-  .hamburger span { display: block; width: 24px; height: 2px; background: var(--cream); border-radius: 2px; transition: all .25s; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--ds-juniper); border-radius: 2px; transition: all .25s; }
   .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--slate); border-top: 1px solid rgba(255,255,255,0.1); padding: 1rem 2rem 1.5rem; z-index: 99; flex-direction: column; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+  .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--ds-paper); border-top: 1px solid rgba(255,255,255,0.1); padding: 1rem 2rem 1.5rem; z-index: 99; flex-direction: column; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
   .mobile-nav.open { display: flex; }
-  .mobile-nav a { color: rgba(250,249,246,0.75); font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 0.2s; }
+  .mobile-nav a { color: var(--ds-ink-soft); font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 0.2s; }
   .mobile-nav a:last-child { border-bottom: none; }
   .mobile-nav a:hover { color: var(--gold-light); }
   .mobile-nav a.mobile-cta { color: var(--gold-light); font-weight: 600; }

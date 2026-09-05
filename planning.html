@@ -35,21 +35,23 @@
 <link rel="stylesheet" href="/tokens.css" />
 <style>
   :root {
-    --cream:    #F7F4EF;
-    --parchment:#F0EBE1;
-    --ink:      #2C2A27;
-    --ink-lt:   #4A4743;
-    --ink-faint:#9A9590;
-    --sage:     #8A9E89;
-    --sage-md:  #C2CEB8;
-    --sage-bg:  #F2F5EE;
-    --gold:     #B8935A;
-    --gold-bg:  #FBF5EB;
-    --rule:     #DDD8CF;
-    --navy:     #2C3650;
-    --white:    #FFFFFF;
-    --step-active: #8A9E89;
-    --step-done:   #B8935A;
+    /* Aliased to the brand palette in tokens.css. */
+    --cream:    var(--ds-paper);
+    --parchment:var(--ds-paper-deep);
+    --ink:      var(--ds-ink);
+    --ink-lt:   var(--ds-ink-soft);
+    --ink-faint:var(--ds-ink-soft);
+    --sage:     var(--ds-juniper);
+    --sage-md:  var(--ds-rule-strong);
+    --sage-bg:  var(--ds-paper-deep);
+    --gold:     var(--ds-ochre-text);
+    --gold-fill:var(--ds-ochre);
+    --gold-bg:  var(--ds-paper-warm);
+    --rule:     var(--ds-rule);
+    --navy:     var(--ds-blue-text);
+    --white:    var(--ds-paper-warm);
+    --step-active: var(--ds-juniper);
+    --step-done:   var(--ds-ochre-text);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -170,7 +172,7 @@
     padding: 0 24px;
   }
   .tend-card-inner {
-    background: var(--navy);
+    background: var(--ds-juniper-deep);
     border-radius: 6px;
     padding: 28px 28px 24px;
     display: flex;
@@ -186,10 +188,10 @@
   }
   .tend-card-body .eyebrow-sm {
     font-family: 'Lato', sans-serif;
-    font-size: 9px;
-    letter-spacing: .16em;
+    font-size: 11px;
+    letter-spacing: .13em;
     text-transform: uppercase;
-    color: var(--sage-md);
+    color: var(--ds-ochre-lt);
     margin-bottom: 6px;
     opacity: .8;
   }
@@ -592,7 +594,7 @@
 
   /* ── CTA FOOTER ── */
   .cta-footer {
-    background: var(--navy);
+    background: var(--ds-juniper-deep);
     color: white;
     padding: 48px 24px;
     text-align: center;

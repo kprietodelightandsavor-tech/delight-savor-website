@@ -11,12 +11,15 @@
 <link rel="stylesheet" href="/tokens.css" />
 <style>
 :root{
-  --cream:#FBF8F2; --paper:#FFFFFF; --ink:#37322B; --ink-soft:#5C544A;
-  --sage:#6E7E62; --sage-soft:#93A284; --gold:#B0894E; --gold-deep:#9A7437;
-  --umber:#6B5A45; --line:#E6DECF; --line-soft:#F0EADD;
-  --display:'Playfair Display',Georgia,serif;
-  --lit:'Cormorant Garamond',Georgia,serif;
-  --sans:'Lato','Helvetica Neue',Arial,sans-serif;
+  /* Aliased to the brand palette in tokens.css. */
+  --cream:var(--ds-paper); --paper:var(--ds-paper-warm);
+  --ink:var(--ds-ink); --ink-soft:var(--ds-ink-soft);
+  --sage:var(--ds-juniper); --sage-soft:var(--ds-ink-soft);
+  --gold:var(--ds-ochre-text); --gold-fill:var(--ds-ochre); --gold-deep:var(--ds-ochre-text);
+  --umber:var(--ds-ink-soft); --line:var(--ds-rule); --line-soft:var(--ds-rule);
+  --display:var(--ds-display);
+  --lit:var(--ds-body);
+  --sans:var(--ds-sans);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;overflow-x:hidden;}
@@ -208,10 +211,10 @@ details[open] summary .mk{transform:rotate(45deg);}
 .site-foot{background:var(--ink);color:#E9E0CF;padding:46px 0 30px;text-align:center;}
 .site-foot .wampc{font-family:var(--lit);font-style:italic;color:var(--gold);margin:0 3px;}
 .site-foot .nm{font-family:var(--display);font-size:20px;color:#FBF5E8;}
-.site-foot .tg{font-family:var(--lit);font-style:italic;font-size:15px;color:var(--gold);margin:4px 0 18px;}
+.site-foot .tg{font-family:var(--lit);font-style:italic;font-size:15px;color:var(--ds-ochre-lt);margin:4px 0 18px;}
 .site-foot .fnav{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:12.5px;letter-spacing:.04em;margin-bottom:18px;}
 .site-foot .fnav a{color:#CDBFA6;text-decoration:none;} .site-foot .fnav a:hover{color:#fff;}
-.site-foot .fine{font-size:11px;color:#9A8E78;letter-spacing:.04em;}
+.site-foot .fine{font-size:11px;color:rgba(245,241,232,.82);letter-spacing:.04em;}
 
 @media (max-width:640px){ .site-nav{display:none;} }
 @media (max-width:860px){
@@ -278,12 +281,15 @@ details[open] summary .mk{transform:rotate(45deg);}
         You already have these. The only NEW things to copy are the block tagged
         "cohort-styles" and the <section id="cohort"> further down. ---- */
 :root{
-  --cream:#FBF8F2; --paper:#FFFFFF; --ink:#37322B; --ink-soft:#5C544A;
-  --sage:#6E7E62; --sage-soft:#93A284; --gold:#B0894E; --gold-deep:#9A7437;
-  --umber:#6B5A45; --line:#E6DECF; --line-soft:#F0EADD;
-  --display:'Playfair Display',Georgia,serif;
-  --lit:'Cormorant Garamond',Georgia,serif;
-  --sans:'Lato','Helvetica Neue',Arial,sans-serif;
+  /* Aliased to the brand palette in tokens.css. */
+  --cream:var(--ds-paper); --paper:var(--ds-paper-warm);
+  --ink:var(--ds-ink); --ink-soft:var(--ds-ink-soft);
+  --sage:var(--ds-juniper); --sage-soft:var(--ds-ink-soft);
+  --gold:var(--ds-ochre-text); --gold-fill:var(--ds-ochre); --gold-deep:var(--ds-ochre-text);
+  --umber:var(--ds-ink-soft); --line:var(--ds-rule); --line-soft:var(--ds-rule);
+  --display:var(--ds-display);
+  --lit:var(--ds-body);
+  --sans:var(--ds-sans);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -583,12 +589,15 @@ section.band{padding:56px 0;}
         You already have these. The only NEW things to copy are the block tagged
         "cohort-styles" and the <section id="cohort"> further down. ---- */
 :root{
-  --cream:#FBF8F2; --paper:#FFFFFF; --ink:#37322B; --ink-soft:#5C544A;
-  --sage:#6E7E62; --sage-soft:#93A284; --gold:#B0894E; --gold-deep:#9A7437;
-  --umber:#6B5A45; --line:#E6DECF; --line-soft:#F0EADD;
-  --display:'Playfair Display',Georgia,serif;
-  --lit:'Cormorant Garamond',Georgia,serif;
-  --sans:'Lato','Helvetica Neue',Arial,sans-serif;
+  /* Aliased to the brand palette in tokens.css. */
+  --cream:var(--ds-paper); --paper:var(--ds-paper-warm);
+  --ink:var(--ds-ink); --ink-soft:var(--ds-ink-soft);
+  --sage:var(--ds-juniper); --sage-soft:var(--ds-ink-soft);
+  --gold:var(--ds-ochre-text); --gold-fill:var(--ds-ochre); --gold-deep:var(--ds-ochre-text);
+  --umber:var(--ds-ink-soft); --line:var(--ds-rule); --line-soft:var(--ds-rule);
+  --display:var(--ds-display);
+  --lit:var(--ds-body);
+  --sans:var(--ds-sans);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
