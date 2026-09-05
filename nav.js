@@ -70,13 +70,13 @@
     .nav-logo-wrap { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; flex: 0 0 auto; }
     .nav-logo-img { height: 40px; width: auto; opacity: 0.95; }
     .nav-logo-text { font-family: 'Playfair Display', serif; color: var(--ds-juniper); font-size: 1rem; letter-spacing: 0.04em; line-height: 1.2; }
-    .nav-logo-text span { display: block; font-size: 0.698rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ds-sage-text); font-family: 'Cormorant Garamond', serif; font-style: italic; }
+    .nav-logo-text span { display: block; font-size: 0.698rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ds-ink-soft); font-family: 'Cormorant Garamond', serif; font-style: italic; }
     .nav-links { list-style: none; display: flex; gap: clamp(0.85rem, 1.5vw, 1.6rem); align-items: center; flex-wrap: nowrap; margin: 0; padding: 0; }
     .nav-links a { color: var(--ds-ink-soft); font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; white-space: nowrap; }
     .nav-links a:hover, .nav-links a.active { color: var(--ds-juniper); }
-    .nav-cta { background: var(--ds-ochre); color: var(--ds-ink) !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; white-space: nowrap; }
+    .nav-cta { background: var(--ds-juniper); color: var(--ds-paper) !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; white-space: nowrap; }
     .nav-social { display: flex; gap: 1rem; align-items: center; flex: 0 0 auto; }
-    .nav-social a { color: var(--ds-sage-text); font-size: 0.785rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; white-space: nowrap; }
+    .nav-social a { color: var(--ds-ink-soft); font-size: 0.785rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; white-space: nowrap; }
     .nav-social a:hover { color: var(--ds-juniper); }
     .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--ds-juniper); border-radius: 2px; transition: all .25s; }

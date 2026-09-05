@@ -30,7 +30,7 @@
     :root {
       /* Aliased to the brand palette in tokens.css. */
       --slate: var(--ds-juniper); --slate-mid: var(--ds-ink-soft); --sage-dark: var(--ds-blue-text);
-      --sage: var(--ds-blue-text); --sage-light: var(--ds-blue-pale); --cream: var(--ds-paper);
+      --sage: var(--ds-blue-text); --sage-light: var(--ds-paper-deep); --cream: var(--ds-paper);
       --gold: var(--ds-ochre-text);   /* safe as text */
       --gold-fill:  var(--ds-ochre);        /* decorative fills only */ --gold-text: var(--ds-ochre-text); --gold-light: var(--ds-ochre-lt);
       --teal: var(--ds-blue-text);
@@ -47,7 +47,7 @@
 
     /* hero */
     .phil-hero { color: var(--ds-ink); padding: 5rem 2rem 4.5rem; text-align: center; }
-    .phil-eyebrow { font-size: 0.763rem; letter-spacing: 0.158em; text-transform: uppercase; color: var(--ds-blue-text); margin-bottom: 1rem; font-family: var(--ff-sans); }
+    .phil-eyebrow { font-size: 0.763rem; letter-spacing: 0.158em; text-transform: uppercase; color: var(--ds-ink-soft); margin-bottom: 1rem; font-family: var(--ff-sans); }
     .phil-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4.8vw, 3.1rem); font-weight: 500; font-style: normal; line-height: 1.2; max-width: 620px; margin: 0 auto 1.1rem; color: var(--ds-juniper); }
     .phil-title em { font-style: italic; color: var(--ds-blue-text); }
     .phil-lead { max-width: 500px; margin: 0 auto 2rem; color: var(--ds-ink); font-size: 1.05rem; line-height: 1.65; }
@@ -57,7 +57,7 @@
     .btn-outline { border: 1px solid var(--ds-rule-strong); color: var(--ds-juniper); padding: 0.65rem 1.75rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; display: inline-block; font-family: var(--ff-sans); transition: border-color .2s, color .2s; }
     .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
 
-    .section-label { font-size: 0.785rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ds-blue-text); margin-bottom: 0.5rem; font-family: var(--ff-sans); }
+    .section-label { font-size: 0.785rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ds-ink-soft); margin-bottom: 0.5rem; font-family: var(--ff-sans); }
     .section-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400; color: var(--slate); margin-bottom: 1rem; line-height: 1.25; }
     .section-body { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; color: var(--ink); line-height: 1.85; }
     .section-body p + p { margin-top: 1rem; }
@@ -125,7 +125,7 @@
     .student-work { background: var(--cream); padding: 4.75rem 2rem; }
     .sw-inner { max-width: 1060px; margin: 0 auto; }
     .sw-head { text-align: center; max-width: 640px; margin: 0 auto 2.5rem; }
-    .sw-head .section-label { color: var(--ds-blue-text); }
+    .sw-head .section-label { color: var(--ds-ink-soft); }
     .sw-grid { display: grid; grid-template-columns: 1fr; gap: 1.75rem; max-width: 700px; margin: 0 auto; }
     .sw-plate { background: var(--cream); border: 1px solid var(--border); padding: 12px; border-radius: 3px; box-shadow: 0 10px 28px rgba(92,86,75,0.12); }
     .sw-plate img { width: 100%; display: block; border-radius: 2px; }
@@ -153,6 +153,42 @@
       .phil-section { padding: 3.5rem 1.25rem; }
       .phil-hero { padding: 3.5rem 1.25rem 3rem; }
       .student-work { padding: 3.5rem 1.25rem; }
+    }
+
+    /* ── THE FOUR MOVES — the one place the illustrations appear in colour.
+       Everywhere else the juniper line art is the shorthand. Labels are
+       type, never baked into the artwork. */
+    .moves4 { margin: 3.25rem auto 0; max-width: 900px; }
+    .moves4-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .moves4-item { position: relative; padding: 1.9rem 1rem 1.7rem; text-align: center; }
+    .moves4-item + .moves4-item { border-left: 1px solid var(--border); }
+    .moves4-art { height: 96px; display: flex; align-items: flex-end; justify-content: center; margin-bottom: 1rem; }
+    .moves4-art img { max-height: 96px; width: auto; display: block; }
+    .moves4-name {
+      font-family: var(--ff-sans); font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate);
+      margin-bottom: 0.4rem;
+    }
+    .moves4-desc { font-family: var(--ff-body); font-size: 1.05rem; line-height: 1.5; color: var(--muted); margin: 0; }
+    .moves4-item + .moves4-item::before {
+      content: "\2192"; position: absolute; left: -0.55em; top: 3.1rem;
+      color: var(--ds-ochre); font-size: 0.95rem; line-height: 1;
+      background: var(--cream); padding: 0 0.3em;
+    }
+    @media (max-width: 900px) {
+      .moves4-grid { grid-template-columns: 1fr 1fr; }
+      .moves4-item:nth-child(3) { border-left: none; }
+      .moves4-item:nth-child(n+3) { border-top: 1px solid var(--border); }
+      .moves4-item:nth-child(3)::before { display: none; }
+    }
+    @media (max-width: 560px) {
+      .moves4-grid { grid-template-columns: 1fr; }
+      .moves4-item + .moves4-item { border-left: none; border-top: 1px solid var(--border); }
+      .moves4-item + .moves4-item::before { content: "\2193"; left: 50%; top: -0.6em; transform: translateX(-50%); }
+      .moves4-item:nth-child(3)::before { display: block; }
     }
   </style>
 </head>
@@ -240,8 +276,8 @@
       </article>
       <article class="pillar-card">
         <div class="pillar-num">v</div>
-        <h3 class="pillar-title">Find It · Follow It · Frame It</h3>
-        <p class="pillar-desc">Three ways of reading, in order. <strong>Find It:</strong> notice what&#8217;s on the page. <strong>Follow It:</strong> ask why, with the text as your evidence. <strong>Frame It:</strong> ask what the whole book is for. This is the spine of every unit.</p>
+        <h3 class="pillar-title">Find It · Follow It · Frame It · Keep It</h3>
+        <p class="pillar-desc">Four ways of reading, in order. <strong>Find It:</strong> notice what&#8217;s on the page. <strong>Follow It:</strong> ask why, with the text as your evidence. <strong>Frame It:</strong> ask what the whole book is for. <strong>Keep It:</strong> write down what became yours &#8212; a narration, a commonplace entry, an essay. This is the spine of every unit.</p>
       </article>
     </div>
   </div>
@@ -349,6 +385,32 @@
           <p class="nb-step"><b>Find It</b>Narration moves to the page; they notice what the author actually wrote.</p>
           <p class="nb-step"><b>Follow It</b>Claims emerge from observation. They&#8217;re no longer summarizing — they&#8217;re arguing.</p>
           <p class="nb-step"><b>Frame It</b>A thesis-driven essay about a book they&#8217;ve truly inhabited. The argument is theirs because the noticing was theirs.</p>
+          <p class="nb-step"><b>Keep It</b>The essay, the narration, the lines copied into the commonplace book. What is kept is what they can return to in five years and still recognise as their own.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="moves4">
+      <div class="moves4-grid">
+        <div class="moves4-item">
+          <div class="moves4-art"><img src="images/method-acorn-color.png" alt="" loading="lazy" decoding="async"></div>
+          <div class="moves4-name">Find It</div>
+          <p class="moves4-desc">Notice what&rsquo;s there.</p>
+        </div>
+        <div class="moves4-item">
+          <div class="moves4-art"><img src="images/method-leaf-color.png" alt="" loading="lazy" decoding="async"></div>
+          <div class="moves4-name">Follow It</div>
+          <p class="moves4-desc">Trace what matters.</p>
+        </div>
+        <div class="moves4-item">
+          <div class="moves4-art"><img src="images/method-oak-color.png" alt="" loading="lazy" decoding="async"></div>
+          <div class="moves4-name">Frame It</div>
+          <p class="moves4-desc">Make meaning.</p>
+        </div>
+        <div class="moves4-item">
+          <div class="moves4-art"><img src="images/method-book-color.png" alt="" loading="lazy" decoding="async"></div>
+          <div class="moves4-name">Keep It</div>
+          <p class="moves4-desc">Keep what became yours.</p>
         </div>
       </div>
     </div>
