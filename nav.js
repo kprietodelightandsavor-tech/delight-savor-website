@@ -60,63 +60,68 @@
 });
    /* ── NAV CSS ── */
   const navCSS = `
-    nav { background: #F5F1E8; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 0 #E6DECF; }
+    nav { background: var(--ds-paper); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 0 var(--ds-rule); }
+
+    /* The bar rule above targets every <nav>; footers contain navs too.
+       Without this they inherit the 68px sticky paper bar. */
+    footer nav { background: none; padding: 0; display: block; height: auto;
+      position: static; box-shadow: none; gap: 0; }
     .nav-logo-wrap { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; flex: 0 0 auto; }
     .nav-logo-img { height: 40px; width: auto; opacity: 0.95; }
-    .nav-logo-text { font-family: 'Playfair Display', serif; color: #3F3732; font-size: 1rem; letter-spacing: 0.04em; line-height: 1.2; }
-    .nav-logo-text span { display: block; font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: #9A7437; font-family: 'Cormorant Garamond', serif; font-style: italic; }
+    .nav-logo-text { font-family: 'Playfair Display', serif; color: var(--ds-juniper); font-size: 1rem; letter-spacing: 0.04em; line-height: 1.2; }
+    .nav-logo-text span { display: block; font-size: 0.698rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ds-sage-text); font-family: 'Cormorant Garamond', serif; font-style: italic; }
     .nav-links { list-style: none; display: flex; gap: clamp(0.85rem, 1.5vw, 1.6rem); align-items: center; flex-wrap: nowrap; margin: 0; padding: 0; }
-    .nav-links a { color: #5C544A; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; white-space: nowrap; }
-    .nav-links a:hover, .nav-links a.active { color: #C9A363; }
-    .nav-cta { background: #C9A363; color: #fff !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; white-space: nowrap; }
+    .nav-links a { color: var(--ds-ink-soft); font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; white-space: nowrap; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ds-juniper); }
+    .nav-cta { background: var(--ds-ochre); color: var(--ds-ink) !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; white-space: nowrap; }
     .nav-social { display: flex; gap: 1rem; align-items: center; flex: 0 0 auto; }
-    .nav-social a { color: #8A8073; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; white-space: nowrap; }
-    .nav-social a:hover { color: #C9A363; }
+    .nav-social a { color: var(--ds-sage-text); font-size: 0.785rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; white-space: nowrap; }
+    .nav-social a:hover { color: var(--ds-juniper); }
     .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: #3F3732; border-radius: 2px; transition: all .25s; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--ds-juniper); border-radius: 2px; transition: all .25s; }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; background: #F5F1E8; border-top: 1px solid #E6DECF; padding: 1rem 2rem 1.5rem; z-index: 99; flex-direction: column; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--ds-paper); border-top: 1px solid var(--ds-rule); padding: 1rem 2rem 1.5rem; z-index: 99; flex-direction: column; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
     .mobile-nav.open { display: flex; }
-    .mobile-nav a { color: #5C544A; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 0; border-bottom: 1px solid #E6DECF; transition: color 0.2s; text-decoration: none; }
+    .mobile-nav a { color: var(--ds-ink-soft); font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 0; border-bottom: 1px solid var(--ds-rule); transition: color 0.2s; text-decoration: none; }
     .mobile-nav a:last-child { border-bottom: none; }
-    .mobile-nav a:hover { color: #C9A363; }
-    .mobile-nav a.mobile-cta { color: #C9A363; font-weight: 600; }
-    .mobile-nav .mobile-divider { height: 1px; background: #E6DECF; margin: 0.5rem 0; }
+    .mobile-nav a:hover { color: var(--ds-juniper); }
+    .mobile-nav a.mobile-cta { color: var(--ds-juniper); font-weight: 600; }
+    .mobile-nav .mobile-divider { height: 1px; background: var(--ds-rule); margin: 0.5rem 0; }
     /* Social links are secondary — drop them before the primary links run out of room. */
     @media (max-width: 1420px) { .nav-social { display: none; } }
     /* Below this the primary links genuinely no longer fit; use the menu. */
     @media (max-width: 1160px) { .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; } }
     /* Very narrow phones: tighten the logo lockup so it never wraps against the menu button. */
-    @media (max-width: 400px) { nav { padding: 0 1rem; } .nav-logo-img { height: 32px; } .nav-logo-text { font-size: 0.9rem; } .nav-logo-text span { font-size: 0.58rem; letter-spacing: 0.07em; } }
+    @media (max-width: 400px) { nav { padding: 0 1rem; } .nav-logo-img { height: 32px; } .nav-logo-text { font-size: 0.9rem; } .nav-logo-text span { font-size: 0.632rem; letter-spacing: 0.07em; } }
 
     /* ── FOOTER ── */
-    footer { background: #232220; color: #d9d2c4; font-family: 'Lato', system-ui, sans-serif; padding: 56px 2rem 28px; margin-top: 60px; }
+    footer { background: var(--ds-paper-deep); color: var(--ds-ink); border-top: 1px solid var(--ds-rule-strong); font-family: 'Lato', system-ui, sans-serif; padding: 56px 2rem 28px; margin-top: 60px; }
     .footer-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; align-items: start; }
     .footer-brand .footer-logo { height: 46px; width: auto; margin-bottom: 14px; opacity: .95; }
-    .footer-brand p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; line-height: 1.5; color: rgba(232,225,212,.78); margin: 0 0 18px; max-width: 38ch; }
-    .footer-email p { font-size: .8rem; letter-spacing: .04em; color: rgba(232,225,212,.66); margin: 0 0 8px; }
+    .footer-brand p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; line-height: 1.5; color: var(--ds-ink); margin: 0 0 18px; max-width: 38ch; }
+    .footer-email p { font-size: 0.8rem; letter-spacing: 0.04em; color: var(--ds-ink-soft); margin: 0 0 8px; }
     .footer-email-row { display: flex; gap: 8px; max-width: 320px; }
-    .footer-email-row input { flex: 1; min-width: 0; padding: 9px 12px; border: 1px solid rgba(255,255,255,.18); border-radius: 4px; background: rgba(255,255,255,.06); color: #faf9f6; font-size: .82rem; }
-    .footer-email-row input::placeholder { color: rgba(232,225,212,.5); }
-    .footer-email-row button { padding: 9px 16px; border: none; border-radius: 4px; background: #C9A363; color: #232220; font-weight: 700; font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; transition: background .2s; }
-    .footer-email-row button:hover { background: #d4ad72; }
-    footer h4 { font-family: 'Lato', system-ui, sans-serif; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; color: #E0C99A; margin: 0 0 14px; font-weight: 700; }
+    .footer-email-row input { flex: 1; min-width: 0; padding: 9px 12px; border: 1px solid var(--ds-rule-strong); border-radius: 4px; background: var(--ds-paper-warm); color: var(--ds-paper); font-size: 0.82rem; }
+    .footer-email-row input::placeholder { color: var(--ds-ink-soft); }
+    .footer-email-row button { padding: 9px 16px; border: none; border-radius: 4px; background: var(--ds-juniper); color: var(--ds-paper); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background .2s; }
+    .footer-email-row button:hover { background: var(--ds-ochre-lt); }
+    footer h4 { font-family: 'Lato', system-ui, sans-serif; font-size: 0.8rem; letter-spacing: 0.115em; text-transform: uppercase; color: var(--ds-juniper); margin: 0 0 14px; font-weight: 700; }
     .footer-nav ul, .footer-connect ul { list-style: none; margin: 0; padding: 0; }
     .footer-nav li, .footer-connect li { margin-bottom: 9px; }
-    .footer-nav a, .footer-connect a { color: rgba(232,225,212,.78); text-decoration: none; font-size: .86rem; letter-spacing: .03em; transition: color .2s; }
-    .footer-nav a:hover, .footer-connect a:hover { color: #fff; }
+    .footer-nav a, .footer-connect a { color: var(--ds-ink); text-decoration: none; font-size: 0.86rem; letter-spacing: 0.03em; transition: color .2s; }
+    .footer-nav a:hover, .footer-connect a:hover { color: var(--ds-juniper); }
     /* ── Also from D&S (family apps) ── */
-    .footer-apps { max-width: 1120px; margin: 40px auto 0; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.1); text-align: center; }
-    .footer-apps p { font-family: 'Cormorant Garamond', serif; font-variant: small-caps; letter-spacing: .18em; font-size: .74rem; color: rgba(232,225,212,.5); margin: 0 0 16px; }
+    .footer-apps { max-width: 1120px; margin: 40px auto 0; padding-top: 28px; border-top: 1px solid var(--ds-rule); text-align: center; }
+    .footer-apps p { font-family: 'Cormorant Garamond', serif; font-variant: small-caps; letter-spacing: 0.13em; font-size: 0.8rem; color: var(--ds-ink-soft); margin: 0 0 16px; }
     .footer-apps-row { display: flex; gap: 2.75rem; justify-content: center; align-items: flex-start; flex-wrap: wrap; }
-    .footer-apps-row a { display: inline-flex; flex-direction: column; align-items: center; gap: .55rem; text-decoration: none; color: rgba(232,225,212,.75); font-family: 'Cormorant Garamond', serif; font-size: .95rem; letter-spacing: .02em; transition: color .2s; }
-    .footer-apps-row a:hover { color: #fff; }
+    .footer-apps-row a { display: inline-flex; flex-direction: column; align-items: center; gap: .55rem; text-decoration: none; color: var(--ds-ink-soft); font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; letter-spacing: 0.02em; transition: color .2s; }
+    .footer-apps-row a:hover { color: var(--ds-paper); }
     .footer-apps-row img { display: block; width: 52px; height: 52px; border-radius: 11px; }
-    .footer-bottom { max-width: 1120px; margin: 36px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.12); display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between; font-size: .72rem; letter-spacing: .03em; color: rgba(232,225,212,.55); }
-    .footer-bottom a { color: rgba(232,225,212,.7); text-decoration: none; }
-    .footer-bottom a:hover { color: #fff; }
+    .footer-bottom { max-width: 1120px; margin: 36px auto 0; padding-top: 20px; border-top: 1px solid var(--ds-rule); display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between; font-size: 0.785rem; letter-spacing: 0.03em; color: var(--ds-ink-soft); }
+    .footer-bottom a { color: var(--ds-ink-soft); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--ds-juniper); }
     @media (max-width: 720px) { .footer-inner { grid-template-columns: minmax(0, 1fr); gap: 34px; } footer { padding: 44px 1.5rem 24px; } .footer-bottom { justify-content: flex-start; } }
     /* An <input>'s intrinsic width kept the subscribe row from shrinking, which pushed
        the whole footer wider than narrow phones. Stack it instead. */

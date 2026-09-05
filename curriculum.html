@@ -12,23 +12,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lato:wght@400;500;700&display=swap" rel="stylesheet" />
 
+<link rel="stylesheet" href="/tokens.css" />
+
 <style>
   :root{
-    --paper:#FBF8F1;
-    --cream:#F4EFE4;
-    --cream-warm:#EFE7D7;
-    --slate:#37322B;     /* warm charcoal — primary ink */
-    --ink:#2B2620;
-    --sage:#5F7457;
-    --sage-deep:#4E6149;
-    --sage-soft:#8A977E;
-    --tawny:#C4923A;     /* tawny gold */
-    --rust:#A8552F;      /* warm terracotta — CTAs */
-    --umber:#6B5240;
-    --line:#E2DACB;
-    --line-soft:#EBE4D6;
-    --shadow-sm:0 1px 2px rgba(55,50,43,.06), 0 6px 18px rgba(55,50,43,.07);
-    --shadow-md:0 2px 4px rgba(55,50,43,.08), 0 14px 34px rgba(55,50,43,.12);
+    /* Aliased to the brand palette in tokens.css. */
+    --paper:var(--ds-paper-warm);
+    --cream:var(--ds-paper);
+    --cream-warm:var(--ds-paper-deep);
+    --slate:var(--ds-juniper);        /* headings */
+    --ink:var(--ds-ink);
+    --sage:var(--ds-juniper);
+    --sage-deep:var(--ds-juniper-deep);
+    --sage-soft:var(--ds-sage);
+    --tawny:var(--ds-ochre-text);
+    --tawny-fill:var(--ds-ochre);
+    --rust:var(--ds-juniper);         /* was terracotta; CTAs are juniper now */
+    --umber:var(--ds-ink-soft);
+    --line:var(--ds-rule);
+    --line-soft:var(--ds-rule);
+    --shadow-sm:0 1px 2px rgba(41,45,44,.05), 0 6px 18px rgba(41,45,44,.06);
+    --shadow-md:0 2px 4px rgba(41,45,44,.07), 0 14px 34px rgba(41,45,44,.10);
   }
 
   *{box-sizing:border-box;}
@@ -48,7 +52,7 @@
   .eyebrow{
     font-family:"Lato", system-ui, sans-serif;
     font-size:12px;
-    letter-spacing:.24em;
+    letter-spacing:0.173em;
     text-transform:uppercase;
     color:var(--sage);
     font-weight:700;
@@ -56,7 +60,7 @@
   .wrap{max-width:1120px;margin:0 auto;padding:0 22px;}
 
   /* ---------- HERO (full branded banner; wordmark + tagline are baked into the art) ---------- */
-  .hero{display:block;background:#2A2520;line-height:0;}
+  .hero{display:block;background:var(--ds-paper);line-height:0;}
   .hero__img{width:100%;height:auto;display:block;}
   .hero-cta{background:var(--paper);text-align:center;padding:30px 22px 4px;}
 
@@ -64,7 +68,7 @@
     display:inline-block;
     font-family:"Lato", system-ui, sans-serif;
     font-size:13px;
-    letter-spacing:.16em;
+    letter-spacing:0.115em;
     text-transform:uppercase;
     font-weight:700;
     text-decoration:none;
@@ -74,7 +78,7 @@
     padding:16px 34px;
     transition:transform .18s ease, background .18s ease, box-shadow .18s ease;
   }
-  .btn--primary{background:var(--rust);color:#FBF6EC;box-shadow:var(--shadow-sm);}
+  .btn--primary{background:var(--ds-juniper);color:var(--ds-paper);box-shadow:var(--shadow-sm);}
   .btn--primary:hover{background:#974B29;transform:translateY(-2px);box-shadow:var(--shadow-md);}
   .btn--cream{background:#FBF6EC;color:var(--rust);box-shadow:var(--shadow-sm);}
   .btn--cream:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);}
@@ -109,8 +113,8 @@
   }
   .level-word .sub{
     display:block;font-family:"Lato",system-ui,sans-serif;
-    font-size:12px;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--sage-soft);margin-top:6px;font-weight:600;
+    font-size:12px;letter-spacing:0.115em;text-transform:uppercase;
+    color:var(--ds-sage-text);margin-top:6px;font-weight:600;
   }
   .level-word:hover,.level-word:focus-visible{color:var(--rust);transform:translateY(-2px);}
   .level-word:hover .sub{color:var(--umber);}
@@ -186,14 +190,14 @@
   }
   .cover--cloth .ct{
     font-family:"Playfair Display",serif;font-weight:600;
-    font-size:20px;line-height:1.15;letter-spacing:.01em;
+    font-size:20px;line-height:1.15;letter-spacing:0.01em;
   }
   .cover--cloth .cr{
-    width:24px;height:1px;background:var(--tawny);margin:11px 0;
+    width:24px;height:1px;background:var(--tawny-fill);margin:11px 0;
   }
   .cover--cloth .ca{
     font-family:"Lato",system-ui,sans-serif;font-size:10px;
-    letter-spacing:.18em;text-transform:uppercase;opacity:.85;
+    letter-spacing:0.13em;text-transform:uppercase;opacity:.85;
   }
   /* your real cover art, layered over the cloth placeholder; if the file is
      missing it removes itself and the placeholder shows through */
@@ -202,7 +206,7 @@
   .pill{
     display:inline-block;align-self:flex-start;
     font-family:"Lato",system-ui,sans-serif;
-    font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+    font-size:11px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;
     color:#FBF6EC;background:var(--slate);
     border-radius:999px;padding:6px 13px;margin:14px 0 8px;
   }
@@ -211,8 +215,8 @@
     font-size:23px;line-height:1.16;color:var(--rust);
   }
   .card__meta{
-    font-family:"Lato",system-ui,sans-serif;font-size:12px;letter-spacing:.02em;
-    color:var(--sage-soft);margin-top:5px;
+    font-family:"Lato",system-ui,sans-serif;font-size:12px;letter-spacing:0.02em;
+    color:var(--ds-sage-text);margin-top:5px;
   }
 
   .shelf-cta{text-align:center;margin-top:14px;}
@@ -243,7 +247,7 @@
   }
   .back-link{
     background:none;border:none;cursor:pointer;
-    font-family:"Lato",system-ui,sans-serif;font-size:13px;letter-spacing:.06em;
+    font-family:"Lato",system-ui,sans-serif;font-size:13px;letter-spacing:0.06em;
     color:var(--sage);font-weight:700;padding:6px 0;
   }
   .back-link:hover{color:var(--rust);}
@@ -258,7 +262,7 @@
   }
   .filters{display:flex;flex-wrap:wrap;gap:9px;}
   .chip{
-    font-family:"Lato",system-ui,sans-serif;font-size:12px;letter-spacing:.08em;
+    font-family:"Lato",system-ui,sans-serif;font-size:12px;letter-spacing:0.08em;
     text-transform:uppercase;font-weight:700;cursor:pointer;
     border:1.5px solid var(--line);background:var(--paper);color:var(--umber);
     border-radius:999px;padding:8px 16px;transition:all .16s ease;
@@ -267,8 +271,8 @@
   .chip[aria-pressed="true"]{background:var(--sage);border-color:var(--sage);color:#FBF6EC;}
   .sort{display:flex;align-items:center;gap:9px;}
   .sort label{
-    font-family:"Lato",system-ui,sans-serif;font-size:11px;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--sage-soft);font-weight:700;
+    font-family:"Lato",system-ui,sans-serif;font-size:11px;letter-spacing:0.101em;
+    text-transform:uppercase;color:var(--ds-sage-text);font-weight:700;
   }
   .sort select{
     font-family:"Lato",system-ui,sans-serif;font-size:13px;color:var(--slate);
@@ -290,23 +294,23 @@
   .gcard .cover--cloth .ct{font-size:17px;}
   .status{
     display:inline-block;align-self:flex-start;margin:13px 0 7px;
-    font-family:"Lato",system-ui,sans-serif;font-size:10px;letter-spacing:.12em;
+    font-family:"Lato",system-ui,sans-serif;font-size:10px;letter-spacing:0.12em;
     text-transform:uppercase;font-weight:700;border-radius:999px;padding:5px 11px;
   }
   .status--go{background:var(--sage);color:#FBF6EC;}
-  .status--self{background:var(--tawny);color:#3A2D12;}
+  .status--self{background:var(--tawny-fill);color:var(--ds-ink);}
   .status--avail{background:var(--umber);color:#FBF6EC;}
   .status--soon{background:transparent;color:var(--umber);border:1px solid var(--line);}
   .gcard__level{
-    font-family:"Lato",system-ui,sans-serif;font-size:10px;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--sage-soft);font-weight:700;margin-bottom:2px;
+    font-family:"Lato",system-ui,sans-serif;font-size:10px;letter-spacing:0.101em;
+    text-transform:uppercase;color:var(--ds-sage-text);font-weight:700;margin-bottom:2px;
   }
   .gcard__title{
     font-family:"Cormorant Garamond",serif;font-weight:600;font-size:21px;
     line-height:1.15;color:var(--rust);
   }
   .gcard__blurb{font-size:16.5px;line-height:1.4;color:var(--umber);margin-top:5px;}
-  .empty{grid-column:1/-1;text-align:center;color:var(--sage-soft);padding:50px 0;font-size:20px;}
+  .empty{grid-column:1/-1;text-align:center;color:var(--ds-sage-text);padding:50px 0;font-size:20px;}
 
   /* view toggling */
   [hidden]{display:none !important;}
@@ -489,7 +493,7 @@ const COURSES = [
     level:"high",
     meta:"The Anti-Hero",
     status:"avail",
-    cloth:"#65766A",
+    cloth:"#5D6C61",
     image:"/images/wuthering-heights.png",
     link:"#",
     blurb:"Wild, strange, unforgettable — the anti-hero studied in full."
@@ -501,7 +505,7 @@ const COURSES = [
     level:"middle",
     meta:"32 weeks · self-paced",
     status:"self",
-    cloth:"#5B7FA6",
+    cloth:"#4C6B8C",
     image:"",
     link:"#",
     blurb:"Living literature and sentence-craft for the middle years, fully self-paced."
@@ -513,7 +517,7 @@ const COURSES = [
     level:"high",
     meta:"Companion study",
     status:"soon",
-    cloth:"#7C7A52",
+    cloth:"#6C6A47",
     image:"",
     link:"https://in-the-margin.netlify.app/old-man-preview.html",
     blurb:"Hemingway’s sea, scaffolded for honors-ready writing. Coming Fall 2026."
@@ -525,7 +529,7 @@ const COURSES = [
     level:"high",
     meta:"Comedy",
     status:"soon",
-    cloth:"#8B6B8B",
+    cloth:"#7C5F7C",
     image:"/images/midsummer.png",
     link:"https://in-the-margin.netlify.app/midsummer-preview.html",
     blurb:"Shakespeare’s comedy, taught the Charlotte Mason way. Coming Jan 2027."

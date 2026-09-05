@@ -1,0 +1,58 @@
+/* ============================================================
+   DELIGHT & SAVOR — BRAND TOKENS
+   Paper is the world. Blue-green is the punctuation.
+
+   Target balance across the site:
+     ~70% warm paper   ~15% juniper   ~8% weathered/soft blue
+      ~5% ink           ~2% ochre
+
+   Deep colour is for typography, rules, small panels and the
+   footer — never a full-screen ground. Every value below is
+   contrast-checked; colours too light to be read as text have
+   a matching *-text sibling. Use the base only for rules,
+   fills, illustrations and line work.
+   ============================================================ */
+
+:root {
+  /* ---- Ground: the dominant field ---------------------------- */
+  --ds-paper:        #F5F1E8;  /* the world                       */
+  --ds-paper-warm:   #FAF7F0;  /* raised cards, lightest          */
+  --ds-paper-deep:   #EDE7DA;  /* quiet alternating bands         */
+
+  /* ---- Ink --------------------------------------------------- */
+  --ds-ink:          #292D2C;  /* body copy       12.37:1 on paper */
+  --ds-ink-soft:     #4A5654;  /* secondary text   6.77:1 on paper */
+
+  /* ---- Juniper: primary identity ----------------------------- */
+  /* logo, headings, buttons, the footer band */
+  --ds-juniper:      #3F6260;  /* 5.96:1 on paper — safe as text   */
+  --ds-juniper-deep: #2F4B4A;  /* footer band; paper on it 8.37:1  */
+  --ds-juniper-pale: #E7ECEB;  /* faintest tint for small panels   */
+
+  /* ---- Weathered blue: secondary ----------------------------- */
+  /* sections, links, small graphics — this is what keeps the
+     brand reading blue-green rather than green */
+  --ds-blue:         #607A86;  /* 4.03:1 — large text, rules, graphics */
+  --ds-blue-text:    #556B76;  /* 4.57:1 — links and label text        */
+  --ds-blue-pale:    #E8ECEE;  /* pale wash for panels                 */
+
+  /* ---- Blue sage: soft secondary ----------------------------- */
+  --ds-sage:         #81989A;  /* DECORATIVE: details, illustrations   */
+  --ds-sage-text:    #586C6E;  /* 4.52:1 when it must be read          */
+
+  /* ---- Ochre: tiny warm counterpoint only -------------------- */
+  --ds-ochre:        #B59055;  /* DECORATIVE: small marks, fills       */
+  --ds-ochre-text:   #7F6337;  /* 4.55:1 on paper                      */
+  --ds-ochre-lt:     #E2C79A;  /* on the juniper footer     5.78:1     */
+
+  /* ---- Rules and hairlines ----------------------------------- */
+  --ds-rule:         rgba(63, 98, 96, .18);
+  --ds-rule-strong:  rgba(63, 98, 96, .34);
+  --ds-rule-dark:    rgba(245, 241, 232, .18);
+
+  /* ---- Type -------------------------------------------------- */
+  --ds-display: 'Playfair Display', Georgia, serif;
+  --ds-body:    'Cormorant Garamond', Georgia, serif;
+  --ds-sans:    'Jost', system-ui, -apple-system, sans-serif;
+  --ds-hand:    'Caveat', cursive;   /* marginalia only, sparingly */
+}

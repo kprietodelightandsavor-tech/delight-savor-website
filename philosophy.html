@@ -25,15 +25,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/tokens.css" />
   <style>
     :root {
-      --slate: #3F3732; --slate-mid: #5C564B; --sage-dark: #557390;
-      --sage: #6D8AA6; --sage-light: #EFE8DA; --cream: #F5F1E8;
-      --gold: #C9A363; --gold-light: #E0C99A; --teal: #6D8AA6;
-      --ink: #3F3732; --muted: #6E675C; --border: #E6DECF; --cloth: #232220;
-      --ff-display: 'Playfair Display', Georgia, serif;
-      --ff-body: 'Cormorant Garamond', Georgia, serif;
-      --ff-sans: 'Jost', system-ui, sans-serif;
+      /* Aliased to the brand palette in tokens.css. */
+      --slate: var(--ds-juniper); --slate-mid: var(--ds-ink-soft); --sage-dark: var(--ds-blue-text);
+      --sage: var(--ds-blue-text); --sage-light: var(--ds-blue-pale); --cream: var(--ds-paper);
+      --gold: var(--ds-ochre-text);   /* safe as text */
+      --gold-fill:  var(--ds-ochre);        /* decorative fills only */ --gold-text: var(--ds-ochre-text); --gold-light: var(--ds-ochre-lt);
+      --teal: var(--ds-blue-text);
+      --ink: var(--ds-ink); --muted: var(--ds-ink-soft); --border: var(--ds-rule);
+      --cloth: var(--ds-juniper-deep);
+      --ff-display: var(--ds-display);
+      --ff-body: var(--ds-body);
+      --ff-sans: var(--ds-sans);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Cormorant Garamond', Georgia, serif; background: var(--cream); color: var(--ink); font-size: 18px; line-height: 1.7; }
@@ -41,22 +46,22 @@
     img { display: block; max-width: 100%; }
 
     /* hero */
-    .phil-hero { color: var(--cream); padding: 4.75rem 2rem 4.25rem; text-align: center; }
-    .phil-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem; font-family: var(--ff-sans); }
-    .phil-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4.8vw, 3.1rem); font-weight: 400; font-style: italic; line-height: 1.2; max-width: 620px; margin: 0 auto 1.1rem; color: var(--cream); text-shadow: 0 2px 1px rgba(0,0,0,.5), 0 -1px 0 rgba(255,240,210,.04); }
-    .phil-title em { font-style: italic; color: var(--gold-light); }
-    .phil-lead { max-width: 500px; margin: 0 auto 2rem; color: rgba(250,249,246,0.78); font-size: 1.05rem; line-height: 1.65; }
+    .phil-hero { color: var(--ds-ink); padding: 5rem 2rem 4.5rem; text-align: center; }
+    .phil-eyebrow { font-size: 0.763rem; letter-spacing: 0.158em; text-transform: uppercase; color: var(--ds-blue-text); margin-bottom: 1rem; font-family: var(--ff-sans); }
+    .phil-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4.8vw, 3.1rem); font-weight: 500; font-style: normal; line-height: 1.2; max-width: 620px; margin: 0 auto 1.1rem; color: var(--ds-juniper); }
+    .phil-title em { font-style: italic; color: var(--ds-blue-text); }
+    .phil-lead { max-width: 500px; margin: 0 auto 2rem; color: var(--ds-ink); font-size: 1.05rem; line-height: 1.65; }
     .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background: var(--gold); color: #fff; padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; font-weight: 600; display: inline-block; font-family: var(--ff-sans); }
-    .btn-ghost { border: 1px solid rgba(250,249,246,0.3); color: rgba(250,249,246,0.85); padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; display: inline-block; font-family: var(--ff-sans); }
-    .btn-outline { border: 1px solid rgba(250,249,246,0.3); color: rgba(250,249,246,0.85); padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; display: inline-block; font-family: var(--ff-sans); transition: border-color .2s, color .2s; }
+    .btn-primary { background: var(--ds-juniper); color: var(--ds-paper); padding: 0.65rem 1.75rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; font-weight: 600; display: inline-block; font-family: var(--ff-sans); }
+    .btn-ghost { border: 1px solid var(--ds-rule-strong); color: var(--ds-juniper); padding: 0.65rem 1.75rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; display: inline-block; font-family: var(--ff-sans); }
+    .btn-outline { border: 1px solid var(--ds-rule-strong); color: var(--ds-juniper); padding: 0.65rem 1.75rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; display: inline-block; font-family: var(--ff-sans); transition: border-color .2s, color .2s; }
     .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
 
-    .section-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; font-family: var(--ff-sans); }
+    .section-label { font-size: 0.785rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ds-blue-text); margin-bottom: 0.5rem; font-family: var(--ff-sans); }
     .section-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400; color: var(--slate); margin-bottom: 1rem; line-height: 1.25; }
     .section-body { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; color: var(--ink); line-height: 1.85; }
     .section-body p + p { margin-top: 1rem; }
-    .gold-rule { width: 40px; height: 2px; background: var(--gold); margin-bottom: 1.4rem; }
+    .gold-rule { width: 40px; height: 2px; background: var(--gold-fill); margin-bottom: 1.4rem; }
     .phil-section { padding: 4.75rem 2rem; }
     .phil-section.alt { background: var(--sage-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .phil-section.stripe { background: var(--cream); border-top: 1px solid var(--border); }
@@ -85,7 +90,7 @@
     .thinker-chip:hover { background: var(--sage-light); border-color: var(--sage); }
     .great-conv-quote { margin-top: 1.75rem; background: var(--cream); border-radius: 4px; padding: 1.75rem 2rem; box-shadow: 0 3px 16px rgba(92,86,75,0.08); border-left: 3px solid var(--sage); }
     .great-conv-quote p { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; color: var(--slate); line-height: 1.65; }
-    .great-conv-quote cite { display: block; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.85rem; font-style: normal; font-family: var(--ff-sans); }
+    .great-conv-quote cite { display: block; font-size: 0.785rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.85rem; font-style: normal; font-family: var(--ff-sans); }
 
     /* year note */
     .year-note { max-width: 720px; margin: 0 auto; text-align: center; font-family: var(--ff-body); font-size: 1.08rem; color: var(--slate-mid); line-height: 1.8; }
@@ -107,38 +112,38 @@
     .narration-bridge-visual { background: var(--sage-light); border-radius: 4px; padding: 1.85rem; border: 1px solid var(--border); }
     .nb-flow { display: flex; flex-direction: column; gap: 0.55rem; }
     .nb-step { font-family: var(--ff-body); font-size: 1.04rem; color: var(--slate); line-height: 1.5; }
-    .nb-step b { font-family: var(--ff-sans); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.1rem; font-weight: 600; }
+    .nb-step b { font-family: var(--ff-sans); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.1rem; font-weight: 600; }
 
     /* cta */
     .phil-cta { padding: 4.75rem 2rem; text-align: center; }
     .phil-cta-inner { max-width: 560px; margin: 0 auto; position: relative; z-index: 1; }
-    .phil-cta-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-style: italic; color: var(--cream); margin-bottom: 0.85rem; font-weight: 400; }
-    .phil-cta-body { font-size: 1.02rem; color: rgba(250,249,246,0.72); line-height: 1.7; margin-bottom: 2rem; }
+    .phil-cta-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-style: normal; font-weight: 500; color: var(--ds-juniper); margin-bottom: 0.85rem; font-weight: 400; }
+    .phil-cta-body { font-size: 1.02rem; color: var(--ds-ink); line-height: 1.7; margin-bottom: 2rem; }
     .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
     /* student work — the heartbeat, near the top */
     .student-work { background: var(--cream); padding: 4.75rem 2rem; }
     .sw-inner { max-width: 1060px; margin: 0 auto; }
     .sw-head { text-align: center; max-width: 640px; margin: 0 auto 2.5rem; }
-    .sw-head .section-label { color: var(--gold); }
+    .sw-head .section-label { color: var(--ds-blue-text); }
     .sw-grid { display: grid; grid-template-columns: 1fr; gap: 1.75rem; max-width: 700px; margin: 0 auto; }
     .sw-plate { background: var(--cream); border: 1px solid var(--border); padding: 12px; border-radius: 3px; box-shadow: 0 10px 28px rgba(92,86,75,0.12); }
     .sw-plate img { width: 100%; display: block; border-radius: 2px; }
-    .sw-cap { text-align: center; font-family: var(--ff-sans); font-variant: small-caps; letter-spacing: 0.14em; font-size: 0.74rem; color: var(--sage-dark); margin-top: 0.7rem; }
+    .sw-cap { text-align: center; font-family: var(--ff-sans); font-variant: small-caps; letter-spacing: 0.101em; font-size: 0.8rem; color: var(--sage-dark); margin-top: 0.7rem; }
 
     /* ── book-cloth covers (charcoal ink) ── */
-    .cloth { position: relative; background-color: #232220;
+    .cloth { position: relative; background-color: var(--ds-paper);
+      /* Paper, not cloth. One near-imperceptible tonal wash; no weave. */
       background-image:
-        repeating-linear-gradient(90deg, rgba(0,0,0,.12) 0 1px, transparent 1px 3px),
-        repeating-linear-gradient(0deg, rgba(255,255,255,.013) 0 1px, transparent 1px 3px),
-        radial-gradient(130% 90% at 50% 0%, #2f2d29 0%, #232220 55%, #191816 100%); }
-    .gilt::before { content:""; position:absolute; inset:16px; border:1px solid rgba(201,163,99,.42); pointer-events:none; z-index:0; }
-    .gilt::after  { content:""; position:absolute; inset:21px; border:1px solid rgba(201,163,99,.16); pointer-events:none; z-index:0; }
+        radial-gradient(120% 80% at 50% 0%, rgba(63,98,96,.05) 0%, rgba(63,98,96,0) 62%); }
+    .site-footer.cloth { background-color: var(--ds-juniper-deep); background-image: none; }
+    .gilt::before { content:""; position:absolute; inset:16px; border:1px solid var(--ds-rule-strong); pointer-events:none; z-index:0; }
+    .gilt::after  { content:""; position:absolute; inset:21px; border:1px solid var(--ds-rule); pointer-events:none; z-index:0; }
     .phil-hero.cloth > * { position: relative; z-index: 1; }
     .fieldnote { max-width: 40ch; margin: 1.9rem auto 0; position: relative; z-index: 1; }
-    .fn-label { display:flex; align-items:center; justify-content:center; gap:.7rem; font-family:var(--ff-sans); font-variant:small-caps; letter-spacing:.22em; font-size:.72rem; color:var(--gold-light); margin-bottom:.55rem; }
-    .fn-label::before, .fn-label::after { content:""; height:1px; width:22px; background:rgba(201,163,99,.55); }
-    .fn-text { font-family:var(--ff-display); font-style:italic; font-size:1.3rem; line-height:1.5; color:var(--cream); text-align:center; }
+    .fn-label { display:flex; align-items:center; justify-content:center; gap:.7rem; font-family:var(--ff-sans); font-variant:small-caps; letter-spacing:0.158em; font-size:0.8rem; color:var(--gold); margin-bottom:.55rem; }
+    .fn-label::before, .fn-label::after { content:""; height:1px; width:22px; background:var(--gold-fill); }
+    .fn-text { font-family:var(--ff-display); font-style:italic; font-size:1.35rem; line-height:1.5; color:var(--ds-juniper); text-align:center; }
     .fn-band { padding: 3.5rem 2rem; text-align:center; }
 
     @media (max-width: 760px) {
@@ -155,9 +160,9 @@
 
 <!-- HERO -->
 <section class="phil-hero cloth gilt" aria-labelledby="phil-title">
-  <p class="phil-eyebrow">The Philosophy · Upper-Level Charlotte Mason Literature</p>
-  <h1 class="phil-title" id="phil-title">The <em>Why</em> Behind Every Unit</h1>
-  <p class="phil-lead">Students deserve the real thing — the best that has been thought and written, not simplified or pre-digested. Here is what I believe, and what it looks like when it works.</p>
+  <p class="phil-eyebrow">The Philosophy</p>
+  <h1 class="phil-title" id="phil-title">The Habit of <em>Attention</em></h1>
+  <p class="phil-lead">Students deserve the real thing — the best that has been thought and written, not simplified or pre-digested. Attention is the habit that makes it theirs. Here is what I believe, and what it looks like when it works.</p>
   <div class="hero-btns">
     <a href="curriculum.html" class="btn-primary">Browse the Curriculum</a>
     <a href="teachers-notebook.html" class="btn-ghost">Teacher&#8217;s Notebook</a>
@@ -201,7 +206,7 @@
     </div>
     <blockquote class="prose-pull">
       The mind is not a vessel to be filled,<br>but a <em>fire to be kindled.</em>
-      <cite style="font-family:var(--ff-sans);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-top:.75rem;display:block;font-style:normal;">— Attributed to Plutarch</cite>
+      <cite style="font-family:var(--ff-sans);font-size:0.785rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage);margin-top:.75rem;display:block;font-style:normal;">— Attributed to Plutarch</cite>
     </blockquote>
   </div>
 </section>
