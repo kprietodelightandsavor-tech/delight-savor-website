@@ -11,13 +11,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/tokens.css" />
   <style>
     :root {
-      --slate: #37322B; --slate-mid: #5C564B; --slate-deep: #232220;
-      --sage: #8C9B79; --sage-light: #EBEFE2; --sage-dark: #5C6A50;
-      --cream: #FAF6EE; --gold: #BE9457; --gold-light: #E2C79A;
-      --teal: #4A7C7E; --ink: #2C2A26; --muted: #6E675C; --border: #E4DED1;
-      --cloth: #232220;
+      /* Aliased to the brand palette in tokens.css. */
+      --slate: var(--ds-juniper); --slate-mid: var(--ds-ink-soft); --slate-deep: var(--ds-juniper-deep);
+      --sage: var(--ds-ink-soft); --sage-light: var(--ds-paper-deep); --sage-dark: var(--ds-blue-text);
+      --cream: var(--ds-paper); --gold: var(--ds-ochre-text); --gold-fill: var(--ds-ochre); --gold-light: var(--ds-ochre-lt);
+      --teal: var(--ds-blue-text); --ink: var(--ds-ink); --muted: var(--ds-ink-soft); --border: var(--ds-rule);
+      --cloth: var(--ds-juniper-deep);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Cormorant Garamond', Georgia, serif; background: var(--cream); color: var(--ink); font-size: 18px; line-height: 1.7; }
@@ -25,22 +27,22 @@
     img { display: block; max-width: 100%; }
 
     /* ── HERO ── */
-    .hero { background: var(--slate); color: var(--cream); padding: 4.5rem 2rem 4rem; text-align: center; }
-    .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem; font-style: italic; }
-    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 400; line-height: 1.2; max-width: 640px; margin: 0 auto 1.1rem; text-shadow: 0 2px 1px rgba(0,0,0,.5), 0 -1px 0 rgba(255,240,210,.04); }
-    .hero-title em { color: var(--gold-light); font-style: italic; }
-    .hero-lead { max-width: 500px; margin: 0 auto 2rem; color: rgba(250,249,246,0.68); font-size: 1rem; line-height: 1.7; }
+    .hero { background: transparent; color: var(--ds-ink); padding: 4.5rem 2rem 4rem; text-align: center; }
+    .hero-eyebrow { font-size: 0.763rem; letter-spacing: 0.158em; text-transform: uppercase; color: var(--ds-ink-soft); margin-bottom: 1rem; font-style: italic; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 400; line-height: 1.2; max-width: 640px; margin: 0 auto 1.1rem; color: var(--ds-juniper); }
+    .hero-title em { color: var(--ds-blue-text); font-style: italic; }
+    .hero-lead { max-width: 500px; margin: 0 auto 2rem; color: var(--ds-ink); font-size: 1rem; line-height: 1.7; }
     .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background: var(--gold); color: var(--cream); padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; font-weight: 600; display: inline-block; transition: background 0.2s; }
+    .btn-primary { background: var(--ds-juniper); color: var(--ds-paper); padding: 0.65rem 1.75rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; font-weight: 600; display: inline-block; transition: background 0.2s; }
     .btn-primary:hover { background: rgba(190,148,87,0.85); }
-    .btn-ghost { border: 1px solid rgba(250,249,246,0.3); color: rgba(250,249,246,0.82); padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; display: inline-block; transition: border-color 0.2s; }
+    .btn-ghost { border: 1px solid var(--ds-rule-strong); color: var(--ds-juniper); padding: 0.65rem 1.75rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; display: inline-block; transition: border-color 0.2s; }
     .btn-ghost:hover { border-color: var(--gold-light); color: var(--gold-light); }
 
     /* ── INTRO PROSE ── */
     .intro-section { padding: 5rem 2rem; background: var(--cream); border-bottom: 1px solid var(--border); }
     .intro-inner { max-width: 720px; margin: 0 auto; }
     .intro-rule { width: 40px; height: 2px; background: var(--gold); margin-bottom: 1.5rem; }
-    .intro-label { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; font-style: italic; }
+    .intro-label { font-size: 0.785rem; letter-spacing: 0.144em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; font-style: italic; }
     .intro-title { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 400; color: var(--slate); margin-bottom: 1.5rem; }
     .intro-body { font-size: 1.05rem; color: var(--ink); line-height: 1.95; }
     .intro-body p + p { margin-top: 1.2rem; }
@@ -50,19 +52,19 @@
     /* Mason pull quote */
     .mason-quote { margin: 2.5rem 0 0; padding: 1.5rem 2rem; border-left: 3px solid var(--gold); background: rgba(190,148,87,0.06); border-radius: 0 6px 6px 0; }
     .mason-quote p { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; color: var(--slate); line-height: 1.65; }
-    .mason-quote cite { display: block; font-family: 'Cormorant Garamond', serif; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 0.75rem; font-style: normal; }
+    .mason-quote cite { display: block; font-family: 'Cormorant Garamond', serif; font-size: 0.785rem; letter-spacing: 0.101em; text-transform: uppercase; color: var(--muted); margin-top: 0.75rem; font-style: normal; }
 
     /* ── QUILT ── */
-    .quilt-section { background: var(--slate-deep); padding: 4rem 2rem 5rem; }
+    .quilt-section { background: var(--ds-paper-deep); padding: 4rem 2rem 5rem; }
     .quilt-inner { max-width: 1060px; margin: 0 auto; }
     .quilt-year { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-    .quilt-year-label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-style: italic; white-space: nowrap; }
+    .quilt-year-label { font-size: 0.785rem; letter-spacing: 0.158em; text-transform: uppercase; color: var(--gold); font-style: italic; white-space: nowrap; }
     .quilt-year-rule { flex: 1; height: 1px; background: rgba(255,255,255,0.09); }
     /* The label is nowrap for the rule-line effect on desktop; on narrow screens that
        forced the whole page to scroll sideways, so let it wrap instead. */
     @media (max-width: 860px) {
       .quilt-year { flex-wrap: wrap; gap: 0.6rem; }
-      .quilt-year-label { white-space: normal; letter-spacing: 0.16em; }
+      .quilt-year-label { white-space: normal; letter-spacing: 0.115em; }
       .quilt-year-rule { flex: 1 0 100%; }
     }
     .quilt-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
@@ -71,7 +73,7 @@
     .quilt-tile.written img { filter: saturate(0.32) sepia(0.2) brightness(0.93); }
     .quilt-tile::after { content: ''; position: absolute; inset: 4px; border: 1px solid rgba(255,255,255,0.07); pointer-events: none; z-index: 1; }
     .quilt-footer-note { text-align: center; margin-top: 2.5rem; }
-    .quilt-footer-note p { font-size: 0.85rem; color: rgba(250,249,246,0.32); font-style: italic; line-height: 1.8; }
+    .quilt-footer-note p { font-size: 0.85rem; color: var(--ds-ink-soft); font-style: italic; line-height: 1.8; }
     .quilt-footer-note em { color: var(--gold); font-style: normal; }
     @media (max-width: 860px) { .quilt-tile { flex: 0 0 calc(25% - 4.5px); } }
     @media (max-width: 560px) {
@@ -83,18 +85,17 @@
     }
 
     /* ── book-cloth covers (charcoal ink) ── */
-    .cloth { position: relative; background-color: #232220;
+    .cloth { position: relative; background-color: var(--ds-paper);
+      /* Paper, not cloth. One near-imperceptible tonal wash; no weave. */
       background-image:
-        repeating-linear-gradient(90deg, rgba(0,0,0,.12) 0 1px, transparent 1px 3px),
-        repeating-linear-gradient(0deg, rgba(255,255,255,.013) 0 1px, transparent 1px 3px),
-        radial-gradient(130% 90% at 50% 0%, #2f2d29 0%, #232220 55%, #191816 100%); }
-    .gilt::before { content:""; position:absolute; inset:16px; border:1px solid rgba(190,148,87,.42); pointer-events:none; z-index:0; }
-    .gilt::after  { content:""; position:absolute; inset:21px; border:1px solid rgba(190,148,87,.16); pointer-events:none; z-index:0; }
+        radial-gradient(120% 80% at 50% 0%, rgba(63,98,96,.05) 0%, rgba(63,98,96,0) 62%); }
+    .gilt::before { content:""; position:absolute; inset:16px; border:1px solid var(--ds-rule-strong); pointer-events:none; z-index:0; }
+    .gilt::after  { content:""; position:absolute; inset:21px; border:1px solid var(--ds-rule); pointer-events:none; z-index:0; }
     .hero.cloth > * { position: relative; z-index: 1; }
     .fieldnote { max-width: 40ch; margin: 1.85rem auto 0; position: relative; z-index: 1; }
-    .fn-label { display:flex; align-items:center; justify-content:center; gap:.7rem; font-family:'Cormorant Garamond', serif; font-variant:small-caps; letter-spacing:.22em; font-size:.74rem; color:var(--gold-light); margin-bottom:.5rem; }
-    .fn-label::before, .fn-label::after { content:""; height:1px; width:22px; background:rgba(190,148,87,.55); }
-    .fn-text { font-family:'Playfair Display', serif; font-style:italic; font-size:1.25rem; line-height:1.5; color:var(--cream); text-align:center; }
+    .fn-label { display:flex; align-items:center; justify-content:center; gap:.7rem; font-family:'Cormorant Garamond', serif; font-variant:small-caps; letter-spacing:0.158em; font-size:0.8rem; color:var(--gold); margin-bottom:.5rem; }
+    .fn-label::before, .fn-label::after { content:""; height:1px; width:22px; background:var(--gold-fill); }
+    .fn-text { font-family:'Playfair Display', serif; font-style:italic; font-size:1.3rem; line-height:1.5; color:var(--ds-juniper); text-align:center; }
   </style>
 </head>
 <body>

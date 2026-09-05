@@ -25,15 +25,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/tokens.css" />
   <style>
     :root {
-      --slate: #3F3732; --slate-mid: #5C564B; --sage-dark: #557390;
-      --sage: #6D8AA6; --sage-light: #EFE8DA; --cream: #F5F1E8;
-      --gold: #C9A363; --gold-light: #E0C99A; --teal: #6D8AA6;
-      --ink: #3F3732; --muted: #6E675C; --border: #E6DECF; --cloth: #232220;
-      --ff-display: 'Playfair Display', Georgia, serif;
-      --ff-body: 'Cormorant Garamond', Georgia, serif;
-      --ff-sans: 'Jost', system-ui, sans-serif;
+      /* Aliased to the brand palette in tokens.css. */
+      --slate: var(--ds-juniper); --slate-mid: var(--ds-ink-soft); --sage-dark: var(--ds-blue-text);
+      --sage: var(--ds-blue-text); --sage-light: var(--ds-paper-deep); --cream: var(--ds-paper);
+      --gold: var(--ds-ochre-text);   /* safe as text */
+      --gold-fill:  var(--ds-ochre);        /* decorative fills only */ --gold-text: var(--ds-ochre-text); --gold-light: var(--ds-ochre-lt);
+      --teal: var(--ds-blue-text);
+      --ink: var(--ds-ink); --muted: var(--ds-ink-soft); --border: var(--ds-rule);
+      --cloth: var(--ds-juniper-deep);
+      --ff-display: var(--ds-display);
+      --ff-body: var(--ds-body);
+      --ff-sans: var(--ds-sans);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Cormorant Garamond', Georgia, serif; background: var(--cream); color: var(--ink); font-size: 18px; line-height: 1.7; }
@@ -41,22 +46,22 @@
     img { display: block; max-width: 100%; }
 
     /* hero */
-    .phil-hero { color: var(--cream); padding: 4.75rem 2rem 4.25rem; text-align: center; }
-    .phil-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem; font-family: var(--ff-sans); }
-    .phil-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4.8vw, 3.1rem); font-weight: 400; font-style: italic; line-height: 1.2; max-width: 620px; margin: 0 auto 1.1rem; color: var(--cream); text-shadow: 0 2px 1px rgba(0,0,0,.5), 0 -1px 0 rgba(255,240,210,.04); }
-    .phil-title em { font-style: italic; color: var(--gold-light); }
-    .phil-lead { max-width: 500px; margin: 0 auto 2rem; color: rgba(250,249,246,0.78); font-size: 1.05rem; line-height: 1.65; }
+    .phil-hero { color: var(--ds-ink); padding: 5rem 2rem 4.5rem; text-align: center; }
+    .phil-eyebrow { font-size: 0.763rem; letter-spacing: 0.158em; text-transform: uppercase; color: var(--ds-ink-soft); margin-bottom: 1rem; font-family: var(--ff-sans); }
+    .phil-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4.8vw, 3.1rem); font-weight: 500; font-style: normal; line-height: 1.2; max-width: 620px; margin: 0 auto 1.1rem; color: var(--ds-juniper); }
+    .phil-title em { font-style: italic; color: var(--ds-blue-text); }
+    .phil-lead { max-width: 500px; margin: 0 auto 2rem; color: var(--ds-ink); font-size: 1.05rem; line-height: 1.65; }
     .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background: var(--gold); color: #fff; padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; font-weight: 600; display: inline-block; font-family: var(--ff-sans); }
-    .btn-ghost { border: 1px solid rgba(250,249,246,0.3); color: rgba(250,249,246,0.85); padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; display: inline-block; font-family: var(--ff-sans); }
-    .btn-outline { border: 1px solid rgba(250,249,246,0.3); color: rgba(250,249,246,0.85); padding: 0.65rem 1.75rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; display: inline-block; font-family: var(--ff-sans); transition: border-color .2s, color .2s; }
+    .btn-primary { background: var(--ds-juniper); color: var(--ds-paper); padding: 0.65rem 1.75rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; font-weight: 600; display: inline-block; font-family: var(--ff-sans); }
+    .btn-ghost { border: 1px solid var(--ds-rule-strong); color: var(--ds-juniper); padding: 0.65rem 1.75rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; display: inline-block; font-family: var(--ff-sans); }
+    .btn-outline { border: 1px solid var(--ds-rule-strong); color: var(--ds-juniper); padding: 0.65rem 1.75rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; display: inline-block; font-family: var(--ff-sans); transition: border-color .2s, color .2s; }
     .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
 
-    .section-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; font-family: var(--ff-sans); }
+    .section-label { font-size: 0.785rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ds-ink-soft); margin-bottom: 0.5rem; font-family: var(--ff-sans); }
     .section-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400; color: var(--slate); margin-bottom: 1rem; line-height: 1.25; }
     .section-body { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; color: var(--ink); line-height: 1.85; }
     .section-body p + p { margin-top: 1rem; }
-    .gold-rule { width: 40px; height: 2px; background: var(--gold); margin-bottom: 1.4rem; }
+    .gold-rule { width: 40px; height: 2px; background: var(--gold-fill); margin-bottom: 1.4rem; }
     .phil-section { padding: 4.75rem 2rem; }
     .phil-section.alt { background: var(--sage-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .phil-section.stripe { background: var(--cream); border-top: 1px solid var(--border); }
@@ -85,7 +90,7 @@
     .thinker-chip:hover { background: var(--sage-light); border-color: var(--sage); }
     .great-conv-quote { margin-top: 1.75rem; background: var(--cream); border-radius: 4px; padding: 1.75rem 2rem; box-shadow: 0 3px 16px rgba(92,86,75,0.08); border-left: 3px solid var(--sage); }
     .great-conv-quote p { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; color: var(--slate); line-height: 1.65; }
-    .great-conv-quote cite { display: block; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.85rem; font-style: normal; font-family: var(--ff-sans); }
+    .great-conv-quote cite { display: block; font-size: 0.785rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.85rem; font-style: normal; font-family: var(--ff-sans); }
 
     /* year note */
     .year-note { max-width: 720px; margin: 0 auto; text-align: center; font-family: var(--ff-body); font-size: 1.08rem; color: var(--slate-mid); line-height: 1.8; }
@@ -107,38 +112,38 @@
     .narration-bridge-visual { background: var(--sage-light); border-radius: 4px; padding: 1.85rem; border: 1px solid var(--border); }
     .nb-flow { display: flex; flex-direction: column; gap: 0.55rem; }
     .nb-step { font-family: var(--ff-body); font-size: 1.04rem; color: var(--slate); line-height: 1.5; }
-    .nb-step b { font-family: var(--ff-sans); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.1rem; font-weight: 600; }
+    .nb-step b { font-family: var(--ff-sans); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.1rem; font-weight: 600; }
 
     /* cta */
     .phil-cta { padding: 4.75rem 2rem; text-align: center; }
     .phil-cta-inner { max-width: 560px; margin: 0 auto; position: relative; z-index: 1; }
-    .phil-cta-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-style: italic; color: var(--cream); margin-bottom: 0.85rem; font-weight: 400; }
-    .phil-cta-body { font-size: 1.02rem; color: rgba(250,249,246,0.72); line-height: 1.7; margin-bottom: 2rem; }
+    .phil-cta-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-style: normal; font-weight: 500; color: var(--ds-juniper); margin-bottom: 0.85rem; font-weight: 400; }
+    .phil-cta-body { font-size: 1.02rem; color: var(--ds-ink); line-height: 1.7; margin-bottom: 2rem; }
     .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
     /* student work — the heartbeat, near the top */
     .student-work { background: var(--cream); padding: 4.75rem 2rem; }
     .sw-inner { max-width: 1060px; margin: 0 auto; }
     .sw-head { text-align: center; max-width: 640px; margin: 0 auto 2.5rem; }
-    .sw-head .section-label { color: var(--gold); }
+    .sw-head .section-label { color: var(--ds-ink-soft); }
     .sw-grid { display: grid; grid-template-columns: 1fr; gap: 1.75rem; max-width: 700px; margin: 0 auto; }
     .sw-plate { background: var(--cream); border: 1px solid var(--border); padding: 12px; border-radius: 3px; box-shadow: 0 10px 28px rgba(92,86,75,0.12); }
     .sw-plate img { width: 100%; display: block; border-radius: 2px; }
-    .sw-cap { text-align: center; font-family: var(--ff-sans); font-variant: small-caps; letter-spacing: 0.14em; font-size: 0.74rem; color: var(--sage-dark); margin-top: 0.7rem; }
+    .sw-cap { text-align: center; font-family: var(--ff-sans); font-variant: small-caps; letter-spacing: 0.101em; font-size: 0.8rem; color: var(--sage-dark); margin-top: 0.7rem; }
 
     /* ── book-cloth covers (charcoal ink) ── */
-    .cloth { position: relative; background-color: #232220;
+    .cloth { position: relative; background-color: var(--ds-paper);
+      /* Paper, not cloth. One near-imperceptible tonal wash; no weave. */
       background-image:
-        repeating-linear-gradient(90deg, rgba(0,0,0,.12) 0 1px, transparent 1px 3px),
-        repeating-linear-gradient(0deg, rgba(255,255,255,.013) 0 1px, transparent 1px 3px),
-        radial-gradient(130% 90% at 50% 0%, #2f2d29 0%, #232220 55%, #191816 100%); }
-    .gilt::before { content:""; position:absolute; inset:16px; border:1px solid rgba(201,163,99,.42); pointer-events:none; z-index:0; }
-    .gilt::after  { content:""; position:absolute; inset:21px; border:1px solid rgba(201,163,99,.16); pointer-events:none; z-index:0; }
+        radial-gradient(120% 80% at 50% 0%, rgba(63,98,96,.05) 0%, rgba(63,98,96,0) 62%); }
+    .site-footer.cloth { background-color: var(--ds-juniper-deep); background-image: none; }
+    .gilt::before { content:""; position:absolute; inset:16px; border:1px solid var(--ds-rule-strong); pointer-events:none; z-index:0; }
+    .gilt::after  { content:""; position:absolute; inset:21px; border:1px solid var(--ds-rule); pointer-events:none; z-index:0; }
     .phil-hero.cloth > * { position: relative; z-index: 1; }
     .fieldnote { max-width: 40ch; margin: 1.9rem auto 0; position: relative; z-index: 1; }
-    .fn-label { display:flex; align-items:center; justify-content:center; gap:.7rem; font-family:var(--ff-sans); font-variant:small-caps; letter-spacing:.22em; font-size:.72rem; color:var(--gold-light); margin-bottom:.55rem; }
-    .fn-label::before, .fn-label::after { content:""; height:1px; width:22px; background:rgba(201,163,99,.55); }
-    .fn-text { font-family:var(--ff-display); font-style:italic; font-size:1.3rem; line-height:1.5; color:var(--cream); text-align:center; }
+    .fn-label { display:flex; align-items:center; justify-content:center; gap:.7rem; font-family:var(--ff-sans); font-variant:small-caps; letter-spacing:0.158em; font-size:0.8rem; color:var(--gold); margin-bottom:.55rem; }
+    .fn-label::before, .fn-label::after { content:""; height:1px; width:22px; background:var(--gold-fill); }
+    .fn-text { font-family:var(--ff-display); font-style:italic; font-size:1.35rem; line-height:1.5; color:var(--ds-juniper); text-align:center; }
     .fn-band { padding: 3.5rem 2rem; text-align:center; }
 
     @media (max-width: 760px) {
@@ -149,15 +154,51 @@
       .phil-hero { padding: 3.5rem 1.25rem 3rem; }
       .student-work { padding: 3.5rem 1.25rem; }
     }
+
+    /* ── THE FOUR MOVES — the one place the illustrations appear in colour.
+       Everywhere else the juniper line art is the shorthand. Labels are
+       type, never baked into the artwork. */
+    .moves4 { margin: 3.25rem auto 0; max-width: 900px; }
+    .moves4-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .moves4-item { position: relative; padding: 1.9rem 1rem 1.7rem; text-align: center; }
+    .moves4-item + .moves4-item { border-left: 1px solid var(--border); }
+    .moves4-art { height: 96px; display: flex; align-items: flex-end; justify-content: center; margin-bottom: 1rem; }
+    .moves4-art img { max-height: 96px; width: auto; display: block; }
+    .moves4-name {
+      font-family: var(--ff-sans); font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate);
+      margin-bottom: 0.4rem;
+    }
+    .moves4-desc { font-family: var(--ff-body); font-size: 1.05rem; line-height: 1.5; color: var(--muted); margin: 0; }
+    .moves4-item + .moves4-item::before {
+      content: "\2192"; position: absolute; left: -0.55em; top: 3.1rem;
+      color: var(--ds-ochre); font-size: 0.95rem; line-height: 1;
+      background: var(--cream); padding: 0 0.3em;
+    }
+    @media (max-width: 900px) {
+      .moves4-grid { grid-template-columns: 1fr 1fr; }
+      .moves4-item:nth-child(3) { border-left: none; }
+      .moves4-item:nth-child(n+3) { border-top: 1px solid var(--border); }
+      .moves4-item:nth-child(3)::before { display: none; }
+    }
+    @media (max-width: 560px) {
+      .moves4-grid { grid-template-columns: 1fr; }
+      .moves4-item + .moves4-item { border-left: none; border-top: 1px solid var(--border); }
+      .moves4-item + .moves4-item::before { content: "\2193"; left: 50%; top: -0.6em; transform: translateX(-50%); }
+      .moves4-item:nth-child(3)::before { display: block; }
+    }
   </style>
 </head>
 <body>
 
 <!-- HERO -->
 <section class="phil-hero cloth gilt" aria-labelledby="phil-title">
-  <p class="phil-eyebrow">The Philosophy · Upper-Level Charlotte Mason Literature</p>
-  <h1 class="phil-title" id="phil-title">The <em>Why</em> Behind Every Unit</h1>
-  <p class="phil-lead">Students deserve the real thing — the best that has been thought and written, not simplified or pre-digested. Here is what I believe, and what it looks like when it works.</p>
+  <p class="phil-eyebrow">The Philosophy</p>
+  <h1 class="phil-title" id="phil-title">The Habit of <em>Attention</em></h1>
+  <p class="phil-lead">Students deserve the real thing — the best that has been thought and written, not simplified or pre-digested. Attention is the habit that makes it theirs. Here is what I believe, and what it looks like when it works.</p>
   <div class="hero-btns">
     <a href="curriculum.html" class="btn-primary">Browse the Curriculum</a>
     <a href="teachers-notebook.html" class="btn-ghost">Teacher&#8217;s Notebook</a>
@@ -201,7 +242,7 @@
     </div>
     <blockquote class="prose-pull">
       The mind is not a vessel to be filled,<br>but a <em>fire to be kindled.</em>
-      <cite style="font-family:var(--ff-sans);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-top:.75rem;display:block;font-style:normal;">— Attributed to Plutarch</cite>
+      <cite style="font-family:var(--ff-sans);font-size:0.785rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage);margin-top:.75rem;display:block;font-style:normal;">— Attributed to Plutarch</cite>
     </blockquote>
   </div>
 </section>
@@ -235,8 +276,8 @@
       </article>
       <article class="pillar-card">
         <div class="pillar-num">v</div>
-        <h3 class="pillar-title">Find It · Follow It · Frame It</h3>
-        <p class="pillar-desc">Three ways of reading, in order. <strong>Find It:</strong> notice what&#8217;s on the page. <strong>Follow It:</strong> ask why, with the text as your evidence. <strong>Frame It:</strong> ask what the whole book is for. This is the spine of every unit.</p>
+        <h3 class="pillar-title">Find It · Follow It · Frame It · Keep It</h3>
+        <p class="pillar-desc">Four ways of reading, in order. <strong>Find It:</strong> notice what&#8217;s on the page. <strong>Follow It:</strong> ask why, with the text as your evidence. <strong>Frame It:</strong> ask what the whole book is for. <strong>Keep It:</strong> write down what became yours &#8212; a narration, a commonplace entry, an essay. This is the spine of every unit.</p>
       </article>
     </div>
   </div>
@@ -344,6 +385,32 @@
           <p class="nb-step"><b>Find It</b>Narration moves to the page; they notice what the author actually wrote.</p>
           <p class="nb-step"><b>Follow It</b>Claims emerge from observation. They&#8217;re no longer summarizing — they&#8217;re arguing.</p>
           <p class="nb-step"><b>Frame It</b>A thesis-driven essay about a book they&#8217;ve truly inhabited. The argument is theirs because the noticing was theirs.</p>
+          <p class="nb-step"><b>Keep It</b>The essay, the narration, the lines copied into the commonplace book. What is kept is what they can return to in five years and still recognise as their own.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="moves4">
+      <div class="moves4-grid">
+        <div class="moves4-item">
+          <div class="moves4-art"><img src="images/method-acorn-color.png" alt="" loading="lazy" decoding="async"></div>
+          <div class="moves4-name">Find It</div>
+          <p class="moves4-desc">Notice what&rsquo;s there.</p>
+        </div>
+        <div class="moves4-item">
+          <div class="moves4-art"><img src="images/method-leaf-color.png" alt="" loading="lazy" decoding="async"></div>
+          <div class="moves4-name">Follow It</div>
+          <p class="moves4-desc">Trace what matters.</p>
+        </div>
+        <div class="moves4-item">
+          <div class="moves4-art"><img src="images/method-oak-color.png" alt="" loading="lazy" decoding="async"></div>
+          <div class="moves4-name">Frame It</div>
+          <p class="moves4-desc">Make meaning.</p>
+        </div>
+        <div class="moves4-item">
+          <div class="moves4-art"><img src="images/method-book-color.png" alt="" loading="lazy" decoding="async"></div>
+          <div class="moves4-name">Keep It</div>
+          <p class="moves4-desc">Keep what became yours.</p>
         </div>
       </div>
     </div>
@@ -371,11 +438,12 @@
         </div>
       </div>
       <div class="narration-bridge-visual">
-        <p class="section-label" style="margin-bottom:1.1rem">The Same Three Moves</p>
+        <p class="section-label" style="margin-bottom:1.1rem">The Same Four Moves</p>
         <div class="nb-flow">
           <p class="nb-step"><b>Find It &#183; Observe</b>What is actually here? What do I notice? What evidence can I gather &#8212; before I decide what it means?</p>
           <p class="nb-step"><b>Follow It &#183; Infer &amp; Pattern</b>What might this suggest? What repeats, changes, connects, or causes something else?</p>
           <p class="nb-step"><b>Frame It &#183; Connect &amp; Meaning</b>Why does this matter? What larger idea does it illuminate &#8212; in another book, in history, in human nature, in my own life?</p>
+          <p class="nb-step"><b>Keep It &#183; Record &amp; Return</b>What is worth keeping from this? A narration, a line copied down, a sketch, a few true sentences &#8212; something to return to.</p>
         </div>
         <p class="nb-step" style="margin-top:1.25rem;border-top:1px solid var(--border);padding-top:1.1rem;">A child examining a paragraph and a child examining a nest are practicing one movement of mind.</p>
       </div>
@@ -404,27 +472,27 @@
       <article class="pillar-card">
         <div class="pillar-num">i</div>
         <h3 class="pillar-title">Watch the Night Sky</h3>
-        <p class="pillar-desc">Go outside after dark and watch the sky for ten minutes &#8212; no naming, no phone. Just look. <strong>Find It:</strong> what is actually up there tonight? <strong>Follow It:</strong> what changed in ten minutes of staying? <strong>Frame It:</strong> what did the real sky tell you that a chart of it never could?</p>
+        <p class="pillar-desc">Go outside after dark and watch the sky for ten minutes &#8212; no naming, no phone. Just look. <strong>Find It:</strong> what is actually up there tonight? <strong>Follow It:</strong> what changed in ten minutes of staying? <strong>Frame It:</strong> what did the real sky tell you that a chart of it never could? <strong>Keep It:</strong> write down one true sentence about what you saw, and the date.</p>
       </article>
       <article class="pillar-card">
         <div class="pillar-num">ii</div>
         <h3 class="pillar-title">Listen Twice</h3>
-        <p class="pillar-desc">Put on a piece of music &#8212; Copland&#8217;s <em>Appalachian Spring</em> is where we start. <strong>Find It:</strong> listen once for the whole. <strong>Follow It:</strong> listen again, following one instrument all the way through. <strong>Frame It:</strong> what did the second listening give you that the first could not?</p>
+        <p class="pillar-desc">Put on a piece of music &#8212; Copland&#8217;s <em>Appalachian Spring</em> is where we start. <strong>Find It:</strong> listen once for the whole. <strong>Follow It:</strong> listen again, following one instrument all the way through. <strong>Frame It:</strong> what did the second listening give you that the first could not? <strong>Keep It:</strong> note the one passage you would want to hear again, and why.</p>
       </article>
       <article class="pillar-card">
         <div class="pillar-num">iii</div>
         <h3 class="pillar-title">The Smallest Thing</h3>
-        <p class="pillar-desc">Choose one painting and sit with it three minutes. <strong>Find It:</strong> find the smallest thing the painter put there on purpose. <strong>Follow It:</strong> why is it there &#8212; what does it do for the whole? <strong>Frame It:</strong> what does the painter make beautiful, and what does that tell you about how he saw?</p>
+        <p class="pillar-desc">Choose one painting and sit with it three minutes. <strong>Find It:</strong> find the smallest thing the painter put there on purpose. <strong>Follow It:</strong> why is it there &#8212; what does it do for the whole? <strong>Frame It:</strong> what does the painter make beautiful, and what does that tell you about how he saw? <strong>Keep It:</strong> copy that smallest thing into the notebook &#8212; in words or in line.</p>
       </article>
       <article class="pillar-card">
         <div class="pillar-num">iv</div>
         <h3 class="pillar-title">One Object, All Term</h3>
-        <p class="pillar-desc">Pick one thing near your home you can watch for months &#8212; a tree, a bush, a garden bed, a feeder, a pond edge. <strong>Find It:</strong> zoom out and draw the whole. <strong>Follow It:</strong> come back and study one small part &#8212; a leaf, the bark, a single feather. <strong>Frame It:</strong> a few true words, and one thing you wonder.</p>
+        <p class="pillar-desc">Pick one thing near your home you can watch for months &#8212; a tree, a bush, a garden bed, a feeder, a pond edge. <strong>Find It:</strong> zoom out and draw the whole. <strong>Follow It:</strong> come back and study one small part &#8212; a leaf, the bark, a single feather. <strong>Frame It:</strong> a few true words, and one thing you wonder. <strong>Keep It:</strong> date the page and leave room beneath it; the entries become a record of one year of looking.</p>
       </article>
       <article class="pillar-card">
         <div class="pillar-num">v</div>
         <h3 class="pillar-title">Give Someone Your Whole Attention</h3>
-        <p class="pillar-desc">In one conversation this week, don&#8217;t plan your reply while the other person is still talking. <strong>Find It:</strong> what did they actually say? <strong>Follow It:</strong> what were they telling you underneath it? <strong>Frame It:</strong> what changes when a person is read as closely as a page?</p>
+        <p class="pillar-desc">In one conversation this week, don&#8217;t plan your reply while the other person is still talking. <strong>Find It:</strong> what did they actually say? <strong>Follow It:</strong> what were they telling you underneath it? <strong>Frame It:</strong> what changes when a person is read as closely as a page? <strong>Keep It:</strong> afterwards, write down the one thing they said that you do not want to forget.</p>
       </article>
     </div>
     <p class="year-note" style="margin-top:2.25rem;">A word on recording: keep it small. A sketch and three words. One photograph and a caption. One excellent question. The moment these turn into essays, you&#8217;ve taken a ten-minute adventure and made it <em>homework in hiking boots.</em></p>

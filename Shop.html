@@ -9,14 +9,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" sizes="512x512" href="images/web-app-manifest-512x512.png">
+<link rel="stylesheet" href="/tokens.css" />
 <style>
 :root{
-  --cream:#FBF8F2; --paper:#FFFFFF; --ink:#37322B; --ink-soft:#5C544A;
-  --sage:#6E7E62; --sage-soft:#93A284; --gold:#B0894E; --gold-deep:#9A7437;
-  --umber:#6B5A45; --line:#E6DECF; --line-soft:#F0EADD;
-  --display:'Playfair Display',Georgia,serif;
-  --lit:'Cormorant Garamond',Georgia,serif;
-  --sans:'Lato','Helvetica Neue',Arial,sans-serif;
+  /* Aliased to the brand palette in tokens.css. */
+  --cream:var(--ds-paper); --paper:var(--ds-paper-warm);
+  --ink:var(--ds-ink); --ink-soft:var(--ds-ink-soft);
+  --sage:var(--ds-juniper); --sage-soft:var(--ds-ink-soft);
+  --gold:var(--ds-ochre-text); --gold-fill:var(--ds-ochre); --gold-deep:var(--ds-ochre-text);
+  --umber:var(--ds-ink-soft); --line:var(--ds-rule); --line-soft:var(--ds-rule);
+  --display:var(--ds-display);
+  --lit:var(--ds-body);
+  --sans:var(--ds-sans);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;overflow-x:hidden;}
@@ -132,10 +136,26 @@ h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--ink);line-height
 .site-foot{background:var(--ink);color:#E9E0CF;padding:46px 0 30px;text-align:center;margin-top:20px;}
 .site-foot .nm{font-family:var(--display);font-size:20px;color:#FBF5E8;}
 .site-foot .wampc{font-family:var(--lit);font-style:italic;color:var(--gold);margin:0 3px;}
-.site-foot .tg{font-family:var(--lit);font-style:italic;font-size:15px;color:var(--gold);margin:4px 0 18px;}
+.site-foot .tg{font-family:var(--lit);font-style:italic;font-size:15px;color:var(--ds-ochre-lt);margin:4px 0 18px;}
 .site-foot .fnav{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:12.5px;letter-spacing:.04em;margin-bottom:18px;}
 .site-foot .fnav a{color:#CDBFA6;text-decoration:none;} .site-foot .fnav a:hover{color:#fff;}
-.site-foot .fine{font-size:11px;color:#9A8E78;letter-spacing:.04em;}
+.site-foot .fine{font-size:11px;color:rgba(245,241,232,.82);letter-spacing:.04em;}
+
+/* The MailerLite embed ships its own ochre button with white text (2.58:1)
+   and injects its stylesheet after ours, with !important. Outrank it so the
+   primary button is juniper, as it is everywhere else on the site. */
+html body .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody
+  .ml-block-form .ml-form-horizontalRow .ml-button-horizontal button.primary,
+html body .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody
+  .ml-block-form button.primary{
+  background-color:var(--ds-juniper)!important;
+  color:var(--ds-paper)!important;
+  border-color:var(--ds-juniper)!important;
+}
+html body .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody
+  .ml-block-form button.primary:hover{
+  background-color:var(--ds-juniper-deep)!important;
+}
 </style>
 </head>
 <body>
@@ -324,5 +344,25 @@ h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--ink);line-height
     ml('account', '1836493');
 </script>
 <!-- End MailerLite Universal -->
+
+<script>
+  /* The MailerLite embed injects its stylesheet after ours and re-asserts an
+     ochre button with white text (2.58:1). An inline !important beats any
+     stylesheet, and an observer catches the button when the embed re-renders. */
+  (function () {
+    var JUNIPER = getComputedStyle(document.documentElement).getPropertyValue('--ds-juniper').trim() || '#3F6260';
+    var PAPER   = getComputedStyle(document.documentElement).getPropertyValue('--ds-paper').trim() || '#F5F1E8';
+    function brand() {
+      document.querySelectorAll('.ml-form-embedContainer button.primary, .ml-form-embedContainer .primary')
+        .forEach(function (b) {
+          b.style.setProperty('background-color', JUNIPER, 'important');
+          b.style.setProperty('border-color', JUNIPER, 'important');
+          b.style.setProperty('color', PAPER, 'important');
+        });
+    }
+    brand();
+    new MutationObserver(brand).observe(document.body, { childList: true, subtree: true });
+  })();
+</script>
 </body>
 </html>

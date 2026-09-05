@@ -12,30 +12,38 @@
      HOW TO USE:
      • Easiest: use this whole file as its own page (e.g. podcast.html)
        and add a "Podcast" link to your nav.
-     • Or: copy everything between  <!-- ITM:START -->  and
-       <!-- ITM:END -->  and paste it into an existing page,
-       then add the font <link> below into that page's <head>.
+     • Or: copy everything between the ITM:START and ITM:END markers
+       and paste it into an existing page, then add the font link
+       below into that page's head.
 
      THE ONE THING TO DO:
-     Find  <!-- PASTE RSS.COM EMBED CODE HERE -->  below and drop in
-     the embed code from RSS.com (Distribution / share → Embed).
+     Find the "PASTE RSS.COM EMBED CODE HERE" marker below and drop in
+     the embed code from RSS.com (Distribution / share, then Embed).
+
+     NOTE: do not write comment markers inside this block. A nested
+     close-marker ends the comment early and the rest of this note
+     renders as visible text on the page.
      ============================================================ -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="/tokens.css" />
+
 <style>
   /* ---- scoped to .itm-podcast so it won't collide with your site CSS ---- */
   .itm-podcast{
-    --cream:#F4ECDB;        /* page ground */
-    --cream-deep:#EFE5CF;   /* card ground */
-    --slate:#403A30;        /* primary text */
-    --umber:#6A5A45;        /* secondary text */
-    --sage:#8A9A7A;         /* botanical accent */
-    --sage-deep:#6C7C60;
-    --gold:#C19B61;         /* margin rule + wordmark */
-    --rule:#D9C9A6;
+    /* Aliased to the brand palette in tokens.css. */
+    --cream:var(--ds-paper);          /* page ground   */
+    --cream-deep:var(--ds-paper-deep);/* card ground   */
+    --slate:var(--ds-ink);            /* primary text  */
+    --umber:var(--ds-ink-soft);       /* secondary text*/
+    --sage:var(--ds-juniper);         /* botanical accent */
+    --sage-deep:var(--ds-juniper-deep);
+    --gold:var(--ds-ochre-text);      /* margin rule + wordmark */
+    --gold-fill:var(--ds-ochre);
+    --rule:var(--ds-rule);
 
     background:var(--cream);
     color:var(--slate);
@@ -184,12 +192,12 @@
     .itm-body>*{opacity:1;transform:none;animation:none;}
   }
      /* site nav */
-  nav.site-nav { background: #37322B; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 0 rgba(0,0,0,.18); font-family: 'Jost', system-ui, sans-serif; }
-  .site-nav .nav-logo-text { font-family: 'Cormorant Garamond', serif; color: #FAF6EE; font-size: 1rem; letter-spacing: 0.04em; text-decoration: none; }
+  nav.site-nav { background: var(--ds-paper); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 0 var(--ds-rule); font-family: 'Jost', system-ui, sans-serif; }
+  .site-nav .nav-logo-text { font-family: 'Cormorant Garamond', serif; color: var(--ds-juniper); font-size: 1rem; letter-spacing: 0.04em; text-decoration: none; }
   .site-nav .nav-links { list-style: none; display: flex; gap: clamp(0.85rem, 1.5vw, 1.6rem); align-items: center; margin: 0; padding: 0; flex-wrap: wrap; }
-  .site-nav .nav-links a { color: rgba(250,249,246,0.82); font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: color 0.2s; white-space: nowrap; }
-  .site-nav .nav-links a:hover, .site-nav .nav-links a.active { color: #E2C79A; }
-  .site-nav .nav-cta { background: #BE9457; color: #37322B !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; white-space: nowrap; }
+  .site-nav .nav-links a { color: var(--ds-ink-soft); font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: color 0.2s; white-space: nowrap; }
+  .site-nav .nav-links a:hover, .site-nav .nav-links a.active { color: var(--ds-juniper); }
+  .site-nav .nav-cta { background: var(--ds-juniper); color: var(--ds-paper) !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; white-space: nowrap; }
   @media (max-width: 720px) { .site-nav .nav-links { gap: 1rem; font-size: 0.7rem; } }
 </style>
 </head>

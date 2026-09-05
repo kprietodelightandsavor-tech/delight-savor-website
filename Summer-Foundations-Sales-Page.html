@@ -8,14 +8,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/tokens.css" />
 <style>
 :root{
-  --cream:#FBF8F2; --paper:#FFFFFF; --ink:#37322B; --ink-soft:#5C544A;
-  --sage:#6E7E62; --sage-soft:#93A284; --gold:#B0894E; --gold-deep:#9A7437;
-  --umber:#6B5A45; --line:#E6DECF; --line-soft:#F0EADD;
-  --display:'Playfair Display',Georgia,serif;
-  --lit:'Cormorant Garamond',Georgia,serif;
-  --sans:'Lato','Helvetica Neue',Arial,sans-serif;
+  /* Aliased to the brand palette in tokens.css. */
+  --cream:var(--ds-paper); --paper:var(--ds-paper-warm);
+  --ink:var(--ds-ink); --ink-soft:var(--ds-ink-soft);
+  --sage:var(--ds-juniper); --sage-soft:var(--ds-ink-soft);
+  --gold:var(--ds-ochre-text); --gold-fill:var(--ds-ochre); --gold-deep:var(--ds-ochre-text);
+  --umber:var(--ds-ink-soft); --line:var(--ds-rule); --line-soft:var(--ds-rule);
+  --display:var(--ds-display);
+  --lit:var(--ds-body);
+  --sans:var(--ds-sans);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;overflow-x:hidden;}
@@ -130,7 +134,7 @@ section.band{padding:56px 0;}
 .stfine{text-align:center;font-size:12px;color:var(--ink-soft);margin:24px auto 0;max-width:740px;}
 
 /* method */
-.method{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--paper);}
+.method{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--paper);}
 .step{padding:30px 26px;border-right:1px solid var(--line);}
 .step:last-child{border-right:none;}
 .step .word{font-family:var(--display);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);}
@@ -207,10 +211,10 @@ details[open] summary .mk{transform:rotate(45deg);}
 .site-foot{background:var(--ink);color:#E9E0CF;padding:46px 0 30px;text-align:center;}
 .site-foot .wampc{font-family:var(--lit);font-style:italic;color:var(--gold);margin:0 3px;}
 .site-foot .nm{font-family:var(--display);font-size:20px;color:#FBF5E8;}
-.site-foot .tg{font-family:var(--lit);font-style:italic;font-size:15px;color:var(--gold);margin:4px 0 18px;}
+.site-foot .tg{font-family:var(--lit);font-style:italic;font-size:15px;color:var(--ds-ochre-lt);margin:4px 0 18px;}
 .site-foot .fnav{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:12.5px;letter-spacing:.04em;margin-bottom:18px;}
 .site-foot .fnav a{color:#CDBFA6;text-decoration:none;} .site-foot .fnav a:hover{color:#fff;}
-.site-foot .fine{font-size:11px;color:#9A8E78;letter-spacing:.04em;}
+.site-foot .fine{font-size:11px;color:rgba(245,241,232,.82);letter-spacing:.04em;}
 
 @media (max-width:640px){ .site-nav{display:none;} }
 @media (max-width:860px){
@@ -277,12 +281,15 @@ details[open] summary .mk{transform:rotate(45deg);}
         You already have these. The only NEW things to copy are the block tagged
         "cohort-styles" and the <section id="cohort"> further down. ---- */
 :root{
-  --cream:#FBF8F2; --paper:#FFFFFF; --ink:#37322B; --ink-soft:#5C544A;
-  --sage:#6E7E62; --sage-soft:#93A284; --gold:#B0894E; --gold-deep:#9A7437;
-  --umber:#6B5A45; --line:#E6DECF; --line-soft:#F0EADD;
-  --display:'Playfair Display',Georgia,serif;
-  --lit:'Cormorant Garamond',Georgia,serif;
-  --sans:'Lato','Helvetica Neue',Arial,sans-serif;
+  /* Aliased to the brand palette in tokens.css. */
+  --cream:var(--ds-paper); --paper:var(--ds-paper-warm);
+  --ink:var(--ds-ink); --ink-soft:var(--ds-ink-soft);
+  --sage:var(--ds-juniper); --sage-soft:var(--ds-ink-soft);
+  --gold:var(--ds-ochre-text); --gold-fill:var(--ds-ochre); --gold-deep:var(--ds-ochre-text);
+  --umber:var(--ds-ink-soft); --line:var(--ds-rule); --line-soft:var(--ds-rule);
+  --display:var(--ds-display);
+  --lit:var(--ds-body);
+  --sans:var(--ds-sans);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -417,7 +424,7 @@ section.band{padding:56px 0;}
       <div class="phonecard" data-full="/images/preview-course-week.jpg"><div class="phone"><div class="screen"><img src="/images/preview-course-week.jpg" alt="A weekly lesson in the app"></div></div><span class="pc-cap">A Lesson</span></div>
       <div class="pagecard" data-full="/images/preview-handout-week-one.jpg"><img src="/images/preview-handout-week-one.jpg" alt="Week One handout"><span class="pc-cap">A Weekly Handout</span></div>
       <div class="pagecard" data-full="/images/preview-workbook-week.jpg"><img src="/images/preview-workbook-week.jpg" alt="A later week's handout"><span class="pc-cap">A Later Week</span></div>
-      <div class="pagecard" data-full="/images/preview-journal-passage.jpg"><img src="/images/preview-journal-passage.jpg" alt="A Find · Follow · Frame page"><span class="pc-cap">Find · Follow · Frame</span></div>
+      <div class="pagecard" data-full="/images/preview-journal-passage.jpg"><img src="/images/preview-journal-passage.jpg" alt="A Find · Follow · Frame · Keep page"><span class="pc-cap">Find · Follow · Frame · Keep</span></div>
       <div class="pagecard" data-full="/images/preview-journal-commonplace.jpg"><img src="/images/preview-journal-commonplace.jpg" alt="A commonplace page"><span class="pc-cap">A Commonplace Page</span></div>
     </div>
     <p class="peek-hint">← Scroll to peek inside · tap any page to read it up close →</p>
@@ -463,18 +470,19 @@ section.band{padding:56px 0;}
   <div class="trio">
     <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 3.5 C9.5 4 3.5 10.5 3.5 21 C14 20.5 20.5 14 20.5 3.5 Z" fill="currentColor"/><path d="M3.5 21 C2.9 21.8 2.5 22.5 2.3 23.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 16.8 C10.5 12.8 14 9 16.8 6.6" stroke="#FBF8F2" stroke-width="1.1" stroke-linecap="round" opacity="0.5"/></svg></div><h3>Narration → Real Writing</h3><p>Students speak their thinking before they ever write it — so the writing arrives easily, and honestly.</p></div>
     <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 3.5 C9.5 4 3.5 10.5 3.5 21 C14 20.5 20.5 14 20.5 3.5 Z" fill="currentColor"/><path d="M3.5 21 C2.9 21.8 2.5 22.5 2.3 23.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 16.8 C10.5 12.8 14 9 16.8 6.6" stroke="#FBF8F2" stroke-width="1.1" stroke-linecap="round" opacity="0.5"/></svg></div><h3>Oral Before Written</h3><p>Confidence first. Every week begins with the student telling the story back — speaking their thinking before they write it.</p></div>
-    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 3.5 C9.5 4 3.5 10.5 3.5 21 C14 20.5 20.5 14 20.5 3.5 Z" fill="currentColor"/><path d="M3.5 21 C2.9 21.8 2.5 22.5 2.3 23.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 16.8 C10.5 12.8 14 9 16.8 6.6" stroke="#FBF8F2" stroke-width="1.1" stroke-linecap="round" opacity="0.5"/></svg></div><h3>Find · Follow · Frame</h3><p>One simple method your student will carry into every book they ever read.</p></div>
+    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 3.5 C9.5 4 3.5 10.5 3.5 21 C14 20.5 20.5 14 20.5 3.5 Z" fill="currentColor"/><path d="M3.5 21 C2.9 21.8 2.5 22.5 2.3 23.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 16.8 C10.5 12.8 14 9 16.8 6.6" stroke="#FBF8F2" stroke-width="1.1" stroke-linecap="round" opacity="0.5"/></svg></div><h3>Find · Follow · Frame · Keep</h3><p>One simple method your student will carry into every book they ever read.</p></div>
   </div>
 </div></section>
 
 <!-- METHOD -->
 <section class="band" id="curriculum"><div class="wrap">
-  <div class="sec-head"><span class="eyebrow">The Method</span><h2>Find · Follow · Frame</h2>
-    <p>The same three moves, every week — until they become the way a reader thinks.</p></div>
+  <div class="sec-head"><span class="eyebrow">The Method</span><h2>Find · Follow · Frame · Keep</h2>
+    <p>The same four moves, every week — until they become the way a reader thinks.</p></div>
   <div class="method">
-    <div class="step"><div class="word">Find it</div><h3>Notice</h3><p>Find the moment that stops you — a line, an image, a choice a character makes. Begin by paying attention.</p></div>
-    <div class="step"><div class="word">Follow it</div><h3>Trace</h3><p>Follow that thread through the book — where it returns, how it deepens, what it costs the people in the story.</p></div>
-    <div class="step"><div class="word">Frame it</div><h3>Say it well</h3><p>Put words around what you found — first out loud in narration, then in a clear, written piece of your own.</p></div>
+    <div class="step"><div class="art" aria-hidden="true"><img src="images/method-acorn.png" alt="" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('is-awaiting');this.remove()"></div><div class="word">Find it</div><h3>Notice</h3><p>Find the moment that stops you — a line, an image, a choice a character makes. Begin by paying attention.</p></div>
+    <div class="step"><div class="art" aria-hidden="true"><img src="images/method-leaf.png" alt="" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('is-awaiting');this.remove()"></div><div class="word">Follow it</div><h3>Trace</h3><p>Follow that thread through the book — where it returns, how it deepens, what it costs the people in the story.</p></div>
+    <div class="step"><div class="art" aria-hidden="true"><img src="images/method-oak.png" alt="" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('is-awaiting');this.remove()"></div><div class="word">Frame it</div><h3>Say it well</h3><p>Put words around what you found — first out loud in narration, then in a clear, written piece of your own.</p></div>
+      <div class="step"><div class="art" aria-hidden="true"><img src="images/method-book.png" alt="" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('is-awaiting');this.remove()"></div><div class="word">Keep it</div><h3>Keep</h3><p>Keep what became yours — the narration, the lines copied into a commonplace book, the finished piece. What is kept is what lasts.</p></div>
   </div>
 </div></section>
 
@@ -499,7 +507,7 @@ section.band{padding:56px 0;}
 <!-- STANDARDS -->
 <section class="band"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Quietly Rigorous</span><h2>The Standards, Mapped to the Method</h2>
-    <p>Gentle on the surface, genuinely rigorous underneath. Each move of Find · Follow · Frame meets the Texas TEKS for English I–IV and the national Common Core — six of the seven ELA strands in six weeks.</p></div>
+    <p>Gentle on the surface, genuinely rigorous underneath. Each move of Find · Follow · Frame · Keep meets the Texas TEKS for English I–IV and the national Common Core — six of the seven ELA strands in six weeks.</p></div>
   <div class="stmap">
     <div class="stcard"><div class="sk"><b>Find it</b> · Notice &amp; gather evidence</div><ul>
       <li><b>TEKS · Comprehension</b> — make inferences and draw conclusions from text evidence</li>
@@ -511,7 +519,7 @@ section.band{padding:56px 0;}
       <li><b>TEKS · Author's Purpose &amp; Craft</b> — analyze how the author's choices shape meaning</li>
       <li><b>CCSS RL.9–10.2 · 3</b> — theme development; how character advances the plot</li>
     </ul></div>
-    <div class="stcard"><div class="sk"><b>Frame it</b> · Discuss &amp; write the argument</div><ul>
+    <div class="stcard"><div class="sk"><b>Frame it &amp; Keep it</b> · Discuss, write, and keep the argument</div><ul>
       <li><b>TEKS · Oral Language</b> — narration and student-led discussion</li>
       <li><b>TEKS · Composition</b> — the writing process, ending in a clear argument</li>
       <li><b>CCSS SL.9–10.1 · W.9–10.1 · W.9–10.9</b> — discuss; argue from textual evidence</li>
@@ -537,7 +545,7 @@ section.band{padding:56px 0;}
       <li>The commonplace habit — keeping what's worth keeping</li><li>Socratic discussion and listening</li>
       <li>Reading a whole novel with attention, start to finish</li></ul></div></details>
     <details><summary>What's covered <span class="mk">+</span></summary><div class="det-body">
-      <p>Steinbeck's <em>Of Mice and Men</em>, read slowly across six weeks, using the Find · Follow · Frame method.</p>
+      <p>Steinbeck's <em>Of Mice and Men</em>, read slowly across six weeks, using the Find · Follow · Frame · Keep method.</p>
       <p>Students sit with the novel's great questions — dreams and disappointment, friendship and loyalty, loneliness, power, and mercy — and learn to move from feeling a story to saying something true about it.</p>
     </div></details>
     <details><summary>Course overview <span class="mk">+</span></summary><div class="det-body">
@@ -558,7 +566,7 @@ section.band{padding:56px 0;}
   <div class="sec-head"><span class="eyebrow">In Your Hands</span><h2>What's Included</h2>
     <p>One tidy digital download — everything you need to teach the whole six weeks.</p></div>
   <div class="incl">
-    <div class="it"><div class="lf"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 3.5 C9.5 4 3.5 10.5 3.5 21 C14 20.5 20.5 14 20.5 3.5 Z" fill="currentColor"/><path d="M3.5 21 C2.9 21.8 2.5 22.5 2.3 23.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 16.8 C10.5 12.8 14 9 16.8 6.6" stroke="#FBF8F2" stroke-width="1.1" stroke-linecap="round" opacity="0.5"/></svg></div><div><b>Six Weekly Student Handouts</b><span>Find · Follow · Frame — one beautifully designed handout per week.</span></div></div>
+    <div class="it"><div class="lf"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 3.5 C9.5 4 3.5 10.5 3.5 21 C14 20.5 20.5 14 20.5 3.5 Z" fill="currentColor"/><path d="M3.5 21 C2.9 21.8 2.5 22.5 2.3 23.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 16.8 C10.5 12.8 14 9 16.8 6.6" stroke="#FBF8F2" stroke-width="1.1" stroke-linecap="round" opacity="0.5"/></svg></div><div><b>Six Weekly Student Handouts</b><span>Find · Follow · Frame · Keep — one beautifully designed handout per week.</span></div></div>
     <div class="it"><div class="lf"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 3.5 C9.5 4 3.5 10.5 3.5 21 C14 20.5 20.5 14 20.5 3.5 Z" fill="currentColor"/><path d="M3.5 21 C2.9 21.8 2.5 22.5 2.3 23.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 16.8 C10.5 12.8 14 9 16.8 6.6" stroke="#FBF8F2" stroke-width="1.1" stroke-linecap="round" opacity="0.5"/></svg></div><div><b>The Character Thread</b><span>Follow one person through the whole novel, week by week.</span></div></div>
     <div class="it"><div class="lf"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 3.5 C9.5 4 3.5 10.5 3.5 21 C14 20.5 20.5 14 20.5 3.5 Z" fill="currentColor"/><path d="M3.5 21 C2.9 21.8 2.5 22.5 2.3 23.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 16.8 C10.5 12.8 14 9 16.8 6.6" stroke="#FBF8F2" stroke-width="1.1" stroke-linecap="round" opacity="0.5"/></svg></div><div><b>A Relation Study</b><span>Sustained, real-world attention work carried all summer.</span></div></div>
     <div class="it"><div class="lf"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 3.5 C9.5 4 3.5 10.5 3.5 21 C14 20.5 20.5 14 20.5 3.5 Z" fill="currentColor"/><path d="M3.5 21 C2.9 21.8 2.5 22.5 2.3 23.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 16.8 C10.5 12.8 14 9 16.8 6.6" stroke="#FBF8F2" stroke-width="1.1" stroke-linecap="round" opacity="0.5"/></svg></div><div><b>Narration &amp; Close-Reading</b><span>Speak it before you write it — every week.</span></div></div>
@@ -581,12 +589,15 @@ section.band{padding:56px 0;}
         You already have these. The only NEW things to copy are the block tagged
         "cohort-styles" and the <section id="cohort"> further down. ---- */
 :root{
-  --cream:#FBF8F2; --paper:#FFFFFF; --ink:#37322B; --ink-soft:#5C544A;
-  --sage:#6E7E62; --sage-soft:#93A284; --gold:#B0894E; --gold-deep:#9A7437;
-  --umber:#6B5A45; --line:#E6DECF; --line-soft:#F0EADD;
-  --display:'Playfair Display',Georgia,serif;
-  --lit:'Cormorant Garamond',Georgia,serif;
-  --sans:'Lato','Helvetica Neue',Arial,sans-serif;
+  /* Aliased to the brand palette in tokens.css. */
+  --cream:var(--ds-paper); --paper:var(--ds-paper-warm);
+  --ink:var(--ds-ink); --ink-soft:var(--ds-ink-soft);
+  --sage:var(--ds-juniper); --sage-soft:var(--ds-ink-soft);
+  --gold:var(--ds-ochre-text); --gold-fill:var(--ds-ochre); --gold-deep:var(--ds-ochre-text);
+  --umber:var(--ds-ink-soft); --line:var(--ds-rule); --line-soft:var(--ds-rule);
+  --display:var(--ds-display);
+  --lit:var(--ds-body);
+  --sans:var(--ds-sans);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -638,6 +649,18 @@ section.band{padding:56px 0;}
 .cohort-card .cta.ghost:hover{background:var(--cream);}
 @media(max-width:760px){.cohort-grid{grid-template-columns:1fr;}}
 /* ===== end copy block 1 of 2 ===== */
+
+/* the four moves, each with its line-art mark */
+.step .art{height:52px;display:flex;align-items:flex-end;margin-bottom:12px;}
+.step .art img{max-height:52px;width:auto;display:block;}
+.step .art.is-awaiting::before{content:"";display:block;width:34px;height:34px;border:1px dashed var(--line);border-radius:50%;}
+
+/* four moves need a two-up step before they stack */
+@media (max-width:1080px) and (min-width:861px){
+  .method{grid-template-columns:repeat(2,1fr);}
+  .method .step:nth-child(2n){border-right:none;}
+  .method .step:nth-child(-n+2){border-bottom:1px solid var(--line);}
+}
 </style>
 </head>
 <body>

@@ -1,0 +1,56 @@
+/* ============================================================
+   DELIGHT & SAVOR — BRAND TOKENS
+   Paper is the material. Everything else is ink on it.
+
+   The hierarchy, and it is closed:
+     Paper #F5F1E8 → Juniper #3F6260 → Ink #292D2C
+     → Weathered Blue #607A86 → Ochre #B59055
+     → and the natural colours inside the illustrations.
+
+   No terracotta. No sage family. No extra neutrals "for
+   differentiation" — differentiate with space and rules instead.
+
+   Juniper sits deliberately on the blue/green boundary (G and B
+   within a couple of points). Do not let it drift toward forest.
+   Weathered blue is a secondary that should only be noticed after
+   looking a while: use it for a title's italic, a link, a small
+   graphic — never as a section background.
+   Ochre is for tiny editorial marks only: rules, arrows, a margin
+   mark, a hover. Primary buttons are juniper.
+   ============================================================ */
+
+:root {
+  /* ---- Paper: the dominant field ---------------------------- */
+  --ds-paper:        #F5F1E8;
+  --ds-paper-warm:   #FAF7F0;  /* raised cards            */
+  --ds-paper-deep:   #EDE7DA;  /* quiet alternating bands */
+
+  /* ---- Ink -------------------------------------------------- */
+  --ds-ink:          #292D2C;  /* body copy      12.4:1 on paper */
+  --ds-ink-soft:     #4A5654;  /* secondary text  6.8:1 on paper */
+
+  /* ---- Juniper: the brand ink ------------------------------- */
+  --ds-juniper:      #3F6260;  /* headings, buttons  5.96:1 on paper */
+  --ds-juniper-deep: #2F4B4A;  /* small dark panels, button hover    */
+  --ds-juniper-pale: #E7ECEB;  /* faintest tint, sparing             */
+
+  /* ---- Weathered blue: secondary, used sparingly ------------ */
+  --ds-blue:         #607A86;  /* small graphics and rules        */
+  --ds-blue-text:    #556B76;  /* when it carries words  4.97:1   */
+
+  /* ---- Ochre: tiny warm marks only -------------------------- */
+  --ds-ochre:        #B59055;  /* rules, arrows, margin marks     */
+  --ds-ochre-text:   #7F6337;  /* an emphasised word     4.98:1   */
+  --ds-ochre-lt:     #E2C79A;  /* only on deep juniper   5.78:1   */
+
+  /* ---- Rules ------------------------------------------------ */
+  --ds-rule:         rgba(63, 98, 96, .18);
+  --ds-rule-strong:  rgba(63, 98, 96, .34);
+  --ds-rule-dark:    rgba(245, 241, 232, .18);
+
+  /* ---- Type ------------------------------------------------- */
+  --ds-display: 'Playfair Display', Georgia, serif;
+  --ds-body:    'Cormorant Garamond', Georgia, serif;
+  --ds-sans:    'Jost', system-ui, -apple-system, sans-serif;
+  --ds-hand:    'Caveat', cursive;   /* marginalia only, sparingly */
+}

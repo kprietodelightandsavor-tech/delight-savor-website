@@ -33,22 +33,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" />
+  <link rel="stylesheet" href="/tokens.css" />
   <style>
     :root {
-      --slate:      #37322B;
-      --slate-mid:  #5C564B;
-      --sage:       #8C9B79;
-      --light-sage: #EBEFE2;
-      --gold:       #BE9457;
-      --gold-light: #E2C79A;
-      --cloth:      #232220;
-      --cream:      #FAF6EE;
-      --cream-dark: #F0EBE0;
-      --text-dark:  #2C2A26;
-      --text-mid:   #6E675C;
-      --ff-display: 'Playfair Display', Georgia, serif;
-      --ff-body:    'Cormorant Garamond', Georgia, serif;
-      --ff-sans:    'Libre Baskerville', serif;
+      /* Aliased to the brand palette in tokens.css. */
+      --slate:      var(--ds-juniper);
+      --slate-mid:  var(--ds-ink-soft);
+      --sage:       var(--ds-ink-soft);
+      --light-sage: var(--ds-paper-deep);
+      --gold:       var(--ds-ochre-text);   /* safe as text */
+      --gold-fill:  var(--ds-ochre);        /* decorative fills only */
+      --gold-text:  var(--ds-ochre-text);
+      --gold-light: var(--ds-ochre-lt);
+      --cloth:      var(--ds-juniper-deep);
+      --cream:      var(--ds-paper);
+      --cream-dark: var(--ds-paper-deep);
+      --text-dark:  var(--ds-ink);
+      --text-mid:   var(--ds-ink-soft);
+      --ff-display: var(--ds-display);
+      --ff-body:    var(--ds-body);
+      --ff-sans:    var(--ds-sans);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -60,41 +64,41 @@
     ════════════════════════════════ */
     /* ── HERO ── */
     .faq-hero {
-      background: var(--slate);
-      color: var(--cream);
-      padding: 4.5rem 2rem 4rem;
+      background: transparent;
+      color: var(--ds-ink);
+      padding: 4.75rem 2rem 4.25rem;
     }
     .faq-hero::before {
       display: none; line-height: 1;
       pointer-events: none; user-select: none;
     }
     .faq-hero-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
-    .faq-eyebrow { font-family: var(--ff-sans); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem; }
-    .faq-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4.5vw, 3rem); font-style: italic; font-weight: 400; color: var(--cream); line-height: 1.2; margin-bottom: 1.1rem; text-shadow: 0 2px 1px rgba(0,0,0,.5), 0 -1px 0 rgba(255,240,210,.04); }
-    .faq-title em { color: var(--gold); }
-    .faq-lead { font-family: var(--ff-body); font-size: 1.15rem; color: rgba(250,249,246,0.72); line-height: 1.8; }
+    .faq-eyebrow { font-family: var(--ff-sans); font-size: 0.785rem; letter-spacing: 0.144em; text-transform: uppercase; color: var(--ds-ink-soft); margin-bottom: 1rem; }
+    .faq-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4.5vw, 3rem); font-style: normal; font-weight: 500; color: var(--ds-juniper); line-height: 1.2; margin-bottom: 1.1rem; }
+    .faq-title em { color: var(--ds-blue-text); }
+    .faq-lead { font-family: var(--ff-body); font-size: 1.15rem; color: var(--ds-ink); line-height: 1.8; }
     /* ── CATEGORY TABS ── */
     .faq-tabs { background: var(--cream-dark); border-bottom: 1px solid rgba(169,183,134,.3); position: sticky; top: 68px; z-index: 90; }
     .faq-tabs-inner { max-width: 1060px; margin: 0 auto; display: flex; overflow-x: auto; padding: 0 2rem; gap: 0; scrollbar-width: none; }
     .faq-tabs-inner::-webkit-scrollbar { display: none; }
-    .faq-tab { font-family: var(--ff-sans); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-mid); background: none; border: none; border-bottom: 2px solid transparent; padding: 1rem 1.25rem; cursor: pointer; white-space: nowrap; transition: color .2s, border-color .2s; }
+    .faq-tab { font-family: var(--ff-sans); font-size: 0.785rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-mid); background: none; border: none; border-bottom: 2px solid transparent; padding: 1rem 1.25rem; cursor: pointer; white-space: nowrap; transition: color .2s, border-color .2s; }
     .faq-tab:hover { color: var(--slate); }
     .faq-tab.active { color: var(--slate); border-bottom-color: var(--gold); }
     /* ── MAIN LAYOUT ── */
     .faq-body { max-width: 1060px; margin: 0 auto; padding: 4rem 2rem 5rem; display: grid; grid-template-columns: 220px 1fr; gap: 4rem; align-items: start; }
     .faq-sidebar { position: sticky; top: 130px; }
-    .faq-sidebar-title { font-family: var(--ff-sans); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .faq-sidebar-title { font-family: var(--ff-sans); font-size: 0.785rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
     .faq-sidebar-nav { list-style: none; }
     .faq-sidebar-nav li + li { margin-top: .1rem; }
-    .faq-sidebar-nav a { font-family: var(--ff-body); font-size: .98rem; color: var(--text-mid); display: block; padding: .4rem .75rem; border-left: 2px solid transparent; border-radius: 0 4px 4px 0; transition: color .2s, border-color .2s, background .2s; }
+    .faq-sidebar-nav a { font-family: var(--ff-body); font-size: 0.98rem; color: var(--text-mid); display: block; padding: .4rem .75rem; border-left: 2px solid transparent; border-radius: 0 4px 4px 0; transition: color .2s, border-color .2s, background .2s; }
     .faq-sidebar-nav a:hover { color: var(--slate); border-left-color: var(--sage); background: var(--light-sage); }
     .faq-sidebar-nav a.active { color: var(--slate); border-left-color: var(--gold); background: rgba(190,148,87,.08); }
     /* ── FAQ GROUPS ── */
     .faq-group { margin-bottom: 4rem; }
     .faq-group:last-child { margin-bottom: 0; }
     .faq-group-header { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(169,183,134,.3); }
-    .gold-rule { width: 32px; height: 2px; background: var(--gold); margin-bottom: .75rem; }
-    .faq-group-label { font-family: var(--ff-sans); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--sage); margin-bottom: .35rem; }
+    .gold-rule { width: 32px; height: 2px; background: var(--gold-fill); margin-bottom: .75rem; }
+    .faq-group-label { font-family: var(--ff-sans); font-size: 0.785rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--sage); margin-bottom: .35rem; }
     .faq-group-title { font-family: var(--ff-display); font-size: 1.7rem; font-weight: 600; color: var(--slate); }
     /* ── ACCORDION ── */
     .faq-list { list-style: none; }
@@ -104,7 +108,7 @@
     .faq-question { font-family: var(--ff-display); font-size: 1.12rem; font-weight: 600; color: var(--slate); line-height: 1.3; }
     .faq-icon { width: 24px; height: 24px; border-radius: 50%; background: var(--light-sage); border: 1px solid rgba(169,183,134,.4); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .2s, transform .3s; }
     .faq-icon svg { width: 10px; height: 10px; color: var(--sage); transition: transform .3s; }
-    .faq-item.open .faq-icon { background: var(--gold); border-color: var(--gold); }
+    .faq-item.open .faq-icon { background: var(--ds-juniper); border-color: var(--ds-juniper); }
     .faq-item.open .faq-icon svg { transform: rotate(45deg); color: var(--cream); }
     .faq-answer { font-family: var(--ff-body); font-size: 1.05rem; color: var(--text-mid); line-height: 1.85; overflow: hidden; max-height: 0; transition: max-height .35s ease, padding .3s ease; padding-bottom: 0; }
     .faq-answer p + p { margin-top: .85rem; }
@@ -114,9 +118,9 @@
     /* ── CONTACT SECTION ── */
     .contact-section { background: var(--light-sage); padding: 5rem 2rem; }
     .contact-inner { max-width: 700px; margin: 0 auto; text-align: center; }
-    .contact-title { font-family: var(--ff-display); font-size: 2rem; font-style: italic; color: var(--slate); margin-bottom: 1rem; }
+    .contact-title { font-family: var(--ff-display); font-size: 2rem; font-style: normal; font-weight: 500; color: var(--slate); margin-bottom: 1rem; }
     .contact-body { font-family: var(--ff-body); font-size: 1.08rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 2rem; }
-    .btn-primary { font-family: var(--ff-sans); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; background: var(--gold); color: var(--slate); border: none; border-radius: 4px; padding: .85rem 2rem; font-weight: 700; cursor: pointer; transition: background .2s, transform .15s; display: inline-block; }
+    .btn-primary { font-family: var(--ff-sans); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; background: var(--ds-juniper); color: var(--ds-paper); border: none; border-radius: 4px; padding: .85rem 2rem; font-weight: 700; cursor: pointer; transition: background .2s, transform .15s; display: inline-block; }
     .btn-primary:hover { background: rgba(190,148,87,.85); transform: translateY(-2px); }
     .contact-email { margin-top: 1.5rem; font-family: var(--ff-body); font-size: 1rem; color: var(--text-mid); }
     .contact-email a { color: var(--slate); border-bottom: 1px solid var(--sage); }
@@ -130,13 +134,13 @@
     @media (max-width: 860px) { .faq-body { grid-template-columns: 1fr; } .faq-sidebar { display: none; } }
     @media (max-width: 600px) { .faq-hero::before { font-size: 15rem; } }
     /* ── book-cloth covers (charcoal ink) ── */
-    .cloth { position: relative; background-color: #232220;
+    .cloth { position: relative; background-color: var(--ds-paper);
+      /* Paper, not cloth. One near-imperceptible tonal wash; no weave. */
       background-image:
-        repeating-linear-gradient(90deg, rgba(0,0,0,.12) 0 1px, transparent 1px 3px),
-        repeating-linear-gradient(0deg, rgba(255,255,255,.013) 0 1px, transparent 1px 3px),
-        radial-gradient(130% 90% at 50% 0%, #2f2d29 0%, #232220 55%, #191816 100%); }
-    .gilt::before { content:""; position:absolute; inset:16px; border:1px solid rgba(190,148,87,.42); pointer-events:none; z-index:0; }
-    .gilt::after  { content:""; position:absolute; inset:21px; border:1px solid rgba(190,148,87,.16); pointer-events:none; z-index:0; }
+        radial-gradient(120% 80% at 50% 0%, rgba(63,98,96,.05) 0%, rgba(63,98,96,0) 62%); }
+    .site-footer.cloth { background-color: var(--ds-juniper-deep); background-image: none; }
+    .gilt::before { content:""; position:absolute; inset:16px; border:1px solid var(--ds-rule-strong); pointer-events:none; z-index:0; }
+    .gilt::after  { content:""; position:absolute; inset:21px; border:1px solid var(--ds-rule); pointer-events:none; z-index:0; }
   </style>
 </head>
 <body>
@@ -185,11 +189,11 @@
         </li>
         <li class="faq-item">
           <button class="faq-btn" aria-expanded="false">
-            <span class="faq-question">What is Find It &middot; Follow It &middot; Frame It?</span>
+            <span class="faq-question">What is Find It &middot; Follow It &middot; Frame It &middot; Keep It?</span>
             <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
           </button>
           <div class="faq-answer">
-            <p>Find It &middot; Follow It &middot; Frame It is the reading method that runs through every unit — not a formula to memorize, but three habits of attention students grow into over time. <em>Find It</em> is noticing what's actually on the page: a word, an image, a shift in tone, the detail that catches the eye. <em>Follow It</em> is asking why it's there and tracing it through the book, with the text itself as the evidence. <em>Frame It</em> is stepping back to ask what the whole work is reaching for — what it's really about.</p><p>The goal is that by the end of a semester, students aren't asking "which step am I on?" They're just reading the way a careful reader reads — noticing, questioning, and listening for what a book is really saying. The <a href="teachers-notebook.html#delight">Teacher's Notebook</a> has the full breakdown of each move.</p>
+            <p>Find It &middot; Follow It &middot; Frame It &middot; Keep It is the reading method that runs through every unit — not a formula to memorize, but four habits of attention students grow into over time. <em>Find It</em> is noticing what's actually on the page: a word, an image, a shift in tone, the detail that catches the eye. <em>Follow It</em> is asking why it's there and tracing it through the book, with the text itself as the evidence. <em>Frame It</em> is stepping back to ask what the whole work is reaching for — what it's really about. <em>Keep It</em> is writing down what became theirs: a narration, a line copied into the commonplace book, an essay. The keeping is what makes a reading last.</p><p>The goal is that by the end of a semester, students aren't asking "which step am I on?" They're just reading the way a careful reader reads — noticing, questioning, and listening for what a book is really saying. The <a href="teachers-notebook.html#delight">Teacher's Notebook</a> has the full breakdown of each move.</p>
           </div>
         </li>
         <li class="faq-item">
@@ -327,7 +331,7 @@
             <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
           </button>
           <div class="faq-answer">
-            <p>Start with Macbeth. It's Year One, Fall — and it's specifically designed to introduce the Find It &middot; Follow It &middot; Frame It method and build the narration habit from the ground up. Wuthering Heights (Year One, Spring) assumes students have some familiarity with the approach. If you're jumping in mid-year with a group that already narrates well, Wuthering Heights works as a standalone, but Macbeth is the better entry point.</p>
+            <p>Start with Macbeth. It's Year One, Fall — and it's specifically designed to introduce the Find It &middot; Follow It &middot; Frame It &middot; Keep It method and build the narration habit from the ground up. Wuthering Heights (Year One, Spring) assumes students have some familiarity with the approach. If you're jumping in mid-year with a group that already narrates well, Wuthering Heights works as a standalone, but Macbeth is the better entry point.</p>
           </div>
         </li>
         <li class="faq-item">
