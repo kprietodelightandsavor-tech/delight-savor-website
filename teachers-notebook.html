@@ -62,7 +62,7 @@
     .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.6fr; gap: 3rem; margin-bottom: 3rem; }
     .footer-brand .logo { font-family: var(--ff-display); font-size: 1.3rem; font-weight: 600; color: var(--cream); margin-bottom: .75rem; }
     .footer-tagline { font-family: var(--ff-body); font-size: .95rem; font-style: italic; color: rgba(250,246,238,.55); line-height: 1.7; }
-    .footer-col-title { font-family: var(--ff-sans); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
+    .footer-col-title { font-family: var(--ff-sans); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
     .footer-nav-list { list-style: none; }
     .footer-nav-list li + li { margin-top: .55rem; }
     .footer-nav-list a { font-family: var(--ff-body); font-size: .98rem; color: rgba(250,246,238,.65); transition: color .2s; }
@@ -129,7 +129,7 @@
     .notebook-quote { font-family: var(--ff-display); font-size: 1.4rem; font-style: italic; color: var(--deep-sage); line-height: 1.6; border-left: 2px solid var(--sage); padding-left: 1.5rem; margin-top: 1.75rem; }
 
     /* ── Find · Follow · Frame — the reading key (flat) ── */
-    .delight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
+    .delight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
     .delight-card { background: var(--cream); border-radius: 3px; padding: 1.75rem 1.5rem; border: 1px solid var(--line); border-top: 2px solid var(--sage); transition: border-color .25s; }
     .delight-card:hover { border-color: rgba(126,142,114,.55); }
     .delight-letter { font-family: var(--ff-display); font-size: 2.5rem; font-style: italic; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: .4rem; }
@@ -146,7 +146,7 @@
     /* ── GRADING (flat) ── */
     .rubric-wrap { margin-top: 2.5rem; border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
     .rubric-head { background: var(--slate); padding: 1.25rem 1.75rem; display: grid; grid-template-columns: 2fr 1fr 2fr; gap: 1rem; }
-    .rubric-head span { font-family: var(--ff-sans); font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); }
+    .rubric-head span { font-family: var(--ff-sans); font-size: .72rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); }
     .rubric-row { background: var(--cream); padding: 1.1rem 1.75rem; display: grid; grid-template-columns: 2fr 1fr 2fr; gap: 1rem; border-bottom: 1px solid var(--line); align-items: center; }
     .rubric-row:last-child { border-bottom: none; }
     .rubric-row:nth-child(even) { background: var(--card); }
@@ -155,17 +155,17 @@
     .rubric-note { font-family: var(--ff-body); font-size: .95rem; color: var(--text-mid); font-style: italic; }
     .rubric-split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
     .rubric-callout { background: var(--slate); border-radius: 3px; padding: 1.5rem 1.75rem; }
-    .rubric-callout-title { font-family: var(--ff-sans); font-size: .68rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: .5rem; }
+    .rubric-callout-title { font-family: var(--ff-sans); font-size: .72rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: .5rem; }
     .rubric-callout-body { font-family: var(--ff-body); font-size: .98rem; color: rgba(250,246,238,.7); line-height: 1.7; }
 
     /* ── DISPATCHES (flat) ── */
-    .substack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+    .substack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
     .substack-card { background: var(--cream); border: 1px solid var(--line); border-radius: 3px; padding: 1.75rem; border-bottom: 2px solid var(--sage); display: flex; flex-direction: column; transition: border-color .25s; }
     .substack-card:hover { border-color: rgba(126,142,114,.55); border-bottom-color: var(--sage); }
     .substack-tag { font-family: var(--ff-sans); font-variant: small-caps; letter-spacing: .14em; font-size: .74rem; color: var(--deep-sage); margin-bottom: .75rem; }
     .substack-title { font-family: var(--ff-display); font-size: 1.2rem; font-weight: 600; color: var(--slate); line-height: 1.3; margin-bottom: .75rem; }
     .substack-excerpt { font-family: var(--ff-body); font-size: .98rem; color: var(--text-mid); line-height: 1.7; flex-grow: 1; margin-bottom: 1.25rem; }
-    .substack-link { font-family: var(--ff-sans); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sage); display: flex; align-items: center; gap: .4rem; transition: gap .2s; }
+    .substack-link { font-family: var(--ff-sans); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sage); display: flex; align-items: center; gap: .4rem; transition: gap .2s; }
     .substack-link:hover { gap: .7rem; }
     .substack-link svg { width: 14px; height: 14px; }
     .substack-cta { margin-top: 2.5rem; text-align: center; }

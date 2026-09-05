@@ -38,17 +38,17 @@
   .signoff .place{font-variant:small-caps;letter-spacing:.18em;font-size:.78rem;color:var(--muted);margin-top:.4rem}
 
   /* ── NAV ── */
-  nav { background: var(--slate); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; }
+  nav { background: var(--slate); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 68px; position: sticky; top: 0; z-index: 100; }
   .nav-logo-wrap { display: flex; align-items: center; gap: 0.65rem; }
   .nav-logo-img { height: 40px; width: auto; opacity: 0.95; }
   .nav-logo-text { font-family: 'Playfair Display', serif; color: var(--cream); font-size: 1rem; letter-spacing: 0.04em; line-height: 1.2; }
-  .nav-logo-text span { display: block; font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(232,213,176,0.45); font-family: 'Cormorant Garamond', serif; font-style: italic; }
-  .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
-  .nav-links a { color: rgba(250,249,246,0.82); font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-logo-text span { display: block; font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,213,176,0.45); font-family: 'Cormorant Garamond', serif; font-style: italic; }
+  .nav-links { list-style: none; display: flex; gap: clamp(0.85rem, 1.5vw, 1.6rem); align-items: center; flex-wrap: nowrap; margin: 0; padding: 0; }
+  .nav-links a { color: rgba(250,249,246,0.82); font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
   .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
-  .nav-cta { background: var(--gold); color: var(--cream) !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; }
-  .nav-social { display: flex; gap: 1.25rem; align-items: center; }
-  .nav-social a { color: rgba(250,249,246,0.52); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-cta { background: var(--gold); color: var(--cream) !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; white-space: nowrap; }
+  .nav-social { display: flex; gap: 1rem; align-items: center; flex: 0 0 auto; }
+  .nav-social a { color: rgba(250,249,246,0.52); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
   .nav-social a:hover { color: var(--gold-light); }
   .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
   .hamburger span { display: block; width: 24px; height: 2px; background: var(--cream); border-radius: 2px; transition: all .25s; }
@@ -62,7 +62,12 @@
   .mobile-nav a:hover { color: var(--gold-light); }
   .mobile-nav a.mobile-cta { color: var(--gold-light); font-weight: 600; }
   .mobile-nav .mobile-divider { height: 1px; background: rgba(255,255,255,0.12); margin: 0.5rem 0; }
-  @media (max-width: 900px) { .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; } }
+  /* Social links are secondary - drop them before the primary links run out of room. */
+  @media (max-width: 1420px) { .nav-social { display: none; } }
+  /* Below this the primary links genuinely no longer fit; use the menu. */
+  @media (max-width: 1160px) { .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; } }
+  /* Very narrow phones: tighten the logo lockup so it never wraps against the menu button. */
+  @media (max-width: 400px) { nav { padding: 0 1rem; } .nav-logo-img { height: 32px; } .nav-logo-text { font-size: 0.9rem; } .nav-logo-text span { font-size: 0.58rem; letter-spacing: 0.07em; } }
 </style></head>
 <body>
 

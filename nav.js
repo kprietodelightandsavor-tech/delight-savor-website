@@ -39,6 +39,8 @@
   <a href="teachers-notebook.html" onclick="toggleMenu()">Teacher&rsquo;s Notebook</a>
   <a href="faq.html" onclick="toggleMenu()">FAQ</a>
   <a href="conversation-quilt.html" onclick="toggleMenu()">Conversation Quilt</a>
+  <a href="lately.html" onclick="toggleMenu()">Lately</a>
+  <a href="podcast.html" onclick="toggleMenu()">Podcast</a>
   <div class="mobile-divider"></div>
   <a href="https://instagram.com/Kim.delightandsavor" target="_blank" rel="noopener" onclick="toggleMenu()">Instagram</a>
   <a href="https://delightandsavor.substack.com" target="_blank" rel="noopener" onclick="toggleMenu()">Substack</a>
@@ -48,7 +50,6 @@
  /* ── INJECT FAVICON + APPLE TOUCH ICON ── */
 [
   { rel: 'icon', type: 'image/png', sizes: '96x96', href: 'images/favicon-96x96.png' },
-  { rel: 'icon', type: 'image/svg+xml', href: 'images/favicon.svg' },
   { rel: 'shortcut icon', href: 'images/favicon.ico' },
   { rel: 'apple-touch-icon', sizes: '180x180', href: 'images/apple-touch-icon.png' },
   { rel: 'manifest', href: 'images/site.webmanifest' }
@@ -59,17 +60,17 @@
 });
    /* ── NAV CSS ── */
   const navCSS = `
-    nav { background: #F5F1E8; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 0 #E6DECF; }
-    .nav-logo-wrap { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; }
+    nav { background: #F5F1E8; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 0 #E6DECF; }
+    .nav-logo-wrap { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; flex: 0 0 auto; }
     .nav-logo-img { height: 40px; width: auto; opacity: 0.95; }
     .nav-logo-text { font-family: 'Playfair Display', serif; color: #3F3732; font-size: 1rem; letter-spacing: 0.04em; line-height: 1.2; }
-    .nav-logo-text span { display: block; font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase; color: #9A7437; font-family: 'Cormorant Garamond', serif; font-style: italic; }
-    .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
-    .nav-links a { color: #5C544A; font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; }
+    .nav-logo-text span { display: block; font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: #9A7437; font-family: 'Cormorant Garamond', serif; font-style: italic; }
+    .nav-links { list-style: none; display: flex; gap: clamp(0.85rem, 1.5vw, 1.6rem); align-items: center; flex-wrap: nowrap; margin: 0; padding: 0; }
+    .nav-links a { color: #5C544A; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; white-space: nowrap; }
     .nav-links a:hover, .nav-links a.active { color: #C9A363; }
-    .nav-cta { background: #C9A363; color: #fff !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; }
-    .nav-social { display: flex; gap: 1.25rem; align-items: center; }
-    .nav-social a { color: #8A8073; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; }
+    .nav-cta { background: #C9A363; color: #fff !important; padding: 0.4rem 1.1rem; border-radius: 2px; font-weight: 600; white-space: nowrap; }
+    .nav-social { display: flex; gap: 1rem; align-items: center; flex: 0 0 auto; }
+    .nav-social a { color: #8A8073; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; text-decoration: none; white-space: nowrap; }
     .nav-social a:hover { color: #C9A363; }
     .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
     .hamburger span { display: block; width: 24px; height: 2px; background: #3F3732; border-radius: 2px; transition: all .25s; }
@@ -83,7 +84,12 @@
     .mobile-nav a:hover { color: #C9A363; }
     .mobile-nav a.mobile-cta { color: #C9A363; font-weight: 600; }
     .mobile-nav .mobile-divider { height: 1px; background: #E6DECF; margin: 0.5rem 0; }
-    @media (max-width: 720px) { .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; } }
+    /* Social links are secondary — drop them before the primary links run out of room. */
+    @media (max-width: 1420px) { .nav-social { display: none; } }
+    /* Below this the primary links genuinely no longer fit; use the menu. */
+    @media (max-width: 1160px) { .nav-links { display: none; } .nav-social { display: none; } .hamburger { display: flex; } }
+    /* Very narrow phones: tighten the logo lockup so it never wraps against the menu button. */
+    @media (max-width: 400px) { nav { padding: 0 1rem; } .nav-logo-img { height: 32px; } .nav-logo-text { font-size: 0.9rem; } .nav-logo-text span { font-size: 0.58rem; letter-spacing: 0.07em; } }
 
     /* ── FOOTER ── */
     footer { background: #232220; color: #d9d2c4; font-family: 'Lato', system-ui, sans-serif; padding: 56px 2rem 28px; margin-top: 60px; }
@@ -92,7 +98,7 @@
     .footer-brand p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; line-height: 1.5; color: rgba(232,225,212,.78); margin: 0 0 18px; max-width: 38ch; }
     .footer-email p { font-size: .8rem; letter-spacing: .04em; color: rgba(232,225,212,.66); margin: 0 0 8px; }
     .footer-email-row { display: flex; gap: 8px; max-width: 320px; }
-    .footer-email-row input { flex: 1; padding: 9px 12px; border: 1px solid rgba(255,255,255,.18); border-radius: 4px; background: rgba(255,255,255,.06); color: #faf9f6; font-size: .82rem; }
+    .footer-email-row input { flex: 1; min-width: 0; padding: 9px 12px; border: 1px solid rgba(255,255,255,.18); border-radius: 4px; background: rgba(255,255,255,.06); color: #faf9f6; font-size: .82rem; }
     .footer-email-row input::placeholder { color: rgba(232,225,212,.5); }
     .footer-email-row button { padding: 9px 16px; border: none; border-radius: 4px; background: #C9A363; color: #232220; font-weight: 700; font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; transition: background .2s; }
     .footer-email-row button:hover { background: #d4ad72; }
@@ -111,7 +117,10 @@
     .footer-bottom { max-width: 1120px; margin: 36px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.12); display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between; font-size: .72rem; letter-spacing: .03em; color: rgba(232,225,212,.55); }
     .footer-bottom a { color: rgba(232,225,212,.7); text-decoration: none; }
     .footer-bottom a:hover { color: #fff; }
-    @media (max-width: 720px) { .footer-inner { grid-template-columns: 1fr; gap: 34px; } footer { padding: 44px 1.5rem 24px; } .footer-bottom { justify-content: flex-start; } }`;
+    @media (max-width: 720px) { .footer-inner { grid-template-columns: minmax(0, 1fr); gap: 34px; } footer { padding: 44px 1.5rem 24px; } .footer-bottom { justify-content: flex-start; } }
+    /* An <input>'s intrinsic width kept the subscribe row from shrinking, which pushed
+       the whole footer wider than narrow phones. Stack it instead. */
+    @media (max-width: 430px) { .footer-email-row { flex-wrap: wrap; } .footer-email-row input, .footer-email-row button { flex: 1 1 100%; } }`;
   /* ── FOOTER HTML ── */
   const footerHTML = `
 <footer>
@@ -134,6 +143,8 @@
         <li><a href="curriculum.html">Curriculum</a></li>
         <li><a href="teachers-notebook.html">Teacher&rsquo;s Notebook</a></li>
         <li><a href="conversation-quilt.html">Conversation Quilt</a></li>
+        <li><a href="lately.html">Lately</a></li>
+        <li><a href="podcast.html">Podcast</a></li>
         <li><a href="Shop.html">Shop</a></li>
         <li><a href="faq.html">FAQ</a></li>
       </ul>
