@@ -7,255 +7,363 @@
      Paper #F6F2E9 → Literary Black #1A1C1B → Blue-Green #49686B
      → Weathered Blue #6A7F8A → Ochre #B28A50
      → and the natural colours inside the illustrations.
-
-   No terracotta. No sage family. No extra neutrals "for
-   differentiation" — differentiate with space, type and rules.
-
-   Literary black carries the reading experience: body copy,
-   important headings, wordmark and the strongest editorial marks.
-   Blue-green is identity and punctuation, not an all-purpose ink:
-   use it for buttons, links, selective emphasis and graphic accents.
-   Weathered blue should only be noticed after looking a while.
-   Ochre is for tiny editorial marks only: rules, arrows, a margin
-   mark, or a hover. Never let ochre become a large fill.
    ============================================================ */
 
 :root {
-  /* ---- Paper: the dominant field ---------------------------- */
   --ds-paper:        #F6F2E9;
-  --ds-paper-warm:   #FBF8F1;  /* raised cards            */
-  --ds-paper-deep:   #EEE8DC;  /* quiet alternating bands */
+  --ds-paper-warm:   #FBF8F1;
+  --ds-paper-deep:   #EEE8DC;
 
-  /* ---- Literary ink ---------------------------------------- */
-  --ds-ink:          #1A1C1B;  /* primary ink: 15.3:1 on paper */
-  --ds-ink-soft:     #4B5351;  /* secondary text, captions      */
+  --ds-ink:          #1A1C1B;
+  --ds-ink-soft:     #4B5351;
 
-  /* ---- Blue-green: distinctive brand accent ---------------- */
-  --ds-juniper:      #49686B;  /* buttons, links, selected emphasis */
-  --ds-juniper-deep: #344F51;  /* button hover / small dark panels  */
-  --ds-juniper-pale: #E8EEEE;  /* faintest tint, sparing             */
+  --ds-juniper:      #49686B;
+  --ds-juniper-deep: #344F51;
+  --ds-juniper-pale: #E8EEEE;
 
-  /* ---- Weathered blue: secondary, used sparingly ----------- */
-  --ds-blue:         #6A7F8A;  /* graphics and rules only          */
-  --ds-blue-text:    #566B76;  /* accessible when it carries words */
+  --ds-blue:         #6A7F8A;
+  --ds-blue-text:    #566B76;
 
-  /* ---- Ochre: tiny warm marks only ------------------------- */
-  --ds-ochre:        #B28A50;  /* decorative rules/arrows only    */
-  --ds-ochre-text:   #77603A;  /* accessible text form             */
-  --ds-ochre-lt:     #DFC596;  /* only on deep blue-green/black    */
+  --ds-ochre:        #B28A50;
+  --ds-ochre-text:   #77603A;
+  --ds-ochre-lt:     #DFC596;
 
-  /* ---- Rules ------------------------------------------------ */
   --ds-rule:         rgba(73, 104, 107, .18);
   --ds-rule-strong:  rgba(73, 104, 107, .34);
   --ds-rule-dark:    rgba(246, 242, 233, .18);
 
-  /* ---- Type ------------------------------------------------- */
   --ds-display: 'Playfair Display', Georgia, serif;
   --ds-body:    'Cormorant Garamond', Georgia, serif;
   --ds-sans:    'Jost', system-ui, -apple-system, sans-serif;
-  --ds-hand:    'Caveat', cursive;   /* marginalia only, sparingly */
+  --ds-hand:    'Caveat', cursive;
 }
 
 /* ============================================================
-   HOMEPAGE — EDITORIAL / LITERARY NATURALIST PASS
-   These selectors deliberately have slightly higher specificity
-   than the page-local legacy rules so the new hierarchy wins
-   without rewriting the whole homepage at once.
+   HOMEPAGE — LITERARY NATURALIST / EDITORIAL PASS
+   Scoped to the homepage so the rest of the site can be refined
+   deliberately rather than inheriting a homepage treatment.
    ============================================================ */
 
-body .hero {
+/* Navigation: quiet paper, black wordmark, blue-green punctuation. */
+body:has(.ds-attention) > nav {
+  background: rgba(246,242,233,.97);
+  border-bottom: 1px solid var(--ds-rule);
+  box-shadow: none;
+  backdrop-filter: blur(10px);
+}
+body:has(.ds-attention) .nav-logo-text {
+  color: var(--ds-ink);
+  font-weight: 500;
+  letter-spacing: .015em;
+}
+body:has(.ds-attention) .nav-logo-text span {
+  color: var(--ds-ink-soft);
+  font-style: normal;
+  letter-spacing: .13em;
+}
+body:has(.ds-attention) .nav-links a,
+body:has(.ds-attention) .nav-social a { color: var(--ds-ink); }
+body:has(.ds-attention) .nav-links a:hover,
+body:has(.ds-attention) .nav-links a.active,
+body:has(.ds-attention) .nav-social a:hover { color: var(--ds-juniper); }
+body:has(.ds-attention) .nav-cta {
+  background: var(--ds-juniper);
+  color: var(--ds-paper) !important;
+  border-radius: 2px;
+}
+
+/* Hero: the visual language of a printed literary journal. */
+body:has(.ds-attention) .hero {
   background: var(--ds-paper);
   color: var(--ds-ink);
   text-align: left;
-  padding: clamp(4.5rem, 8vw, 7rem) 2rem clamp(4rem, 7vw, 6rem);
+  padding: clamp(4.75rem, 8vw, 7rem) 2rem clamp(4.5rem, 7vw, 6.25rem);
   border-bottom: 1px solid var(--ds-rule);
 }
-body .hero-inner {
+body:has(.ds-attention) .hero-inner {
   max-width: 1180px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, .92fr);
   grid-template-areas:
-    "eyebrow snaps"
-    "headline snaps"
-    "tagline snaps"
-    "cta snaps"
-    "colophon snaps";
-  column-gap: clamp(2.5rem, 6vw, 6.5rem);
+    "eyebrow art"
+    "headline art"
+    "tagline art"
+    "cta art"
+    "colophon art";
+  column-gap: clamp(2.75rem, 6vw, 6.5rem);
   align-items: center;
 }
-body .hero-eyebrow { grid-area: eyebrow; margin-bottom: 1.25rem; color: var(--ds-ink-soft); }
-body .hero-headline {
+body:has(.ds-attention) .hero-inner::after {
+  content: "";
+  grid-area: art;
+  width: 100%;
+  min-height: clamp(330px, 39vw, 510px);
+  background: url('/delight-savor-mark-transparent.png') center / contain no-repeat;
+  filter: drop-shadow(0 14px 22px rgba(26,28,27,.10));
+}
+body:has(.ds-attention) .hero-eyebrow {
+  grid-area: eyebrow;
+  color: var(--ds-ink-soft);
+  font-size: .76rem;
+  letter-spacing: .17em;
+  margin: 0 0 1.35rem;
+}
+body:has(.ds-attention) .hero-headline {
   grid-area: headline;
   color: var(--ds-ink);
-  font-size: clamp(3rem, 6vw, 5.6rem);
+  font-size: clamp(3.25rem, 6vw, 5.75rem);
   font-weight: 400;
   line-height: .98;
-  letter-spacing: -.035em;
-  margin: 0 0 1.7rem;
+  letter-spacing: -.042em;
+  margin: 0 0 1.8rem;
   max-width: 760px;
 }
-body .hero-headline em {
+body:has(.ds-attention) .hero-headline em {
+  display: inline-block;
   color: var(--ds-juniper);
   font-style: normal;
   font-weight: 400;
 }
-body .hero-tagline {
+body:has(.ds-attention) .hero-tagline {
   grid-area: tagline;
   color: var(--ds-ink);
-  max-width: 590px;
-  margin: 0 0 2rem;
+  max-width: 575px;
+  margin: 0 0 2.1rem;
   font-size: clamp(1.2rem, 2vw, 1.48rem);
   line-height: 1.55;
 }
-body .hero-cta-group { grid-area: cta; justify-content: flex-start; }
-body .hero-colophon {
+body:has(.ds-attention) .hero-cta-group {
+  grid-area: cta;
+  justify-content: flex-start;
+}
+body:has(.ds-attention) .hero-colophon {
   grid-area: colophon;
   justify-content: flex-start;
-  margin-top: 2rem;
+  margin-top: 2.15rem;
   color: var(--ds-ink-soft);
+  letter-spacing: .13em;
 }
-body .hero-snaps {
-  grid-area: snaps;
-  margin: 0;
-  min-height: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  align-items: end;
-}
-body .hero-snap {
-  width: 100%;
-  background: var(--ds-paper-warm);
-  padding: 7px;
-  box-shadow: 0 12px 32px rgba(26,28,27,.10);
-  transform: none !important;
-}
-body .hero-snap:nth-child(1) { grid-column: 1 / -1; }
-body .hero-snap img { width: 100%; height: clamp(150px, 18vw, 245px); object-fit: cover; }
-body .hero-snap:nth-child(1) img { height: clamp(210px, 25vw, 330px); }
+/* The brand illustration replaces the former scrapbook photo cluster in the hero. */
+body:has(.ds-attention) .hero-snaps { display: none; }
 
-body .btn-primary {
+body:has(.ds-attention) .btn-primary {
   background: var(--ds-juniper);
   color: var(--ds-paper);
   border-radius: 2px;
   box-shadow: none;
+  padding: .9rem 1.9rem;
 }
-body .btn-outline {
+body:has(.ds-attention) .btn-primary:hover { background: var(--ds-juniper-deep); }
+body:has(.ds-attention) .btn-outline,
+body:has(.ds-attention) .btn-ghost {
   color: var(--ds-ink);
   border-color: rgba(26,28,27,.38);
   border-radius: 2px;
 }
+body:has(.ds-attention) .btn-outline:hover,
+body:has(.ds-attention) .btn-ghost:hover {
+  color: var(--ds-juniper);
+  border-color: var(--ds-juniper);
+}
 
-/* Four-part method: quiet, specimen-like, and visually central. */
-body .ds-attention {
+/* Four-part method: a specimen plate rather than four app cards. */
+body:has(.ds-attention) .ds-attention {
   background: var(--ds-paper-warm);
-  padding: clamp(4.5rem, 8vw, 7rem) 1.5rem;
+  padding: clamp(5rem, 8vw, 7.25rem) 1.5rem;
   border-bottom: 1px solid var(--ds-rule);
 }
-body .ds-attention-inner { max-width: 1120px; }
-body .ds-attention-lede,
-body .section-title,
-body .ds-wt-title {
+body:has(.ds-attention) .ds-attention-inner { max-width: 1120px; }
+body:has(.ds-attention) .section-rule {
+  width: 70px;
+  height: 1px;
+  background: var(--ds-ochre);
+  margin-left: auto;
+  margin-right: auto;
+}
+body:has(.ds-attention) .section-label,
+body:has(.ds-attention) .ds-shelf-eyebrow,
+body:has(.ds-attention) .ds-wt-eyebrow {
+  color: var(--ds-ink-soft);
+  letter-spacing: .18em;
+}
+body:has(.ds-attention) .ds-attention-lede,
+body:has(.ds-attention) .section-title,
+body:has(.ds-attention) .ds-wt-title {
   color: var(--ds-ink);
   font-style: normal;
   font-weight: 400;
-  letter-spacing: -.02em;
+  letter-spacing: -.028em;
 }
-body .ds-attention-body { color: var(--ds-ink-soft); }
-body .ds-moves { color: var(--ds-juniper); }
-body .ds-moves-grid {
+body:has(.ds-attention) .ds-attention-lede {
+  font-size: clamp(2.5rem, 4.8vw, 4.35rem);
+  line-height: 1.05;
+}
+body:has(.ds-attention) .ds-attention-body {
+  color: var(--ds-ink-soft);
+  max-width: 650px;
+}
+body:has(.ds-attention) .ds-moves { color: var(--ds-juniper); }
+body:has(.ds-attention) .ds-moves-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
-  margin-top: 3rem;
+  margin-top: 3.4rem;
   border-top: 1px solid var(--ds-rule);
   border-bottom: 1px solid var(--ds-rule);
 }
-body .ds-move {
-  padding: 2.2rem 1.6rem 2.35rem;
+body:has(.ds-attention) .ds-move {
+  padding: 2.35rem 1.6rem 2.45rem;
   min-width: 0;
 }
-body .ds-move + .ds-move { border-left: 1px solid var(--ds-rule); }
-body .ds-move-art {
-  height: 126px;
-  margin: 0 auto 1rem;
+body:has(.ds-attention) .ds-move + .ds-move { border-left: 1px solid var(--ds-rule); }
+body:has(.ds-attention) .ds-move-art {
+  height: 132px;
+  margin: 0 auto 1.15rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body .ds-move-art img {
+body:has(.ds-attention) .ds-move-art img {
   width: auto;
-  max-width: 132px;
-  max-height: 118px;
+  max-width: 136px;
+  max-height: 122px;
   object-fit: contain;
 }
-body .ds-move-name {
+body:has(.ds-attention) .ds-move-name {
   color: var(--ds-juniper);
   font-family: var(--ds-display);
-  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  font-size: clamp(1.5rem, 2vw, 1.9rem);
   font-weight: 400;
-  letter-spacing: -.01em;
+  letter-spacing: -.015em;
 }
-body .ds-move-desc { color: var(--ds-ink); line-height: 1.45; }
-
-/* Writing Table: paper, black ink, fewer decorative cues. */
-body .ds-writingtable-section {
-  background: var(--ds-paper);
+body:has(.ds-attention) .ds-move-desc {
   color: var(--ds-ink);
-  padding: clamp(5rem, 9vw, 8rem) 1.5rem;
+  line-height: 1.45;
+  max-width: 18ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+body:has(.ds-attention) .ds-attention-more { margin-top: 2.5rem; }
+
+/* The bookshelf keeps its character, but removes the old rustic heaviness. */
+body:has(.ds-attention) .ds-shelf-section {
+  background: var(--ds-paper-deep);
   border-bottom: 1px solid var(--ds-rule);
 }
-body .ds-wt-inner { max-width: 980px; }
-body .ds-wt-title {
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
+body:has(.ds-attention) .ds-shelf-title {
   color: var(--ds-ink);
+  font-style: normal;
+  font-size: clamp(2.4rem, 4.5vw, 3.7rem);
+  letter-spacing: -.025em;
 }
-body .ds-wt-epigraph { color: var(--ds-ink-soft); font-size: 1.3rem; }
-body .ds-wt-flow { color: var(--ds-juniper); }
-body .ds-wt-body,
-body .ds-wt-movement-desc,
-body .ds-wt-closing { color: var(--ds-ink); }
-body .ds-wt-grid { gap: 0; padding: 0; border-top: 1px solid var(--ds-rule); border-bottom: 1px solid var(--ds-rule); }
-body .ds-wt-movement { padding: 2rem 1.5rem 2.2rem; }
-body .ds-wt-movement + .ds-wt-movement { border-left: 1px solid var(--ds-rule); }
-body .ds-wt-movement:not(:last-child)::after { display: none; }
-body .ds-wt-movement-title { color: var(--ds-juniper); }
+body:has(.ds-attention) .ds-shelf-board {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--ds-rule-strong) 7%, var(--ds-rule-strong) 93%, transparent);
+  box-shadow: none;
+}
+body:has(.ds-attention) .ds-shelf-fieldnote { color: var(--ds-ink-soft); }
+body:has(.ds-attention) .ds-shelf-cta { color: var(--ds-juniper); }
 
-/* Bring major homepage headings back to black; reserve blue-green for emphasis. */
-body .philosophy-quote,
-body .ds-shelf-title,
-body .step-title,
-body .journal-title,
-body .about-title { color: var(--ds-ink); }
+/* Writing Table: black ink, generous paper, fine rules. */
+body:has(.ds-attention) .ds-writingtable-section {
+  background: var(--ds-paper);
+  color: var(--ds-ink);
+  padding: clamp(5.5rem, 9vw, 8.5rem) 1.5rem;
+  border-bottom: 1px solid var(--ds-rule);
+}
+body:has(.ds-attention) .ds-wt-inner { max-width: 980px; }
+body:has(.ds-attention) .ds-wt-title {
+  font-size: clamp(3rem, 5vw, 4.75rem);
+  line-height: 1;
+}
+body:has(.ds-attention) .ds-wt-epigraph {
+  color: var(--ds-ink-soft);
+  font-size: 1.32rem;
+}
+body:has(.ds-attention) .ds-wt-flow { color: var(--ds-juniper); }
+body:has(.ds-attention) .ds-wt-body,
+body:has(.ds-attention) .ds-wt-movement-desc,
+body:has(.ds-attention) .ds-wt-closing { color: var(--ds-ink); }
+body:has(.ds-attention) .ds-wt-grid {
+  gap: 0;
+  padding: 0;
+  border-top: 1px solid var(--ds-rule);
+  border-bottom: 1px solid var(--ds-rule);
+}
+body:has(.ds-attention) .ds-wt-movement { padding: 2.1rem 1.5rem 2.3rem; }
+body:has(.ds-attention) .ds-wt-movement + .ds-wt-movement { border-left: 1px solid var(--ds-rule); }
+body:has(.ds-attention) .ds-wt-movement:not(:last-child)::after { display: none; }
+body:has(.ds-attention) .ds-wt-movement-title { color: var(--ds-juniper); }
+
+/* Secondary homepage sections: black headings, no green wash. */
+body:has(.ds-attention) .steps-section { background: var(--ds-paper-warm); }
+body:has(.ds-attention) .step-card {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--ds-rule-strong);
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+body:has(.ds-attention) .step-num { color: var(--ds-ochre-text); }
+body:has(.ds-attention) .step-title,
+body:has(.ds-attention) .philosophy-quote,
+body:has(.ds-attention) .kim-name,
+body:has(.ds-attention) .journal-title,
+body:has(.ds-attention) .about-title { color: var(--ds-ink); }
+body:has(.ds-attention) .philosophy-section { background: var(--ds-paper); }
+body:has(.ds-attention) .philosophy-rule { height: 1px; background: var(--ds-ochre); }
+body:has(.ds-attention) .philosophy-quote { font-style: normal; font-weight: 400; }
+body:has(.ds-attention) .philosophy-quote em { color: var(--ds-juniper); }
+body:has(.ds-attention) .kim-section { background: var(--ds-paper); }
+body:has(.ds-attention) .kim-photo-frame {
+  border-radius: 0;
+  border-color: var(--ds-rule-strong);
+  box-shadow: 0 14px 34px rgba(26,28,27,.08);
+}
+body:has(.ds-attention) .kim-eyebrow,
+body:has(.ds-attention) .kim-link { color: var(--ds-juniper); }
+
+/* Footer stays light and editorial rather than becoming a dark block. */
+body:has(.ds-attention) .site-footer,
+body:has(.ds-attention) > footer {
+  background: var(--ds-paper-deep);
+  color: var(--ds-ink);
+  border-top: 1px solid var(--ds-rule-strong);
+}
 
 @media (max-width: 860px) {
-  body .hero-inner {
+  body:has(.ds-attention) .hero-inner {
     grid-template-columns: 1fr;
     grid-template-areas:
       "eyebrow"
       "headline"
       "tagline"
       "cta"
-      "snaps"
+      "art"
       "colophon";
   }
-  body .hero-headline { font-size: clamp(3rem, 12vw, 4.6rem); }
-  body .hero-snaps { margin-top: 2.5rem; }
-  body .ds-moves-grid { grid-template-columns: repeat(2, 1fr); }
-  body .ds-move:nth-child(3) { border-left: 0; border-top: 1px solid var(--ds-rule); }
-  body .ds-move:nth-child(4) { border-top: 1px solid var(--ds-rule); }
+  body:has(.ds-attention) .hero-inner::after {
+    min-height: 300px;
+    max-width: 520px;
+    justify-self: center;
+    margin-top: 2.8rem;
+  }
+  body:has(.ds-attention) .hero-headline { font-size: clamp(3.1rem, 12vw, 4.8rem); }
+  body:has(.ds-attention) .ds-moves-grid { grid-template-columns: repeat(2, 1fr); }
+  body:has(.ds-attention) .ds-move:nth-child(3) { border-left: 0; border-top: 1px solid var(--ds-rule); }
+  body:has(.ds-attention) .ds-move:nth-child(4) { border-top: 1px solid var(--ds-rule); }
 }
 
 @media (max-width: 560px) {
-  body .hero { padding: 3.5rem 1.25rem 4rem; }
-  body .hero-headline { font-size: clamp(2.75rem, 14vw, 4rem); }
-  body .hero-cta-group { flex-direction: column; align-items: stretch; }
-  body .hero-cta-group a { text-align: center; }
-  body .hero-snaps { grid-template-columns: 1fr 1fr; }
-  body .hero-snap:nth-child(1) { grid-column: 1 / -1; }
-  body .ds-moves-grid { grid-template-columns: 1fr; }
-  body .ds-move + .ds-move { border-left: 0; border-top: 1px solid var(--ds-rule); }
-  body .ds-wt-grid { grid-template-columns: 1fr; }
-  body .ds-wt-movement + .ds-wt-movement { border-left: 0; border-top: 1px solid var(--ds-rule); }
+  body:has(.ds-attention) .hero { padding: 3.4rem 1.25rem 4rem; }
+  body:has(.ds-attention) .hero-headline { font-size: clamp(2.8rem, 14vw, 4rem); }
+  body:has(.ds-attention) .hero-cta-group { flex-direction: column; align-items: stretch; }
+  body:has(.ds-attention) .hero-cta-group a { text-align: center; }
+  body:has(.ds-attention) .hero-inner::after { min-height: 240px; margin-top: 2.25rem; }
+  body:has(.ds-attention) .ds-moves-grid { grid-template-columns: 1fr; }
+  body:has(.ds-attention) .ds-move + .ds-move { border-left: 0; border-top: 1px solid var(--ds-rule); }
+  body:has(.ds-attention) .ds-wt-grid { grid-template-columns: 1fr; }
+  body:has(.ds-attention) .ds-wt-movement + .ds-wt-movement { border-left: 0; border-top: 1px solid var(--ds-rule); }
 }
