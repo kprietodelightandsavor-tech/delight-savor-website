@@ -150,11 +150,16 @@
   }
   .shelf::-webkit-scrollbar{display:none;}
   /* the wooden/sage ledge that makes it read as a shelf */
+  /* The ledge belongs at the base of the books, not under their captions.
+     Card width is a constant 208px and covers are 2:3, so the cover base is
+     deterministic; keep these two in step if the card width ever changes. */
+  .shelf-rail{--cover-w:208px;--cover-h:calc(var(--cover-w) * 3 / 2);}
   .shelf-rail::after{
-    content:"";position:absolute;left:22px;right:22px;bottom:8px;height:10px;
-    border-radius:3px;
-    background:linear-gradient(180deg, var(--umber), #574231);
-    box-shadow:0 10px 22px rgba(55,50,43,.18);
+    content:"";position:absolute;left:22px;right:22px;
+    top:calc(6px + var(--cover-h) + 1px);height:2px;border-radius:2px;
+    background:linear-gradient(90deg,
+      transparent, var(--ds-rule-strong) 5%, var(--ds-rule-strong) 95%, transparent);
+    pointer-events:none;
   }
   .shelf-fade{position:absolute;top:0;bottom:18px;width:24px;pointer-events:none;z-index:2;}
   .shelf-fade--l{left:0;background:linear-gradient(90deg,var(--paper),transparent);}
@@ -168,14 +173,28 @@
     transition:transform .2s ease;
   }
   .card:hover{transform:translateY(-6px);}
-  .card:hover .cover{box-shadow:var(--shadow-md);}
+    .card:hover .cover{
+    box-shadow:
+      0 0 0 1px rgba(41,45,44,.12),
+      0 2px 4px rgba(41,45,44,.12),
+      0 22px 40px -10px rgba(41,45,44,.32);
+  }
 
   /* book-cover treatment (clothbound placeholder until a real photo is set) */
   .cover{
-    position:relative;aspect-ratio:3/4;border-radius:4px;overflow:hidden;
-    box-shadow:var(--shadow-sm);
+    position:relative;aspect-ratio:2/3;border-radius:3px;overflow:hidden;
     background-size:cover;background-position:center;
-    transition:box-shadow .2s ease;
+    box-shadow:
+      0 0 0 1px rgba(41,45,44,.10),
+      0 1px 2px rgba(41,45,44,.10),
+      0 12px 24px -8px rgba(41,45,44,.26);
+    transition:box-shadow .25s ease, transform .25s ease;
+  }
+  /* a whisper of a spine down the leading edge, so it reads as a book */
+  .cover::after{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:8px;z-index:2;
+    background:linear-gradient(90deg, rgba(41,45,44,.18), rgba(41,45,44,.04) 55%, rgba(41,45,44,0));
+    pointer-events:none;
   }
   .cover--cloth{
     display:flex;flex-direction:column;justify-content:center;align-items:center;
@@ -228,8 +247,13 @@
     display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch;
   }
   .featured__img{
-    min-height:380px;background-size:cover;background-position:center;
-    background-color:var(--sage-deep);
+    min-height:380px;display:flex;align-items:center;justify-content:center;
+    padding:52px 28px;background:var(--cream);
+  }
+  /* the cover is shown as a book, at its own proportion, not cropped to fill */
+  .featured__cover{
+    display:block;width:100%;height:auto;max-width:272px;aspect-ratio:2/3;object-fit:cover;
+    border-radius:3px;box-shadow:0 2px 4px rgba(41,45,44,.10), 0 18px 38px rgba(41,45,44,.18);
   }
   .featured__body{padding:54px 52px;}
   .featured__body h2{
@@ -290,7 +314,7 @@
     transition:transform .18s ease;}
   .gcard:hover{transform:translateY(-5px);}
   .gcard:hover .cover{box-shadow:var(--shadow-md);}
-  .gcard .cover{aspect-ratio:3/4;}
+  .gcard .cover{aspect-ratio:2/3;}
   .gcard .cover--cloth .ct{font-size:17px;}
   .status{
     display:inline-block;align-self:flex-start;margin:13px 0 7px;
@@ -317,7 +341,7 @@
 
   @media(max-width:760px){
     .featured__grid{grid-template-columns:1fr;}
-    .featured__img{min-height:240px;}
+    .featured__img{min-height:auto;padding:40px 24px 8px;}
     .featured__body{padding:38px 26px 44px;}
     .shelf-head{align-items:center;}
   }
@@ -576,7 +600,7 @@ const COURSES = [
     meta:"Year-long · In the Margin",
     status:"avail",
     cloth:"#4E6149",
-    image:"/images/poetry-old-man.png",
+    image:"/images/art-of-attention.jpg",
     link:"https://in-the-margin.netlify.app/",
     blurb:"A year of poetry and Hemingway — close reading, narration, the Great Conversation."
   },
@@ -588,7 +612,7 @@ const COURSES = [
     meta:"The Tragic Hero",
     status:"avail",
     cloth:"#37322B",
-    image:"/images/macbeth.png",
+    image:"/images/macbeth.jpg",
     link:"#",
     blurb:"Ambition and disordered loves, read beside Augustine."
   },
@@ -600,7 +624,7 @@ const COURSES = [
     meta:"The Anti-Hero",
     status:"avail",
     cloth:"#5D6C61",
-    image:"/images/wuthering-heights.png",
+    image:"/images/wuthering-heights.jpg",
     link:"#",
     blurb:"Wild, strange, unforgettable — the anti-hero studied in full."
   },
@@ -612,7 +636,7 @@ const COURSES = [
     meta:"32 weeks · self-paced",
     status:"self",
     cloth:"#4C6B8C",
-    image:"",
+    image:"/images/a-place-to-belong.jpg",
     link:"#",
     blurb:"Living literature and sentence-craft for the middle years, fully self-paced."
   },
@@ -624,7 +648,7 @@ const COURSES = [
     meta:"Companion study",
     status:"soon",
     cloth:"#6C6A47",
-    image:"",
+    image:"/images/poetry-old-man.jpg",
     link:"https://in-the-margin.netlify.app/old-man-preview.html",
     blurb:"Hemingway’s sea, scaffolded for honors-ready writing. Coming Fall 2026."
   },
@@ -636,7 +660,7 @@ const COURSES = [
     meta:"Comedy",
     status:"soon",
     cloth:"#7C5F7C",
-    image:"/images/midsummer.png",
+    image:"/images/midsummer.jpg",
     link:"https://in-the-margin.netlify.app/midsummer-preview.html",
     blurb:"Shakespeare’s comedy, taught the Charlotte Mason way. Coming Jan 2027."
   }
@@ -677,11 +701,11 @@ function renderFeatured(){
     cta:"Take a deeper look", ctaHref:c.link
   };
   const fimg = (c.spotlight && c.spotlight.image) || c.image || "";
-  const bg = fimg
-    ? `background-image:linear-gradient(135deg, rgba(78,97,73,.20), rgba(55,50,43,.42)), url('${esc(fimg)}');background-color:${esc(c.cloth)};background-size:cover;background-position:center`
-    : `background-color:${esc(c.cloth)}`;
+  const art = fimg
+    ? `<img class="featured__cover" src="${esc(fimg)}" alt="${esc(c.title)} cover" width="800" height="1200" loading="eager" decoding="async" fetchpriority="high">`
+    : `<div class="featured__cover" style="background:${esc(c.cloth)}"></div>`;
   document.getElementById("featured").innerHTML = `
-    <div class="featured__img" style="${bg}"></div>
+    <div class="featured__img">${art}</div>
     <div class="featured__body">
       <span class="eyebrow">${esc(s.eyebrow)}</span>
       <h2>${esc(s.heading)}</h2>
