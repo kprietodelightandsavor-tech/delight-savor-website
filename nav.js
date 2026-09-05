@@ -17,11 +17,11 @@
     </div>
   </a>
   <ul class="nav-links">
+    <li><a href="index.html#start-here">Start Here</a></li>
     <li><a href="philosophy.html"${isActive('philosophy.html')}>Philosophy</a></li>
     <li><a href="curriculum.html"${isActive('curriculum.html')}>Curriculum</a></li>
     <li><a href="teachers-notebook.html"${isActive('teachers-notebook.html')}>Teacher&rsquo;s Notebook</a></li>
     <li><a href="faq.html"${isActive('faq.html')}>FAQ</a></li>
-    <li><a href="conversation-quilt.html"${isActive('conversation-quilt.html')}>Conversation Quilt</a></li>
     <li><a href="Shop.html" class="nav-cta">Shop Now</a></li>
   </ul>
   <div class="nav-social">
@@ -34,6 +34,7 @@
   </button>
 </nav>
 <div class="mobile-nav" id="mobile-nav">
+  <a href="index.html#start-here" onclick="toggleMenu()">Start Here</a>
   <a href="philosophy.html" onclick="toggleMenu()">Philosophy</a>
   <a href="curriculum.html" onclick="toggleMenu()">Curriculum</a>
   <a href="teachers-notebook.html" onclick="toggleMenu()">Teacher&rsquo;s Notebook</a>

@@ -327,6 +327,77 @@
     *{transition:none !important;}
   }
   :focus-visible{outline:2.5px solid var(--tawny);outline-offset:3px;border-radius:3px;}
+
+  /* ── WHAT A WEEK FEELS LIKE ──────────────────────────────────────
+     The experiential answer to "what does a student actually do?",
+     placed before the catalogue. A calm vertical ladder: numeral,
+     move, and one plain sentence. No decoration. */
+  .week{padding:56px 0 64px;background:var(--cream);border-top:1px solid var(--line-soft);}
+  .week__head{text-align:center;margin-bottom:38px;}
+  .week__head h2{
+    font-family:"Playfair Display", serif;font-weight:600;
+    font-size:clamp(26px,4vw,34px);margin:.3em 0 .15em;color:var(--slate);
+  }
+  .week__head .lede{font-size:21px;color:var(--umber);max-width:52ch;margin:0 auto;}
+  .week__list{
+    max-width:660px;margin:0 auto;list-style:none;padding:0;
+    border-top:1px solid var(--line);
+  }
+  .week__step{
+    display:grid;grid-template-columns:2.6rem 1fr;gap:0 1.1rem;
+    align-items:baseline;padding:1.15rem .25rem 1.2rem;
+    border-bottom:1px solid var(--line);
+  }
+  .week__num{
+    font-family:"Playfair Display", serif;font-style:italic;
+    font-size:1.05rem;color:var(--tawny);line-height:1.4;
+  }
+  .week__move{
+    font-family:"Lato", system-ui, sans-serif;font-size:13px;font-weight:700;
+    letter-spacing:0.12em;text-transform:uppercase;color:var(--slate);
+    margin:0 0 .3rem;
+  }
+  .week__say{
+    font-family:"Cormorant Garamond", Georgia, serif;
+    font-size:19px;line-height:1.55;color:var(--umber);margin:0;
+  }
+  .week__foot{
+    max-width:660px;margin:1.6rem auto 0;text-align:center;
+    font-family:"Cormorant Garamond", Georgia, serif;font-style:italic;
+    font-size:19px;color:var(--umber);
+  }
+  @media (max-width:560px){
+    .week{padding:44px 0 50px;}
+    .week__step{grid-template-columns:2rem 1fr;gap:0 .8rem;}
+  }
+
+  /* ── STUDENT WORK: reusable placeholder ──────────────────────────
+     Ready for real specimens — notebook pages, annotations, commonplace
+     entries, sketches, capstones, student writing. Renders nothing until
+     .ds-specimen items are added, so no empty boxes appear meanwhile.
+     Usage:
+       <div class="ds-specimens">
+         <figure class="ds-specimen">
+           <img src="images/work-....jpg" alt="...">
+           <figcaption>Grade 10 &middot; Macbeth &middot; commonplace entry</figcaption>
+         </figure>
+       </div>
+  */
+  .ds-specimens{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));
+    gap:22px;max-width:1000px;margin:34px auto 0;
+  }
+  .ds-specimens:empty{display:none;}
+  .ds-specimen{margin:0;}
+  .ds-specimen img{
+    display:block;width:100%;height:auto;border:1px solid var(--line);
+    border-radius:2px;background:var(--paper);
+  }
+  .ds-specimen figcaption{
+    font-family:"Lato", system-ui, sans-serif;font-size:12px;
+    letter-spacing:0.1em;text-transform:uppercase;color:var(--ds-sage-text);
+    margin-top:.6rem;text-align:center;
+  }
 </style>
 </head>
 
@@ -367,6 +438,41 @@
           <span class="big">High School</span>
           <span class="sub">Living Literature &amp; Language</span>
         </button>
+      </div>
+    </section>
+
+    <!-- WHAT A WEEK FEELS LIKE — what a student actually does -->
+    <section class="week" aria-labelledby="week-heading">
+      <div class="wrap">
+        <div class="week__head">
+          <span class="eyebrow">How it works</span>
+          <h2 id="week-heading">What a week feels like</h2>
+          <p class="lede">Six moves, in order. The same shape every week, whatever the book.</p>
+        </div>
+        <ol class="week__list">
+          <li class="week__step"><span class="week__num" aria-hidden="true">i</span>
+            <div><p class="week__move">Read</p>
+            <p class="week__say">Encounter a living work of literature.</p></div></li>
+          <li class="week__step"><span class="week__num" aria-hidden="true">ii</span>
+            <div><p class="week__move">Narrate</p>
+            <p class="week__say">Tell what you encountered &mdash; before someone tells you what to think.</p></div></li>
+          <li class="week__step"><span class="week__num" aria-hidden="true">iii</span>
+            <div><p class="week__move">Notice</p>
+            <p class="week__say">Find a word, image, pattern, question, or moment that lingers.</p></div></li>
+          <li class="week__step"><span class="week__num" aria-hidden="true">iv</span>
+            <div><p class="week__move">Follow</p>
+            <p class="week__say">Trace it through the text.</p></div></li>
+          <li class="week__step"><span class="week__num" aria-hidden="true">v</span>
+            <div><p class="week__move">Connect</p>
+            <p class="week__say">Bring it into conversation with history, philosophy, art, nature, or another writer.</p></div></li>
+          <li class="week__step"><span class="week__num" aria-hidden="true">vi</span>
+            <div><p class="week__move">Write</p>
+            <p class="week__say">Say something true &mdash; and support it.</p></div></li>
+        </ol>
+        <p class="week__foot">Narration carries the early weeks; by the end of a unit the same student is arguing a thesis they arrived at themselves.</p>
+
+        <!-- Student work goes here when there is real work to show. -->
+        <div class="ds-specimens"></div>
       </div>
     </section>
 
