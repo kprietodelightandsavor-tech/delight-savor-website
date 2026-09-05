@@ -1,52 +1,53 @@
 /* ============================================================
    DELIGHT & SAVOR — BRAND TOKENS
-   Paper is the material. Everything else is ink on it.
+   Paper is the material. Black is the ink. Blue-green is the
+   distinctive editorial accent.
 
    The hierarchy, and it is closed:
-     Paper #F5F1E8 → Juniper #3F6260 → Ink #292D2C
-     → Weathered Blue #607A86 → Ochre #B59055
+     Paper #F6F2E9 → Literary Black #1A1C1B → Blue-Green #49686B
+     → Weathered Blue #6A7F8A → Ochre #B28A50
      → and the natural colours inside the illustrations.
 
    No terracotta. No sage family. No extra neutrals "for
-   differentiation" — differentiate with space and rules instead.
+   differentiation" — differentiate with space, type and rules.
 
-   Juniper sits deliberately on the blue/green boundary (G and B
-   within a couple of points). Do not let it drift toward forest.
-   Weathered blue is a secondary that should only be noticed after
-   looking a while: use it for a title's italic, a link, a small
-   graphic — never as a section background.
+   Literary black carries the reading experience: body copy,
+   important headings, wordmark and the strongest editorial marks.
+   Blue-green is identity and punctuation, not an all-purpose ink:
+   use it for buttons, links, selective emphasis and graphic accents.
+   Weathered blue should only be noticed after looking a while.
    Ochre is for tiny editorial marks only: rules, arrows, a margin
-   mark, a hover. Primary buttons are juniper.
+   mark, or a hover. Never let ochre become a large fill.
    ============================================================ */
 
 :root {
   /* ---- Paper: the dominant field ---------------------------- */
-  --ds-paper:        #F5F1E8;
-  --ds-paper-warm:   #FAF7F0;  /* raised cards            */
-  --ds-paper-deep:   #EDE7DA;  /* quiet alternating bands */
+  --ds-paper:        #F6F2E9;
+  --ds-paper-warm:   #FBF8F1;  /* raised cards            */
+  --ds-paper-deep:   #EEE8DC;  /* quiet alternating bands */
 
-  /* ---- Ink -------------------------------------------------- */
-  --ds-ink:          #292D2C;  /* body copy      12.4:1 on paper */
-  --ds-ink-soft:     #4A5654;  /* secondary text  6.8:1 on paper */
+  /* ---- Literary ink ---------------------------------------- */
+  --ds-ink:          #1A1C1B;  /* primary ink: 15.3:1 on paper */
+  --ds-ink-soft:     #4B5351;  /* secondary text, captions      */
 
-  /* ---- Juniper: the brand ink ------------------------------- */
-  --ds-juniper:      #3F6260;  /* headings, buttons  5.96:1 on paper */
-  --ds-juniper-deep: #2F4B4A;  /* small dark panels, button hover    */
-  --ds-juniper-pale: #E7ECEB;  /* faintest tint, sparing             */
+  /* ---- Blue-green: distinctive brand accent ---------------- */
+  --ds-juniper:      #49686B;  /* buttons, links, selected emphasis */
+  --ds-juniper-deep: #344F51;  /* button hover / small dark panels  */
+  --ds-juniper-pale: #E8EEEE;  /* faintest tint, sparing             */
 
-  /* ---- Weathered blue: secondary, used sparingly ------------ */
-  --ds-blue:         #607A86;  /* small graphics and rules        */
-  --ds-blue-text:    #556B76;  /* when it carries words  4.97:1   */
+  /* ---- Weathered blue: secondary, used sparingly ----------- */
+  --ds-blue:         #6A7F8A;  /* graphics and rules only          */
+  --ds-blue-text:    #566B76;  /* accessible when it carries words */
 
-  /* ---- Ochre: tiny warm marks only -------------------------- */
-  --ds-ochre:        #B59055;  /* rules, arrows, margin marks     */
-  --ds-ochre-text:   #7F6337;  /* an emphasised word     4.98:1   */
-  --ds-ochre-lt:     #E2C79A;  /* only on deep juniper   5.78:1   */
+  /* ---- Ochre: tiny warm marks only ------------------------- */
+  --ds-ochre:        #B28A50;  /* decorative rules/arrows only    */
+  --ds-ochre-text:   #77603A;  /* accessible text form             */
+  --ds-ochre-lt:     #DFC596;  /* only on deep blue-green/black    */
 
   /* ---- Rules ------------------------------------------------ */
-  --ds-rule:         rgba(63, 98, 96, .18);
-  --ds-rule-strong:  rgba(63, 98, 96, .34);
-  --ds-rule-dark:    rgba(245, 241, 232, .18);
+  --ds-rule:         rgba(73, 104, 107, .18);
+  --ds-rule-strong:  rgba(73, 104, 107, .34);
+  --ds-rule-dark:    rgba(246, 242, 233, .18);
 
   /* ---- Type ------------------------------------------------- */
   --ds-display: 'Playfair Display', Georgia, serif;
