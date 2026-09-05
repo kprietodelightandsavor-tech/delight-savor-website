@@ -38,7 +38,8 @@
       /* Local names are kept so existing rules keep working; each points at the
          brand palette in tokens.css. Paper is the ground; juniper and weathered
          blue are the identity; ochre is a tiny warm counterpoint. */
-      --slate:       var(--ds-juniper);      /* headings, wordmark           */
+      --slate:       var(--ds-ink);          /* headings carry black         */
+      --accent:      var(--ds-juniper);      /* blue-green: punctuation only */
       --slate-mid:   var(--ds-ink-soft);
       --sage:        var(--ds-ink-soft);    /* safe as text and as rules    */
       --sage-soft:   var(--ds-rule);         /* decorative details only      */
@@ -127,14 +128,6 @@
 
     .hero-colophon { margin-top: 2.5rem; display: flex; align-items: center; justify-content: center; gap: .85rem; font-family: var(--ff-sans); font-variant: small-caps; letter-spacing: 0.101em; font-size: 0.8rem; color: var(--ds-ink-soft); }
     .hero-colophon .tick { width: 26px; height: 1px; background: var(--ds-ochre); }
-    .hero-snaps { display: flex; gap: .9rem; justify-content: center; align-items: flex-start; flex-wrap: wrap; margin-top: 2.4rem; min-height: 174px; }
-    .hero-snap { width: 132px; background: var(--ds-paper-warm); padding: 7px 7px 11px; border-radius: 2px; box-shadow: 0 6px 16px rgba(41,45,44,.14); transition: transform .18s, box-shadow .18s; }
-    .hero-snap img { display: block; width: 100%; height: 156px; object-fit: cover; border-radius: 1px; }
-    .hero-snap:nth-child(1) { transform: rotate(-3deg); }
-    .hero-snap:nth-child(2) { transform: rotate(1.6deg) translateY(-6px); }
-    .hero-snap:nth-child(3) { transform: rotate(2.8deg); }
-    .hero-snap:hover { transform: rotate(0) translateY(-3px); box-shadow: 0 10px 24px rgba(41,45,44,.20); z-index: 2; }
-    @media (max-width: 520px) { .hero-snaps { min-height: 142px; } .hero-snap { width: 104px; } .hero-snap img { height: 124px; } }
 
     /* scroll cue */
     .scroll-cue { margin-top: 2.75rem; display: flex; flex-direction: column; align-items: center; gap: .4rem; color: rgba(250,249,246,.5); font-family: var(--ff-sans); font-size: 0.785rem; letter-spacing: 0.108em; text-transform: uppercase; }
@@ -315,7 +308,7 @@
     .ds-attention-inner { max-width: 860px; margin: 0 auto; text-align: center; }
     .ds-attention-lede {
       font-family: var(--ff-display); font-size: clamp(1.5rem, 3.1vw, 2.15rem);
-      line-height: 1.32; color: var(--ds-juniper); margin: 0 0 1.6rem; letter-spacing: 0.005em;
+      line-height: 1.32; color: var(--accent); margin: 0 0 1.6rem; letter-spacing: 0.005em;
     }
     .ds-attention-body {
       font-family: var(--ff-body); font-size: clamp(1.08rem, 1.7vw, 1.25rem);
@@ -413,6 +406,60 @@
       max-width: 760px; margin: 0 auto;
     }
     @media (max-width: 620px) { .ds-hero-plate { padding: 0 1rem .5rem; } }
+
+    /* ── HERO ────────────────────────────────────────────────────────
+       The banner is full-bleed and carries the eyebrow and headline as
+       set type; the live copy below it is hidden from sight on wide
+       screens but never removed from the document. On phones the banner
+       crops to the bird and the real type takes over. */
+    .hero { background: var(--ds-paper); padding: 0 0 3.25rem; text-align: center; }
+    .hero-banner { display: block; }
+    .hero-banner img { display: block; width: 100%; height: auto; }
+    .hero-inner { max-width: 720px; margin: 0 auto; padding: 2.6rem 2rem 0; }
+    /* wide screens: the artwork already says it, so hide the duplicate type
+       visually while leaving it readable to assistive tech */
+    @media (min-width: 701px) {
+      .hero-eyebrow, .hero-headline {
+        position: absolute; width: 1px; height: 1px; overflow: hidden;
+        clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+      }
+      .hero-inner { padding-top: 2.2rem; }
+    }
+    @media (max-width: 700px) {
+      .hero { padding-bottom: 2.5rem; }
+      .hero-inner { padding: 1.9rem 1.5rem 0; }
+      /* copy first, then the illustration, at a height that leaves room */
+      .hero-banner { order: 2; margin-top: 1.9rem; }
+      .hero { display: flex; flex-direction: column; }
+      .hero-inner { order: 1; }
+      .hero-banner img { max-height: 46vh; object-fit: cover; object-position: center; }
+    }
+
+    /* ── EDITORIAL PAUSE ─────────────────────────────────────────────
+       One of Kim's own photographs between information-heavy sections:
+       modest, square-edged, plenty of air. A field-note plate, not a
+       scrapbook page — no rotation, tape, or heavy shadow. */
+    .ds-pause { background: var(--ds-paper); padding: 4.5rem 2rem; }
+    .ds-pause-inner { max-width: 940px; margin: 0 auto; }
+    .ds-pause figure { margin: 0; }
+    .ds-pause img {
+      display: block; width: 100%; height: auto; aspect-ratio: 3 / 2;
+      object-fit: cover; border-radius: 2px;
+      box-shadow: 0 1px 2px rgba(26,28,27,.07);
+    }
+    .ds-pause figcaption {
+      font-family: var(--ff-sans); font-size: 0.78rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--ds-ink-soft);
+      margin-top: .95rem; text-align: center;
+    }
+    .ds-pause--pair .ds-pause-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem;
+    }
+    .ds-pause--pair img { aspect-ratio: 4 / 5; }
+    @media (max-width: 620px) {
+      .ds-pause { padding: 3.25rem 1.5rem; }
+      .ds-pause--pair .ds-pause-inner { grid-template-columns: 1fr; gap: 1.4rem; }
+    }
   </style>
 </head>
 <body>
@@ -462,7 +509,16 @@
 
 
 <!-- HERO -->
-<section class="hero cloth gilt" aria-labelledby="hero-headline">
+<section class="hero" aria-labelledby="hero-headline">
+  <!-- The banner sets the eyebrow and headline as type. Both stay in the DOM
+       below for search engines and screen readers, and become visible on
+       phones, where the baked-in type would be far too small to read. -->
+  <picture class="hero-banner">
+    <source media="(max-width: 700px)" srcset="images/hero-banner-mobile.jpg">
+    <img src="images/hero-banner.jpg" alt=""
+         width="1800" height="771" loading="eager" decoding="async" fetchpriority="high">
+  </picture>
+
   <div class="hero-inner">
     <p class="hero-eyebrow">Delight &amp; Savor · Upper-Level Language Arts, Grades 9–12</p>
     <h1 class="hero-headline" id="hero-headline">
@@ -478,8 +534,6 @@
       <a href="philosophy.html" class="btn-outline">Discover the Approach</a>
     </div>
     <div class="hero-colophon"><span class="tick"></span>Words that linger · Ideas that form<span class="tick"></span></div>
-    <!-- hero snapshots — auto-chosen at random from the ranch photo set -->
-    <div class="hero-snaps" id="heroSnaps" aria-label="Scenes from the ranch"></div>
   </div>
 </section>
 
@@ -487,13 +541,6 @@
      THE ATTENTION SECTION — the conviction beneath the curriculum.
      Kept short on purpose; the Philosophy page carries the depth.
      ============================================================ -->
-<!-- A single plate: the chickadee, the acorn and oak leaves, and the books. -->
-<section class="ds-hero-plate" aria-hidden="true">
-  <img src="images/hero-bird-books.jpg"
-       alt=""
-       width="1440" height="929"
-       loading="eager" decoding="async" fetchpriority="high">
-</section>
 
 <section class="ds-attention" aria-labelledby="ds-attention-heading">
   <div class="ds-attention-inner">
@@ -537,6 +584,16 @@
     <div class="ds-attention-more">
       <a href="philosophy.html" class="btn-ghost">See how this shapes every unit</a>
     </div>
+  </div>
+</section>
+
+<!-- Editorial pause: one photograph between the idea and the shelf. -->
+<section class="ds-pause" aria-label="From the ranch">
+  <div class="ds-pause-inner">
+    <figure>
+      <img id="pauseOne" alt="A scene from the ranch" loading="lazy" decoding="async">
+      <figcaption>From the ranch &middot; Hill Country of Texas</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -948,6 +1005,11 @@
      Drop-in replacement for the existing Writing Table section
      on the delightandsavor.com homepage.
      ============================================================ -->
+
+<!-- Editorial pause: a restrained pair, before the writing sections. -->
+<section class="ds-pause ds-pause--pair" aria-label="From the ranch">
+  <div class="ds-pause-inner" id="pausePair"></div>
+</section>
 
 <section class="ds-writingtable-section" aria-labelledby="ds-wt-heading">
   <div class="ds-wt-inner">
@@ -1686,13 +1748,21 @@
   "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251317/IMG_1181_nnqygu.jpg",
   "https://res.cloudinary.com/dwdbmowur/image/upload/v1780251316/IMG_1044_xncm6n.jpg"
     ];
-    function src(u){ return u.replace('/upload/','/upload/c_fill,w_264,h_312,q_auto,f_auto/').replace(/\.(heic|jpe?g|png)$/i,'.jpg'); }
+    function src(u,w,h){
+      return u.replace('/upload/','/upload/c_fill,w_'+w+',h_'+h+',q_auto,f_auto/')
+              .replace(/\.(heic|jpe?g|png)$/i,'.jpg');
+    }
     var pool = photos.slice();
     for (var i=pool.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=pool[i];pool[i]=pool[j];pool[j]=t; }
-    var pick = pool.slice(0,3);
-    var wrap = document.getElementById('heroSnaps');
-    if (wrap) wrap.innerHTML = pick.map(function(u){
-      return '<figure class="hero-snap"><img loading="eager" decoding="async" fetchpriority="high" width="264" height="312" src="'+src(u)+'" alt="A scene from the ranch"></figure>';
+
+    /* one photograph for the first pause */
+    var one = document.getElementById('pauseOne');
+    if (one) { one.width = 1200; one.height = 800; one.src = src(pool[0], 1200, 800); }
+
+    /* a restrained pair for the second */
+    var pair = document.getElementById('pausePair');
+    if (pair) pair.innerHTML = pool.slice(1,3).map(function(u){
+      return '<figure><img src="'+src(u,900,1125)+'" width="900" height="1125" alt="A scene from the ranch" loading="lazy" decoding="async"></figure>';
     }).join('');
   })();
 </script>
