@@ -55,3 +55,207 @@
   --ds-sans:    'Jost', system-ui, -apple-system, sans-serif;
   --ds-hand:    'Caveat', cursive;   /* marginalia only, sparingly */
 }
+
+/* ============================================================
+   HOMEPAGE — EDITORIAL / LITERARY NATURALIST PASS
+   These selectors deliberately have slightly higher specificity
+   than the page-local legacy rules so the new hierarchy wins
+   without rewriting the whole homepage at once.
+   ============================================================ */
+
+body .hero {
+  background: var(--ds-paper);
+  color: var(--ds-ink);
+  text-align: left;
+  padding: clamp(4.5rem, 8vw, 7rem) 2rem clamp(4rem, 7vw, 6rem);
+  border-bottom: 1px solid var(--ds-rule);
+}
+body .hero-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+  grid-template-areas:
+    "eyebrow snaps"
+    "headline snaps"
+    "tagline snaps"
+    "cta snaps"
+    "colophon snaps";
+  column-gap: clamp(2.5rem, 6vw, 6.5rem);
+  align-items: center;
+}
+body .hero-eyebrow { grid-area: eyebrow; margin-bottom: 1.25rem; color: var(--ds-ink-soft); }
+body .hero-headline {
+  grid-area: headline;
+  color: var(--ds-ink);
+  font-size: clamp(3rem, 6vw, 5.6rem);
+  font-weight: 400;
+  line-height: .98;
+  letter-spacing: -.035em;
+  margin: 0 0 1.7rem;
+  max-width: 760px;
+}
+body .hero-headline em {
+  color: var(--ds-juniper);
+  font-style: normal;
+  font-weight: 400;
+}
+body .hero-tagline {
+  grid-area: tagline;
+  color: var(--ds-ink);
+  max-width: 590px;
+  margin: 0 0 2rem;
+  font-size: clamp(1.2rem, 2vw, 1.48rem);
+  line-height: 1.55;
+}
+body .hero-cta-group { grid-area: cta; justify-content: flex-start; }
+body .hero-colophon {
+  grid-area: colophon;
+  justify-content: flex-start;
+  margin-top: 2rem;
+  color: var(--ds-ink-soft);
+}
+body .hero-snaps {
+  grid-area: snaps;
+  margin: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: end;
+}
+body .hero-snap {
+  width: 100%;
+  background: var(--ds-paper-warm);
+  padding: 7px;
+  box-shadow: 0 12px 32px rgba(26,28,27,.10);
+  transform: none !important;
+}
+body .hero-snap:nth-child(1) { grid-column: 1 / -1; }
+body .hero-snap img { width: 100%; height: clamp(150px, 18vw, 245px); object-fit: cover; }
+body .hero-snap:nth-child(1) img { height: clamp(210px, 25vw, 330px); }
+
+body .btn-primary {
+  background: var(--ds-juniper);
+  color: var(--ds-paper);
+  border-radius: 2px;
+  box-shadow: none;
+}
+body .btn-outline {
+  color: var(--ds-ink);
+  border-color: rgba(26,28,27,.38);
+  border-radius: 2px;
+}
+
+/* Four-part method: quiet, specimen-like, and visually central. */
+body .ds-attention {
+  background: var(--ds-paper-warm);
+  padding: clamp(4.5rem, 8vw, 7rem) 1.5rem;
+  border-bottom: 1px solid var(--ds-rule);
+}
+body .ds-attention-inner { max-width: 1120px; }
+body .ds-attention-lede,
+body .section-title,
+body .ds-wt-title {
+  color: var(--ds-ink);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -.02em;
+}
+body .ds-attention-body { color: var(--ds-ink-soft); }
+body .ds-moves { color: var(--ds-juniper); }
+body .ds-moves-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 3rem;
+  border-top: 1px solid var(--ds-rule);
+  border-bottom: 1px solid var(--ds-rule);
+}
+body .ds-move {
+  padding: 2.2rem 1.6rem 2.35rem;
+  min-width: 0;
+}
+body .ds-move + .ds-move { border-left: 1px solid var(--ds-rule); }
+body .ds-move-art {
+  height: 126px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .ds-move-art img {
+  width: auto;
+  max-width: 132px;
+  max-height: 118px;
+  object-fit: contain;
+}
+body .ds-move-name {
+  color: var(--ds-juniper);
+  font-family: var(--ds-display);
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  font-weight: 400;
+  letter-spacing: -.01em;
+}
+body .ds-move-desc { color: var(--ds-ink); line-height: 1.45; }
+
+/* Writing Table: paper, black ink, fewer decorative cues. */
+body .ds-writingtable-section {
+  background: var(--ds-paper);
+  color: var(--ds-ink);
+  padding: clamp(5rem, 9vw, 8rem) 1.5rem;
+  border-bottom: 1px solid var(--ds-rule);
+}
+body .ds-wt-inner { max-width: 980px; }
+body .ds-wt-title {
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  color: var(--ds-ink);
+}
+body .ds-wt-epigraph { color: var(--ds-ink-soft); font-size: 1.3rem; }
+body .ds-wt-flow { color: var(--ds-juniper); }
+body .ds-wt-body,
+body .ds-wt-movement-desc,
+body .ds-wt-closing { color: var(--ds-ink); }
+body .ds-wt-grid { gap: 0; padding: 0; border-top: 1px solid var(--ds-rule); border-bottom: 1px solid var(--ds-rule); }
+body .ds-wt-movement { padding: 2rem 1.5rem 2.2rem; }
+body .ds-wt-movement + .ds-wt-movement { border-left: 1px solid var(--ds-rule); }
+body .ds-wt-movement:not(:last-child)::after { display: none; }
+body .ds-wt-movement-title { color: var(--ds-juniper); }
+
+/* Bring major homepage headings back to black; reserve blue-green for emphasis. */
+body .philosophy-quote,
+body .ds-shelf-title,
+body .step-title,
+body .journal-title,
+body .about-title { color: var(--ds-ink); }
+
+@media (max-width: 860px) {
+  body .hero-inner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "eyebrow"
+      "headline"
+      "tagline"
+      "cta"
+      "snaps"
+      "colophon";
+  }
+  body .hero-headline { font-size: clamp(3rem, 12vw, 4.6rem); }
+  body .hero-snaps { margin-top: 2.5rem; }
+  body .ds-moves-grid { grid-template-columns: repeat(2, 1fr); }
+  body .ds-move:nth-child(3) { border-left: 0; border-top: 1px solid var(--ds-rule); }
+  body .ds-move:nth-child(4) { border-top: 1px solid var(--ds-rule); }
+}
+
+@media (max-width: 560px) {
+  body .hero { padding: 3.5rem 1.25rem 4rem; }
+  body .hero-headline { font-size: clamp(2.75rem, 14vw, 4rem); }
+  body .hero-cta-group { flex-direction: column; align-items: stretch; }
+  body .hero-cta-group a { text-align: center; }
+  body .hero-snaps { grid-template-columns: 1fr 1fr; }
+  body .hero-snap:nth-child(1) { grid-column: 1 / -1; }
+  body .ds-moves-grid { grid-template-columns: 1fr; }
+  body .ds-move + .ds-move { border-left: 0; border-top: 1px solid var(--ds-rule); }
+  body .ds-wt-grid { grid-template-columns: 1fr; }
+  body .ds-wt-movement + .ds-wt-movement { border-left: 0; border-top: 1px solid var(--ds-rule); }
+}
