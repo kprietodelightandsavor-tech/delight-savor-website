@@ -348,7 +348,7 @@
       height: 68px; margin: 0 auto .95rem; display: flex;
       align-items: flex-end; justify-content: center;
     }
-    .ds-move-art img { max-height: 68px; width: auto; display: block; }
+    .ds-move-art img { max-height: 68px; max-width: 92px; width: auto; display: block; }
     /* placeholder shown only until the illustration is supplied */
     .ds-move-art.is-awaiting::before, .ds-move-art:empty::before {
       content: ""; display: block; width: 44px; height: 44px;
@@ -402,6 +402,17 @@
       letter-spacing: 0.101em; text-transform: uppercase;
       color: var(--ds-ochre-text); margin: 0 0 .5rem;
     }
+
+    /* ── HERO PLATE ─────────────────────────────────────────────────
+       One photographic plate between the hero and the attention
+       section. Its edges are feathered to the paper in the asset, so
+       it sits on the page rather than sitting in a box. */
+    .ds-hero-plate { background: var(--ds-paper); padding: 0 2rem 1rem; }
+    .ds-hero-plate img {
+      display: block; width: 100%; height: auto;
+      max-width: 760px; margin: 0 auto;
+    }
+    @media (max-width: 620px) { .ds-hero-plate { padding: 0 1rem .5rem; } }
   </style>
 </head>
 <body>
@@ -476,6 +487,14 @@
      THE ATTENTION SECTION — the conviction beneath the curriculum.
      Kept short on purpose; the Philosophy page carries the depth.
      ============================================================ -->
+<!-- A single plate: the chickadee, the acorn and oak leaves, and the books. -->
+<section class="ds-hero-plate" aria-hidden="true">
+  <img src="images/hero-bird-books.jpg"
+       alt=""
+       width="1440" height="929"
+       loading="eager" decoding="async" fetchpriority="high">
+</section>
+
 <section class="ds-attention" aria-labelledby="ds-attention-heading">
   <div class="ds-attention-inner">
     <div class="section-rule" aria-hidden="true"></div>
@@ -485,7 +504,8 @@
     </h2>
     <p class="ds-attention-body">
       A student studying a paragraph, a painting, a piece of music, or a bird's
-      nest is practicing the same movement of mind.
+      nest is practicing the same movement of mind. Four movements, really &mdash;
+      the ones that turn reading into writing.
     </p>
     <p class="ds-moves" aria-label="Look closely. Follow the evidence. Make meaning.">
       <span>Look closely.</span><span>Follow the evidence.</span><span>Make meaning.</span>
@@ -957,48 +977,7 @@
       say something true about what they've read.
     </p>
 
-    <div class="ds-wt-movements">
-      <p class="ds-wt-movements-intro">
-        Along the way, students practice the four movements that turn reading into writing —
-      </p>
-
-      <div class="ds-wt-grid">
-        <div class="ds-wt-movement">
-          <span class="ds-wt-numeral" aria-hidden="true">i</span>
-          <h3 class="ds-wt-movement-title">Find It</h3>
-          <p class="ds-wt-movement-desc">
-            Notice what stands out — a recurring image, a strange word, a moment that lingers.
-          </p>
-        </div>
-
-        <div class="ds-wt-movement">
-          <span class="ds-wt-numeral" aria-hidden="true">ii</span>
-          <h3 class="ds-wt-movement-title">Follow It</h3>
-          <p class="ds-wt-movement-desc">
-            Trace it through the text. Watch it grow, shift, return, complicate.
-          </p>
-        </div>
-
-        <div class="ds-wt-movement">
-          <span class="ds-wt-numeral" aria-hidden="true">iii</span>
-          <h3 class="ds-wt-movement-title">Frame It</h3>
-          <p class="ds-wt-movement-desc">
-            Articulate what it means — and how it connects: to ourselves, to the world,
-            to other writers and thinkers, to the other subjects we study.
-          </p>
-        </div>
-        <div class="ds-wt-movement">
-          <span class="ds-wt-numeral" aria-hidden="true">iv</span>
-          <h3 class="ds-wt-movement-title">Keep It</h3>
-          <p class="ds-wt-movement-desc">
-            Write it down and keep it — a narration, a commonplace entry, an essay.
-            What is kept is what stays theirs.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <p class="ds-wt-body ds-wt-body--deeper">
+        <p class="ds-wt-body ds-wt-body--deeper">
       But the real work runs deeper than the page. To read a book well is to be changed
       by it: to see ourselves, and others, and the world we live in with new understanding.
     </p>
@@ -1086,80 +1065,15 @@
     margin-bottom: 2rem;
   }
 
-  /* Three movements */
-  .ds-wt-movements {
-    margin: 0 auto;
-    max-width: 880px;
-  }
-  .ds-wt-movements-intro {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-style: italic;
-    font-size: 1.15rem;
-    color: var(--ds-ink-soft);
-    margin: 0 0 3rem;
-    line-height: 1.5;
-  }
 
-  .ds-wt-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2.5rem;
-    align-items: start;
-    text-align: center;
-    padding: 0 1rem;
-  }
 
-  .ds-wt-movement {
-    position: relative;
-    padding: 0 0.5rem;
-  }
 
   /* Subtle gold connector between movements */
   @media (max-width: 1040px) and (min-width: 761px) {
-    .ds-wt-grid { grid-template-columns: repeat(2, 1fr); gap: 2.25rem 2.5rem; }
-    .ds-wt-movement:not(:last-child)::after { display: none; }
-  }
-  .ds-wt-movement:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 1.6rem;
-    right: -1.4rem;
-    width: 1rem;
-    height: 1px;
-    background: var(--ds-ochre);
-    opacity: 0.5;
   }
 
-  .ds-wt-numeral {
-    display: block;
-    font-family: 'Cormorant Garamond', 'Canela', Georgia, serif;
-    font-style: italic;
-    font-size: 1.5rem;
-    color: var(--ds-ochre-text); /* Warm Gold */
-    letter-spacing: 0.05em;
-    margin-bottom: 0.85rem;
-    line-height: 1;
-  }
 
-  .ds-wt-movement-title {
-    font-family: 'Cormorant Garamond', 'Canela', Georgia, serif;
-    font-weight: 500;
-    font-style: italic;
-    font-size: 1.85rem;
-    line-height: 1.1;
-    color: var(--ds-ink);
-    margin: 0 0 1rem;
-  }
 
-  .ds-wt-movement-desc {
-    font-size: 0.98rem;
-    line-height: 1.7;
-    color: var(--ds-ink-soft);
-    margin: 0;
-    max-width: 260px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
   /* Closing */
   .ds-wt-closing {
@@ -1180,21 +1094,6 @@
       font-size: 0.785rem;
       letter-spacing: 0.101em;
     }
-    .ds-wt-grid {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      padding: 0;
-    }
-    .ds-wt-movement:not(:last-child)::after {
-      top: auto;
-      right: 50%;
-      bottom: -1.5rem;
-      transform: translateX(50%);
-      width: 1px;
-      height: 1rem;
-    }
-    .ds-wt-movement-desc { max-width: 320px; }
-    .ds-wt-movement-title { font-size: 1.65rem; }
   }
 </style>
 <!-- PHILOSOPHY TEASER -->
