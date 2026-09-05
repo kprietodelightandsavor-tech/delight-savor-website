@@ -408,31 +408,22 @@
     @media (max-width: 620px) { .ds-hero-plate { padding: 0 1rem .5rem; } }
 
     /* ── HERO ────────────────────────────────────────────────────────
-       The banner is full-bleed and carries the eyebrow and headline as
-       set type; the live copy below it is hidden from sight on wide
-       screens but never removed from the document. On phones the banner
-       crops to the bird and the real type takes over. */
-    .hero { background: var(--ds-paper); padding: 0 0 3.25rem; text-align: center; }
-    .hero-banner { display: block; }
-    .hero-banner img { display: block; width: 100%; height: auto; }
-    .hero-inner { max-width: 720px; margin: 0 auto; padding: 2.6rem 2rem 0; }
-    /* wide screens: the artwork already says it, so hide the duplicate type
-       visually while leaving it readable to assistive tech */
-    @media (min-width: 701px) {
-      .hero-eyebrow, .hero-headline {
-        position: absolute; width: 1px; height: 1px; overflow: hidden;
-        clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
-      }
-      .hero-inner { padding-top: 2.2rem; }
-    }
+       Type on paper. The illustration used to sit here; it now closes
+       the page, so the first screen is words and air. */
+    .hero { background: var(--ds-paper); padding: 5.5rem 2rem 4.75rem; text-align: center; }
+    .hero-inner { max-width: 720px; margin: 0 auto; padding: 0; }
     @media (max-width: 700px) {
-      .hero { padding-bottom: 2.5rem; }
-      .hero-inner { padding: 1.9rem 1.5rem 0; }
-      /* copy first, then the illustration, at a height that leaves room */
-      .hero-banner { order: 2; margin-top: 1.9rem; }
-      .hero { display: flex; flex-direction: column; }
-      .hero-inner { order: 1; }
-      .hero-banner img { max-height: 46vh; object-fit: cover; object-position: center; }
+      .hero { padding: 3.5rem 1.5rem 3.25rem; }
+    }
+
+    /* ── CLOSING BAND ────────────────────────────────────────────────
+       The banner as a last word, full-bleed against the paper. On phones
+       it swaps to the illustration-only crop, which has no type in it. */
+    .ds-colophon-band { background: var(--ds-paper); padding: 0; }
+    .ds-band-art { display: block; }
+    .ds-band-art img { display: block; width: 100%; height: auto; }
+    @media (max-width: 700px) {
+      .ds-band-art img { max-height: 52vh; object-fit: cover; object-position: center; }
     }
 
     /* ── EDITORIAL PAUSE ─────────────────────────────────────────────
@@ -511,15 +502,8 @@
 
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-headline">
-  <!-- The banner sets the eyebrow and headline as type. Both stay in the DOM
-       below for search engines and screen readers, and become visible on
-       phones, where the baked-in type would be far too small to read. -->
-  <picture class="hero-banner">
-    <source media="(max-width: 700px)" srcset="images/hero-banner-mobile.jpg">
-    <img src="images/hero-banner.jpg" alt=""
-         width="1800" height="771" loading="eager" decoding="async" fetchpriority="high">
-  </picture>
-
+  <!-- Type on paper, nothing else. The illustrated banner that used to sit
+       here now closes the page instead — see the colophon band below. -->
   <div class="hero-inner">
     <p class="hero-eyebrow">Delight &amp; Savor · Upper-Level Language Arts, Grades 9–12</p>
     <h1 class="hero-headline" id="hero-headline">
@@ -1555,6 +1539,20 @@
       </a>
     </div>
   </div>
+</section>
+
+<!-- ============================================================
+     CLOSING BAND — the illustrated banner, as a last word.
+     It repeats the headline deliberately: the page opens with those
+     words set as live type and closes with them as artwork. The image
+     is decorative (alt=""), so the refrain is seen and not heard twice.
+     ============================================================ -->
+<section class="ds-colophon-band" aria-hidden="true">
+  <picture class="ds-band-art">
+    <source media="(max-width: 700px)" srcset="images/hero-banner-mobile.jpg">
+    <img src="images/hero-banner.jpg" alt=""
+         width="1800" height="771" loading="lazy" decoding="async">
+  </picture>
 </section>
 
 <!-- FOOTER -->
