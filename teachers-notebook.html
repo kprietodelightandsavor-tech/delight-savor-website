@@ -135,7 +135,10 @@
     .delight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
     .delight-card { background: var(--cream); border-radius: 3px; padding: 1.75rem 1.5rem; border: 1px solid var(--line); border-top: 2px solid var(--sage); transition: border-color .25s; }
     .delight-card:hover { border-color: rgba(126,142,114,.55); }
-    .delight-letter { font-family: var(--ff-display); font-size: 2.5rem; font-style: italic; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: .4rem; }
+    .delight-art { height: 60px; display: flex; align-items: flex-end; margin-bottom: .85rem; }
+    .delight-art img { max-height: 60px; width: auto; display: block; }
+    .delight-art.is-awaiting::before { content: ""; display: block; width: 38px; height: 38px; border: 1px dashed var(--line-ink); border-radius: 50%; }
+    .delight-letter { font-family: var(--ff-display); font-size: 1.15rem; font-style: italic; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: .3rem; }
     .delight-word { font-family: var(--ff-sans); font-size: 0.763rem; letter-spacing: 0.101em; text-transform: uppercase; color: var(--slate); margin-bottom: .75rem; }
     .delight-desc { font-family: var(--ff-body); font-size: 0.98rem; color: var(--text-mid); line-height: 1.7; }
 
@@ -343,32 +346,37 @@
     <h2 class="section-title" id="delight-title">Find It · Follow It · Frame It · Keep It</h2>
     <p class="section-body">
       Find It · Follow It · Frame It · Keep It is the analytical movement woven through every unit —
-      three repeatable moves that carry a reader from noticing to argument. It isn't a
-      worksheet or a formula but a habit of attention that gradually becomes instinct:
-      find what's there, follow where it leads, frame what it means.
+      four repeatable moves that carry a reader from noticing to argument, and then
+      into words worth keeping. It isn't a worksheet or a formula but a habit of
+      attention that gradually becomes instinct: find what's there, follow where it
+      leads, frame what it means, keep what became yours.
     </p>
 
     <div class="delight-grid">
       <div class="delight-card">
+        <div class="delight-art" aria-hidden="true"><img src="images/method-acorn.png" alt="" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('is-awaiting');this.remove()"></div>
         <div class="delight-letter">i</div>
         <div class="delight-word">Find It</div>
         <p class="delight-desc">Notice what is actually there — a word that repeats, an image that lingers, a silence where you expected speech. Before interpreting anything, the reader gathers the concrete evidence of what the text is doing, named plainly.</p>
       </div>
       <div class="delight-card">
+        <div class="delight-art" aria-hidden="true"><img src="images/method-leaf.png" alt="" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('is-awaiting');this.remove()"></div>
         <div class="delight-letter">ii</div>
         <div class="delight-word">Follow It</div>
         <p class="delight-desc">Trace the thread through the text. Once something has been found, follow where it leads — how it develops, deepens, or turns. Patterns carry more weight than single moments; following is how a noticing becomes an idea.</p>
       </div>
       <div class="delight-card">
+        <div class="delight-art" aria-hidden="true"><img src="images/method-oak.png" alt="" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('is-awaiting');this.remove()"></div>
         <div class="delight-letter">iii</div>
         <div class="delight-word">Frame It</div>
         <p class="delight-desc">Say what it means. Frame the pattern into a claim — an argument about what the text reveals and why it matters. This is where narration becomes thesis, and the reading becomes the student's own.</p>
       </div>
-        <div class="delight-card">
-          <div class="delight-letter">iv</div>
-          <div class="delight-word">Keep It</div>
-          <p class="delight-desc">Write it down and keep it. What was found, followed and framed becomes a narration, a commonplace entry, an essay. Keeping is what turns a good reading into something the student owns &mdash; and can return to years later and still recognise as their own.</p>
-        </div>
+      <div class="delight-card">
+        <div class="delight-art" aria-hidden="true"><img src="images/method-book.png" alt="" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('is-awaiting');this.remove()"></div>
+        <div class="delight-letter">iv</div>
+        <div class="delight-word">Keep It</div>
+        <p class="delight-desc">Write it down and keep it. What was found, followed and framed becomes a narration, a commonplace entry, an essay. Keeping is what turns a good reading into something the student owns &mdash; and can return to years later and still recognise as their own.</p>
+      </div>
     </div>
   </div>
 </section>
