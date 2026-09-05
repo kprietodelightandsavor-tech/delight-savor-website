@@ -419,23 +419,22 @@
     /* ── CLOSING BAND ────────────────────────────────────────────────
        The banner as a last word, full-bleed against the paper. On phones
        it swaps to the illustration-only crop, which has no type in it. */
-    /* Sized down rather than cropped: the full composition survives, open
-       book and all, it just sits smaller — a closing plate, not a band. */
-    .ds-colophon-band { background: var(--ds-paper); padding: 1rem 2rem 3.5rem; }
-    .ds-band-art { display: block; max-width: 860px; margin: 0 auto; }
-    .ds-band-art img { display: block; width: 100%; height: auto; }
-    /* On wide screens the artwork says it; only phones need the words set. */
-    .ds-band-restate { display: none; }
+    /* The bird carries no type, so the restatement is set as live text at
+       every width — otherwise the page loses the line it closes on. */
+    .ds-colophon-band { background: var(--ds-paper); padding: 1.5rem 2rem 4.5rem; text-align: center; }
+    .ds-band-art {
+      display: block; width: 100%; max-width: 340px; height: auto;
+      margin: 0 auto 1.6rem;
+    }
+    .ds-band-restate {
+      margin: 0; font-family: 'Playfair Display', serif; font-weight: 500;
+      font-size: clamp(1.4rem, 2.4vw, 1.75rem); line-height: 1.32;
+      color: var(--ds-juniper);
+    }
+    .ds-band-restate em { display: block; font-style: italic; color: var(--ds-blue-text); }
     @media (max-width: 700px) {
-      .ds-colophon-band { padding: .5rem 1.5rem 2.5rem; }
-      .ds-band-art img { max-height: 38vh; object-fit: cover; object-position: center; }
-      .ds-band-restate {
-        display: block; margin: 0; padding: 1.9rem 1.5rem .35rem;
-        font-family: 'Playfair Display', serif; font-weight: 500;
-        font-size: 1.4rem; line-height: 1.32; text-align: center;
-        color: var(--ds-juniper);
-      }
-      .ds-band-restate em { display: block; font-style: italic; color: var(--ds-blue-text); }
+      .ds-colophon-band { padding: 1rem 1.5rem 3rem; }
+      .ds-band-art { max-width: 250px; margin-bottom: 1.3rem; }
     }
 
     /* ── EDITORIAL PAUSE ─────────────────────────────────────────────
@@ -1589,11 +1588,8 @@
      restatement below is set as live text for them instead.
      ============================================================ -->
 <section class="ds-colophon-band">
-  <picture class="ds-band-art">
-    <source media="(max-width: 700px)" srcset="images/hero-banner-mobile.jpg">
-    <img src="images/hero-banner.jpg" alt=""
-         width="1800" height="771" loading="lazy" decoding="async">
-  </picture>
+  <img class="ds-band-art" src="images/closing-chickadee.png" alt=""
+       width="500" height="417" loading="lazy" decoding="async">
   <p class="ds-band-restate">Stories shape us. <em>Attention transforms us.</em></p>
 </section>
 
