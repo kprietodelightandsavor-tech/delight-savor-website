@@ -422,8 +422,17 @@
     .ds-colophon-band { background: var(--ds-paper); padding: 0; }
     .ds-band-art { display: block; }
     .ds-band-art img { display: block; width: 100%; height: auto; }
+    /* On wide screens the artwork says it; only phones need the words set. */
+    .ds-band-restate { display: none; }
     @media (max-width: 700px) {
       .ds-band-art img { max-height: 52vh; object-fit: cover; object-position: center; }
+      .ds-band-restate {
+        display: block; margin: 0; padding: 1.9rem 1.5rem .35rem;
+        font-family: 'Playfair Display', serif; font-weight: 500;
+        font-size: 1.4rem; line-height: 1.32; text-align: center;
+        color: var(--ds-juniper);
+      }
+      .ds-band-restate em { display: block; font-style: italic; color: var(--ds-blue-text); }
     }
 
     /* ── EDITORIAL PAUSE ─────────────────────────────────────────────
@@ -1543,16 +1552,20 @@
 
 <!-- ============================================================
      CLOSING BAND — the illustrated banner, as a last word.
-     It repeats the headline deliberately: the page opens with those
-     words set as live type and closes with them as artwork. The image
-     is decorative (alt=""), so the refrain is seen and not heard twice.
+     It repeats the headline deliberately: the page states its thesis at
+     the top and restates it here, the way an essay does. On wide screens
+     the artwork carries those words itself, so the image is decorative
+     (alt="") and the refrain is seen rather than heard twice. Phones get
+     the illustration-only crop, which has no type in it — so the
+     restatement below is set as live text for them instead.
      ============================================================ -->
-<section class="ds-colophon-band" aria-hidden="true">
+<section class="ds-colophon-band">
   <picture class="ds-band-art">
     <source media="(max-width: 700px)" srcset="images/hero-banner-mobile.jpg">
     <img src="images/hero-banner.jpg" alt=""
          width="1800" height="771" loading="lazy" decoding="async">
   </picture>
+  <p class="ds-band-restate">Stories shape us. <em>Attention transforms us.</em></p>
 </section>
 
 <!-- FOOTER -->
