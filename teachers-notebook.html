@@ -106,7 +106,9 @@
       font-family: var(--ff-body); font-style: italic; font-size: .95rem;
       color: var(--ds-ink-soft); line-height: 1.5; margin-top: .7rem;
     }
-    @media (max-width: 1180px) {
+    /* Floats in the margin only where there is gutter to float in: the
+       text column is 1000px, so below ~1440px it would sit on the copy. */
+    @media (max-width: 1439px) {
       .tn-margin-art { position: static; width: 130px; margin: 0 auto 2.5rem; }
     }
 
@@ -123,7 +125,11 @@
     @media (max-width: 620px) { .fn-branch { width: 82%; margin-bottom: 1.25rem; } }
 
     /* Closing band. */
-    .tn-closing { background: var(--ds-paper-deep); padding: 4.5rem 2rem; text-align: center; }
+    .tn-closing { background: var(--ds-paper-deep); padding: 4.5rem 2rem; text-align: center;
+                  position: relative; overflow: hidden; }
+    .tn-corner-art { position: absolute; left: 0; top: 0; width: 190px; height: auto;
+                     opacity: .85; pointer-events: none; }
+    @media (max-width: 1100px) { .tn-corner-art { display: none; } }
     .tn-closing-inner { max-width: 620px; margin: 0 auto; }
     .tn-closing-bird { width: 190px; height: auto; margin: 0 auto 1.5rem; }
     .tn-closing-quote {
@@ -798,6 +804,8 @@
 <!-- ══ CLOSING ══════════════════════════════════════════════════
      The last word before the footer: one line, one small bird. ══ -->
 <section class="tn-closing" aria-label="Closing">
+  <img class="tn-corner-art" src="images/tn-corner.webp" alt=""
+       width="560" height="746" loading="lazy" decoding="async">
   <div class="tn-closing-inner">
     <img class="tn-closing-bird" src="images/tn-bird-small.webp" alt=""
          width="520" height="373" loading="lazy" decoding="async">
