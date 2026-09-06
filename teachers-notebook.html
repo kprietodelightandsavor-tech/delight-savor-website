@@ -69,7 +69,7 @@
     .tn-title { color: var(--ds-ink); letter-spacing: -.02em; }
     .tn-title em { color: var(--ds-juniper); font-style: italic; }
     .tn-hero-art { margin: 0; text-align: center; }
-    .tn-hero-art img { width: 100%; max-width: 340px; height: auto; margin: 0 auto; }
+    .tn-hero-art img { width: 100%; max-width: 400px; height: auto; margin: 0 auto; }
     .tn-hero-art figcaption {
       font-family: var(--ff-body); font-style: italic; font-size: 1rem;
       color: var(--ds-ink-soft); line-height: 1.5; margin-top: .9rem;
@@ -100,24 +100,32 @@
 
     /* A drawing in the margin, opposite the running text. */
     .tn-has-art { position: relative; }
-    .tn-margin-art { margin: 0; position: absolute; right: 2rem; top: 4.5rem; width: 200px; text-align: center; }
+    .tn-margin-art { margin: 0; position: absolute; right: 2rem; top: 4.5rem; width: 148px; text-align: center; }
     .tn-margin-art img { width: 100%; height: auto; }
     .tn-margin-art figcaption {
       font-family: var(--ff-body); font-style: italic; font-size: .95rem;
       color: var(--ds-ink-soft); line-height: 1.5; margin-top: .7rem;
     }
     @media (max-width: 1180px) {
-      .tn-margin-art { position: static; width: 170px; margin: 0 auto 2.5rem; }
+      .tn-margin-art { position: static; width: 130px; margin: 0 auto 2.5rem; }
     }
 
     /* Hairlines instead of boxes. */
     .gold-rule { width: 42px; height: 1px; }
     .tn-hero-toc, .faq-item, .dispatch-card, .grading-card, .teacher-card { border-radius: 0; box-shadow: none; }
 
+    /* A flowering branch over the field note. */
+    .fn-band { position: relative; }
+    .fn-branch {
+      display: block; width: min(420px, 78%); height: auto;
+      margin: 0 auto 1.75rem; opacity: .95;
+    }
+    @media (max-width: 620px) { .fn-branch { width: 82%; margin-bottom: 1.25rem; } }
+
     /* Closing band. */
     .tn-closing { background: var(--ds-paper-deep); padding: 4.5rem 2rem; text-align: center; }
     .tn-closing-inner { max-width: 620px; margin: 0 auto; }
-    .tn-closing-bird { width: 116px; height: auto; margin: 0 auto 1.5rem; }
+    .tn-closing-bird { width: 190px; height: auto; margin: 0 auto 1.5rem; }
     .tn-closing-quote {
       font-family: var(--ff-display); font-style: italic; font-weight: 400;
       font-size: clamp(1.3rem, 2.6vw, 1.7rem); line-height: 1.45;
@@ -331,7 +339,7 @@
       <div class="hero-colophon"><span class="tick"></span>A field guide to teaching living books<span class="tick"></span></div>
     </div>
     <figure class="tn-hero-art">
-      <img src="images/tn-chickadee.png" alt="" width="760" height="629"
+      <img src="images/tn-chickadee.webp" alt="" width="760" height="570"
            loading="eager" decoding="async">
       <figcaption>Small things<br>open wide worlds.</figcaption>
     </figure>
@@ -467,7 +475,7 @@
 <!-- ══ ENTRY iii — NARRATION ══ -->
 <section class="tn-section tn-has-art" id="narration" aria-labelledby="narration-title">
   <figure class="tn-margin-art">
-    <img src="images/tn-botanical.png" alt="" width="307" height="358" loading="lazy" decoding="async">
+    <img src="images/tn-botanical.webp" alt="" width="440" height="642" loading="lazy" decoding="async">
     <figcaption>Attention is<br>a kind of hospitality.</figcaption>
   </figure>
   <div class="tn-inner">
@@ -567,12 +575,12 @@
       </div>
       <div class="rubric-row">
         <span class="rubric-category">Major Work</span>
-        <span class="rubric-weight">55%</span>
+        <span class="rubric-weight">60%</span>
         <span class="rubric-note">Recitation, compositions, creative projects, presentations, final thesis</span>
       </div>
       <div class="rubric-row">
         <span class="rubric-category">Minor Work · Daily &amp; Weekly Habits</span>
-        <span class="rubric-weight">45%</span>
+        <span class="rubric-weight">40%</span>
         <span class="rubric-note">Weekly narrations, handouts, commonplace checks, annotated bibliography</span>
       </div>
     </div>
@@ -602,6 +610,8 @@
 
 <!-- INTERSTITIAL FIELD NOTE -->
 <section class="cloth fn-band" aria-label="Field note">
+  <img class="fn-branch" src="images/tn-branch-rule.webp" alt=""
+       width="900" height="690" loading="lazy" decoding="async">
   <div class="fieldnote">
     <span class="fn-label">Field Note</span>
     <p class="fn-text">What the ranch teaches, the classroom borrows.</p>
@@ -789,8 +799,8 @@
      The last word before the footer: one line, one small bird. ══ -->
 <section class="tn-closing" aria-label="Closing">
   <div class="tn-closing-inner">
-    <img class="tn-closing-bird" src="images/tn-bird-small.png" alt=""
-         width="360" height="296" loading="lazy" decoding="async">
+    <img class="tn-closing-bird" src="images/tn-bird-small.webp" alt=""
+         width="520" height="373" loading="lazy" decoding="async">
     <blockquote class="tn-closing-quote">
       A slower, deeper, kinder education is possible &mdash;<br>
       and it changes everything.
