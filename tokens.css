@@ -20,37 +20,177 @@
    ============================================================ */
 
 :root {
-  /* ---- Paper: the dominant field ---------------------------- */
   --ds-paper:        #F6F2E9;
-  --ds-paper-warm:   #FBF8F1;  /* raised cards            */
-  --ds-paper-deep:   #EEE8DC;  /* quiet alternating bands */
-
-  /* ---- Ink -------------------------------------------------- */
-  --ds-ink:          #1A1C1B;  /* body copy      12.4:1 on paper */
-  --ds-ink-soft:     #4B5351;  /* secondary text  6.8:1 on paper */
-
-  /* ---- Juniper: the brand ink ------------------------------- */
-  --ds-juniper:      #49686B;  /* headings, buttons  5.96:1 on paper */
-  --ds-juniper-deep: #344F51;  /* small dark panels, button hover    */
-  --ds-juniper-pale: #E8EEEE;  /* faintest tint, sparing             */
-
-  /* ---- Weathered blue: secondary, used sparingly ------------ */
-  --ds-blue:         #6A7F8A;  /* small graphics and rules        */
-  --ds-blue-text:    #596B74;  /* when it carries words  4.97:1   */
-
-  /* ---- Ochre: tiny warm marks only -------------------------- */
-  --ds-ochre:        #B28A50;  /* rules, arrows, margin marks     */
-  --ds-ochre-text:   #785B31;  /* an emphasised word     5.63:1   */
-  --ds-ochre-lt:     #DFC596;  /* only on deep juniper   5.78:1   */
-
-  /* ---- Rules ------------------------------------------------ */
+  --ds-paper-warm:   #FBF8F1;
+  --ds-paper-deep:   #EEE8DC;
+  --ds-ink:          #1A1C1B;
+  --ds-ink-soft:     #4B5351;
+  --ds-juniper:      #49686B;
+  --ds-juniper-deep: #344F51;
+  --ds-juniper-pale: #E8EEEE;
+  --ds-blue:         #6A7F8A;
+  --ds-blue-text:    #596B74;
+  --ds-ochre:        #B28A50;
+  --ds-ochre-text:   #785B31;
+  --ds-ochre-lt:     #DFC596;
   --ds-rule:         rgba(73, 104, 107, .18);
   --ds-rule-strong:  rgba(73, 104, 107, .34);
   --ds-rule-dark:    rgba(246, 242, 233, .18);
-
-  /* ---- Type ------------------------------------------------- */
   --ds-display: 'Playfair Display', Georgia, serif;
   --ds-body:    'Cormorant Garamond', Georgia, serif;
   --ds-sans:    'Jost', system-ui, -apple-system, sans-serif;
-  --ds-hand:    'Caveat', cursive;   /* marginalia only, sparingly */
+  --ds-hand:    'Caveat', cursive;
+}
+
+/* ============================================================
+   TEACHER'S NOTEBOOK — 2026 editorial polish
+   Scoped here so the rest of the site remains untouched.
+   ============================================================ */
+body:has(.tn-hero) {
+  background: var(--ds-paper) !important;
+  color: var(--ds-ink) !important;
+}
+body:has(.tn-hero) .tn-hero {
+  background: linear-gradient(180deg, var(--ds-paper-warm), var(--ds-paper)) !important;
+  border-bottom: 1px solid var(--ds-rule) !important;
+}
+body:has(.tn-hero) .tn-hero-inner {
+  max-width: 1160px !important;
+  padding-top: 5.75rem !important;
+  padding-bottom: 5.25rem !important;
+  gap: 5rem !important;
+}
+body:has(.tn-hero) .tn-eyebrow,
+body:has(.tn-hero) .section-label,
+body:has(.tn-hero) .tn-toc-title {
+  color: var(--ds-juniper) !important;
+  letter-spacing: .18em !important;
+}
+body:has(.tn-hero) .tn-title {
+  color: var(--ds-ink) !important;
+  font-size: clamp(3rem, 6vw, 5.25rem) !important;
+  line-height: .98 !important;
+  letter-spacing: -.035em !important;
+  font-weight: 400 !important;
+  max-width: 10ch;
+}
+body:has(.tn-hero) .tn-title em {
+  color: var(--ds-blue-text) !important;
+}
+body:has(.tn-hero) .tn-tagline {
+  color: var(--ds-ink-soft) !important;
+  font-size: 1.25rem !important;
+  line-height: 1.6 !important;
+}
+body:has(.tn-hero) .hero-colophon {
+  color: var(--ds-ink-soft) !important;
+}
+body:has(.tn-hero) .tn-hero-toc {
+  background: rgba(251,248,241,.72) !important;
+  border: 1px solid var(--ds-rule-strong) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 2rem 2.15rem !important;
+}
+body:has(.tn-hero) .tn-toc-list a {
+  color: var(--ds-ink-soft) !important;
+}
+body:has(.tn-hero) .tn-toc-list a:hover {
+  color: var(--ds-juniper) !important;
+}
+body:has(.tn-hero) .tn-section {
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+  border-bottom: 1px solid var(--ds-rule) !important;
+}
+body:has(.tn-hero) .tn-section.alt {
+  background: var(--ds-paper-warm) !important;
+}
+body:has(.tn-hero) .tn-inner {
+  max-width: 1080px !important;
+}
+body:has(.tn-hero) .gold-rule {
+  width: 42px !important;
+  height: 1px !important;
+  background: var(--ds-ochre) !important;
+}
+body:has(.tn-hero) .section-title {
+  color: var(--ds-ink) !important;
+  font-size: clamp(2.2rem, 4vw, 3.5rem) !important;
+  font-weight: 400 !important;
+  letter-spacing: -.025em !important;
+}
+body:has(.tn-hero) .section-body {
+  color: var(--ds-ink-soft) !important;
+  font-size: 1.12rem !important;
+  line-height: 1.78 !important;
+}
+body:has(.tn-hero) .margin-note,
+body:has(.tn-hero) .notebook-quote {
+  border-left-color: var(--ds-blue) !important;
+}
+body:has(.tn-hero) .margin-note .when,
+body:has(.tn-hero) .margin-note .obs,
+body:has(.tn-hero) .notebook-quote {
+  color: var(--ds-blue-text) !important;
+}
+body:has(.tn-hero) .delight-grid {
+  gap: 0 !important;
+  border-top: 1px solid var(--ds-rule) !important;
+  border-bottom: 1px solid var(--ds-rule) !important;
+}
+body:has(.tn-hero) .delight-card {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  border-top: 0 !important;
+  padding: 2rem 1.6rem !important;
+  box-shadow: none !important;
+}
+body:has(.tn-hero) .delight-card + .delight-card {
+  border-left: 1px solid var(--ds-rule) !important;
+}
+body:has(.tn-hero) .delight-word,
+body:has(.tn-hero) .delight-card h3 {
+  color: var(--ds-juniper) !important;
+}
+body:has(.tn-hero) .faq-item,
+body:has(.tn-hero) .dispatch-card,
+body:has(.tn-hero) .grading-card,
+body:has(.tn-hero) .teacher-card {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+body:has(.tn-hero) .site-footer {
+  background: var(--ds-paper-deep) !important;
+  color: var(--ds-ink-soft) !important;
+}
+body:has(.tn-hero) .site-footer .logo,
+body:has(.tn-hero) .site-footer a {
+  color: var(--ds-ink) !important;
+}
+body:has(.tn-hero) .footer-col-title {
+  color: var(--ds-juniper) !important;
+}
+
+@media (max-width: 760px) {
+  body:has(.tn-hero) .tn-hero-inner {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    padding: 3.6rem 1.35rem 3rem !important;
+  }
+  body:has(.tn-hero) .tn-title {
+    max-width: none;
+    font-size: clamp(2.7rem, 14vw, 4rem) !important;
+  }
+  body:has(.tn-hero) .tn-section {
+    padding: 4.25rem 1.35rem !important;
+  }
+  body:has(.tn-hero) .delight-grid {
+    grid-template-columns: 1fr !important;
+  }
+  body:has(.tn-hero) .delight-card + .delight-card {
+    border-left: 0 !important;
+    border-top: 1px solid var(--ds-rule) !important;
+  }
 }
