@@ -75,10 +75,17 @@
       color: var(--ds-ink-soft); line-height: 1.5; margin-top: .9rem;
     }
 
+    /* The snapshot is now a direct grid child, so it needs justify-self:
+       align-self only centres it on the block axis here. */
+    .tn-hero-inner > .hero-snap { justify-self: center; width: 300px; }
+    @media (max-width: 760px) { .tn-hero-inner > .hero-snap { width: 240px; } }
+
     /* Contents: numbered, three across, hairline separated. */
     .tn-contents { padding: 0 2rem 4.5rem; }
     .tn-contents .tn-inner { border-top: 1px solid var(--ds-rule); padding-top: 2.5rem; }
     .tn-contents .tn-toc-title { margin-bottom: 1.6rem; }
+    .tn-contents-branch { width: min(300px, 62%); height: auto; margin: 0 auto 1.1rem; }
+    @media (max-width: 620px) { .tn-contents-branch { width: 70%; } }
     .tn-toc-grid {
       list-style: none; display: grid; gap: 1px;
       grid-template-columns: repeat(3, 1fr);
@@ -119,8 +126,8 @@
     /* A flowering branch over the field note. */
     .fn-band { position: relative; }
     .fn-branch {
-      display: block; width: min(420px, 78%); height: auto;
-      margin: 0 auto 1.75rem; opacity: .95;
+      display: block; width: min(340px, 74%); height: auto;
+      margin: 0 auto 1.6rem;
     }
     @media (max-width: 620px) { .fn-branch { width: 82%; margin-bottom: 1.25rem; } }
 
@@ -344,10 +351,10 @@
       <div class="fieldnote" style="margin:0 0 1.6rem"><span class="fn-label" style="justify-content:flex-start">Field Note</span><p class="fn-text" style="text-align:left">Not the reader in front of you — the whole person.</p></div>
       <div class="hero-colophon"><span class="tick"></span>A field guide to teaching living books<span class="tick"></span></div>
     </div>
-    <figure class="tn-hero-art">
-      <img src="images/tn-chickadee.webp" alt="" width="760" height="570"
-           loading="eager" decoding="async">
-      <figcaption>Small things<br>open wide worlds.</figcaption>
+    <figure class="hero-snap">
+      <img src="images/tn-hero-photo.jpg" alt="Kim by the water at dusk"
+           width="540" height="648" loading="eager" decoding="async">
+      <figcaption>Monkey Island, Panama &mdash; where the quiet revived me</figcaption>
     </figure>
   </div>
 </section>
@@ -357,6 +364,8 @@
      is copy and one illustration and nothing else. ══ -->
 <section class="tn-contents" aria-labelledby="tn-contents-title">
   <div class="tn-inner">
+    <img class="tn-contents-branch" src="images/tn-branch-rule.webp" alt=""
+         width="900" height="690" loading="lazy" decoding="async">
     <p class="tn-toc-title" id="tn-contents-title">In This Notebook</p>
     <ol class="tn-toc-grid">
       <li><a href="#what-is"><span class="n">01</span><span class="t">What This Notebook Is</span><span class="s">Vision &amp; philosophy</span></a></li>
@@ -616,8 +625,8 @@
 
 <!-- INTERSTITIAL FIELD NOTE -->
 <section class="cloth fn-band" aria-label="Field note">
-  <img class="fn-branch" src="images/tn-branch-rule.webp" alt=""
-       width="900" height="690" loading="lazy" decoding="async">
+  <img class="fn-branch" src="images/tn-chickadee.webp" alt=""
+       width="760" height="570" loading="lazy" decoding="async">
   <div class="fieldnote">
     <span class="fn-label">Field Note</span>
     <p class="fn-text">What the ranch teaches, the classroom borrows.</p>
