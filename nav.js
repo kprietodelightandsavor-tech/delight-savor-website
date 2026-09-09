@@ -167,7 +167,7 @@
   <div class="footer-apps">
     <p>Also from Delight &amp; Savor</p>
     <div class="footer-apps-row">
-      <a href="https://in-the-margin.netlify.app" target="_blank" rel="noopener">
+      <a href="https://margin.delightandsavor.com" target="_blank" rel="noopener">
         <img src="images/margin_logo-rounded-512.png" alt="In the Margin app icon" />
         In the Margin
       </a>

@@ -573,12 +573,53 @@ const LEVEL_LABEL = {
 };
 
 const COURSES = [
+  /* The canonical list is In the Margin's own library:
+     margin.delightandsavor.com/preview.html — four courses, two of them
+     year-long. Macbeth, Wuthering Heights, The Old Man and the Sea and
+     A Midsummer Night's Dream are terms inside those years now, not
+     separate courses, so they are no longer listed on their own. */
+  {
+    id:"art-of-tragedy",
+    title:"The Art of Tragedy",
+    author:"Macbeth & Wuthering Heights",   /* esc() escapes this at render */
+    level:"high",
+    meta:"Year-long · Grades 9–12",
+    status:"avail",
+    cloth:"#37322B",
+    image:"/images/art-of-tragedy.jpg",
+    link:"https://margin.delightandsavor.com/art-of-tragedy/",
+    blurb:"A year on ambition and disordered love — Shakespeare's tragedy in the fall, Brontë's in the spring."
+  },
+  {
+    id:"art-of-attention",
+    title:"The Art of Attention",
+    author:"Poetry, The Old Man and the Sea, A Midsummer Night’s Dream",
+    level:"high",
+    meta:"Year-long · Grades 9–12",
+    status:"avail",
+    cloth:"#4E6149",
+    image:"/images/art-of-attention.jpg",
+    link:"https://margin.delightandsavor.com/art-of-attention/",
+    blurb:"A year of looking closely — poetry and Hemingway in the fall, Shakespeare's comedy in the spring."
+  },
+  {
+    id:"lss",
+    title:"A Place to Belong",
+    author:"A Place to Hang the Moon · Number the Stars",
+    level:"middle",
+    meta:"Thirty weeks · Grades 6–8",
+    status:"self",
+    cloth:"#4C6B8C",
+    image:"/images/a-place-to-belong.jpg",
+    link:"https://margin.delightandsavor.com/living-stories-preview.html",
+    blurb:"Living books and real writing for the middle years, ending in a first research paper."
+  },
   {
     id:"summer-foundations",
-    title:"Summer Foundations",
-    author:"Of Mice and Men",
+    title:"Of Mice and Men",
+    author:"Summer Foundations · Steinbeck",
     level:"summer",
-    meta:"Steinbeck · 6 weeks",
+    meta:"Six weeks · Grades 8–11",
     status:"go",
     cloth:"#6B5240",
     image:"/images/cover-omam.jpg",
@@ -592,78 +633,6 @@ const COURSES = [
       cta:"Take a deeper look",
       ctaHref:"/Summer-Foundations-Sales-Page.html"
     }
-  },
-  {
-    id:"art-of-attention",
-    title:"Art of Attention",
-    author:"Poetry & The Old Man and the Sea",
-    level:"high",
-    meta:"Year-long · In the Margin",
-    status:"avail",
-    cloth:"#4E6149",
-    image:"/images/art-of-attention.jpg",
-    link:"https://in-the-margin.netlify.app/",
-    blurb:"A year of poetry and Hemingway — close reading, narration, the Great Conversation."
-  },
-  {
-    id:"macbeth",
-    title:"Macbeth",
-    author:"Shakespeare",
-    level:"high",
-    meta:"The Tragic Hero",
-    status:"avail",
-    cloth:"#37322B",
-    image:"/images/macbeth.jpg",
-    link:"#",
-    blurb:"Ambition and disordered loves, read beside Augustine."
-  },
-  {
-    id:"wuthering-heights",
-    title:"Wuthering Heights",
-    author:"Emily Brontë",
-    level:"high",
-    meta:"The Anti-Hero",
-    status:"avail",
-    cloth:"#5D6C61",
-    image:"/images/wuthering-heights.jpg",
-    link:"#",
-    blurb:"Wild, strange, unforgettable — the anti-hero studied in full."
-  },
-  {
-    id:"lss",
-    title:"A Place to Belong",
-    author:"Living Stories & Sentences · Series 1",
-    level:"middle",
-    meta:"32 weeks · self-paced",
-    status:"self",
-    cloth:"#4C6B8C",
-    image:"/images/a-place-to-belong.jpg",
-    link:"#",
-    blurb:"Living literature and sentence-craft for the middle years, fully self-paced."
-  },
-  {
-    id:"old-man",
-    title:"The Old Man and the Sea",
-    author:"Hemingway",
-    level:"high",
-    meta:"Companion study",
-    status:"soon",
-    cloth:"#6C6A47",
-    image:"/images/poetry-old-man.jpg",
-    link:"https://in-the-margin.netlify.app/old-man-preview.html",
-    blurb:"Hemingway’s sea, scaffolded for honors-ready writing. Coming Fall 2026."
-  },
-  {
-    id:"midsummer",
-    title:"A Midsummer Night’s Dream",
-    author:"Shakespeare",
-    level:"high",
-    meta:"Comedy",
-    status:"soon",
-    cloth:"#7C5F7C",
-    image:"/images/midsummer.jpg",
-    link:"https://in-the-margin.netlify.app/midsummer-preview.html",
-    blurb:"Shakespeare’s comedy, taught the Charlotte Mason way. Coming Jan 2027."
   }
 ];
 

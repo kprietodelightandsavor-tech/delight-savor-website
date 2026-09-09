@@ -61,7 +61,7 @@ IN THE MARGIN APP:
 - Student companion app — works on phone, tablet, or laptop
 - Students save it to their home screen
 - Features: weekly assignment tracker, Reading Companion, Writing Table, Narration Coach (Find It · Follow It · Frame It), Literary Devices reference, Commonplace Journal
-- URL: in-the-margin.netlify.app
+- URL: margin.delightandsavor.com
 
 TEND — Charlotte Mason Homeschool Planner App:
 - A separate digital planner app for homeschool families
