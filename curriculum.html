@@ -237,6 +237,29 @@
     font-family:"Lato",system-ui,sans-serif;font-size:12px;letter-spacing:0.02em;
     color:var(--ds-ink-soft);margin-top:5px;
   }
+  /* What each term reads, and the thinkers met along the way. */
+  .card__terms{
+    margin-top:9px;padding-top:7px;border-top:1px solid var(--line);
+    display:grid;gap:3px;
+  }
+  .card__term{display:grid;grid-template-columns:auto 1fr;gap:7px;align-items:baseline;}
+  .term-label{
+    font-family:"Lato",system-ui,sans-serif;font-size:9.5px;letter-spacing:0.1em;
+    text-transform:uppercase;color:var(--tawny);white-space:nowrap;
+  }
+  .term-book{
+    font-family:"Cormorant Garamond",serif;font-size:13.5px;line-height:1.24;
+    color:var(--ds-ink);
+  }
+  .card__thinkers{
+    margin-top:7px;font-family:"Cormorant Garamond",serif;font-size:12.5px;
+    font-style:italic;line-height:1.35;color:var(--ds-ink-soft);
+  }
+  .tk-label{
+    display:block;font-family:"Lato",system-ui,sans-serif;font-style:normal;
+    font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--ds-ink-soft);margin-bottom:2px;
+  }
 
   .shelf-cta{text-align:center;margin-top:14px;}
 
@@ -667,6 +690,17 @@ function coverHTML(c){
     ${c.image ? `<img class="cover__img" src="${esc(c.image)}" alt="${esc(c.title)} cover" loading="lazy" onerror="this.remove()">` : ``}
   </div>`;
 }
+/* What is read each term, and whose thinking we read it beside. */
+function termsHTML(c){
+  if(!c.terms || !c.terms.length) return "";
+  return `<div class="card__terms">` + c.terms.map(t =>
+    `<div class="card__term"><span class="term-label">${esc(t.label)}</span><span class="term-book">${esc(t.book)}</span></div>`
+  ).join("") + `</div>`;
+}
+function thinkersHTML(c){
+  if(!c.thinkers) return "";
+  return `<div class="card__thinkers"><span class="tk-label">In company with</span>${esc(c.thinkers)}</div>`;
+}
 function linkAttrs(link){
   return external(link) ? ` target="_blank" rel="noopener"` : "";
 }
@@ -679,6 +713,8 @@ function renderShelf(){
       <span class="pill">${esc(LEVEL_LABEL[c.level])}</span>
       <div class="card__title">${esc(c.title)}</div>
       <div class="card__meta">${esc(c.meta)}</div>
+      ${termsHTML(c)}
+      ${thinkersHTML(c)}
     </a>`).join("");
 }
 
