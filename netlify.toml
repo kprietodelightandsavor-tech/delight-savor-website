@@ -1,2 +1,10 @@
 [build]
   functions = "netlify/functions"
+
+[[edge_functions]]
+  function = "teaching-method-notes"
+  path = "/philosophy.html"
+
+[[edge_functions]]
+  function = "teaching-method-notes"
+  path = "/teachers-notebook.html"
