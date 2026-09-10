@@ -2,6 +2,10 @@
   functions = "netlify/functions"
 
 [[edge_functions]]
+  function = "curriculum-pricing"
+  path = "/curriculum.html"
+
+[[edge_functions]]
   function = "teaching-method-notes"
   path = "/philosophy.html"
 
