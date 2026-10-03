@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Macbeth: A Charlotte Mason Literature Study for High School · Delight &amp; Savor</title>
+  <!-- favicon handled by nav.js (same as every other page) -->
+  <meta name="theme-color" content="#3F3732" />
+  <meta name="description" content="A fifteen-week Macbeth study for homeschool and co-op, grades 9–12. Narration first, then close reading, a debate, and a thesis-driven essay. Part of The Art of Tragedy." />
+  <meta name="author" content="Kim Prieto" />
+  <link rel="canonical" href="https://delightandsavor.com/macbeth" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Delight &amp; Savor" />
+  <meta property="og:title" content="Macbeth: A Charlotte Mason Literature Study for High School" />
+  <meta property="og:description" content="A fifteen-week Macbeth study for homeschool and co-op, grades 9–12. Narration first, then close reading, a debate, and a thesis-driven essay." />
+  <meta property="og:url" content="https://delightandsavor.com/macbeth" />
+  <meta property="og:image" content="https://delightandsavor.com/images/macbeth.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/tokens.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Cormorant Garamond', Georgia, serif; background: var(--ds-paper); color: var(--ds-ink); font-size: 18px; line-height: 1.7; }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; height: auto; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.5rem; }
+    .narrow { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+    .eyebrow { font-size: 0.763rem; letter-spacing: 0.158em; text-transform: uppercase; color: var(--ds-ochre-text); font-style: italic; margin-bottom: 0.9rem; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; color: var(--ds-juniper); text-wrap: balance; }
+
+    /* HERO */
+    .hero { padding: 4rem 0 3.5rem; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 3.5rem; align-items: center; }
+    .hero-cover { border-radius: 3px; box-shadow: 0 18px 40px -22px rgba(26,28,27,0.55), 0 0 0 1px var(--ds-rule); }
+    h1 { font-size: clamp(2rem, 4.6vw, 3.1rem); line-height: 1.15; margin-bottom: 1.1rem; }
+    h1 em { color: var(--ds-blue-text); font-style: italic; }
+    .question { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.3rem; line-height: 1.5; color: var(--ds-juniper-deep); margin-bottom: 1.1rem; }
+    .lede { font-size: 1.2rem; line-height: 1.75; max-width: 560px; margin-bottom: 1.75rem; }
+    .btns { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+    .btn-primary { background: var(--ds-juniper); color: var(--ds-paper); padding: 0.75rem 1.75rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; font-weight: 600; display: inline-block; text-decoration: none; }
+    .btn-primary:hover { background: var(--ds-juniper-deep); }
+    .btn-ghost { border: 1px solid var(--ds-rule-strong); color: var(--ds-juniper); padding: 0.75rem 1.75rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; display: inline-block; text-decoration: none; }
+    .btn-ghost:hover { border-color: var(--ds-juniper); }
+
+    /* FACTS */
+    .facts { border-top: 1px solid var(--ds-rule); border-bottom: 1px solid var(--ds-rule); background: var(--ds-paper-warm); }
+    .facts dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .facts dl > div { padding: 1.5rem 1.25rem; border-left: 1px solid var(--ds-rule); }
+    .facts dl > div:first-child { border-left: 0; padding-left: 0; }
+    .facts dt { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ds-ink-soft); margin-bottom: 0.3rem; }
+    .facts dd { font-family: 'Playfair Display', serif; font-size: 1.1rem; line-height: 1.4; color: var(--ds-juniper); }
+
+    /* SECTIONS */
+    section.block { padding: 4rem 0; }
+    section.band { background: var(--ds-paper-deep); }
+    h2 { font-size: clamp(1.5rem, 3vw, 1.95rem); line-height: 1.25; margin-bottom: 1.1rem; }
+    .prose p { font-size: 1.15rem; line-height: 1.85; margin-bottom: 1.15rem; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose p.eyebrow { font-size: 0.763rem; line-height: 1.7; margin-bottom: 0.9rem; }
+    .prose a { color: var(--ds-blue-text); text-decoration: underline; text-underline-offset: 3px; }
+    .prose strong { font-weight: 600; color: var(--ds-juniper-deep); }
+
+    .weeks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .card { background: var(--ds-paper-warm); border: 1px solid var(--ds-rule); border-radius: 4px; padding: 1.75rem; }
+    .card h3 { font-size: 1.25rem; margin-bottom: 0.6rem; }
+    .card p { font-size: 1.08rem; line-height: 1.75; }
+    .card ul { margin: 0.6rem 0 0 1.15rem; font-size: 1.08rem; line-height: 1.75; }
+
+    .moves { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+    .moves li { border-top: 2px solid var(--ds-ochre); padding-top: 0.9rem; }
+    .moves b { display: block; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 1.2rem; color: var(--ds-juniper); margin-bottom: 0.25rem; }
+    .moves span { font-size: 1.05rem; line-height: 1.6; }
+
+    blockquote { margin: 2rem 0 0; padding: 1.5rem 1.9rem; border-left: 3px solid var(--ds-ochre); background: rgba(178,138,80,0.07); border-radius: 0 6px 6px 0; }
+    blockquote p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.12rem; line-height: 1.7; color: var(--ds-juniper); }
+    blockquote cite { display: block; margin-top: 0.8rem; font-style: normal; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ds-ink-soft); }
+    blockquote cite a { color: var(--ds-blue-text); }
+
+    .ends { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem; align-items: center; }
+    .ends figure img { border-radius: 4px; }
+    .ends figcaption { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-ink-soft); margin-top: 0.6rem; }
+    .ends ol { margin: 0.5rem 0 0 1.2rem; font-size: 1.12rem; line-height: 1.8; }
+    .ends ol li { margin-bottom: 0.5rem; }
+
+    .price { text-align: center; }
+    .price-card { max-width: 560px; margin: 1.75rem auto 0; background: var(--ds-paper-warm); border: 1px solid var(--ds-rule-strong); border-radius: 4px; padding: 2.25rem 2rem; }
+    .price-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--ds-juniper); line-height: 1.1; }
+    .price-unit { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ds-ink-soft); margin: 0.4rem 0 1rem; }
+    .price-card p { font-size: 1.08rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .price .btns { justify-content: center; }
+    .price-note { font-size: 1.02rem; margin-top: 1.5rem; }
+    .price-note a { color: var(--ds-blue-text); }
+
+    .faq details { border-top: 1px solid var(--ds-rule); padding: 1.15rem 0; }
+    .faq details:last-child { border-bottom: 1px solid var(--ds-rule); }
+    .faq summary { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--ds-juniper); cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; color: var(--ds-ochre-text); font-size: 1.3rem; line-height: 1; }
+    .faq details[open] summary::after { content: "\2013"; }
+    .faq details p { font-size: 1.1rem; line-height: 1.8; margin-top: 0.8rem; }
+    .faq details a { color: var(--ds-blue-text); }
+
+    @media (max-width: 760px) {
+      .hero { padding: 2.5rem 0; }
+      .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-cover { max-width: 210px; margin: 0 auto; }
+      .facts dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .facts dl > div { padding: 1.1rem 1rem; }
+      .facts dl > div:nth-child(odd) { border-left: 0; padding-left: 0; }
+      .facts dl > div:nth-child(n+3) { border-top: 1px solid var(--ds-rule); }
+      .weeks, .ends { grid-template-columns: 1fr; gap: 1.5rem; }
+      .moves { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      section.block { padding: 3rem 0; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"Macbeth: A Charlotte Mason Literature Study","description":"A fifteen-week study of Shakespeare's Macbeth for grades 9–12, the fall term of The Art of Tragedy. Narration first, then close reading, a debate, and a thesis-driven essay.","url":"https://delightandsavor.com/macbeth","educationalLevel":"Grades 9-12","provider":{"@type":"Organization","name":"Delight & Savor","url":"https://delightandsavor.com/"},"author":{"@type":"Person","name":"Kim Prieto"},"isPartOf":{"@type":"Course","name":"The Art of Tragedy","url":"https://margin.delightandsavor.com/art-of-tragedy/"},"offers":{"@type":"Offer","category":"Self-paced, full school year","price":"299","priceCurrency":"USD","url":"https://delightandsavor.com/shop"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What grades is the Macbeth study for?","acceptedAnswer":{"@type":"Answer","text":"Grades 9–12. Grade is a guideline; the better question is whether your student is ready to sit with a hard book and have a real conversation about it."}},{"@type":"Question","name":"Does my student need to have read Shakespeare before?","acceptedAnswer":{"@type":"Answer","text":"No. Narration doesn't require prior knowledge, only honest engagement with the text. A student who has never read Shakespeare can absolutely begin with Macbeth."}},{"@type":"Question","name":"Do I need to buy the play separately?","acceptedAnswer":{"@type":"Answer","text":"Yes. You'll need a copy of Macbeth. Any standard edition works, and the play is in the public domain."}},{"@type":"Question","name":"My student struggles with writing. Will this work?","acceptedAnswer":{"@type":"Answer","text":"Yes. A student who narrates faithfully for ten weeks has been gathering the evidence for a thesis without knowing it. The move from narration to essay is gradual by design."}}]}</script>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <img class="hero-cover" src="images/macbeth.jpg" width="800" height="1200"
+         alt="Cover of the Delight &amp; Savor Macbeth study: a castle on a misted hill at dusk with two daggers in the grass." />
+    <div>
+      <p class="eyebrow">The Art of Tragedy &middot; Year One &middot; Fall Term</p>
+      <h1><em>Macbeth</em>: A Charlotte Mason Literature Study for High School</h1>
+      <p class="question">How much is fate, and how much is our own hand?</p>
+      <p class="lede">Fifteen weeks with Shakespeare&rsquo;s shortest, fiercest tragedy, for homeschool and co-op students in grades 9&ndash;12. We read the play itself, aloud and act by act. Students narrate before anyone tells them what to think, and by the end of the term they are arguing a thesis they arrived at themselves.</p>
+      <div class="btns">
+        <a class="btn-primary" href="https://margin.delightandsavor.com/art-of-tragedy/" target="_blank" rel="noopener">Preview the Course</a>
+        <a class="btn-ghost" href="https://margin.delightandsavor.com/art-of-tragedy/handouts/AoT_Scope_and_Sequence.pdf" target="_blank" rel="noopener">Scope &amp; Sequence (PDF)</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- FACTS -->
+<section class="facts" aria-label="At a glance">
+  <div class="wrap">
+    <dl>
+      <div><dt>Grades</dt><dd>9&ndash;12</dd></div>
+      <div><dt>Length</dt><dd>Fifteen weeks, one fall term</dd></div>
+      <div><dt>Read beside</dt><dd>Augustine and Machiavelli</dd></div>
+      <div><dt>Ends in</dt><dd>A debate, an essay, a quilt square</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="block">
+  <div class="narrow prose">
+    <p class="eyebrow">Not another dusty Shakespeare unit</p>
+    <h2>We hand students the book, not a summary of it</h2>
+    <p>Most Macbeth study guides are comprehension questions, vocabulary lists, and a test. This one starts somewhere else: with the student telling back, in their own words, what they met in the reading. Charlotte Mason called narration &ldquo;the art of knowing,&rdquo; and it is the backbone of every week.</p>
+    <p>I taught AP Literature and AP Language in public school for nine years before I homeschooled, and I hold a master&rsquo;s in Literary Studies. This study keeps the rigor of that classroom and changes what the rigor is <em>for</em>. The analysis is real. It simply grows out of what the student noticed, not out of what I told them to find.</p>
+    <blockquote>
+      <p>When I returned to teaching <em>Macbeth</em>, I knew I didn&rsquo;t want it to feel like just another dusty Shakespeare unit. I wanted it to breathe.</p>
+      <cite>From the Journal &middot; <a href="journal-blending-old-loves-and-new-rhythms.html">Blending Old Loves and New Rhythms</a></cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- HOW A WEEK WORKS -->
+<section class="block band">
+  <div class="wrap">
+    <p class="eyebrow">How the term moves</p>
+    <h2>A Read week, then a Deep-Dive week</h2>
+    <div class="prose" style="max-width:720px;">
+      <p>We go through the play act by act, alternating two kinds of weeks, so no one is asked to analyze a scene they have not yet simply read and told back.</p>
+    </div>
+    <div class="weeks">
+      <div class="card">
+        <h3>Read week</h3>
+        <p>Read the act aloud, together. Then narrate: oral at first, written as the term goes on. Some weeks the narration is a tableau, with students freezing a moment from the play into a living picture.</p>
+      </div>
+      <div class="card">
+        <h3>Deep-Dive week</h3>
+        <p>Each one opens the same way:</p>
+        <ul>
+          <li>The Habit of Attention</li>
+          <li>A Find It &middot; Follow It &middot; Frame It passage</li>
+          <li>A short writing lesson</li>
+        </ul>
+      </div>
+    </div>
+    <div class="prose" style="max-width:720px; margin-top:2rem;">
+      <p>The arts sit beside the text. We listen to Mussorgsky&rsquo;s <em>Night on Bald Mountain</em> while reading Act I and look closely at Henry Fuseli&rsquo;s <em>Macbeth</em> painting, so students meet Shakespeare as part of a larger cultural conversation and not as a play in isolation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="block">
+  <div class="wrap">
+    <p class="eyebrow">From narration to argument</p>
+    <h2>Four moves that turn reading into writing</h2>
+    <div class="prose" style="max-width:720px;">
+      <p>The essay never appears out of nowhere. A student who narrates faithfully for ten weeks has been gathering the evidence for a thesis without knowing it. <a href="philosophy.html">Read the full approach.</a></p>
+    </div>
+    <ul class="moves">
+      <li><b>Find It</b><span>Notice what is actually on the page.</span></li>
+      <li><b>Follow It</b><span>Trace it through the play, with the text as evidence.</span></li>
+      <li><b>Frame It</b><span>Say what it means, and why it matters.</span></li>
+      <li><b>Keep It</b><span>Write it down: a narration, a commonplace entry, an essay.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- WHERE IT ENDS -->
+<section class="block band">
+  <div class="wrap ends">
+    <div>
+      <p class="eyebrow">Where the term gathers</p>
+      <h2>A debate, an essay, and a square for the quilt</h2>
+      <ol>
+        <li><strong>A debate</strong>, where students argue the play out loud before they argue it on paper.</li>
+        <li><strong>A Follow-the-Thread essay.</strong> Each student follows one thread through the play and argues what it means.</li>
+        <li><strong>A square for the class Quilt</strong>, where every student answers the play back in their own hand. <a href="conversation-quilt.html" style="color:var(--ds-blue-text);">See the Conversation Quilt.</a></li>
+      </ol>
+    </div>
+    <figure>
+      <img src="https://res.cloudinary.com/dwdbmowur/image/upload/c_fill,g_center,w_1200,h_800,q_85/v1779549799/4C3C2B9A-4152-4816-9ECD-F54E8A0B285B_srrfvo.png" width="1200" height="800" loading="lazy"
+           alt="Macbeth student capstone collage of symbol and response tiles." />
+      <figcaption>Macbeth &middot; Symbol &amp; Response &middot; student capstone work, 2023&ndash;2024</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="block price">
+  <div class="wrap">
+    <p class="eyebrow">How to get it</p>
+    <h2>Macbeth is the fall term of The Art of Tragedy</h2>
+    <div class="price-card">
+      <div class="price-num">$299</div>
+      <div class="price-unit">The full school year &middot; self-paced</div>
+      <p>Macbeth in the fall and <em>Wuthering Heights</em> in the spring, with weekly lessons, handouts, projects, writing, and capstone materials. An optional Honors track is built in.</p>
+      <div class="btns">
+        <a class="btn-primary" href="https://margin.delightandsavor.com/art-of-tragedy/" target="_blank" rel="noopener">Preview the Course</a>
+        <a class="btn-ghost" href="Shop.html">Visit the Shop</a>
+      </div>
+    </div>
+    <p class="price-note">Want teacher feedback or a live class? <a href="curriculum.html">See every way to learn.</a></p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block band faq">
+  <div class="narrow">
+    <p class="eyebrow">Questions parents ask</p>
+    <h2>Before you begin</h2>
+    <details>
+      <summary>What grades is it for?</summary>
+      <p>Grades 9&ndash;12, though honestly the better question is: is your student ready to sit with a hard book and have a real conversation about it? Grade is a guideline. The student is the guide.</p>
+    </details>
+    <details>
+      <summary>Does my student need to have read Shakespeare before?</summary>
+      <p>No. Narration doesn&rsquo;t require prior knowledge, only honest engagement with the text. A student who has never read Shakespeare can absolutely begin with <em>Macbeth</em>.</p>
+    </details>
+    <details>
+      <summary>Do I need to buy the play separately?</summary>
+      <p>Yes. You&rsquo;ll need a copy of <em>Macbeth</em>. Any standard edition works, and the play is in the public domain, so it is easy to find online or at a used bookstore.</p>
+    </details>
+    <details>
+      <summary>My student struggles with writing. Will this work?</summary>
+      <p>Yes, and this approach may be exactly what a struggling writer needs. A student who &ldquo;can&rsquo;t write&rdquo; usually doesn&rsquo;t yet know what they think. Narration addresses that at the root, and the move from narration to essay is gradual by design. <a href="faq.html">More questions answered here.</a></p>
+    </details>
+  </div>
+</section>
+
+<!-- Shared nav + footer, same as every other page -->
+<script src="/nav.js"></script>
+
+</body>
+</html>

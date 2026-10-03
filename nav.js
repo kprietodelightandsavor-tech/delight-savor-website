@@ -26,7 +26,7 @@
   </ul>
   <div class="nav-social">
     <a href="https://instagram.com/Kim.delightandsavor" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a>
+    <a href="https://www.pinterest.com/kprietodelightandsavor/" target="_blank" rel="noopener">Pinterest</a>
     <a href="https://delightandsavor.substack.com" target="_blank" rel="noopener">Substack</a>
   </div>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
@@ -161,7 +161,7 @@
       <h4>Connect</h4>
       <ul>
         <li><a href="https://instagram.com/Kim.delightandsavor" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a></li>
+        <li><a href="https://www.pinterest.com/kprietodelightandsavor/" target="_blank" rel="noopener">Pinterest</a></li>
         <li><a href="https://delightandsavor.substack.com" target="_blank" rel="noopener">Substack</a></li>
       </ul>
     </div>
