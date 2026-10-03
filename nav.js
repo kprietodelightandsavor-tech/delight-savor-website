@@ -39,6 +39,7 @@
   <a href="curriculum.html" onclick="toggleMenu()">Curriculum</a>
   <a href="teachers-notebook.html" onclick="toggleMenu()">Teacher&rsquo;s Notebook</a>
   <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+  <a href="journal.html" onclick="toggleMenu()">Journal</a>
   <a href="conversation-quilt.html" onclick="toggleMenu()">Conversation Quilt</a>
   <a href="lately.html" onclick="toggleMenu()">Lately</a>
   <a href="podcast.html" onclick="toggleMenu()">Podcast</a>
@@ -148,6 +149,7 @@
         <li><a href="philosophy.html">Philosophy</a></li>
         <li><a href="curriculum.html">Curriculum</a></li>
         <li><a href="teachers-notebook.html">Teacher&rsquo;s Notebook</a></li>
+        <li><a href="journal.html">Journal</a></li>
         <li><a href="conversation-quilt.html">Conversation Quilt</a></li>
         <li><a href="lately.html">Lately</a></li>
         <li><a href="podcast.html">Podcast</a></li>
