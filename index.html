@@ -100,6 +100,8 @@
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--ds-paper); border-top: 1px solid var(--ds-rule); padding: 1rem 2rem 1.5rem; z-index: 99; flex-direction: column; box-shadow: 0 8px 24px rgba(41,45,44,.10); }
     .mobile-nav.open { display: flex; }
+    .mobile-nav { max-height: calc(100vh - 68px); max-height: calc(100dvh - 68px); overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+    .mobile-nav a { flex-shrink: 0; }
     .mobile-nav a { color: var(--ds-ink-soft); font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 0; border-bottom: 1px solid var(--ds-rule); transition: color 0.2s; text-decoration: none; }
     .mobile-nav a:last-child { border-bottom: none; }
     .mobile-nav a:hover { color: var(--ds-juniper); }

@@ -147,6 +147,8 @@
     box-shadow: 0 8px 24px rgba(44,42,39,.08);
   }
   .mobile-nav.open { display: flex; }
+    .mobile-nav { max-height: calc(100vh - 68px); max-height: calc(100dvh - 68px); overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+    .mobile-nav a { flex-shrink: 0; }
   .mobile-nav a {
     font-family: 'Lato', sans-serif;
     font-size: 11px;
