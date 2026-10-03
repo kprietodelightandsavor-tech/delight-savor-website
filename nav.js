@@ -10,7 +10,7 @@
   const navHTML = `
 <nav>
   <a href="index.html" class="nav-logo-wrap">
-    <img src="images/web-app-manifest-192x192.png" alt="Delight &amp; Savor" class="nav-logo-img" />
+    <img src="images/web-app-manifest-192x192.png?v=2" alt="Delight &amp; Savor" class="nav-logo-img" />
     <div class="nav-logo-text">
       Delight &amp; Savor
       <span>Beauty. Meaning. Connection.</span>
@@ -51,9 +51,9 @@
 </div>`;
  /* ── INJECT FAVICON + APPLE TOUCH ICON ── */
 [
-  { rel: 'icon', type: 'image/png', sizes: '96x96', href: 'images/favicon-96x96.png' },
-  { rel: 'shortcut icon', href: 'images/favicon.ico' },
-  { rel: 'apple-touch-icon', sizes: '180x180', href: 'images/apple-touch-icon.png' },
+  { rel: 'icon', type: 'image/png', sizes: '96x96', href: 'images/favicon-96x96.png?v=2' },
+  { rel: 'shortcut icon', href: 'images/favicon.ico?v=2' },
+  { rel: 'apple-touch-icon', sizes: '180x180', href: 'images/apple-touch-icon.png?v=2' },
   { rel: 'manifest', href: 'images/site.webmanifest' }
 ].forEach(function (i) {
   const link = document.createElement('link');
@@ -84,7 +84,9 @@
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--ds-paper); border-top: 1px solid var(--ds-rule); padding: 1rem 2rem 1.5rem; z-index: 99; flex-direction: column; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--ds-paper); border-top: 1px solid var(--ds-rule); padding: 1rem 2rem 1.5rem; z-index: 99; flex-direction: column; box-shadow: 0 8px 24px rgba(0,0,0,0.12); max-height: calc(100vh - 68px); max-height: calc(100dvh - 68px); overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+    .mobile-nav a { flex-shrink: 0; }
+    body.menu-open { overflow: hidden; }
     .mobile-nav.open { display: flex; }
     .mobile-nav a { color: var(--ds-ink-soft); font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 0; border-bottom: 1px solid var(--ds-rule); transition: color 0.2s; text-decoration: none; }
     .mobile-nav a:last-child { border-bottom: none; }
@@ -133,7 +135,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="images/web-app-manifest-192x192.png" alt="Delight &amp; Savor" class="footer-logo" />
+      <img src="images/web-app-manifest-192x192.png?v=2" alt="Delight &amp; Savor" class="footer-logo" />
       <p>Charlotte Mason upper-level literature and language arts for the student who is ready to read deeply.</p>
       <div class="footer-email">
         <p>From the Ranch &amp; the Desk &mdash; one monthly letter.</p>
@@ -170,11 +172,11 @@
     <p>Also from Delight &amp; Savor</p>
     <div class="footer-apps-row">
       <a href="https://margin.delightandsavor.com" target="_blank" rel="noopener">
-        <img src="images/margin_logo-rounded-512.png" alt="In the Margin app icon" />
+        <img src="images/margin_logo-rounded-512.png?v=2" alt="In the Margin app icon" />
         In the Margin
       </a>
       <a href="https://tend-ds.netlify.app" target="_blank" rel="noopener">
-        <img src="images/tend_logo-rounded-512.png" alt="Tend app icon" />
+        <img src="images/tend_logo-rounded-512.png?v=2" alt="Tend app icon" />
         Tend
       </a>
     </div>
@@ -203,6 +205,7 @@
     if (btn && nav) {
       btn.classList.toggle('open');
       nav.classList.toggle('open');
+      document.body.classList.toggle('menu-open', nav.classList.contains('open'));
     }
   };
   document.addEventListener('click', function(e) {
@@ -211,6 +214,7 @@
     if (nav && nav.classList.contains('open') && !nav.contains(e.target) && btn && !btn.contains(e.target)) {
       btn.classList.remove('open');
       nav.classList.remove('open');
+      document.body.classList.remove('menu-open');
     }
   });
 })();
