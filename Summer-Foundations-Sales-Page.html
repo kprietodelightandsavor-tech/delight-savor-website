@@ -367,7 +367,7 @@ section.band{padding:56px 0;}
       <span class="ctag">Self-Paced</span>
       <h3>On Your Own Schedule</h3>
       <div class="cprice">$49 <small>&middot; family license</small></div>
-      <p class="cprice-sub">or $147 &middot; co-op license &mdash; up to 12 students</p>
+      <p class="cprice-sub">or <a href="https://payhip.com/b/oAvck">Summer co-op license · $147</a> · up to 12 students</p>
       <p class="cdesc">The full course, carried by the handouts. You set the pace and respond to the writing &mdash; this summer, or any summer after.</p>
       <ul>
         <li>All six weekly handouts &amp; the complete course in the app</li>
@@ -450,8 +450,8 @@ section.band{padding:56px 0;}
       <div class="lic">
         <label for="license">Choose your license</label>
         <select id="license">
-          <option value="49" data-label="Family License">Family License — one household — $49</option>
-          <option value="147" data-label="Co-op License">Co-op License — up to 12 students — $147</option>
+          <option value="49" data-url="https://payhip.com/b/13MxT" data-label="Family License">Family License — one household — $49</option>
+          <option value="147" data-url="https://payhip.com/b/oAvck" data-label="Co-op License">Co-op License — up to 12 students — $147</option>
         </select>
         <p class="lic-note" id="licNote"><strong>Family License:</strong> one household, all your children, for as many years as you like.</p>
       </div>
@@ -550,7 +550,7 @@ section.band{padding:56px 0;}
       <p>Students sit with the novel's great questions — dreams and disappointment, friendship and loyalty, loneliness, power, and mercy — and learn to move from feeling a story to saying something true about it.</p>
     </div></details>
     <details><summary>Course overview <span class="mk">+</span></summary><div class="det-body">
-      <p>Six weeks, one lesson per week (about 60–90 minutes of together-time), self-paced for families or taught live in a summer cohort. Narration-first and discussion-rich, with no busywork — every page on the student's desk is doing real work.</p>
+      <p>Six weeks, one lesson per week (about 60–90 minutes of together-time), self-paced for families or taught by your co-op teacher. Narration-first and discussion-rich, with no busywork — every page on the student's desk is doing real work.</p>
     </div></details>
     <details><summary>Who it's for <span class="mk">+</span></summary><div class="det-body">
       <p>Families who want a gentle but serious bridge into high-school-level literature; students ready for their first real novel study; anyone who wants the narration-to-writing habit in place before fall.</p>
@@ -686,7 +686,7 @@ section.band{padding:56px 0;}
       <span class="ctag">Self-Paced</span>
       <h3>On Your Own Schedule</h3>
       <div class="cprice">$49 <small>&middot; family license</small></div>
-      <p class="cprice-sub">or $147 &middot; co-op license &mdash; up to 12 students</p>
+      <p class="cprice-sub">or <a href="https://payhip.com/b/oAvck">Summer co-op license · $147</a> · up to 12 students</p>
       <p class="cdesc">The full course, carried by the handouts. You set the pace and respond to the writing &mdash; this summer, or any summer after.</p>
       <ul>
         <li>All six weekly handouts &amp; the complete course in the app</li>
@@ -710,7 +710,7 @@ section.band{padding:56px 0;}
         <li><b>A small cohort</b> reading together in our shared Google Classroom</li>
       </ul>
       <div class="cfoot">
-        <a class="cta alt" href="mailto:kprieto.delightandsavor@gmail.com?subject=Summer%20Foundations%20Live%20Cohort">Enroll in the Cohort</a>
+        <a class="cta alt" href="mailto:kprieto.delightandsavor@gmail.com?subject=Summer%20Foundations%20Live%20Cohort">Ask about future dates</a>
         <p class="cmeta">This cohort has finished &middot; the self-paced course above is always open &middot; next summer cohort TBD</p>
       </div>
     </div>
@@ -882,11 +882,15 @@ section.band{padding:56px 0;}
     'Family License':'<strong>Family License:</strong> one household, all your children, for as many years as you like.',
     'Co-op License':'<strong>Co-op License:</strong> one teacher, one class — covers student materials for up to 12 students.'
   };
-  sel.addEventListener('change',function(){
+  function updateLicense(){
     var o=sel.options[sel.selectedIndex];
+    btn.href=o.dataset.url;
     now.textContent='$'+o.value;
     note.innerHTML=notes[o.dataset.label];
-  });
+  }
+  sel.addEventListener('change',updateLicense);
+  window.addEventListener('pageshow',updateLicense);
+  updateLicense();
 })();
 </script>
 </body>
