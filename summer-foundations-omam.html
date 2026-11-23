@@ -278,15 +278,15 @@ details[open] summary .mk{transform:rotate(45deg);}
       <div class="lic">
         <label for="license">Choose your license</label>
         <select id="license">
-          <option value="49" data-label="Family License">Family License — one household — $49</option>
-          <option value="147" data-label="Co-op License">Co-op License — up to 12 students — $147</option>
+          <option value="49" data-url="https://payhip.com/b/13MxT" data-label="Family License">Family License — one household — $49</option>
+          <option value="147" data-url="https://payhip.com/b/oAvck" data-label="Co-op License">Co-op License — up to 12 students — $147</option>
         </select>
         <p class="lic-note" id="licNote"><strong>Family License:</strong> one household, all your children, for as many years as you like.</p>
       </div>
       <a class="cta" href="https://payhip.com/b/13MxT" id="buyBtn">Add to Cart</a>
       <div class="subcta">
         <a href="/images/Summer-Foundations-Scope-and-Sequence.pdf" target="_blank" rel="noopener">↓ Download the free Scope &amp; Sequence</a>
-        <span class="muted">Prefer it taught live? <a href="#cohort" style="display:inline;">Join the summer cohort — $110 →</a></span>
+        <span class="muted">Choose a family or co-op license above.</span>
         <span class="muted">Instant download · files delivered the moment you purchase</span>
       </div>
     </div>
@@ -392,7 +392,7 @@ details[open] summary .mk{transform:rotate(45deg);}
       <p>Students sit with the novel's great questions — dreams and disappointment, friendship and loyalty, loneliness, power, and mercy — and learn to move from feeling a story to saying something true about it.</p>
     </div></details>
     <details><summary>Course overview <span class="mk">+</span></summary><div class="det-body">
-      <p>Six weeks, one lesson per week (about 60–90 minutes of together-time), self-paced for families or taught live in a summer cohort. Narration-first and discussion-rich, with no busywork — every page on the student's desk is doing real work.</p>
+      <p>Six weeks, one lesson per week (about 60–90 minutes of together-time), self-paced for families or taught by your co-op teacher. Narration-first and discussion-rich, with no busywork — every page on the student's desk is doing real work.</p>
     </div></details>
     <details><summary>Who it's for <span class="mk">+</span></summary><div class="det-body">
       <p>Families who want a gentle but serious bridge into high-school-level literature; students ready for their first real novel study; anyone who wants the narration-to-writing habit in place before fall.</p>
@@ -491,11 +491,15 @@ details[open] summary .mk{transform:rotate(45deg);}
     'Family License':'<strong>Family License:</strong> one household, all your children, for as many years as you like.',
     'Co-op License':'<strong>Co-op License:</strong> one teacher, one class — covers student materials for up to 12 students.'
   };
-  sel.addEventListener('change',function(){
+  function updateLicense(){
     var o=sel.options[sel.selectedIndex];
+    btn.href=o.dataset.url;
     now.textContent='$'+o.value;
     note.innerHTML=notes[o.dataset.label];
-  });
+  }
+  sel.addEventListener('change',updateLicense);
+  window.addEventListener('pageshow',updateLicense);
+  updateLicense();
 })();
 </script>
 </body>
