@@ -1,0 +1,16 @@
+/* Reading Room shelf shared by Curriculum and Shop */
+.rr-shelf,.rr-plans {max-width:1120px;margin:0 auto;padding:clamp(32px,5vw,68px) clamp(20px,4vw,44px);scroll-margin-top:88px;color:var(--ds-ink)}
+.rr-shelf h2,.rr-plans h2 {font:500 clamp(32px,4vw,48px)/1.12 var(--ds-display);color:var(--ds-juniper);margin:0 0 12px}
+.rr-intro,.rr-online p,.rr-plans p {font:400 19px/1.5 var(--ds-body);max-width:65ch;margin:0 0 16px}
+.rr-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 32px;margin:28px 0}
+.rr-book {display:grid;grid-template-columns:minmax(85px,31%) minmax(0,1fr);gap:18px;border-top:1px solid var(--ds-rule);padding:20px 0;align-items:start}
+.rr-art img {display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:contain}
+.rr-book h3,.rr-online h3,.rr-plans h3 {font:600 clamp(21px,2.4vw,28px)/1.14 var(--ds-display);color:var(--ds-juniper);margin:4px 0}
+.rr-meta,.rr-author {font:400 14px/1.45 var(--ds-sans);color:var(--ds-ink-soft);margin:0}
+.rr-desc {font:400 18px/1.35 var(--ds-body);margin:9px 0}
+.rr-links {display:flex;flex-wrap:wrap;gap:0 15px}
+.rr-links a,.rr-online a,.rr-plans a {display:inline-flex;align-items:center;min-height:44px;font:700 14px/1.35 var(--ds-sans);color:var(--ds-juniper);text-decoration:underline;text-underline-offset:3px}
+.rr-online {border-block:1px solid var(--ds-rule);padding:18px 0}
+.rr-online p,.rr-plans p {margin:8px 0}
+.rr-plans article {margin-top:22px;scroll-margin-top:90px}
+@media(max-width:720px){.rr-grid{grid-template-columns:1fr;gap:0}.rr-book{gap:14px}.rr-desc{font-size:17px}}

@@ -20,6 +20,7 @@
     <li><a href="index.html#start-here">Start Here</a></li>
     <li><a href="philosophy.html"${isActive('philosophy.html')}>Philosophy</a></li>
     <li><a href="curriculum.html"${isActive('curriculum.html')}>Curriculum</a></li>
+        <li><a href="/curriculum#reading-room">Reading Room</a></li>
     <li><a href="teachers-notebook.html"${isActive('teachers-notebook.html')}>Teacher&rsquo;s Notebook</a></li>
     <li><a href="faq.html"${isActive('faq.html')}>FAQ</a></li>
     <li><a href="Shop.html" class="nav-cta">Shop Now</a></li>
@@ -37,6 +38,7 @@
   <a href="index.html#start-here" onclick="toggleMenu()">Start Here</a>
   <a href="philosophy.html" onclick="toggleMenu()">Philosophy</a>
   <a href="curriculum.html" onclick="toggleMenu()">Curriculum</a>
+  <a href="/curriculum#reading-room" onclick="toggleMenu()">Reading Room</a>
   <a href="teachers-notebook.html" onclick="toggleMenu()">Teacher&rsquo;s Notebook</a>
   <a href="faq.html" onclick="toggleMenu()">FAQ</a>
   <a href="journal.html" onclick="toggleMenu()">Journal</a>
@@ -150,6 +152,7 @@
       <ul>
         <li><a href="philosophy.html">Philosophy</a></li>
         <li><a href="curriculum.html">Curriculum</a></li>
+        <li><a href="/curriculum#reading-room">Reading Room</a></li>
         <li><a href="teachers-notebook.html">Teacher&rsquo;s Notebook</a></li>
         <li><a href="journal.html">Journal</a></li>
         <li><a href="conversation-quilt.html">Conversation Quilt</a></li>
