@@ -91,7 +91,7 @@ body {
 .lesson-peek { border-left: 2px solid var(--ds-ochre); padding: 4px 0 4px clamp(18px, 2.8vw, 38px); }
 .lesson-peek h3 + p { margin: .55rem 0 .2rem; }
 .paper-band { background: var(--ds-paper); border-block: 1px solid var(--ds-rule); }
-.curriculum .rr-shelf { padding-block: clamp(40px, 5vw, 66px); }
+.curriculum .rr-shelf { max-width: 1260px; padding-block: clamp(40px, 5vw, 66px); }
 .curriculum .rr-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); margin: 32px 0 0; }
 .curriculum .rr-book { display: flex; flex-direction: column; border: 0; gap: 14px; padding: 0; min-width: 0; }
 .curriculum .rr-art, .year-cover { display: block; }
@@ -157,4 +157,3 @@ body {
   .curriculum .rr-desc { font-size: 17px; }
   .week__list { grid-template-columns: 1fr; }
 }
-@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
