@@ -1,481 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Charlotte Mason Literature Curriculum for Middle &amp; High School · Delight &amp; Savor</title>
-<link rel="canonical" href="https://delightandsavor.com/curriculum" />
-<meta name="description" content="Explore four Reading Room literary companions, free Week One PDFs, and Charlotte Mason literature courses for families and co-ops." />
-
-<!-- favicon handled by nav.js (same as every other page) -->
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lato:wght@400;500;700&display=swap" rel="stylesheet" />
-
-<link rel="stylesheet" href="/tokens.css" />
-
-<style>
-  :root{
-    /* Aliased to the brand palette in tokens.css. */
-    --paper:var(--ds-paper-warm);
-    --cream:var(--ds-paper);
-    --cream-warm:var(--ds-paper-deep);
-    --slate:var(--ds-juniper);        /* headings */
-    --ink:var(--ds-ink);
-    --sage:var(--ds-juniper);
-    --sage-deep:var(--ds-juniper-deep);
-    --sage-soft:var(--ds-rule);
-    --tawny:var(--ds-ochre-text);
-    --tawny-fill:var(--ds-ochre);
-    --rust:var(--ds-juniper);         /* was terracotta; CTAs are juniper now */
-    --umber:var(--ds-ink-soft);
-    --line:var(--ds-rule);
-    --line-soft:var(--ds-rule);
-    --shadow-sm:0 1px 2px rgba(41,45,44,.05), 0 6px 18px rgba(41,45,44,.06);
-    --shadow-md:0 2px 4px rgba(41,45,44,.07), 0 14px 34px rgba(41,45,44,.10);
-  }
-
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--slate);
-    font-family:"Cormorant Garamond", Georgia, serif;
-    font-size:19px;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-  }
-  img{max-width:100%;display:block;}
-  a{color:inherit;}
-
-  .eyebrow{
-    font-family:"Lato", system-ui, sans-serif;
-    font-size:12px;
-    letter-spacing:0.173em;
-    text-transform:uppercase;
-    color:var(--sage);
-    font-weight:700;
-  }
-  .wrap{max-width:1120px;margin:0 auto;padding:0 22px;}
-
-  /* ---------- HERO (full branded banner; wordmark + tagline are baked into the art) ---------- */
-  .hero{display:block;background:var(--ds-paper);line-height:0;}
-  .hero__img{width:100%;height:auto;display:block;}
-  .hero-cta{background:var(--paper);text-align:center;padding:30px 22px 4px;}
-
-  .btn{
-    display:inline-block;
-    font-family:"Lato", system-ui, sans-serif;
-    font-size:13px;
-    letter-spacing:0.115em;
-    text-transform:uppercase;
-    font-weight:700;
-    text-decoration:none;
-    border:none;
-    cursor:pointer;
-    border-radius:999px;
-    padding:16px 34px;
-    transition:transform .18s ease, background .18s ease, box-shadow .18s ease;
-  }
-  .btn--primary{background:var(--ds-juniper);color:var(--ds-paper);box-shadow:var(--shadow-sm);}
-  .btn--primary:hover{background:#974B29;transform:translateY(-2px);box-shadow:var(--shadow-md);}
-  .btn--cream{background:#FBF6EC;color:var(--rust);box-shadow:var(--shadow-sm);}
-  .btn--cream:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);}
-  .btn--ghost{background:transparent;color:var(--slate);border:1.5px solid var(--line);}
-  .btn--ghost:hover{border-color:var(--sage);color:var(--sage);}
-
-  /* ---------- LEVELS (big subject-style words) ---------- */
-  .levels{padding:62px 0 14px;text-align:center;}
-  .levels__head{margin-bottom:30px;}
-  .levels__head h2{
-    font-family:"Playfair Display", serif;
-    font-weight:600;
-    font-size:clamp(26px,4vw,34px);
-    margin:.3em 0 .15em;
-    color:var(--slate);
-  }
-  .levels__head .lede{
-    font-size:21px;color:var(--umber);max-width:56ch;margin:0 auto;
-  }
-  .level-words{
-    display:flex;flex-wrap:wrap;justify-content:center;gap:14px 48px;margin-top:8px;
-  }
-  .level-word{
-    background:none;border:none;cursor:pointer;padding:10px 6px;
-    font-family:"Playfair Display", serif;
-    line-height:1.05;text-align:center;
-    color:var(--sage);
-    transition:color .18s ease, transform .18s ease;
-  }
-  .level-word .big{
-    display:block;font-size:clamp(28px,5.2vw,46px);font-weight:600;
-  }
-  .level-word .sub{
-    display:block;font-family:"Lato",system-ui,sans-serif;
-    font-size:12px;letter-spacing:0.115em;text-transform:uppercase;
-    color:var(--ds-ink-soft);margin-top:6px;font-weight:600;
-  }
-  .level-word:hover,.level-word:focus-visible{color:var(--rust);transform:translateY(-2px);}
-  .level-word:hover .sub{color:var(--umber);}
-
-  /* ---------- SHELF (horizontal carousel on a rail) ---------- */
-  .shelf-section{padding:34px 0 60px;}
-  .shelf-head{
-    display:flex;align-items:flex-end;justify-content:space-between;gap:16px;
-    max-width:1120px;margin:0 auto 18px;padding:0 22px;
-  }
-  .shelf-head h2{
-    font-family:"Playfair Display",serif;font-weight:600;
-    font-size:clamp(24px,3.4vw,30px);margin:.2em 0 0;
-  }
-  .shelf-arrows{display:flex;gap:10px;}
-  .arrow{
-    width:46px;height:46px;border-radius:999px;
-    border:1.5px solid var(--line);background:var(--paper);
-    color:var(--slate);font-size:18px;cursor:pointer;
-    display:flex;align-items:center;justify-content:center;
-    transition:border-color .18s, color .18s, background .18s;
-  }
-  .arrow:hover{border-color:var(--sage);color:var(--sage);}
-  .arrow:disabled{opacity:.35;cursor:default;}
-
-  .shelf-rail{position:relative;}
-  .shelf{
-    display:flex;gap:22px;
-    overflow-x:auto;scroll-snap-type:x mandatory;
-    padding:6px 22px 26px;
-    /* Snap to the padding edge, not the scrollport edge — without this the
-       first card snaps flush to x=0 and its gutter scrolls out of sight. */
-    scroll-padding-inline:22px;
-    margin:0 auto;max-width:1164px;
-    scrollbar-width:none;
-  }
-  .shelf::-webkit-scrollbar{display:none;}
-  /* the wooden/sage ledge that makes it read as a shelf */
-  /* The ledge belongs at the base of the books, not under their captions.
-     Card width is a constant 208px and covers are 2:3, so the cover base is
-     deterministic; keep these two in step if the card width ever changes. */
-  .shelf-rail{--cover-w:208px;--cover-h:calc(var(--cover-w) * 3 / 2);}
-  .shelf-rail::after{
-    content:"";position:absolute;left:22px;right:22px;
-    top:calc(6px + var(--cover-h) + 1px);height:2px;border-radius:2px;
-    background:linear-gradient(90deg,
-      transparent, var(--ds-rule-strong) 5%, var(--ds-rule-strong) 95%, transparent);
-    pointer-events:none;
-  }
-  .shelf-fade{position:absolute;top:0;bottom:18px;width:24px;pointer-events:none;z-index:2;}
-  .shelf-fade--l{left:0;background:linear-gradient(90deg,var(--paper),transparent);}
-  .shelf-fade--r{right:0;background:linear-gradient(270deg,var(--paper),transparent);}
-
-  .card{
-    scroll-snap-align:start;
-    flex:0 0 auto;width:208px;
-    text-decoration:none;color:inherit;
-    display:flex;flex-direction:column;
-    transition:transform .2s ease;
-  }
-  .card:hover{transform:translateY(-6px);}
-    .card:hover .cover{
-    box-shadow:
-      0 0 0 1px rgba(41,45,44,.12),
-      0 2px 4px rgba(41,45,44,.12),
-      0 22px 40px -10px rgba(41,45,44,.32);
-  }
-
-  /* book-cover treatment (clothbound placeholder until a real photo is set) */
-  .cover{
-    position:relative;aspect-ratio:2/3;border-radius:3px;overflow:hidden;
-    background-size:cover;background-position:center;
-    box-shadow:
-      0 0 0 1px rgba(41,45,44,.10),
-      0 1px 2px rgba(41,45,44,.10),
-      0 12px 24px -8px rgba(41,45,44,.26);
-    transition:box-shadow .25s ease, transform .25s ease;
-  }
-  /* a whisper of a spine down the leading edge, so it reads as a book */
-  .cover::after{
-    content:"";position:absolute;left:0;top:0;bottom:0;width:8px;z-index:2;
-    background:linear-gradient(90deg, rgba(41,45,44,.18), rgba(41,45,44,.04) 55%, rgba(41,45,44,0));
-    pointer-events:none;
-  }
-  .cover--cloth{
-    display:flex;flex-direction:column;justify-content:center;align-items:center;
-    text-align:center;padding:22px 18px;color:#F4E9D8;
-    background-image:
-      repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 3px),
-      repeating-linear-gradient(90deg, rgba(0,0,0,.06) 0 1px, transparent 1px 3px);
-  }
-  .cover--cloth::before{
-    content:"";position:absolute;inset:12px;border:1px solid rgba(244,233,216,.45);
-    border-radius:2px;pointer-events:none;
-  }
-  .cover--cloth .ct{
-    font-family:"Playfair Display",serif;font-weight:600;
-    font-size:20px;line-height:1.15;letter-spacing:0.01em;
-  }
-  .cover--cloth .cr{
-    width:24px;height:1px;background:var(--tawny-fill);margin:11px 0;
-  }
-  .cover--cloth .ca{
-    font-family:"Lato",system-ui,sans-serif;font-size:10px;
-    letter-spacing:0.13em;text-transform:uppercase;opacity:.85;
-  }
-  /* your real cover art, layered over the cloth placeholder; if the file is
-     missing it removes itself and the placeholder shows through */
-  .cover__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-
-  .pill{
-    display:inline-block;align-self:flex-start;
-    font-family:"Lato",system-ui,sans-serif;
-    font-size:11px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;
-    color:#FBF6EC;background:var(--slate);
-    border-radius:999px;padding:6px 13px;margin:14px 0 8px;
-  }
-  .card__title{
-    font-family:"Cormorant Garamond",serif;font-weight:600;
-    font-size:23px;line-height:1.16;color:var(--rust);
-  }
-  .card__meta{
-    font-family:"Lato",system-ui,sans-serif;font-size:12px;letter-spacing:0.02em;
-    color:var(--ds-ink-soft);margin-top:5px;
-  }
-  /* What each term reads, and the thinkers met along the way. */
-  .card__terms{
-    margin-top:9px;padding-top:7px;border-top:1px solid var(--line);
-    display:grid;gap:3px;
-  }
-  .card__term{display:grid;grid-template-columns:auto 1fr;gap:7px;align-items:baseline;}
-  .term-label{
-    font-family:"Lato",system-ui,sans-serif;font-size:9.5px;letter-spacing:0.1em;
-    text-transform:uppercase;color:var(--tawny);white-space:nowrap;
-  }
-  .term-book{
-    font-family:"Cormorant Garamond",serif;font-size:13.5px;line-height:1.24;
-    color:var(--ds-ink);
-  }
-  .card__thinkers{
-    margin-top:7px;font-family:"Cormorant Garamond",serif;font-size:12.5px;
-    font-style:italic;line-height:1.35;color:var(--ds-ink-soft);
-  }
-  .tk-label{
-    display:block;font-family:"Lato",system-ui,sans-serif;font-style:normal;
-    font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;
-    color:var(--ds-ink-soft);margin-bottom:2px;
-  }
-
-  .shelf-cta{text-align:center;margin-top:14px;}
-
-  /* ---------- FEATURED spotlight ---------- */
-  .featured{background:var(--cream-warm);padding:0;margin-top:6px;}
-  .featured__grid{
-    max-width:1120px;margin:0 auto;
-    display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch;
-  }
-  .featured__img{
-    min-height:380px;display:flex;align-items:center;justify-content:center;
-    padding:52px 28px;background:var(--cream);
-  }
-  /* the cover is shown as a book, at its own proportion, not cropped to fill */
-  .featured__cover{
-    display:block;width:100%;height:auto;max-width:272px;aspect-ratio:2/3;object-fit:cover;
-    border-radius:3px;box-shadow:0 2px 4px rgba(41,45,44,.10), 0 18px 38px rgba(41,45,44,.18);
-  }
-  .featured__body{padding:54px 52px;}
-  .featured__body h2{
-    font-family:"Playfair Display",serif;font-weight:600;
-    font-size:clamp(30px,4.4vw,46px);line-height:1.05;
-    color:var(--slate);margin:.34em 0 .4em;
-  }
-  .featured__body p{font-size:21px;color:var(--ink);max-width:42ch;margin:0 0 28px;}
-
-  /* ---------- CATALOG (Shop All) ---------- */
-  .catalog{padding:42px 0 70px;}
-  .catalog__top{
-    display:flex;align-items:center;justify-content:space-between;gap:16px;
-    flex-wrap:wrap;margin-bottom:8px;
-  }
-  .back-link{
-    background:none;border:none;cursor:pointer;
-    font-family:"Lato",system-ui,sans-serif;font-size:13px;letter-spacing:0.06em;
-    color:var(--sage);font-weight:700;padding:6px 0;
-  }
-  .back-link:hover{color:var(--rust);}
-  .catalog h2{
-    font-family:"Playfair Display",serif;font-weight:600;
-    font-size:clamp(28px,4vw,40px);margin:.1em 0 .35em;color:var(--slate);
-  }
-  .controls{
-    display:flex;align-items:center;justify-content:space-between;gap:18px;
-    flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-    padding:14px 0;margin-bottom:30px;
-  }
-  .filters{display:flex;flex-wrap:wrap;gap:9px;}
-  .chip{
-    font-family:"Lato",system-ui,sans-serif;font-size:12px;letter-spacing:0.08em;
-    text-transform:uppercase;font-weight:700;cursor:pointer;
-    border:1.5px solid var(--line);background:var(--paper);color:var(--umber);
-    border-radius:999px;padding:8px 16px;transition:all .16s ease;
-  }
-  .chip:hover{border-color:var(--sage);color:var(--sage);}
-  .chip[aria-pressed="true"]{background:var(--sage);border-color:var(--sage);color:#FBF6EC;}
-  .sort{display:flex;align-items:center;gap:9px;}
-  .sort label{
-    font-family:"Lato",system-ui,sans-serif;font-size:11px;letter-spacing:0.101em;
-    text-transform:uppercase;color:var(--ds-ink-soft);font-weight:700;
-  }
-  .sort select{
-    font-family:"Lato",system-ui,sans-serif;font-size:13px;color:var(--slate);
-    border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;
-    background:var(--paper);cursor:pointer;
-  }
-
-  .grid{
-    display:grid;grid-template-columns:repeat(2,1fr);gap:30px 26px;
-  }
-  @media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr);}}
-  @media(min-width:980px){.grid{grid-template-columns:repeat(4,1fr);}}
-
-  .gcard{text-decoration:none;color:inherit;display:flex;flex-direction:column;
-    transition:transform .18s ease;}
-  .gcard:hover{transform:translateY(-5px);}
-  .gcard:hover .cover{box-shadow:var(--shadow-md);}
-  .gcard .cover{aspect-ratio:2/3;}
-  .gcard .cover--cloth .ct{font-size:17px;}
-  .status{
-    display:inline-block;align-self:flex-start;margin:13px 0 7px;
-    font-family:"Lato",system-ui,sans-serif;font-size:10px;letter-spacing:0.12em;
-    text-transform:uppercase;font-weight:700;border-radius:999px;padding:5px 11px;
-  }
-  .status--go{background:var(--sage);color:#FBF6EC;}
-  .status--self{background:var(--tawny-fill);color:var(--ds-ink);}
-  .status--avail{background:var(--umber);color:#FBF6EC;}
-  .status--soon{background:transparent;color:var(--umber);border:1px solid var(--line);}
-  .gcard__level{
-    font-family:"Lato",system-ui,sans-serif;font-size:10px;letter-spacing:0.101em;
-    text-transform:uppercase;color:var(--ds-ink-soft);font-weight:700;margin-bottom:2px;
-  }
-  .gcard__title{
-    font-family:"Cormorant Garamond",serif;font-weight:600;font-size:21px;
-    line-height:1.15;color:var(--rust);
-  }
-  .gcard__blurb{font-size:16.5px;line-height:1.4;color:var(--umber);margin-top:5px;}
-  .empty{grid-column:1/-1;text-align:center;color:var(--ds-ink-soft);padding:50px 0;font-size:20px;}
-
-  /* view toggling */
-  [hidden]{display:none !important;}
-
-  @media(max-width:760px){
-    .featured__grid{grid-template-columns:1fr;}
-    .featured__img{min-height:auto;padding:40px 24px 8px;}
-    .featured__body{padding:38px 26px 44px;}
-    .shelf-head{align-items:center;}
-  }
-
-  @media(prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto;}
-    *{transition:none !important;}
-  }
-  :focus-visible{outline:2.5px solid var(--tawny);outline-offset:3px;border-radius:3px;}
-
-  /* ── WHAT A WEEK FEELS LIKE ──────────────────────────────────────
-     The experiential answer to "what does a student actually do?",
-     placed before the catalogue. A calm vertical ladder: numeral,
-     move, and one plain sentence. No decoration. */
-  .week{padding:56px 0 64px;background:var(--cream);border-top:1px solid var(--line-soft);}
-  .week__head{text-align:center;margin-bottom:38px;}
-  .week__head h2{
-    font-family:"Playfair Display", serif;font-weight:600;
-    font-size:clamp(26px,4vw,34px);margin:.3em 0 .15em;color:var(--slate);
-  }
-  .week__head .lede{font-size:21px;color:var(--umber);max-width:52ch;margin:0 auto;}
-  .week__list{
-    max-width:660px;margin:0 auto;list-style:none;padding:0;
-    border-top:1px solid var(--line);
-  }
-  .week__step{
-    display:grid;grid-template-columns:2.6rem 1fr;gap:0 1.1rem;
-    align-items:baseline;padding:1.15rem .25rem 1.2rem;
-    border-bottom:1px solid var(--line);
-  }
-  .week__num{
-    font-family:"Playfair Display", serif;font-style:italic;
-    font-size:1.05rem;color:var(--tawny);line-height:1.4;
-  }
-  .week__move{
-    font-family:"Lato", system-ui, sans-serif;font-size:13px;font-weight:700;
-    letter-spacing:0.12em;text-transform:uppercase;color:var(--slate);
-    margin:0 0 .3rem;
-  }
-  .week__say{
-    font-family:"Cormorant Garamond", Georgia, serif;
-    font-size:19px;line-height:1.55;color:var(--umber);margin:0;
-  }
-  .week__foot{
-    max-width:660px;margin:1.6rem auto 0;text-align:center;
-    font-family:"Cormorant Garamond", Georgia, serif;font-style:italic;
-    font-size:19px;color:var(--umber);
-  }
-  @media (max-width:560px){
-    .week{padding:44px 0 50px;}
-    .week__step{grid-template-columns:2rem 1fr;gap:0 .8rem;}
-  }
-
-  /* ── STUDENT WORK: reusable placeholder ──────────────────────────
-     Ready for real specimens — notebook pages, annotations, commonplace
-     entries, sketches, capstones, student writing. Renders nothing until
-     .ds-specimen items are added, so no empty boxes appear meanwhile.
-     Usage:
-       <div class="ds-specimens">
-         <figure class="ds-specimen">
-           <img src="images/work-....jpg" alt="...">
-           <figcaption>Grade 10 &middot; Macbeth &middot; commonplace entry</figcaption>
-         </figure>
-       </div>
-  */
-  .ds-specimens{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));
-    gap:22px;max-width:1000px;margin:34px auto 0;
-  }
-  .ds-specimens:empty{display:none;}
-  .ds-specimen{margin:0;}
-  .ds-specimen img{
-    display:block;width:100%;height:auto;border:1px solid var(--line);
-    border-radius:2px;background:var(--paper);
-  }
-  .ds-specimen figcaption{
-    font-family:"Lato", system-ui, sans-serif;font-size:12px;
-    letter-spacing:0.1em;text-transform:uppercase;color:var(--ds-ink-soft);
-    margin-top:.6rem;text-align:center;
-  }
-</style>
-  <script src="/reveal.js"></script>
-<link rel="stylesheet" href="/reading-room.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Literature &amp; Language Arts Curriculum · Delight &amp; Savor</title>
+  <link rel="canonical" href="https://delightandsavor.com/curriculum">
+  <meta name="description" content="Explore the online family membership, individual Reading Room PDFs, full-year English language arts courses, and co-op classroom editions from Delight &amp; Savor.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/tokens.css">
+  <link rel="stylesheet" href="/reading-room.css">
+  <link rel="stylesheet" href="/curriculum.css">
 </head>
-
 <body>
-<!-- Your shared nav/footer are injected by nav.js, same as every other page. -->
-
-<main>
-
-  <!-- ============ BROWSE VIEW ============ -->
-  <div id="browse">
-
-  <!-- HERO — full branded banner; the wordmark, tagline, and "rooted in beauty…" are part of the artwork -->
-  <header class="hero">
-    <img class="hero__img" src="/images/hero-curriculum.jpg"
-         alt="A stack of Delight &amp; Savor course books — Wuthering Heights, The Old Man and the Sea, A Midsummer Night's Dream, Nature — beside an open journal and a chickadee mug on a sunlit desk." />
+<main class="curriculum" id="browse">
+  <header class="curr-intro wrap">
+    <div>
+      <p class="kicker">Charlotte Mason curriculum · Grades 6–12</p>
+      <h1>Literature &amp; <br>language arts</h1>
+      <p class="intro-text">Read one good book together, or let several books shape a year of English. Choose what fits your family table or your co-op classroom.</p>
+    </div>
+    <img src="/images/hero-curriculum.jpg" width="1800" height="720" alt="Course books, an open journal, and a chickadee mug on the reading table.">
   </header>
-  <div class="hero-cta">
-    <h1 class="eyebrow" style="display:block;margin:0 0 16px;">Charlotte Mason Literature &amp; Language Arts · Grades 6–12</h1>
-    <a class="btn btn--primary" href="#shelf-section">Browse full courses</a>
-    <a class="btn" href="#reading-room">Explore the Reading Room</a>
+
+  <div class="pathways wrap" id="ways-to-learn" role="navigation" aria-label="Four ways to use the curriculum">
+    <a class="path path-primary" href="#membership">
+      <span class="path-name">Online membership</span><span class="path-copy">All my online courses, with interactive lessons and teaching notes for parents. Coming soon.</span><span class="path-arrow" aria-hidden="true">↓</span>
+    </a>
+    <a class="path" href="#reading-room">
+      <span class="path-name">Individual PDFs</span><span class="path-copy">Buy one book study to print and keep. $24 per companion.</span><span class="path-arrow" aria-hidden="true">↓</span>
+    </a>
+    <a class="path" href="#full-year">
+      <span class="path-name">Full-year ELA courses</span><span class="path-copy">Purchase a year of literature and writing to teach at home.</span><span class="path-arrow" aria-hidden="true">↓</span>
+    </a>
+    <a class="path" href="#versions">
+      <span class="path-name">Co-op classroom editions</span><span class="path-copy">Teach one class with weekly plans, discussion notes, and handouts.</span><span class="path-arrow" aria-hidden="true">↓</span>
+    </a>
   </div>
 
-<section class="rr-shelf" id="reading-room" aria-labelledby="rr-title">
-    <h2 id="rr-title">Reading Room · Single-Book Studies</h2>
-    <p class="rr-intro">Choose one novel or play to read together. Each printable guide includes narration, discussion, and optional writing. Try Week One free.</p>
+  <section class="membership wrap" id="membership" aria-labelledby="membership-title">
+    <div>
+      <p class="kicker">Online family membership · Coming soon</p>
+      <h2 id="membership-title">Your online Reading Room</h2>
+      <p>The family membership will bring all my online courses together in <i>In the Margin</i>. Open the week’s reading with your child, switch to Teach View for a question to ask aloud, and keep a favorite line in a digital commonplace journal.</p>
+      <a class="action" href="https://margin.delightandsavor.com/preview.html#reading-room-title">Explore the online courses <span aria-hidden="true">→</span></a>
+    </div>
+    <aside class="lesson-peek" aria-labelledby="lesson-title">
+      <p class="kicker">Try an online lesson</p>
+      <h3 id="lesson-title">Before you meet Santiago</h3>
+      <p>Read Whitman’s short poem together. Where does the speaker leave the lecture room? Open the conversation prompts, then carry that question into <i>The Old Man and the Sea</i>.</p>
+      <a class="text-link" href="https://margin.delightandsavor.com/reading-room-samples/the-old-man-and-the-sea-week-1">Open the free first week <span aria-hidden="true">→</span></a>
+    </aside>
+  </section>
+
+  <section class="paper-band" id="reading-room" aria-labelledby="rr-title">
+    <div class="rr-shelf wrap">
+      <p class="kicker">Individual PDFs · One-time purchase</p>
+      <h2 id="rr-title">The Reading Room in print</h2>
+      <p class="rr-intro">Choose a novel or play and try the first week free. Each $24 companion gives your household the complete study to print and keep, with narration, conversation, and optional writing.</p>
     <div class="rr-grid">
       <article class="rr-book">
         <a class="rr-art" href="https://payhip.com/preview/yjNfG" aria-label="Preview the first week of The Penderwicks"><img src="https://margin.delightandsavor.com/library/covers/penderwicks.jpg" alt="" loading="lazy" width="600" height="900"></a>
@@ -505,49 +88,56 @@
         <div class="rr-links"><a href="https://payhip.com/preview/qwchb" aria-label="Free Week One PDF for A Midsummer Night’s Dream">Free Week One PDF</a>
         <a href="/shop#a-midsummer-nights-dream" aria-label="Buy the full PDF of A Midsummer Night’s Dream for $24">Full PDF · $24</a></div></div>
       </article>
-      <article class="rr-book">
-        <a class="rr-art" href="https://payhip.com/preview/13MxT" aria-label="Preview the first week of Of Mice and Men"><img src="https://margin.delightandsavor.com/library/covers/of-mice-and-men.jpg" alt="" loading="lazy" width="600" height="900"></a>
+      <article class="rr-book" id="of-mice-and-men">
+        <a class="rr-art" href="/samples/of-mice-and-men-week-one.pdf" aria-label="Preview the first week of Of Mice and Men"><img src="/images/of-mice-and-men-reading-room.jpg" alt="" loading="lazy" width="900" height="1350"></a>
         <div class="rr-info"><p class="rr-meta">Novel study · High school · 6 weeks</p><h3>Of Mice and Men</h3>
         <p class="rr-author">John Steinbeck</p><p class="rr-desc">Follow George and Lennie’s dream of a place of their own. How does its meaning change each time they tell the story?</p>
-        <div class="rr-links"><a href="https://payhip.com/preview/13MxT" aria-label="Free Week One PDF for Of Mice and Men">Free Week One PDF</a>
+        <div class="rr-links"><a href="/samples/of-mice-and-men-week-one.pdf" aria-label="Free Week One PDF for Of Mice and Men">Free Week One PDF</a>
         <a href="/shop#of-mice-and-men" aria-label="Buy the full PDF of Of Mice and Men for $24">Full PDF · $24</a></div></div>
       </article>
     </div>
-    <div class="rr-online"><h3>Read in the web app</h3><p>Explore the online samples in <i>In the Margin</i>. The forthcoming Reading Room family membership includes all four online companions and Teach View for $15/month. Each $24 PDF is a separate, one-time purchase.</p>
-    <a href="https://margin.delightandsavor.com/#reading-room-title">Explore the online Reading Room →</a></div>
+    </div>
   </section>
-    <!-- LEVELS -->
-    <section class="levels wrap">
-      <div class="levels__head">
-        <span class="eyebrow">One method, every level</span>
-        <h2>Find it. Follow it. Frame it. Keep it.</h2>
-        <p class="lede">Every course runs on living books and narration — and underneath that gentle surface is real rigor. Students work in close literary and comparative analysis, read through historical and critical lenses, and learn to build an argument that holds. Wonder and analysis grow side by side — never one before the other.</p>
-      </div>
-      <div class="level-words">
-        <button class="level-word" data-level="summer">
-          <span class="big">Summer Foundations</span>
-          <span class="sub">A gentle start</span>
-        </button>
-        <button class="level-word" data-level="middle">
-          <span class="big">Middle School</span>
-          <span class="sub">Living Stories &amp; Sentences</span>
-        </button>
-        <button class="level-word" data-level="high">
-          <span class="big">High School</span>
-          <span class="sub">Living Literature &amp; Language</span>
-        </button>
-      </div>
-    </section>
 
-    <!-- WHAT A WEEK FEELS LIKE — what a student actually does -->
-    <section class="week" aria-labelledby="week-heading">
-      <div class="wrap">
-        <div class="week__head">
-          <span class="eyebrow">How it works</span>
-          <h2 id="week-heading">A week in a full course</h2>
-          <p class="lede">These six habits guide the longer middle and high school courses.</p>
-        </div>
-        <ol class="week__list">
+  <section class="year-section wrap" id="shelf-section" aria-labelledby="full-year">
+    <p class="kicker">Full-year family courses · Self-paced</p>
+    <h2 id="full-year">A year of English language arts</h2>
+    <p class="section-intro">Choose one complete course for your family. Literature gives the writing its subject. A middle schooler learns to shape a paragraph from a narration. A high schooler follows a detail through a book and builds an argument from the evidence.</p>
+    <div class="year-controls" id="catalog" hidden>
+      <div class="year-filters" role="group" aria-label="Filter full-year courses by level">
+        <button type="button" data-filter="all" aria-pressed="true">All levels</button>
+        <button type="button" data-filter="middle" aria-pressed="false">Middle school</button>
+        <button type="button" data-filter="high" aria-pressed="false">High school</button>
+      </div>
+      <label>Sort by <select id="year-sort"><option value="level">Grade level</option><option value="az">Title A–Z</option><option value="featured">Featured</option></select></label>
+    </div>
+    <div class="year-grid" id="year-courses">
+      <article class="year-book" data-level="middle" data-featured="3">
+        <a class="year-cover" aria-label="Preview A Place to Belong" href="https://margin.delightandsavor.com/living-stories-preview.html"><img src="/images/a-place-to-belong.jpg" width="240" height="360" loading="lazy" alt=""></a>
+        <p class="kicker">Middle school · Grades 6–8</p>
+        <h3>A Place to Belong</h3>
+        <p>Read <i>A Place to Hang the Moon</i> and <i>Number the Stars</i>. Across thirty weeks, oral narration grows into paragraphs and a first research paper.</p>
+        <a class="text-link" href="/shop#a-place-to-belong">Get the family course · $129 <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="year-book" data-level="high" data-featured="2">
+        <a class="year-cover" aria-label="Preview The Art of Attention" href="https://margin.delightandsavor.com/art-of-attention/"><img src="/images/art-of-attention.jpg" width="240" height="360" loading="lazy" alt=""></a>
+        <p class="kicker">High school · Grades 9–12</p>
+        <h3>The Art of Attention</h3>
+        <p>Begin with poetry, read <i>The Old Man and the Sea</i>, and finish with <i>A Midsummer Night’s Dream</i>. Follow a word or image until it becomes a literary argument.</p>
+        <p class="availability">Family enrollment forthcoming</p>
+        <a class="text-link" href="https://margin.delightandsavor.com/art-of-attention/">Preview the course <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="year-book" data-level="high" data-featured="1">
+        <a class="year-cover" aria-label="Preview The Art of Tragedy" href="https://margin.delightandsavor.com/art-of-tragedy/"><img src="/images/art-of-tragedy.jpg" width="240" height="360" loading="lazy" alt=""></a>
+        <p class="kicker">High school · Grades 9–12</p>
+        <h3>The Art of Tragedy</h3>
+        <p>Read <i>Macbeth</i> alongside <i>Wuthering Heights</i>. Trace what ambition and love ask of their characters, then develop an interpretation in a sustained essay.</p>
+        <a class="text-link" href="/shop#the-art-of-tragedy">Get the family course · $299 <span aria-hidden="true">→</span></a>
+      </article>
+    </div>
+    <details class="week">
+      <summary>A week in a full-year course</summary>
+<ol class="week__list">
           <li class="week__step"><span class="week__num" aria-hidden="true">i</span>
             <div><p class="week__move">Read</p>
             <p class="week__say">Encounter a living work of literature.</p></div></li>
@@ -567,312 +157,48 @@
             <div><p class="week__move">Write</p>
             <p class="week__say">Say something true &mdash; and support it.</p></div></li>
         </ol>
-        <p class="week__foot">Narration carries the early weeks; by the end of a unit the same student is arguing a thesis they arrived at themselves.</p>
+        <p class="week__foot">An oral narration at the beginning of a unit can become the seed of a thesis a student argues in their own words.</p>
+    </details>
+  </section>
 
-        <!-- Student work goes here when there is real work to show. -->
-        <div class="ds-specimens"></div>
+  <section class="coop-band" id="versions" aria-labelledby="coop-title">
+    <div class="coop-inner wrap">
+      <div>
+        <p class="kicker">Co-op classroom editions</p>
+        <h2 id="coop-title">Teach it with a class</h2>
+        <p>Gather your students for a weekly, 90-minute class. Your teacher’s guide includes a timed lesson plan, questions for the room, and student handouts for the work they’ll carry home.</p>
       </div>
-    </section>
-
-    <!-- SHELF / CAROUSEL -->
-    <section class="shelf-section" id="shelf-section">
-      <div class="shelf-head">
-        <div>
-          <span class="eyebrow">On the shelf</span>
-          <h2>Pull one down and look closer</h2>
-        </div>
-        <div class="shelf-arrows">
-          <button class="arrow" id="shelfPrev" aria-label="Scroll left">&lsaquo;</button>
-          <button class="arrow" id="shelfNext" aria-label="Scroll right">&rsaquo;</button>
-        </div>
-      </div>
-      <div class="shelf-rail">
-        <span class="shelf-fade shelf-fade--l"></span>
-        <span class="shelf-fade shelf-fade--r"></span>
-        <div class="shelf" id="shelf"><!-- rendered --></div>
-      </div>
-      <div class="shelf-cta">
-        <button class="btn btn--primary" id="shopAll">Browse all full courses</button>
-      </div>
-    </section>
-
-    <section id="ways-to-learn" class="rr-plans" aria-labelledby="plans-title">
-      <h2 id="plans-title">Courses for home and co-op</h2>
-      <article><h3>Full-Year English Language Arts Courses</h3><p><a href="/shop#the-art-of-tragedy">Buy The Art of Tragedy · $299</a>. <a href="/shop#a-place-to-belong">Get A Place to Belong · $129</a>. <a href="https://margin.delightandsavor.com/art-of-attention/">Preview The Art of Attention</a> ($299; enrollment forthcoming).</p></article><article><h3>Summer Foundations</h3><p>Six weeks with <i>Of Mice and Men</i>. <a href="/shop#summer-co-op">Summer co-op license · $147</a> for up to 12 students.</p><a href="/shop">See the courses →</a></article>
-      <article id="versions"><h3>Co-op Courses</h3><p>One teacher and one class use the course web app for one school year. Pay $325 upfront or $39 a month for nine teaching months ($351 total).</p><a href="/shop#school-year-co-op">Choose a classroom license →</a></article>
-    </section>
-    <!-- FEATURED -->
-    <section class="featured">
-      <div class="featured__grid" id="featured"><!-- rendered --></div>
-    </section>
-
-  </div>
-
-  <!-- ============ CATALOG VIEW (Shop All) ============ -->
-  <div id="catalog" class="catalog wrap" hidden>
-    <div class="catalog__top">
-      <button class="back-link" id="backBtn">&lsaquo; Back to featured</button>
-    </div>
-    <h2 tabindex="-1">Full courses</h2>
-    <p>For individual books, <a href="#reading-room" id="catalog-room">browse the Reading Room</a>.</p>
-    <div class="controls">
-      <div class="filters" id="filters" role="group" aria-label="Filter by level">
-        <button class="chip" data-filter="all" aria-pressed="true">All</button>
-        <button class="chip" data-filter="summer" aria-pressed="false">Summer</button>
-        <button class="chip" data-filter="middle" aria-pressed="false">Middle School</button>
-        <button class="chip" data-filter="high" aria-pressed="false">High School</button>
-      </div>
-      <div class="sort">
-        <label for="sortSel">Sort by</label>
-        <select id="sortSel">
-          <option value="featured">Featured</option>
-          <option value="az">Title A–Z</option>
-          <option value="level">Level</option>
-        </select>
+      <div class="coop-actions">
+        <p>One school-year license covers one teacher and one class. Choose $325 upfront or nine monthly payments of $39 ($351 total).</p>
+        <a class="action" href="/shop#school-year-co-op">See the classroom license <span aria-hidden="true">→</span></a>
+        <a class="text-link" href="https://margin.delightandsavor.com/teacher-samples/attention-ending-argument/">Try two free co-op lessons <span aria-hidden="true">→</span></a>
       </div>
     </div>
-    <div class="grid" id="grid"><!-- rendered --></div>
-  </div>
-
+  </section>
 </main>
-
 <script src="/nav.js?v=3"></script>
-
 <script>
-/* =====================================================================
-   EDIT HERE — one list runs the whole page.
-   ===================================================================== */
-const FEATURED = "summer-foundations";
-
-const STATUS_LABEL = {
-  go:"Enrolling now", self:"Self-paced", avail:"Available", soon:"Coming soon", preview:"Course preview"
-};
-const LEVEL_LABEL = {
-  summer:"Summer Foundations", middle:"Middle School", high:"High School"
-};
-
-const COURSES = [
-  /* The canonical list is In the Margin's own library:
-     margin.delightandsavor.com/preview.html — four courses, two of them
-     year-long. Macbeth, Wuthering Heights, The Old Man and the Sea and
-     A Midsummer Night's Dream are terms inside those years now, not
-     separate courses, so they are no longer listed on their own. */
-  {
-    id:"art-of-tragedy",
-    title:"The Art of Tragedy",
-    author:"Macbeth & Wuthering Heights",   /* esc() escapes this at render */
-    level:"high",
-    meta:"Year-long · Grades 9–12",
-    status:"avail",
-    cloth:"#37322B",
-    image:"/images/art-of-tragedy.jpg",
-    link:"https://margin.delightandsavor.com/art-of-tragedy/",
-    terms:[
-      {label:"Fall",   book:"Macbeth"},
-      {label:"Spring", book:"Wuthering Heights"}
-    ],
-    thinkers:"Augustine · Rousseau · Aristotle",
-    blurb:"A year on ambition and disordered love — Shakespeare's tragedy in the fall, Brontë's in the spring."
-  },
-  {
-    id:"art-of-attention",
-    title:"The Art of Attention",
-    author:"Poetry, The Old Man and the Sea, A Midsummer Night’s Dream",
-    level:"high",
-    meta:"Year-long · Grades 9–12",
-    status:"preview",
-    cloth:"#4E6149",
-    image:"/images/art-of-attention.jpg",
-    link:"https://margin.delightandsavor.com/art-of-attention/",
-    terms:[
-      {label:"Fall",   book:"Poetry · The Old Man and the Sea"},
-      {label:"Spring", book:"A Midsummer Night’s Dream"}
-    ],
-    thinkers:"Aristotle · Simone Weil · Plato",
-    blurb:"A year of looking closely — poetry and Hemingway in the fall, Shakespeare's comedy in the spring."
-  },
-  {
-    id:"lss",
-    title:"A Place to Belong",
-    author:"A Place to Hang the Moon · Number the Stars",
-    level:"middle",
-    meta:"Thirty weeks · Grades 6–8",
-    status:"preview",
-    cloth:"#4C6B8C",
-    image:"/images/a-place-to-belong.jpg",
-    link:"https://margin.delightandsavor.com/living-stories-preview.html",
-    terms:[
-      {label:"Term I",  book:"A Place to Hang the Moon"},
-      {label:"Term II", book:"Number the Stars"}
-    ],
-    thinkers:"Wordsworth · Tennyson · Browning · Hopkins",
-    blurb:"Living books and real writing for the middle years, ending in a first research paper."
-  },
-  {
-    id:"summer-foundations",
-    title:"Of Mice and Men",
-    author:"Summer Foundations · Co-op course",
-    level:"summer",
-    meta:"Six weeks · Grades 8–11",
-    status:"go",
-    cloth:"#6B5240",
-    image:"/images/cover-omam.jpg",
-    link:"/Summer-Foundations-Sales-Page.html",
-    terms:[
-      {label:"Six weeks", book:"Of Mice and Men"}
-    ],
-    thinkers:"Camus · Sartre",
-    blurb:"A gentle six-week on-ramp into close reading and narration.",
-    spotlight:{
-      image:"/images/cover-omam.jpg",
-      eyebrow:"Six weeks · start anytime",
-      heading:"Summer Foundations for co-ops",
-      body:"Six unhurried weeks with Steinbeck’s <em>Of Mice and Men</em> — a character thread, a Relation Study, a haiku, and a capstone that gathers the summer’s noticing into knowing. Delivered through the In&nbsp;the&nbsp;Margin app, paper and all.",
-      cta:"Take a deeper look",
-      ctaHref:"/Summer-Foundations-Sales-Page.html"
-    }
+  const controls = document.querySelector('.year-controls');
+  const courseList = document.getElementById('year-courses');
+  const yearBooks = [...courseList.children];
+  const filterButtons = controls.querySelectorAll('[data-filter]');
+  const yearSort = document.getElementById('year-sort');
+  function sortYearBooks() {
+    const title = book => book.querySelector('h3').textContent;
+    const byTitle = (a, b) => title(a).localeCompare(title(b));
+    const compare = {
+      az: byTitle,
+      level: (a, b) => Number(a.dataset.level === 'high') - Number(b.dataset.level === 'high') || byTitle(a, b),
+      featured: (a, b) => Number(a.dataset.featured) - Number(b.dataset.featured)
+    };
+    courseList.append(...yearBooks.slice().sort(compare[yearSort.value]));
   }
-];
-
-/* ---------- helpers ---------- */
-const esc = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
-const external = href => /^https?:\/\//.test(href);
-
-function coverHTML(c){
-  return `<div class="cover cover--cloth" style="background-color:${esc(c.cloth)}">
-    <div class="ct">${esc(c.title)}</div>
-    <div class="cr"></div>
-    <div class="ca">${esc(c.author||"")}</div>
-    ${c.image ? `<img class="cover__img" src="${esc(c.image)}" alt="${esc(c.title)} cover" loading="lazy" onerror="this.remove()">` : ``}
-  </div>`;
-}
-/* What is read each term, and whose thinking we read it beside. */
-function termsHTML(c){
-  if(!c.terms || !c.terms.length) return "";
-  return `<div class="card__terms">` + c.terms.map(t =>
-    `<div class="card__term"><span class="term-label">${esc(t.label)}</span><span class="term-book">${esc(t.book)}</span></div>`
-  ).join("") + `</div>`;
-}
-function thinkersHTML(c){
-  if(!c.thinkers) return "";
-  return `<div class="card__thinkers"><span class="tk-label">In company with</span>${esc(c.thinkers)}</div>`;
-}
-function linkAttrs(link){
-  return external(link) ? ` target="_blank" rel="noopener"` : "";
-}
-
-/* ---------- render shelf ---------- */
-function renderShelf(){
-  document.getElementById("shelf").innerHTML = COURSES.map(c => `
-    <a class="card" href="${esc(c.link)}"${linkAttrs(c.link)}>
-      ${coverHTML(c)}
-      <span class="pill">${esc(LEVEL_LABEL[c.level])}</span>
-      <div class="card__title">${esc(c.title)}</div>
-      <div class="card__meta">${esc(c.meta)}</div>
-      ${termsHTML(c)}
-      ${thinkersHTML(c)}
-    </a>`).join("");
-}
-
-/* ---------- render featured spotlight ---------- */
-function renderFeatured(){
-  const c = COURSES.find(x => x.id === FEATURED) || COURSES[0];
-  const s = c.spotlight || {
-    eyebrow:STATUS_LABEL[c.status], heading:c.title, body:c.blurb,
-    cta:"Take a deeper look", ctaHref:c.link
-  };
-  const fimg = (c.spotlight && c.spotlight.image) || c.image || "";
-  const art = fimg
-    ? `<img class="featured__cover" src="${esc(fimg)}" alt="${esc(c.title)} cover" width="800" height="1200" loading="eager" decoding="async" fetchpriority="high">`
-    : `<div class="featured__cover" style="background:${esc(c.cloth)}"></div>`;
-  document.getElementById("featured").innerHTML = `
-    <div class="featured__img">${art}</div>
-    <div class="featured__body">
-      <span class="eyebrow">${esc(s.eyebrow)}</span>
-      <h2>${esc(s.heading)}</h2>
-      <p>${s.body}</p>
-      <a class="btn btn--primary" href="${esc(s.ctaHref)}"${linkAttrs(s.ctaHref)}>${esc(s.cta)} →</a>
-    </div>`;
-}
-
-/* ---------- render catalog grid ---------- */
-let activeFilter = "all";
-function renderGrid(){
-  let list = COURSES.filter(c => activeFilter === "all" ? true : c.level === activeFilter);
-  const sort = document.getElementById("sortSel").value;
-  if (sort === "az") list = [...list].sort((a,b)=>a.title.localeCompare(b.title));
-  else if (sort === "level"){
-    const order = {summer:0, middle:1, high:2};
-    list = [...list].sort((a,b)=> order[a.level]-order[b.level] || a.title.localeCompare(b.title));
-  }
-  const grid = document.getElementById("grid");
-  if (!list.length){ grid.innerHTML = `<p class="empty">No courses here yet — check back soon.</p>`; return; }
-  grid.innerHTML = list.map(c => `
-    <a class="gcard" href="${esc(c.link)}"${linkAttrs(c.link)}>
-      ${coverHTML(c)}
-      <span class="status status--${c.status}">${esc(STATUS_LABEL[c.status])}</span>
-      <div class="gcard__level">${esc(LEVEL_LABEL[c.level])}</div>
-      <div class="gcard__title">${esc(c.title)}</div>
-      <div class="gcard__blurb">${esc(c.blurb)}</div>
-    </a>`).join("");
-}
-
-/* ---------- view toggle ---------- */
-const browse = document.getElementById("browse");
-const catalog = document.getElementById("catalog");
-function showCatalog(filter){
-  if (filter){ setFilter(filter); }
-  browse.hidden = true;
-  catalog.hidden = false;
-  window.scrollTo(0, 0);
-  catalog.querySelector("h2").focus?.();
-}
-function showBrowse(){
-  catalog.hidden = true;
-  browse.hidden = false;
-}
-function setFilter(f){
-  activeFilter = f;
-  document.querySelectorAll(".chip").forEach(ch =>
-    ch.setAttribute("aria-pressed", ch.dataset.filter === f ? "true" : "false"));
-  renderGrid();
-}
-
-/* ---------- shelf scrolling ---------- */
-function setupShelf(){
-  const shelf = document.getElementById("shelf");
-  const step = () => Math.min(shelf.clientWidth * 0.8, 460);
-  document.getElementById("shelfPrev").onclick = () => shelf.scrollBy({left:-step(), behavior:"smooth"});
-  document.getElementById("shelfNext").onclick = () => shelf.scrollBy({left: step(), behavior:"smooth"});
-  const upd = () => {
-    document.getElementById("shelfPrev").disabled = shelf.scrollLeft < 8;
-    document.getElementById("shelfNext").disabled =
-      shelf.scrollLeft + shelf.clientWidth >= shelf.scrollWidth - 8;
-  };
-  shelf.addEventListener("scroll", upd, {passive:true});
-  window.addEventListener("resize", upd);
-  upd();
-}
-
-/* ---------- wire up ---------- */
-renderShelf();
-renderFeatured();
-renderGrid();
-setupShelf();
-
-document.getElementById("shopAll").onclick = () => showCatalog("all");
-document.getElementById("backBtn").onclick = showBrowse;
-document.getElementById("catalog-room").addEventListener("click", showBrowse);
-window.addEventListener("hashchange", () => {
-  if (catalog.hidden || !["#reading-room", "#versions", "#ways-to-learn"].includes(location.hash)) return;
-  showBrowse();
-  document.querySelector(location.hash).scrollIntoView();
-});
-document.getElementById("sortSel").onchange = renderGrid;
-document.querySelectorAll(".chip").forEach(ch =>
-  ch.addEventListener("click", () => setFilter(ch.dataset.filter)));
-document.querySelectorAll(".level-word").forEach(w =>
-  w.addEventListener("click", () => showCatalog(w.dataset.level)));
+  filterButtons.forEach(button => button.addEventListener('click', () => {
+    filterButtons.forEach(other => other.setAttribute('aria-pressed', String(other === button)));
+    yearBooks.forEach(book => { book.hidden = button.dataset.filter !== 'all' && book.dataset.level !== button.dataset.filter; });
+  }));
+  yearSort.addEventListener('change', sortYearBooks);
+  controls.hidden = false;
 </script>
 </body>
 </html>
